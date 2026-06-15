@@ -53,3 +53,30 @@ const LESSONS = [
     tags: ["InnerFrench", "متوسط", "کار"],
   },
 ];
+
+// ═══════════════════════════════════════════════════════════
+//  بانک نکته‌ها — «می‌دونستی که...؟»
+//  هر بار یکی تصادفی روی صفحه‌ی اول نشان داده می‌شود.
+//  برای افزودن نکته‌ی جدید، فقط یک بلوک اضافه کن.
+//  type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
+// ═══════════════════════════════════════════════════════════
+const TIPS = [
+  {
+    type: "saviez",
+    fr: "En français, « aujourd'hui » contient en réalité trois fois le mot « jour » à travers son histoire !",
+    fa: "می‌دونستی واژه‌ی « aujourd'hui » (امروز) در طول تاریخ خودش، سه بار معنای «روز» را در دل خود دارد!",
+    cat: "grammar"
+  },
+  {
+    type: "rappel",
+    fr: "« Bon » est un adjectif, « bien » est un adverbe. On dit « un bon livre » mais « il écrit bien ».",
+    fa: "یادت باشه: « bon » صفت است و « bien » قید. می‌گیم « un bon livre » (کتاب خوب) ولی « il écrit bien » (خوب می‌نویسد).",
+    cat: "grammar"
+  },
+  {
+    type: "saviez",
+    fr: "Le mot « parce que » répond à « pourquoi ? », mais « car » ne se met jamais en début de phrase.",
+    fa: "می‌دونستی « parce que » به «چرا؟» جواب می‌دهد، ولی « car » هیچ‌وقت اول جمله نمی‌آید؟",
+    cat: "grammar"
+  },
+];

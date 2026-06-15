@@ -140,6 +140,59 @@
         }
         .channel-btn .tg { font-size: 18px; }
 
+        /* کارت نکته — می‌دونستی که...؟ */
+        .tip-card {
+            width: 100%;
+            max-width: 560px;
+            margin-bottom: 26px;
+            background: linear-gradient(135deg, #1f3a5f, #2e7bb5);
+            color: var(--cream);
+            border-radius: 16px;
+            padding: 20px 24px;
+            cursor: pointer;
+            text-align: right;
+            box-shadow: 0 10px 30px rgba(31,58,95,0.22);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .tip-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(31,58,95,0.3); }
+        .tip-card::after {
+            content: "";
+            position: absolute;
+            top: -30px; left: -30px;
+            width: 120px; height: 120px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+        }
+        .tip-head {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold-soft);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: flex; align-items: center; gap: 7px;
+        }
+        .tip-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px;
+            font-style: italic;
+            line-height: 1.5;
+            direction: ltr; text-align: left;
+            margin-bottom: 10px;
+        }
+        .tip-fa {
+            font-size: 14px;
+            line-height: 1.9;
+            opacity: 0.92;
+        }
+        .tip-next {
+            font-size: 11px;
+            opacity: 0.6;
+            margin-top: 12px;
+            text-align: center;
+        }
+
         /* جستجو */
         .search-box {
             width: 100%;
@@ -507,6 +560,8 @@
         <p class="sub-fr" dir="ltr">Ma bibliothèque de français</p>
         <p class="sub">همه‌چیز اینجاست تا فرانسه برای تو ساده‌تر بشه</p>
 
+        <div class="tip-card" id="tipCard" onclick="nextTip()"></div>
+
         <div class="search-box">
             <input type="text" id="search" placeholder="جستجو در محتواها..." oninput="onSearch()">
         </div>
@@ -732,6 +787,24 @@
             box.innerHTML = html;
         }
 
+        let lastTip = -1;
+        function nextTip() {
+            const card = document.getElementById("tipCard");
+            if (typeof TIPS === "undefined" || !TIPS.length) { card.style.display = "none"; return; }
+            let i;
+            do { i = Math.floor(Math.random() * TIPS.length); }
+            while (TIPS.length > 1 && i === lastTip);
+            lastTip = i;
+            const t = TIPS[i];
+            const head = t.type === "rappel" ? "✦ یادت باشه که…" : "✦ می‌دونستی که…؟";
+            card.innerHTML = `
+                <div class="tip-head">${head}</div>
+                <div class="tip-fr" dir="ltr">${t.fr}</div>
+                <div class="tip-fa">${t.fa}</div>
+                <div class="tip-next">برای نکته‌ی بعدی لمس کن ↺</div>`;
+        }
+
+        nextTip();
         buildLatest();
         buildCatGrid();
     </script>
