@@ -40,6 +40,7 @@ const LESSONS = [
     level: "متوسط (B2)",
     premium: false,
     tags: ["دورکاری", "فناوری", "با مثال"],
+    summary: "تمام واژگان دورکاری و فناوری، دسته‌بندی‌شده در ۷ بخش — با تعریف، مترادف و سه مثال در سطح آزمون برای هر واژه.",
   },
   {
     link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000751533361",
