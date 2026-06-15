@@ -232,6 +232,61 @@
         }
         .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 2px; }
 
+        /* جدیدترین محتوا */
+        .latest {
+            margin-top: 46px;
+            width: 100%;
+            max-width: 720px;
+        }
+        .latest-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .latest-title .fa { font-family: 'Vazirmatn', sans-serif; font-size: 17px; display:block; }
+        .latest-sub { font-size: 13px; color: var(--gray); margin-bottom: 22px; }
+        .latest-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+        }
+        .latest-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: right;
+            text-decoration: none;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .latest-card::before {
+            content: ""; position: absolute;
+            top: 0; right: 0; bottom: 0; width: 3px;
+            background: var(--c);
+        }
+        .latest-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(31,58,95,0.12);
+            border-color: transparent;
+        }
+        .latest-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .latest-card h5 {
+            font-size: 16px; color: var(--navy);
+            margin-bottom: 4px; font-weight: 500;
+        }
+        .latest-card .lc-cat { font-size: 12px; color: var(--gray); }
+
         /* نتایج */
         .results {
             max-width: 1300px;
@@ -394,6 +449,8 @@
         </a>
 
         <div class="cat-grid" id="catGrid"></div>
+
+        <div class="latest" id="latest"></div>
     </div>
 
     <div class="results" id="results">
@@ -529,6 +586,29 @@
             }).join("");
         }
 
+        function buildLatest() {
+            const box = document.getElementById("latest");
+            if (!LESSONS.length) { box.innerHTML = ""; return; }
+            // جدیدترین = آخرین مواردی که به لیست اضافه شده‌اند (تا ۳ مورد)
+            const latest = LESSONS.slice(-3).reverse();
+            let html = `
+                <div class="latest-title">Derniers ajouts<span class="fa">جدیدترین محتواها</span></div>
+                <div class="latest-sub">تازه‌ترین چیزهایی که به کتابخانه اضافه شده</div>
+                <div class="latest-row">`;
+            latest.forEach(l => {
+                const c = catInfo(l.category);
+                html += `
+                    <a href="${l.file}" class="latest-card" style="--c:${c.color}">
+                        <span class="latest-badge">${l.premium ? '⭐ ویژه' : 'تازه'}</span>
+                        <h5>${l.title || ""}</h5>
+                        <span class="lc-cat">${c.label}</span>
+                    </a>`;
+            });
+            html += `</div>`;
+            box.innerHTML = html;
+        }
+
+        buildLatest();
         buildCatGrid();
     </script>
 </body>
