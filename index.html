@@ -638,7 +638,7 @@
                 const c = catInfo(l.category);
                 const isPodcast = l.category === "podcast" || l.link;
                 // مقصد لینک: پادکست → لینک خارجی، بقیه → فایل HTML
-                const href = l.link || l.file || "#";
+                const href = safeUrl(l.link || l.file || "#");
                 const target = l.link ? ' target="_blank" rel="noopener"' : "";
                 const btnText = isPodcast ? "شنیدن پادکست ♪" : "باز کردن ←";
 
@@ -675,6 +675,11 @@
         }
 
         // تولید تصویر SVG زیبا برای هر محتوا بر اساس دسته‌اش
+        // امن‌کردن URL برای قرارگیری در ویژگی href
+        function safeUrl(u) {
+            return (u || "#").replace(/&/g, "&amp;");
+        }
+
         function coverFor(l) {
             // اگر محتوا خودش تصویر داشت (مثل پادکست)، همان را استفاده کن
             if (l.cover) return l.cover;
@@ -709,7 +714,7 @@
                 <div class="news-list">`;
             latest.forEach(l => {
                 const c = catInfo(l.category);
-                const href = l.link || l.file || "#";
+                const href = safeUrl(l.link || l.file || "#");
                 const target = l.link ? ' target="_blank" rel="noopener"' : "";
                 const summary = l.summary || l.descFa || "";
                 html += `
