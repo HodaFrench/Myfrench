@@ -82,6 +82,18 @@ const LESSONS = [
     tags: ["تلفظ", "commencer", "نکته‌ی طلایی"],
     summary: "چرا می‌نویسیم « nous commençons » و نه « commencons »؟ یک قانون کوچک تلفظ که با فعل commencer یاد می‌گیری.",
   },
+  {
+    file: "TCF_EO_T3_expatriation.html",
+    title: "زندگی در کشوری دیگر",
+    titleFr: "S'habituer à vivre à l'étranger",
+    category: "tcf",
+    section: "expression-orale",
+    task: "tache-3",
+    level: "B2",
+    premium: false,
+    tags: ["اکسپتریشن", "مهاجرت", "نمونه‌ی کامل"],
+    summary: "یک پاسخ کامل و تحلیل‌شده برای تکلیف ۳ — با ساختارها و متصل‌کننده‌های رنگی، نکات واژگانی و ترجمه‌ی فارسی هر پاراگراف.",
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════
