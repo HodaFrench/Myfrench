@@ -380,6 +380,45 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های زیرشاخه (بخش/تکلیف) */
+        .sub-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 26px 22px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sub-card::before {
+            content: ""; position: absolute;
+            top: 0; right: 0; bottom: 0; width: 4px;
+            background: var(--c); opacity: 0.85;
+            transition: width 0.3s ease;
+        }
+        .sub-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(31,58,95,0.13);
+            border-color: transparent;
+        }
+        .sub-card:hover::before { width: 8px; }
+        .sub-fr-l {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 600;
+            color: var(--navy);
+        }
+        .sub-fa-l { font-size: 14px; color: var(--gray); }
+        .sub-go {
+            font-size: 13px; font-weight: 700;
+            color: var(--c); margin-top: 10px;
+        }
+
         /* نتایج */
         .results {
             max-width: 1300px;
@@ -608,6 +647,8 @@
     <script src="data.js"></script>
     <script>
         let activeCat = null;
+        let activeSection = null;  // بخش فعال (مثل expression-orale)
+        let activeTask = null;     // تکلیف فعال (مثل tache-3)
 
         function lessonsIn(catId) {
             return LESSONS.filter(l => l.category === catId).length;
@@ -639,10 +680,26 @@
         function catInfo(id) {
             return CATEGORIES.find(c => c.id === id) || { label: id, icon: "📄", color: "#2e7bb5" };
         }
+        function sectionsOf(catId) {
+            return (typeof SECTIONS !== "undefined" && SECTIONS[catId]) ? SECTIONS[catId] : null;
+        }
 
         function openCat(catId) {
             activeCat = catId;
+            activeSection = null;
+            activeTask = null;
             document.getElementById("search").value = "";
+            openResults();
+            // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
+            if (catId !== "all" && sectionsOf(catId)) {
+                renderSections(catId);
+            } else {
+                setResultsTitle(catId);
+                render();
+            }
+        }
+
+        function setResultsTitle(catId) {
             const ci = catInfo(catId);
             if (catId === "all") {
                 document.getElementById("resultsTitle").innerHTML = "همه‌ی محتواها";
@@ -650,7 +707,53 @@
                 document.getElementById("resultsTitle").innerHTML =
                     '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
             }
-            openResults();
+        }
+
+        // نمایش کارت‌های بخش (مثل Expression Orale)
+        function renderSections(catId) {
+            const ci = catInfo(catId);
+            const secs = sectionsOf(catId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            document.getElementById("count").textContent = secs.length + " بخش";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = secs.map(s => `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openSection('${catId}','${s.id}')">
+                    <span class="sub-fr-l" dir="ltr">${s.label}</span>
+                    <span class="sub-fa-l">${s.labelFa}</span>
+                    <span class="sub-go">مشاهده ←</span>
+                </button>`).join("");
+        }
+
+        // نمایش کارت‌های تکلیف (مثل Tâche 3)
+        function openSection(catId, secId) {
+            activeSection = secId;
+            activeTask = null;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' + sec.label;
+            document.getElementById("count").textContent = (sec.tasks||[]).length + " تکلیف";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = (sec.tasks||[]).map(t => `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openTask('${catId}','${secId}','${t.id}')">
+                    <span class="sub-fr-l" dir="ltr">${t.label}</span>
+                    <span class="sub-fa-l">${t.labelFa}</span>
+                    <span class="sub-go">مشاهده ←</span>
+                </button>`).join("");
+        }
+
+        // نمایش محتواهای یک تکلیف
+        function openTask(catId, secId, taskId) {
+            activeTask = taskId;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            const task = sec.tasks.find(t => t.id === taskId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' +
+                sec.label + ' <span style="color:var(--gray)">›</span> ' + task.label;
             render();
         }
 
@@ -676,6 +779,8 @@
 
         function goHome() {
             activeCat = null;
+            activeSection = null;
+            activeTask = null;
             document.getElementById("search").value = "";
             document.getElementById("results").classList.remove("show");
             document.getElementById("hero").classList.remove("shrink");
@@ -688,11 +793,13 @@
 
             let filtered = LESSONS.filter(l => {
                 const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
+                const matchSection = !activeSection || l.section === activeSection;
+                const matchTask = !activeTask || l.task === activeTask;
                 const matchSearch = !q ||
                     (l.title && l.title.toLowerCase().includes(q)) ||
                     (l.titleFr && l.titleFr.toLowerCase().includes(q)) ||
                     (l.tags && l.tags.join(" ").toLowerCase().includes(q));
-                return matchCat && matchSearch;
+                return matchCat && matchSection && matchTask && matchSearch;
             });
 
             document.getElementById("count").textContent = filtered.length + " محتوا";
