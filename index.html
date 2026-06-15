@@ -84,9 +84,37 @@
         .hero .sub {
             font-size: 18px;
             color: var(--gray);
-            margin-bottom: 40px;
+            margin-bottom: 12px;
             max-width: 540px;
         }
+        .hero .sub-fa {
+            font-size: 16px;
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 38px;
+            padding: 12px 24px;
+            background: var(--white);
+            border: 2px solid var(--line);
+            border-radius: 30px;
+            color: var(--blue-deep);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: inherit;
+            transition: all 0.25s;
+        }
+        .channel-btn:hover {
+            border-color: var(--blue-soft);
+            background: var(--blue-pale);
+            transform: translateY(-2px);
+        }
+        .channel-btn .tg { font-size: 18px; }
 
         /* جستجو */
         .search-box {
@@ -292,12 +320,18 @@
 
     <div class="hero" id="hero">
         <div class="welcome">FRANÇAIS AVEC HODA</div>
-        <h2>همه‌چیز برای فرانسه،<br>یک‌جا و منظم</h2>
+        <h2 dir="ltr">Tout le français,<br>en un seul endroit</h2>
+        <p class="sub-fa">همه‌چیز برای فرانسه، یک‌جا و منظم</p>
         <p class="sub">تو شروع کن — مسیر، خودش جلو می‌رود.</p>
 
         <div class="search-box">
             <input type="text" id="search" placeholder="جستجو در محتواها..." oninput="onSearch()">
         </div>
+
+        <a href="https://t.me/TCFHODA" target="_blank" class="channel-btn">
+            <span class="tg">✈</span>
+            <span>کانال تلگرام هدی — TCFHODA@</span>
+        </a>
 
         <div class="cat-grid" id="catGrid"></div>
     </div>
