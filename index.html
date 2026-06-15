@@ -174,44 +174,63 @@
 
         /* دسته‌ها به‌صورت کارت در صفحه‌ی اول */
         .cat-grid {
-            display: flex;
-            gap: 13px;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 720px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 560px;
+            width: 100%;
         }
         .cat-chip {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-align: right;
             background: var(--white);
             border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 26px 24px 22px;
+            border-radius: 16px;
+            padding: 20px 22px;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 150px;
             font-family: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        /* نوار رنگی ظریف سمت راست هر کادر */
+        .cat-chip::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 4px;
+            background: var(--c);
+            opacity: 0.85;
+            transition: width 0.3s ease;
         }
         .cat-chip:hover {
             border-color: transparent;
-            transform: translateY(-5px);
-            box-shadow: 0 16px 34px rgba(31,58,95,0.14);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(31,58,95,0.13);
         }
-        .cat-chip:hover .ico {
-            background: currentColor;
-            transform: scale(1.05);
-        }
-        .cat-chip:hover .ico span { color: var(--white) !important; }
-        .cat-chip .ico {
-            width: 56px; height: 56px;
-            margin: 0 auto 14px;
+        .cat-chip:hover::before { width: 8px; }
+        .cat-chip .chip-mark {
+            flex-shrink: 0;
+            width: 46px; height: 46px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 24px; line-height: 1;
-            border-radius: 50%;
+            font-size: 22px; line-height: 1;
+            color: var(--c);
             background: var(--cream);
-            border: 1.5px solid currentColor;
-            transition: all 0.25s;
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
-        .cat-chip .name { font-size: 16px; font-weight: 500; color: var(--navy); }
-        .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 3px; }
+        .cat-chip:hover .chip-mark {
+            background: var(--c);
+            color: var(--white);
+        }
+        .cat-chip .chip-body { display: flex; flex-direction: column; }
+        .cat-chip .name {
+            font-size: 17px; font-weight: 500; color: var(--navy);
+            line-height: 1.5;
+        }
+        .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 2px; }
 
         /* نتایج */
         .results {
@@ -347,7 +366,8 @@
         @media (max-width: 768px) {
             .hero h2 { font-size: 30px; }
             .hero .sub { font-size: 16px; }
-            .cat-chip { min-width: 110px; padding: 15px 18px; }
+            .cat-grid { grid-template-columns: 1fr; max-width: 360px; }
+            .cat-chip { padding: 16px 18px; }
         }
     </style>
 </head>
@@ -404,18 +424,22 @@
         function buildCatGrid() {
             const el = document.getElementById("catGrid");
             let html = `
-                <button class="cat-chip" onclick="openCat('all')">
-                    <span class="ico" style="color:var(--navy)"><span>●</span></span>
-                    <span class="name">همه</span>
-                    <span class="num">${LESSONS.length} محتوا</span>
+                <button class="cat-chip" onclick="openCat('all')" style="--c:var(--navy)">
+                    <span class="chip-mark">●</span>
+                    <span class="chip-body">
+                        <span class="name">همهٔ محتواها</span>
+                        <span class="num">${LESSONS.length} محتوا</span>
+                    </span>
                 </button>`;
             CATEGORIES.forEach(c => {
                 const n = lessonsIn(c.id);
                 html += `
-                <button class="cat-chip" onclick="openCat('${c.id}')">
-                    <span class="ico" style="color:${c.color}"><span>${c.icon}</span></span>
-                    <span class="name">${c.label}</span>
-                    <span class="num">${n} محتوا</span>
+                <button class="cat-chip" onclick="openCat('${c.id}')" style="--c:${c.color}">
+                    <span class="chip-mark">${c.icon}</span>
+                    <span class="chip-body">
+                        <span class="name">${c.label}</span>
+                        <span class="num">${n} محتوا</span>
+                    </span>
                 </button>`;
             });
             el.innerHTML = html;
