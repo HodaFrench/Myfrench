@@ -736,26 +736,41 @@
         }
 
         function coverFor(l) {
-            // اگر محتوا خودش تصویر داشت (مثل پادکست)، همان را استفاده کن
+            // ۱) عکس واقعی (فایل آپلودشده)
+            if (l.img) return '<img src="' + l.img + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">';
+            // ۲) تصویر SVG سفارشی (مثل پادکست)
             if (l.cover) return l.cover;
             const c = catInfo(l.category);
             const col = c.color;
-            // طرح‌های متفاوت برای هر دسته
+            // رنگ روشن‌تر برای گرادیان (با ترکیب سفید)
+            const lite = col + "cc";
+
+            // موتیف‌های پخته و زیبا برای هر دسته
             const motifs = {
-                tcf:     '<circle cx="320" cy="40" r="50" fill="#fff" opacity="0.08"/><rect x="40" y="60" width="70" height="80" rx="6" fill="#fff" opacity="0.16"/><rect x="50" y="74" width="50" height="6" rx="3" fill="#fff" opacity="0.4"/><rect x="50" y="90" width="40" height="6" rx="3" fill="#fff" opacity="0.3"/><path d="M120 110 l14 14 l24 -28" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>',
-                grammar: '<circle cx="60" cy="120" r="44" fill="#fff" opacity="0.07"/><text x="200" y="95" font-size="60" fill="#fff" opacity="0.16" text-anchor="middle" font-family="Georgia,serif" font-style="italic">§</text><rect x="250" y="50" width="60" height="6" rx="3" fill="#fff" opacity="0.3"/><rect x="240" y="66" width="80" height="6" rx="3" fill="#fff" opacity="0.25"/>',
-                conversation: '<circle cx="330" cy="110" r="48" fill="#fff" opacity="0.07"/><rect x="60" y="50" width="120" height="54" rx="14" fill="#fff" opacity="0.18"/><rect x="120" y="86" width="130" height="48" rx="14" fill="#fff" opacity="0.12"/><circle cx="90" cy="77" r="5" fill="#fff" opacity="0.5"/><circle cx="110" cy="77" r="5" fill="#fff" opacity="0.5"/><circle cx="130" cy="77" r="5" fill="#fff" opacity="0.5"/>',
-                vocab:   '<circle cx="320" cy="120" r="50" fill="#fff" opacity="0.07"/><text x="80" y="105" font-size="72" fill="#fff" opacity="0.18" font-family="Georgia,serif" font-weight="bold">Aa</text><rect x="190" y="60" width="100" height="6" rx="3" fill="#fff" opacity="0.3"/><rect x="190" y="78" width="130" height="6" rx="3" fill="#fff" opacity="0.22"/><rect x="190" y="96" width="80" height="6" rx="3" fill="#fff" opacity="0.18"/>',
-                podcast: '<circle cx="320" cy="40" r="50" fill="#fff" opacity="0.08"/><rect x="180" y="48" width="40" height="60" rx="20" fill="#fff" opacity="0.2"/><path d="M168 92 a32 32 0 0 0 64 0" stroke="#fff" stroke-width="4" fill="none" opacity="0.4"/><rect x="197" y="124" width="6" height="16" fill="#fff" opacity="0.3"/>'
+                tcf: '<g opacity="0.9"><rect x="148" y="44" width="104" height="76" rx="8" fill="#fffdf8" opacity="0.95"/><rect x="160" y="58" width="62" height="6" rx="3" fill="' + col + '" opacity="0.5"/><rect x="160" y="72" width="80" height="5" rx="2.5" fill="' + col + '" opacity="0.3"/><rect x="160" y="84" width="70" height="5" rx="2.5" fill="' + col + '" opacity="0.3"/><circle cx="232" cy="104" r="15" fill="#2e9e5b"/><path d="M225 104 l5 5 l9 -11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>',
+                grammar: '<text x="200" y="118" font-size="130" fill="#fffdf8" opacity="0.16" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold">§</text><rect x="120" y="56" width="160" height="7" rx="3.5" fill="#fffdf8" opacity="0.4"/><rect x="140" y="74" width="120" height="6" rx="3" fill="#fffdf8" opacity="0.28"/>',
+                conversation: '<g><rect x="58" y="44" width="150" height="62" rx="18" fill="#fffdf8" opacity="0.95"/><circle cx="92" cy="75" r="6" fill="' + col + '" opacity="0.55"/><circle cx="118" cy="75" r="6" fill="' + col + '" opacity="0.55"/><circle cx="144" cy="75" r="6" fill="' + col + '" opacity="0.55"/><rect x="150" y="88" width="170" height="52" rx="16" fill="#fffdf8" opacity="0.55"/></g>',
+                vocab: '<text x="92" y="120" font-size="96" fill="#fffdf8" opacity="0.22" font-family="Georgia,serif" font-weight="bold">Aa</text><rect x="200" y="54" width="120" height="7" rx="3.5" fill="#fffdf8" opacity="0.4"/><rect x="200" y="74" width="150" height="6" rx="3" fill="#fffdf8" opacity="0.28"/><rect x="200" y="92" width="100" height="6" rx="3" fill="#fffdf8" opacity="0.22"/>',
+                podcast: '<g><circle cx="200" cy="76" r="46" fill="#fffdf8" opacity="0.1"/><rect x="184" y="44" width="32" height="54" rx="16" fill="#fffdf8" opacity="0.92"/><path d="M168 88 a32 32 0 0 0 64 0" stroke="#fffdf8" stroke-width="5" fill="none" opacity="0.7"/><rect x="197" y="120" width="6" height="18" rx="3" fill="#fffdf8" opacity="0.6"/><rect x="184" y="136" width="32" height="5" rx="2.5" fill="#fffdf8" opacity="0.5"/></g>'
             };
-            const motif = motifs[l.category] || '<circle cx="320" cy="40" r="50" fill="#fff" opacity="0.08"/>';
+            const motif = motifs[l.category] || '';
+
+            // الگوی نقطه‌چین ظریف در پس‌زمینه
+            const dots = '<circle cx="40" cy="36" r="3" fill="#fff" opacity="0.12"/><circle cx="360" cy="130" r="4" fill="#fff" opacity="0.1"/><circle cx="330" cy="30" r="2.5" fill="#fff" opacity="0.14"/><circle cx="60" cy="128" r="2.5" fill="#fff" opacity="0.1"/>';
+
             return '<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">' +
-                '<rect width="400" height="160" fill="' + col + '"/>' +
+                '<defs>' +
+                '<linearGradient id="bg' + l.category + '" x1="0" y1="0" x2="1" y2="1">' +
+                '<stop offset="0" stop-color="' + col + '"/>' +
+                '<stop offset="1" stop-color="' + col + '" stop-opacity="0.78"/></linearGradient>' +
+                '<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1">' +
+                '<stop offset="0.55" stop-color="#000" stop-opacity="0"/>' +
+                '<stop offset="1" stop-color="#000" stop-opacity="0.22"/></linearGradient>' +
+                '</defs>' +
+                '<rect width="400" height="160" fill="url(#bg' + l.category + ')"/>' +
+                dots + motif +
                 '<rect width="400" height="160" fill="url(#sh)"/>' +
-                '<defs><linearGradient id="sh" x1="0" y1="0" x2="1" y2="1">' +
-                '<stop offset="0" stop-color="#000" stop-opacity="0"/>' +
-                '<stop offset="1" stop-color="#000" stop-opacity="0.18"/></linearGradient></defs>' +
-                motif + '</svg>';
+                '</svg>';
         }
 
         function buildLatest() {

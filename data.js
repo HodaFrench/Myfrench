@@ -24,6 +24,10 @@ const CATEGORIES = [
 //   { file: "GR_001.html", title: "...", titleFr: "...", category: "grammar",
 //     level: "B1", premium: false, tags: ["..."] }
 //
+//   • تصویر: اگر چیزی ندهی، خودکار یک تصویر زیبا ساخته می‌شود.
+//   • برای عکس واقعی: فایل عکس را در مخزن آپلود کن و این خط را اضافه کن:
+//       img: "mon-image.jpg"
+//
 // ۲) پادکست (لینک خارجی مثل Spotify/YouTube + توضیح دوزبانه):
 //   { link: "https://open.spotify.com/...", title: "...", titleFr: "...",
 //     category: "podcast",
