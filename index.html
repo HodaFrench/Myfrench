@@ -183,12 +183,12 @@
         .cat-chip {
             display: flex;
             align-items: center;
-            gap: 16px;
-            text-align: right;
+            justify-content: center;
+            text-align: center;
             background: var(--white);
             border: 1px solid var(--line);
             border-radius: 16px;
-            padding: 20px 22px;
+            padding: 24px 22px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
@@ -425,7 +425,6 @@
             const el = document.getElementById("catGrid");
             let html = `
                 <button class="cat-chip" onclick="openCat('all')" style="--c:var(--navy)">
-                    <span class="chip-mark">●</span>
                     <span class="chip-body">
                         <span class="name">همهٔ محتواها</span>
                         <span class="num">${LESSONS.length} محتوا</span>
@@ -435,7 +434,6 @@
                 const n = lessonsIn(c.id);
                 html += `
                 <button class="cat-chip" onclick="openCat('${c.id}')" style="--c:${c.color}">
-                    <span class="chip-mark">${c.icon}</span>
                     <span class="chip-body">
                         <span class="name">${c.label}</span>
                         <span class="num">${n} محتوا</span>
