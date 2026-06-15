@@ -3,28 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Français avec Hoda — کتابخانه‌ی آموزش فرانسه</title>
+    <title>Ma bibliothèque de français — Hoda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --blue-deep: #1a4f7a;
-            --blue: #2e7bb5;
-            --blue-soft: #5b9bd5;
-            --blue-pale: #eaf3fb;
-            --blue-mist: #f5f9fd;
-            --ink: #25323d;
-            --gray: #7a8a99;
-            --line: #e3edf5;
-            --white: #ffffff;
+            --navy: #1f3a5f;        /* سرمه‌ای جلد کتاب */
+            --navy-deep: #16293f;
+            --navy-soft: #41618a;
+            --gold: #a8874f;        /* طلایی/برنزی حروف */
+            --gold-soft: #c4a572;
+            --paper: #f7f3ea;       /* کاغذ استخوانی */
+            --paper-warm: #efe9db;
+            --cream: #fdfaf3;
+            --ink: #2c2a26;         /* مرکب */
+            --gray: #8a8275;
+            --line: #e4ddcd;
+            --white: #fffdf8;
+            /* نام‌های قدیمی برای سازگاری */
+            --blue-deep: #1f3a5f;
+            --blue: #41618a;
+            --blue-soft: #a8874f;
+            --blue-pale: #efe9db;
+            --blue-mist: #f7f3ea;
         }
 
         body {
-            font-family: 'Tahoma', Arial, sans-serif;
-            background: var(--blue-mist);
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+            background: var(--paper);
             color: var(--ink);
             line-height: 1.9;
             min-height: 100vh;
+        }
+        /* بافت ظریف کاغذ */
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            background-image: radial-gradient(circle at 50% 0%, rgba(168,135,79,0.04), transparent 60%);
+            pointer-events: none; z-index: 0;
         }
 
         /* نوار بالا */
@@ -33,27 +52,32 @@
             align-items: center;
             justify-content: center;
             gap: 13px;
-            padding: 20px;
-            background: var(--white);
+            padding: 18px;
+            background: var(--cream);
             border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         .topbar .logo {
-            width: 44px; height: 44px;
-            border-radius: 13px;
-            background: linear-gradient(135deg, var(--blue-deep), var(--blue-soft));
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--navy);
+            border: 2px solid var(--gold-soft);
             display: flex; align-items: center; justify-content: center;
-            font-size: 22px;
-            box-shadow: 0 4px 12px rgba(46,123,181,0.25);
+            font-size: 20px;
+            color: var(--gold-soft);
         }
-        .topbar h1 { font-size: 20px; font-weight: 800; color: var(--blue-deep); }
+        .topbar h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px; font-weight: 600;
+            color: var(--navy); letter-spacing: 0.5px;
+        }
         .topbar .tag { font-size: 12px; color: var(--gray); }
 
         /* بخش معرفی */
         .hero {
-            min-height: calc(100vh - 86px);
+            min-height: calc(100vh - 88px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -61,24 +85,22 @@
             text-align: center;
             padding: 40px 24px;
             transition: min-height 0.5s ease;
-            background:
-                radial-gradient(circle at 20% 20%, rgba(91,155,213,0.10), transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(46,123,181,0.08), transparent 40%);
+            position: relative; z-index: 1;
         }
         .hero.shrink { min-height: auto; padding: 48px 24px 26px; }
 
         .hero .welcome {
-            font-size: 15px;
-            color: var(--blue);
-            font-weight: 700;
-            margin-bottom: 14px;
-            letter-spacing: 1px;
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
         }
         .hero h2 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 18px;
-            color: var(--blue-deep);
+            font-size: 46px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--navy);
             line-height: 1.4;
         }
         .hero .sub {
@@ -88,33 +110,34 @@
             max-width: 540px;
         }
         .hero .sub-fr {
-            font-size: 16px;
-            color: var(--blue);
-            font-weight: 600;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: 500;
             letter-spacing: 0.5px;
-            margin-bottom: 16px;
+            margin-bottom: 22px;
             font-style: italic;
         }
         .channel-btn {
             display: inline-flex;
             align-items: center;
             gap: 9px;
-            margin-bottom: 38px;
-            padding: 12px 24px;
-            background: var(--white);
-            border: 2px solid var(--line);
-            border-radius: 30px;
-            color: var(--blue-deep);
+            margin-bottom: 40px;
+            padding: 11px 24px;
+            background: transparent;
+            border: 1px solid var(--gold-soft);
+            border-radius: 4px;
+            color: var(--gold);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 500;
             font-family: inherit;
             transition: all 0.25s;
         }
         .channel-btn:hover {
-            border-color: var(--blue-soft);
-            background: var(--blue-pale);
-            transform: translateY(-2px);
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--cream);
         }
         .channel-btn .tg { font-size: 18px; }
 
@@ -127,19 +150,19 @@
         }
         .search-box input {
             width: 100%;
-            padding: 19px 58px 19px 22px;
-            font-size: 17px;
-            border: 2px solid var(--line);
-            border-radius: 16px;
+            padding: 18px 56px 18px 22px;
+            font-size: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
             font-family: inherit;
-            background: var(--white);
+            background: var(--cream);
             transition: all 0.25s;
             color: var(--ink);
         }
         .search-box input:focus {
             outline: none;
-            border-color: var(--blue-soft);
-            box-shadow: 0 10px 32px rgba(46,123,181,0.15);
+            border-color: var(--gold-soft);
+            box-shadow: 0 6px 22px rgba(168,135,79,0.12);
         }
         .search-box::before {
             content: "🔍";
@@ -159,25 +182,25 @@
             max-width: 720px;
         }
         .cat-chip {
-            background: var(--white);
-            border: 2px solid var(--line);
-            border-radius: 16px;
-            padding: 18px 26px;
+            background: var(--cream);
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 22px 28px;
             cursor: pointer;
             transition: all 0.25s;
-            min-width: 130px;
+            min-width: 140px;
             font-family: inherit;
         }
         .cat-chip:hover {
-            border-color: var(--blue-soft);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 28px rgba(46,123,181,0.15);
+            border-color: var(--gold-soft);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(31,58,95,0.10);
         }
         .cat-chip .ico {
             font-size: 26px; display: block; margin-bottom: 10px;
             line-height: 1; font-weight: 400;
         }
-        .cat-chip .name { font-size: 16px; font-weight: 700; color: var(--blue-deep); }
+        .cat-chip .name { font-size: 16px; font-weight: 500; color: var(--navy); }
         .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 3px; }
 
         /* نتایج */
@@ -200,23 +223,26 @@
             gap: 12px;
             margin: 30px 0 24px;
             padding-bottom: 16px;
-            border-bottom: 2px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
-        .results-head h3 { font-size: 24px; color: var(--blue-deep); }
+        .results-head h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px; font-weight: 600; color: var(--navy);
+        }
         .results-head .count { font-size: 14px; color: var(--gray); }
         .back-btn {
-            background: var(--blue-pale);
-            color: var(--blue-deep);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
+            background: transparent;
+            color: var(--gray);
+            border: 1px solid var(--line);
+            padding: 9px 18px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
             font-family: inherit;
             transition: all 0.2s;
         }
-        .back-btn:hover { background: var(--blue-soft); color: white; }
+        .back-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--cream); }
 
         .grid {
             display: grid;
@@ -224,8 +250,8 @@
             gap: 22px;
         }
         .card {
-            background: var(--white);
-            border-radius: 18px;
+            background: var(--cream);
+            border-radius: 6px;
             border: 1px solid var(--line);
             overflow: hidden;
             transition: all 0.25s;
@@ -233,39 +259,42 @@
             flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(26,79,122,0.12);
-            border-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 34px rgba(31,58,95,0.12);
+            border-color: var(--gold-soft);
         }
         .card-top {
-            height: 8px;
-            background: var(--blue);
+            height: 4px;
+            background: var(--navy);
         }
         .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
         .card-cat {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--blue);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--gray);
             margin-bottom: 12px;
             align-self: flex-start;
+            text-transform: uppercase;
         }
-        .card h4 { font-size: 19px; margin-bottom: 6px; color: var(--ink); }
+        .card h4 { font-size: 19px; font-weight: 700; margin-bottom: 6px; color: var(--navy); }
         .card .fr {
-            font-size: 13px; color: var(--gray);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px; color: var(--gold);
             direction: ltr; text-align: left;
-            margin-bottom: 14px; line-height: 1.5;
+            margin-bottom: 14px; line-height: 1.4; font-style: italic;
         }
         .card-meta { margin-bottom: 16px; }
         .card-meta span {
             display: inline-block;
-            background: var(--blue-pale);
-            color: var(--blue-deep);
+            background: var(--paper-warm);
+            color: var(--navy);
             font-size: 12px;
             padding: 4px 11px;
-            border-radius: 13px;
+            border-radius: 3px;
             margin: 3px 3px 3px 0;
         }
         .premium-tag {
@@ -274,15 +303,15 @@
         }
         .card .open {
             display: block; text-align: center;
-            background: var(--blue-deep);
-            color: white; padding: 13px;
-            border-radius: 12px;
+            background: var(--navy);
+            color: var(--cream); padding: 12px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 700; font-size: 15px;
+            font-weight: 500; font-size: 14px;
             margin-top: auto;
             transition: all 0.25s;
         }
-        .card .open:hover { background: var(--blue); }
+        .card .open:hover { background: var(--gold); color: var(--white); }
 
         .empty {
             grid-column: 1/-1;
@@ -296,13 +325,14 @@
         /* فوتر */
         .footer {
             text-align: center;
-            padding: 40px 20px;
-            background: var(--white);
-            border-top: 1px solid var(--line);
-            color: var(--gray);
+            padding: 44px 20px;
+            background: var(--navy);
+            border-top: 3px solid var(--gold-soft);
+            color: var(--paper-warm);
             font-size: 14px;
+            position: relative; z-index: 1;
         }
-        .footer strong { color: var(--blue-deep); }
+        .footer strong { color: var(--gold-soft); font-weight: 500; }
 
         @media (max-width: 768px) {
             .hero h2 { font-size: 30px; }
@@ -313,7 +343,7 @@
 </head>
 <body>
     <div class="topbar">
-        <div class="logo">🇫🇷</div>
+        <div class="logo">F</div>
         <div>
             <h1>Français avec Hoda</h1>
             <div class="tag">آموزش زبان فرانسه</div>
