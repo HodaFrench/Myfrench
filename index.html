@@ -381,6 +381,22 @@
             border-radius: 3px;
             margin: 3px 3px 3px 0;
         }
+        .pod-desc {
+            background: var(--paper-warm);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        .pod-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px; font-style: italic;
+            color: var(--navy); line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .pod-fa {
+            font-size: 13px; color: var(--ink);
+            line-height: 1.8;
+        }
         .premium-tag {
             background: #fff3e0 !important;
             color: #e08a00 !important;
@@ -568,19 +584,36 @@
 
             grid.innerHTML = filtered.map(l => {
                 const c = catInfo(l.category);
+                const isPodcast = l.category === "podcast" || l.link;
+                // مقصد لینک: پادکست → لینک خارجی، بقیه → فایل HTML
+                const href = l.link || l.file || "#";
+                const target = l.link ? ' target="_blank" rel="noopener"' : "";
+                const btnText = isPodcast ? "شنیدن پادکست ♪" : "باز کردن ←";
+
+                // بخش توضیح دوزبانه (مخصوص پادکست)
+                let descBlock = "";
+                if (l.descFr || l.descFa) {
+                    descBlock = `
+                        <div class="pod-desc">
+                            ${l.descFr ? `<div class="pod-fr" dir="ltr">${l.descFr}</div>` : ""}
+                            ${l.descFa ? `<div class="pod-fa">${l.descFa}</div>` : ""}
+                        </div>`;
+                }
+
                 return `
-                <div class="card">
+                <div class="card${isPodcast ? ' card-podcast' : ''}">
                     <div class="card-top" style="background:${c.color}"></div>
                     <div class="card-body">
                         <span class="card-cat"><span style="color:${c.color}">${c.icon}</span> ${c.label}</span>
                         <h4>${l.title || ""}</h4>
                         ${l.titleFr ? `<div class="fr">${l.titleFr}</div>` : ""}
+                        ${descBlock}
                         <div class="card-meta">
                             ${l.level ? `<span>${l.level}</span>` : ""}
                             ${(l.tags||[]).map(t => `<span>${t}</span>`).join("")}
                             ${l.premium ? `<span class="premium-tag">⭐ ویژه</span>` : ""}
                         </div>
-                        <a href="${l.file}" class="open">باز کردن ←</a>
+                        <a href="${href}"${target} class="open">${btnText}</a>
                     </div>
                 </div>`;
             }).join("");

@@ -10,21 +10,26 @@ const CATEGORIES = [
   { id: "grammar",      label: "گرامر",        icon: "§", color: "#22618f" },
   { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
+  { id: "podcast",      label: "پادکست",       icon: "♪", color: "#5a6f9e" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
 ];
 
 // محتواها — هنوز خالی است؛ با هم پر می‌کنیم
+//
+// دو نوع محتوا می‌توان اضافه کرد:
+//
+// ۱) محتوای معمولی (فایل HTML داخل سایت):
+//   { file: "GR_001.html", title: "...", titleFr: "...", category: "grammar",
+//     level: "B1", premium: false, tags: ["..."] }
+//
+// ۲) پادکست (لینک خارجی مثل Spotify/YouTube + توضیح دوزبانه):
+//   { link: "https://open.spotify.com/...", title: "...", titleFr: "...",
+//     category: "podcast",
+//     descFa: "این پادکست درباره‌ی ... است",
+//     descFr: "Ce podcast parle de ...",
+//     tags: ["..."] }
+//
 const LESSONS = [
-  // نمونه‌ی ساختار (می‌توانی این را پاک کنی):
-  // {
-  //   file: "GR_001.html",
-  //   title: "عنوان فارسی",
-  //   titleFr: "Titre français",
-  //   category: "grammar",
-  //   level: "B1",
-  //   premium: false,        // true یعنی محتوای پولی
-  //   tags: ["گرامر پایه"],
-  // },
 ];
