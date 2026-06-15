@@ -181,23 +181,34 @@
             max-width: 720px;
         }
         .cat-chip {
-            background: var(--cream);
+            background: var(--white);
             border: 1px solid var(--line);
-            border-radius: 6px;
-            padding: 22px 28px;
+            border-radius: 18px;
+            padding: 26px 24px 22px;
             cursor: pointer;
-            transition: all 0.25s;
-            min-width: 140px;
+            transition: all 0.3s ease;
+            min-width: 150px;
             font-family: inherit;
         }
         .cat-chip:hover {
-            border-color: var(--gold-soft);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 26px rgba(31,58,95,0.10);
+            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 16px 34px rgba(31,58,95,0.14);
         }
+        .cat-chip:hover .ico {
+            background: currentColor;
+            transform: scale(1.05);
+        }
+        .cat-chip:hover .ico span { color: var(--white) !important; }
         .cat-chip .ico {
-            font-size: 26px; display: block; margin-bottom: 10px;
-            line-height: 1; font-weight: 400;
+            width: 56px; height: 56px;
+            margin: 0 auto 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; line-height: 1;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 1.5px solid currentColor;
+            transition: all 0.25s;
         }
         .cat-chip .name { font-size: 16px; font-weight: 500; color: var(--navy); }
         .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 3px; }
@@ -394,7 +405,7 @@
             const el = document.getElementById("catGrid");
             let html = `
                 <button class="cat-chip" onclick="openCat('all')">
-                    <span class="ico" style="color:var(--blue-deep)">●</span>
+                    <span class="ico" style="color:var(--navy)"><span>●</span></span>
                     <span class="name">همه</span>
                     <span class="num">${LESSONS.length} محتوا</span>
                 </button>`;
@@ -402,7 +413,7 @@
                 const n = lessonsIn(c.id);
                 html += `
                 <button class="cat-chip" onclick="openCat('${c.id}')">
-                    <span class="ico" style="color:${c.color}">${c.icon}</span>
+                    <span class="ico" style="color:${c.color}"><span>${c.icon}</span></span>
                     <span class="name">${c.label}</span>
                     <span class="num">${n} محتوا</span>
                 </button>`;
