@@ -32,4 +32,13 @@ const CATEGORIES = [
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {
+    file: "VOCAB_teletravail_technologie.html",
+    title: "واژگان دورکاری و فناوری",
+    titleFr: "Télétravail & Technologie",
+    category: "vocab",
+    level: "متوسط (B2)",
+    premium: false,
+    tags: ["دورکاری", "فناوری", "با مثال"],
+  },
 ];
