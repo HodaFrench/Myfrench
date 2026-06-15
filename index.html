@@ -143,7 +143,10 @@
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(46,123,181,0.15);
         }
-        .cat-chip .ico { font-size: 30px; display: block; margin-bottom: 8px; }
+        .cat-chip .ico {
+            font-size: 26px; display: block; margin-bottom: 10px;
+            line-height: 1; font-weight: 400;
+        }
         .cat-chip .name { font-size: 16px; font-weight: 700; color: var(--blue-deep); }
         .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 3px; }
 
@@ -288,9 +291,9 @@
     </div>
 
     <div class="hero" id="hero">
-        <div class="welcome">به کتابخانه خوش آمدید</div>
-        <h2>یادگیری فرانسه،<br>ساده و دلنشین</h2>
-        <p class="sub">یک دسته را انتخاب کن یا جستجو کن تا محتواها را ببینی، ورق بزنی و بخوانی</p>
+        <div class="welcome">FRANÇAIS AVEC HODA</div>
+        <h2>کتابخانه‌ی زبان فرانسه</h2>
+        <p class="sub">مجموعه‌ای منظم از جزوه‌ها و منابع — برای گرامر، مکالمه، واژگان و آمادگی TCF. یک بخش را انتخاب کن یا جستجو کن.</p>
 
         <div class="search-box">
             <input type="text" id="search" placeholder="جستجو در محتواها..." oninput="onSearch()">
@@ -328,7 +331,7 @@
             const el = document.getElementById("catGrid");
             let html = `
                 <button class="cat-chip" onclick="openCat('all')">
-                    <span class="ico">🌟</span>
+                    <span class="ico" style="color:var(--blue-deep)">●</span>
                     <span class="name">همه</span>
                     <span class="num">${LESSONS.length} محتوا</span>
                 </button>`;
@@ -336,7 +339,7 @@
                 const n = lessonsIn(c.id);
                 html += `
                 <button class="cat-chip" onclick="openCat('${c.id}')">
-                    <span class="ico">${c.icon}</span>
+                    <span class="ico" style="color:${c.color}">${c.icon}</span>
                     <span class="name">${c.label}</span>
                     <span class="num">${n} محتوا</span>
                 </button>`;
@@ -351,8 +354,13 @@
         function openCat(catId) {
             activeCat = catId;
             document.getElementById("search").value = "";
-            const title = catId === "all" ? "همه‌ی محتواها" : (catInfo(catId).icon + " " + catInfo(catId).label);
-            document.getElementById("resultsTitle").textContent = title;
+            const ci = catInfo(catId);
+            if (catId === "all") {
+                document.getElementById("resultsTitle").innerHTML = "همه‌ی محتواها";
+            } else {
+                document.getElementById("resultsTitle").innerHTML =
+                    '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            }
             openResults();
             render();
         }
@@ -411,7 +419,7 @@
                 <div class="card">
                     <div class="card-top" style="background:${c.color}"></div>
                     <div class="card-body">
-                        <span class="card-cat">${c.icon} ${c.label}</span>
+                        <span class="card-cat"><span style="color:${c.color}">${c.icon}</span> ${c.label}</span>
                         <h4>${l.title || ""}</h4>
                         ${l.titleFr ? `<div class="fr">${l.titleFr}</div>` : ""}
                         <div class="card-meta">

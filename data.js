@@ -6,10 +6,10 @@
 
 // دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
 const CATEGORIES = [
-  { id: "tcf",     label: "TCF", icon: "🎯", color: "#1e6fb8" },
-  { id: "grammar", label: "گرامر", icon: "📐", color: "#2e8b9e" },
-  { id: "conversation", label: "مکالمه", icon: "💬", color: "#3a7bd5" },
-  { id: "vocab",   label: "لغت و واژگان", icon: "📚", color: "#4a90c2" },
+  { id: "tcf",          label: "آمادگی TCF",   icon: "◆", color: "#1a4f7a" },
+  { id: "grammar",      label: "گرامر",        icon: "▤", color: "#22618f" },
+  { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
+  { id: "vocab",        label: "واژگان",       icon: "✦", color: "#4a90c2" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
