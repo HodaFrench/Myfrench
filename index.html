@@ -851,6 +851,12 @@
             grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 22px;
         }
+        /* برای بخش‌های تک‌کارتی بزرگ (صفت، کوییز، نکته، واکنش، تلفظ) */
+        .grid.grid-single {
+            grid-template-columns: 1fr;
+            max-width: 720px;
+            margin: 0 auto;
+        }
         .card {
             background: var(--cream);
             border-radius: 6px;
@@ -1121,6 +1127,7 @@
 
         // نمایش کارت‌های نکته‌ی طلایی
         function renderAstuces() {
+            document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("astuces");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
@@ -1156,6 +1163,7 @@
 
         // نمایش کارت‌های صفت
         function renderAdjectifs() {
+            document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("adjectifs");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
@@ -1209,6 +1217,7 @@
 
         // نمایش کوییزها
         function renderQuiz() {
+            document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("quiz");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
@@ -1252,6 +1261,7 @@
 
         // نمایش واکنش‌ها (چطور واکنش بدم؟)
         function renderReactions() {
+            document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("reactions");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
@@ -1288,6 +1298,7 @@
 
         // نمایش تمرین‌های تلفظ
         function renderPrononciation() {
+            document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("prononciation");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
@@ -1327,6 +1338,7 @@
 
         // نمایش کارت‌های بخش (مثل Expression Orale)
         function renderSections(catId) {
+            document.getElementById("grid").classList.remove("grid-single");
             const ci = catInfo(catId);
             const secs = sectionsOf(catId);
             document.getElementById("resultsTitle").innerHTML =
@@ -1362,6 +1374,7 @@
 
         // نمایش محتواهای یک تکلیف
         function openTask(catId, secId, taskId) {
+            document.getElementById("grid").classList.remove("grid-single");
             activeTask = taskId;
             activeSujet = null;
             const ci = catInfo(catId);
@@ -1436,6 +1449,7 @@
         }
 
         function render() {
+            document.getElementById("grid").classList.remove("grid-single");
             const q = document.getElementById("search").value.trim().toLowerCase();
             const grid = document.getElementById("grid");
 
