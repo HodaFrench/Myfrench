@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تمرین افعال انعکاسی — Verbes pronominaux | Grammaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#e9e4db; --paper-warm:#e0dace; --cream:#f4f0e8;
+    --ink:#2c2a26; --gray:#8a8275; --line:#d8d0c2; --white:#f8f5ef;
+    --green:#2e8b5b;
+  }
+  body{
+    font-family:'Vazirmatn',Arial,sans-serif;
+    background-color:var(--paper);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.045'/%3E%3C/svg%3E");
+    color:var(--ink); line-height:1.9; padding:24px 16px 60px;
+  }
+  .wrap{max-width:760px; margin:0 auto;}
+
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:36px 30px; border-radius:20px; text-align:center; margin-bottom:14px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:150px;height:150px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header .fa{font-size:15px; opacity:.92;}
+
+  .intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:26px; font-size:14.5px; line-height:1.9; color:var(--ink);}
+  .intro b{color:var(--navy);}
+
+  .toolbar{display:flex; gap:10px; justify-content:center; margin-bottom:24px; flex-wrap:wrap;}
+  .toolbar button{font-family:inherit; font-size:13.5px; font-weight:500; cursor:pointer;
+    border:1px solid var(--line); background:var(--cream); color:var(--navy);
+    padding:9px 18px; border-radius:8px; transition:all .2s;}
+  .toolbar button:hover{background:var(--navy); color:var(--cream); border-color:transparent;}
+
+  .q-card{display:flex; gap:14px; background:var(--white); border:1px solid var(--line);
+    border-radius:14px; padding:18px 20px; margin-bottom:14px; transition:all .2s;}
+  .q-card:hover{box-shadow:0 8px 22px rgba(31,58,95,.08);}
+  .q-num{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:var(--navy);
+    color:var(--cream); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;}
+  .q-body{flex:1;}
+  .q-fr{font-size:17px; color:var(--ink); direction:ltr; text-align:left; line-height:2; margin-bottom:4px;}
+  .blank{cursor:pointer; border-radius:5px; padding:1px 3px; transition:background .2s;}
+  .blank:hover{background:rgba(196,80,45,.1);}
+  .blank-line{color:var(--terracotta); font-weight:700; border-bottom:2px dotted var(--terracotta); padding:0 4px;}
+  .blank-line.done{border-bottom:none;}
+  .verb{color:var(--gray); font-style:italic; font-size:15px; font-family:'Cormorant Garamond',serif;}
+  .q-fa{font-size:13.5px; color:var(--gray); line-height:1.8;}
+  .q-answer{display:none; margin-top:10px; padding:10px 14px; background:rgba(46,139,91,.09);
+    border-right:3px solid var(--green); border-radius:8px; font-size:15px; direction:rtl;}
+  .q-answer.show{display:block; animation:fade .3s;}
+  .q-answer b{color:var(--green); font-weight:700;}
+  .q-answer span[dir="ltr"]{direction:ltr; display:inline-block;}
+  .ans-label{font-size:12px; font-weight:700; color:var(--green); margin-left:6px;}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+  .footer{text-align:center; margin-top:30px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+
+    <div class="header">
+      <div class="tag">Grammaire · Exercice</div>
+      <h1>Les verbes pronominaux</h1>
+      <div class="fa">تمرین افعال انعکاسی در زمان حال</div>
+    </div>
+
+    <div class="intro">
+      افعال انعکاسی (pronominaux) فعل‌هایی هستند که با یک ضمیر انعکاسی (me, te, se, nous, vous, se) صرف می‌شوند.
+      هر فعل را در زمان حال (présent) و متناسب با فاعلِ جمله صرف کن.
+      <br><b>روی جای خالی هر جمله کلیک کن تا پاسخ درست را ببینی.</b>
+    </div>
+
+    <div class="toolbar">
+      <button onclick="revealAll()">نمایش همه‌ی پاسخ‌ها</button>
+      <button onclick="hideAll()">پنهان‌کردن همه</button>
+    </div>
+
+      <div class="q-card">
+        <div class="q-num">1</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Pendant la semaine, je <span class="blank" onclick="reveal(1)"><span class="blank-line" id="bl1">______</span><span class="verb">(se lever)</span></span> à 8 heures.</div>
+          <div class="q-fa">در طول هفته، ساعت ۸ بیدار می‌شوم.</div>
+          <div class="q-answer" id="ans1">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Pendant la semaine, je <b>me lève</b> à 8 heures.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">2</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Marie <span class="blank" onclick="reveal(2)"><span class="blank-line" id="bl2">______</span><span class="verb">(se maquiller)</span></span> trop.</div>
+          <div class="q-fa">ماری زیادی آرایش می‌کند.</div>
+          <div class="q-answer" id="ans2">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Marie <b>se maquille</b> trop.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">3</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Comment vous <span class="blank" onclick="reveal(3)"><span class="blank-line" id="bl3">______</span><span class="verb">(s'appeler)</span></span> ?</div>
+          <div class="q-fa">اسم شما چیست؟ (شما را چه صدا می‌کنند؟)</div>
+          <div class="q-answer" id="ans3">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Comment vous <b>vous appelez</b> ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">4</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Nous <span class="blank" onclick="reveal(4)"><span class="blank-line" id="bl4">______</span><span class="verb">(se retrouver)</span></span> devant le cinéma ?</div>
+          <div class="q-fa">ما جلوی سینما همدیگر را می‌بینیم؟</div>
+          <div class="q-answer" id="ans4">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Nous <b>nous retrouvons</b> devant le cinéma ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">5</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Les amoureux <span class="blank" onclick="reveal(5)"><span class="blank-line" id="bl5">______</span><span class="verb">(se regarder)</span></span> les yeux dans les yeux.</div>
+          <div class="q-fa">عاشق‌ها چشم در چشم به هم نگاه می‌کنند.</div>
+          <div class="q-answer" id="ans5">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Les amoureux <b>se regardent</b> les yeux dans les yeux.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">6</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">On <span class="blank" onclick="reveal(6)"><span class="blank-line" id="bl6">______</span><span class="verb">(se demander)</span></span> comment tu vas.</div>
+          <div class="q-fa">از خود می‌پرسیم حالت چطور است.</div>
+          <div class="q-answer" id="ans6">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">On <b>se demande</b> comment tu vas.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">7</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Tu <span class="blank" onclick="reveal(7)"><span class="blank-line" id="bl7">______</span><span class="verb">(se rappeler)</span></span> de nos vacances au Canada ?</div>
+          <div class="q-fa">تعطیلاتمان در کانادا را به یاد می‌آوری؟</div>
+          <div class="q-answer" id="ans7">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Tu <b>te rappelles</b> de nos vacances au Canada ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">8</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">À quelle heure est-ce que vos enfants <span class="blank" onclick="reveal(8)"><span class="blank-line" id="bl8">______</span><span class="verb">(se coucher)</span></span> ?</div>
+          <div class="q-fa">بچه‌هایتان ساعت چند می‌خوابند؟</div>
+          <div class="q-answer" id="ans8">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">À quelle heure est-ce que vos enfants <b>se couchent</b> ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">9</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Ma sœur <span class="blank" onclick="reveal(9)"><span class="blank-line" id="bl9">______</span><span class="verb">(se réveiller)</span></span> très tôt.</div>
+          <div class="q-fa">خواهرم خیلی زود بیدار می‌شود.</div>
+          <div class="q-answer" id="ans9">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Ma sœur <b>se réveille</b> très tôt.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">10</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Je <span class="blank" onclick="reveal(10)"><span class="blank-line" id="bl10">______</span><span class="verb">(se laver)</span></span> les mains dans la salle de bain.</div>
+          <div class="q-fa">دست‌هایم را در دستشویی می‌شویم.</div>
+          <div class="q-answer" id="ans10">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Je <b>me lave</b> les mains dans la salle de bain.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">11</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Nous <span class="blank" onclick="reveal(11)"><span class="blank-line" id="bl11">______</span><span class="verb">(se brosser)</span></span> les dents après chaque repas.</div>
+          <div class="q-fa">بعد از هر وعده‌ی غذا دندان‌هایمان را مسواک می‌زنیم.</div>
+          <div class="q-answer" id="ans11">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Nous <b>nous brossons</b> les dents après chaque repas.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">12</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Mes amis <span class="blank" onclick="reveal(12)"><span class="blank-line" id="bl12">______</span><span class="verb">(se retrouver)</span></span> tous les week-ends au parc.</div>
+          <div class="q-fa">دوستانم هر آخر هفته در پارک همدیگر را می‌بینند.</div>
+          <div class="q-answer" id="ans12">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Mes amis <b>se retrouvent</b> tous les week-ends au parc.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">13</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Je <span class="blank" onclick="reveal(13)"><span class="blank-line" id="bl13">______</span><span class="verb">(se doucher)</span></span> tous les matins.</div>
+          <div class="q-fa">هر صبح دوش می‌گیرم.</div>
+          <div class="q-answer" id="ans13">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Je <b>me douche</b> tous les matins.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">14</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Ma tante <span class="blank" onclick="reveal(14)"><span class="blank-line" id="bl14">______</span><span class="verb">(s'appeler)</span></span> Christine.</div>
+          <div class="q-fa">اسم خاله‌ام کریستین است.</div>
+          <div class="q-answer" id="ans14">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Ma tante <b>s'appelle</b> Christine.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">15</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Marion <span class="blank" onclick="reveal(15)"><span class="blank-line" id="bl15">______</span><span class="verb">(se regarder)</span></span> dans le miroir.</div>
+          <div class="q-fa">ماریون در آینه به خودش نگاه می‌کند.</div>
+          <div class="q-answer" id="ans15">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Marion <b>se regarde</b> dans le miroir.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">16</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Les filles <span class="blank" onclick="reveal(16)"><span class="blank-line" id="bl16">______</span><span class="verb">(s'arrêter)</span></span> à la gare.</div>
+          <div class="q-fa">دخترها در ایستگاه قطار توقف می‌کنند.</div>
+          <div class="q-answer" id="ans16">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Les filles <b>s'arrêtent</b> à la gare.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">17</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Pauline et moi <span class="blank" onclick="reveal(17)"><span class="blank-line" id="bl17">______</span><span class="verb">(se laver)</span></span> les cheveux tous les matins.</div>
+          <div class="q-fa">پولین و من هر صبح موهایمان را می‌شوییم.</div>
+          <div class="q-answer" id="ans17">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Pauline et moi <b>nous lavons</b> les cheveux tous les matins.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">18</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Les garçons <span class="blank" onclick="reveal(18)"><span class="blank-line" id="bl18">______</span><span class="verb">(s'éloigner)</span></span> du centre ville.</div>
+          <div class="q-fa">پسرها از مرکز شهر دور می‌شوند.</div>
+          <div class="q-answer" id="ans18">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Les garçons <b>s'éloignent</b> du centre ville.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">19</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Philippe <span class="blank" onclick="reveal(19)"><span class="blank-line" id="bl19">______</span><span class="verb">(s'amuser)</span></span> à surfer l'Internet.</div>
+          <div class="q-fa">فیلیپ با گشتن در اینترنت سرگرم می‌شود.</div>
+          <div class="q-answer" id="ans19">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Philippe <b>s'amuse</b> à surfer l'Internet.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">20</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Ces élèves <span class="blank" onclick="reveal(20)"><span class="blank-line" id="bl20">______</span><span class="verb">(s'ennuyer)</span></span> à l'école.</div>
+          <div class="q-fa">این دانش‌آموزها در مدرسه حوصله‌شان سر می‌رود.</div>
+          <div class="q-answer" id="ans20">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Ces élèves <b>s'ennuient</b> à l'école.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">21</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Tu <span class="blank" onclick="reveal(21)"><span class="blank-line" id="bl21">______</span><span class="verb">(se doucher)</span></span> combien de fois par jour ?</div>
+          <div class="q-fa">روزی چند بار دوش می‌گیری؟</div>
+          <div class="q-answer" id="ans21">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Tu <b>te douches</b> combien de fois par jour ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">22</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Mon fils <span class="blank" onclick="reveal(22)"><span class="blank-line" id="bl22">______</span><span class="verb">(s'habiller)</span></span> tout seul.</div>
+          <div class="q-fa">پسرم خودش تنهایی لباس می‌پوشد.</div>
+          <div class="q-answer" id="ans22">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Mon fils <b>s'habille</b> tout seul.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">23</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Nous <span class="blank" onclick="reveal(23)"><span class="blank-line" id="bl23">______</span><span class="verb">(se déshabiller)</span></span> avant de nager.</div>
+          <div class="q-fa">قبل از شنا لباس‌هایمان را درمی‌آوریم.</div>
+          <div class="q-answer" id="ans23">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Nous <b>nous déshabillons</b> avant de nager.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">24</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Vous <span class="blank" onclick="reveal(24)"><span class="blank-line" id="bl24">______</span><span class="verb">(se téléphoner)</span></span> souvent ?</div>
+          <div class="q-fa">شما اغلب به هم تلفن می‌زنید؟</div>
+          <div class="q-answer" id="ans24">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Vous <b>vous téléphonez</b> souvent ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">25</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">François <span class="blank" onclick="reveal(25)"><span class="blank-line" id="bl25">______</span><span class="verb">(s'imaginer)</span></span> qu'il va devenir riche.</div>
+          <div class="q-fa">فرانسوا تصور می‌کند که ثروتمند خواهد شد.</div>
+          <div class="q-answer" id="ans25">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">François <b>s'imagine</b> qu'il va devenir riche.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">26</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Nous <span class="blank" onclick="reveal(26)"><span class="blank-line" id="bl26">______</span><span class="verb">(se parler)</span></span> depuis plus de dix ans.</div>
+          <div class="q-fa">ما بیش از ده سال است که با هم حرف می‌زنیم.</div>
+          <div class="q-answer" id="ans26">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Nous <b>nous parlons</b> depuis plus de dix ans.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">27</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Les enfants <span class="blank" onclick="reveal(27)"><span class="blank-line" id="bl27">______</span><span class="verb">(se poser)</span></span> beaucoup de questions.</div>
+          <div class="q-fa">بچه‌ها سؤال‌های زیادی از خود می‌پرسند.</div>
+          <div class="q-answer" id="ans27">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Les enfants <b>se posent</b> beaucoup de questions.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">28</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Vous <span class="blank" onclick="reveal(28)"><span class="blank-line" id="bl28">______</span><span class="verb">(se croiser)</span></span> dans le bus tous les matins.</div>
+          <div class="q-fa">شما هر صبح در اتوبوس از کنار هم رد می‌شوید.</div>
+          <div class="q-answer" id="ans28">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Vous <b>vous croisez</b> dans le bus tous les matins.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">29</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Ils <span class="blank" onclick="reveal(29)"><span class="blank-line" id="bl29">______</span><span class="verb">(se saluer)</span></span> très poliment.</div>
+          <div class="q-fa">آن‌ها خیلی مؤدبانه به هم سلام می‌کنند.</div>
+          <div class="q-answer" id="ans29">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Ils <b>se saluent</b> très poliment.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">30</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Pour le carnaval, Sophie <span class="blank" onclick="reveal(30)"><span class="blank-line" id="bl30">______</span><span class="verb">(se déguiser)</span></span> en sorcière.</div>
+          <div class="q-fa">برای کارناوال، سوفی خود را به شکل جادوگر درمی‌آورد.</div>
+          <div class="q-answer" id="ans30">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Pour le carnaval, Sophie <b>se déguise</b> en sorcière.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">31</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Tu <span class="blank" onclick="reveal(31)"><span class="blank-line" id="bl31">______</span><span class="verb">(se couper)</span></span> les cheveux toi-même ?</div>
+          <div class="q-fa">موهایت را خودت کوتاه می‌کنی؟</div>
+          <div class="q-answer" id="ans31">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Tu <b>te coupes</b> les cheveux toi-même ?</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">32</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Je <span class="blank" onclick="reveal(32)"><span class="blank-line" id="bl32">______</span><span class="verb">(se demander)</span></span> comment il t'a rencontré.</div>
+          <div class="q-fa">از خود می‌پرسم چطور تو را ملاقات کرده است.</div>
+          <div class="q-answer" id="ans32">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Je <b>me demande</b> comment il t'a rencontré.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">33</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Grâce à l'Internet on <span class="blank" onclick="reveal(33)"><span class="blank-line" id="bl33">______</span><span class="verb">(s'envoyer)</span></span> des messages très rapidement.</div>
+          <div class="q-fa">به‌لطف اینترنت، پیام‌ها را خیلی سریع برای هم می‌فرستیم.</div>
+          <div class="q-answer" id="ans33">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Grâce à l'Internet on <b>s'envoie</b> des messages très rapidement.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">34</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Je <span class="blank" onclick="reveal(34)"><span class="blank-line" id="bl34">______</span><span class="verb">(se rappeler)</span></span> très bien de mon enfance au Québec.</div>
+          <div class="q-fa">کودکی‌ام در کبک را خیلی خوب به یاد می‌آورم.</div>
+          <div class="q-answer" id="ans34">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Je <b>me rappelle</b> très bien de mon enfance au Québec.</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">35</div>
+        <div class="q-body">
+          <div class="q-fr" dir="ltr">Pierre <span class="blank" onclick="reveal(35)"><span class="blank-line" id="bl35">______</span><span class="verb">(se moquer)</span></span> du professeur.</div>
+          <div class="q-fa">پیر معلم را مسخره می‌کند.</div>
+          <div class="q-answer" id="ans35">
+            <span class="ans-label">پاسخ:</span> <span dir="ltr">Pierre <b>se moque</b> du professeur.</span>
+          </div>
+        </div>
+      </div>
+
+    <div class="footer">
+      ✦ افعال انعکاسی را با تمرین به خاطر بسپار<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+
+  <script>
+    function reveal(n){
+      document.getElementById('ans'+n).classList.add('show');
+      document.getElementById('bl'+n).classList.add('done');
+    }
+    function revealAll(){
+      document.querySelectorAll('.q-answer').forEach(a=>a.classList.add('show'));
+      document.querySelectorAll('.blank-line').forEach(b=>b.classList.add('done'));
+    }
+    function hideAll(){
+      document.querySelectorAll('.q-answer').forEach(a=>a.classList.remove('show'));
+      document.querySelectorAll('.blank-line').forEach(b=>b.classList.remove('done'));
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>

@@ -140,6 +140,16 @@ const LESSONS = [
     summary: "چرا می‌نویسیم « nous commençons » و نه « commencons »؟ یک قانون کوچک تلفظ که با فعل commencer یاد می‌گیری.",
   },
   {
+    file: "GRAM_verbes_pronominaux.html",
+    title: "تمرین افعال انعکاسی",
+    titleFr: "Les verbes pronominaux",
+    category: "grammar",
+    level: "متوسط (B1)",
+    premium: false,
+    tags: ["افعال انعکاسی", "تمرین", "روتین روزمره"],
+    summary: "۳۵ جمله‌ی تمرینی برای صرف افعال انعکاسی (pronominaux) در زمان حال — با ترجمه‌ی فارسی هر جمله و پاسخ قابل‌نمایش با یک کلیک.",
+  },
+  {
     file: "TCF_EO_T3_expatriation.html",
     title: "زندگی در کشوری دیگر",
     titleFr: "S'habituer à vivre à l'étranger",
