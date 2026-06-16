@@ -429,6 +429,88 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های نکته‌ی طلایی */
+        .astuce-card {
+            background: linear-gradient(140deg, var(--white) 0%, var(--cream) 100%);
+            border: 1px solid var(--line);
+            border-right: 5px solid var(--terracotta);
+            border-radius: 16px;
+            padding: 24px 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .astuce-card::after {
+            content: "✦";
+            position: absolute;
+            top: -10px; left: 14px;
+            font-size: 90px;
+            color: var(--terracotta);
+            opacity: 0.06;
+            pointer-events: none;
+        }
+        .astuce-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--terracotta);
+            background: rgba(196,80,45,0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .astuce-titre {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .astuce-compare {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .astuce-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        .astuce-row span[dir="ltr"] { direction: ltr; }
+        .astuce-row.correct { background: rgba(46,139,91,0.1); color: #2e7d52; }
+        .astuce-row.faux { background: rgba(196,80,45,0.09); color: #b5462c; text-decoration: line-through; text-decoration-thickness: 1px; }
+        .ar-icon { font-size: 16px; }
+        .astuce-note {
+            font-size: 14.5px;
+            line-height: 2;
+            color: var(--ink);
+            background: var(--paper-warm);
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+        }
+        .astuce-note b { color: var(--terracotta); }
+        .astuce-ex {
+            border-right: 3px solid var(--gold-soft);
+            padding: 8px 14px;
+            background: rgba(196,165,114,0.07);
+            border-radius: 8px;
+        }
+        .ax-fr {
+            direction: ltr; text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px; font-style: italic;
+            color: var(--navy); margin-bottom: 4px;
+        }
+        .ax-fa { font-size: 13.5px; color: var(--gray); }
+
         /* کارت‌های زیرشاخه (بخش/تکلیف) */
         .sub-card {
             display: flex;
@@ -773,13 +855,41 @@
             activeSujet = null;
             document.getElementById("search").value = "";
             openResults();
-            // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
-            if (catId !== "all" && sectionsOf(catId)) {
+            // دسته‌ی نکته‌های طلایی → نمایش مخصوص
+            if (catId === "astuces") {
+                renderAstuces();
+            } else if (catId !== "all" && sectionsOf(catId)) {
+                // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
             } else {
                 setResultsTitle(catId);
                 render();
             }
+        }
+
+        // نمایش کارت‌های نکته‌ی طلایی
+        function renderAstuces() {
+            const ci = catInfo("astuces");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof ASTUCES !== "undefined") ? ASTUCES : [];
+            document.getElementById("count").textContent = list.length + " نکته";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز نکته‌ای اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(a => `
+                <div class="astuce-card">
+                    <div class="astuce-badge">✦ نکته‌ی طلایی</div>
+                    <h4 class="astuce-titre">${a.titre}</h4>
+                    <div class="astuce-compare">
+                        ${a.correct ? `<div class="astuce-row correct"><span class="ar-icon">✅</span><span dir="ltr">${a.correct}</span></div>` : ""}
+                        ${a.faux ? `<div class="astuce-row faux"><span class="ar-icon">❌</span><span dir="ltr">${a.faux}</span></div>` : ""}
+                    </div>
+                    ${a.note ? `<div class="astuce-note">${a.note}</div>` : ""}
+                    ${a.exemple ? `<div class="astuce-ex"><div class="ax-fr" dir="ltr">${a.exemple}</div>${a.exempleFa ? `<div class="ax-fa">${a.exempleFa}</div>` : ""}</div>` : ""}
+                </div>`).join("");
         }
 
         function setResultsTitle(catId) {

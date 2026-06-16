@@ -11,6 +11,7 @@ const CATEGORIES = [
   { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
   { id: "podcast",      label: "پادکست",       icon: "♪", color: "#5a6f9e" },
+  { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -214,4 +215,26 @@ const TIPS = [
   // ساختار هر نکته:
   //   { type: "saviez", fr: "...", fa: "...", cat: "grammar" }
   //   type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
+];
+
+// ═══════════════════════════════════════════════════════════
+//  نکته‌های طلایی — «نکته‌های هدی»
+//  نکته‌های کوتاه و کاربردی که در یک بخش جدا و ماندگار نمایش داده می‌شوند.
+//  هر نکته:
+//    titre   : عنوان کوتاه نکته
+//    correct : شکل درست (با ✅)
+//    faux    : شکل غلط (با ❌) — اختیاری
+//    note    : توضیح فارسی
+//    exemple : یک مثال فرانسه
+//    exempleFa : ترجمه‌ی مثال
+// ═══════════════════════════════════════════════════════════
+const ASTUCES = [
+  {
+    titre: "سؤال پرسیدن هیچ‌وقت با demander نمی‌آید!",
+    correct: "poser une question",
+    faux: "demander une question",
+    note: "برای «سؤال پرسیدن» همیشه از فعل <b>poser</b> استفاده کن، نه demander. فعل demander به‌معنای «درخواست کردن / خواستن» است، نه «سؤال پرسیدن».",
+    exemple: "L'élève pose une question au professeur.",
+    exempleFa: "دانش‌آموز از معلم یک سؤال می‌پرسد.",
+  },
 ];
