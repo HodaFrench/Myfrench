@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Télétravail &amp; Technologie — Vocabulaire B2 · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Télétravail &amp; <b>Technologie</b></h1>
+    <div class="b2">Niveau B2 · Expression Orale &amp; Écrite</div>
+    <p class="lead">Tout le vocabulaire du thème, classé par catégorie : définition, traduction persane et 3 exemples B2 complexes pour chaque mot.</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration télétravail">
+      <!-- maison / home office -->
+      <path d="M16 96 L60 64 L104 96 Z" fill="#2E8B6B" opacity="0.18"/>
+      <rect x="26" y="96" width="68" height="58" rx="5" fill="#2E8B6B" opacity="0.13"/>
+      <!-- bureau -->
+      <rect x="40" y="150" width="290" height="9" rx="3" fill="#46537d" opacity="0.35"/>
+      <!-- ordinateur portable -->
+      <rect x="120" y="74" width="120" height="76" rx="7" fill="#1B2A6B"/>
+      <rect x="128" y="82" width="104" height="60" rx="4" fill="#FBF8F0"/>
+      <!-- grille visioconférence -->
+      <rect x="134" y="88" width="44" height="22" rx="3" fill="#2E6BD6"/><circle cx="156" cy="99" r="6" fill="#FBF8F0"/>
+      <rect x="182" y="88" width="44" height="22" rx="3" fill="#7C5BD6"/><circle cx="204" cy="99" r="6" fill="#FBF8F0"/>
+      <rect x="134" y="114" width="44" height="22" rx="3" fill="#2E8B8B"/><circle cx="156" cy="125" r="6" fill="#FBF8F0"/>
+      <rect x="182" y="114" width="44" height="22" rx="3" fill="#D6922E"/><circle cx="204" cy="125" r="6" fill="#FBF8F0"/>
+      <rect x="110" y="150" width="140" height="8" rx="4" fill="#28407a"/>
+      <!-- wifi -->
+      <g stroke="#2E6BD6" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.85">
+        <path d="M268 70 a26 26 0 0 1 40 0"/>
+        <path d="M276 80 a15 15 0 0 1 24 0"/>
+      </g>
+      <circle cx="288" cy="90" r="3.5" fill="#2E6BD6"/>
+      <!-- mug -->
+      <rect x="262" y="128" width="26" height="22" rx="4" fill="#C0392B"/>
+      <path d="M288 132 a8 8 0 0 1 0 14" stroke="#C0392B" stroke-width="4" fill="none"/>
+      <!-- plante -->
+      <rect x="300" y="132" width="20" height="18" rx="3" fill="#A8443E"/>
+      <path d="M310 132 C300 118 304 112 310 110 C316 112 320 118 310 132" fill="#2E8B6B"/>
+    </svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+ {id:1,name:"Les moyens",fa:"ابزارها و وسایل",icon:"🌐",color:"#2E6BD6"},
+ {id:2,name:"Le lieu",fa:"مکان کار",icon:"🏠",color:"#5B5BD6"},
+ {id:3,name:"Les coûts",fa:"هزینه‌ها",icon:"💶",color:"#A8443E"},
+ {id:4,name:"Les horaires &amp; le temps",fa:"ساعات کاری و زمان",icon:"⏰",color:"#2E8B8B"},
+ {id:5,name:"La vie privée",fa:"زندگی شخصی",icon:"⚖️",color:"#2E8B6B"},
+ {id:6,name:"Les relations",fa:"روابط کاری",icon:"👥",color:"#7C5BD6"},
+ {id:7,name:"Les impacts",fa:"پیامدها",icon:"📊",color:"#C0392B"}
+];
+const D=[
+{c:1,term:"une communication virtuelle",fa:"ارتباط مجازی",def:"Un échange professionnel qui se fait par internet, sans présence physique.",syn:["un échange en ligne","une communication à distance"],ex:[["Dans la mesure où les équipes sont désormais dispersées aux quatre coins du monde, une <b>communication virtuelle</b> fluide est devenue la condition même de leur efficacité.","از آنجا که تیم‌ها اکنون در سرتاسر جهان پراکنده‌اند، یک ارتباط مجازیِ روان به شرط اصلی کارآمدی آن‌ها بدل شده است."],["Quoique la <b>communication virtuelle</b> ait considérablement rapproché les collaborateurs, force est de constater qu'elle ne saurait reproduire la spontanéité des échanges en présentiel.","هرچند ارتباط مجازی همکاران را به‌میزان چشمگیری به هم نزدیک کرده، ناگزیر باید پذیرفت که نمی‌تواند خودانگیختگی گفت‌وگوهای حضوری را بازآفرینی کند."],["Si les entreprises n'avaient pas massivement investi dans la <b>communication virtuelle</b>, elles n'auraient jamais pu maintenir leur activité durant la crise sanitaire.","اگر شرکت‌ها به‌طور گسترده روی ارتباط مجازی سرمایه‌گذاری نکرده بودند، هرگز نمی‌توانستند فعالیت خود را در دوران بحران بهداشتی حفظ کنند."]]},
+{c:1,term:"une visioconférence",fa:"ویدیوکنفرانس / جلسه‌ی تصویری",def:"Une réunion organisée à distance, avec image et son, via internet.",syn:["une réunion en ligne","un appel vidéo"],ex:[["Ce qui m'apparaît particulièrement appréciable dans la <b>visioconférence</b>, c'est qu'elle permet de réunir, en quelques clics, des interlocuteurs que des centaines de kilomètres séparent.","آنچه در ویدیوکنفرانس به‌نظرم به‌ویژه ارزشمند است این است که با چند کلیک می‌توان افرادی را که صدها کیلومتر از هم فاصله دارند گرد هم آورد."],["Bien que la <b>visioconférence</b> fasse gagner un temps précieux, son usage abusif finit par engendrer une véritable lassitude, au point que certains parlent déjà de « fatigue numérique ».","هرچند ویدیوکنفرانس وقت گران‌بهایی را ذخیره می‌کند، استفاده‌ی افراطی از آن سرانجام نوعی خستگی واقعی پدید می‌آورد، تا جایی که برخی از هم‌اکنون از «خستگی دیجیتال» سخن می‌گویند."],["Pour peu que la connexion soit stable, une <b>visioconférence</b> bien préparée se révèle souvent plus productive qu'une réunion classique qui s'éternise.","به‌شرط آنکه اینترنت پایدار باشد، یک ویدیوکنفرانسِ خوب‌آماده‌شده اغلب پربازده‌تر از جلسه‌ای سنتی است که بی‌پایان طول می‌کشد."]]},
+{c:1,term:"le numérique",fa:"فضای دیجیتال / فناوری دیجیتال",def:"L'ensemble des outils et technologies liés à l'informatique et à internet.",syn:["les outils numériques","la technologie"],ex:[["Loin de se limiter à un simple outil, le <b>numérique</b> a redéfini en profondeur nos manières de travailler, de communiquer et même de penser.","فناوری دیجیتال که به‌هیچ‌وجه به یک ابزار ساده محدود نمی‌شود، شیوه‌های کار، ارتباط و حتی اندیشیدن ما را به‌طور بنیادی بازتعریف کرده است."],["Nul ne saurait nier que le <b>numérique</b> facilite l'accès au savoir ; encore faut-il que chacun dispose des compétences nécessaires pour en tirer parti.","هیچ‌کس نمی‌تواند انکار کند که فناوری دیجیتال دسترسی به دانش را آسان می‌کند؛ اما به شرط آنکه هرکس مهارت‌های لازم برای بهره‌بردن از آن را داشته باشد."],["À mesure que le <b>numérique</b> s'impose dans tous les secteurs, le fossé se creuse entre ceux qui le maîtrisent et ceux qui en restent exclus.","هرچه فناوری دیجیتال در همه‌ی بخش‌ها جا می‌افتد، شکاف میان کسانی که بر آن مسلط‌اند و کسانی که از آن کنار گذاشته می‌شوند عمیق‌تر می‌شود."]]},
+{c:1,term:"les TIC",fa:"فناوری‌های اطلاعات و ارتباطات",def:"Les technologies de l'information et de la communication : les outils pour échanger et travailler (ordinateur, logiciels…).",syn:["les outils de communication"],ex:[["Ce sont les <b>TIC</b> qui, en abolissant les distances, ont rendu possible l'essor spectaculaire du travail à distance.","این فناوری‌های اطلاعات و ارتباطات‌اند که با از میان برداشتن فاصله‌ها، رشد چشمگیر کار از راه دور را ممکن کرده‌اند."],["Il serait illusoire de croire que les <b>TIC</b> suffisent à elles seules : sans une réelle culture du collaboratif, elles ne produisent guère de résultats.","خام‌خیالی است اگر بپنداریم فناوری‌های اطلاعات و ارتباطات به‌تنهایی کافی‌اند؛ بدون فرهنگ واقعیِ کار گروهی، نتیجه‌ی چندانی به بار نمی‌آورند."],["Afin que les salariés tirent pleinement parti des <b>TIC</b>, il importe qu'ils y soient formés de manière continue.","برای آنکه کارکنان به‌طور کامل از فناوری‌های اطلاعات و ارتباطات بهره ببرند، مهم است که به‌طور پیوسته در این زمینه آموزش ببینند."]]},
+{c:2,term:"en présentiel / au bureau",fa:"حضوری / در دفتر",def:"Travailler sur place, dans les locaux de l'entreprise.",syn:["sur site","au bureau"],ex:[["Si bon nombre d'employeurs tiennent au travail <b>en présentiel</b>, c'est qu'ils y voient un gage de cohésion et de contrôle.","اگر بسیاری از کارفرمایان به کار حضوری پایبندند، به این دلیل است که آن را تضمینی برای انسجام و نظارت می‌دانند."],["Quoiqu'il soit parfois contraignant, le travail <b>en présentiel</b> demeure irremplaçable lorsqu'il s'agit de tisser des liens humains durables.","هرچند کار حضوری گاهی دست‌وپاگیر است، آنجا که پای ساختن پیوندهای انسانیِ پایدار در میان باشد، همچنان جایگزین‌ناپذیر می‌ماند."],["Imposer cinq jours <b>en présentiel</b> reviendrait, pour beaucoup, à renoncer aux avantages durement acquis du télétravail.","الزام به پنج روز کار حضوری، برای بسیاری، به‌منزله‌ی چشم‌پوشی از مزایای به‌سختی‌به‌دست‌آمده‌ی دورکاری خواهد بود."]]},
+{c:2,term:"à domicile / chez soi",fa:"از خانه / در منزل",def:"Travailler depuis son logement, sans se rendre au bureau.",syn:["en télétravail","depuis chez soi"],ex:[["Travailler <b>à domicile</b> suppose une discipline de fer, faute de quoi les distractions du quotidien finissent par prendre le dessus.","کار کردن از خانه مستلزم انضباطی آهنین است، وگرنه حواس‌پرتی‌های روزمره سرانجام دست بالا را می‌گیرند."],["Ce qui séduit dans le travail <b>à domicile</b>, c'est moins le confort que la liberté d'organiser sa journée à sa guise.","آنچه در کار از خانه جذاب است، نه آن‌قدر راحتی، بلکه آزادی در سازماندهی دلخواهِ روز است."],["Pour que le travail <b>à domicile</b> ne vire pas à l'isolement, encore faut-il s'astreindre à conserver un lien régulier avec ses collègues.","برای آنکه کار از خانه به انزوا نینجامد، باید خود را ملزم کرد که ارتباطی منظم با همکاران حفظ شود."]]},
+{c:2,term:"à distance / virtuellement",fa:"از راه دور / مجازی",def:"Travailler loin du bureau, en se connectant en ligne.",syn:["en distanciel","virtuellement"],ex:[["Le travail <b>à distance</b>, dont les avantages ne sont plus à démontrer, exige néanmoins une confiance mutuelle sans laquelle il ne saurait fonctionner.","کار از راه دور، که مزایایش دیگر نیازی به اثبات ندارد، با این حال مستلزم اعتماد متقابلی است که بدون آن نمی‌تواند کار کند."],["Alors même que le travail <b>à distance</b> se généralise, certaines entreprises peinent encore à repenser leurs méthodes de management.","درست در همان حال که کار از راه دور فراگیر می‌شود، برخی شرکت‌ها هنوز در بازنگری روش‌های مدیریتی خود درمی‌مانند."],["N'était la barrière de la distance, on croirait que ces collaborateurs partagent le même bureau, tant leur coordination <b>à distance</b> est efficace.","اگر مانع فاصله نبود، گمان می‌رفت این همکاران در یک دفتر مشترک کار می‌کنند، بس که هماهنگی‌شان از راه دور کارآمد است."]]},
+{c:2,term:"un environnement propice",fa:"محیط مناسب / مساعد",def:"Un cadre calme, confortable et adapté qui aide à bien travailler.",syn:["un cadre adapté","un espace calme"],ex:[["Aménager un <b>environnement propice</b> au travail n'est pas un luxe, mais une condition sine qua non de la concentration.","فراهم کردن محیطی مناسب برای کار تجمل نیست، بلکه شرط لازمِ تمرکز است."],["Dès lors que l'on dispose d'un <b>environnement propice</b>, calme et bien équipé, la productivité s'en trouve nettement améliorée.","به‌محض آنکه آدم محیطی مناسب، آرام و خوب‌مجهز در اختیار داشته باشد، بهره‌وری به‌وضوح بهبود می‌یابد."],["Tous les télétravailleurs ne bénéficient malheureusement pas d'un <b>environnement propice</b>, ce qui creuse les inégalités entre les salariés.","متأسفانه همه‌ی دورکاران از محیطی مناسب برخوردار نیستند، و همین نابرابری میان کارکنان را عمیق‌تر می‌کند."]]},
+{c:2,term:"du matériel ergonomique",fa:"تجهیزات ارگونومیک",def:"Des équipements confortables et bien conçus (chaise, bureau, écran) pour protéger la santé.",syn:["un équipement adapté","du mobilier confortable"],ex:[["Investir dans du <b>matériel ergonomique</b> relève moins de la dépense que de la prévention, dans la mesure où cela épargne bien des problèmes de santé.","سرمایه‌گذاری روی تجهیزات ارگونومیک کمتر هزینه است و بیشتر پیشگیری، چراکه از بسیاری مشکلات سلامتی جلوگیری می‌کند."],["Faute de <b>matériel ergonomique</b>, nombre de télétravailleurs développent, à la longue, des douleurs articulaires difficiles à soigner.","در نبود تجهیزات ارگونومیک، بسیاری از دورکاران به‌مرور دچار دردهای مفصلیِ دشوارعلاج می‌شوند."],["Si les employeurs fournissaient systématiquement du <b>matériel ergonomique</b>, ils y gagneraient à terme en productivité comme en bien-être.","اگر کارفرمایان به‌طور سیستماتیک تجهیزات ارگونومیک تأمین می‌کردند، در بلندمدت هم در بهره‌وری و هم در رفاه سود می‌بردند."]]},
+{c:2,term:"l'externalisation / la délocalisation",fa:"برون‌سپاری / انتقال کار",def:"Confier une partie du travail à une autre entreprise ou à un autre lieu, souvent pour réduire les coûts.",syn:["la sous-traitance","la délocalisation"],ex:[["Si l'<b>externalisation</b> de certaines tâches permet de réduire les coûts, elle soulève en revanche d'épineuses questions de qualité et de confidentialité.","اگر برون‌سپاری برخی وظایف هزینه‌ها را کاهش می‌دهد، در مقابل پرسش‌های دشوار کیفیت و محرمانگی را برمی‌انگیزد."],["La <b>délocalisation</b> des emplois, que beaucoup déplorent, n'est souvent que la conséquence d'une concurrence devenue mondiale.","انتقال مشاغل به مناطق دیگر، که بسیاری از آن ابراز تأسف می‌کنند، اغلب چیزی جز پیامد رقابتی جهانی‌شده نیست."],["Aussi rentable soit-elle, l'<b>externalisation</b> finit parfois par fragiliser les compétences internes de l'entreprise.","برون‌سپاری، هر اندازه هم سودآور باشد، گاهی سرانجام مهارت‌های درونی شرکت را تضعیف می‌کند."]]},
+{c:2,term:"le coworking / le travail nomade",fa:"فضای کار اشتراکی / کار سیار",def:"Travailler dans des espaces partagés (tiers-lieux) ou en se déplaçant, hors du bureau classique.",syn:["les bureaux partagés","les tiers-lieux"],ex:[["Ce qui fait le succès du <b>coworking</b>, c'est qu'il concilie l'autonomie du travail indépendant et la convivialité d'un véritable collectif.","آنچه موفقیت فضای کار اشتراکی را رقم می‌زند این است که استقلال کار مستقل را با صمیمیت یک جمع واقعی آشتی می‌دهد."],["Quoique le <b>coworking</b> séduise surtout les jeunes actifs, il gagne peu à peu l'ensemble des secteurs, tant ses avantages sont manifestes.","هرچند فضای کار اشتراکی بیشتر جوانان شاغل را جذب می‌کند، به‌تدریج همه‌ی بخش‌ها را دربر می‌گیرد، بس که مزایایش آشکار است."],["À ceux que le travail à domicile isole, le <b>coworking</b> offre une solution idéale : rompre la solitude sans renoncer à sa liberté.","برای کسانی که کار در خانه منزوی‌شان می‌کند، فضای کار اشتراکی راه‌حلی ایده‌آل پیشنهاد می‌دهد: شکستن تنهایی بدون چشم‌پوشی از آزادی."]]},
+{c:3,term:"les coûts engendrés / les frais",fa:"هزینه‌های ایجادشده",def:"L'argent qu'une activité oblige à dépenser.",syn:["les dépenses","les frais"],ex:[["En supprimant les trajets quotidiens, le télétravail réduit sensiblement les <b>coûts engendrés</b> par les déplacements, tant pour le salarié que pour l'entreprise.","دورکاری با حذف رفت‌وآمد روزانه، هزینه‌های ناشی از جابه‌جایی را هم برای کارمند و هم برای شرکت به‌میزان محسوسی کاهش می‌دهد."],["On aurait tort de négliger les <b>frais</b> liés à l'équipement, lesquels finissent par peser lourd dans le budget des ménages.","اشتباه است که هزینه‌های مربوط به تجهیزات را نادیده بگیریم، هزینه‌هایی که سرانجام در بودجه‌ی خانوارها سنگینی می‌کنند."],["Quand bien même les <b>coûts engendrés</b> par la transition numérique seraient élevés, l'investissement demeure rentable à long terme.","حتی اگر هزینه‌های ناشی از گذار دیجیتال بالا هم باشند، این سرمایه‌گذاری در درازمدت سودآور باقی می‌ماند."]]},
+{c:3,term:"l'équipement",fa:"تجهیزات / لوازم",def:"L'ensemble des objets et logiciels nécessaires pour travailler (ordinateur, abonnement…).",syn:["le matériel","les outils"],ex:[["L'<b>équipement</b> dont dépend le télétravail représente un investissement que tous les foyers ne peuvent se permettre.","تجهیزاتی که دورکاری به آن وابسته است، سرمایه‌گذاری‌ای است که همه‌ی خانوارها از پس آن برنمی‌آیند."],["Si performant que soit l'<b>équipement</b>, il ne saurait compenser l'absence d'une connexion fiable.","تجهیزات هر اندازه هم کارآمد باشند، نمی‌توانند نبود یک اینترنت مطمئن را جبران کنند."],["Il serait judicieux que les entreprises renouvellent régulièrement l'<b>équipement</b> de leurs salariés, sous peine de voir leur productivité décliner.","عاقلانه است که شرکت‌ها تجهیزات کارکنانشان را به‌طور منظم نوسازی کنند، وگرنه شاهد افت بهره‌وری خواهند بود."]]},
+{c:3,term:"économiser / faire des économies",fa:"صرفه‌جویی کردن / پس‌انداز",def:"Dépenser moins, mettre de l'argent de côté.",syn:["un gain d'argent","réduire les dépenses"],ex:[["En me dispensant des trajets et des repas pris à l'extérieur, le télétravail me permet d'<b>économiser</b> une somme non négligeable chaque mois.","دورکاری با بی‌نیاز کردنم از رفت‌وآمد و وعده‌های غذایی بیرون، امکان می‌دهد هر ماه مبلغی قابل‌توجه صرفه‌جویی کنم."],["Ce n'est qu'en repensant l'usage de ses locaux qu'une entreprise parvient réellement à <b>économiser</b> sur ses charges fixes.","تنها با بازاندیشی در استفاده از فضاهایش است که یک شرکت واقعاً می‌تواند در هزینه‌های ثابتش صرفه‌جویی کند."],["Si l'entreprise avait fermé plus tôt certains bureaux, elle aurait <b>économisé</b> des sommes considérables.","اگر شرکت زودتر برخی دفاتر را تعطیل کرده بود، مبالغ چشمگیری صرفه‌جویی کرده بود."]]},
+{c:3,term:"les déplacements professionnels",fa:"سفرها و رفت‌وآمدهای کاری",def:"Les trajets et voyages effectués pour le travail.",syn:["les trajets de travail","les voyages d'affaires"],ex:[["Grâce aux outils numériques, bon nombre de <b>déplacements professionnels</b>, jadis jugés indispensables, se révèlent aujourd'hui parfaitement évitables.","به لطف ابزارهای دیجیتال، بسیاری از سفرهای کاری که زمانی ضروری شمرده می‌شدند، امروز کاملاً قابل‌اجتناب از کار درمی‌آیند."],["Réduire les <b>déplacements professionnels</b> ne profite pas seulement aux entreprises ; cela contribue aussi à alléger l'empreinte carbone.","کاهش سفرهای کاری نه‌تنها به سود شرکت‌هاست، بلکه به سبک‌تر کردن رد پای کربن نیز کمک می‌کند."],["Naguère synonymes de prestige, les <b>déplacements professionnels</b> sont désormais perçus comme une perte de temps et d'argent.","سفرهای کاری که زمانی مترادف اعتبار بودند، اکنون به‌منزله‌ی اتلاف وقت و پول تلقی می‌شوند."]]},
+{c:4,term:"un emploi du temps chargé / léger",fa:"برنامه‌ی فشرده / سبک",def:"Le programme des tâches d'une journée, qui peut comporter beaucoup ou peu de travail.",syn:["un planning rempli","une journée bien remplie"],ex:[["Lorsqu'on jongle avec un <b>emploi du temps chargé</b>, le moindre imprévu suffit à faire vaciller tout l'équilibre de la journée.","وقتی آدم با برنامه‌ای فشرده دست‌وپنجه نرم می‌کند، کوچک‌ترین اتفاق پیش‌بینی‌نشده کافی است تا تعادل کل روز را به هم بزند."],["Ce que permet avant tout le télétravail, c'est de réorganiser un <b>emploi du temps</b> souvent trop rigide.","آنچه دورکاری پیش از هر چیز ممکن می‌کند، بازسازمان‌دهی برنامه‌ای است که اغلب بیش‌ازحد خشک است."],["Si mon <b>emploi du temps</b> était moins chargé, sans doute consacrerais-je davantage de temps à ma famille.","اگر برنامه‌ام کم‌فشارتر بود، بی‌شک وقت بیشتری را به خانواده‌ام اختصاص می‌دادم."]]},
+{c:4,term:"des horaires flexibles / souples",fa:"ساعات کاری منعطف",def:"La possibilité de choisir ses heures de travail.",syn:["des horaires aménageables","la liberté d'horaire"],ex:[["Ce sont les <b>horaires flexibles</b> qui, plus que tout autre avantage, expliquent l'engouement des salariés pour le télétravail.","این ساعات کاری منعطف‌اند که، بیش از هر مزیت دیگری، شیفتگی کارکنان به دورکاری را توضیح می‌دهند."],["Pour peu qu'ils soient bien encadrés, les <b>horaires flexibles</b> profitent autant à l'employé qu'à l'employeur.","به‌شرط آنکه خوب تنظیم شوند، ساعات کاری منعطف هم به سود کارمند است و هم کارفرما."],["À condition de ne pas en abuser, des <b>horaires flexibles</b> permettent de concilier sereinement obligations professionnelles et vie de famille.","به شرط آنکه در آن زیاده‌روی نشود، ساعات کاری منعطف امکان می‌دهد تعهدات کاری و زندگی خانوادگی را با آرامش سازگار کرد."]]},
+{c:4,term:"des plages horaires / des créneaux",fa:"بازه‌های زمانی",def:"Des périodes de temps précises réservées dans la journée.",syn:["des créneaux","des tranches horaires"],ex:[["Il conviendrait de définir des <b>plages horaires</b> communes durant lesquelles chacun s'engagerait à rester joignable.","بهتر است بازه‌های زمانی مشترکی تعیین شود که هرکس در طول آن‌ها متعهد به در دسترس ماندن باشد."],["En réservant des <b>plages horaires</b> précises à ses courriels, on évite de se laisser interrompre à tout moment.","با کنار گذاشتن بازه‌های زمانی مشخص برای ایمیل‌ها، آدم از اینکه هر لحظه کارش قطع شود جلوگیری می‌کند."],["Sans <b>créneaux</b> clairement délimités, le travail tend à s'étaler sur l'ensemble de la journée, vie privée comprise.","بدون بازه‌های زمانیِ روشناً‌مشخص‌شده، کار گرایش دارد در سراسر روز، حتی زندگی خصوصی، گسترده شود."]]},
+{c:4,term:"les amplitudes horaires",fa:"دامنه‌ی ساعات کاری",def:"La durée totale entre le début et la fin de la journée de travail.",syn:["la durée de travail","l'étendue horaire"],ex:[["Paradoxalement, les <b>amplitudes horaires</b> s'avèrent souvent plus longues en télétravail, comme si la frontière entre travail et repos s'était estompée.","به‌طور متناقض‌نمایی، دامنه‌ی ساعات کاری اغلب در دورکاری بیشتر است، گویی مرز میان کار و استراحت محو شده باشد."],["De larges <b>amplitudes horaires</b>, si elles ne sont pas encadrées, finissent par nuire à la santé des salariés.","دامنه‌ی ساعات کاریِ گسترده، اگر تنظیم نشود، سرانجام به سلامت کارکنان آسیب می‌زند."],["Il faudrait que les <b>amplitudes horaires</b> soient strictement encadrées, sans quoi le droit à la déconnexion resterait lettre morte.","باید دامنه‌ی ساعات کاری به‌دقت تنظیم شود، وگرنه حق قطع ارتباط با کار صرفاً روی کاغذ می‌ماند."]]},
+{c:4,term:"gagner du temps",fa:"در وقت صرفه‌جویی کردن",def:"Aller plus vite, éviter de perdre du temps.",syn:["optimiser son temps","être efficace"],ex:[["En s'épargnant des heures de trajet, le télétravailleur ne fait pas que <b>gagner du temps</b> : il préserve aussi son énergie et sa sérénité.","دورکار با بی‌نیاز کردن خود از ساعت‌ها رفت‌وآمد، تنها در وقت صرفه‌جویی نمی‌کند: انرژی و آرامشش را نیز حفظ می‌کند."],["C'est en rationalisant les réunions que l'on parvient véritablement à <b>gagner du temps</b>.","تنها با منطقی‌کردن جلسات است که آدم واقعاً می‌تواند در وقت صرفه‌جویی کند."],["Si les échanges étaient mieux organisés, nous <b>gagnerions</b> un temps que nous gaspillons aujourd'hui en allers-retours inutiles.","اگر تبادل‌ها بهتر سازماندهی می‌شدند، وقتی را که امروز در رفت‌وبرگشت‌های بیهوده هدر می‌دهیم، ذخیره می‌کردیم."]]},
+{c:4,term:"la réunionite",fa:"جلسه‌زدگی (افراط در جلسات)",def:"La tendance excessive à organiser trop de réunions, souvent inutiles (familier).",syn:["l'excès de réunions"],ex:[["La <b>réunionite</b>, ce mal bien connu des grandes structures, finit par dévorer un temps que l'on pourrait consacrer à des tâches autrement plus utiles.","جلسه‌زدگی، این دردِ شناخته‌شده‌ی سازمان‌های بزرگ، سرانجام وقتی را می‌بلعد که می‌شد صرف کارهایی به‌مراتب مفیدتر کرد."],["Loin d'améliorer la coordination, la <b>réunionite</b> ne fait bien souvent qu'épuiser les équipes.","جلسه‌زدگی، که به‌هیچ‌وجه هماهنگی را بهتر نمی‌کند، اغلب فقط تیم‌ها را از پا درمی‌آورد."],["Si l'on s'attaquait sérieusement à la <b>réunionite</b>, chacun verrait sa productivité augmenter de façon spectaculaire.","اگر به‌طور جدی به جلسه‌زدگی پرداخته می‌شد، هرکس می‌دید که بهره‌وری‌اش به‌طرز چشمگیری افزایش می‌یابد."]]},
+{c:5,term:"concilier vie pro et vie perso",fa:"سازگار کردن کار و زندگی شخصی",def:"Trouver un équilibre entre le travail et la vie personnelle ou familiale.",syn:["équilibrer travail et famille","trouver un équilibre"],ex:[["Tout l'enjeu du télétravail réside dans la capacité à <b>concilier vie professionnelle et vie personnelle</b> sans que l'une n'empiète sur l'autre.","تمام چالش دورکاری در توانایی سازگار کردن کار و زندگی شخصی است، بی‌آنکه یکی به دیگری تجاوز کند."],["Pour les parents qui travaillent, <b>concilier vie pro et vie perso</b> tient souvent de l'exercice d'équilibriste.","برای والدینِ شاغل، سازگار کردن کار و زندگی شخصی اغلب به بندبازی می‌ماند."],["Aussi pratique soit-il, le télétravail ne garantit nullement que l'on parvienne à <b>concilier vie pro et vie perso</b>.","دورکاری، هر اندازه هم کاربردی باشد، به‌هیچ‌وجه تضمین نمی‌کند که آدم بتواند کار و زندگی شخصی را سازگار کند."]]},
+{c:5,term:"établir des frontières",fa:"مرزبندی کردن",def:"Séparer clairement le temps de travail du temps personnel.",syn:["poser des limites","séparer travail et maison"],ex:[["Faute d'<b>établir des frontières</b> nettes entre le bureau et le foyer, on s'expose à voir le travail déborder sur chaque instant de la journée.","در نبود مرزبندی روشن میان دفتر و خانه، آدم در معرض این است که ببیند کار به هر لحظه از روز سرریز می‌کند."],["C'est en s'astreignant à <b>établir des frontières</b> que l'on parvient à préserver sa vie privée du travail.","تنها با ملزم کردن خود به مرزبندی است که آدم می‌تواند زندگی خصوصی‌اش را از کار حفظ کند."],["Si je n'avais pas appris à <b>établir des frontières</b>, le travail aurait sans doute fini par envahir toute mon existence.","اگر یاد نگرفته بودم که مرزبندی کنم، کار بی‌شک سرانجام تمام هستی‌ام را فرا می‌گرفت."]]},
+{c:5,term:"envahir / déborder (la vie privée)",fa:"فرا گرفتن / سرریز کردن کار",def:"Quand le travail prend trop de place et entre dans la vie privée.",syn:["empiéter sur","l'intrusion"],ex:[["À force de répondre aux courriels en soirée, on laisse insidieusement le travail <b>envahir</b> la sphère privée.","با پاسخ‌دادنِ مداوم به ایمیل‌ها در شب، ناخودآگاه می‌گذاریم کار حوزه‌ی خصوصی را فرا بگیرد."],["Le travail tend à <b>déborder</b> sur le temps personnel dès lors qu'aucune limite claire n'a été posée.","کار، به‌محض آنکه هیچ مرز روشنی تعیین نشده باشد، گرایش دارد به وقت شخصی سرریز کند."],["Pour éviter que le travail n'<b>envahisse</b> tout, mieux vaut s'imposer d'éteindre ses appareils à heure fixe.","برای جلوگیری از اینکه کار همه‌چیز را فرا بگیرد، بهتر است آدم خود را ملزم کند که دستگاه‌هایش را در ساعتی ثابت خاموش کند."]]},
+{c:6,term:"les collègues / les pairs",fa:"همکاران",def:"Les personnes avec qui l'on travaille, au même niveau.",syn:["les pairs","les coéquipiers"],ex:[["Ce que le télétravail tend à raréfier, ce sont précisément ces échanges informels entre <b>collègues</b> qui cimentent l'esprit d'équipe.","آنچه دورکاری گرایش به کمیاب‌کردنش دارد، دقیقاً همان گفت‌وگوهای غیررسمی میان همکاران است که روح تیمی را استحکام می‌بخشند."],["Si éloignés soient-ils géographiquement, des <b>collègues</b> soudés parviennent toujours à maintenir une véritable complicité.","همکارانِ به‌هم‌پیوسته، هر اندازه هم از نظر جغرافیایی دور باشند، همواره می‌توانند نوعی همدلی واقعی را حفظ کنند."],["Il importe, même à distance, d'entretenir avec ses <b>collègues</b> un lien qui ne se limite pas aux seules questions de travail.","مهم است، حتی از راه دور، با همکاران پیوندی حفظ شود که به مسائل کاری محدود نماند."]]},
+{c:6,term:"les supérieurs / les responsables",fa:"مدیران / رؤسا",def:"Les personnes qui dirigent et encadrent le travail (la hiérarchie).",syn:["les chefs","la hiérarchie"],ex:[["Nombre de <b>supérieurs</b> peinent encore à accorder leur confiance à des équipes qu'ils ne voient plus quotidiennement.","بسیاری از مدیران هنوز در سپردنِ اعتماد به تیم‌هایی که دیگر هر روز نمی‌بینندشان درمی‌مانند."],["C'est aux <b>responsables</b> qu'il revient d'instaurer un climat de confiance, faute de quoi le travail à distance vire vite à la surveillance.","این بر عهده‌ی مدیران است که فضایی از اعتماد برقرار کنند، وگرنه کار از راه دور به‌سرعت به نظارت بدل می‌شود."],["Si les <b>supérieurs</b> accordaient davantage d'autonomie, ils s'apercevraient sans doute que leurs équipes n'en sont que plus motivées.","اگر مدیران استقلال بیشتری می‌دادند، بی‌شک درمی‌یافتند که تیم‌هایشان فقط باانگیزه‌تر می‌شوند."]]},
+{c:7,term:"l'autonomie",fa:"استقلال (در کار)",def:"La capacité à travailler seul, à s'organiser sans dépendre des autres.",syn:["l'indépendance","la liberté d'organisation"],ex:[["L'<b>autonomie</b> qu'offre le télétravail est à double tranchant : libératrice pour les uns, déstabilisante pour les autres.","استقلالی که دورکاری ارائه می‌دهد دولبه است: برای برخی رهایی‌بخش و برای برخی دیگر آشفته‌کننده."],["Pour que l'<b>autonomie</b> porte ses fruits, encore faut-il savoir s'imposer à soi-même une discipline rigoureuse.","برای آنکه استقلال به بار بنشیند، باید بتوان بر خود انضباطی سخت‌گیرانه تحمیل کرد."],["Loin de convenir à tous, l'<b>autonomie</b> peut désarçonner ceux qui ont besoin d'un cadre rassurant.","استقلال که به‌هیچ‌وجه به‌کار همه نمی‌آید، می‌تواند کسانی را که به چارچوبی اطمینان‌بخش نیاز دارند سردرگم کند."]]},
+{c:7,term:"la productivité",fa:"بهره‌وری",def:"La capacité à produire beaucoup et bien en peu de temps.",syn:["le rendement","l'efficacité"],ex:[["Si la <b>productivité</b> tend à croître en télétravail, c'est à condition que le salarié bénéficie d'un environnement réellement propice.","اگر بهره‌وری در دورکاری گرایش به افزایش دارد، به‌شرطی است که کارمند از محیطی واقعاً مناسب برخوردار باشد."],["Non seulement un cadre calme améliore la <b>productivité</b>, mais il réduit aussi sensiblement le stress.","محیط آرام نه‌تنها بهره‌وری را بهبود می‌بخشد، بلکه استرس را نیز به‌میزان محسوسی کاهش می‌دهد."],["Aussi élevée que soit la <b>productivité</b>, elle ne saurait justifier que l'on néglige le bien-être des salariés.","بهره‌وری، هر اندازه هم بالا باشد، نمی‌تواند نادیده‌گرفتن رفاه کارکنان را توجیه کند."]]},
+{c:7,term:"l'absentéisme",fa:"غیبت از کار",def:"Le fait de s'absenter souvent du travail.",syn:["les absences répétées"],ex:[["On observe que le télétravail, en réduisant les contraintes de transport, tend à faire reculer l'<b>absentéisme</b>.","مشاهده می‌شود که دورکاری، با کاستن از محدودیت‌های حمل‌ونقل، گرایش دارد غیبت از کار را کاهش دهد."],["Un <b>absentéisme</b> élevé trahit bien souvent un malaise plus profond qu'il serait imprudent d'ignorer.","غیبتِ زیاد از کار اغلب نشانه‌ی نارضایتیِ عمیق‌تری است که نادیده‌گرفتنش بی‌احتیاطی خواهد بود."],["Si les conditions de travail venaient à s'améliorer, l'<b>absentéisme</b> ne tarderait pas à diminuer.","اگر شرایط کاری بهبود می‌یافت، غیبت از کار دیری نمی‌پایید که کاهش یابد."]]},
+{c:7,term:"la sédentarité",fa:"کم‌تحرکی",def:"Le fait de rester assis longtemps, sans activité physique.",syn:["le manque d'activité","l'inactivité physique"],ex:[["Le revers du télétravail, c'est qu'il favorise une <b>sédentarité</b> dont les effets sur la santé sont loin d'être anodins.","روی دیگرِ دورکاری این است که به کم‌تحرکی‌ای دامن می‌زند که اثرات آن بر سلامت به‌هیچ‌وجه بی‌اهمیت نیست."],["Plus insidieuse qu'on ne le croit, la <b>sédentarité</b> s'installe à mesure que les journées se passent devant un écran.","کم‌تحرکی، که موذیانه‌تر از آن است که می‌پنداریم، هرچه روزها پشت صفحه‌نمایش می‌گذرد، جا می‌افتد."],["Pour peu que l'on s'impose des pauses régulières, il est tout à fait possible de lutter contre la <b>sédentarité</b>.","به‌شرط آنکه آدم استراحت‌های منظم را بر خود تحمیل کند، کاملاً می‌توان با کم‌تحرکی مقابله کرد."]]},
+{c:7,term:"le temps d'écran",fa:"زمان استفاده از صفحه‌نمایش",def:"La durée passée devant un écran (ordinateur, téléphone).",syn:["l'exposition aux écrans"],ex:[["À mesure que le travail se dématérialise, le <b>temps d'écran</b> s'allonge au point de mettre la santé visuelle à rude épreuve.","هرچه کار غیرمادی‌تر می‌شود، زمان استفاده از صفحه‌نمایش چنان طولانی می‌شود که سلامت بینایی را به‌سختی می‌آزماید."],["Un <b>temps d'écran</b> excessif, en perturbant le sommeil, finit par se répercuter sur l'ensemble de l'équilibre quotidien.","زمان زیادِ استفاده از صفحه‌نمایش، با مختل‌کردن خواب، سرانجام بر کل تعادل روزانه تأثیر می‌گذارد."],["Il serait sage de limiter le <b>temps d'écran</b>, ne serait-ce que pour préserver sa concentration.","عاقلانه است که زمان استفاده از صفحه‌نمایش محدود شود، ولو فقط برای حفظ تمرکز."]]},
+{c:7,term:"l'épuisement professionnel (burn-out)",fa:"فرسودگی شغلی",def:"Une très grande fatigue physique et mentale liée au travail.",syn:["le burn-out","la fatigue extrême"],ex:[["Une pression constante, conjuguée à des journées sans fin, conduit insensiblement à l'<b>épuisement professionnel</b>.","فشار مداوم، همراه با روزهای بی‌پایان، آدم را نامحسوس به فرسودگی شغلی می‌کشاند."],["L'<b>épuisement professionnel</b>, que l'on a longtemps sous-estimé, touche aujourd'hui un nombre croissant de télétravailleurs.","فرسودگی شغلی، که مدت‌ها دست‌کم گرفته می‌شد، امروز شمار فزاینده‌ای از دورکاران را درگیر می‌کند."],["Pour prévenir l'<b>épuisement professionnel</b>, il est primordial d'apprendre à déconnecter, quitte à décevoir ponctuellement sa hiérarchie.","برای پیشگیری از فرسودگی شغلی، بسیار مهم است که آدم بیاموزد ارتباط با کار را قطع کند، حتی به بهای آنکه گاه مدیرانش را ناامید کند."]]},
+{c:7,term:"l'isolement",fa:"انزوا / تنهایی",def:"Le fait de se retrouver seul, coupé des autres.",syn:["la solitude","le manque de contacts"],ex:[["Le principal écueil du travail à domicile demeure l'<b>isolement</b>, lequel pèse insidieusement sur le moral.","دام اصلی کار در خانه همچنان انزواست، که موذیانه بر روحیه سنگینی می‌کند."],["Si gratifiant soit-il, le travail solitaire engendre parfois un <b>isolement</b> que rien ne vient compenser.","کار انفرادی، هر اندازه هم رضایت‌بخش باشد، گاهی انزوایی پدید می‌آورد که هیچ‌چیز جبرانش نمی‌کند."],["C'est pour rompre l'<b>isolement</b> que bien des indépendants se tournent vers les espaces de coworking.","بسیاری از فریلنسرها دقیقاً برای شکستن انزوا به فضاهای کار اشتراکی روی می‌آورند."]]},
+{c:7,term:"la confiance / la méfiance",fa:"اعتماد / بی‌اعتمادی",def:"Le fait de croire en quelqu'un ; au contraire, la méfiance est le doute envers lui.",syn:["la confiance mutuelle","(contraire) la méfiance"],ex:[["Le télétravail repose tout entier sur la <b>confiance</b>, sans laquelle la collaboration à distance se mue rapidement en surveillance.","دورکاری به‌تمامی بر اعتماد استوار است، اعتمادی که بدون آن همکاری از راه دور به‌سرعت به نظارت بدل می‌شود."],["Là où règne la méfiance, le travail à distance devient une source de tensions ; là où s'installe la <b>confiance</b>, il libère les énergies.","آنجا که بی‌اعتمادی حاکم است، کار از راه دور منشأ تنش می‌شود؛ آنجا که اعتماد جا می‌افتد، انرژی‌ها را آزاد می‌کند."],["Si les responsables faisaient davantage <b>confiance</b> à leurs équipes, ils n'éprouveraient nul besoin de les surveiller.","اگر مدیران بیشتر به تیم‌هایشان اعتماد می‌کردند، هیچ نیازی به نظارت بر آن‌ها احساس نمی‌کردند."]]},
+{c:7,term:"le traçage numérique / la surveillance",fa:"ردیابی دیجیتال / نظارت",def:"Le fait d'être suivi ou surveillé grâce à des outils numériques.",syn:["la surveillance","le contrôle numérique"],ex:[["Le <b>traçage numérique</b> des salariés, sous couvert d'efficacité, soulève de redoutables questions éthiques.","ردیابی دیجیتال کارکنان، به بهانه‌ی کارآمدی، پرسش‌های اخلاقیِ هولناکی را برمی‌انگیزد."],["Aussi rassurant qu'il paraisse pour les responsables, le <b>traçage numérique</b> sape insidieusement la confiance et l'autonomie.","ردیابی دیجیتال، هر اندازه هم برای مدیران اطمینان‌بخش به‌نظر برسد، موذیانه اعتماد و استقلال را تضعیف می‌کند."],["À trop vouloir contrôler par le <b>traçage numérique</b>, on finit par obtenir l'effet inverse : démotivation et défiance.","از بسکه آدم بخواهد با ردیابی دیجیتال کنترل کند، سرانجام نتیجه‌ی معکوس می‌گیرد: بی‌انگیزگی و بی‌اعتمادی."]]}
+];
+const PHRASES=[
+ ["<b>À mon sens</b>, le télétravail présente plus d'avantages que d'inconvénients.","به نظر من، دورکاری مزایای بیشتری نسبت به معایبش دارد."],
+ ["<b>Force est de constater que</b> le numérique a bouleversé le monde du travail.","ناگزیر باید پذیرفت که فناوری دیجیتال دنیای کار را زیرورو کرده است."],
+ ["<b>D'un côté</b>, on gagne en autonomie ; <b>d'un autre côté</b>, on risque l'isolement.","از یک سو استقلال بیشتری می‌یابیم؛ از سوی دیگر در خطر انزوا قرار می‌گیریم."],
+ ["<b>Il convient de rappeler que</b> tout le monde ne dispose pas d'un environnement propice.","شایان ذکر است که همه از محیطی مناسب برخوردار نیستند."],
+ ["<b>En définitive</b>, le télétravail serait idéal s'il était mieux encadré.","در نهایت، دورکاری اگر بهتر تنظیم می‌شد، ایده‌آل می‌بود."],
+ ["<b>Pour conclure</b>, je dirais que l'avenir du travail repose sur un modèle hybride.","برای جمع‌بندی، می‌گویم که آینده‌ی کار بر یک الگوی ترکیبی استوار است."]
+];
+
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+root.appendChild(pb);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>

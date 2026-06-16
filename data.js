@@ -72,16 +72,28 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
-    file: "VOCAB_teletravail_technologie.html",
-    title: "واژگان دورکاری و فناوری",
+    file: "VOCAB_teletravail_intermediaire.html",
+    title: "واژگان دورکاری و فناوری — متوسط",
     titleFr: "Télétravail & Technologie",
     category: "vocab",
-    level: "متوسط (B2)",
+    level: "متوسط (B1–B2)",
     premium: false,
-    tags: ["دورکاری", "فناوری", "با مثال"],
+    tags: ["دورکاری", "فناوری", "سطح متوسط"],
     theme: "دنیای کار و فناوری",
     keywords: ["دورکاری", "فناوری", "ارتباطات"],
-    summary: "تمام واژگان دورکاری و فناوری، دسته‌بندی‌شده در ۷ بخش — با تعریف، مترادف و سه مثال در سطح آزمون برای هر واژه.",
+    summary: "واژگان ضروری دورکاری و فناوری در سطح متوسط — با تعریف، مترادف و مثال. نقطه‌ی شروع خوبی برای ساختن دایره‌ی واژگان این موضوع.",
+  },
+  {
+    file: "VOCAB_teletravail_avance.html",
+    title: "واژگان دورکاری و فناوری — پیشرفته",
+    titleFr: "Télétravail & Technologie — B2",
+    category: "vocab",
+    level: "پیشرفته (B2+)",
+    premium: false,
+    tags: ["دورکاری", "فناوری", "سطح پیشرفته"],
+    theme: "دنیای کار و فناوری",
+    keywords: ["دورکاری", "فناوری", "اصطلاحات تخصصی"],
+    summary: "واژگان پیشرفته‌تر و دقیق‌تر دورکاری و فناوری — برای کسانی که می‌خواهند بیان غنی‌تر و حرفه‌ای‌تری در آزمون داشته باشند.",
   },
   {
     link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000751533361",
