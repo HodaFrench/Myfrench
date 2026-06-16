@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tâche 3 — Trouver un travail au Canada | Expression Orale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#e6e1d6; --paper-warm:#e0dace; --cream:#f4f0e8;
+    --ink:#2c2a26; --gray:#8a8275; --line:#d8d0c2; --white:#f8f5ef;
+  }
+  body{
+    font-family:'Vazirmatn',Arial,sans-serif;
+    background-color:var(--paper);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='lin'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.018' numOctaves='3' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lin)' opacity='0.5'/%3E%3C/svg%3E");
+    color:var(--ink); line-height:2; font-size:18px;
+  }
+
+  .sidebar{position:fixed; right:0; top:0; width:280px; height:100vh;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--cream); padding:26px 0; overflow-y:auto; z-index:1000; box-shadow:-2px 0 14px rgba(0,0,0,0.18);}
+  .sidebar-header{padding:14px 20px 20px; text-align:center; border-bottom:1px solid rgba(196,165,114,0.3);
+    margin-bottom:18px; font-size:13px; color:var(--gold-soft); font-weight:700; line-height:1.9;}
+  .sidebar h2{padding:0 22px 14px; font-size:14px; color:var(--gold-soft); font-weight:700; letter-spacing:1px;}
+  .sidebar-item{padding:12px 22px; cursor:pointer; transition:all 0.25s; border-right:4px solid transparent; font-size:14.5px; font-weight:500;}
+  .sidebar-item:hover{background:rgba(255,255,255,0.07); border-right-color:var(--gold-soft); padding-right:28px;}
+  .sidebar-item.active{background:linear-gradient(270deg,rgba(196,165,114,0.18) 0%,transparent 100%); border-right-color:var(--gold-soft); font-weight:700;}
+
+  .main{margin-right:280px; padding:30px;}
+  .wrap{max-width:860px; margin:0 auto;}
+  .section{display:none; animation:fadeIn 0.45s;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  .header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%); color:var(--cream);
+    padding:44px 40px; border-radius:20px; margin-bottom:40px; text-align:center;
+    box-shadow:0 16px 44px rgba(31,58,95,0.28); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-50px;left:-50px;width:180px;height:180px;background:rgba(255,255,255,0.05);border-radius:50%;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:40px; margin-bottom:12px; font-weight:600; line-height:1.3;}
+  .header .subtitle{font-size:16px; opacity:0.92; line-height:1.8;}
+  .header .info{font-size:14px; opacity:0.85; margin-top:16px; border-top:1px solid rgba(196,165,114,0.4); padding-top:14px; line-height:1.9;}
+
+  .card{background:var(--white); padding:34px; border-radius:18px; margin-bottom:34px;
+    box-shadow:0 8px 24px rgba(31,58,95,0.07); border-right:6px solid var(--gold-soft);}
+  .card h3{margin-bottom:24px; font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--navy); font-weight:600; direction:ltr; text-align:left;}
+
+  .texte-box{background:var(--cream); padding:24px; border-radius:14px; border-right:5px solid var(--navy-soft);
+    margin:18px 0; font-size:18px; line-height:2.2; direction:ltr; text-align:left;}
+
+  .connecteur{background:rgba(196,165,114,0.36); padding:3px 9px; border-radius:4px; font-weight:700; color:#806233; font-style:italic;}
+  .mot{background:rgba(65,97,138,0.09); padding:1px 4px; border-radius:3px; color:#34455a;}
+
+  .notes-box{background:var(--paper-warm); padding:20px 22px; border-radius:12px; margin:16px 0; border-right:4px solid var(--gold);}
+  .notes-box .nt-title{font-size:14px; font-weight:700; color:var(--gold); margin-bottom:12px; letter-spacing:0.5px;}
+  .nt-item{margin-bottom:11px; padding-bottom:11px; border-bottom:1px dashed var(--line); font-size:15px; line-height:1.9;}
+  .nt-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .nt-fr{direction:ltr; display:inline; font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:var(--navy); font-weight:600;}
+  .nt-fa{color:var(--ink);}
+
+  .traduction-box{background:linear-gradient(135deg,rgba(31,58,95,0.05),rgba(196,165,114,0.07));
+    padding:22px 24px; border-radius:14px; border-right:5px solid var(--gold-soft); margin:18px 0;
+    color:var(--navy-deep); font-size:16px; line-height:2.1;}
+  .traduction-box .tr-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;letter-spacing:0.5px;}
+
+  .footer{background:var(--navy); color:var(--cream); padding:40px; border-radius:18px; text-align:center; margin-top:50px; border-top:3px solid var(--gold-soft);}
+  .footer h3{font-family:'Cormorant Garamond',serif; font-size:24px; margin-bottom:14px; color:var(--gold-soft);}
+  .author-info{margin-top:18px; padding-top:18px; border-top:1px solid rgba(196,165,114,0.3); font-size:14px; line-height:2;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:18px;font-size:13px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:16px;height:16px;border-radius:3px;display:inline-block;}
+
+  @media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;} .main{margin-right:0;} .sidebar-item{display:inline-block;}}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--paper-warm);}
+  ::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:5px;}
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">Expression Orale · Tâche 3</div>
+    <h2>SECTIONS</h2>
+    <div class="sidebar-item active" onclick="showSection('intro',this)">Introduction</div>
+    <div class="sidebar-item" onclick="showSection('arg1',this)">Argument 1</div>
+    <div class="sidebar-item" onclick="showSection('arg2',this)">Argument 2</div>
+    <div class="sidebar-item" onclick="showSection('arg3',this)">Argument 3</div>
+    <div class="sidebar-item" onclick="showSection('arg4',this)">Argument 4</div>
+    <div class="sidebar-item" onclick="showSection('conclusion',this)">Conclusion</div>
+  </div>
+
+  <div class="main"><div class="wrap">
+    <div class="header">
+      <h1>Trouver un travail au Canada</h1>
+      <p class="subtitle">Serait-il simple de trouver un travail si vous vous installez au Canada ?</p>
+      <div class="info">Expression Orale · Tâche 3 — Niveau B2</div>
+      <div class="legend">
+        <span><i style="background:rgba(196,165,114,0.7)"></i> متصل‌کننده / گذرواژه‌ی استدلال</span>
+        <span><i style="background:rgba(65,97,138,0.2)"></i> واژگان سوژه</span>
+      </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div id="intro" class="section active">
+      <div class="card">
+        <h3>Introduction</h3>
+        <div class="texte-box">
+          Le Canada est reconnu comme un pays attractif pour les <span class="mot">travailleurs étrangers</span> <span class="connecteur">grâce à</span> son économie solide et ses nombreuses <span class="mot">opportunités professionnelles</span>. Beaucoup se demandent <span class="connecteur">cependant</span> s'il est réellement facile de <span class="mot">trouver un emploi</span> en s'installant dans ce pays. <span class="connecteur">À mon avis</span>, il est <span class="connecteur">tout à fait possible</span> d'y réussir professionnellement, <span class="connecteur">à condition de</span> bien se préparer et de comprendre le <span class="mot">marché du travail</span> canadien. Plusieurs éléments favorisent l'<span class="mot">insertion professionnelle</span>, <span class="connecteur">tels que</span> la <span class="mot">demande de main-d'œuvre</span>, les <span class="mot">programmes d'immigration</span>, la diversité des secteurs et l'importance des <span class="mot">compétences professionnelles</span>.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">grâce à</span> <span class="nt-fa">— به‌لطفِ (متصل‌کننده‌ی علت مثبت)</span></div>
+          <div class="nt-item"><span class="nt-fr">cependant</span> <span class="nt-fa">— با این حال (متصل‌کننده‌ی تضاد)</span></div>
+          <div class="nt-item"><span class="nt-fr">à mon avis</span> <span class="nt-fa">— به نظر من (بیان نظر شخصی)</span></div>
+          <div class="nt-item"><span class="nt-fr">tout à fait possible</span> <span class="nt-fa">— کاملاً ممکن (عبارت تأکیدی)</span></div>
+          <div class="nt-item"><span class="nt-fr">à condition de</span> <span class="nt-fa">— به‌شرطِ اینکه (بیان شرط)</span></div>
+          <div class="nt-item"><span class="nt-fr">tels que</span> <span class="nt-fa">— مانندِ / از قبیلِ (برای مثال‌زدن)</span></div>
+          <div class="nt-item"><span class="nt-fr">le marché du travail</span> <span class="nt-fa">— بازار کار (واژه‌ی محوری سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">la demande de main-d'œuvre</span> <span class="nt-fa">— تقاضای نیروی کار (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'insertion professionnelle</span> <span class="nt-fa">— ورود/جذب به بازار کار (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          کانادا به‌لطف اقتصاد قدرتمند و فرصت‌های شغلی فراوانش، کشوری جذاب برای کارگران خارجی شناخته می‌شود. با این حال، بسیاری از خود می‌پرسند که آیا واقعاً پیدا کردن کار با ساکن‌شدن در این کشور آسان است. به نظر من، کاملاً ممکن است که آدم آنجا از نظر شغلی موفق شود، به‌شرطِ اینکه خوب آماده شود و بازار کار کانادا را بشناسد. عناصر متعددی ورود به بازار کار را تقویت می‌کنند، مانند تقاضای نیروی کار، برنامه‌های مهاجرتی، تنوع بخش‌ها و اهمیت مهارت‌های حرفه‌ای.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 1 -->
+    <div id="arg1" class="section">
+      <div class="card">
+        <h3>Argument 1 — La demande de main-d'œuvre</h3>
+        <div class="texte-box">
+          <span class="connecteur">Tout d'abord</span>, le Canada connaît une forte <span class="mot">demande de main-d'œuvre</span> dans plusieurs <span class="mot">secteurs clés</span>. <span class="connecteur">Par exemple</span>, le domaine des <span class="mot">technologies de l'information</span>, de la <span class="mot">santé</span>, de l'<span class="mot">ingénierie</span> et des <span class="mot">services publics</span> recrute régulièrement des <span class="mot">travailleurs qualifiés</span>. Cette situation crée de nombreuses opportunités pour les candidats motivés et préparés, <span class="connecteur">qu'ils soient</span> débutants ou expérimentés.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">tout d'abord</span> <span class="nt-fa">— پیش از هر چیز (شروع اولین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">par exemple</span> <span class="nt-fa">— برای مثال</span></div>
+          <div class="nt-item"><span class="nt-fr">qu'ils soient … ou …</span> <span class="nt-fa">— چه … باشند چه … (ساختار با subjonctif)</span></div>
+          <div class="nt-item"><span class="nt-fr">les secteurs clés</span> <span class="nt-fa">— بخش‌های کلیدی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les travailleurs qualifiés</span> <span class="nt-fa">— کارگران ماهر/متخصص (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">recruter</span> <span class="nt-fa">— استخدام کردن (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          پیش از هر چیز، کانادا تقاضای بالایی برای نیروی کار در چند بخش کلیدی دارد. برای مثال، حوزه‌ی فناوری اطلاعات، سلامت، مهندسی و خدمات عمومی، به‌طور منظم کارگران متخصص استخدام می‌کنند. این وضعیت فرصت‌های فراوانی برای داوطلبان باانگیزه و آماده ایجاد می‌کند، چه تازه‌کار باشند چه باتجربه.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 2 -->
+    <div id="arg2" class="section">
+      <div class="card">
+        <h3>Argument 2 — Les programmes d'accompagnement</h3>
+        <div class="texte-box">
+          <span class="connecteur">Ensuite</span>, le pays propose des <span class="mot">programmes d'accompagnement</span> pour les <span class="mot">nouveaux arrivants</span>, <span class="connecteur">ce qui</span> facilite grandement la <span class="mot">recherche d'emploi</span>. Des services comme l'aide à la rédaction de <span class="mot">CV</span> et de <span class="mot">lettres de motivation</span>, les <span class="mot">ateliers de préparation aux entretiens</span> et les cours de langue permettent aux candidats de mieux comprendre les <span class="mot">attentes des employeurs</span> et d'améliorer leurs chances de réussite.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">ensuite</span> <span class="nt-fa">— سپس (شروع استدلال دوم)</span></div>
+          <div class="nt-item"><span class="nt-fr">ce qui</span> <span class="nt-fa">— چیزی که (ضمیر ربط)</span></div>
+          <div class="nt-item"><span class="nt-fr">les nouveaux arrivants</span> <span class="nt-fa">— تازه‌واردان / مهاجران تازه (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">la recherche d'emploi</span> <span class="nt-fa">— جست‌وجوی کار (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">une lettre de motivation</span> <span class="nt-fa">— انگیزه‌نامه (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les attentes des employeurs</span> <span class="nt-fa">— انتظارات کارفرماها (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سپس، این کشور برنامه‌های همراهی برای تازه‌واردان ارائه می‌دهد، چیزی که جست‌وجوی کار را بسیار آسان می‌کند. خدماتی مانند کمک به نوشتن رزومه و انگیزه‌نامه، کارگاه‌های آماده‌سازی برای مصاحبه و کلاس‌های زبان، به داوطلبان اجازه می‌دهند انتظارات کارفرماها را بهتر بفهمند و شانس موفقیتشان را افزایش دهند.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 3 -->
+    <div id="arg3" class="section">
+      <div class="card">
+        <h3>Argument 3 — La diversité des secteurs</h3>
+        <div class="texte-box">
+          <span class="connecteur">De plus</span>, la <span class="mot">diversité des villes</span> et des secteurs d'activité offre un large éventail de choix. <span class="connecteur">Que</span> l'on souhaite travailler dans une grande ville comme Toronto ou Vancouver, <span class="connecteur">ou</span> dans des régions plus petites comme Calgary ou Halifax, il existe des opportunités adaptées aux <span class="mot">compétences</span> et aux préférences de chacun. Les <span class="mot">secteurs en croissance</span> offrent <span class="connecteur">également</span> la possibilité de <span class="mot">progresser rapidement dans sa carrière</span>.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">de plus</span> <span class="nt-fa">— علاوه بر این (افزودن استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">que … ou …</span> <span class="nt-fa">— چه … چه … (بیان دو حالت با subjonctif)</span></div>
+          <div class="nt-item"><span class="nt-fr">également</span> <span class="nt-fa">— همچنین / نیز</span></div>
+          <div class="nt-item"><span class="nt-fr">un large éventail de</span> <span class="nt-fa">— طیف گسترده‌ای از (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les secteurs en croissance</span> <span class="nt-fa">— بخش‌های روبه‌رشد (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">progresser dans sa carrière</span> <span class="nt-fa">— پیشرفت در مسیر شغلی (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          علاوه بر این، تنوع شهرها و بخش‌های فعالیت، طیف گسترده‌ای از انتخاب‌ها ارائه می‌دهد. چه آدم بخواهد در شهری بزرگ مثل تورنتو یا ونکوور کار کند، چه در مناطق کوچک‌تر مثل کلگری یا هلیفکس، فرصت‌هایی متناسب با مهارت‌ها و سلیقه‌ی هرکس وجود دارد. بخش‌های روبه‌رشد همچنین امکان پیشرفت سریع در مسیر شغلی را فراهم می‌کنند.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 4 -->
+    <div id="arg4" class="section">
+      <div class="card">
+        <h3>Argument 4 — Les compétences et la langue</h3>
+        <div class="texte-box">
+          <span class="connecteur">Enfin</span>, la maîtrise des <span class="mot">compétences professionnelles</span> et de la langue joue un <span class="mot">rôle crucial</span>. Les travailleurs qui possèdent une <span class="mot">formation solide</span>, de l'<span class="mot">expérience</span> et une bonne connaissance de l'anglais ou du français ont de grandes chances de trouver un emploi rapidement. <span class="connecteur">De plus</span>, la <span class="mot">motivation</span> et l'<span class="mot">adaptabilité</span> sont des <span class="mot">atouts précieux</span> pour réussir son <span class="mot">intégration professionnelle</span>.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">enfin</span> <span class="nt-fa">— سرانجام (آخرین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">de plus</span> <span class="nt-fa">— علاوه بر این (افزودن)</span></div>
+          <div class="nt-item"><span class="nt-fr">jouer un rôle crucial</span> <span class="nt-fa">— نقش تعیین‌کننده ایفا کردن (عبارت سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">une formation solide</span> <span class="nt-fa">— آموزش/تحصیلات محکم (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'adaptabilité</span> <span class="nt-fa">— سازگاری‌پذیری (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">un atout précieux</span> <span class="nt-fa">— برگ برنده / مزیت ارزشمند (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سرانجام، تسلط بر مهارت‌های حرفه‌ای و زبان، نقشی تعیین‌کننده ایفا می‌کند. کارگرانی که آموزش محکم، تجربه و دانش خوبی از انگلیسی یا فرانسه دارند، شانس بالایی برای یافتن سریع کار دارند. علاوه بر این، انگیزه و سازگاری‌پذیری، برگ‌های برنده‌ی ارزشمندی برای موفقیت در جذب حرفه‌ای هستند.
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="section">
+      <div class="card">
+        <h3>Conclusion</h3>
+        <div class="texte-box">
+          <span class="connecteur">En conclusion</span>, trouver un emploi au Canada est <span class="mot">réaliste</span> <span class="connecteur">grâce à</span> la demande de main-d'œuvre, aux programmes d'accompagnement, à la diversité des secteurs et à l'importance des compétences et de la langue. <span class="connecteur">Avec</span> une préparation adéquate, de la motivation et une <span class="mot">attitude proactive</span>, l'<span class="mot">intégration dans le marché du travail</span> canadien peut se faire rapidement et efficacement, <span class="mot">ouvrant la voie à</span> une expérience professionnelle enrichissante et réussie.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">en conclusion</span> <span class="nt-fa">— در نتیجه (متصل‌کننده‌ی جمع‌بندی)</span></div>
+          <div class="nt-item"><span class="nt-fr">grâce à</span> <span class="nt-fa">— به‌لطفِ (متصل‌کننده‌ی علت)</span></div>
+          <div class="nt-item"><span class="nt-fr">une attitude proactive</span> <span class="nt-fa">— نگرش فعال/پیش‌دستانه (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">ouvrir la voie à</span> <span class="nt-fa">— راه را برای … گشودن (عبارت سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">enrichissant(e)</span> <span class="nt-fa">— غنی‌کننده (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          در نتیجه، یافتن کار در کانادا به‌لطف تقاضای نیروی کار، برنامه‌های همراهی، تنوع بخش‌ها و اهمیت مهارت‌ها و زبان، واقع‌بینانه است. با آمادگیِ مناسب، انگیزه و نگرشی فعال، ادغام در بازار کار کانادا می‌تواند سریع و کارآمد انجام شود و راه را برای تجربه‌ای شغلی غنی و موفق بگشاید.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h3>✦ Expression Orale — Tâche 3</h3>
+      <div class="author-info">متصل‌کننده‌ها را به خاطر بسپار و در پاسخ خودت به کار ببر.</div>
+    </div>
+  </div></div>
+
+  <script>
+    function showSection(id, el){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if(el) el.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
