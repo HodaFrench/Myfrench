@@ -543,4 +543,18 @@ const PRONONCIATION = [
       "خندیدن مداوم واقعاً نفس‌کشیدن را آرام می‌کند، و تکرار سریع این جمله جدیتتان را در فن بیان نشان می‌دهد؛ ولی غر زدن با عصبانیت، خنده را کلاً نابود می‌کند!",
     ],
   },
+  {
+    jour: "روز سوم",
+    titre: "تمرین صداهای نزل (تودماغی)",
+    focus: ["an", "en", "on", "in"],
+    video: "videos/PRON_jour3_nasales.mp4",
+    texteFr: [
+      "Pendant le printemps, Valentin entend un vent violent venant du Mont-Blanc.",
+      "Il plante des pommes, pourtant il pense aux pentes pendantes.",
+    ],
+    texteFa: [
+      "در فصل بهار، والنتین صدای یک باد تند را شنید که از طرف مون‌بلان می‌آمد.",
+      "او داشت سیب می‌کاشت، ولی با این حال فکرش پیش آن دامنه‌های شیب‌دار بود.",
+    ],
+  },
 ];
