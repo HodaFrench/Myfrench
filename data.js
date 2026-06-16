@@ -13,6 +13,7 @@ const CATEGORIES = [
   { id: "podcast",      label: "پادکست",       icon: "♪", color: "#5a6f9e" },
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
+  { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -330,5 +331,22 @@ const ADJECTIFS = [
       fr: "Le déménagement dans un nouveau pays peut être une expérience déstabilisante au début, mais il permet souvent de développer une grande capacité d'adaptation.",
       fa: "مهاجرت به یک کشور جدید در ابتدا می‌تواند تجربه‌ای گیج‌کننده و برهم‌زننده‌ی تعادل باشد، اما اغلب باعث تقویت توانایی سازگاری می‌شود.",
     },
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  کوییزهای کوتاه — «کوییز»
+//  هر کوییز:
+//    question : متن سؤال (می‌تواند جای خالی با ___ داشته باشد)
+//    options  : آرایه‌ای از گزینه‌ها
+//    correct  : ایندکس گزینه‌ی درست (از ۰)
+//    note     : توضیح کوتاه بعد از پاسخ (اختیاری)
+// ═══════════════════════════════════════════════════════════
+const QUIZ = [
+  {
+    question: "Ça dépend ___ la situation.",
+    options: ["sur", "à", "de", "pour"],
+    correct: 2,
+    note: "فعل « dépendre » همیشه با حرف اضافه‌ی <b>de</b> می‌آید: « ça dépend de… » (بستگی دارد به…).",
   },
 ];

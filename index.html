@@ -81,6 +81,8 @@
 
         /* بخش معرفی */
         /* چیدمان دو ستونه‌ی معرفی */
+        .hero-centered { text-align: center; max-width: 680px; margin: 0 auto; }
+        .hero-centered .hero-tag { text-align: center; }
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -121,7 +123,9 @@
         .photo-placeholder .ph-icon { font-size: 48px; }
         .photo-placeholder .ph-text { font-size: 15px; color: var(--gray); text-align: center; line-height: 1.8; }
         @media (max-width: 820px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+            .hero-centered { text-align: center; max-width: 680px; margin: 0 auto; }
+        .hero-centered .hero-tag { text-align: center; }
+        .hero-grid { grid-template-columns: 1fr; gap: 28px; }
             .hero-photo { order: -1; }
             .hero-text { text-align: center; }
             .photo-frame { max-width: 280px; }
@@ -431,6 +435,63 @@
             .news-img { width: 100%; height: 140px; }
             .news-body { padding: 16px 18px; }
         }
+
+        /* کارت‌های کوییز */
+        .quiz-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid #2e8b6b;
+            border-radius: 16px;
+            padding: 24px 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.08);
+        }
+        .quiz-badge {
+            display: inline-block;
+            font-size: 11px; font-weight: 700; letter-spacing: 1px;
+            color: #2e8b6b; background: rgba(46,139,107,0.1);
+            padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+        }
+        .quiz-q {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px; font-weight: 600; color: var(--navy);
+            direction: ltr; text-align: left; line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+        .quiz-opt {
+            display: flex; align-items: center; gap: 12px;
+            background: var(--cream); border: 1.5px solid var(--line);
+            border-radius: 12px; padding: 13px 16px;
+            font-family: inherit; font-size: 17px; color: var(--ink);
+            cursor: pointer; transition: all 0.2s; text-align: right;
+        }
+        .quiz-opt span[dir="ltr"] { direction: ltr; font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+        .quiz-opt:hover:not(.disabled) { border-color: #2e8b6b; background: rgba(46,139,107,0.05); }
+        .opt-letter {
+            flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+            background: var(--navy); color: var(--cream);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700;
+        }
+        .quiz-opt.disabled { cursor: default; opacity: 0.7; }
+        .quiz-opt.correct {
+            border-color: #2e8b6b; background: rgba(46,139,107,0.14); opacity: 1;
+        }
+        .quiz-opt.correct .opt-letter { background: #2e8b6b; }
+        .quiz-opt.correct::after { content: "✓"; margin-right: auto; color: #2e8b6b; font-weight: 700; font-size: 18px; }
+        .quiz-opt.wrong {
+            border-color: #c0563f; background: rgba(192,86,63,0.1); opacity: 1;
+        }
+        .quiz-opt.wrong .opt-letter { background: #c0563f; }
+        .quiz-opt.wrong::after { content: "✕"; margin-right: auto; color: #c0563f; font-weight: 700; font-size: 18px; }
+        .quiz-note {
+            display: none; margin-top: 16px; padding: 14px 16px;
+            background: var(--paper-warm); border-right: 3px solid #2e8b6b;
+            border-radius: 10px; font-size: 14.5px; line-height: 2; color: var(--ink);
+        }
+        .quiz-note.show { display: block; animation: fade .3s; }
+        .quiz-note b { color: #2e8b6b; }
+        @keyframes fade { from{opacity:0;transform:translateY(-4px);} to{opacity:1;transform:translateY(0);} }
 
         /* کارت‌های صفت */
         .adj-card {
@@ -828,21 +889,11 @@
     </div>
 
     <div class="hero" id="hero">
-      <div class="hero-grid">
-        <div class="hero-text">
+      <div class="hero-text hero-centered">
           <div class="hero-tag">FRANÇAIS AVEC HODA</div>
           <h2>کتابخانهٔ فرانسهٔ من</h2>
           <p class="sub-fr" dir="ltr">Ma bibliothèque de français</p>
           <p class="sub">همه‌چیز اینجاست تا فرانسه برای تو ساده‌تر بشه</p>
-        </div>
-        <div class="hero-photo">
-          <div class="photo-frame" id="heroPhoto">
-            <div class="photo-placeholder">
-              <span class="ph-icon">✦</span>
-              <span class="ph-text">عکس هدی اینجا می‌آید<br><small>به‌زودی…</small></span>
-            </div>
-          </div>
-        </div>
       </div>
 
         <div class="search-box">
@@ -931,6 +982,8 @@
                 renderAstuces();
             } else if (catId === "adjectifs") {
                 renderAdjectifs();
+            } else if (catId === "quiz") {
+                renderQuiz();
             } else if (catId !== "all" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
@@ -973,6 +1026,49 @@
                 document.getElementById("resultsTitle").innerHTML =
                     '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
             }
+        }
+
+        // نمایش کوییزها
+        function renderQuiz() {
+            const ci = catInfo("quiz");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof QUIZ !== "undefined") ? QUIZ : [];
+            document.getElementById("count").textContent = list.length + " کوییز";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">?</span>هنوز کوییزی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((q, qi) => `
+                <div class="quiz-card">
+                    <div class="quiz-badge">؟ کوییز کوتاه</div>
+                    <div class="quiz-q" dir="ltr">${q.question}</div>
+                    <div class="quiz-opts">
+                        ${q.options.map((opt, oi) => `
+                            <button class="quiz-opt" id="q${qi}o${oi}" onclick="answerQuiz(${qi},${oi},${q.correct})">
+                                <span class="opt-letter">${String.fromCharCode(65+oi)}</span>
+                                <span dir="ltr">${opt}</span>
+                            </button>`).join("")}
+                    </div>
+                    ${q.note ? `<div class="quiz-note" id="qn${qi}">${q.note}</div>` : ""}
+                </div>`).join("");
+        }
+
+        function answerQuiz(qi, oi, correct) {
+            const card = document.getElementById("q"+qi+"o0").parentElement;
+            if (card.dataset.answered) return;
+            card.dataset.answered = "1";
+            const opts = card.querySelectorAll(".quiz-opt");
+            opts.forEach((b, idx) => {
+                b.classList.add("disabled");
+                if (idx === correct) b.classList.add("correct");
+            });
+            if (oi !== correct) {
+                document.getElementById("q"+qi+"o"+oi).classList.add("wrong");
+            }
+            const note = document.getElementById("qn"+qi);
+            if (note) note.classList.add("show");
         }
 
         // نمایش کارت‌های بخش (مثل Expression Orale)
