@@ -11,19 +11,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #1f3a5f;        /* سرمه‌ای جلد کتاب */
+            --navy: #1e3a5f;        /* سرمه‌ای جلد کتاب */
             --navy-deep: #16293f;
             --navy-soft: #41618a;
-            --gold: #a8874f;        /* طلایی/برنزی حروف */
+            --gold: #b07a4a;        /* طلایی/برنزی حروف */
             --gold-soft: #c4a572;
-            --terracotta: #c0653f;  /* نارنجی آجری — لهجه (مثل French Mornings) */
-            --paper: #f7f3ea;       /* کاغذ استخوانی */
-            --paper-warm: #efe9db;
-            --cream: #fdfaf3;
+            --terracotta: #c4502d;  /* نارنجی آجری — لهجه (مثل French Mornings) */
+            --paper: #e9e4db;       /* کاغذ استخوانی */
+            --paper-warm: #e0dace;
+            --cream: #f4f0e8;
             --ink: #2c2a26;         /* مرکب */
             --gray: #8a8275;
             --line: #e4ddcd;
-            --white: #fffdf8;
+            --white: #f8f5ef;
             /* نام‌های قدیمی برای سازگاری */
             --blue-deep: #1f3a5f;
             --blue: #41618a;
@@ -34,7 +34,8 @@
 
         body {
             font-family: 'Vazirmatn', 'Tahoma', sans-serif;
-            background: var(--paper);
+            background-color: var(--paper);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.045'/%3E%3C/svg%3E");
             color: var(--ink);
             line-height: 1.9;
             min-height: 100vh;
@@ -650,7 +651,7 @@
     <div class="topbar">
         <div>
             <h1>Français avec Hoda</h1>
-            <div class="tag"><span class="name-fa">هدی خدمتی</span><span class="role-fa">مدرس زبان فرانسه</span></div>
+            <div class="tag"><span class="role-fa">مدرس زبان فرانسه</span></div>
         </div>
     </div>
 
@@ -699,7 +700,7 @@
 
     <div class="footer">
         <p>🇫🇷 <strong>Français avec Hoda</strong> — کتابخانه‌ی آموزش زبان فرانسه</p>
-        <p style="margin-top:6px; font-size:12px;">© 2025 — Hoda KHEDMATI</p>
+        <p style="margin-top:6px; font-size:12px;">© 2025</p>
     </div>
 
     <!-- کارت نکته — گوشه‌ی صفحه -->
