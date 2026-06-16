@@ -17,7 +17,7 @@
             --gold: #b07a4a;        /* طلایی/برنزی حروف */
             --gold-soft: #c4a572;
             --terracotta: #c4502d;  /* نارنجی آجری — لهجه (مثل French Mornings) */
-            --paper: #e6e1d6;       /* کتانِ کرم — مثل French Mornings */
+            --paper: #faf8f3;       /* کرمِ خیلی روشن، تمیز و باکلاس */
             --paper-warm: #e0dace;
             --cream: #f4f0e8;
             --ink: #2c2a26;         /* مرکب */
@@ -32,26 +32,7 @@
             --blue-mist: #f7f3ea;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-            background-image: url("bg_library.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            pointer-events: none;
-        }
-        /* پرده‌ی خیلی ملایم روشن روی عکس — فقط برای خوانایی، نه محوکردن */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background: linear-gradient(rgba(246,242,233,0.32), rgba(246,242,233,0.42));
-            pointer-events: none;
-        }
+
         body {
             font-family: 'Vazirmatn', 'Tahoma', sans-serif;
             background-color: var(--paper);
@@ -64,10 +45,8 @@
         .topbar {
             text-align: center;
             padding: 16px;
-            background: rgba(248,245,239,0.72);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(216,208,194,0.6);
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -313,14 +292,12 @@
             width: 100%;
         }
         .cat-chip {
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: rgba(248,245,239,0.80);
-            border: 1px solid rgba(216,208,194,0.7);
+            background: var(--white);
+            border: 1px solid var(--line);
             border-radius: 16px;
             padding: 24px 22px;
             cursor: pointer;
@@ -857,11 +834,9 @@
             margin: 0 auto;
         }
         .card {
-            background: rgba(248,245,239,0.82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: var(--white);
             border-radius: 6px;
-            border: 1px solid rgba(216,208,194,0.7);
+            border: 1px solid var(--line);
             overflow: hidden;
             transition: all 0.25s;
             display: flex;
