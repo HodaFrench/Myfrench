@@ -557,4 +557,20 @@ const PRONONCIATION = [
       "او داشت سیب می‌کاشت، ولی با این حال فکرش پیش آن دامنه‌های شیب‌دار بود.",
     ],
   },
+  {
+    jour: "روز چهارم",
+    titre: "تمرین صدای س",
+    focus: ["s"],
+    video: "videos/PRON_jour4_s.mp4",
+    texteFr: [
+      "Salut salut monsieur Sans Souci, combien sont ces six cent six saucissons-ci ?",
+      "Ces six cent six saucissons-ci sont six sous.",
+      "Six sous, ces six cent six saucissons-ci ! Si ces six cent six saucissons-ci sont six sous, ces six cent six saucissons-ci sont trop chers.",
+    ],
+    texteFa: [
+      "سلام سلام آقای بی‌دغدغه! قیمت این ششصد و شش تا سوسیس چند است؟",
+      "این ششصد و شش تا سوسیس می‌شوند شش سو (واحد پول قدیمی فرانسوی).",
+      "چی؟ شش سو برای این ششصد و شش تا سوسیس؟! اگر واقعاً قیمت این ششصد و شش تا سوسیس شش سو باشد، پس خیلی گران است!",
+    ],
+  },
 ];
