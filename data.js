@@ -573,4 +573,22 @@ const PRONONCIATION = [
       "چی؟ شش سو برای این ششصد و شش تا سوسیس؟! اگر واقعاً قیمت این ششصد و شش تا سوسیس شش سو باشد، پس خیلی گران است!",
     ],
   },
+  {
+    jour: "روز پنجم",
+    titre: "صدای on (تودماغی) و حرف r",
+    focus: ["on", "r"],
+    video: "videos/PRON_jour5_on_r.mp4",
+    texteFr: [
+      "Simon ronfle comme un lion,",
+      "son ronron roule dans le salon.",
+      "Il rêve qu'il est un dragon,",
+      "mais il a peur d'un papillon !",
+    ],
+    texteFa: [
+      "سیمون مثل یک شیر خر و پف می‌کند،",
+      "خرخرش توی اتاق پیچیده.",
+      "خواب می‌بیند که یک اژدهاست،",
+      "ولی از یک پروانه می‌ترسد!",
+    ],
+  },
 ];
