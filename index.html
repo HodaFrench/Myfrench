@@ -533,6 +533,25 @@
             background: var(--navy);
         }
         .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .theme-box {
+            background: var(--paper-warm);
+            border-radius: 10px;
+            padding: 10px 13px;
+            margin: 10px 0 12px;
+            border-right: 3px solid var(--terracotta);
+        }
+        .theme-line { font-size: 13px; color: var(--ink); margin-bottom: 7px; }
+        .theme-label { font-weight: 700; color: var(--terracotta); }
+        .kw-line { display: flex; flex-wrap: wrap; gap: 6px; }
+        .kw {
+            font-size: 12px;
+            background: var(--white);
+            color: var(--navy);
+            border: 1px solid var(--line);
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
         .card-cat {
             display: inline-flex;
             align-items: center;
@@ -935,6 +954,11 @@
                         <h4>${l.title || ""}</h4>
                         ${l.titleFr ? `<div class="fr">${l.titleFr}</div>` : ""}
                         ${descBlock}
+                        ${(l.theme || (l.keywords && l.keywords.length)) ? `
+                        <div class="theme-box">
+                            ${l.theme ? `<div class="theme-line"><span class="theme-label">تم:</span> ${l.theme}</div>` : ""}
+                            ${(l.keywords && l.keywords.length) ? `<div class="kw-line">${l.keywords.map(k => `<span class="kw">${k}</span>`).join("")}</div>` : ""}
+                        </div>` : ""}
                         <div class="card-meta">
                             ${l.level ? `<span>${l.level}</span>` : ""}
                             ${(l.tags||[]).map(t => `<span>${t}</span>`).join("")}
