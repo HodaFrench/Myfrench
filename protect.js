@@ -1,21 +1,23 @@
 /* ═══════════════════════════════════════════════════════════
-   محافظت محتوا — Hoda KHEDMATI · @TCFHODA
-   واترمارک قابل‌رؤیت در اسکرین‌شات + محدودیت راست‌کلیک
-   استفاده: <script src="protect.js"></script> در انتهای هر صفحه
+   محافظت محتوا — Hoda KHEDMATI
+   واترمارک لطیف + محدودیت راست‌کلیک
+   فقط کافیست در انتهای هر صفحه این خط اضافه شود:
+   <script src="protect.js"></script>
    ═══════════════════════════════════════════════════════════ */
 (function () {
-  var WM_TEXT = "هدی خدمتی · Hoda KHEDMATI · @TCFHODA";
+  // ---------- واترمارک لطیف و تکرارشونده ----------
+  var WM_TEXT = "Hoda KHEDMATI · @TCFHODA";
 
-  // ---------- ۱) واترمارک تکرارشونده‌ی سراسری ----------
-  function addTiledWatermark() {
+  function addWatermark() {
     if (document.getElementById("hk-watermark")) return;
     var wm = document.createElement("div");
     wm.id = "hk-watermark";
+    // یک کاشی SVG کم‌رنگ که به‌صورت الگو تکرار می‌شود
     var svg =
-      '<svg xmlns="http://www.w3.org/2000/svg" width="380" height="240">' +
-      '<text x="190" y="125" fill="rgba(31,58,95,0.10)" font-size="16" ' +
-      'font-family="Tahoma,sans-serif" font-weight="bold" text-anchor="middle" ' +
-      'transform="rotate(-24 190 120)">' + WM_TEXT + '</text></svg>';
+      '<svg xmlns="http://www.w3.org/2000/svg" width="340" height="200">' +
+      '<text x="170" y="105" fill="rgba(31,58,95,0.05)" font-size="15" ' +
+      'font-family="Tahoma,sans-serif" text-anchor="middle" ' +
+      'transform="rotate(-24 170 100)">' + WM_TEXT + '</text></svg>';
     var url = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svg)));
     wm.style.cssText =
       "position:fixed;inset:0;z-index:2147483646;pointer-events:none;" +
@@ -24,38 +26,14 @@
     document.body.appendChild(wm);
   }
 
-  // ---------- ۲) مهر گوشه‌ها (همیشه در اسکرین‌شات می‌افتد) ----------
-  function addCornerStamps() {
-    if (document.getElementById("hk-corners")) return;
-    var box = document.createElement("div");
-    box.id = "hk-corners";
-    box.style.cssText =
-      "position:fixed;inset:0;z-index:2147483645;pointer-events:none;";
-    var positions = [
-      "top:10px;left:12px;",
-      "top:10px;right:12px;",
-      "bottom:10px;left:12px;",
-      "bottom:10px;right:12px;",
-    ];
-    positions.forEach(function (pos) {
-      var s = document.createElement("div");
-      s.textContent = "✦ Hoda · @TCFHODA";
-      s.style.cssText =
-        "position:absolute;" + pos +
-        "font:600 11px Tahoma,sans-serif;color:rgba(31,58,95,0.30);" +
-        "letter-spacing:0.3px;white-space:nowrap;";
-      box.appendChild(s);
-    });
-    document.body.appendChild(box);
-  }
-
-  // ---------- ۳) محدودکردن راست‌کلیک و کشیدن ----------
+  // ---------- محدودکردن راست‌کلیک ----------
   function blockContextMenu(e) { e.preventDefault(); return false; }
 
+  // اجرا
   function init() {
-    addTiledWatermark();
-    addCornerStamps();
+    addWatermark();
     document.addEventListener("contextmenu", blockContextMenu);
+    // محدودکردن کشیدن تصاویر (drag)
     document.addEventListener("dragstart", function (e) {
       if (e.target && e.target.tagName === "IMG") e.preventDefault();
     });

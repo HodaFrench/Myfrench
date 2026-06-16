@@ -17,7 +17,7 @@
             --gold: #b07a4a;        /* طلایی/برنزی حروف */
             --gold-soft: #c4a572;
             --terracotta: #c4502d;  /* نارنجی آجری — لهجه (مثل French Mornings) */
-            --paper: #e9e4db;       /* کاغذ استخوانی */
+            --paper: #e6e1d6;       /* کتانِ کرم — مثل French Mornings */
             --paper-warm: #e0dace;
             --cream: #f4f0e8;
             --ink: #2c2a26;         /* مرکب */
@@ -35,7 +35,10 @@
         body {
             font-family: 'Vazirmatn', 'Tahoma', sans-serif;
             background-color: var(--paper);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.045'/%3E%3C/svg%3E");
+            /* بافت کتانی ظریف — مثل French Mornings (دو لایه: نویز ریز + رگه‌های افقی محو) */
+            background-image:
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='lin'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012 0.018' numOctaves='3' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lin)' opacity='0.5'/%3E%3C/svg%3E"),
+              url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='gr'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23gr)' opacity='0.03'/%3E%3C/svg%3E");
             color: var(--ink);
             line-height: 1.9;
             min-height: 100vh;
