@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le bien-être au travail — Vocabulaire · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Le bien-être <b>au travail</b></h1>
+    <div class="b2">Niveau B2+ · Expression Orale &amp; Écrite</div><div style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1rem;color:#C0392B;margin:6px 0 2px;">APERÇU GRATUIT · 10 premiers mots</div>
+    <p class="lead">Le vocabulaire du thème avec, pour chaque mot, une définition, une traduction persane et 3 exemples B2+ complexes (subjonctif, hypothétiques, tournures soutenues).</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration bien-etre au travail"><rect x="44" y="150" width="272" height="8" rx="4" fill="#46537d" opacity="0.28"/><circle cx="306" cy="46" r="17" fill="#D6922E"/><g stroke="#D6922E" stroke-width="3" stroke-linecap="round"><line x1="306" y1="16" x2="306" y2="8"/><line x1="306" y1="76" x2="306" y2="84"/><line x1="276" y1="46" x2="268" y2="46"/><line x1="336" y1="46" x2="344" y2="46"/><line x1="286" y1="26" x2="280" y2="20"/><line x1="326" y1="26" x2="332" y2="20"/></g><path d="M180 150 C120 110 120 60 152 60 C170 60 180 78 180 86 C180 78 190 60 208 60 C240 60 240 110 180 150 Z" fill="#C0392B"/><path d="M180 86 C176 73 185 65 198 66 C197 79 190 87 180 86 Z" fill="#2E8B6B"/><rect x="70" y="124" width="38" height="30" rx="5" fill="#A8443E"/><path d="M89 124 C78 104 83 94 89 92 C95 94 100 104 89 124" fill="#2E8B6B"/><path d="M89 124 C72 116 69 104 72 96 C82 99 90 112 89 124" fill="#2E8B8B"/><path d="M89 124 C106 116 109 104 106 96 C96 99 88 112 89 124" fill="#3FA07A"/></svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+{id:1,name:"Le bonheur &amp; l'épanouissement",fa:"خوشبختی و شکوفایی",icon:"🌱",color:"#2E8B6B"},
+{id:2,name:"Les composantes du bien-être",fa:"مؤلفه‌های بهزیستی",icon:"🤝",color:"#2E8B8B"},
+{id:3,name:"Le mal-être au travail",fa:"نارضایتی در کار",icon:"😣",color:"#C77A2E"},
+{id:4,name:"Les pathologies professionnelles",fa:"آسیب‌های شغلی",icon:"🧠",color:"#C0392B"},
+{id:5,name:"L'entreprise &amp; le management",fa:"شرکت و مدیریت",icon:"🏢",color:"#2E6BD6"},
+{id:6,name:"Les décisions de carrière",fa:"تصمیم‌های شغلی",icon:"📈",color:"#5B5BD6"},
+{id:7,name:"Les tendances actuelles",fa:"روندهای امروزی",icon:"🧭",color:"#7C5BD6"}
+];
+const D=[
+{c:1,term:"l'épanouissement (professionnel)",fa:"شکوفایی (شغلی)",def:"Le fait de se développer pleinement et de s'accomplir dans son travail.",syn:["la réalisation de soi","l'accomplissement"],ex:[["Loin de se réduire à la réussite matérielle, l'<b>épanouissement</b> professionnel suppose que l'on trouve un véritable sens à ce que l'on fait.","شکوفایی شغلی، که به‌هیچ‌وجه به موفقیت مادی محدود نمی‌شود، مستلزم آن است که آدم در کاری که می‌کند معنایی واقعی بیابد."],["Il est rare que l'on s'<b>épanouisse</b> dans un environnement où le travail n'est ni reconnu ni valorisé.","به‌ندرت پیش می‌آید که آدم در محیطی شکوفا شود که در آن کار نه قدر دیده می‌شود و نه ارزش‌گذاری."],["Aussi bien rémunéré soit-il, un poste qui n'offre aucune perspective d'<b>épanouissement</b> finit par lasser.","شغلی که هیچ چشم‌انداز شکوفایی ندارد، هر اندازه هم پردرآمد باشد، سرانجام آدم را خسته می‌کند."]]},
+{c:1,term:"le bien-être au travail",fa:"بهزیستی / رفاه در کار",def:"L'état de satisfaction physique et psychologique que l'on ressent dans son activité professionnelle.",syn:["la qualité de vie au travail","le confort moral"],ex:[["Force est de constater que le <b>bien-être au travail</b>, longtemps négligé, est devenu un enjeu majeur pour les entreprises.","ناگزیر باید پذیرفت که بهزیستی در کار، که مدت‌ها نادیده گرفته می‌شد، به دغدغه‌ای اساسی برای شرکت‌ها بدل شده است."],["Bien que le <b>bien-être au travail</b> relève en partie du ressenti, il n'en demeure pas moins mesurable à travers l'absentéisme ou le turn-over.","هرچند بهزیستی در کار تا حدی به احساس فردی بازمی‌گردد، با این حال از طریق غیبت یا جابه‌جایی نیروی کار قابل‌سنجش است."],["Si les employeurs prenaient le <b>bien-être au travail</b> davantage au sérieux, ils verraient sans doute leurs équipes gagner en engagement.","اگر کارفرمایان بهزیستی در کار را جدی‌تر می‌گرفتند، بی‌شک می‌دیدند که تعهد تیم‌هایشان بیشتر می‌شود."]]},
+{c:1,term:"être comblé(e)",fa:"سرشار از رضایت / کاملاً خشنود",def:"Éprouver une satisfaction totale, n'avoir plus rien à désirer.",syn:["pleinement satisfait","heureux"],ex:[["Rares sont ceux qui, au terme de leur carrière, peuvent affirmer s'être sentis pleinement <b>comblés</b>.","نادرند کسانی که در پایان حرفه‌شان بتوانند ادعا کنند کاملاً سرشار از رضایت بوده‌اند."],["Quand bien même il serait <b>comblé</b> sur le plan professionnel, il aspirerait encore à plus de temps pour les siens.","حتی اگر از نظر شغلی هم سرشار از رضایت بود، باز هم آرزوی وقت بیشتری برای عزیزانش را داشت."],["Ce n'est qu'en accord avec ses valeurs que l'on se sent véritablement <b>comblé</b> par son travail.","تنها در هماهنگی با ارزش‌های خود است که آدم واقعاً از کارش سرشار از رضایت می‌شود."]]},
+{c:1,term:"être bien dans sa peau",fa:"احساس خوب با خود داشتن / در آرامش با خویش",def:"Se sentir à l'aise avec soi-même, en harmonie intérieure.",syn:["s'accepter","être en phase avec soi-même"],ex:[["Il va de soi qu'un salarié <b>bien dans sa peau</b> se montrera plus créatif et plus engagé qu'un autre rongé par le doute.","بدیهی است کارمندی که با خود در آرامش است، خلاق‌تر و متعهدتر از کسی خواهد بود که تردید او را می‌خورد."],["Pour peu que l'on se sente <b>bien dans sa peau</b>, les difficultés du quotidien paraissent soudain plus surmontables.","به‌شرط آنکه آدم با خود در آرامش باشد، دشواری‌های روزمره ناگهان قابل‌غلبه‌تر به‌نظر می‌رسند."],["Loin d'être un luxe, le fait d'être <b>bien dans sa peau</b> conditionne en grande partie notre équilibre professionnel.","احساس خوب با خود، که به‌هیچ‌وجه تجمل نیست، تا حد زیادی تعادل شغلی ما را تعیین می‌کند."]]},
+{c:1,term:"donner du sens à son travail",fa:"معنا بخشیدن به کار خود",def:"Trouver une utilité, une raison d'être à ce que l'on fait.",syn:["trouver une finalité","se sentir utile"],ex:[["À l'heure où la quête de sens s'impose, nombre de salariés n'hésitent plus à changer de voie pour <b>donner du sens à leur travail</b>.","در روزگاری که جست‌وجوی معنا اهمیت یافته، بسیاری از کارکنان دیگر برای معنا بخشیدن به کارشان از تغییر مسیر تردید نمی‌کنند."],["C'est précisément lorsqu'il ne parvient plus à <b>donner du sens à son travail</b> que le salarié bascule dans le brown-out.","دقیقاً زمانی که کارمند دیگر نمی‌تواند به کارش معنا ببخشد، به ورطه‌ی بی‌معنایی شغلی می‌افتد."],["Quoi qu'on en dise, un salaire élevé ne saurait à lui seul <b>donner du sens à un travail</b> que l'on juge absurde.","هرچه بگویند، حقوق بالا به‌تنهایی نمی‌تواند به کاری که آدم پوچ می‌داندش معنا ببخشد."]]},
+{c:2,term:"la reconnaissance / la valorisation",fa:"قدردانی / ارزش‌گذاری",def:"Le fait que les efforts et le travail d'une personne soient appréciés et mis en valeur.",syn:["la gratitude","l'estime"],ex:[["On aurait tort de croire que seul le salaire compte : la <b>reconnaissance</b> pèse souvent bien davantage dans la motivation.","اشتباه است اگر بپنداریم فقط حقوق مهم است؛ قدردانی اغلب در انگیزه به‌مراتب وزن بیشتری دارد."],["Faute de <b>reconnaissance</b>, même les salariés les plus dévoués finissent par se désengager.","در نبود قدردانی، حتی متعهدترین کارکنان هم سرانجام بی‌تعهد می‌شوند."],["C'est la <b>reconnaissance</b> du travail accompli qui, plus que tout, nourrit l'estime de soi.","این قدردانی از کارِ انجام‌شده است که، بیش از هر چیز، عزت نفس را تغذیه می‌کند."]]},
+{c:2,term:"l'estime de soi",fa:"عزت نفس",def:"Le regard positif et la valeur que l'on s'accorde à soi-même.",syn:["la confiance en soi","l'amour-propre"],ex:[["Il n'est pas rare que le harcèlement moral mine durablement l'<b>estime de soi</b> de la victime.","کم پیش نمی‌آید که آزار روانی، عزت نفس قربانی را به‌طور پایدار تخریب کند."],["Pour peu que l'on soit régulièrement dévalorisé, l'<b>estime de soi</b> s'effrite à une vitesse surprenante.","به‌شرط آنکه آدم مدام تحقیر شود، عزت نفس با سرعتی شگفت‌آور فرومی‌ریزد."],["C'est en se voyant confier des responsabilités que le salarié regagne peu à peu l'<b>estime de soi</b>.","کارمند با سپرده‌شدن مسئولیت‌ها به اوست که به‌تدریج عزت نفسش را بازمی‌یابد."]]},
+{c:2,term:"une ambiance détendue",fa:"فضای آرام / بی‌تنش",def:"Une atmosphère agréable, sans tension, où l'on se sent à l'aise.",syn:["un climat serein","une atmosphère agréable"],ex:[["Quoiqu'elle paraisse anodine, une <b>ambiance détendue</b> conditionne en réalité la créativité comme la cohésion d'une équipe.","فضای بی‌تنش، هرچند بی‌اهمیت به‌نظر می‌رسد، در واقع هم خلاقیت و هم انسجام تیم را تعیین می‌کند."],["Là où règne une <b>ambiance détendue</b>, les conflits se règlent plus aisément et le stress reflue.","آنجا که فضایی آرام حاکم است، تعارض‌ها آسان‌تر حل می‌شوند و استرس فرومی‌نشیند."],["Si l'<b>ambiance détendue</b> venait à disparaître, la motivation de l'équipe en pâtirait aussitôt.","اگر فضای آرام از میان می‌رفت، انگیزه‌ی تیم بی‌درنگ آسیب می‌دید."]]},
+{c:2,term:"des équipes soudées / l'entraide",fa:"تیم‌های منسجم / همیاری",def:"Des groupes unis dont les membres se soutiennent mutuellement.",syn:["la solidarité","l'esprit d'équipe"],ex:[["C'est dans les moments de crise que l'on mesure à quel point une <b>équipe soudée</b> fait la différence.","در لحظات بحران است که درمی‌یابیم یک تیم منسجم چه تفاوتی ایجاد می‌کند."],["Pour peu que règne l'<b>entraide</b>, les tâches les plus ardues deviennent étonnamment supportables.","به‌شرط آنکه همیاری حاکم باشد، دشوارترین کارها به‌طرز شگفت‌آوری قابل‌تحمل می‌شوند."],["Sans une <b>équipe soudée</b> sur laquelle s'appuyer, le salarié isolé s'épuise bien plus vite.","بدون یک تیم منسجم که بتوان به آن تکیه کرد، کارمندِ منزوی بسیار زودتر فرسوده می‌شود."]]},
+{c:2,term:"l'autonomie / la responsabilisation",fa:"استقلال / مسئولیت‌پذیری",def:"La possibilité d'agir librement et d'assumer la responsabilité de ses décisions.",syn:["la liberté d'action","la prise d'initiative"],ex:[["Nombre d'études soulignent que l'<b>autonomie</b> figure parmi les toutes premières sources de satisfaction au travail.","بسیاری از پژوهش‌ها تأکید می‌کنند که استقلال از نخستین سرچشمه‌های رضایت شغلی است."],["Pour que la <b>responsabilisation</b> porte ses fruits, encore faut-il que le droit à l'erreur soit réellement accordé.","برای آنکه مسئولیت‌پذیری به بار بنشیند، باید حق خطا واقعاً به رسمیت شناخته شود."],["Aussi appréciée soit-elle, l'<b>autonomie</b> peut déstabiliser ceux qui ont besoin d'un cadre rassurant.","استقلال، هر اندازه هم خوشایند باشد، می‌تواند کسانی را که به چارچوبی اطمینان‌بخش نیاز دارند سردرگم کند."]]}
+];
+const PHRASES=[
+["<b>À mon sens</b>, le bonheur au travail ne devrait pas être un luxe, mais un droit.","به نظر من، خوشبختی در کار نباید تجمل باشد، بلکه باید یک حق باشد."],
+["<b>Force est de constater que</b> le bien-être influence directement la performance.","ناگزیر باید پذیرفت که بهزیستی مستقیماً بر عملکرد اثر می‌گذارد."],
+["<b>D'un côté</b>, l'entreprise vise la rentabilité ; <b>d'un autre côté</b>, elle a tout intérêt à préserver ses salariés.","از یک سو شرکت سودآوری را هدف می‌گیرد؛ از سوی دیگر، حفظ کارکنانش کاملاً به سود اوست."],
+["<b>Il convient de rappeler que</b> le bonheur au travail dépend autant du salarié que de l'employeur.","شایان ذکر است که خوشبختی در کار هم به کارمند بستگی دارد و هم به کارفرما."],
+["<b>En définitive</b>, un salarié épanoui est aussi un salarié plus engagé.","در نهایت، کارمندِ شکوفا، کارمندِ متعهدتری هم هست."],
+["<b>Pour conclure</b>, je dirais que le bien-être au travail est l'affaire de tous.","برای جمع‌بندی، می‌گویم که بهزیستی در کار کارِ همه است."]
+];
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+/* pb omis dans l'aperçu */;
+
+
+    var promo=document.createElement('section');
+    promo.className='cat'; promo.id='cpromo';
+    promo.innerHTML='<div class=\"secmark\">Aperçu</div>'
+      +'<div style=\"background:#FBF8F0;border:2px dashed #2E8B6B;border-radius:14px;padding:26px 22px;margin:26px 0 10px;text-align:center;box-shadow:0 12px 30px -16px rgba(27,42,107,.4);\">'
+      +'<div style=\"font-family:Fraunces,serif;font-weight:800;font-size:1.5rem;color:#1B2A6B;margin-bottom:6px;\">Ceci n\'est qu\'un aperçu \u2728</div>'
+      +'<div style=\"font-family:Vazirmatn,sans-serif;font-size:1rem;color:#46537d;direction:rtl;margin-bottom:8px;\">\u0627\u06cc\u0646 \u0641\u0642\u0637 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0627\u0633\u062a \u2014 \u0628\u0631\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0648\u0627\u0698\u06af\u0627\u0646 \u0648 \u0647\u0645\u0647\u200c\u06cc \u062a\u0645\u200c\u0647\u0627\u060c \u067e\u06a9\u06cc\u062c \u06a9\u0627\u0645\u0644 \u0631\u0627 \u062a\u0647\u06cc\u0647 \u06a9\u0646\u06cc\u062f.</div>'
+      +'<div style=\"font-family:Spectral,serif;font-size:.95rem;color:#1B2A6B;\">La version complète contient les 35 mots du thème, classés en 7 rubriques, avec 3 exemples traduits chacun \u2014 ainsi que la \u00ab\u00a0bo\u00eete \u00e0 phrases\u00a0\u00bb pour le d\u00e9bat.</div>'
+      +'<div style=\"font-family:Caveat,cursive;font-weight:700;font-size:1.4rem;color:#1B2A6B;margin-top:14px;\">Hoda KHEDMATI \u00b7 @TCFHODA</div></div>'
+      +'<div class=\"sig-foot\"><span class=\"name\">Hoda KHEDMATI</span><span class=\"handle\">@TCFHODA</span></div>';
+    document.getElementById('root').appendChild(promo);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>
