@@ -436,6 +436,55 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های تمرین تلفظ */
+        .pron-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid #3f8a9c;
+            border-radius: 16px;
+            padding: 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.08);
+        }
+        .pron-head { margin-bottom: 14px; }
+        .pron-jour {
+            display: inline-block; font-size: 13px; font-weight: 700;
+            color: #3f8a9c; background: rgba(63,138,156,0.1);
+            padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+        }
+        .pron-titre {
+            display: block; font-size: 20px; font-weight: 700;
+            color: var(--navy); line-height: 1.6;
+        }
+        .pron-sounds { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+        .pron-sound {
+            font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700;
+            color: #3f8a9c; background: var(--cream);
+            width: 38px; height: 38px; border-radius: 10px;
+            display: inline-flex; align-items: center; justify-content: center;
+            border: 1.5px solid var(--line);
+        }
+        .pron-video {
+            border-radius: 14px; overflow: hidden; margin-bottom: 20px;
+            background: #000; box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .pron-video video { width: 100%; display: block; max-height: 480px; }
+        .pron-text { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+        .pron-line {
+            background: var(--cream); border-right: 4px solid var(--gold-soft);
+            border-radius: 10px; padding: 14px 16px;
+        }
+        .pron-fr {
+            font-family: 'Cormorant Garamond', serif; font-size: 19px;
+            color: var(--navy); direction: ltr; text-align: left;
+            line-height: 1.7; margin-bottom: 6px;
+        }
+        .pron-fa { font-size: 14px; color: var(--ink); line-height: 1.9; }
+        .pron-cta {
+            text-align: center; font-size: 15px; font-weight: 700;
+            color: #3f8a9c; background: rgba(63,138,156,0.08);
+            padding: 12px; border-radius: 12px;
+        }
+
         /* کارت‌های واکنش (چطور واکنش بدم؟) */
         .react-card {
             background: var(--white);
@@ -1041,6 +1090,8 @@
                 renderQuiz();
             } else if (catId === "reactions") {
                 renderReactions();
+            } else if (catId === "prononciation") {
+                renderPrononciation();
             } else if (catId !== "all" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
@@ -1083,6 +1134,59 @@
                 document.getElementById("resultsTitle").innerHTML =
                     '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
             }
+        }
+
+        // نمایش کارت‌های صفت
+        function renderAdjectifs() {
+            const ci = catInfo("adjectifs");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof ADJECTIFS !== "undefined") ? ADJECTIFS : [];
+            document.getElementById("count").textContent = list.length + " صفت";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">◆</span>هنوز صفتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(a => `
+                <div class="adj-card">
+                    <div class="adj-head">
+                        <span class="adj-mot" dir="ltr">${a.mot}</span>
+                        ${a.emoji ? `<span class="adj-emoji">${a.emoji}</span>` : ""}
+                    </div>
+                    ${(a.traductions && a.traductions.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔹 ترجمه</div>
+                        <div class="adj-trads">${a.traductions.map(t => `<span class="adj-trad">${t}</span>`).join("")}</div>
+                    </div>` : ""}
+                    ${(a.synonymes && a.synonymes.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔹 مترادف‌ها</div>
+                        <div class="adj-syns">
+                            ${a.synonymes.map(s => `<div class="adj-syn"><span class="syn-fr" dir="ltr">${s.fr}</span><span class="syn-arrow">←</span><span class="syn-fa">${s.fa}</span></div>`).join("")}
+                        </div>
+                    </div>` : ""}
+                    ${(a.combinaisons && a.combinaisons.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔗 ترکیبات پرتکرار</div>
+                        <div class="adj-combos">
+                            ${a.combinaisons.map(c => `
+                            <div class="adj-combo">
+                                <span class="combo-icon">${c.icon || "•"}</span>
+                                <div class="combo-text">
+                                    <span class="combo-fr" dir="ltr">${c.fr}</span>
+                                    <span class="combo-fa">${c.fa}</span>
+                                </div>
+                            </div>`).join("")}
+                        </div>
+                    </div>` : ""}
+                    ${a.phrase ? `
+                    <div class="adj-phrase">
+                        <div class="adj-label">🔹 جمله</div>
+                        <div class="phrase-fr" dir="ltr">${a.phrase.fr}</div>
+                        <div class="phrase-fa">${a.phrase.fa}</div>
+                    </div>` : ""}
+                </div>`).join("");
         }
 
         // نمایش کوییزها
@@ -1160,6 +1264,45 @@
                                 ${e.ex ? `<div class="react-ex"><div class="rex-fr" dir="ltr">${e.ex}</div>${e.exFa ? `<div class="rex-fa">${e.exFa}</div>` : ""}</div>` : ""}
                             </div>`).join("")}
                     </div>
+                </div>`;
+            }).join("");
+        }
+
+        // نمایش تمرین‌های تلفظ
+        function renderPrononciation() {
+            const ci = catInfo("prononciation");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
+            document.getElementById("count").textContent = list.length + " تمرین";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز تمرینی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(p => {
+                const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
+                const lines = (p.texteFr || []).map((fr, i) => `
+                    <div class="pron-line">
+                        <div class="pron-fr" dir="ltr">${fr}</div>
+                        ${p.texteFa && p.texteFa[i] ? `<div class="pron-fa">${p.texteFa[i]}</div>` : ""}
+                    </div>`).join("");
+                return `
+                <div class="pron-card">
+                    <div class="pron-head">
+                        <span class="pron-jour">🗣️ ${p.jour}</span>
+                        <span class="pron-titre">${p.titre}</span>
+                    </div>
+                    ${sounds ? `<div class="pron-sounds">${sounds}</div>` : ""}
+                    ${p.video ? `
+                    <div class="pron-video">
+                        <video controls preload="metadata" playsinline>
+                            <source src="${safeUrl(p.video)}" type="video/mp4">
+                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                        </video>
+                    </div>` : ""}
+                    <div class="pron-text">${lines}</div>
+                    <div class="pron-cta">📢 با من تکرار کن!</div>
                 </div>`;
             }).join("");
         }

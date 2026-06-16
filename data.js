@@ -15,6 +15,7 @@ const CATEGORIES = [
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
   { id: "reactions",    label: "چطور واکنش بدم؟", icon: "❝", color: "#d17b3f" },
+  { id: "prononciation", label: "تمرین تلفظ",     icon: "🗣", color: "#3f8a9c" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -451,6 +452,33 @@ const REACTIONS = [
         ex: "— Tu veux que je t'aide ? — Je veux bien, merci beaucoup !", exFa: "— می‌خواهی کمکت کنم؟ — باشه، خیلی ممنون!" },
       { fr: "J'accepte", fa: "قبول می‌کنم", emoji: "🤝",
         ex: "— Nous vous proposons ce poste. — J'accepte avec joie !", exFa: "— این شغل را به شما پیشنهاد می‌دهیم. — با خوشحالی قبول می‌کنم!" },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  تمرین تلفظ — ویدیوهای هدی
+//  هر تمرین:
+//    jour    : شماره/عنوان روز
+//    titre   : موضوع تمرین (صداها)
+//    video   : مسیر فایل ویدیو
+//    texteFr : متن فرانسه (آرایه‌ای از جملات)
+//    texteFa : ترجمه‌ی فارسی (آرایه‌ای، هم‌ترتیب با جملات)
+//    focus   : صداهایی که تمرین می‌شوند
+// ═══════════════════════════════════════════════════════════
+const PRONONCIATION = [
+  {
+    jour: "روز اول",
+    titre: "تمرین صداهای س، ز، ش و ژ",
+    focus: ["s", "z", "ch", "j"],
+    video: "videos/PRON_jour1_sifflantes.mp4",
+    texteFr: [
+      "Julie cherche son chat sous le soleil chaud de juillet.",
+      "Chaque jour, ce joli chat joue joyeusement avec une jupe jaune.",
+    ],
+    texteFa: [
+      "ژولی زیر آفتاب گرم ماه جولای دنبال گربه‌اش می‌گردد.",
+      "هر روز، این گربه‌ی ملوس با یک دامن زرد با شادی بازی می‌کند.",
     ],
   },
 ];
