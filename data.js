@@ -14,6 +14,7 @@ const CATEGORIES = [
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
+  { id: "reactions",    label: "چطور واکنش بدم؟", icon: "❝", color: "#d17b3f" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -348,5 +349,48 @@ const QUIZ = [
     options: ["sur", "à", "de", "pour"],
     correct: 2,
     note: "فعل « dépendre » همیشه با حرف اضافه‌ی <b>de</b> می‌آید: « ça dépend de… » (بستگی دارد به…).",
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  چطور واکنش بدم؟ — عبارت‌های واکنشی در موقعیت‌های مختلف
+//  هر موضوع:
+//    titre   : عنوان موقعیت (مثل Accepter)
+//    titreFa : ترجمه‌ی عنوان
+//    emoji   : ایموجی موضوع
+//    couleur : رنگ کارت
+//    expressions : آرایه‌ای از { fr, fa, ex, exFa, emoji }
+//        fr=عبارت، fa=ترجمه، ex=مثال، exFa=ترجمه‌ی مثال، emoji=ایموجی
+// ═══════════════════════════════════════════════════════════
+const REACTIONS = [
+  {
+    titre: "Accepter",
+    titreFa: "پذیرفتن / قبول کردن",
+    emoji: "🙆‍♀️✅",
+    couleur: "#6c63c4",
+    expressions: [
+      { fr: "D'accord / C'est d'accord", fa: "باشه / قبوله", emoji: "👍",
+        ex: "— On se voit à 8h ? — D'accord, à ce soir !", exFa: "— ساعت ۸ همدیگر را ببینیم؟ — باشه، تا شب!" },
+      { fr: "Comme tu veux", fa: "هرجور تو بخوای", emoji: "🤷‍♀️",
+        ex: "— On commande une pizza ou des sushis ? — Comme tu veux, j'aime les deux !", exFa: "— پیتزا سفارش بدیم یا سوشی؟ — هرجور تو بخوای، هردو را دوست دارم!" },
+      { fr: "Pourquoi pas ?", fa: "چرا که نه؟", emoji: "😏",
+        ex: "— Et si on allait au cinéma ce soir ? — Pourquoi pas !", exFa: "— نظرت چیه امشب بریم سینما؟ — چرا که نه!" },
+      { fr: "Avec plaisir !", fa: "با کمال میل!", emoji: "😊",
+        ex: "— Tu veux dîner chez nous ? — Avec plaisir, merci !", exFa: "— می‌خواهی شام خانه‌ی ما باشی؟ — با کمال میل، ممنون!" },
+      { fr: "Volontiers !", fa: "با کمال میل! / حتماً!", emoji: "🙌",
+        ex: "— Un peu plus de café ? — Volontiers !", exFa: "— کمی قهوه‌ی بیشتر؟ — با کمال میل!" },
+      { fr: "C'est une bonne idée", fa: "فکر خوبیه", emoji: "💡",
+        ex: "— On pourrait faire une pause ? — C'est une bonne idée, je suis fatigué.", exFa: "— می‌توانیم یک استراحت کنیم؟ — فکر خوبیه، خسته‌ام." },
+      { fr: "Super ! / C'est super !", fa: "عالیه! / محشره!", emoji: "🤩",
+        ex: "— J'ai réservé une table pour ce soir. — Super ! J'ai hâte !", exFa: "— برای امشب یک میز رزرو کردم. — عالیه! بی‌صبرانه منتظرم!" },
+      { fr: "Parfait ! / C'est parfait !", fa: "بی‌نقصه! / عالیه!", emoji: "👌",
+        ex: "— Je passe te chercher à midi. — Parfait, je serai prêt !", exFa: "— ظهر میام دنبالت. — عالیه، آماده خواهم بود!" },
+      { fr: "Génial ! / C'est génial", fa: "فوق‌العاده‌ست! / محشره!", emoji: "🎉",
+        ex: "— On part en weekend à la mer ! — Génial, j'adore la plage !", exFa: "— آخر هفته می‌رویم کنار دریا! — فوق‌العاده‌ست، عاشق ساحلم!" },
+      { fr: "Je veux bien", fa: "باشه، دوست دارم / مایلم", emoji: "🙂",
+        ex: "— Tu veux que je t'aide ? — Je veux bien, merci beaucoup !", exFa: "— می‌خواهی کمکت کنم؟ — باشه، خیلی ممنون!" },
+      { fr: "J'accepte", fa: "قبول می‌کنم", emoji: "🤝",
+        ex: "— Nous vous proposons ce poste. — J'accepte avec joie !", exFa: "— این شغل را به شما پیشنهاد می‌دهیم. — با خوشحالی قبول می‌کنم!" },
+    ],
   },
 ];

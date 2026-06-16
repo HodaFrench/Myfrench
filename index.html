@@ -436,6 +436,62 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های واکنش (چطور واکنش بدم؟) */
+        .react-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid var(--rc);
+            border-radius: 16px;
+            padding: 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.08);
+        }
+        .react-head {
+            display: flex; align-items: center; gap: 12px;
+        }
+        .react-titre {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px; font-weight: 700; color: var(--rc); direction: ltr;
+        }
+        .react-emoji { font-size: 24px; }
+        .react-titre-fa {
+            font-size: 14px; color: var(--gray); margin-top: 2px;
+            padding-bottom: 16px; margin-bottom: 18px;
+            border-bottom: 2px solid var(--line);
+        }
+        .react-list { display: flex; flex-direction: column; gap: 14px; }
+        .react-item {
+            background: var(--cream);
+            border-radius: 12px; padding: 14px 16px;
+            transition: all 0.2s;
+        }
+        .react-item:hover { box-shadow: 0 4px 14px rgba(31,58,95,0.07); }
+        .react-expr {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .react-ico { font-size: 20px; }
+        .react-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px; font-weight: 600; color: var(--navy); direction: ltr;
+        }
+        .react-fa {
+            font-size: 14px; color: var(--rc); font-weight: 500;
+            margin-right: auto; background: rgba(0,0,0,0.02);
+            padding: 2px 10px; border-radius: 12px;
+        }
+        .react-ex {
+            border-right: 3px solid var(--gold-soft);
+            padding: 8px 14px; margin-top: 8px;
+            background: rgba(196,165,114,0.06); border-radius: 8px;
+        }
+        .rex-fr {
+            direction: ltr; text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px; font-style: italic; color: var(--navy-soft);
+            line-height: 1.7; margin-bottom: 3px;
+        }
+        .rex-fa { font-size: 13px; color: var(--gray); line-height: 1.8; }
+
         /* کارت‌های کوییز */
         .quiz-card {
             background: var(--white);
@@ -984,6 +1040,8 @@
                 renderAdjectifs();
             } else if (catId === "quiz") {
                 renderQuiz();
+            } else if (catId === "reactions") {
+                renderReactions();
             } else if (catId !== "all" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
@@ -1069,6 +1127,42 @@
             }
             const note = document.getElementById("qn"+qi);
             if (note) note.classList.add("show");
+        }
+
+        // نمایش واکنش‌ها (چطور واکنش بدم؟)
+        function renderReactions() {
+            const ci = catInfo("reactions");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof REACTIONS !== "undefined") ? REACTIONS : [];
+            document.getElementById("count").textContent = list.length + " موضوع";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">❝</span>هنوز موضوعی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(r => {
+                const col = r.couleur || "#d17b3f";
+                return `
+                <div class="react-card" style="--rc:${col}">
+                    <div class="react-head">
+                        <span class="react-titre" dir="ltr">${r.titre}</span>
+                        ${r.emoji ? `<span class="react-emoji">${r.emoji}</span>` : ""}
+                    </div>
+                    ${r.titreFa ? `<div class="react-titre-fa">${r.titreFa}</div>` : ""}
+                    <div class="react-list">
+                        ${r.expressions.map(e => `
+                            <div class="react-item">
+                                <div class="react-expr">
+                                    <span class="react-ico">${e.emoji || "💬"}</span>
+                                    <span class="react-fr" dir="ltr">${e.fr}</span>
+                                    <span class="react-fa">${e.fa}</span>
+                                </div>
+                                ${e.ex ? `<div class="react-ex"><div class="rex-fr" dir="ltr">${e.ex}</div>${e.exFa ? `<div class="rex-fa">${e.exFa}</div>` : ""}</div>` : ""}
+                            </div>`).join("")}
+                    </div>
+                </div>`;
+            }).join("");
         }
 
         // نمایش کارت‌های بخش (مثل Expression Orale)
