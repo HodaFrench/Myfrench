@@ -26,7 +26,21 @@ const SECTIONS = {
   tcf: [
     { id: "expression-orale",  label: "Expression Orale", labelFa: "بیان شفاهی",
       tasks: [
-        { id: "tache-3", label: "Tâche 3", labelFa: "تکلیف ۳" },
+        { id: "tache-3", label: "Tâche 3", labelFa: "تکلیف ۳",
+          // ۱۰ موضوع استاندارد TCF — هر محتوا با فیلد sujet به یکی وصل می‌شود
+          sujets: [
+            { id: "etudes-travail",    label: "Études, travail et réussite",            labelFa: "تحصیل، کار و موفقیت" },
+            { id: "immigration",       label: "Immigration et vie à l'étranger",        labelFa: "مهاجرت و زندگی در خارج" },
+            { id: "technologie",       label: "Technologie, Internet et réseaux sociaux", labelFa: "تکنولوژی، اینترنت و شبکه‌های اجتماعی" },
+            { id: "medias",            label: "Médias et information",                   labelFa: "رسانه و اطلاعات" },
+            { id: "education",         label: "Éducation et enfance",                    labelFa: "آموزش و تربیت کودک" },
+            { id: "famille",           label: "Famille et mode de vie",                  labelFa: "خانواده و سبک زندگی" },
+            { id: "sante",             label: "Santé, sport et alimentation",           labelFa: "سلامتی، ورزش و تغذیه" },
+            { id: "environnement",     label: "Environnement et consommation",          labelFa: "محیط زیست و مصرف" },
+            { id: "voyage",            label: "Voyage et tourisme",                     labelFa: "سفر و گردشگری" },
+            { id: "societe",           label: "Société et valeurs",                     labelFa: "جامعه و ارزش‌ها" },
+          ]
+        },
       ]
     },
   ],
@@ -89,6 +103,7 @@ const LESSONS = [
     category: "tcf",
     section: "expression-orale",
     task: "tache-3",
+    sujet: "immigration",
     level: "B2",
     premium: false,
     tags: ["اکسپتریشن", "مهاجرت", "نمونه‌ی کامل"],
@@ -101,6 +116,7 @@ const LESSONS = [
     category: "tcf",
     section: "expression-orale",
     task: "tache-3",
+    sujet: "education",
     level: "B2",
     premium: false,
     tags: ["تربیت", "کودک", "نمونه‌ی کامل"],
@@ -115,22 +131,8 @@ const LESSONS = [
 //  type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
 // ═══════════════════════════════════════════════════════════
 const TIPS = [
-  {
-    type: "saviez",
-    fr: "En français, « aujourd'hui » contient en réalité trois fois le mot « jour » à travers son histoire !",
-    fa: "می‌دونستی واژه‌ی « aujourd'hui » (امروز) در طول تاریخ خودش، سه بار معنای «روز» را در دل خود دارد!",
-    cat: "grammar"
-  },
-  {
-    type: "rappel",
-    fr: "« Bon » est un adjectif, « bien » est un adverbe. On dit « un bon livre » mais « il écrit bien ».",
-    fa: "یادت باشه: « bon » صفت است و « bien » قید. می‌گیم « un bon livre » (کتاب خوب) ولی « il écrit bien » (خوب می‌نویسد).",
-    cat: "grammar"
-  },
-  {
-    type: "saviez",
-    fr: "Le mot « parce que » répond à « pourquoi ? », mais « car » ne se met jamais en début de phrase.",
-    fa: "می‌دونستی « parce que » به «چرا؟» جواب می‌دهد، ولی « car » هیچ‌وقت اول جمله نمی‌آید؟",
-    cat: "grammar"
-  },
+  // نکته‌ها را هدی می‌فرستد و اینجا اضافه می‌شوند.
+  // ساختار هر نکته:
+  //   { type: "saviez", fr: "...", fa: "...", cat: "grammar" }
+  //   type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
 ];

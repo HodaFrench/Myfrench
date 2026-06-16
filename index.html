@@ -649,6 +649,7 @@
         let activeCat = null;
         let activeSection = null;  // بخش فعال (مثل expression-orale)
         let activeTask = null;     // تکلیف فعال (مثل tache-3)
+        let activeSujet = null;    // موضوع فعال (مثل immigration)
 
         function lessonsIn(catId) {
             return LESSONS.filter(l => l.category === catId).length;
@@ -688,6 +689,7 @@
             activeCat = catId;
             activeSection = null;
             activeTask = null;
+            activeSujet = null;
             document.getElementById("search").value = "";
             openResults();
             // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
@@ -747,13 +749,44 @@
         // نمایش محتواهای یک تکلیف
         function openTask(catId, secId, taskId) {
             activeTask = taskId;
+            activeSujet = null;
             const ci = catInfo(catId);
             const sec = sectionsOf(catId).find(s => s.id === secId);
             const task = sec.tasks.find(t => t.id === taskId);
+            const crumb = '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' +
+                sec.label + ' <span style="color:var(--gray)">›</span> ' + task.label;
+            // اگر این تکلیف موضوع دارد، به‌جای محتواها موضوع‌ها را نشان بده
+            if (task.sujets && task.sujets.length) {
+                document.getElementById("resultsTitle").innerHTML = crumb;
+                document.getElementById("count").textContent = task.sujets.length + " موضوع";
+                const grid = document.getElementById("grid");
+                grid.innerHTML = task.sujets.map(s => {
+                    const n = LESSONS.filter(l => l.sujet === s.id).length;
+                    return `
+                    <button class="sub-card" style="--c:${ci.color}" onclick="openSujet('${catId}','${secId}','${taskId}','${s.id}')">
+                        <span class="sub-fr-l" dir="ltr">${s.label}</span>
+                        <span class="sub-fa-l">${s.labelFa}</span>
+                        <span class="sub-go">${n ? n + ' محتوا ←' : 'به‌زودی'}</span>
+                    </button>`;
+                }).join("");
+            } else {
+                document.getElementById("resultsTitle").innerHTML = crumb;
+                render();
+            }
+        }
+
+        function openSujet(catId, secId, taskId, sujetId) {
+            activeSujet = sujetId;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            const task = sec.tasks.find(t => t.id === taskId);
+            const suj = task.sujets.find(s => s.id === sujetId);
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
                 ci.label + ' <span style="color:var(--gray)">›</span> ' +
-                sec.label + ' <span style="color:var(--gray)">›</span> ' + task.label;
+                sec.label + ' <span style="color:var(--gray)">›</span> ' +
+                task.label + ' <span style="color:var(--gray)">›</span> ' + suj.label;
             render();
         }
 
@@ -781,6 +814,7 @@
             activeCat = null;
             activeSection = null;
             activeTask = null;
+            activeSujet = null;
             document.getElementById("search").value = "";
             document.getElementById("results").classList.remove("show");
             document.getElementById("hero").classList.remove("shrink");
@@ -795,11 +829,12 @@
                 const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
                 const matchSection = !activeSection || l.section === activeSection;
                 const matchTask = !activeTask || l.task === activeTask;
+                const matchSujet = !activeSujet || l.sujet === activeSujet;
                 const matchSearch = !q ||
                     (l.title && l.title.toLowerCase().includes(q)) ||
                     (l.titleFr && l.titleFr.toLowerCase().includes(q)) ||
                     (l.tags && l.tags.join(" ").toLowerCase().includes(q));
-                return matchCat && matchSection && matchTask && matchSearch;
+                return matchCat && matchSection && matchTask && matchSujet && matchSearch;
             });
 
             document.getElementById("count").textContent = filtered.length + " محتوا";
