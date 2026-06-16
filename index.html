@@ -32,6 +32,18 @@
             --blue-mist: #f7f3ea;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url("bg_library.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.12;  /* شفافیت کم — عکس محو پشت سایت */
+            pointer-events: none;
+        }
         body {
             font-family: 'Vazirmatn', 'Tahoma', sans-serif;
             background-color: var(--paper);
