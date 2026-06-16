@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tâche 3 — Travailler dans un autre pays | Expression Orale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#e9e4db; --paper-warm:#e0dace; --cream:#f4f0e8;
+    --ink:#2c2a26; --gray:#8a8275; --line:#d8d0c2; --white:#f8f5ef;
+  }
+  body{
+    font-family:'Vazirmatn',Arial,sans-serif;
+    background-color:var(--paper);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.045'/%3E%3C/svg%3E");
+    color:var(--ink); line-height:2; font-size:18px;
+  }
+
+  .sidebar{position:fixed; right:0; top:0; width:280px; height:100vh;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--cream); padding:26px 0; overflow-y:auto; z-index:1000; box-shadow:-2px 0 14px rgba(0,0,0,0.18);}
+  .sidebar-header{padding:14px 20px 20px; text-align:center; border-bottom:1px solid rgba(196,165,114,0.3);
+    margin-bottom:18px; font-size:13px; color:var(--gold-soft); font-weight:700; line-height:1.9;}
+  .sidebar h2{padding:0 22px 14px; font-size:14px; color:var(--gold-soft); font-weight:700; letter-spacing:1px;}
+  .sidebar-item{padding:12px 22px; cursor:pointer; transition:all 0.25s; border-right:4px solid transparent; font-size:14.5px; font-weight:500;}
+  .sidebar-item:hover{background:rgba(255,255,255,0.07); border-right-color:var(--gold-soft); padding-right:28px;}
+  .sidebar-item.active{background:linear-gradient(270deg,rgba(196,165,114,0.18) 0%,transparent 100%); border-right-color:var(--gold-soft); font-weight:700;}
+
+  .main{margin-right:280px; padding:30px;}
+  .wrap{max-width:860px; margin:0 auto;}
+  .section{display:none; animation:fadeIn 0.45s;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  .header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%); color:var(--cream);
+    padding:44px 40px; border-radius:20px; margin-bottom:40px; text-align:center;
+    box-shadow:0 16px 44px rgba(31,58,95,0.28); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-50px;left:-50px;width:180px;height:180px;background:rgba(255,255,255,0.05);border-radius:50%;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:40px; margin-bottom:12px; font-weight:600; line-height:1.3;}
+  .header .subtitle{font-size:16px; opacity:0.92; line-height:1.8;}
+  .header .info{font-size:14px; opacity:0.85; margin-top:16px; border-top:1px solid rgba(196,165,114,0.4); padding-top:14px; line-height:1.9;}
+
+  .card{background:var(--white); padding:34px; border-radius:18px; margin-bottom:34px;
+    box-shadow:0 8px 24px rgba(31,58,95,0.07); border-right:6px solid var(--gold-soft);}
+  .card h3{margin-bottom:24px; font-family:'Cormorant Garamond',serif; font-size:30px; color:var(--navy); font-weight:600; direction:ltr; text-align:left;}
+
+  .texte-box{background:var(--cream); padding:24px; border-radius:14px; border-right:5px solid var(--navy-soft);
+    margin:18px 0; font-size:18px; line-height:2.2; direction:ltr; text-align:left;}
+
+  .connecteur{background:rgba(196,165,114,0.36); padding:3px 9px; border-radius:4px; font-weight:700; color:#806233; font-style:italic;}
+  .mot{background:rgba(65,97,138,0.09); padding:1px 4px; border-radius:3px; color:#34455a;}
+
+  .notes-box{background:var(--paper-warm); padding:20px 22px; border-radius:12px; margin:16px 0; border-right:4px solid var(--gold);}
+  .notes-box .nt-title{font-size:14px; font-weight:700; color:var(--gold); margin-bottom:12px; letter-spacing:0.5px;}
+  .nt-item{margin-bottom:11px; padding-bottom:11px; border-bottom:1px dashed var(--line); font-size:15px; line-height:1.9;}
+  .nt-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .nt-fr{direction:ltr; display:inline; font-family:'Cormorant Garamond',serif; font-size:17px; font-style:italic; color:var(--navy); font-weight:600;}
+  .nt-fa{color:var(--ink);}
+
+  .traduction-box{background:linear-gradient(135deg,rgba(31,58,95,0.05),rgba(196,165,114,0.07));
+    padding:22px 24px; border-radius:14px; border-right:5px solid var(--gold-soft); margin:18px 0;
+    color:var(--navy-deep); font-size:16px; line-height:2.1;}
+  .traduction-box .tr-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;letter-spacing:0.5px;}
+
+  .footer{background:var(--navy); color:var(--cream); padding:40px; border-radius:18px; text-align:center; margin-top:50px; border-top:3px solid var(--gold-soft);}
+  .footer h3{font-family:'Cormorant Garamond',serif; font-size:24px; margin-bottom:14px; color:var(--gold-soft);}
+  .author-info{margin-top:18px; padding-top:18px; border-top:1px solid rgba(196,165,114,0.3); font-size:14px; line-height:2;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:18px;font-size:13px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:16px;height:16px;border-radius:3px;display:inline-block;}
+
+  @media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;} .main{margin-right:0;} .sidebar-item{display:inline-block;}}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--paper-warm);}
+  ::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:5px;}
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">Expression Orale · Tâche 3</div>
+    <h2>SECTIONS</h2>
+    <div class="sidebar-item active" onclick="showSection('intro',this)">Introduction</div>
+    <div class="sidebar-item" onclick="showSection('arg1',this)">Argument 1</div>
+    <div class="sidebar-item" onclick="showSection('arg2',this)">Argument 2</div>
+    <div class="sidebar-item" onclick="showSection('arg3',this)">Argument 3</div>
+    <div class="sidebar-item" onclick="showSection('arg4',this)">Argument 4</div>
+    <div class="sidebar-item" onclick="showSection('conclusion',this)">Conclusion</div>
+  </div>
+
+  <div class="main"><div class="wrap">
+    <div class="header">
+      <h1>Travailler dans un autre pays</h1>
+      <p class="subtitle">Est-il facile de travailler dans un autre pays ? Expliquez pourquoi.</p>
+      <div class="info">Expression Orale · Tâche 3 — Niveau B2</div>
+      <div class="legend">
+        <span><i style="background:rgba(196,165,114,0.7)"></i> متصل‌کننده / گذرواژه‌ی استدلال</span>
+        <span><i style="background:rgba(65,97,138,0.2)"></i> واژگان سوژه</span>
+      </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div id="intro" class="section active">
+      <div class="card">
+        <h3>Introduction</h3>
+        <div class="texte-box">
+          Travailler dans un autre pays est un projet qui attire de plus en plus de personnes, <span class="connecteur">que ce soit pour</span> découvrir de nouvelles expériences, <span class="mot">progresser professionnellement</span> ou enrichir sa vie personnelle. <span class="connecteur">Même si</span> certains pensent que cela peut être difficile, <span class="connecteur">je suis convaincu qu'</span>avec de la motivation et une bonne préparation, il est possible de réussir à <span class="mot">travailler à l'étranger</span>. <span class="connecteur">En effet</span>, cette expérience permet de découvrir de nouvelles cultures, de renforcer ses <span class="mot">compétences</span>, de développer un <span class="mot">réseau international</span> et de gagner en <span class="mot">autonomie</span> et en confiance en soi.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">que ce soit pour … ou …</span> <span class="nt-fa">— چه برای … چه برای … (ساختار برشمردن گزینه‌ها)</span></div>
+          <div class="nt-item"><span class="nt-fr">même si</span> <span class="nt-fa">— حتی اگر (متصل‌کننده‌ی امتیاز)</span></div>
+          <div class="nt-item"><span class="nt-fr">je suis convaincu que</span> <span class="nt-fa">— متقاعدم که / یقین دارم که (بیان نظر قاطع)</span></div>
+          <div class="nt-item"><span class="nt-fr">en effet</span> <span class="nt-fa">— در واقع (برای توضیح و تأیید)</span></div>
+          <div class="nt-item"><span class="nt-fr">travailler à l'étranger</span> <span class="nt-fa">— کار کردن در خارج (واژه‌ی محوری سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">progresser professionnellement</span> <span class="nt-fa">— پیشرفت شغلی کردن (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les compétences / le réseau / l'autonomie</span> <span class="nt-fa">— مهارت‌ها / شبکه / استقلال (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          کار کردن در کشوری دیگر پروژه‌ای است که افراد بیشتر و بیشتری را جذب می‌کند، چه برای کشف تجربه‌های تازه، چه برای پیشرفت شغلی یا غنی‌کردن زندگی شخصی. حتی اگر برخی فکر کنند این کار می‌تواند دشوار باشد، من یقین دارم که با انگیزه و آمادگیِ خوب، می‌توان در کار کردن در خارج موفق شد. در واقع، این تجربه امکان کشف فرهنگ‌های تازه، تقویت مهارت‌ها، توسعه‌ی شبکه‌ای بین‌المللی و کسب استقلال و اعتماد به نفس را می‌دهد.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 1 -->
+    <div id="arg1" class="section">
+      <div class="card">
+        <h3>Argument 1 — L'immersion culturelle</h3>
+        <div class="texte-box">
+          <span class="connecteur">Tout d'abord</span>, travailler dans un autre pays offre une véritable <span class="mot">immersion culturelle</span>. Vivre au quotidien dans un environnement différent permet de comprendre les <span class="mot">habitudes locales</span>, les traditions et les valeurs des habitants. Cette immersion facilite l'<span class="mot">adaptation au travail</span>, aide à mieux communiquer avec les <span class="mot">collègues</span> et enrichit profondément l'expérience personnelle, <span class="connecteur">car</span> elle permet de vivre la culture de l'intérieur <span class="connecteur">plutôt que</span> de la découvrir seulement à travers des livres ou des médias.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">tout d'abord</span> <span class="nt-fa">— پیش از هر چیز (شروع اولین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">car</span> <span class="nt-fa">— زیرا (متصل‌کننده‌ی علت)</span></div>
+          <div class="nt-item"><span class="nt-fr">plutôt que</span> <span class="nt-fa">— به‌جای اینکه (برای مقایسه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'immersion culturelle</span> <span class="nt-fa">— غوطه‌وری فرهنگی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les habitudes locales</span> <span class="nt-fa">— عادات محلی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'adaptation au travail</span> <span class="nt-fa">— تطبیق با کار (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les collègues</span> <span class="nt-fa">— همکاران (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          پیش از هر چیز، کار کردن در کشوری دیگر یک غوطه‌وری فرهنگی واقعی ارائه می‌دهد. زندگی روزمره در محیطی متفاوت امکان درک عادات محلی، سنت‌ها و ارزش‌های ساکنان را می‌دهد. این غوطه‌وری تطبیق با کار را آسان می‌کند، به ارتباط بهتر با همکاران کمک می‌کند و تجربه‌ی شخصی را عمیقاً غنی می‌سازد، زیرا اجازه می‌دهد فرهنگ را از درون زندگی کنیم، به‌جای آنکه فقط از طریق کتاب‌ها یا رسانه‌ها کشفش کنیم.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 2 -->
+    <div id="arg2" class="section">
+      <div class="card">
+        <h3>Argument 2 — Les compétences</h3>
+        <div class="texte-box">
+          <span class="connecteur">Ensuite</span>, cette expérience constitue un moyen efficace d'améliorer ses <span class="mot">compétences professionnelles et linguistiques</span>. Travailler dans un autre pays oblige souvent à parler une nouvelle langue et à s'adapter à différentes <span class="mot">méthodes de travail</span> ou à des règles professionnelles spécifiques. Cette exigence développe la <span class="mot">polyvalence</span>, la créativité et la capacité à résoudre des problèmes, <span class="connecteur">tout en</span> renforçant un <span class="mot">CV</span> et en augmentant les chances d'<span class="mot">évolution professionnelle</span> future.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">ensuite</span> <span class="nt-fa">— سپس (شروع استدلال دوم)</span></div>
+          <div class="nt-item"><span class="nt-fr">tout en + participe présent</span> <span class="nt-fa">— ضمنِ … / در همان حال که (همزمانی دو عمل)</span></div>
+          <div class="nt-item"><span class="nt-fr">les compétences linguistiques</span> <span class="nt-fa">— مهارت‌های زبانی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les méthodes de travail</span> <span class="nt-fa">— روش‌های کار (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">la polyvalence</span> <span class="nt-fa">— چندمهارتی بودن / توانایی انجام کارهای متنوع (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'évolution professionnelle</span> <span class="nt-fa">— پیشرفت و ارتقای شغلی (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سپس، این تجربه راهی مؤثر برای بهبود مهارت‌های شغلی و زبانی است. کار کردن در کشوری دیگر اغلب آدم را وادار می‌کند به یک زبان تازه صحبت کند و با روش‌های مختلف کار یا قواعد حرفه‌ای خاص تطبیق یابد. این الزام، چندمهارتی بودن، خلاقیت و توانایی حل مسئله را پرورش می‌دهد، ضمن آنکه یک رزومه را تقویت می‌کند و شانس ارتقای شغلی آینده را افزایش می‌دهد.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 3 -->
+    <div id="arg3" class="section">
+      <div class="card">
+        <h3>Argument 3 — Le réseau international</h3>
+        <div class="texte-box">
+          <span class="connecteur">De plus</span>, travailler à l'étranger permet de développer un <span class="mot">réseau professionnel international</span>. On rencontre des collègues et des partenaires venant de <span class="mot">divers horizons</span>, <span class="connecteur">ce qui</span> favorise les échanges, les <span class="mot">collaborations</span> et les <span class="mot">opportunités professionnelles</span>. Ces contacts peuvent devenir des ressources précieuses pour des projets futurs ou pour faciliter des <span class="mot">transitions professionnelles</span> dans différents pays.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">de plus</span> <span class="nt-fa">— علاوه بر این (افزودن استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">ce qui</span> <span class="nt-fa">— چیزی که (ضمیر ربط برای افزودن نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">un réseau professionnel</span> <span class="nt-fa">— شبکه‌ی حرفه‌ای (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">divers horizons</span> <span class="nt-fa">— زمینه‌ها/خاستگاه‌های گوناگون (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les collaborations</span> <span class="nt-fa">— همکاری‌ها (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les transitions professionnelles</span> <span class="nt-fa">— گذارهای شغلی / تغییر مسیر کاری (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          علاوه بر این، کار کردن در خارج امکان توسعه‌ی یک شبکه‌ی حرفه‌ای بین‌المللی را می‌دهد. آدم با همکاران و شریکانی از زمینه‌های گوناگون آشنا می‌شود، چیزی که تبادل‌ها، همکاری‌ها و فرصت‌های شغلی را تقویت می‌کند. این ارتباط‌ها می‌توانند منابعی ارزشمند برای پروژه‌های آینده یا برای آسان‌کردن تغییر مسیرهای شغلی در کشورهای مختلف شوند.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 4 -->
+    <div id="arg4" class="section">
+      <div class="card">
+        <h3>Argument 4 — L'autonomie</h3>
+        <div class="texte-box">
+          <span class="connecteur">Enfin</span>, cette expérience renforce considérablement l'<span class="mot">autonomie</span> et la <span class="mot">confiance en soi</span>. S'adapter à un nouvel environnement, gérer les <span class="mot">démarches administratives</span>, trouver un logement ou surmonter les difficultés liées à la vie quotidienne à l'étranger permet de devenir plus <span class="mot">mature, indépendant et résilient</span>. Ces qualités sont <span class="connecteur">non seulement</span> utiles pour la carrière professionnelle, <span class="connecteur">mais</span> elles contribuent <span class="connecteur">également</span> à un développement personnel solide.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">enfin</span> <span class="nt-fa">— سرانجام (آخرین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">non seulement … mais … également</span> <span class="nt-fa">— نه‌تنها … بلکه … نیز (ساختار تأکید دوگانه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'autonomie / la confiance en soi</span> <span class="nt-fa">— استقلال / اعتماد به نفس (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les démarches administratives</span> <span class="nt-fa">— کارهای اداری (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">mature, indépendant, résilient</span> <span class="nt-fa">— بالغ، مستقل، تاب‌آور (سه‌گانه‌ی صفت‌ها — واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سرانجام، این تجربه استقلال و اعتماد به نفس را به‌شکل چشمگیری تقویت می‌کند. تطبیق با محیطی تازه، انجام کارهای اداری، یافتن مسکن یا غلبه بر دشواری‌های زندگی روزمره در خارج، امکان بالغ‌تر، مستقل‌تر و تاب‌آورتر شدن را می‌دهد. این ویژگی‌ها نه‌تنها برای حرفه‌ی شغلی مفیدند، بلکه به یک رشد شخصی محکم نیز کمک می‌کنند.
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="section">
+      <div class="card">
+        <h3>Conclusion</h3>
+        <div class="texte-box">
+          <span class="connecteur">En conclusion</span>, travailler dans un autre pays est une expérience <span class="mot">enrichissante</span> et <span class="connecteur">tout à fait</span> accessible avec de la préparation et de la motivation. Elle permet de <span class="mot">s'immerger dans une nouvelle culture</span>, de développer ses compétences et son réseau professionnel, et de renforcer son autonomie et sa confiance en soi. Travailler à l'étranger représente <span class="connecteur">ainsi</span> une <span class="mot">opportunité unique</span> pour progresser professionnellement et <span class="mot">s'épanouir personnellement</span>, <span class="connecteur">tout en</span> ouvrant de nouvelles perspectives dans la vie.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">en conclusion</span> <span class="nt-fa">— در نتیجه (متصل‌کننده‌ی جمع‌بندی)</span></div>
+          <div class="nt-item"><span class="nt-fr">tout à fait</span> <span class="nt-fa">— کاملاً (برای تأکید)</span></div>
+          <div class="nt-item"><span class="nt-fr">ainsi</span> <span class="nt-fa">— بدین‌ترتیب (نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">tout en + participe présent</span> <span class="nt-fa">— ضمنِ … / در همان حال که</span></div>
+          <div class="nt-item"><span class="nt-fr">s'épanouir personnellement</span> <span class="nt-fa">— شکوفا شدن از نظر شخصی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">une opportunité unique</span> <span class="nt-fa">— فرصتی بی‌نظیر (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          در نتیجه، کار کردن در کشوری دیگر تجربه‌ای غنی‌کننده و کاملاً دست‌یافتنی با آمادگی و انگیزه است. این تجربه امکان غوطه‌ور شدن در فرهنگی تازه، توسعه‌ی مهارت‌ها و شبکه‌ی حرفه‌ای، و تقویت استقلال و اعتماد به نفس را می‌دهد. بدین‌ترتیب، کار کردن در خارج فرصتی بی‌نظیر برای پیشرفت شغلی و شکوفایی شخصی است، ضمن آنکه چشم‌اندازهای تازه‌ای در زندگی می‌گشاید.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h3>✦ Expression Orale — Tâche 3</h3>
+      <div class="author-info">متصل‌کننده‌ها را به خاطر بسپار و در پاسخ خودت به کار ببر.</div>
+    </div>
+  </div></div>
+
+  <script>
+    function showSection(id, el){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if(el) el.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
