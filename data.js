@@ -350,6 +350,66 @@ const QUIZ = [
     correct: 2,
     note: "فعل « dépendre » همیشه با حرف اضافه‌ی <b>de</b> می‌آید: « ça dépend de… » (بستگی دارد به…).",
   },
+  {
+    question: "Il faut faire des efforts ___ (تا حد ممکن).",
+    options: ["autant que possible", "autant de possible"],
+    correct: 0,
+    note: "عبارت درست « <b>autant que possible</b> » است به‌معنای «تا حد ممکن / تا جای ممکن».",
+  },
+  {
+    question: "Les parents ___ les enseignants sont préoccupés par l'usage des écrans.",
+    options: ["ainsi que", "autant que", "autant de"],
+    correct: 0,
+    note: "« <b>ainsi que</b> » یعنی «و همچنین / به‌همراهِ». اینجا والدین و معلمان را به هم وصل می‌کند.",
+  },
+  {
+    question: "Cette entreprise produit ___ déchets qu'avant.",
+    options: ["ainsi que", "autant que", "autant de"],
+    correct: 2,
+    note: "پیش از یک اسم (déchets) از « <b>autant de</b> » استفاده می‌کنیم: «به همان اندازه زباله». ساختار: autant de + اسم.",
+  },
+  {
+    question: "Je viendrai ___ il fasse beau.",
+    options: ["parce qu'", "puisqu'", "pourvu qu'", "dès qu'"],
+    correct: 2,
+    note: "« <b>pourvu que</b> » (به‌شرطِ اینکه) با subjonctif می‌آید: « pourvu qu'il fasse beau ».",
+  },
+  {
+    question: "Je doute qu'elle ___ la vérité avant aujourd'hui.",
+    options: ["sache", "savait", "ait su", "saurait"],
+    correct: 2,
+    note: "« douter que » + subjonctif. چون عمل پیش از «امروز» کامل شده، subjonctif passé به‌کار می‌رود: « <b>ait su</b> ».",
+  },
+  {
+    question: "Il faut que tu ___ ce travail avant ce soir.",
+    options: ["finisses", "aies fini", "finissais", "finiras"],
+    correct: 1,
+    note: "چون کار باید پیش از «امشب» تمام شده باشد، subjonctif passé درست است: « <b>aies fini</b> ».",
+  },
+  {
+    question: "Je cherche un appartement qui ___ deux chambres. (مطمئن نیستم وجود داشته باشد)",
+    options: ["a", "ait", "aura", "avait"],
+    correct: 1,
+    note: "چون وجود آپارتمان قطعی نیست، بعد از « qui » از subjonctif استفاده می‌کنیم: « <b>ait</b> ».",
+  },
+  {
+    question: "J'habite dans un appartement qui ___ deux chambres. (واقعاً وجود دارد)",
+    options: ["a", "ait", "aura", "ayant"],
+    correct: 0,
+    note: "چون آپارتمان واقعاً وجود دارد و واقعیت است، indicatif درست است: « <b>a</b> ».",
+  },
+  {
+    question: "C'est la seule personne qui ___ me comprendre.",
+    options: ["peut", "puisse", "pourra", "pouvait"],
+    correct: 1,
+    note: "بعد از صفت‌های مطلق مثل « le seul / la seule » از subjonctif استفاده می‌شود: « <b>puisse</b> ».",
+  },
+  {
+    question: "C'est le plus beau pays que je ___.",
+    options: ["connais", "connaisse", "connaîtrai", "ai connu"],
+    correct: 1,
+    note: "بعد از صفت عالی (le plus beau) از subjonctif استفاده می‌شود: « <b>connaisse</b> ».",
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════
