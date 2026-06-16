@@ -12,6 +12,7 @@ const CATEGORIES = [
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
   { id: "podcast",      label: "پادکست",       icon: "♪", color: "#5a6f9e" },
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
+  { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -270,5 +271,51 @@ const ASTUCES = [
     note: "برای «سؤال پرسیدن» همیشه از فعل <b>poser</b> استفاده کن، نه demander. فعل demander به‌معنای «درخواست کردن / خواستن» است، نه «سؤال پرسیدن».",
     exemple: "L'élève pose une question au professeur.",
     exempleFa: "دانش‌آموز از معلم یک سؤال می‌پرسد.",
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  صفت‌ها — کارت کامل هر صفت
+//  هر صفت:
+//    mot       : صفت (مذکر / مؤنث)
+//    emoji     : ایموجی‌های نماینده‌ی حس صفت
+//    traductions : آرایه‌ای از ترجمه‌های فارسی
+//    synonymes : آرایه‌ای از { fr, fa }
+//    combinaisons : آرایه‌ای از { fr, fa, icon }  (ترکیبات پرتکرار)
+//    phrase    : { fr, fa }  (یک جمله‌ی نمونه)
+// ═══════════════════════════════════════════════════════════
+const ADJECTIFS = [
+  {
+    mot: "déstabilisant / déstabilisante",
+    emoji: "😵‍💫⚠️",
+    traductions: [
+      "گیج‌کننده و آشفته‌کننده",
+      "برهم‌زننده‌ی تعادل ذهنی",
+      "سردرگم‌کننده",
+      "مختل‌کننده‌ی آرامش",
+    ],
+    synonymes: [
+      { fr: "perturbant", fa: "آشفته‌کننده" },
+      { fr: "troublant", fa: "نگران‌کننده / برهم‌زننده" },
+      { fr: "déroutant", fa: "گیج‌کننده" },
+      { fr: "inquiétant", fa: "نگران‌کننده" },
+      { fr: "déconcertant", fa: "سردرگم‌کننده" },
+    ],
+    combinaisons: [
+      { fr: "une situation déstabilisante", fa: "وضعیت آشفته‌کننده", icon: "⚠️" },
+      { fr: "une expérience déstabilisante", fa: "تجربه‌ی گیج‌کننده", icon: "🌍" },
+      { fr: "un changement déstabilisant", fa: "تغییرِ برهم‌زننده‌ی تعادل", icon: "🔄" },
+      { fr: "une nouvelle déstabilisante", fa: "خبر شوک‌آور", icon: "📰" },
+      { fr: "un événement déstabilisant", fa: "رویداد آشفته‌کننده", icon: "💥" },
+      { fr: "une période déstabilisante", fa: "دوره‌ای پر از بی‌ثباتی", icon: "⏳" },
+      { fr: "une remarque déstabilisante", fa: "اظهارنظر گیج‌کننده", icon: "💬" },
+      { fr: "une révélation déstabilisante", fa: "افشاگری شوک‌آور", icon: "🔍" },
+      { fr: "un contexte déstabilisant", fa: "شرایط ناپایدار و آشفته", icon: "🌐" },
+      { fr: "une décision déstabilisante", fa: "تصمیمی که تعادل را برهم می‌زند", icon: "⚖️" },
+    ],
+    phrase: {
+      fr: "Le déménagement dans un nouveau pays peut être une expérience déstabilisante au début, mais il permet souvent de développer une grande capacité d'adaptation.",
+      fa: "مهاجرت به یک کشور جدید در ابتدا می‌تواند تجربه‌ای گیج‌کننده و برهم‌زننده‌ی تعادل باشد، اما اغلب باعث تقویت توانایی سازگاری می‌شود.",
+    },
   },
 ];

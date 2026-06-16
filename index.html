@@ -429,6 +429,74 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های صفت */
+        .adj-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid #7a5ba8;
+            border-radius: 16px;
+            padding: 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.08);
+        }
+        .adj-head {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 12px; flex-wrap: wrap;
+            padding-bottom: 16px; margin-bottom: 18px;
+            border-bottom: 2px solid var(--line);
+        }
+        .adj-mot {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px; font-weight: 600;
+            color: #5a3f85; direction: ltr;
+        }
+        .adj-emoji { font-size: 24px; }
+        .adj-block { margin-bottom: 20px; }
+        .adj-label {
+            font-size: 14px; font-weight: 700;
+            color: #7a5ba8; margin-bottom: 12px;
+        }
+        .adj-trads { display: flex; flex-wrap: wrap; gap: 8px; }
+        .adj-trad {
+            font-size: 14px; color: var(--navy);
+            background: rgba(122,91,168,0.08);
+            padding: 6px 14px; border-radius: 20px;
+        }
+        .adj-syns { display: flex; flex-direction: column; gap: 8px; }
+        .adj-syn {
+            display: flex; align-items: center; gap: 10px;
+            font-size: 15px; padding: 7px 12px;
+            background: var(--cream); border-radius: 8px;
+        }
+        .syn-fr { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--navy); direction: ltr; min-width: 130px; }
+        .syn-arrow { color: #7a5ba8; }
+        .syn-fa { color: var(--ink); font-size: 14px; }
+        .adj-combos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .adj-combo {
+            display: flex; gap: 10px; align-items: flex-start;
+            background: var(--paper-warm);
+            padding: 11px 13px; border-radius: 10px;
+        }
+        .combo-icon { font-size: 18px; flex-shrink: 0; }
+        .combo-text { display: flex; flex-direction: column; gap: 2px; }
+        .combo-fr { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--navy); direction: ltr; }
+        .combo-fa { font-size: 12.5px; color: var(--gray); line-height: 1.7; }
+        .adj-phrase {
+            margin-top: 6px;
+            background: linear-gradient(135deg, rgba(122,91,168,0.07), rgba(196,165,114,0.06));
+            border-right: 4px solid #7a5ba8;
+            border-radius: 12px; padding: 18px 20px;
+        }
+        .phrase-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px; font-style: italic; line-height: 1.7;
+            color: var(--navy); direction: ltr; text-align: left;
+            margin-bottom: 10px;
+        }
+        .phrase-fa { font-size: 14px; color: var(--ink); line-height: 1.9; }
+        @media (max-width: 600px) {
+            .adj-combos { grid-template-columns: 1fr; }
+        }
+
         /* کارت‌های نکته‌ی طلایی */
         .astuce-card {
             background: linear-gradient(140deg, var(--white) 0%, var(--cream) 100%);
@@ -858,6 +926,8 @@
             // دسته‌ی نکته‌های طلایی → نمایش مخصوص
             if (catId === "astuces") {
                 renderAstuces();
+            } else if (catId === "adjectifs") {
+                renderAdjectifs();
             } else if (catId !== "all" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
