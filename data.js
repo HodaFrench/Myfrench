@@ -531,4 +531,16 @@ const PRONONCIATION = [
       "هر روز، این گربه‌ی ملوس با یک دامن زرد با شادی بازی می‌کند.",
     ],
   },
+  {
+    jour: "روز دوم",
+    titre: "تمرین صدای ر",
+    focus: ["r"],
+    video: "videos/PRON_jour2_r.mp4",
+    texteFr: [
+      "Rire régulièrement rend réellement la respiration relaxante et répéter cette phrase rapidement révèle votre rigueur en rhétorique ; mais râler rageusement ruine radicalement le rire.",
+    ],
+    texteFa: [
+      "خندیدن مداوم واقعاً نفس‌کشیدن را آرام می‌کند، و تکرار سریع این جمله جدیتتان را در فن بیان نشان می‌دهد؛ ولی غر زدن با عصبانیت، خنده را کلاً نابود می‌کند!",
+    ],
+  },
 ];
