@@ -638,6 +638,15 @@
         }
         .cw:hover { background: rgba(176,80,111,0.2); }
         .cw.open { background: #b0506f; color: #fff; }
+        /* هایلایت ساختار گرامری/کالوکیشن (آبی) */
+        .cw-struct {
+            background: rgba(46,123,181,0.12);
+            color: #1f6196;
+            border-bottom: 1.5px dashed #2e7bb5;
+        }
+        .cw-struct:hover { background: rgba(46,123,181,0.22); }
+        .cw-struct.open { background: #2e7bb5; color: #fff; }
+        .cw-struct::before { content: "⚙ "; font-size: 10px; opacity: 0.6; }
         .cw-pop {
             position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
             background: var(--navy); color: var(--cream);
@@ -1808,11 +1817,19 @@
 
         // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
         function parseClickWords(text) {
-            return text.replace(/⟦([^|⟧]+)\|([^⟧]+)⟧/g, function(_, mot, sens) {
+            // نوع ۱: ساختار گرامری/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
+            text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens) {
+                const m = mot.replace(/"/g, '&quot;');
+                const s = sens.replace(/"/g, '&quot;');
+                return '<span class="cw cw-struct" dir="ltr" onclick="toggleCw(this)" data-sens="' + s + '">' + m + '</span>';
+            });
+            // نوع ۲: واژه‌ی دشوار ⟦mot|معنی⟧ (صورتی)
+            text = text.replace(/⟦([^|⟧]+)\|([^⟧]+)⟧/g, function(_, mot, sens) {
                 const m = mot.replace(/"/g, '&quot;');
                 const s = sens.replace(/"/g, '&quot;');
                 return '<span class="cw" dir="ltr" onclick="toggleCw(this)" data-sens="' + s + '">' + m + '</span>';
             });
+            return text;
         }
         function toggleCw(el) {
             // اگر باز است، فوراً ببند
@@ -1835,7 +1852,7 @@
             el._cwTimer = setTimeout(() => {
                 el.classList.remove("open");
                 el._cwTimer = null;
-            }, 5000);
+            }, 3000);
         }
 
         // نمایش مینی‌آرتیکل‌ها
