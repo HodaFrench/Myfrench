@@ -920,4 +920,62 @@ const MINIARTICLES = [
       fa: "بزرگ‌ترین درس این نیست که «کسی را پیدا کن که تو را کامل کند»، بلکه این است که «خودت کسی شو که بلد است سالم دوست بدارد و دوست داشته شود.»",
     },
   },
+  {
+    titre: "Faut-il éviter de prendre le petit-déjeuner ?",
+    emoji: "🍳",
+    niveau: "B1",
+    paras: [
+      "Pendant longtemps, le petit-déjeuner a été ⟦considéré comme|تلقی شده به‌عنوان⟧ « le repas le plus important de la journée ». Mais est-ce que tout le monde ⟦devrait|باید⟧ vraiment en prendre ?",
+      "La réponse est plus ⟦nuancée|ظریف / دقیق⟧ qu'un simple oui ou non. ⟦Sauter|رد کردن / حذف کردن⟧ le petit-déjeuner peut ⟦convenir à|مناسب بودن برای⟧ certaines personnes, mais ce n'est pas ⟦automatiquement|به‌طور خودکار⟧ plus sain. Ce qui compte le plus, c'est votre ⟦alimentation|تغذیه⟧ globale et la qualité des aliments que vous ⟦consommez|مصرف می‌کنید⟧.",
+      "Les recherches ⟦suggèrent|نشان می‌دهند⟧ que les personnes qui prennent un petit-déjeuner ⟦nutritif|مغذی⟧ ont souvent une meilleure ⟦concentration|تمرکز⟧, un niveau d'énergie plus ⟦stable|پایدار⟧ et une ⟦humeur|خلق‌وخو⟧ plus positive. À l'inverse, le sauter peut provoquer une ⟦faim|گرسنگی⟧ plus intense plus tard, ce qui augmente le risque de ⟦trop manger|پرخوری⟧.",
+      "La vraie question n'est donc pas « Dois-je prendre un petit-déjeuner ? », mais plutôt « Quel type de petit-déjeuner ⟦soutient|پشتیبانی می‌کند⟧ le mieux mes objectifs ? » Un repas riche en ⟦protéines|پروتئین⟧, en ⟦fibres|فیبر⟧ et en bonnes graisses est bien plus ⟦bénéfique|مفید⟧ que des céréales sucrées ou des ⟦viennoiseries|شیرینی‌های صبحانه⟧.",
+    ],
+    morale: {
+      fr: "Les habitudes saines ne se construisent pas en suivant les tendances, mais en comprenant ce qui aide votre corps et votre cerveau à fonctionner au mieux.",
+      fa: "عادت‌های سالم با دنبال‌کردن مدها ساخته نمی‌شوند، بلکه با فهمیدن اینکه چه چیزی به بدن و مغز شما کمک می‌کند بهتر کار کنند.",
+    },
+  },
+  {
+    titre: "Le secret pour passer le meilleur été de votre vie",
+    emoji: "☀️",
+    niveau: "B1",
+    paras: [
+      "Beaucoup de personnes pensent qu'un été réussi ⟦nécessite|نیاز دارد به⟧ des voyages ⟦coûteux|پرهزینه⟧ ou des projets ⟦extraordinaires|خارق‌العاده⟧. Pourtant, les plus beaux ⟦souvenirs|خاطرات⟧ ⟦naissent|متولد می‌شوند⟧ souvent des moments les plus simples.",
+      "Une promenade au ⟦coucher du soleil|غروب آفتاب⟧, un pique-nique entre amis, la lecture d'un livre dans un parc ou la ⟦découverte|کشف⟧ d'un nouveau ⟦quartier|محله⟧ de votre ville peuvent rendre l'été vraiment spécial. Les psychologues expliquent que vivre de nouvelles ⟦expériences|تجربه‌ها⟧ aide à créer des souvenirs plus ⟦marquants|ماندگار⟧.",
+      "En même temps, passer du temps de qualité avec les personnes que l'on aime et ⟦s'accorder|به خود اختصاص دادن⟧ des moments de repos peut avoir un impact plus important sur le ⟦bonheur|خوشبختی⟧ que le fait d'être ⟦constamment|دائماً⟧ ⟦occupé|مشغول⟧.",
+    ],
+    morale: {
+      fr: "Le secret d'un été inoubliable n'est pas d'en faire plus, mais d'être davantage présent dans l'instant. Essayez quelque chose de nouveau et profitez des petits moments : ce sont souvent eux qui deviennent les souvenirs les plus durables.",
+      fa: "راز یک تابستان فراموش‌نشدنی این نیست که کارهای بیشتری بکنی، بلکه این است که بیشتر در لحظه حاضر باشی. چیز تازه‌ای را امتحان کن و از لحظه‌های کوچک لذت ببر؛ اغلب همین‌ها ماندگارترین خاطرات می‌شوند.",
+    },
+  },
+  {
+    titre: "La lumière du matin : l'antidépresseur que nous négligeons",
+    emoji: "☀️",
+    niveau: "B2",
+    paras: [
+      "Beaucoup d'entre nous commencent leur journée en regardant leur téléphone, alors que notre cerveau attend en réalité quelque chose de bien plus important : la lumière du soleil du matin.",
+      "Selon les psychologues, ⟦s'exposer à|قرار گرفتن در معرض⟧ la lumière naturelle peu après le ⟦réveil|بیدار شدن⟧ aide à ⟦réguler|تنظیم کردن⟧ notre ⟦horloge biologique|ساعت زیستی⟧, améliore la qualité du ⟦sommeil|خواب⟧ et ⟦favorise|تقویت می‌کند⟧ une meilleure humeur. La lumière matinale ⟦signale|علامت می‌دهد⟧ au cerveau de réduire la production de ⟦mélatonine|ملاتونین⟧ et d'augmenter l'état d'⟦éveil|بیداری⟧.",
+      "Le problème, c'est que notre mode de vie moderne nous garde souvent à l'intérieur. Nous passons des heures sous un ⟦éclairage|نورپردازی⟧ ⟦artificiel|مصنوعی⟧ qui ne peut pas remplacer tous les ⟦bienfaits|فواید⟧ de la lumière naturelle. Avec le temps, cela peut ⟦entraîner|منجر شدن به⟧ des ⟦troubles du sommeil|اختلالات خواب⟧, une baisse d'énergie et même des ⟦symptômes|نشانه‌ها⟧ dépressifs.",
+      "La bonne nouvelle, c'est que la solution est ⟦étonnamment|به‌طرز شگفت‌انگیزی⟧ simple. Passer seulement 10 à 15 minutes à l'extérieur le matin peut avoir un effet ⟦significatif|چشمگیر⟧ sur le ⟦bien-être|سلامت / تندرستی⟧ mental et physique.",
+    ],
+    morale: {
+      fr: "Parfois, l'un des meilleurs remèdes pour améliorer son humeur n'est ni un médicament ni une astuce de productivité : c'est simplement la lumière du soleil. Votre cerveau a plus besoin de la lumière du matin que votre téléphone n'a besoin de votre attention.",
+      fa: "گاهی یکی از بهترین درمان‌ها برای بهتر شدن خلق‌وخو، نه دارو است نه ترفند بهره‌وری: فقط نور خورشید است. مغز شما بیشتر به نور صبحگاهی نیاز دارد تا تلفنتان به توجه شما.",
+    },
+  },
+  {
+    titre: "« Sois heureux. » — mais est-ce le vrai but ?",
+    emoji: "🌍",
+    niveau: "B2",
+    paras: [
+      "La société moderne ⟦considère|در نظر می‌گیرد⟧ souvent le ⟦bonheur|خوشبختی⟧ comme le ⟦but ultime|هدف نهایی⟧ de la vie. Pourtant, toutes les cultures ne voient pas la vie de cette manière.",
+      "Une récente étude ⟦interculturelle|بین‌فرهنگی⟧ a montré que, dans de nombreux pays ⟦occidentaux|غربی⟧, les gens recherchent un « bonheur ⟦maximal|حداکثری⟧ », ⟦tandis que|در حالی که⟧ au Japon ou au Bhoutan, on préfère souvent une vie ⟦émotionnelle|عاطفی⟧ plus ⟦équilibrée|متعادل⟧. Pour eux, une belle vie ⟦repose aussi sur|متکی است بر⟧ l'⟦harmonie|هماهنگی⟧, le sens, les relations humaines et la ⟦paix intérieure|آرامش درونی⟧.",
+      "Les psychologues expliquent même que la recherche constante d'un bonheur extrême peut devenir ⟦épuisante|خسته‌کننده⟧. Parfois, la vie la plus saine n'est pas la plus heureuse, mais la plus ⟦porteuse de sens|معنادار⟧.",
+    ],
+    morale: {
+      fr: "Peut-être que le bonheur n'a jamais été une destination permanente. Peut-être qu'il est simplement le résultat d'une vie vécue avec équilibre, connexion et raison d'être. Toutes les belles vies ne paraissent pas infiniment heureuses de l'extérieur — et c'est tout à fait normal.",
+      fa: "شاید خوشبختی هیچ‌وقت یک مقصد همیشگی نبوده است. شاید فقط نتیجه‌ی زندگی‌ای است که با تعادل، ارتباط و هدف زیسته شده. همه‌ی زندگی‌های زیبا از بیرون بی‌نهایت شاد به نظر نمی‌رسند — و این کاملاً طبیعی است.",
+    },
+  },
 ];
