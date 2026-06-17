@@ -14,7 +14,7 @@
             --navy: #1e3a5f;        /* سرمه‌ای جلد کتاب */
             --navy-deep: #16293f;
             --navy-soft: #41618a;
-            --gold: #b07a4a;        /* طلایی/برنزی حروف */
+            --gold: #b07a4a; --gold-deep: #8a5a2b;        /* طلایی/برنزی حروف */
             --gold-soft: #c4a572;
             --terracotta: #c4502d;  /* نارنجی آجری — لهجه (مثل French Mornings) */
             --paper: #f4f3f5;       /* دقیقاً رنگ پس‌زمینه‌ی عکس کرواسان */
@@ -175,18 +175,21 @@
         }
         .hero .sub {
             font-size: 18px;
-            color: var(--gray);
-            margin-bottom: 12px;
+            color: var(--ink);
+            font-weight: 500;
+            margin: 0 auto 12px;
             max-width: 540px;
+            text-align: center;
         }
         .hero .sub-fr {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            color: var(--gold);
-            font-weight: 500;
+            font-size: 28px;
+            color: var(--gold-deep);
+            font-weight: 700;
             letter-spacing: 0.5px;
-            margin-bottom: 22px;
+            margin: 0 auto 22px;
             font-style: italic;
+            text-align: center;
         }
         .channel-btn {
             display: inline-flex;
