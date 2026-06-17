@@ -956,7 +956,7 @@ const PRONONCIATION = [
 const EDITOA1 = [
   {
     lecon: "Leçon 1",
-    titre: "سرگرمی‌ها، کشورها و اعداد",
+    titre: "سرگرمی‌ها (Les loisirs)",
     mots: [
       // ---- Les loisirs ----
       { mot: "l'art", fa: "هنر", genre: "(m.)", exemples: [
@@ -984,7 +984,12 @@ const EDITOA1 = [
         { fr: "Tu aimes le sport ?", fa: "ورزش را دوست داری؟" },
         { fr: "Le sport, c'est bon pour la santé.", fa: "ورزش برای سلامتی خوب است." },
       ]},
-      // ---- L'identité ----
+    ],
+  },
+  {
+    lecon: "Leçon 2",
+    titre: "هویت و کشورها (L'identité)",
+    mots: [
       { mot: "le nom", fa: "نام خانوادگی", exemples: [
         { fr: "Quel est votre nom ?", fa: "نام خانوادگی شما چیست؟" },
         { fr: "Mon nom est Karimi.", fa: "نام خانوادگی من کریمی است." },
