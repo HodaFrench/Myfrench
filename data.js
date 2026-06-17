@@ -189,6 +189,16 @@ const LESSONS = [
     summary: "۳۵ جمله‌ی تمرینی برای صرف افعال انعکاسی (pronominaux) در زمان حال — با ترجمه‌ی فارسی هر جمله و پاسخ قابل‌نمایش با یک کلیک.",
   },
   {
+    file: "GRAM_chiffre_nombre_numero.html",
+    title: "تفاوت رقم، عدد و شماره",
+    titleFr: "chiffre / nombre / numéro",
+    category: "grammar",
+    level: "متوسط",
+    premium: false,
+    tags: ["واژگان", "صوتی", "اشتباه رایج"],
+    summary: "تفاوت سه واژه‌ی نزدیک chiffre (رقم)، nombre (عدد) و numéro (شماره) — با توضیح صوتی هدی، تعریف هر کدام و نمونه‌های واقعی.",
+  },
+  {
     file: "TCF_EO_T3_expatriation.html",
     title: "زندگی در کشوری دیگر",
     titleFr: "S'habituer à vivre à l'étranger",
