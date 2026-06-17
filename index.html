@@ -454,6 +454,50 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* بخش InnerFrench */
+        .if-card {
+            display: flex; align-items: center; gap: 14px;
+            background: var(--white); border: 1px solid var(--line);
+            border-right: 4px solid #2e7bb5; border-radius: 14px;
+            padding: 18px 20px; cursor: pointer; text-align: right;
+            box-shadow: 0 6px 18px rgba(31,58,95,0.05); transition: all 0.2s; width: 100%;
+        }
+        .if-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(46,123,181,0.15); border-right-color: #1a4f7a; }
+        .if-num {
+            font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700;
+            color: #fff; background: linear-gradient(135deg,#2e7bb5,#1a4f7a);
+            min-width: 50px; height: 50px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .if-body { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+        .if-titre { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--navy); }
+        .if-titre-fa { font-size: 13.5px; color: var(--ink); }
+        .if-theme { font-size: 11.5px; color: #2e7bb5; margin-top: 3px; }
+        .if-go { font-size: 16px; color: #2e7bb5; flex-shrink: 0; }
+
+        .if-episode { background: var(--white); border: 1px solid var(--line); border-top: 4px solid #2e7bb5;
+            border-radius: 16px; padding: 26px 24px; box-shadow: 0 8px 24px rgba(31,58,95,0.06); }
+        .if-ep-head { padding-bottom: 16px; margin-bottom: 18px; border-bottom: 2px solid var(--line); }
+        .if-ep-titre { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+        .if-ep-titre-fa { font-size: 15px; color: var(--ink); margin-top: 4px; }
+        .if-ep-theme { font-size: 12.5px; color: #2e7bb5; margin-top: 8px; background: rgba(46,123,181,0.08); display: inline-block; padding: 3px 12px; border-radius: 12px; }
+        .if-player { margin-bottom: 14px; }
+        .if-source {
+            display: block; text-align: center; text-decoration: none;
+            background: linear-gradient(135deg,#2e7bb5,#1a4f7a); color: #fff;
+            font-size: 14px; font-weight: 600; padding: 12px; border-radius: 10px; margin-bottom: 18px;
+            transition: opacity 0.2s;
+        }
+        .if-source:hover { opacity: 0.9; }
+        .if-intro { background: var(--paper-warm); border-right: 4px solid var(--gold-soft);
+            border-radius: 10px; padding: 14px 18px; font-size: 14px; line-height: 2; margin-bottom: 16px; }
+        .if-hint { font-size: 12.5px; color: var(--gray); background: var(--cream); padding: 8px 14px; border-radius: 8px; margin-bottom: 20px; }
+        .if-text { display: flex; flex-direction: column; gap: 14px; }
+        .if-para { direction: ltr; text-align: left; font-family: 'Cormorant Garamond', serif;
+            font-size: 18px; line-height: 1.95; color: var(--ink); }
+        .if-credit { margin-top: 24px; padding-top: 16px; border-top: 1px dashed var(--line);
+            font-size: 12px; color: var(--gray); text-align: center; }
+
         /* کارت‌های مینی‌آرتیکل */
         .mini-card {
             background: var(--white);
@@ -1269,6 +1313,8 @@
                 renderEditoA1();
             } else if (catId === "miniarticle") {
                 renderMiniarticles();
+            } else if (catId === "innerfrench") {
+                renderInnerFrench();
             } else if (catId === "grammar" && !activeGroupe) {
                 // گرامر زیرپوشه‌ها (مودهای فعلی) دارد → اول پوشه‌ها را نشان بده
                 renderGroupes(catId);
@@ -1517,6 +1563,68 @@
                     <span class="sub-fa-l">${s.labelFa}</span>
                     <span class="sub-go">مشاهده ←</span>
                 </button>`).join("");
+        }
+
+        // نمایش لیست قسمت‌های InnerFrench
+        function renderInnerFrench() {
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo("innerfrench");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
+            document.getElementById("count").textContent = list.length + " قسمت";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">▶</span>هنوز قسمتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((ep, i) => `
+                <button class="if-card" onclick="openInnerEpisode(${i})">
+                    <span class="if-num">#${ep.num}</span>
+                    <span class="if-body">
+                        <span class="if-titre" dir="ltr">${ep.titre}</span>
+                        <span class="if-titre-fa">${ep.titreFa}</span>
+                        ${ep.theme ? `<span class="if-theme">${ep.theme}</span>` : ""}
+                    </span>
+                    <span class="if-go">▶</span>
+                </button>`).join("");
+        }
+
+        // باز کردن یک قسمت → متن کامل با واژگان کلیکی + پخش‌کننده
+        function openInnerEpisode(idx) {
+            const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
+            const ep = list[idx];
+            if (!ep) return;
+            const ci = catInfo("innerfrench");
+            document.getElementById("grid").classList.add("grid-single");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> InnerFrench #' + ep.num;
+            document.getElementById("count").textContent = "متن کامل";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = `
+                <div class="if-episode">
+                    <div class="if-ep-head">
+                        <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
+                        <div class="if-ep-titre-fa">${ep.titreFa}</div>
+                        ${ep.theme ? `<div class="if-ep-theme">${ep.theme}</div>` : ""}
+                    </div>
+                    ${ep.audio ? `
+                    <div class="if-player">
+                        <audio controls preload="metadata" style="width:100%">
+                            <source src="${safeUrl(ep.audio)}" type="audio/mpeg">
+                        </audio>
+                    </div>` : ""}
+                    <a class="if-source" href="${ep.source}" target="_blank" rel="noopener">
+                        🎧 گوش‌دادن و منبع اصلی در InnerFrench.com
+                    </a>
+                    ${ep.intro ? `<div class="if-intro">${ep.intro}</div>` : ""}
+                    <div class="if-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی</div>
+                    <div class="if-text">
+                        ${(ep.paras||[]).map(p => `<p class="if-para" dir="ltr">${parseClickWords(p)}</p>`).join("")}
+                    </div>
+                    <div class="if-credit">منبع: InnerFrench — Hugo Cotton · با احترام به سازنده‌ی اثر</div>
+                </div>`;
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
         // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی

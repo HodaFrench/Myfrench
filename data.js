@@ -10,7 +10,8 @@ const CATEGORIES = [
   { id: "grammar",      label: "گرامر",        icon: "§", color: "#22618f" },
   { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
-  { id: "podcast",      label: "پادکست",       icon: "♪", color: "#5a6f9e" },
+  { id: "podcast",      label: "معرفی پادکست",       icon: "♪", color: "#5a6f9e" },
+  { id: "innerfrench",  label: "InnerFrench",       icon: "▶", color: "#2e7bb5" },
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
@@ -1281,5 +1282,49 @@ const MINIARTICLES = [
       fr: "Le bonheur ne se trouve pas dans ce qu'on possède, mais dans ce qu'on apprécie. Avoir moins, c'est parfois vivre mieux.",
       fa: "خوشبختی در آنچه داریم نیست، در آن چیزی است که قدرش را می‌دانیم. کمتر داشتن، گاهی یعنی بهتر زیستن.",
     },
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  InnerFrench — پادکست با متن کامل و واژگان کلیکی
+//  هر قسمت:
+//    num    : شماره‌ی قسمت
+//    titre  : عنوان فرانسه
+//    titreFa: عنوان فارسی
+//    theme  : موضوع
+//    audio  : لینک مستقیم mp3 (از سرور InnerFrench)
+//    source : لینک صفحه‌ی اصلی (برای ذکر منبع)
+//    intro  : معرفی کوتاه فارسی
+//    paras  : پاراگراف‌های متن. واژه‌ی دشوار (A2+) به‌صورت ⟦mot|معنی⟧
+// ═══════════════════════════════════════════════════════════
+const INNERFRENCH = [
+  {
+    num: 1,
+    titre: "Apprendre le français naturellement",
+    titreFa: "یادگیری طبیعی زبان فرانسه",
+    theme: "یادگیری زبان · نظریه‌ی Krashen",
+    audio: "",
+    source: "https://innerfrench.com/01-learn-french-naturally/",
+    intro: "در این قسمت اول، هوگو خودش را معرفی می‌کند و درباره‌ی نظریه‌ی معروف استیون کراشن صحبت می‌کند: چطور یک زبان را به‌طور طبیعی یاد بگیریم؟ پنج فرضیه‌ی کلیدی که نگاه تو به یادگیری زبان را عوض می‌کند.",
+    paras: [
+      "Bonjour et bienvenue dans ce premier épisode. Merci d'être avec moi aujourd'hui, je suis très content que vous écoutiez ce podcast. Pour commencer, je vais vous présenter l'idée de ce podcast. C'est tout simplement pour les gens qui apprennent le français et qui ne ⟦trouvent|پیدا می‌کنند⟧ pas de choses intéressantes à écouter.",
+      "Il y a plusieurs ⟦profils|نیمرخ‌ها / انواع⟧ de personnes qui apprennent le français. Pour les ⟦débutants|مبتدی‌ها⟧, il y a plein d'exercices sur internet. Et pour les personnes qui ont déjà un niveau ⟦avancé|پیشرفته⟧, elles peuvent lire et écouter tous les médias français. Mais entre les deux, il y a les personnes de niveau ⟦intermédiaire|متوسط⟧ qui ne peuvent pas encore comprendre les médias français traditionnels, parce que c'est un peu trop ⟦compliqué|پیچیده⟧.",
+      "Ce que je veux faire avec ce podcast, c'est vous aider à apprendre le français, pas avec de la grammaire mais en écoutant des choses intéressantes. Je vais vous parler de ⟦politique|سیاست⟧, de ⟦société|جامعه⟧, de culture, de la France mais aussi de tous les autres pays.",
+      "Je vais me ⟦présenter|معرفی کردن⟧, comme c'est le premier podcast. Je m'appelle Hugo, je suis professeur en Pologne, à Varsovie, ⟦depuis|از / به‌مدتِ⟧ plusieurs années. La première fois qu'on écoute, c'est normal de ne pas tout comprendre. Il faut écouter deux fois, trois fois. Et plus vous écouterez, plus vous comprendrez.",
+      "Aujourd'hui, on va parler des langues. Pour commencer, il faut faire la ⟦distinction|تمایز⟧ entre la langue ⟦maternelle|مادری⟧ et une langue ⟦étrangère|خارجی⟧. La langue maternelle, on n'en a qu'une : c'est la langue qu'on apprend quand on est enfant. Les langues étrangères, ce sont les autres langues qu'on apprend en général à l'école.",
+      "Quand on parle de la ⟦théorie|نظریه⟧ de l'apprentissage des langues, il y a une personne très importante : le professeur Stephen Krashen. Dans les années 80, il a ⟦publié|منتشر کرد⟧ plusieurs livres qui ont beaucoup ⟦influencé|تأثیر گذاشت⟧ la façon dont on enseigne les langues. Grâce à cette théorie, vous allez pouvoir ⟦progresser|پیشرفت کردن⟧ plus rapidement.",
+      "Pour comprendre la théorie de Krashen, il y a cinq ⟦hypothèses|فرضیه‌ها⟧. La première hypothèse est centrale. Krashen dit qu'il faut faire la différence entre ⟦acquisition|فراگیری⟧ et ⟦apprentissage|یادگیری⟧. Acquérir une langue, c'est quand vous êtes enfant et que naturellement, ⟦inconsciemment|ناخودآگاه⟧, vous commencez à utiliser une langue pour parler à vos parents. Pour Krashen, c'est la seule façon ⟦efficace|مؤثر⟧.",
+      "L'apprentissage, au contraire, c'est quelque chose de ⟦conscient|آگاهانه⟧. Quand vous êtes à l'école, vous apprenez les ⟦règles|قواعد⟧ de grammaire. Mais Krashen pense que quand on apprend une langue de cette façon, on ne peut pas l'utiliser pour ⟦communiquer|ارتباط برقرار کردن⟧. Pour résumer : il faut apprendre une langue de façon plus naturelle, comme les enfants.",
+      "Personnellement, je ne suis pas complètement d'accord. Je pense qu'il faut connaître les règles de grammaire, mais ce n'est pas la ⟦priorité|اولویت⟧. D'abord, il faut essayer de communiquer, même si vous faites des ⟦fautes|اشتباه‌ها⟧. L'important, c'est de ⟦transmettre|انتقال دادن⟧ un message.",
+      "La deuxième hypothèse, c'est l'hypothèse du ⟦contrôleur|بازرس / کنترل‌گر⟧. Quand on parle une langue étrangère, il y a un contrôleur dans notre tête qui ⟦vérifie|بررسی می‌کند⟧ si on respecte les règles. Si vous êtes ⟦extraverti|برون‌گرا⟧, le contrôleur est faible : vous parlez sans peur. Mais si vous êtes ⟦introverti|درون‌گرا⟧, le contrôleur est très présent : vous réfléchissez trop avant de parler. Pour résumer : il faut ⟦limiter|محدود کردن⟧ l'influence du contrôleur.",
+      "Il ne faut pas avoir peur de faire des erreurs, c'est normal. Même les personnes les plus ⟦talentueuses|بااستعداد⟧ font des erreurs. La troisième hypothèse, c'est l'⟦ordre naturel|ترتیب طبیعی⟧ d'acquisition : chaque langue a son propre ordre. Par exemple en français, les ⟦articles|حروف تعریف⟧ sont difficiles à ⟦maîtriser|تسلط یافتن بر⟧ et ça prend très longtemps.",
+      "La quatrième hypothèse, c'est l'hypothèse de l'input. Elle dit qu'on apprend une langue quand on essaye de comprendre des ⟦contenus|محتواها⟧. Mais attention : si c'est trop facile, vous n'allez rien apprendre. Il faut essayer de comprendre des choses un peu trop difficiles pour vous, d'un niveau un peu ⟦supérieur|بالاتر⟧ au vôtre. À ce moment-là, votre ⟦cerveau|مغز⟧ va faire un effort et utiliser le ⟦contexte|بافت / زمینه⟧.",
+      "Krashen dit aussi que comprendre est plus important que s'exprimer. Mais moi, je ne suis pas d'accord : utiliser une langue pour communiquer permet aussi de faire des progrès. La cinquième hypothèse, c'est le ⟦filtre affectif|فیلتر عاطفی⟧. Quand vous ⟦ressentez|احساس می‌کنید⟧ des émotions positives, c'est plus facile d'apprendre. Si vous êtes ⟦motivé|باانگیزه⟧ et en ⟦confiance|اعتماد⟧, vous êtes dans un meilleur état d'esprit.",
+      "Par contre, si vous êtes ⟦stressé|مضطرب⟧ ou ⟦triste|غمگین⟧, votre filtre va ⟦bloquer|مسدود کردن⟧ le message. C'est pour ça que l'⟦ambiance|فضا / جو⟧ est très importante. Si vous apprenez avec un professeur, c'est important d'avoir une bonne relation et de vous sentir en confiance.",
+      "La conclusion de cette théorie, c'est qu'il n'est pas très important d'avoir une grande connaissance de la grammaire pour utiliser une langue. C'est un peu ⟦contre-intuitif|خلافِ شهود⟧. Pour acquérir une langue, il faut l'utiliser pour comprendre des messages. Tous les jours, essayez de comprendre quelque chose en français : un article, une vidéo, un email, ⟦n'importe quoi|هر چیزی⟧.",
+      "Ne faites pas confiance à une méthode ⟦centrée sur|متمرکز بر⟧ la grammaire. La grammaire peut vous aider à comprendre une ⟦structure|ساختار⟧, mais ça ne doit pas être la base de votre apprentissage. Le plus important, c'est de trouver des choses qui vous ⟦intéressent|برایتان جالب‌اند⟧, des choses que vous aurez envie de lire et d'écouter.",
+      "Contrairement à Krashen, moi je pense qu'il faut aussi utiliser la langue pour s'exprimer. Ça permet trois choses : d'abord, ⟦identifier|شناسایی کردن⟧ les problèmes ; ensuite, ⟦vérifier|بررسی کردن⟧ ce que vous avez appris ; et enfin, prendre ⟦confiance en vous|اعتمادبه‌نفس⟧. Quand vous voyez que vous êtes capable de vous exprimer, c'est très ⟦gratifiant|رضایت‌بخش⟧ et ça vous encourage à continuer.",
+      "Voilà, c'est la fin de ce podcast. Merci à tous de m'avoir écouté. La semaine prochaine, nous parlerons des robots : comment vivre avec eux et est-ce qu'ils peuvent nous ⟦remplacer|جایگزین کردن⟧ ? En attendant, je vous invite à essayer de comprendre un maximum de choses et à faire un peu de français tous les jours. Passez une bonne semaine et à bientôt !",
+    ],
   },
 ];
