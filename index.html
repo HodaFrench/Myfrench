@@ -595,7 +595,11 @@
             direction: rtl; white-space: nowrap;
             padding: 5px 12px; border-radius: 8px; z-index: 10;
             box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+            pointer-events: none;
         }
+        .cw.open .cw-pop { opacity: 1; visibility: visible; }
         .cw-pop::after {
             content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
             border: 6px solid transparent; border-top-color: var(--navy);
@@ -1689,7 +1693,13 @@
             });
         }
         function toggleCw(el) {
-            el.classList.toggle("open");
+            // اگر باز است، فوراً ببند
+            if (el.classList.contains("open")) {
+                el.classList.remove("open");
+                if (el._cwTimer) { clearTimeout(el._cwTimer); el._cwTimer = null; }
+                return;
+            }
+            // ساخت حباب معنی اگر هنوز نیست
             let pop = el.querySelector(".cw-pop");
             if (!pop) {
                 pop = document.createElement("span");
@@ -1697,6 +1707,13 @@
                 pop.textContent = el.getAttribute("data-sens");
                 el.appendChild(pop);
             }
+            el.classList.add("open");
+            // محو خودکار بعد از ۵ ثانیه
+            if (el._cwTimer) clearTimeout(el._cwTimer);
+            el._cwTimer = setTimeout(() => {
+                el.classList.remove("open");
+                el._cwTimer = null;
+            }, 5000);
         }
 
         // نمایش مینی‌آرتیکل‌ها
