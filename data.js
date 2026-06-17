@@ -255,6 +255,16 @@ const LESSONS = [
     summary: "همه‌ی حروف ربط مهم (زمان، علت، هدف، تضاد، شرط) دسته‌بندی‌شده — با مثال، ترجمه‌ی فارسی، اینکه هر کدام indicatif یا subjonctif می‌خواهد، و ۶ تمرین تعاملی.",
   },
   {
+    file: "GRAM_conditionnel_present.html",
+    title: "وجه شرطی حال",
+    titleFr: "Le conditionnel présent",
+    category: "grammar",
+    level: "متوسط (B1)",
+    premium: false,
+    tags: ["conditionnel", "ادب", "قاعده‌ی si", "تمرین"],
+    summary: "وجه شرطی حال: تشکیل (ریشه‌ی futur + پایانه‌ی imparfait)، ۵ کاربرد (ادب، آرزو، شرط، نصیحت، خبر تأییدنشده)، قاعده‌ی طلایی «si» و ۶ تمرین تعاملی با پاسخ.",
+  },
+  {
     file: "TCF_EO_T3_expatriation.html",
     title: "زندگی در کشوری دیگر",
     titleFr: "S'habituer à vivre à l'étranger",

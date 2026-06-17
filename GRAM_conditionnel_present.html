@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditionnel présent | Grammaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --purple:#7a5ba8;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.08) 31px, rgba(65,97,138,0.08) 32px);
+    color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
+  .wrap{max-width:800px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:38px 30px; border-radius:20px; text-align:center; margin-bottom:26px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header .fa{font-size:15px; opacity:.92;}
+
+  .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:26px; font-size:15px; line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+
+  .sec{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px 24px;
+    margin-bottom:22px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .sec-title{font-family:'Cormorant Garamond',serif; font-size:25px; font-weight:600; color:var(--navy);
+    margin-bottom:8px; direction:ltr; text-align:left;}
+  .sec-title-fa{font-size:14px; color:var(--gold); font-weight:700; margin-bottom:18px;}
+  .sec p{font-size:14.5px; line-height:2.1; margin-bottom:12px;}
+  .sec p b{color:var(--navy);}
+
+  /* فرمول */
+  .formula{background:linear-gradient(135deg,rgba(46,139,107,0.08),rgba(196,165,114,0.06));
+    border:1.5px dashed var(--green); border-radius:12px; padding:18px; text-align:center; margin:18px 0;}
+  .formula .big{font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; line-height:1.8;}
+  .formula .big .a{color:var(--terracotta);}
+  .formula .big .b{color:var(--purple);}
+
+  /* جدول صرف */
+  .conj-card{background:var(--cream); border-radius:12px; padding:16px 18px; border-top:3px solid var(--navy-soft); margin:14px 0;}
+  .conj-card h4{font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--navy); direction:ltr; text-align:center; margin-bottom:10px;}
+  .conj-card .row{display:flex; justify-content:space-between; font-size:14.5px; padding:4px 0; direction:ltr; border-bottom:1px dashed var(--line);}
+  .conj-card .row:last-child{border-bottom:none;}
+  .conj-card .pron{color:var(--gray);}
+  .conj-card .form{font-weight:600; color:var(--navy);}
+  .conj-card .form .end{color:var(--terracotta); font-weight:700;}
+
+  /* کاربردها */
+  .use{background:var(--cream); border-right:4px solid var(--purple); border-radius:10px; padding:14px 18px; margin:12px 0;}
+  .use-t{font-size:15px; font-weight:700; color:var(--purple); margin-bottom:8px;}
+  .ex{direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-size:17px;
+    color:var(--navy); background:var(--white); padding:9px 14px; border-radius:8px; margin:6px 0; line-height:1.7;}
+  .ex .hl{background:rgba(122,91,168,0.18); padding:1px 5px; border-radius:4px; font-weight:700;}
+  .ex-fa{font-size:13px; color:var(--gray); margin:2px 0 8px; line-height:1.8;}
+
+  .rule{background:linear-gradient(135deg,rgba(122,91,168,0.07),rgba(196,165,114,0.06));
+    border-right:5px solid var(--purple); border-radius:12px; padding:16px 20px; margin:18px 0; font-size:14px; line-height:2;}
+  .rule .rt{font-size:14px; font-weight:700; color:var(--purple); margin-bottom:8px;}
+  .rule.warn{border-right-color:var(--terracotta); background:linear-gradient(135deg,rgba(196,80,45,0.06),rgba(196,165,114,0.06));}
+  .rule.warn .rt{color:var(--terracotta);}
+
+  /* تمرین */
+  .quiz-sec{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--green);
+    border-radius:16px; padding:26px 24px; margin-top:30px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz-sec h3{font-size:18px; color:var(--navy); font-weight:700; margin-bottom:6px;}
+  .quiz-sec .qsub{font-size:13.5px; color:var(--gray); margin-bottom:20px;}
+  .q-item{margin-bottom:22px; padding-bottom:22px; border-bottom:1px dashed var(--line);}
+  .q-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600;}
+  .q-fa{font-size:13px; color:var(--gray); margin-bottom:12px;}
+  .q-opts{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .q-opt{font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; direction:ltr;
+    background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .q-opt:hover:not(.done){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .q-opt.correct{background:rgba(46,139,107,0.15); border-color:var(--green); color:var(--green);}
+  .q-opt.wrong{background:rgba(196,80,45,0.1); border-color:var(--terracotta); color:var(--terracotta);}
+  .q-ans{display:none; font-size:13.5px; line-height:1.9; background:var(--paper-warm); border-right:3px solid var(--green); border-radius:8px; padding:10px 14px;}
+  .q-ans.show{display:block; animation:fade .3s;}
+  .q-ans b{color:var(--green);}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+  .footer{text-align:center; margin-top:34px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+
+    <div class="header">
+      <div class="tag">Grammaire · Conjugaison</div>
+      <h1>Le conditionnel présent</h1>
+      <div class="fa">وجه شرطی حال</div>
+    </div>
+
+    <div class="lead">
+      می‌خواهی مؤدبانه چیزی بخواهی؟ 🙏 آرزویی داری؟ 💭 یا می‌خواهی بگویی «اگر... آنگاه...»؟
+      اینجاست که <b>conditionnel présent</b> به کمکت می‌آید! این وجه، یکی از زیباترین و کاربردی‌ترین بخش‌های فرانسه است که گفتارت را نرم، مؤدبانه و حرفه‌ای می‌کند. خبر خوب: ساختنش خیلی ساده است، چون فقط ترکیبی از دو چیزی است که از قبل بلدی! بریم ببینیم. 😊
+    </div>
+
+    <!-- بخش ۱: تشکیل -->
+    <div class="sec">
+      <div class="sec-title">1. La formation</div>
+      <div class="sec-title-fa">چطور می‌سازیمش؟ (خیلی ساده!)</div>
+      <p>یک فرمول طلایی دارد که هیچ‌وقت فراموشش نمی‌کنی:</p>
+      <div class="formula">
+        <div class="big"><span class="a">ریشه‌ی futur simple</span> + <span class="b">پایانه‌های imparfait</span></div>
+      </div>
+      <p>یعنی همان ریشه‌ای که برای زمان آینده استفاده می‌کنی، ولی با این پایانه‌ها: <b>-ais, -ais, -ait, -ions, -iez, -aient</b> (دقیقاً مثل ماضی استمراری).</p>
+      <div class="conj-card">
+        <h4 dir="ltr">parler → je parler-</h4>
+        <div class="row"><span class="pron">je</span><span class="form">parler<span class="end">ais</span></span></div>
+        <div class="row"><span class="pron">tu</span><span class="form">parler<span class="end">ais</span></span></div>
+        <div class="row"><span class="pron">il/elle</span><span class="form">parler<span class="end">ait</span></span></div>
+        <div class="row"><span class="pron">nous</span><span class="form">parler<span class="end">ions</span></span></div>
+        <div class="row"><span class="pron">vous</span><span class="form">parler<span class="end">iez</span></span></div>
+        <div class="row"><span class="pron">ils/elles</span><span class="form">parler<span class="end">aient</span></span></div>
+      </div>
+      <p>💡 <b>افعال بی‌قاعده</b> همان ریشه‌ی بی‌قاعده‌ی futur را دارند: être → je <b>serais</b> / avoir → j'<b>aurais</b> / aller → j'<b>irais</b> / faire → je <b>ferais</b> / pouvoir → je <b>pourrais</b> / vouloir → je <b>voudrais</b> / venir → je <b>viendrais</b>.</p>
+    </div>
+
+    <!-- بخش ۲: کاربردها -->
+    <div class="sec">
+      <div class="sec-title">2. Les emplois</div>
+      <div class="sec-title-fa">۵ کاربرد اصلی</div>
+
+      <div class="use">
+        <div class="use-t">🙏 ۱. ادب و درخواست مؤدبانه</div>
+        <div class="ex">Je <span class="hl">voudrais</span> un café, s'il vous plaît.</div>
+        <div class="ex-fa">یک قهوه می‌خواستم، لطفاً. (به‌جای je veux که خشک است)</div>
+        <div class="ex"><span class="hl">Pourriez</span>-vous m'aider, s'il vous plaît ?</div>
+        <div class="ex-fa">می‌توانستید کمکم کنید لطفاً؟</div>
+      </div>
+
+      <div class="use">
+        <div class="use-t">💭 ۲. آرزو و میل</div>
+        <div class="ex">J'<span class="hl">aimerais</span> voyager au Canada un jour.</div>
+        <div class="ex-fa">دلم می‌خواست یک روز به کانادا سفر کنم.</div>
+      </div>
+
+      <div class="use">
+        <div class="use-t">🔑 ۳. فرض و شرط (با si + imparfait)</div>
+        <div class="ex">Si j'avais plus de temps, je <span class="hl">lirais</span> davantage.</div>
+        <div class="ex-fa">اگر وقت بیشتری داشتم، بیشتر مطالعه می‌کردم.</div>
+      </div>
+
+      <div class="use">
+        <div class="use-t">💡 ۴. نصیحت و پیشنهاد</div>
+        <div class="ex">Tu <span class="hl">devrais</span> te reposer un peu.</div>
+        <div class="ex-fa">بهتر است کمی استراحت کنی. (نرم‌تر از امری)</div>
+      </div>
+
+      <div class="use">
+        <div class="use-t">📰 ۵. خبر تأییدنشده (شایعه)</div>
+        <div class="ex">Selon la presse, le ministre <span class="hl">serait</span> démissionnaire.</div>
+        <div class="ex-fa">به گفته‌ی مطبوعات، وزیر ظاهراً استعفا داده است. (قطعی نیست)</div>
+      </div>
+    </div>
+
+    <!-- بخش ۳: قاعده‌ی si -->
+    <div class="sec">
+      <div class="sec-title">3. La règle du « si » 🔑</div>
+      <div class="sec-title-fa">قاعده‌ی طلایی «اگر»</div>
+      <p>این جدول کوچک را حفظ کن و دیگر هیچ‌وقت در ساختار شرطی اشتباه نمی‌کنی:</p>
+      <div class="rule">
+        <div class="ex">si + <b>présent</b> → <b>futur</b></div>
+        <div class="ex-fa">Si tu étudies, tu réussiras. (اگر درس بخوانی، موفق می‌شوی.)</div>
+        <div class="ex">si + <b>imparfait</b> → <b>conditionnel présent</b></div>
+        <div class="ex-fa">Si tu étudiais, tu réussirais. (اگر درس می‌خواندی، موفق می‌شدی.)</div>
+      </div>
+      <div class="rule warn">
+        <div class="rt">⚠️ تله‌ی بزرگ!</div>
+        <p>بعد از «si» <b>هرگز</b> conditionnel (پایانه‌ی -rais) نمی‌آید! یک ضرب‌المثل فرانسوی می‌گوید: «Les "si" n'aiment pas les "-rais"» (سی‌ها، -re‌ها را دوست ندارند). پس:</p>
+        <div class="ex" style="text-decoration:line-through; color:var(--terracotta);">Si j'aurais le temps...</div>
+        <div class="ex-fa">❌ کاملاً غلط!</div>
+        <div class="ex" style="color:var(--green);">Si j'avais le temps... ✓</div>
+        <div class="ex-fa">✅ درست (si + imparfait)</div>
+      </div>
+    </div>
+
+    <!-- بخش ۴: آینده یا شرطی؟ -->
+    <div class="sec">
+      <div class="sec-title">4. Futur ou conditionnel ?</div>
+      <div class="sec-title-fa">چطور این دو را اشتباه نگیریم؟</div>
+      <p>اول‌شخص مفرد این دو خیلی شبیه‌اند: je parler<b>ai</b> (آینده) و je parler<b>ais</b> (شرطی). یک ترفند ساده دارد:</p>
+      <div class="rule">
+        <div class="rt">✨ ترفند «nous»</div>
+        <p>جمله را با <b>nous</b> بساز و گوش کن:</p>
+        <div class="ex">nous parler<b>ons</b> = آینده (futur) ➜ قطعی</div>
+        <div class="ex">nous parler<b>ions</b> = شرطی (conditionnel) ➜ فرضی</div>
+        <div class="ex-fa">صدای «-ons» یعنی آینده، صدای «-ions» یعنی شرطی. ساده، نه؟</div>
+      </div>
+    </div>
+
+    <!-- تمرین -->
+    <div class="quiz-sec">
+      <h3>🎯 حالا تمرین کن!</h3>
+      <div class="qsub">گزینه‌ی درست را انتخاب کن. روی پاسخ کلیک کن تا توضیح را ببینی.</div>
+
+      <div class="q-item">
+        <div class="q-text">Si j'avais de l'argent, je ___ une maison.</div>
+        <div class="q-fa">اگر پول داشتم، یک خانه می‌خریدم.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">achèterai</button>
+          <button class="q-opt" onclick="ans(this,1,1)">achèterais</button>
+          <button class="q-opt" onclick="ans(this,2,1)">achetais</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: achèterais</b> — ساختار «si + imparfait (avais) → conditionnel présent». پس فعل دوم شرطی است: achèterais.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">___-vous fermer la fenêtre, s'il vous plaît ?</div>
+        <div class="q-fa">می‌توانستید پنجره را ببندید لطفاً؟ (مؤدبانه)</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">Pouvez</button>
+          <button class="q-opt" onclick="ans(this,1,1)">Pourriez</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: Pourriez</b> — برای درخواست مؤدبانه از conditionnel استفاده می‌کنیم. «Pourriez-vous» بسیار مؤدب‌تر از «Pouvez-vous» است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Tu ___ voir un médecin, tu as l'air fatigué.</div>
+        <div class="q-fa">بهتر است یک پزشک ببینی، خسته به نظر می‌رسی. (نصیحت)</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">dois</button>
+          <button class="q-opt" onclick="ans(this,1,1)">devrais</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: devrais</b> — برای نصیحت نرم و دوستانه از conditionnel «devrais» استفاده می‌کنیم. «dois» (باید) خیلی دستوری و خشک است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">کدام جمله درست است؟</div>
+        <div class="q-fa">قاعده‌ی «si» را به یاد بیاور.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">Si je serais riche...</button>
+          <button class="q-opt" onclick="ans(this,1,1)">Si j'étais riche...</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: Si j'étais riche...</b> — بعد از «si» هرگز conditionnel (serais) نمی‌آید! باید imparfait (étais) بیاید. یادت باشد: «si»‌ها «-rais» را دوست ندارند.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">J'___ visiter le Japon un jour. (آرزو)</div>
+        <div class="q-fa">دلم می‌خواست یک روز ژاپن را ببینم.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">aime</button>
+          <button class="q-opt" onclick="ans(this,1,1)">aimerais</button>
+          <button class="q-opt" onclick="ans(this,2,1)">aimerai</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: aimerais</b> — برای بیان آرزو و میل از conditionnel «aimerais» استفاده می‌کنیم. این یک آرزوست، نه واقعیت قطعی.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Selon les médias, il y ___ un accord bientôt. (خبر تأییدنشده)</div>
+        <div class="q-fa">به گفته‌ی رسانه‌ها، ظاهراً به‌زودی توافقی خواهد بود.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">aura</button>
+          <button class="q-opt" onclick="ans(this,1,1)">aurait</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: aurait</b> — برای خبری که قطعی نیست و فقط نقل می‌شود (شایعه)، از conditionnel استفاده می‌کنیم: «il y aurait».</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ✦ با conditionnel، فرانسه‌ات مؤدب، نرم و حرفه‌ای می‌شود!<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+
+  <script>
+    function ans(el, idx, correctIdx){
+      const item = el.closest('.q-item');
+      if(item.dataset.done) return;
+      item.dataset.done = "1";
+      const opts = item.querySelectorAll('.q-opt');
+      opts.forEach((o,i)=>{ o.classList.add('done'); if(i===correctIdx) o.classList.add('correct'); });
+      if(idx!==correctIdx) el.classList.add('wrong');
+      item.querySelector('.q-ans').classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
