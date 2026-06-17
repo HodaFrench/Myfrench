@@ -321,6 +321,17 @@ const LESSONS = [
     summary: "تمرین جامع conditionnel présent در سه بخش: صرف افعال بی‌قاعده، تشخیص آینده از شرطی، و کاربرد در موقعیت — همه تعاملی با پاسخ و توضیح.",
   },
   {
+    file: "GRAM_apres_que.html",
+    title: "après que: اخباری یا التزامی؟",
+    titleFr: "« Après que » : indicatif ou subjonctif ?",
+    category: "grammar",
+    groupe: "subjonctif",
+    level: "پیشرفته (B2)",
+    premium: false,
+    tags: ["après que", "subjonctif", "indicatif", "تمرین"],
+    summary: "چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی.",
+  },
+  {
     file: "GUIDE_prononciation.html",
     title: "راهنمای کامل تلفظ فرانسوی",
     titleFr: "La prononciation française — A à Z",

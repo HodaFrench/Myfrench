@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>après que : indicatif ou subjonctif ? | Grammaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --purple:#7a5ba8;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.08) 31px, rgba(65,97,138,0.08) 32px);
+    color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
+  .wrap{max-width:800px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:38px 30px; border-radius:20px; text-align:center; margin-bottom:26px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header .fa{font-size:15px; opacity:.92;}
+  .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:26px; font-size:15px; line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+  .sec{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px 24px;
+    margin-bottom:22px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .sec-title{font-family:'Cormorant Garamond',serif; font-size:25px; font-weight:600; color:var(--navy);
+    margin-bottom:8px; direction:ltr; text-align:left;}
+  .sec-title-fa{font-size:14px; color:var(--gold); font-weight:700; margin-bottom:18px;}
+  .sec p{font-size:14.5px; line-height:2.1; margin-bottom:12px;}
+  .sec p b{color:var(--navy);}
+  .rule{background:linear-gradient(135deg,rgba(46,139,107,0.08),rgba(196,165,114,0.06));
+    border-right:5px solid var(--green); border-radius:12px; padding:18px 20px; margin:18px 0;}
+  .rule .rt{font-size:14px; font-weight:700; color:var(--green); margin-bottom:10px;}
+  .rule.warn{border-right-color:var(--terracotta); background:linear-gradient(135deg,rgba(196,80,45,0.06),rgba(196,165,114,0.06));}
+  .rule.warn .rt{color:var(--terracotta);}
+  .rule.purple{border-right-color:var(--purple); background:linear-gradient(135deg,rgba(122,91,168,0.07),rgba(196,165,114,0.06));}
+  .rule.purple .rt{color:var(--purple);}
+  .ex{direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-size:17px;
+    color:var(--navy); background:var(--white); padding:10px 14px; border-radius:8px; margin:8px 0; line-height:1.7;}
+  .ex .hl{background:rgba(46,139,107,0.16); padding:1px 5px; border-radius:4px; font-weight:700;}
+  .ex .hlr{background:rgba(196,80,45,0.14); padding:1px 5px; border-radius:4px; font-weight:700;}
+  .ex-fa{font-size:13px; color:var(--gray); margin:2px 0 12px; line-height:1.8;}
+  .compare{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0;}
+  @media(max-width:600px){.compare{grid-template-columns:1fr;}}
+  .comp-card{border-radius:12px; padding:16px 18px;}
+  .comp-card.a{background:rgba(46,139,107,0.07); border:1.5px solid rgba(46,139,107,0.3);}
+  .comp-card.b{background:rgba(122,91,168,0.07); border:1.5px solid rgba(122,91,168,0.3);}
+  .comp-h{font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:700; direction:ltr; text-align:center; margin-bottom:4px;}
+  .comp-card.a .comp-h{color:var(--green);}
+  .comp-card.b .comp-h{color:var(--purple);}
+  .comp-mode{text-align:center; font-size:12px; font-weight:700; margin-bottom:12px;}
+  .comp-card.a .comp-mode{color:var(--green);}
+  .comp-card.b .comp-mode{color:var(--purple);}
+  /* تمرین */
+  .quiz-sec{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--green);
+    border-radius:16px; padding:26px 24px; margin-top:30px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz-sec h3{font-size:18px; color:var(--navy); font-weight:700; margin-bottom:6px;}
+  .quiz-sec .qsub{font-size:13.5px; color:var(--gray); margin-bottom:20px;}
+  .q-item{margin-bottom:22px; padding-bottom:22px; border-bottom:1px dashed var(--line);}
+  .q-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600;}
+  .q-fa{font-size:13px; color:var(--gray); margin-bottom:12px;}
+  .q-opts{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .q-opt{font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; direction:ltr;
+    background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .q-opt:hover:not(.done){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .q-opt.correct{background:rgba(46,139,107,0.15); border-color:var(--green); color:var(--green);}
+  .q-opt.wrong{background:rgba(196,80,45,0.1); border-color:var(--terracotta); color:var(--terracotta);}
+  .q-ans{display:none; font-size:13.5px; line-height:1.9; background:var(--paper-warm); border-right:3px solid var(--green); border-radius:8px; padding:10px 14px;}
+  .q-ans.show{display:block; animation:fade .3s;}
+  .q-ans b{color:var(--green);}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+  .footer{text-align:center; margin-top:34px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+    <div class="header">
+      <div class="tag">Grammaire · Subtilité</div>
+      <h1>« Après que » : indicatif ou subjonctif ?</h1>
+      <div class="fa">پس از «après que» چه می‌آید؟</div>
+    </div>
+
+    <div class="lead">
+      این یکی از پرتکرارترین اشتباه‌های فرانسه است — حتی خود فرانسوی‌ها! 😮 خیلی‌ها بعد از «après que» از subjonctif استفاده می‌کنند (مثلاً <i dir="ltr">après qu'il soit parti</i>). ولی قاعده‌ی درست چیز دیگری می‌گوید. در این درس یک‌بار برای همیشه یاد می‌گیری که چرا «après que» با <b>indicatif</b> می‌آید، نه subjonctif — و چطور آن را با «avant que» اشتباه نگیری.
+    </div>
+
+    <!-- قاعده اصلی -->
+    <div class="sec">
+      <div class="sec-title">La règle d'or</div>
+      <div class="sec-title-fa">قاعده‌ی طلایی</div>
+      <div class="rule">
+        <div class="rt">✅ après que + indicatif</div>
+        <p>چون «après que» (پس از اینکه) به کاری اشاره می‌کند که <b>قطعاً اتفاق افتاده</b> یا <b>قطعاً خواهد افتاد</b>. این یک واقعیت است، نه یک فرض. و وجه واقعیت در فرانسه، <b>indicatif</b> است.</p>
+        <div class="ex">Il est parti <span class="hl">après que</span> nous l'<span class="hl">avons</span> salué.</div>
+        <div class="ex-fa">او رفت، پس از اینکه همه به او سلام کردیم. (سلام‌کردن قطعاً انجام شد ✓)</div>
+        <div class="ex">Je rentrerai <span class="hl">après que</span> la nuit <span class="hl">sera</span> tombée.</div>
+        <div class="ex-fa">برمی‌گردم، پس از اینکه شب فرا برسد. (قطعاً فرا می‌رسد ✓)</div>
+        <div class="ex">Chaque soir, elle se repose <span class="hl">après qu'</span>elle <span class="hl">a</span> dîné.</div>
+        <div class="ex-fa">هر شب، پس از اینکه شام خورد، استراحت می‌کند.</div>
+      </div>
+    </div>
+
+    <!-- چرا اشتباه می‌شود -->
+    <div class="sec">
+      <div class="sec-title">Pourquoi tout le monde se trompe ?</div>
+      <div class="sec-title-fa">چرا همه اشتباه می‌کنند؟</div>
+      <p>دلیلش ساده است: «avant que» (پیش از اینکه) با <b>subjonctif</b> می‌آید. چون این دو شبیه هم‌اند، آدم‌ها ناخودآگاه فکر می‌کنند «après que» هم باید subjonctif بگیرد. ولی این یک <b>قیاس غلط</b> است!</p>
+      <div class="compare">
+        <div class="comp-card b">
+          <div class="comp-h" dir="ltr">avant que</div>
+          <div class="comp-mode">+ SUBJONCTIF</div>
+          <div class="ex" style="font-size:15px;">avant qu'il <b>parte</b></div>
+          <div class="ex-fa" style="text-align:center;">پیش از اینکه برود<br>(هنوز نرفته = نامطمئن)</div>
+        </div>
+        <div class="comp-card a">
+          <div class="comp-h" dir="ltr">après que</div>
+          <div class="comp-mode">+ INDICATIF</div>
+          <div class="ex" style="font-size:15px;">après qu'il <b>est</b> parti</div>
+          <div class="ex-fa" style="text-align:center;">پس از اینکه رفت<br>(رفته = قطعی)</div>
+        </div>
+      </div>
+      <div class="rule purple">
+        <div class="rt">🧠 منطقش را بفهم، حفظ نکن</div>
+        <p><b>avant que</b> = کاری که <b>هنوز نشده</b> → نامطمئن → subjonctif (وجه شک و فرض)<br>
+        <b>après que</b> = کاری که <b>قطعاً شده</b> → واقعیت → indicatif (وجه واقعیت)</p>
+      </div>
+    </div>
+
+    <!-- اشتباه رایج -->
+    <div class="sec">
+      <div class="sec-title">L'erreur la plus fréquente</div>
+      <div class="sec-title-fa">اشتباه پرتکرار</div>
+      <div class="rule warn">
+        <div class="rt">⚠️ این را نگو</div>
+        <div class="ex" style="text-decoration:line-through; color:var(--terracotta);">après qu'il soit arrivé</div>
+        <div class="ex-fa">❌ غلط (subjonctif بعد از après que)</div>
+        <div class="ex" style="color:var(--green);">après qu'il est arrivé ✓</div>
+        <div class="ex-fa">✅ درست (indicatif)</div>
+      </div>
+      <p>💡 <b>نکته‌ی واقع‌بینانه:</b> این اشتباه آن‌قدر رایج شده که حتی در روزنامه‌های معتبر و گفتار روزمره‌ی فرانسوی‌ها هم دیده می‌شود. اما در <b>نوشتار رسمی</b> و مخصوصاً در <b>آزمون‌ها (مثل TCF)</b>، حتماً قاعده‌ی درست (indicatif) را رعایت کن.</p>
+    </div>
+
+    <!-- راه ساده‌تر -->
+    <div class="sec">
+      <div class="sec-title">Une astuce pour éviter le problème</div>
+      <div class="sec-title-fa">یک ترفند برای دور زدن مشکل</div>
+      <p>اگر <b>فاعل هر دو جمله یکی باشد</b>، می‌توانی به‌جای «après que» از <b>après + مصدر گذشته</b> (infinitif passé) استفاده کنی. این هم ساده‌تر است هم رایج‌تر:</p>
+      <div class="rule">
+        <div class="ex">Après <span class="hl">avoir fini</span> mon travail, je suis sorti.</div>
+        <div class="ex-fa">پس از تمام‌کردن کارم، بیرون رفتم. (= après que j'ai fini)</div>
+        <div class="ex">Après <span class="hl">être arrivée</span>, elle a téléphoné.</div>
+        <div class="ex-fa">پس از رسیدن، او تلفن زد.</div>
+      </div>
+      <p>این ساختار با <b>avoir</b> یا <b>être</b> + اسم مفعول ساخته می‌شود — همان کمک‌فعل‌هایی که در passé composé استفاده می‌کنی.</p>
+    </div>
+
+    <!-- تمرین -->
+    <div class="quiz-sec">
+      <h3>🎯 حالا تمرین کن!</h3>
+      <div class="qsub">گزینه‌ی درست را انتخاب کن. روی پاسخ کلیک کن تا توضیح را ببینی.</div>
+
+      <div class="q-item">
+        <div class="q-text">Après qu'il ___ son discours, les gens ont applaudi.</div>
+        <div class="q-fa">پس از اینکه سخنرانی‌اش را تمام کرد، مردم تشویق کردند.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">ait fini</button>
+          <button class="q-opt" onclick="ans(this,1,1)">a fini</button>
+        </div>
+        <div class="q-ans"><b>a fini</b> — «après que» با indicatif می‌آید. سخنرانی قطعاً تمام شده، پس passé composé (a fini) درست است، نه subjonctif (ait fini).</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Je sortirai ___ il arrête de pleuvoir. (پس از اینکه باران بند بیاید)</div>
+        <div class="q-fa">بیرون می‌روم پس از اینکه باران بند بیاید.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">avant que</button>
+          <button class="q-opt" onclick="ans(this,1,1)">après que</button>
+        </div>
+        <div class="q-ans"><b>après que</b> — معنی جمله «پس از اینکه» است. و با après que فعل به indicatif می‌آید: après qu'il arrête.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">کدام جمله درست است؟</div>
+        <div class="q-fa">به قاعده‌ی après que فکر کن.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">après que tu sois rentré</button>
+          <button class="q-opt" onclick="ans(this,1,1)">après que tu es rentré</button>
+        </div>
+        <div class="q-ans"><b>après que tu es rentré</b> — indicatif (es rentré) درست است، نه subjonctif (sois rentré). برگشتن یک واقعیت قطعی است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Compare : ___ il parte, dis-lui au revoir. (پیش از اینکه برود)</div>
+        <div class="q-fa">پیش از اینکه برود، به او خداحافظی بگو.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,0)">Avant qu'</button>
+          <button class="q-opt" onclick="ans(this,1,0)">Après qu'</button>
+        </div>
+        <div class="q-ans"><b>Avant qu'</b> — اینجا «parte» یک فعل subjonctif است. فقط «avant que» با subjonctif می‌آید (کار هنوز نشده). دقت کن که après que هرگز subjonctif نمی‌گیرد.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">جمله‌ی «Après que j'ai mangé, j'ai dormi» را چطور ساده‌تر بنویسیم؟</div>
+        <div class="q-fa">وقتی فاعل هر دو یکی است.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">Après mangé, j'ai dormi</button>
+          <button class="q-opt" onclick="ans(this,1,1)">Après avoir mangé, j'ai dormi</button>
+        </div>
+        <div class="q-ans"><b>Après avoir mangé, j'ai dormi</b> — وقتی فاعل یکی است، از «après + مصدر گذشته» (avoir mangé) استفاده می‌کنیم. ساده‌تر و رایج‌تر است.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ✦ یادت باشد: après que = واقعیت = indicatif. همین!<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+  <script>
+    function ans(el, idx, correctIdx){
+      const item = el.closest('.q-item');
+      if(item.dataset.done) return;
+      item.dataset.done = "1";
+      const opts = item.querySelectorAll('.q-opt');
+      opts.forEach((o,i)=>{ o.classList.add('done'); if(i===correctIdx) o.classList.add('correct'); });
+      if(idx!==correctIdx) el.classList.add('wrong');
+      item.querySelector('.q-ans').classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
