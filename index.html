@@ -43,6 +43,18 @@
         /* بافت ظریف کاغذ */
 
 
+        /* پس‌زمینه‌ی ظریف با ستاره‌های درخشان (کم‌تعداد، آرام) */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%23c4a572' stroke-width='1.1' opacity='0.32'%3E%3Cpath d='M90 110 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z'/%3E%3Cpath d='M470 80 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4 -5.6 -5.6 -2.4 5.6 -2.4z'/%3E%3Cpath d='M520 340 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z'/%3E%3Cpath d='M180 470 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4 -5.6 -5.6 -2.4 5.6 -2.4z'/%3E%3Cpath d='M380 520 l2 4.6 4.6 2 -4.6 2 -2 4.6 -2 -4.6 -4.6 -2 4.6 -2z'/%3E%3C/g%3E%3Cg fill='%23c4a572' opacity='0.22'%3E%3Ccircle cx='300' cy='200' r='2'/%3E%3Ccircle cx='110' cy='300' r='1.6'/%3E%3Ccircle cx='450' cy='250' r='1.8'/%3E%3Ccircle cx='250' cy='400' r='1.6'/%3E%3Ccircle cx='540' cy='150' r='1.6'/%3E%3C/g%3E%3Cg fill='%237a5ba8' opacity='0.16'%3E%3Cpath d='M300 90 l2.6 6 6 2.6 -6 2.6 -2.6 6 -2.6 -6 -6 -2.6 6 -2.6z'/%3E%3Cpath d='M70 420 l2.2 5 5 2.2 -5 2.2 -2.2 5 -2.2 -5 -5 -2.2 5 -2.2z'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 600px 600px;
+            pointer-events: none;
+        }
+
         /* نوار بالا */
         .topbar {
             text-align: center;

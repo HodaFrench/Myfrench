@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Environnement &amp; énergies — Vocabulaire · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Environnement <b>&amp; énergies</b></h1>
+    <div class="b2">Niveau B2+ · Expression Orale &amp; Écrite</div><div style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1rem;color:#C0392B;margin:6px 0 2px;">APERÇU GRATUIT · 10 premiers mots</div>
+    <p class="lead">Le vocabulaire du thème avec, pour chaque mot, une définition, une traduction persane et 3 exemples B2+ complexes (subjonctif, hypothétiques, tournures soutenues).</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="environnement energies"><circle cx="300" cy="44" r="16" fill="#D6922E"/><g stroke="#D6922E" stroke-width="3" stroke-linecap="round"><line x1="300" y1="16" x2="300" y2="8"/><line x1="300" y1="72" x2="300" y2="80"/><line x1="272" y1="44" x2="264" y2="44"/><line x1="328" y1="44" x2="336" y2="44"/><line x1="281" y1="25" x2="275" y2="19"/><line x1="319" y1="25" x2="325" y2="19"/></g><path d="M0 152 Q 120 122 250 150 T 360 150 L360 188 L0 188 Z" fill="#2E8B6B" opacity="0.16"/><rect x="40" y="150" width="280" height="6" rx="3" fill="#46537d" opacity="0.22"/><line x1="150" y1="150" x2="150" y2="74" stroke="#46537d" stroke-width="5" stroke-linecap="round"/><g stroke="#2E8B6B" stroke-width="6" stroke-linecap="round"><line x1="150" y1="72" x2="150" y2="30"/><line x1="150" y1="74" x2="114" y2="94"/><line x1="150" y1="74" x2="186" y2="94"/></g><circle cx="150" cy="73" r="6" fill="#1B2A6B"/><line x1="210" y1="150" x2="210" y2="104" stroke="#46537d" stroke-width="3.5" stroke-linecap="round"/><g stroke="#3FA07A" stroke-width="4" stroke-linecap="round"><line x1="210" y1="103" x2="210" y2="78"/><line x1="210" y1="104" x2="189" y2="116"/><line x1="210" y1="104" x2="231" y2="116"/></g><circle cx="210" cy="103" r="4" fill="#1B2A6B"/><polygon points="248,150 262,126 320,126 306,150" fill="#2E6BD6"/><line x1="281" y1="126" x2="267" y2="150" stroke="#FBF8F0" stroke-width="1.4"/><line x1="300" y1="126" x2="286" y2="150" stroke="#FBF8F0" stroke-width="1.4"/><line x1="255" y1="138" x2="313" y2="138" stroke="#FBF8F0" stroke-width="1.4"/></svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+{id:1,name:"Les sources d'énergie",fa:"منابع انرژی",icon:"🛢️",color:"#5B5BD6"},
+{id:2,name:"Les énergies renouvelables",fa:"انرژی‌های تجدیدپذیر",icon:"🌬️",color:"#2E8B6B"},
+{id:3,name:"La pollution &amp; les émissions",fa:"آلودگی و انتشار",icon:"🏭",color:"#C77A2E"},
+{id:4,name:"Le réchauffement &amp; les impacts",fa:"گرمایش و پیامدها",icon:"🌡️",color:"#C0392B"},
+{id:5,name:"La transition écologique",fa:"گذار زیست‌محیطی",icon:"♻️",color:"#2E6BD6"},
+{id:6,name:"Le débat « pour ou contre »",fa:"بحث موافق و مخالف",icon:"⚖️",color:"#7C5BD6"},
+{id:7,name:"Expressions avec « vent »",fa:"اصطلاح‌های «باد»",icon:"🍃",color:"#2E8B8B"}
+];
+const D=[
+{c:1,term:"les énergies fossiles",fa:"انرژی‌های فسیلی (نفت، گاز، زغال‌سنگ)",def:"Les énergies tirées de ressources non renouvelables comme le pétrole, le gaz et le charbon.",syn:["les combustibles fossiles","les ressources non renouvelables"],ex:[["Quoiqu'elles aient longtemps soutenu la croissance, les <b>énergies fossiles</b> hypothèquent aujourd'hui l'avenir de la planète.","انرژی‌های فسیلی هرچند مدت‌ها رشد را پشتیبانی کردند، امروز آینده‌ی کره‌ی زمین را به گرو می‌گذارند."],["Il est désormais admis que l'abandon progressif des <b>énergies fossiles</b> conditionne toute lutte sérieuse contre le réchauffement.","اکنون پذیرفته شده که کنار گذاشتن تدریجی انرژی‌های فسیلی شرط هر مبارزه‌ی جدی با گرمایش زمین است."],["Si nous continuions à brûler des <b>énergies fossiles</b> au même rythme, la neutralité carbone resterait un vœu pieux.","اگر با همین آهنگ به سوزاندن انرژی‌های فسیلی ادامه می‌دادیم، خنثایی کربن صرفاً یک آرزوی دست‌نیافتنی می‌ماند."]]},
+{c:1,term:"un gisement (de pétrole / de gaz)",fa:"میدان / ذخیره‌ی نفت یا گاز",def:"Une accumulation naturelle de pétrole, de gaz ou de minerai exploitable.",syn:["un réservoir","une réserve"],ex:[["Aussi prometteur soit-il, un <b>gisement</b> ne saurait à lui seul garantir l'indépendance énergétique d'un pays.","یک میدان، هر اندازه هم امیدبخش باشد، به‌تنهایی نمی‌تواند استقلال انرژیِ یک کشور را تضمین کند."],["À mesure que les <b>gisements</b> les plus accessibles s'épuisent, leur exploitation devient toujours plus coûteuse.","هرچه دسترس‌پذیرترین میدان‌ها تهی می‌شوند، بهره‌برداری از آن‌ها پیوسته پرهزینه‌تر می‌شود."],["C'est précisément la dépendance à ces <b>gisements</b> que la transition énergétique cherche à briser.","این دقیقاً همان وابستگی به این میدان‌هاست که گذار انرژی می‌کوشد بشکند."]]},
+{c:1,term:"une centrale nucléaire",fa:"نیروگاه هسته‌ای",def:"Une installation qui produit de l'électricité à partir de l'énergie de l'atome.",syn:["le nucléaire","une centrale atomique"],ex:[["Bien qu'elle émette peu de CO₂, une <b>centrale nucléaire</b> soulève d'épineuses questions de sûreté et de déchets.","یک نیروگاه هسته‌ای هرچند کربن کمی منتشر می‌کند، پرسش‌های دشوار ایمنی و پسماند را برمی‌انگیزد."],["Le débat sur les <b>centrales nucléaires</b> oppose ceux qui y voient une énergie bas carbone et ceux qui en redoutent les risques.","بحث درباره‌ی نیروگاه‌های هسته‌ای کسانی را که آن را انرژیِ کم‌کربن می‌دانند در برابر کسانی قرار می‌دهد که از خطرهایش بیم دارند."],["Quand bien même on fermerait toutes les <b>centrales nucléaires</b>, encore faudrait-il pouvoir compenser une telle production.","حتی اگر همه‌ی نیروگاه‌های هسته‌ای را تعطیل می‌کردیم، باز باید بتوان چنین تولیدی را جبران کرد."]]},
+{c:1,term:"l'approvisionnement énergétique",fa:"تأمین انرژی",def:"Le fait de fournir de l'énergie de manière suffisante et continue.",syn:["la fourniture d'énergie","la sécurité énergétique"],ex:[["Garantir un <b>approvisionnement énergétique</b> stable tout en se décarbonant relève d'un véritable défi.","تضمین تأمین انرژیِ پایدار همراه با کربن‌زدایی، چالشی واقعی است."],["Tant que l'<b>approvisionnement énergétique</b> reposera sur quelques pays, la moindre tension géopolitique le fragilisera.","تا زمانی که تأمین انرژی بر چند کشور استوار باشد، کوچک‌ترین تنش ژئوپلیتیک آن را شکننده می‌کند."],["C'est en diversifiant ses sources qu'un pays sécurise le plus sûrement son <b>approvisionnement énergétique</b>.","کشور با متنوع‌سازی منابعش است که مطمئن‌ترین راه را برای ایمن‌سازی تأمین انرژی می‌پیماید."]]},
+{c:1,term:"la dépendance énergétique",fa:"وابستگی انرژی",def:"La situation d'un pays obligé d'importer l'énergie qu'il ne produit pas.",syn:["la dépendance aux importations","la vulnérabilité énergétique"],ex:[["Réduire la <b>dépendance énergétique</b> n'est pas qu'une question écologique : c'est aussi un enjeu de souveraineté.","کاهش وابستگی انرژی فقط مسئله‌ای زیست‌محیطی نیست؛ بلکه موضوعی در حاکمیت ملی هم هست."],["Plus un pays développe ses renouvelables, moins il pâtit d'une <b>dépendance énergétique</b> coûteuse.","هرچه کشور انرژی‌های تجدیدپذیرش را بیشتر توسعه دهد، کمتر از وابستگی انرژیِ پرهزینه آسیب می‌بیند."],["Si l'on n'avait pas négligé les énergies propres, notre <b>dépendance énergétique</b> serait aujourd'hui bien moindre.","اگر انرژی‌های پاک را نادیده نگرفته بودیم، وابستگی انرژیِ ما امروز بسیار کمتر می‌بود."]]},
+{c:2,term:"les énergies renouvelables (vertes / propres)",fa:"انرژی‌های تجدیدپذیر (سبز / پاک)",def:"Les énergies issues de sources naturelles inépuisables (soleil, vent, eau).",syn:["les énergies vertes","les énergies propres"],ex:[["Loin d'être une simple mode, les <b>énergies renouvelables</b> s'imposent désormais comme le pilier de toute transition crédible.","انرژی‌های تجدیدپذیر که به‌هیچ‌وجه یک مُد گذرا نیستند، اکنون به ستون هر گذارِ معتبر بدل شده‌اند."],["Aussi prometteuses soient-elles, les <b>énergies renouvelables</b> posent encore la question de leur intermittence.","انرژی‌های تجدیدپذیر، هر اندازه هم امیدبخش باشند، هنوز مسئله‌ی ناپایداریِ تولیدشان را پیش می‌کشند."],["C'est en misant résolument sur les <b>énergies renouvelables</b> que les pays espèrent atteindre la neutralité carbone.","کشورها با تکیه‌ی قاطع بر انرژی‌های تجدیدپذیر است که امید دارند به خنثایی کربن برسند."]]},
+{c:2,term:"un parc éolien / une éolienne",fa:"مزرعه‌ی بادی / توربین بادی (خشکی، فراساحلی)",def:"Un ensemble d'éoliennes qui transforment la force du vent en électricité, sur terre ou en mer.",syn:["une turbine éolienne","l'éolien terrestre ou en mer"],ex:[["Bien qu'il divise les riverains, le <b>parc éolien</b> demeure l'un des moyens les plus efficaces de produire une électricité propre.","مزرعه‌ی بادی هرچند ساکنان مجاور را دودسته می‌کند، همچنان یکی از کارآمدترین راه‌های تولید برق پاک است."],["C'est souvent au nom du paysage que l'on s'oppose à l'implantation d'un <b>parc éolien</b>.","اغلب به‌نام چشم‌انداز است که با احداث یک مزرعه‌ی بادی مخالفت می‌شود."],["Pour peu qu'elles soient bien implantées, les <b>éoliennes</b> offshore concilient performance et moindre nuisance visuelle.","به‌شرط آنکه خوب جانمایی شوند، توربین‌های بادیِ فراساحلی کارایی و آلودگیِ بصریِ کمتر را با هم آشتی می‌دهند."]]},
+{c:2,term:"un panneau solaire / photovoltaïque",fa:"پنل خورشیدی / فتوولتائیک",def:"Un dispositif qui transforme la lumière du soleil en électricité.",syn:["le solaire","le photovoltaïque"],ex:[["Quoique leur fabrication ait un coût écologique, les <b>panneaux solaires</b> se rentabilisent largement sur la durée.","پنل‌های خورشیدی هرچند ساختشان هزینه‌ی زیست‌محیطی دارد، در بلندمدت به‌خوبی صرفه‌ی اقتصادی پیدا می‌کنند."],["C'est en équipant les toitures de <b>panneaux photovoltaïques</b> que bien des foyers réduisent leur facture.","با مجهز کردن بام‌ها به پنل‌های فتوولتائیک است که بسیاری از خانوارها قبضشان را کاهش می‌دهند."],["Si chaque bâtiment public était couvert de <b>panneaux solaires</b>, la production verte ferait un bond considérable.","اگر هر ساختمان عمومی به پنل خورشیدی پوشانده می‌شد، تولید سبز جهشی چشمگیر می‌کرد."]]},
+{c:2,term:"l'énergie hydraulique / la biomasse",fa:"انرژی آبی / زیست‌توده",def:"L'hydraulique exploite la force de l'eau ; la biomasse, l'énergie de la matière organique.",syn:["l'hydroélectricité","l'énergie verte"],ex:[["Souvent éclipsée par l'éolien, l'<b>énergie hydraulique</b> n'en demeure pas moins l'une des plus anciennes sources renouvelables.","انرژی آبی که اغلب در سایه‌ی انرژی بادی قرار می‌گیرد، با این حال یکی از کهن‌ترین منابع تجدیدپذیر است."],["Pour peu qu'elle soit bien gérée, la <b>biomasse</b> transforme un déchet encombrant en ressource précieuse.","زیست‌توده به‌شرط مدیریت درست، یک پسماندِ دردسرساز را به منبعی ارزشمند بدل می‌کند."],["C'est en combinant <b>énergie hydraulique</b>, solaire et éolien que l'on bâtit un mix réellement durable.","با ترکیب انرژی آبی، خورشیدی و بادی است که می‌توان ترکیبی واقعاً پایدار ساخت."]]},
+{c:2,term:"le développement durable",fa:"توسعه‌ی پایدار",def:"Un développement qui répond aux besoins présents sans compromettre ceux des générations futures.",syn:["la durabilité","l'éco-responsabilité"],ex:[["Loin d'opposer croissance et environnement, le <b>développement durable</b> cherche précisément à les réconcilier.","توسعه‌ی پایدار که رشد و محیط‌زیست را در برابر هم نمی‌گذارد، دقیقاً می‌کوشد آن دو را آشتی دهد."],["Il serait illusoire de prôner le <b>développement durable</b> tout en maintenant un modèle fondé sur le gaspillage.","خام‌خیالی است که آدم توسعه‌ی پایدار را تبلیغ کند و در همان حال الگویی مبتنی بر اسراف را حفظ کند."],["C'est aux générations actuelles qu'il incombe de faire du <b>développement durable</b> une réalité, et non un simple slogan.","این بر عهده‌ی نسل‌های کنونی است که توسعه‌ی پایدار را به واقعیت بدل کنند، نه صرفاً یک شعار."]]}
+];
+const PHRASES=[
+["<b>À mon sens</b>, la transition vers les énergies propres n'est plus une option, mais une nécessité.","به نظر من، گذار به انرژی‌های پاک دیگر یک گزینه نیست، بلکه یک ضرورت است."],
+["<b>Force est de constater que</b> les énergies fossiles s'épuisent et polluent.","ناگزیر باید پذیرفت که انرژی‌های فسیلی هم تمام می‌شوند و هم آلوده می‌کنند."],
+["<b>D'un côté</b>, l'éolien produit une énergie propre ; <b>d'un autre côté</b>, il modifie le paysage.","از یک سو انرژی بادی برق پاک تولید می‌کند؛ از سوی دیگر، چشم‌انداز را تغییر می‌دهد."],
+["<b>Il convient de rappeler que</b> chaque source d'énergie a ses avantages et ses limites.","شایان ذکر است که هر منبع انرژی مزایا و محدودیت‌های خود را دارد."],
+["<b>En définitive</b>, c'est un mix énergétique équilibré qui paraît le plus raisonnable.","در نهایت، یک ترکیب انرژیِ متعادل معقول‌ترین گزینه به‌نظر می‌رسد."],
+["<b>Pour conclure</b>, je dirais que préserver la planète est la responsabilité de chacun.","برای جمع‌بندی، می‌گویم که حفظ کره‌ی زمین مسئولیت هرکس است."]
+];
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+/* pb omis dans l'aperçu */;
+
+
+    var promo=document.createElement('section');
+    promo.className='cat'; promo.id='cpromo';
+    promo.innerHTML='<div class=\"secmark\">Aperçu</div>'
+      +'<div style=\"background:#FBF8F0;border:2px dashed #2E8B6B;border-radius:14px;padding:26px 22px;margin:26px 0 10px;text-align:center;box-shadow:0 12px 30px -16px rgba(27,42,107,.4);\">'
+      +'<div style=\"font-family:Fraunces,serif;font-weight:800;font-size:1.5rem;color:#1B2A6B;margin-bottom:6px;\">Ceci n\'est qu\'un aperçu \u2728</div>'
+      +'<div style=\"font-family:Vazirmatn,sans-serif;font-size:1rem;color:#46537d;direction:rtl;margin-bottom:8px;\">\u0627\u06cc\u0646 \u0641\u0642\u0637 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0627\u0633\u062a \u2014 \u0628\u0631\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0648\u0627\u0698\u06af\u0627\u0646 \u0648 \u0647\u0645\u0647\u200c\u06cc \u062a\u0645\u200c\u0647\u0627\u060c \u067e\u06a9\u06cc\u062c \u06a9\u0627\u0645\u0644 \u0631\u0627 \u062a\u0647\u06cc\u0647 \u06a9\u0646\u06cc\u062f.</div>'
+      +'<div style=\"font-family:Spectral,serif;font-size:.95rem;color:#1B2A6B;\">La version complète contient les 35 mots du thème, classés en 7 rubriques, avec 3 exemples traduits chacun \u2014 ainsi que la \u00ab\u00a0bo\u00eete \u00e0 phrases\u00a0\u00bb pour le d\u00e9bat.</div>'
+      +'<div style=\"font-family:Caveat,cursive;font-weight:700;font-size:1.4rem;color:#1B2A6B;margin-top:14px;\">Hoda KHEDMATI \u00b7 @TCFHODA</div></div>'
+      +'<div class=\"sig-foot\"><span class=\"name\">Hoda KHEDMATI</span><span class=\"handle\">@TCFHODA</span></div>';
+    document.getElementById('root').appendChild(promo);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>
