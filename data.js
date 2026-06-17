@@ -12,6 +12,7 @@ const CATEGORIES = [
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
   { id: "podcast",      label: "معرفی پادکست",       icon: "♪", color: "#5a6f9e" },
   { id: "innerfrench",  label: "InnerFrench",       icon: "▶", color: "#2e7bb5" },
+  { id: "prive",        label: "شاگردان خصوصی",     icon: "🔒", color: "#7a5ba8" },
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
@@ -1422,6 +1423,27 @@ const INNERFRENCH = [
       { fr: "Ne faites pas confiance à une méthode ⟦centrée sur|متمرکز بر⟧ la grammaire. La grammaire peut vous aider à comprendre une ⟦structure|ساختار⟧, mais ça ne doit pas être la base de votre apprentissage. Le plus important, c'est de trouver des choses qui vous ⟦intéressent|برایتان جالب‌اند⟧, des choses que vous aurez envie de lire et d'écouter.", fa: "به روشی که متمرکز بر گرامر است اعتماد نکنید. گرامر می‌تواند به فهمیدن یک ساختار کمک کند، اما نباید پایه‌ی یادگیری شما باشد. مهم‌ترین چیز این است که چیزهایی پیدا کنید که برایتان جالب‌اند، چیزهایی که دلتان بخواهد بخوانید و گوش بدهید." },
       { fr: "Contrairement à Krashen, moi je pense qu'il faut aussi utiliser la langue pour s'exprimer. Ça permet trois choses : d'abord, ⟦identifier|شناسایی کردن⟧ les problèmes ; ensuite, ⟦vérifier|بررسی کردن⟧ ce que vous avez appris ; et enfin, prendre ⟦confiance en vous|اعتمادبه‌نفس⟧. Quand vous voyez que vous êtes capable de vous exprimer, c'est très ⟦gratifiant|رضایت‌بخش⟧ et ça vous encourage à continuer.", fa: "برخلاف کراشن، من فکر می‌کنم باید از زبان برای بیان خود هم استفاده کرد. این سه فایده دارد: اول، شناسایی مشکلات؛ بعد، بررسی آنچه یاد گرفته‌اید؛ و در آخر، به‌دست‌آوردن اعتمادبه‌نفس. وقتی می‌بینید که می‌توانید خود را بیان کنید، خیلی رضایت‌بخش است و تشویقتان می‌کند ادامه بدهید." },
       { fr: "Voilà, c'est la fin de ce podcast. Merci à tous de m'avoir écouté. La semaine prochaine, nous parlerons des robots : comment vivre avec eux et est-ce qu'ils peuvent nous ⟦remplacer|جایگزین کردن⟧ ? En attendant, je vous invite à essayer de comprendre un maximum de choses et à faire un peu de français tous les jours. Passez une bonne semaine et à bientôt !", fa: "خب، این پایان این پادکست بود. از همه‌ی شما ممنون که گوش دادید. هفته‌ی بعد درباره‌ی ربات‌ها حرف می‌زنیم: چطور با آن‌ها زندگی کنیم و آیا می‌توانند جای ما را بگیرند؟ تا آن موقع، دعوتتان می‌کنم سعی کنید حداکثر چیزها را بفهمید و هر روز کمی فرانسه کار کنید. هفته‌ی خوبی داشته باشید و به‌زودی می‌بینمتان!" },
+    ],
+  },
+];
+
+// ═══════════════════════════════════════════════════════════
+//  شاگردان خصوصی — محتوای اختصاصی هر شاگرد (با رمز)
+//  هر شاگرد:
+//    nom    : نام شاگرد
+//    emoji  : ایموجی
+//    note   : یادداشت/توضیح کوتاه
+//    items  : آرایه‌ای از محتواها {titre, desc, link?}
+// ═══════════════════════════════════════════════════════════
+const PRIVE_PASSWORD = "X12X";
+const PRIVE = [
+  {
+    nom: "علیرضا",
+    emoji: "👤",
+    note: "محتوای اختصاصی و تمرین‌های ویژه‌ی علیرضا.",
+    items: [
+      // وقتی محتوایی برای علیرضا داشتی، اینجا اضافه می‌شود
+      // مثال: { titre: "تمرین هفته ۱", desc: "توضیح کوتاه", link: "FICHIER.html" },
     ],
   },
 ];

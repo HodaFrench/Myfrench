@@ -454,6 +454,56 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* بخش شاگردان خصوصی */
+        .prive-lock {
+            background: var(--white); border: 1px solid var(--line); border-top: 4px solid #7a5ba8;
+            border-radius: 18px; padding: 40px 30px; text-align: center;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.06); max-width: 420px; margin: 0 auto;
+        }
+        .prive-lock-icon { font-size: 48px; margin-bottom: 16px; }
+        .prive-lock-title { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .prive-lock-sub { font-size: 14px; color: var(--gray); line-height: 1.9; margin-bottom: 24px; }
+        .prive-input {
+            width: 100%; font-family: 'Vazirmatn', sans-serif; font-size: 16px; text-align: center;
+            padding: 12px 16px; border: 1.5px solid var(--line); border-radius: 12px;
+            margin-bottom: 14px; outline: none; transition: border-color 0.2s; letter-spacing: 2px;
+        }
+        .prive-input:focus { border-color: #7a5ba8; }
+        .prive-btn {
+            width: 100%; font-family: 'Vazirmatn', sans-serif; font-size: 15px; font-weight: 700;
+            background: linear-gradient(135deg, #7a5ba8, #5a3b88); color: #fff;
+            border: none; border-radius: 12px; padding: 13px; cursor: pointer; transition: opacity 0.2s;
+        }
+        .prive-btn:hover { opacity: 0.92; }
+        .prive-error { font-size: 13px; color: var(--terracotta); margin-top: 14px; min-height: 18px; }
+        .prive-welcome {
+            background: linear-gradient(135deg, rgba(122,91,168,0.08), rgba(196,165,114,0.05));
+            border-right: 4px solid #7a5ba8; border-radius: 10px; padding: 14px 18px;
+            font-size: 14px; color: var(--ink); margin-bottom: 18px;
+        }
+        .prive-card {
+            background: var(--white); border: 1px solid var(--line); border-top: 4px solid #7a5ba8;
+            border-radius: 16px; padding: 24px; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(31,58,95,0.06);
+        }
+        .prive-card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .prive-emoji {
+            font-size: 24px; width: 48px; height: 48px; background: rgba(122,91,168,0.1);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+        }
+        .prive-nom { font-size: 20px; font-weight: 700; color: var(--navy); }
+        .prive-note { font-size: 14px; color: var(--ink); line-height: 1.9; margin-bottom: 16px; }
+        .prive-items { display: flex; flex-direction: column; gap: 10px; }
+        .prive-item {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            background: var(--cream); border-radius: 10px; padding: 14px 16px; text-decoration: none;
+            border-right: 3px solid #7a5ba8; transition: all 0.2s;
+        }
+        a.prive-item:hover { background: rgba(122,91,168,0.06); transform: translateX(-2px); }
+        .prive-item-titre { font-size: 15px; font-weight: 600; color: var(--navy); }
+        .prive-item-desc { font-size: 13px; color: var(--gray); flex: 1; }
+        .prive-item-go { font-size: 16px; color: #7a5ba8; }
+        .prive-empty { font-size: 13px; color: var(--gray); text-align: center; padding: 20px; font-style: italic; }
+
         /* بخش InnerFrench */
         .if-card {
             display: flex; align-items: center; gap: 14px;
@@ -1365,6 +1415,8 @@
                 renderMiniarticles();
             } else if (catId === "innerfrench") {
                 renderInnerFrench();
+            } else if (catId === "prive") {
+                renderPrive();
             } else if (catId === "grammar" && !activeGroupe) {
                 // گرامر زیرپوشه‌ها (مودهای فعلی) دارد → اول پوشه‌ها را نشان بده
                 renderGroupes(catId);
@@ -1616,6 +1668,76 @@
         }
 
         // نمایش لیست قسمت‌های InnerFrench
+        // ── بخش شاگردان خصوصی (با رمز) ──
+        let priveUnlocked = false;
+        function renderPrive() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("prive");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const grid = document.getElementById("grid");
+            if (!priveUnlocked) {
+                document.getElementById("count").textContent = "محافظت‌شده";
+                grid.innerHTML = `
+                    <div class="prive-lock">
+                        <div class="prive-lock-icon">🔒</div>
+                        <div class="prive-lock-title">این بخش خصوصی است</div>
+                        <div class="prive-lock-sub">مخصوص شاگردان خصوصی. لطفاً رمز را وارد کن.</div>
+                        <input type="password" id="priveInput" class="prive-input" placeholder="رمز ورود" 
+                               onkeydown="if(event.key==='Enter') checkPrive()">
+                        <button class="prive-btn" onclick="checkPrive()">ورود</button>
+                        <div id="priveError" class="prive-error"></div>
+                    </div>`;
+                setTimeout(() => { const inp = document.getElementById("priveInput"); if (inp) inp.focus(); }, 100);
+                return;
+            }
+            renderPriveContent();
+        }
+
+        function checkPrive() {
+            const inp = document.getElementById("priveInput");
+            const err = document.getElementById("priveError");
+            if (!inp) return;
+            if (inp.value === PRIVE_PASSWORD) {
+                priveUnlocked = true;
+                renderPrive();
+            } else {
+                err.textContent = "رمز اشتباه است. دوباره امتحان کن.";
+                inp.value = "";
+                inp.focus();
+            }
+        }
+
+        function renderPriveContent() {
+            const ci = catInfo("prive");
+            const list = (typeof PRIVE !== "undefined") ? PRIVE : [];
+            document.getElementById("count").textContent = list.length + " شاگرد";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = `
+                <div class="prive-welcome">🔓 خوش آمدی! این بخش مخصوص شاگردان خصوصی است.</div>
+                ${list.map(s => `
+                    <div class="prive-card">
+                        <div class="prive-card-head">
+                            <span class="prive-emoji">${s.emoji || "👤"}</span>
+                            <span class="prive-nom">${s.nom}</span>
+                        </div>
+                        ${s.note ? `<div class="prive-note">${s.note}</div>` : ""}
+                        ${(s.items && s.items.length) ? `
+                        <div class="prive-items">
+                            ${s.items.map(it => it.link ? `
+                                <a class="prive-item" href="${it.link}">
+                                    <span class="prive-item-titre">${it.titre}</span>
+                                    ${it.desc ? `<span class="prive-item-desc">${it.desc}</span>` : ""}
+                                    <span class="prive-item-go">←</span>
+                                </a>` : `
+                                <div class="prive-item">
+                                    <span class="prive-item-titre">${it.titre}</span>
+                                    ${it.desc ? `<span class="prive-item-desc">${it.desc}</span>` : ""}
+                                </div>`).join("")}
+                        </div>` : `<div class="prive-empty">هنوز محتوایی اضافه نشده — به‌زودی</div>`}
+                    </div>`).join("")}`;
+        }
+
         function renderInnerFrench() {
             document.getElementById("grid").classList.remove("grid-single");
             const ci = catInfo("innerfrench");
