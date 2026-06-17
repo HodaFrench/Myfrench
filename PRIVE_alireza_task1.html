@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پرونده‌ی علیرضا — Expression Orale Task 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --purple-deep:#5a3b88;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(122,91,168,0.06) 31px, rgba(122,91,168,0.06) 32px);
+    color:var(--ink); line-height:1.9; padding:24px 16px 70px;}
+  .wrap{max-width:860px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:22px;}
+  .topbar a{display:inline-block; color:var(--purple); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--purple); color:#fff;}
+  .header{background:linear-gradient(135deg,var(--purple),var(--purple-deep)); color:#fff;
+    padding:38px 30px; border-radius:20px; text-align:center; margin-bottom:24px;
+    box-shadow:0 14px 34px rgba(122,91,168,.26); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:170px;height:170px;background:rgba(255,255,255,.06);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; margin-bottom:10px;}
+  .header h1{font-size:26px; font-weight:700; margin-bottom:8px;}
+  .header .sub{font-size:14px; opacity:.92;}
+  .intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:24px; font-size:14.5px; line-height:2.1;}
+  .intro b{color:var(--purple-deep);}
+  /* راهنما */
+  .legend{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin-bottom:22px;}
+  .legend-title{font-size:14px; font-weight:700; color:var(--navy); margin-bottom:12px;}
+  .legend-grid{display:flex; flex-direction:column; gap:8px;}
+  .legend-item{font-size:13px; display:flex; gap:8px; align-items:center;}
+  .legend-dot{width:12px; height:12px; border-radius:3px; flex-shrink:0;}
+  /* ناوبری */
+  .qnav{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px 22px; margin-bottom:26px;}
+  .qnav-title{font-size:14px; font-weight:700; color:var(--navy); margin-bottom:12px;}
+  .qnav-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  @media(max-width:600px){.qnav-grid{grid-template-columns:1fr;}}
+  .qnav a{display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);
+    background:var(--cream); padding:9px 14px; border-radius:9px; font-size:13.5px; transition:all .2s;}
+  .qnav a:hover{background:rgba(122,91,168,0.08); color:var(--purple);}
+  .qnav a .qn{width:22px;height:22px;border-radius:50%;background:var(--purple);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+  /* بلوک سؤال */
+  .question-block{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--purple);
+    border-radius:18px; padding:26px 24px; margin-bottom:26px; box-shadow:0 8px 24px rgba(31,58,95,.06); scroll-margin-top:16px;}
+  .q-header{display:flex; align-items:center; gap:14px; margin-bottom:20px; padding-bottom:16px; border-bottom:2px solid var(--line);}
+  .q-num{font-size:22px; font-weight:700; color:#fff; background:linear-gradient(135deg,var(--purple),var(--purple-deep));
+    min-width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .q-texts{flex:1;}
+  .q-fr{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--navy); direction:ltr; text-align:left; line-height:1.3;}
+  .q-fa{font-size:14px; color:var(--gray); margin-top:4px;}
+  /* کارت جواب */
+  .answers-wrap{display:flex; flex-direction:column; gap:12px;}
+  .answer-card{border:1px solid var(--line); border-radius:12px; overflow:hidden; transition:all .2s;}
+  .answer-card.answer-best{border-color:var(--gold); box-shadow:0 4px 16px rgba(176,122,74,.12);}
+  .answer-head{width:100%; display:flex; align-items:center; gap:10px; background:var(--cream);
+    border:none; border-right:4px solid; padding:14px 18px; cursor:pointer; text-align:right; transition:background .2s;}
+  .answer-head:hover{background:var(--paper-warm);}
+  .answer-label{font-size:14.5px; font-weight:700; flex:1;}
+  .answer-badge{font-size:11px; color:#fff; padding:3px 10px; border-radius:10px; font-weight:600;}
+  .answer-toggle{font-size:14px; color:var(--gray); transition:transform .25s;}
+  .answer-card.open .answer-toggle{transform:rotate(180deg);}
+  .answer-body{max-height:0; overflow:hidden; transition:max-height .35s ease;}
+  .answer-card.open .answer-body{max-height:1200px;}
+  .answer-desc{font-size:13px; color:var(--gray); line-height:1.9; padding:14px 18px 0; background:var(--white);}
+  .answer-text{font-family:'Cormorant Garamond',serif; font-size:17px; line-height:1.85; color:var(--ink);
+    direction:ltr; text-align:left; padding:12px 18px 18px; background:var(--white);}
+  /* تمرین */
+  .practice-section{margin-top:22px; background:linear-gradient(135deg,rgba(46,139,107,0.06),rgba(196,165,114,0.05));
+    border-right:5px solid var(--green); border-radius:14px; padding:20px 22px;}
+  .practice-head{font-size:16px; font-weight:700; color:var(--green); margin-bottom:6px;}
+  .practice-sub{font-size:13px; color:var(--ink); line-height:1.9; margin-bottom:16px;}
+  .skel-list{display:flex; flex-direction:column; gap:10px; margin-bottom:16px;}
+  .skel-item{background:var(--white); border-radius:9px; padding:12px 16px; border:1px solid var(--line);}
+  .skel-chunk{font-family:'Cormorant Garamond',serif; font-size:16px; color:var(--navy); font-weight:600; display:block; direction:ltr; text-align:left;}
+  .skel-note{font-size:12px; color:var(--gray); display:block; margin-top:4px;}
+  .drill-box{background:var(--white); border:1.5px solid var(--green); border-radius:12px; padding:16px 18px;}
+  .drill-title{font-size:13.5px; font-weight:700; color:var(--green); margin-bottom:10px;}
+  .drill-text{font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.8; color:var(--ink); direction:ltr; text-align:left;}
+  .footer{text-align:center; margin-top:30px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--purple);}
+  .backtop{display:block; text-align:center; margin-top:14px;}
+  .backtop a{font-size:12px; color:var(--purple); text-decoration:none;}
+</style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+    <div class="header">
+      <div class="tag">DOSSIER PRIVÉ · TCF CANADA</div>
+      <h1>پرونده‌ی علیرضا</h1>
+      <div class="sub">Expression Orale — Tâche 1 · هفت سؤال با پنج نسخه‌ی جواب و تمرین کنترل‌شده</div>
+    </div>
+    <div class="intro">
+      سلام علیرضا 👋 این پرونده از روی کارِ خودت ساخته شده. ایده‌اش این است: <b>به‌جای حفظ‌کردن جواب‌ها</b>، با استفاده از فکر فارسیِ خودت روان‌تر حرف بزنی. برای هر سؤال <b>پنج نسخه</b> داری — از نزدیک‌ترین به فکر فارسی تا نسخه‌ی نهاییِ امتحان. روی هر کدام بزن تا باز شود. و در بخش <b>تمرین</b>، الگوهای جمله (اسکلت) را پیدا می‌کنی که می‌توانی با کلمات خودت پُرشان کنی. 🎯
+    </div>
+    <div class="legend">
+      <div class="legend-title">🎨 پنج نسخه‌ی جواب چه فرقی دارند؟</div>
+      <div class="legend-grid">
+        <div class="legend-item"><span class="legend-dot" style="background:#8a8275"></span> <b>نوع ۱</b> — نزدیک به فکر فارسی (برای ساخت ایده)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#3f8a9c"></span> <b>نوع ۲</b> — طبیعی و کامل (برای مطالعه)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#2e8b6b"></span> <b>نوع ۳</b> — ساده و امن (ضد استرس)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#b07a4a"></span> <b>نوع ۴</b> — نسخه‌ی نهاییِ امتحان ⭐ (این را تمرین کن)</div>
+        <div class="legend-item"><span class="legend-dot" style="background:#7a5ba8"></span> <b>نوع ۵</b> — ارتقای واژگان C1</div>
+      </div>
+    </div>
+    <div class="qnav">
+      <div class="qnav-title">📑 هفت سؤال</div>
+      <div class="qnav-grid"><a href="#q1"><span class="qn">۱</span> معرفی خود</a><a href="#q2"><span class="qn">۲</span> محل زندگی</a><a href="#q3"><span class="qn">۳</span> اهل کجایی</a><a href="#q4"><span class="qn">۴</span> توصیف شهر زادگاه</a><a href="#q5"><span class="qn">۵</span> بازگشت به زادگاه</a><a href="#q6"><span class="qn">۶</span> دلتنگی‌ها</a><a href="#q7"><span class="qn">۷</span> نظر دربارهٔ تهران</a></div>
+    </div>
+    
+    <div class="question-block" id="q1">
+        <div class="q-header">
+            <div class="q-num">۱</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Pouvez-vous vous présenter brièvement ?</div>
+                <div class="q-fa">می‌توانید خودتان را کوتاه معرفی کنید؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">Je m’appelle Ali Reza, j’ai environ trente ans. Je suis originaire de la région de Hamedan, mais j’ai grandi dans une petite ville près d’Arak, et aujourd’hui je vis principalement à Téhéran. Je travaille dans le domaine de l’investissement, surtout dans le private equity et le venture capital, avec un fonds basé à Abu Dhabi. J’ai étudié l’ingénierie à l’Université Sharif, puis le management de la technologie à l’Université de Téhéran. Récemment, j’ai aussi été admis à Harvard, ce qui représente pour moi une étape très importante, même si les démarches de visa restent compliquées. Sur le plan personnel, je suis marié, mais ma femme étudie actuellement aux États-Unis, donc nous vivons une relation à distance. En ce moment, ma vie tourne beaucoup autour du travail, du français, des projets d’immigration au Canada et de l’idée de construire une vie plus stable avec ma femme.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Je m’appelle Ali Reza, j’ai environ trente ans et je vis principalement à Téhéran. À l’origine, je viens d’une famille liée à la région de Hamedan, mais j’ai grandi dans une petite ville près d’Arak, avant de m’installer à Téhéran pour mes études. Sur le plan académique, j’ai un parcours assez hybride. J’ai d’abord étudié l’ingénierie à l’Université Sharif, puis j’ai fait un master en management de la technologie à l’Université de Téhéran. Plus récemment, j’ai aussi été admis à Harvard, ce qui est pour moi une opportunité très importante, même si les questions de visa rendent la situation plus complexe. Professionnellement, je travaille dans le domaine de l’investissement, surtout entre le private equity, le venture capital, la stratégie et l’analyse d’entreprises. Je travaille principalement à distance avec un fonds basé à Abu Dhabi, ce qui rend mon environnement professionnel assez international. Sur le plan personnel, je suis marié, mais ma femme étudie actuellement aux États-Unis, donc nous vivons une relation à distance. Aujourd’hui, ma vie est une période de transition : je développe ma carrière, j’apprends le français et je prépare aussi un projet d’immigration au Canada pour construire une vie plus stable avec elle.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Je m’appelle Ali Reza, j’ai environ trente ans et je vis principalement à Téhéran. Je suis originaire de la région de Hamedan, mais j’ai grandi dans une petite ville près d’Arak. J’ai étudié l’ingénierie à l’Université Sharif, puis le management de la technologie à l’Université de Téhéran. Aujourd’hui, je travaille dans l’investissement, surtout avec un fonds basé à Abu Dhabi, donc mon travail est assez international. Je suis marié, mais ma femme étudie actuellement aux États-Unis, donc nous vivons à distance. En ce moment, je me concentre surtout sur mon travail, le français et mon projet d’immigration au Canada. Donc, je dirais que ma vie actuelle est une période de transition entre carrière, mobilité internationale et construction d’une vie plus stable avec ma femme.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Je m’appelle Ali Reza, j’ai environ trente ans et je vis principalement à Téhéran. À l’origine, je viens de la région de Hamedan, mais j’ai grandi dans une petite ville près d’Arak, avant de partir à Téhéran pour mes études. J’ai étudié l’ingénierie à l’Université Sharif, puis le management de la technologie à l’Université de Téhéran. Mon parcours est donc assez hybride, entre la finance, la technologie, la stratégie et l’investissement. Aujourd’hui, je travaille principalement à distance avec un fonds basé à Abu Dhabi, dans le domaine du private equity et du venture capital. Sur le plan personnel, je suis marié, mais ma femme étudie actuellement aux États-Unis, donc nous vivons une relation à distance. En ce moment, je prépare aussi le français et un projet d’immigration au Canada. Donc, au fond, je dirais que ma vie actuelle est une période de transition : je développe ma carrière, je renforce mes compétences et j’essaie de construire une vie plus stable avec ma femme.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Je m’appelle Ali Reza, j’ai environ trente ans et mon parcours est à la fois iranien, international et assez hybride. Je vis principalement à Téhéran, mais mes racines sont plutôt liées à la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Ce parcours m’a donné une forme d’adaptabilité, parce que j’ai assez tôt changé d’environnement, d’échelle et de rythme de vie. Sur le plan académique, j’ai d’abord étudié l’ingénierie à l’Université Sharif, puis le management de la technologie à l’Université de Téhéran. Plus récemment, j’ai aussi été admis à Harvard, ce qui représente pour moi une étape très significative, même si les contraintes de visa rendent ce projet plus incertain pour le moment. Professionnellement, je travaille dans l’investissement, surtout à l’intersection du private equity, du venture capital, de la stratégie et de la technologie. Je collabore principalement à distance avec un fonds basé à Abu Dhabi, ce qui m’a progressivement placé dans un environnement beaucoup plus international. Sur le plan personnel, je suis marié, mais ma femme poursuit actuellement ses études aux États-Unis, donc notre vie de couple est marquée par la distance. En parallèle, je prépare le français et un projet d’immigration au Canada. Au fond, ma vie actuelle est une période de transition et de construction : j’essaie de consolider ma carrière, de renforcer mon profil international et de préparer une vie plus stable avec ma femme, probablement en Amérique du Nord.</div>
+            </div>
+        </div></div>
+        
+    </div>
+    <div class="question-block" id="q2">
+        <div class="q-header">
+            <div class="q-num">۲</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Où habitez-vous actuellement ?</div>
+                <div class="q-fa">در حال حاضر کجا زندگی می‌کنید؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">Actuellement, j’habite principalement à Téhéran, dans le quartier de Fatemi. Cela fait environ un an et demi que je vis dans mon appartement actuel. Mais mon lien avec Téhéran est beaucoup plus ancien, parce que je suis arrivé dans cette ville il y a environ quatorze ans, quand je suis parti de la région de Hamedan pour poursuivre mes études. À l’origine, je viens plutôt de la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Mais après mon admission à l’université, Téhéran est devenue progressivement ma ville principale. J’y ai étudié, j’y ai travaillé, et j’y ai construit une grande partie de ma vie adulte. Cela dit, mon mode de vie actuel est un peu mobile. Comme je travaille souvent à distance avec un fonds basé à Abu Dhabi, il m’arrive de voyager ou de rester temporairement dans d’autres pays. Mais si je dois donner une réponse simple, je dirais que ma base principale reste Téhéran.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">J’habite actuellement à Téhéran, dans le quartier de Fatemi, où je vis depuis environ un an et demi. Mais en réalité, mon histoire avec Téhéran a commencé beaucoup plus tôt. Je suis arrivé dans cette ville il y a environ quatorze ans, lorsque j’ai quitté ma région d’origine pour commencer mes études universitaires. À l’origine, ma famille est plutôt liée à la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Ensuite, mon admission à l’université m’a amené à Téhéran, et avec le temps, cette ville est devenue mon principal point d’ancrage. J’y ai étudié, j’y ai commencé ma vie professionnelle, et j’y ai construit une grande partie de ma vie personnelle. Cela dit, je ne vis pas de manière totalement fixe. Comme je travaille souvent à distance avec une équipe internationale et un fonds basé à Abu Dhabi, mon quotidien est parfois assez mobile. J’ai aussi des projets d’immigration, notamment vers le Canada, donc je dirais que Téhéran est aujourd’hui ma base principale, mais pas forcément ma destination définitive.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">J’habite actuellement à Téhéran, dans le quartier de Fatemi. Cela fait environ un an et demi que je vis dans mon appartement actuel, mais je connais Téhéran depuis beaucoup plus longtemps. Je suis arrivé à Téhéran il y a environ quatorze ans pour mes études universitaires. À l’origine, je viens de la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Aujourd’hui, Téhéran est ma base principale, parce que j’y ai étudié, j’y ai travaillé et j’y ai construit une grande partie de ma vie. Mais comme je travaille souvent à distance, mon mode de vie est aussi assez mobile.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">J’habite actuellement à Téhéran, dans le quartier de Fatemi, où je vis depuis environ un an et demi. Mais mon lien avec Téhéran est beaucoup plus ancien, puisque je suis arrivé dans cette ville il y a environ quatorze ans pour mes études universitaires. À l’origine, je viens de la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Avec le temps, Téhéran est devenue mon principal point d’ancrage : j’y ai étudié, j’y ai commencé ma vie professionnelle et j’y ai construit une grande partie de ma vie adulte. Cela dit, mon mode de vie actuel n’est pas totalement fixe. Comme je travaille souvent à distance avec un fonds basé à Abu Dhabi, et comme je prépare aussi des projets d’immigration, notamment vers le Canada, je dirais que Téhéran est aujourd’hui ma base principale, mais pas forcément ma destination finale.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">J’habite actuellement à Téhéran, dans le quartier de Fatemi, mais mon rapport à cette ville dépasse largement mon appartement actuel. Je suis arrivé à Téhéran il y a environ quatorze ans, au moment où j’ai quitté ma région d’origine pour poursuivre mes études universitaires. Mes racines sont plutôt liées à la région de Hamedan, et j’ai grandi dans une petite ville près d’Arak. Mais avec le temps, Téhéran est devenue mon principal point d’ancrage : c’est la ville où j’ai étudié, où j’ai commencé ma vie professionnelle, et où j’ai construit une partie importante de mon identité adulte. Cela dit, je ne définirais pas ma vie actuelle comme une vie complètement sédentaire. Mon travail à distance avec un fonds basé à Abu Dhabi, mes projets d’immigration au Canada et ma situation familiale, notamment le fait que ma femme étudie aux États-Unis, rendent mon mode de vie beaucoup plus mobile. Au fond, Téhéran reste ma base, mais ma vie est déjà organisée autour d’une logique plus internationale.</div>
+            </div>
+        </div></div>
+        
+    </div>
+    <div class="question-block" id="q3">
+        <div class="q-header">
+            <div class="q-num">۳</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">D&#x27;où venez-vous ? / Où avez-vous grandi ?</div>
+                <div class="q-fa">اهل کجا هستید؟ / کجا بزرگ شدید؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">En fait, j’ai grandi depuis l’âge de deux ans dans une ville qui s’appelle Mohajeran. En persan, “Mohajeran” veut dire “les immigrants”, et je trouve cela assez intéressant. C’est une petite ville située près d’Arak, dans une région qui se trouve plutôt vers le centre-ouest de l’Iran. J’y ai étudié dans une ou deux très bonnes écoles, qui étaient presque considérées comme des écoles pour élèves très doués dans cette région. Donc, même si la ville était petite, l’environnement scolaire était assez fort et sérieux. Ensuite, je suis parti à Téhéran pour continuer mes études, et c’est là que j’ai commencé mon parcours universitaire. Mais à l’origine, je dirais que je viens de Mohajeran. C’est une ville petite et nouvelle, presque du même âge que moi, mais avec beaucoup plus d’équipements et de possibilités qu’une petite ville ordinaire.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Je viens à l’origine de Mohajeran, une petite ville près d’Arak, dans le centre-ouest de l’Iran. J’y ai grandi depuis l’âge de deux ans. Ce qui est assez intéressant, c’est que le nom “Mohajeran” signifie “les immigrants” en persan. Même si c’est une petite ville, elle était assez particulière. Elle était relativement nouvelle, presque de ma génération, mais elle avait plus d’équipements et de possibilités qu’une petite ville ordinaire. Pour moi, c’était un environnement assez structuré, surtout sur le plan scolaire. J’ai étudié dans une ou deux très bonnes écoles de cette région, presque au niveau des écoles pour élèves très doués. Cela m’a donné une base scolaire assez solide. Ensuite, je suis parti à Téhéran pour commencer mes études universitaires, et c’est là que mon parcours académique et professionnel a vraiment avancé. Mais quand on parle de mes origines, je dirais que Mohajeran reste la ville qui a marqué mon enfance.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Je viens à l’origine de Mohajeran, une petite ville près d’Arak, dans le centre-ouest de l’Iran. J’y ai grandi depuis l’âge de deux ans. Le nom de cette ville est assez intéressant, parce que “Mohajeran” veut dire “les immigrants” en persan. C’est une ville petite et assez nouvelle, presque du même âge que moi, mais elle avait plus d’équipements qu’une petite ville normale. J’y ai étudié dans de très bonnes écoles, presque comme des écoles pour élèves très doués dans cette région. Ensuite, je suis parti à Téhéran pour commencer mes études universitaires. Donc, même si ma vie adulte est surtout liée à Téhéran, mon origine et mon enfance restent liées à Mohajeran.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Je viens à l’origine de Mohajeran, une petite ville assez nouvelle située près d’Arak, dans le centre-ouest de l’Iran. J’y ai grandi depuis l’âge de deux ans, donc c’est vraiment la ville de mon enfance. Ce qui est assez intéressant, c’est que “Mohajeran” veut dire “les immigrants” en persan. Même si c’était une petite ville, elle avait plus d’équipements et de possibilités qu’une ville ordinaire de cette taille. J’y ai aussi étudié dans de très bonnes écoles, presque au niveau des écoles pour élèves très doués dans la région, donc j’ai eu un environnement scolaire assez solide. Ensuite, je suis parti à Téhéran pour commencer mes études universitaires, et c’est là que ma vie adulte a vraiment commencé. Mais quand on parle de mes origines, je dirais que Mohajeran reste le lieu qui a marqué mon enfance, avant mon départ vers Téhéran.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Je viens à l’origine de Mohajeran, une petite ville nouvelle située près d’Arak, dans le centre-ouest de l’Iran. J’y ai grandi depuis l’âge de deux ans, et ce détail compte beaucoup pour moi, parce que c’est vraiment là que mes premiers repères se sont construits. Le nom de la ville est aussi assez symbolique : en persan, “Mohajeran” signifie “les immigrants”. Ce qui me semble particulier, avec le recul, c’est que Mohajeran n’était pas une petite ville ordinaire. Elle était presque de ma génération, mais elle avait des équipements et un cadre scolaire relativement développés pour une ville de cette taille. J’y ai étudié dans de très bonnes écoles, presque comparables aux écoles pour élèves très doués de la région, ce qui m’a donné une base académique assez solide. Ensuite, je suis parti à Téhéran pour commencer mes études universitaires, et c’est là que mon parcours d’adulte a vraiment pris forme. Cela dit, quand je parle de mes origines, je ne pense pas seulement à un lieu géographique. Je pense aussi à une ville jeune, construite autour d’une communauté, qui a beaucoup influencé ma manière de voir l’éducation, l’effort et la mobilité sociale.</div>
+            </div>
+        </div></div>
+        
+    </div>
+    <div class="question-block" id="q4">
+        <div class="q-header">
+            <div class="q-num">۴</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Pouvez-vous décrire votre ville d&#x27;origine ?</div>
+                <div class="q-fa">می‌توانید شهر زادگاهتان را توصیف کنید؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">Pour décrire plus précisément la ville d’où je viens, je dirais d’abord que moi-même, je n’avais pas une image très claire de cette ville quand j’étais enfant. C’est surtout après mon départ à l’université que j’ai compris qu’elle était différente. Quand on dit “une ville nouvelle”, on imagine parfois une petite ville moins développée, moins chère, ou avec moins de possibilités. Mais l’endroit où j’ai grandi n’était pas vraiment comme ça. Mohajeran était une ville assez intéressante, construite presque volontairement près d’une grande zone industrielle. Elle se trouvait dans une grande plaine, entre deux grandes montagnes. C’était un endroit assez isolé, mais en même temps presque autonome. Il y avait plusieurs milliers de familles, peut-être autour de cinq ou six mille, et la ville avait beaucoup de choses à elle : sa propre organisation, ses services, son eau, son électricité, et à l’époque même une forme de système de sécurité ou de police interne. Beaucoup de pères travaillaient dans les entreprises autour de la ville. Certains rentraient vers cinq heures de l’après-midi, d’autres travaillaient de nuit. Le week-end, l’ambiance était très particulière : les familles sortaient, il y avait un club, un restaurant familial, un espace commun où beaucoup de gens allaient. C’était une ville assez homogène, mais en même temps vivante ; moderne, mais simple. Il n’y avait pas vraiment une atmosphère bourgeoise, mais les maisons étaient grandes, souvent comme des villas, et les enfants se connaissaient presque tous. Honnêtement, je n’y suis pas retourné depuis très longtemps. Cela fait environ quatorze ans que je suis parti à Téhéran, et même si je suis allé dans d’autres villes comme Arak ou Tabriz, je ne suis presque jamais retourné à Mohajeran. Si je devais donner une image, je dirais que c’était un peu comme une sorte de Kish sans tours, au centre de l’Iran : un endroit moderne, organisé, où les enfants étaient assez libres et où les gens se comportaient avec respect. Mais en même temps, c’était aussi un paquet assez isolé : on pouvait en sortir, bien sûr, mais peu de gens de l’extérieur y entraient vraiment.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Si je veux décrire ma ville d’origine plus précisément, je dirais que Mohajeran était une ville assez particulière. Quand j’étais enfant, je ne me rendais pas vraiment compte de sa spécificité. C’est seulement après mon départ à l’université que j’ai compris que ce n’était pas simplement une petite ville nouvelle comme les autres. En général, quand on parle d’une ville nouvelle, on pense parfois à un endroit moins développé, moins vivant, ou simplement moins cher. Mais Mohajeran ne correspondait pas vraiment à cette image. Elle avait été construite près d’une grande zone industrielle, dans une vaste plaine entre deux grandes montagnes. La ville était relativement isolée, mais elle fonctionnait presque comme un petit système autonome, avec ses propres services et une organisation assez particulière. Ce qui me reste le plus en mémoire, c’est la vie sociale de cette ville. Beaucoup de familles y vivaient parce que les pères travaillaient dans les entreprises autour de la ville. La semaine était organisée autour du travail, et le week-end, les familles se retrouvaient dans des espaces communs, comme un club ou un restaurant familial. L’ambiance était très homogène, mais en même temps assez vivante : moderne, simple, sans atmosphère bourgeoise, avec de grandes maisons et beaucoup d’enfants qui se connaissaient. Pour donner une image, je dirais que Mohajeran ressemblait un peu à une version intérieure de Kish, mais sans les tours et sans le côté touristique. C’était un endroit organisé, propre, assez sûr, où les enfants pouvaient circuler assez librement. En même temps, la ville restait isolée : on pouvait en sortir, bien sûr, mais peu de gens de l’extérieur y entraient vraiment. C’est peut-être pour cela que, même après quatorze ans à Téhéran, cette ville reste dans ma mémoire comme un petit monde à part.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Pour décrire Mohajeran plus simplement, je dirais que c’était une petite ville nouvelle, près d’Arak, au centre-ouest de l’Iran. Quand j’étais enfant, je ne comprenais pas vraiment que cette ville était différente. C’est surtout après mon départ à l’université que j’ai compris qu’elle avait quelque chose de spécial. La ville avait été construite près d’une grande zone industrielle, dans une grande plaine entre deux montagnes. Elle était assez isolée, mais elle avait beaucoup de choses à elle : ses services, son organisation, et une vie sociale assez particulière. Beaucoup de familles vivaient là parce que les pères travaillaient dans les entreprises autour de la ville. Le week-end, les familles sortaient souvent dans des espaces communs, comme un club ou un restaurant familial. L’ambiance était simple, moderne et assez vivante. Les maisons étaient grandes, les enfants se connaissaient, et on se sentait assez libre. Mais en même temps, la ville restait isolée. Je pourrais dire que c’était un peu comme une petite version de Kish, mais sans tours, au centre de l’Iran.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Pour décrire Mohajeran, je dirais que c’était une petite ville nouvelle assez particulière, près d’Arak, dans le centre-ouest de l’Iran. Quand j’étais enfant, je ne réalisais pas vraiment à quel point cette ville était différente. C’est surtout après mon départ à l’université que j’ai compris qu’elle n’était pas simplement une petite ville ordinaire. Elle avait été construite près d’une grande zone industrielle, dans une vaste plaine entre deux grandes montagnes. La ville était assez isolée, mais elle fonctionnait presque comme un petit système autonome, avec ses propres services et une organisation très particulière. Beaucoup de familles y vivaient parce que les pères travaillaient dans les entreprises autour de la ville. Ce que je garde surtout en mémoire, c’est l’ambiance sociale. Le week-end, les familles se retrouvaient dans des espaces communs, comme un club ou un restaurant familial. C’était une ville assez homogène, mais vivante ; moderne, mais simple. Les maisons étaient grandes, les enfants se connaissaient presque tous, et il y avait une forme de liberté et de sécurité. Si je devais donner une image, je dirais que Mohajeran ressemblait un peu à une version de Kish sans tours, mais située au centre de l’Iran. C’était un endroit organisé et assez respectueux, où les enfants pouvaient vivre librement. Cela dit, la ville restait très isolée : on pouvait en sortir, mais peu de gens de l’extérieur y entraient vraiment.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Si je devais décrire Mohajeran avec un peu plus de recul, je dirais que c’était une ville nouvelle, mais pas du tout au sens banal du terme. Quand on parle d’une ville nouvelle, on imagine parfois un endroit périphérique, moins développé ou simplement moins cher. Or, Mohajeran avait une logique différente : c’était une ville construite près d’une grande zone industrielle, dans une vaste plaine située entre deux grandes montagnes, au centre-ouest de l’Iran. Ce qui la rendait particulière, c’est qu’elle était à la fois isolée et presque autonome. Elle avait ses propres services, sa propre organisation, et une vie collective assez structurée. À l’époque, plusieurs milliers de familles y vivaient, souvent parce que les pères travaillaient dans les entreprises autour de la ville. Le rythme de la semaine était donc très lié au travail industriel, tandis que le week-end avait une dimension beaucoup plus familiale et communautaire. Ce que je garde en mémoire, c’est cette atmosphère très spécifique : une ville homogène, mais vivante ; moderne, mais simple ; sans vraie bourgeoisie visible, mais avec de grandes maisons et un cadre de vie relativement confortable. Les enfants se connaissaient presque tous, circulaient librement, et avaient accès à beaucoup d’équipements pour une ville de cette taille. Pour donner une image, je dirais que Mohajeran ressemblait un peu à une sorte de Kish intérieur, sans tours et sans dimension touristique, mais avec une organisation assez moderne. Cela dit, cette qualité avait aussi son revers : la ville formait presque un espace fermé. On pouvait en sortir, bien sûr, mais peu de gens de l’extérieur y entraient vraiment. Avec le recul, je dirais que c’était un petit monde à part, à la fois protégé, organisé et isolé.</div>
+            </div>
+        </div></div>
+        
+        <div class="practice-section">
+            <div class="practice-head">🏋️ تمرین کنترل‌شده</div>
+            <div class="practice-sub">این الگوها را به‌جای حفظ‌کردن کل جواب، مثل اسکلت استفاده کن. هر بار با کلمات خودت پُرشان کن.</div>
+            <div class="skel-list"><div class="skel-item"><span class="skel-chunk" dir="ltr">Pour décrire Mohajeran, je dirais que... / Quand j’étais enfant... / Elle avait été construite... / Ce que je garde... / Si je devais donner une image...</span><span class="skel-note">Use this to avoid losing control.</span></div></div>
+            
+            <div class="drill-box">
+                <div class="drill-title">🎯 جواب کنترل‌شده‌ی ۳۰ ثانیه‌ای (این را با صدای بلند تمرین کن)</div>
+                <div class="drill-text" dir="ltr">Pour décrire Mohajeran plus simplement, je dirais que c’était une petite ville nouvelle, près d’Arak, au centre-ouest de l’Iran. Quand j’étais enfant, je ne comprenais pas vraiment que cette ville était différente. C’est surtout après mon départ à l’université que j’ai compris qu’elle avait quelque chose de spécial. La ville avait été construite près d’une grande zone industrielle, dans une grande plaine entre deux montagnes. Elle était assez isolée, mais elle avait beaucoup de choses à elle : ses services, son organisation, et une vie sociale assez particulière. Beaucoup de familles vivaient là parce que les pères travaillaient dans les entreprises autour de la ville. Le week-end, les familles sortaient souvent dans des espaces communs, comme un club ou un restaurant familial. L’ambiance était simple, moderne et assez vivante. Les maisons étaient grandes, les enfants se connaissaient, et on se sentait assez libre. Mais en même temps, la ville restait isolée. Je pourrais dire que c’était un peu comme une petite version de Kish, mais sans tours, au centre de l’Iran.</div>
+            </div>
+        </div>
+    </div>
+    <div class="question-block" id="q5">
+        <div class="q-header">
+            <div class="q-num">۵</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Aimeriez-vous retourner vivre dans votre ville d&#x27;origine ?</div>
+                <div class="q-fa">دوست دارید برگردید و در شهر زادگاهتان زندگی کنید؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">Honnêtement, si vous me demandez si j’aimerais retourner vivre là-bas, je dirais non. J’ai beaucoup expliqué que cette ville était différente et intéressante, mais pour y vivre à nouveau, non. En général, je crois que les êtres humains doivent bouger. En persan, on dit parfois que “la bénédiction est dans le mouvement”, et pour moi cela veut dire que la croissance vient aussi du déplacement. C’est même intéressant, parce que le nom de la ville où j’ai grandi, Mohajeran, veut dire “les immigrants” en persan. Donc, d’une certaine manière, cette idée de mouvement fait presque partie de mon histoire personnelle. Je pense qu’il faut toujours garder l’idée d’avancer et de progresser, pas seulement regarder le passé comme un endroit où l’on veut retourner. Je vois beaucoup de personnes qui, même dix ou vingt ans plus tard, restent très attachées à leurs souvenirs. Je les comprends, et je respecte cela. Mais personnellement, ce n’est pas ma manière de voir les choses. Ce n’est pas vraiment mon goût. Pour moi, le passé peut être important, mais il ne doit pas devenir une direction de vie. Même Téhéran, où je vis maintenant, a peut-être déjà atteint une certaine limite pour moi. Je pense qu’à un moment donné, il faut repartir, mais bien sûr il faut le faire intelligemment. Il faut gérer ses ressources financières, ne pas rester bloqué au milieu du chemin, et préparer chaque déplacement. Mais au fond, je crois que le progrès vient du fait d’avancer. Si je regarde mon propre parcours, je suis arrivé à Mohajeran quand j’avais deux ans, j’y ai grandi, puis je suis allé vers Arak, ensuite vers Téhéran, puis mon travail m’a relié à Abu Dhabi, et ma femme est partie aux États-Unis. Peut-être qu’après deux ou trois autres étapes, si tout se passe bien, nous arriverons enfin à un meilleur endroit.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Honnêtement, je n’aimerais pas retourner vivre à Mohajeran, même si cette ville a une valeur très particulière pour moi. Je l’associe à mon enfance, à mes premiers souvenirs et à une certaine forme de communauté. Mais pour vivre à long terme, je ne me vois pas vraiment y retourner. La raison principale, c’est que je crois beaucoup au mouvement. En persan, on dit que “la bénédiction est dans le mouvement”, et cette phrase correspond assez bien à ma manière de voir la vie. Pour moi, avancer, changer d’environnement et se confronter à de nouveaux contextes fait partie de la croissance personnelle. C’est d’ailleurs assez symbolique que la ville où j’ai grandi s’appelle Mohajeran, c’est-à-dire “les immigrants” en persan. D’une certaine manière, même mon origine est liée à cette idée de déplacement. Je pense qu’il faut garder ses souvenirs avec respect, mais qu’il ne faut pas laisser la nostalgie décider de son avenir. Je comprends les personnes qui restent très attachées à leur passé, même dix ou vingt ans plus tard. Je respecte ce rapport aux souvenirs. Mais personnellement, ce n’est pas mon tempérament. J’ai plutôt besoin de sentir que j’avance. Même Téhéran, qui est aujourd’hui ma base principale, n’est peut-être pas une destination finale pour moi. Cela dit, je ne pense pas qu’il faille bouger n’importe comment. Chaque déplacement demande une préparation, surtout sur le plan financier. Il faut gérer ses ressources, éviter de rester bloqué au milieu du chemin, et construire les étapes progressivement. Si je regarde mon parcours, il y a déjà eu plusieurs déplacements : Mohajeran, Arak, Téhéran, puis un environnement professionnel lié à Abu Dhabi, et ma femme aux États-Unis. J’espère qu’après encore quelques étapes, nous arriverons à un endroit plus stable et plus favorable pour notre vie.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Honnêtement, je n’aimerais pas retourner vivre à Mohajeran. J’aime cette ville parce qu’elle représente mon enfance, mais je ne me vois pas y vivre à long terme. Pour moi, les gens doivent avancer et bouger. En persan, on dit que “la bénédiction est dans le mouvement”, et cette idée me parle beaucoup. Je pense que la croissance vient souvent du changement d’environnement. Ce qui est intéressant, c’est que le nom Mohajeran veut dire “les immigrants” en persan. Donc, même le nom de ma ville est lié à l’idée de mouvement. Je respecte les personnes qui restent très attachées à leurs souvenirs, mais personnellement, je ne veux pas vivre seulement dans le passé. Bien sûr, il ne faut pas bouger sans préparation. Il faut gérer son argent, ses choix et ses étapes. Mais si je regarde mon parcours, j’ai déjà beaucoup changé d’environnement : Mohajeran, Arak, Téhéran, puis un travail lié à Abu Dhabi, et ma femme aux États-Unis. Donc, je pense que mon chemin continue encore.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Honnêtement, même si Mohajeran a une valeur très particulière pour moi, je ne pense pas que j’aimerais y retourner pour y vivre. C’est la ville de mon enfance, et je la respecte beaucoup, mais je crois que ma vie doit continuer ailleurs. Ma conviction personnelle, c’est que les gens doivent avancer et changer d’environnement pour grandir. En persan, on dit que “la bénédiction est dans le mouvement”, et cette phrase correspond vraiment à ma manière de voir les choses. C’est d’ailleurs assez symbolique que le nom de ma ville, Mohajeran, signifie “les immigrants”. Je comprends les personnes qui restent très attachées à leurs souvenirs, même après dix ou vingt ans. Je respecte cela, mais personnellement, je ne veux pas que le passé devienne ma direction principale. Pour moi, les souvenirs sont importants, mais ils ne doivent pas remplacer le mouvement. Cela dit, je ne crois pas non plus qu’il faille bouger sans préparation. Il faut gérer ses ressources, surtout financières, et construire chaque étape intelligemment pour ne pas rester bloqué au milieu du chemin. Quand je regarde mon propre parcours, je vois déjà ce mouvement : Mohajeran, Arak, Téhéran, puis un environnement professionnel lié à Abu Dhabi, et ma femme aux États-Unis. Donc, au fond, je dirais que je ne veux pas revenir en arrière ; je veux plutôt continuer à avancer vers une vie plus stable et meilleure.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Avec le recul, je ne dirais pas que j’aimerais retourner vivre à Mohajeran, même si cette ville reste très importante dans mon histoire personnelle. Elle représente mon enfance, une partie de mes premiers repères, et aussi une forme de communauté que je respecte beaucoup. Mais je crois profondément que la vie ne doit pas se limiter au retour vers ce que l’on connaît déjà. Ma vision est assez liée à une idée simple : le mouvement crée souvent la croissance. En persan, on dit que “la bénédiction est dans le mouvement”, et cette formule résume assez bien mon rapport à la vie. Ce qui est presque symbolique, c’est que la ville où j’ai grandi s’appelle Mohajeran, c’est-à-dire “les immigrants”. Donc, même mon point de départ porte déjà cette idée de déplacement. Je comprends très bien les personnes qui restent attachées à leurs souvenirs pendant dix ou vingt ans. Je ne juge pas cela, parce que la mémoire peut donner de la continuité et de la profondeur à une vie. Mais dans mon cas, je ne veux pas que la nostalgie devienne une forme d’immobilité. Je préfère garder le passé comme une source d’énergie, pas comme une destination. Cela dit, je ne défends pas un mouvement naïf ou désorganisé. Partir demande des ressources, une préparation financière, une capacité d’adaptation et une vraie gestion du risque. Il ne suffit pas de vouloir avancer ; il faut aussi éviter de se retrouver bloqué au milieu du chemin. Quand je regarde mon propre parcours, je vois une succession de déplacements : Mohajeran, Arak, Téhéran, puis un environnement professionnel lié à Abu Dhabi, et une vie familiale marquée par les États-Unis à travers les études de ma femme. J’ai l’impression que ce mouvement n’est pas encore terminé. Si les prochaines étapes sont bien construites, j’espère qu’elles nous mèneront vers une vie plus stable, plus ouverte et plus cohérente avec nos ambitions.</div>
+            </div>
+        </div></div>
+        
+        <div class="practice-section">
+            <div class="practice-head">🏋️ تمرین کنترل‌شده</div>
+            <div class="practice-sub">این الگوها را به‌جای حفظ‌کردن کل جواب، مثل اسکلت استفاده کن. هر بار با کلمات خودت پُرشان کن.</div>
+            <div class="skel-list"><div class="skel-item"><span class="skel-chunk" dir="ltr">Honnêtement, même si..., je ne pense pas que...</span><span class="skel-note">Start with respect + clear no.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Ma conviction personnelle, c’est que...</span><span class="skel-note">Introduce main belief.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">En persan, on dit que...</span><span class="skel-note">Use the proverb naturally.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Je comprends les personnes qui..., mais personnellement...</span><span class="skel-note">Show nuance and respect.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Cela dit, il ne faut pas...</span><span class="skel-note">Add risk/control condition.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Quand je regarde mon propre parcours...</span><span class="skel-note">Give personal example.</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Donc, au fond...</span><span class="skel-note">Close answer clearly.</span></div></div>
+            
+            <div class="drill-box">
+                <div class="drill-title">🎯 جواب کنترل‌شده‌ی ۳۰ ثانیه‌ای (این را با صدای بلند تمرین کن)</div>
+                <div class="drill-text" dir="ltr">Je ne pense pas que j’aimerais retourner vivre à Mohajeran, même si cette ville reste très importante pour moi. Pour moi, les gens doivent avancer et changer d’environnement pour grandir. En persan, on dit que la bénédiction est dans le mouvement, et même le nom Mohajeran signifie les immigrants. Donc, je préfère garder mes souvenirs avec respect, mais continuer à avancer vers une vie plus stable.</div>
+            </div>
+        </div>
+    </div>
+    <div class="question-block" id="q6">
+        <div class="q-header">
+            <div class="q-num">۶</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Qu&#x27;est-ce qui vous manque le plus de votre ville d&#x27;origine ?</div>
+                <div class="q-fa">چه چیزی از شهر زادگاهتان بیشتر دلتان تنگ می‌شود؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">C’est une question intéressante. Honnêtement, je pense que ce qui me manque le plus, ce n’est pas forcément la ville elle-même, mais certaines sensations très précises. Il y a quelques années, ou plutôt récemment, quand je suis retourné là-bas, je suis passé dans une rue où je courais quand j’étais enfant. Et là, j’ai eu un sentiment très étrange. Je ne me considère pas vraiment comme quelqu’un de très sentimental, mais à ce moment-là, j’avais envie de rester plusieurs heures dans cette rue. C’était comme si une partie de mon corps ou de mon cerveau était programmée pour reconnaître cet endroit. Je ne m’attendais pas du tout à ressentir quelque chose d’aussi fort. Mais en même temps, je ne pense pas que ce sentiment signifie qu’il faut retourner en arrière. Pour moi, la nostalgie reste la nostalgie, et le passé reste le passé. On peut le regarder avec respect, mais il ne faut pas en faire une direction de vie. En réalité, je crois que l’avenir a plus de possibilités et plus d’intérêt pour moi. Peut-être que je me trompe, je ne sais pas, mais jusqu’à maintenant, chaque fois que j’ai bougé, la vie m’a montré une nouvelle vue, une nouvelle possibilité. Par exemple, il y a quatre ans, je n’imaginais pas du tout travailler un jour avec Abu Dhabi. Je ne savais même pas vraiment quelle place cela pouvait avoir dans ma vie. Et il y a dix ans, si quelqu’un m’avait dit que j’essaierais un jour d’aller aux États-Unis ou au Canada, je n’y aurais probablement pas cru. Donc, ce qui me manque, c’est peut-être cette sensation très profonde liée à l’enfance. Mais ce que je ne veux pas perdre, c’est le mouvement. Parce que pour moi, ce qu’on perd vraiment, c’est quand on arrête d’avancer.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Ce qui me manque le plus de ma ville d’origine, ce n’est pas vraiment un bâtiment ou un endroit précis, mais plutôt une sensation liée à l’enfance. Récemment, quand je suis retourné à Mohajeran, je suis passé dans une rue où je courais quand j’étais enfant. Et là, j’ai ressenti quelque chose d’assez étrange et assez fort. Je ne me considère pas comme quelqu’un de très sentimental, mais à ce moment-là, j’avais envie de rester longtemps dans cette rue. C’était comme si mon corps ou mon cerveau reconnaissait cet endroit avant même que je le comprenne consciemment. J’ai trouvé cela très intéressant, parce que je ne pensais pas avoir une réaction aussi profonde. Cela dit, cette sensation ne me donne pas forcément envie de revenir en arrière. Pour moi, la nostalgie est importante, parce qu’elle nous rappelle d’où l’on vient, mais elle ne doit pas nous empêcher d’avancer. Je préfère regarder le passé avec respect, tout en gardant mon énergie pour les expériences nouvelles. En réalité, je pense que l’avenir est souvent plus riche que ce qu’on imagine. Peut-être que je me trompe, mais jusqu’à maintenant, chaque changement d’environnement m’a ouvert une nouvelle perspective. Je n’aurais jamais imaginé travailler un jour avec Abu Dhabi, ni penser sérieusement aux États-Unis ou au Canada. Donc, ce qui me manque, c’est une forme de mémoire très profonde, mais ce que je veux préserver, c’est ma capacité à bouger et à découvrir de nouvelles étapes.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Ce qui me manque le plus, ce n’est pas vraiment la ville elle-même, mais une sensation de mon enfance. Une fois, quand je suis retourné à Mohajeran, je suis passé dans une rue où je courais quand j’étais enfant. J’ai ressenti quelque chose de très étrange. Je ne suis pas quelqu’un de très sentimental, mais à ce moment-là, j’avais envie de rester là pendant plusieurs heures. C’était comme si mon corps reconnaissait cet endroit. Je ne pensais pas que cette rue pouvait provoquer une réaction aussi forte chez moi. Mais malgré cela, je ne pense pas qu’il faille revenir en arrière. La nostalgie est belle, mais elle reste la nostalgie. Pour moi, le passé est important, mais l’avenir est plus intéressant. Chaque fois que j’ai changé d’environnement, la vie m’a montré quelque chose de nouveau. Donc, je préfère garder ces souvenirs, mais continuer à avancer.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Ce qui me manque le plus de ma ville d’origine, ce n’est pas vraiment la ville elle-même, mais certaines sensations liées à mon enfance. Récemment, quand je suis retourné à Mohajeran, je suis passé dans une rue où je courais quand j’étais enfant, et j’ai ressenti quelque chose de très étrange. Je ne me considère pas comme quelqu’un de très sentimental, mais à ce moment-là, j’avais envie de rester là pendant plusieurs heures. C’était comme si mon corps, ou même mon cerveau, reconnaissait cet endroit avant moi. Cette réaction m’a surpris, parce que je ne pensais pas avoir un lien aussi profond avec cette rue. Cela dit, je ne pense pas que la nostalgie doive nous pousser à revenir en arrière. Pour moi, le passé est important, mais il doit rester une source de mémoire, pas une direction de vie. Je préfère garder ces souvenirs avec respect, tout en restant tourné vers l’avenir. J’ai l’impression que, dans ma vie, chaque changement d’environnement m’a ouvert une nouvelle perspective. Il y a quelques années, je n’aurais jamais imaginé travailler avec Abu Dhabi, ni penser sérieusement aux États-Unis ou au Canada. Donc, au fond, ce qui me manque, c’est une partie très intime de mon enfance ; mais ce que je veux préserver, c’est surtout ma capacité à avancer et à découvrir de nouvelles étapes.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Avec le recul, je dirais que ce qui me manque le plus de ma ville d’origine, ce n’est pas la ville comme espace physique, mais une forme de mémoire corporelle liée à l’enfance. Récemment, lorsque je suis retourné à Mohajeran, je suis passé dans une rue où je courais quand j’étais enfant, et cette rue a provoqué en moi une réaction inattendue. Je ne me considère pas comme quelqu’un de particulièrement sentimental, mais à ce moment-là, j’ai eu envie de rester là pendant plusieurs heures. C’était comme si mon corps, ou même une partie de mon cerveau, reconnaissait cet endroit avant que je puisse l’analyser. J’ai trouvé cela très fort, parce que cela m’a montré que certains lieux restent inscrits en nous, même quand on pense les avoir dépassés. Cela dit, je ne veux pas confondre mémoire et retour en arrière. La nostalgie peut être belle et même nécessaire, parce qu’elle nous rappelle d’où nous venons. Mais si elle devient une forme d’immobilité, elle peut aussi nous empêcher de vivre de nouvelles expériences. Pour moi, le passé doit rester une source d’énergie, pas une prison. Je pense que l’avenir garde souvent plus de possibilités qu’on ne l’imagine. Peut-être que je me trompe, mais jusqu’à présent, chaque déplacement important dans ma vie m’a ouvert une perspective que je n’aurais jamais prévue. Il y a quelques années, je n’imaginais pas travailler avec Abu Dhabi, ni penser sérieusement aux États-Unis ou au Canada. Donc, au fond, ce qui me manque, c’est cette sensation intime d’un lieu qui a formé une partie de moi. Mais ce que je veux préserver, ce n’est pas le retour au passé ; c’est la capacité à rester disponible pour l’avenir, à bouger, et à laisser la vie me montrer de nouvelles directions.</div>
+            </div>
+        </div></div>
+        
+        <div class="practice-section">
+            <div class="practice-head">🏋️ تمرین کنترل‌شده</div>
+            <div class="practice-sub">این الگوها را به‌جای حفظ‌کردن کل جواب، مثل اسکلت استفاده کن. هر بار با کلمات خودت پُرشان کن.</div>
+            <div class="skel-list"><div class="skel-item"><span class="skel-chunk" dir="ltr">Ce qui me manque le plus..., ce n’est pas..., mais...</span><span class="skel-note">Use to answer directly without overexplaining</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Quand je suis retourné à Mohajeran, je suis passé dans une rue où je courais enfant.</span><span class="skel-note">One concrete example</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Je ne me considère pas comme sentimental, mais j’avais envie de rester là plusieurs heures.</span><span class="skel-note">Shows spontaneity and self-reflection</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Je veux garder ces souvenirs, tout en restant tourné vers l’avenir.</span><span class="skel-note">Clean exam ending</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Ce qui me manque, c’est une sensation. / Ce que je veux préserver, c’est ma capacité à avancer.</span><span class="skel-note">Say both 5 times slowly</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">une rue où je courais</span><span class="skel-note">Do not say: une rue que je courais</span></div></div>
+            
+        </div>
+    </div>
+    <div class="question-block" id="q7">
+        <div class="q-header">
+            <div class="q-num">۷</div>
+            <div class="q-texts">
+                <div class="q-fr" dir="ltr">Qu&#x27;est-ce que vous pensez de Téhéran ?</div>
+                <div class="q-fa">نظرتان دربارهٔ تهران چیست؟</div>
+            </div>
+        </div>
+        <div class="answers-wrap">
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#8a8275">
+                <span class="answer-label" style="color:#8a8275">نوع ۱ — نزدیک به فکر فارسی</span>
+                <span class="answer-badge" style="background:#8a8275">ساخت ایده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">ترجمه‌ی نزدیک به آنچه در ذهن فارسی‌ات می‌گویی. برای ساختن ایده خوب است، نه نسخه‌ی نهایی امتحان.</div>
+                <div class="answer-text" dir="ltr">Oui, je vis à Téhéran. Mais si vous me demandez ce que je pense de Téhéran, je dirais d’abord qu’il faut voir avec quelle ville on la compare. Est-ce qu’on la compare à une ville comme Istanbul ? À Dubaï ? À une petite ville en Iran ? Ou même à une ville américaine comme Rochester, où ma femme étudie actuellement, ou à New York ? Selon la comparaison, l’image de Téhéran peut beaucoup changer. Honnêtement, ces dernières années, et surtout cette dernière période, Téhéran n’est pas dans une très bonne situation. À cause des problèmes économiques, des tensions récentes et de l’incertitude générale, la qualité de vie est devenue plus difficile. Donc je ne veux pas donner une image romantique ou trop positive de la ville. Mais si on revient dix, quinze ou vingt ans en arrière, et si on regarde la structure intérieure de Téhéran, son tissu économique et son tissu professionnel, on voit que c’est une ville très importante. Ce n’est pas vraiment une ville touristique, comme Chiraz ou Ispahan. Bien sûr, il y a des loisirs, des cafés, des restaurants et certains lieux intéressants, mais l’identité principale de Téhéran n’est pas touristique. C’est plutôt une ville de travail, d’entreprises, de logements, de projets et de marchés. Dans ce sens, on peut peut-être comparer son tissu à celui d’une ville comme Ankara, ou même, d’une certaine manière, Toronto : une ville qui a des attractions, mais où les gens ne viennent pas forcément seulement pour le tourisme. Ils y vivent, ils y travaillent, ils y créent des projets. Pour moi, c’est un aspect très important. Ce que je trouve aussi intéressant, c’est que Téhéran n’est pas une ville artificielle. Quand on marche dans certaines rues, dans certains quartiers, on voit des couches d’histoire, de construction, de destruction, de reconstruction et de développement. Les murs, les bâtiments, les rues montrent que la ville a vraiment vécu. Mais il faut aussi préciser que Téhéran a plusieurs définitions. Il y a Téhéran au sens plus central, celui que beaucoup de gens imaginent quand ils pensent à la ville. Et puis il y a le Grand Téhéran, qui s’est développé avec le temps, surtout vers l’ouest et le sud, avec des zones périphériques qui n’ont pas toujours le même accès aux services, aux transports ou aux opportunités. Donc, au fond, Téhéran est une ville très réelle, très active, mais aussi très complexe et parfois très fatigante.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#3f8a9c">
+                <span class="answer-label" style="color:#3f8a9c">نوع ۲ — طبیعی و کامل</span>
+                <span class="answer-badge" style="background:#3f8a9c">مطالعه</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی فرانسه‌ی طبیعی و کامل. برای مطالعه عالی است، اما کمی طولانی برای گفتن.</div>
+                <div class="answer-text" dir="ltr">Oui, je vis à Téhéran, et mon opinion sur cette ville dépend beaucoup de la comparaison que l’on fait. Si on compare Téhéran à Istanbul, à Dubaï, à New York, à Rochester ou même à une petite ville en Iran, on n’aura pas du tout la même impression. C’est pour cela que je pense qu’il faut parler de Téhéran avec beaucoup de nuance. Honnêtement, la situation actuelle de Téhéran n’est pas très facile. Ces dernières années, les difficultés économiques, les tensions récentes et l’incertitude générale ont rendu la vie quotidienne plus lourde. Donc je ne veux pas présenter Téhéran comme une ville idéale. Aujourd’hui, vivre à Téhéran peut être fatigant, surtout à cause de la pression économique et de la complexité du quotidien. Cela dit, Téhéran reste une ville très importante et très réelle. Ce n’est pas une ville principalement touristique, comme Chiraz ou Ispahan peuvent l’être. Elle a des lieux de loisirs et des quartiers intéressants, mais son identité principale est ailleurs : c’est une ville de travail, d’entreprises, de logements, de marchés et de projets. À mon avis, son tissu ressemble davantage à celui d’une capitale économique et administrative, comme Ankara, ou même, d’une certaine manière, Toronto, plutôt qu’à une ville conçue pour les touristes. Ce que j’apprécie dans Téhéran, c’est justement ce côté non artificiel. Dans certaines rues, certains murs et certains quartiers, on sent que la ville a été construite, transformée, détruite parfois, puis reconstruite. Il y a des couches d’histoire et de développement, même si tout n’est pas toujours beau ou bien organisé. Enfin, il faut distinguer Téhéran au sens central et le Grand Téhéran. Le Téhéran que beaucoup de gens imaginent correspond surtout aux quartiers plus anciens ou plus centraux. Mais avec le temps, la ville s’est beaucoup étendue, surtout vers l’ouest et le sud, et certaines zones périphériques n’ont pas le même accès aux services, aux transports ou aux opportunités. Donc, pour moi, Téhéran est une ville vivante, dense et authentique, mais aussi inégale, complexe et parfois très difficile à vivre.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#2e8b6b">
+                <span class="answer-label" style="color:#2e8b6b">نوع ۳ — ساده و امن</span>
+                <span class="answer-badge" style="background:#2e8b6b">ضد استرس</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی ساده‌تر و شفاهی. امن‌ترین گزینه زیر استرس امتحان.</div>
+                <div class="answer-text" dir="ltr">Oui, je vis à Téhéran. Pour parler de cette ville, je pense qu’il faut d’abord dire avec quoi on la compare. Si on la compare à Istanbul, à Dubaï, à New York, à Rochester ou à une petite ville en Iran, l’image ne sera pas la même. Honnêtement, aujourd’hui, Téhéran n’est pas dans une très bonne période. Les problèmes économiques et les tensions récentes ont rendu la vie plus difficile. Donc je ne veux pas dire que c’est une ville facile ou idéale. Mais en même temps, Téhéran reste une ville très vivante et très réelle. Ce n’est pas une ville surtout touristique comme Chiraz ou Ispahan. C’est plutôt une ville de travail, d’universités, d’entreprises, de logements et de projets. Ce que j’aime dans Téhéran, c’est qu’elle n’est pas artificielle. On sent que la ville a une histoire, qu’elle a été construite, changée, parfois détruite et reconstruite. Mais il faut aussi distinguer le centre de Téhéran et le Grand Téhéran. Certaines zones périphériques, surtout vers l’ouest et le sud, n’ont pas toujours un bon accès aux services ou aux transports. Donc, pour moi, Téhéran est une ville intéressante, active et authentique, mais aussi complexe et fatigante.</div>
+            </div>
+        </div>
+        <div class="answer-card answer-best">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#b07a4a">
+                <span class="answer-label" style="color:#b07a4a">نوع ۴ — نسخه‌ی نهایی امتحان ⭐</span>
+                <span class="answer-badge" style="background:#b07a4a">توصیه‌شده</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">بهترین نسخه برای امتحان. کنترل‌شده، روان و حرفه‌ای. این را تمرین کن!</div>
+                <div class="answer-text" dir="ltr">Oui, je vis à Téhéran, et je pense qu’il faut toujours parler de cette ville avec nuance. Tout dépend de la comparaison que l’on fait : si on compare Téhéran à Istanbul, à Dubaï, à New York, à Rochester ou même à une petite ville en Iran, on n’aura pas du tout la même impression. Honnêtement, la situation actuelle de Téhéran n’est pas facile. Ces dernières années, surtout avec les difficultés économiques et les tensions récentes, la vie quotidienne est devenue plus lourde. Donc je ne veux pas présenter Téhéran comme une ville idéale. Cela dit, Téhéran reste pour moi une ville très réelle et très active. Ce n’est pas une ville principalement touristique, comme Chiraz ou Ispahan. C’est plutôt une ville de travail, d’entreprises, d’universités, de logements, de marchés et de projets. Dans ce sens, son tissu ressemble davantage à celui d’une capitale économique et professionnelle qu’à une ville construite autour du tourisme. Ce que j’apprécie à Téhéran, c’est son côté non artificiel. Quand on marche dans certains quartiers, on sent les couches de la ville : elle a été construite, transformée, parfois détruite, puis reconstruite. Bien sûr, tout n’est pas beau ni bien organisé, mais la ville a une vraie densité et une vraie énergie. Il faut aussi distinguer le Téhéran central et le Grand Téhéran. Avec le temps, la ville s’est beaucoup étendue, surtout vers l’ouest et le sud, et certaines zones périphériques n’ont pas toujours le même accès aux services ou aux transports. Donc, au fond, je dirais que Téhéran est une ville authentique, vivante et pleine d’opportunités, mais aussi inégale, complexe et parfois très fatigante.</div>
+            </div>
+        </div>
+        <div class="answer-card">
+            <button class="answer-head" onclick="this.parentElement.classList.toggle('open')" style="border-right-color:#7a5ba8">
+                <span class="answer-label" style="color:#7a5ba8">نوع ۵ — ارتقای واژگان C1</span>
+                <span class="answer-badge" style="background:#7a5ba8">واژگان C1</span>
+                <span class="answer-toggle">▾</span>
+            </button>
+            <div class="answer-body">
+                <div class="answer-desc">نسخه‌ی سطح‌بالاتر برای تقویت واژگان. کمی سنگین‌تر است؛ برای یادگیری کلمات تازه.</div>
+                <div class="answer-text" dir="ltr">Je vis à Téhéran, mais je pense qu’on ne peut pas parler de cette ville de manière absolue. Tout dépend du point de comparaison. Si on la compare à Istanbul, à Dubaï, à New York, à Rochester ou à une petite ville iranienne, on ne parle presque pas de la même réalité urbaine. Téhéran est une ville qui demande beaucoup de nuance. Aujourd’hui, il faut reconnaître que la situation de Téhéran est difficile. Les difficultés économiques, les tensions récentes et l’incertitude ont rendu la vie quotidienne plus lourde et parfois plus épuisante. Donc je n’ai pas envie d’idéaliser cette ville, ni de la présenter comme un endroit facile à vivre. Cela dit, ce qui me frappe à Téhéran, c’est son caractère réel et non artificiel. Ce n’est pas une ville construite principalement pour le tourisme, contrairement à des villes comme Chiraz ou Ispahan, qui ont une identité touristique beaucoup plus forte. Téhéran est plutôt une ville de travail, d’institutions, d’entreprises, de logements, de marchés et de projets. Son tissu urbain et économique ressemble davantage à celui d’une capitale fonctionnelle qu’à celui d’une ville destinée aux visiteurs. J’aime aussi le fait que Téhéran porte les traces de ses transformations. Dans certains quartiers, on voit que la ville a été construite, démolie, reconstruite et développée par couches successives. Elle n’est pas toujours belle, elle n’est pas toujours cohérente, mais elle n’est pas fausse. Il y a une densité humaine, économique et historique qui rend la ville très vivante. En même temps, il faut distinguer le Téhéran central du Grand Téhéran. Avec l’expansion de la ville, surtout vers l’ouest et le sud, certaines zones périphériques ont été ajoutées à cette réalité urbaine, mais elles n’ont pas toujours le même niveau d’accès aux transports, aux services ou aux opportunités. Donc, avec le recul, je dirais que Téhéran est une ville puissante et authentique, mais aussi inégale, usante et profondément complexe.</div>
+            </div>
+        </div></div>
+        
+        <div class="practice-section">
+            <div class="practice-head">🏋️ تمرین کنترل‌شده</div>
+            <div class="practice-sub">این الگوها را به‌جای حفظ‌کردن کل جواب، مثل اسکلت استفاده کن. هر بار با کلمات خودت پُرشان کن.</div>
+            <div class="skel-list"><div class="skel-item"><span class="skel-chunk" dir="ltr">Tout dépend de la comparaison que l’on fait.</span><span class="skel-note">تهران را مطلق قضاوت نکن</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">La situation actuelle n’est pas facile.</span><span class="skel-note">امروز دشوار است</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">Cela dit, Téhéran reste...</span><span class="skel-note">اما فقط منفی نمان</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">une ville de travail, d’entreprises, d’universités...</span><span class="skel-note">شهر کار و زندگی است، نه توریسم</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">son côté non artificiel</span><span class="skel-note">مصنوعی نیست</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">les couches de la ville</span><span class="skel-note">ساخت/تخریب/بازسازی</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">le Téhéran central et le Grand Téhéran</span><span class="skel-note">مرکز با حاشیه فرق دارد</span></div><div class="skel-item"><span class="skel-chunk" dir="ltr">authentique, vivante... mais complexe et fatigante</span><span class="skel-note">جمع‌بندی دوطرفه</span></div></div>
+            
+        </div>
+    </div>
+    <div class="footer">
+      ✦ هر روز یکی‌دو سؤال را با صدای بلند تمرین کن. هدف: روان‌بودن، نه بی‌نقص‌بودن.<br>
+      <b>Français avec Hoda</b> · پرونده‌ی اختصاصی علیرضا
+      <div class="backtop"><a href="#top">↑ بازگشت به بالا</a></div>
+    </div>
+  </div>
+  <script src="protect.js"></script>
+</body>
+</html>
