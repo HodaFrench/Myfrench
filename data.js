@@ -1114,4 +1114,172 @@ const MINIARTICLES = [
       fa: "شاید خوشبختی هیچ‌وقت یک مقصد همیشگی نبوده است. شاید فقط نتیجه‌ی زندگی‌ای است که با تعادل، ارتباط و هدف زیسته شده. همه‌ی زندگی‌های زیبا از بیرون بی‌نهایت شاد به نظر نمی‌رسند — و این کاملاً طبیعی است.",
     },
   },
+  {
+    titre: "Pourquoi les matins sont-ils si difficiles ?",
+    emoji: "🌅",
+    niveau: "B1",
+    paras: [
+      "Pour beaucoup de gens, le matin est le moment le plus ⟦difficile|سخت⟧ de la journée. On se sent ⟦fatigué|خسته⟧, de mauvaise ⟦humeur|خلق‌وخو⟧, et l'idée de sortir du lit ⟦semble|به نظر می‌رسد⟧ presque impossible. Mais pourquoi ?",
+      "Pendant la nuit, notre corps se ⟦repose|استراحت می‌کند⟧ et notre cerveau a besoin de temps pour se ⟦réveiller|بیدار شدن⟧ complètement. De plus, beaucoup de personnes regardent leur téléphone juste après le réveil, ce qui ⟦fatigue|خسته می‌کند⟧ l'esprit dès les premières minutes.",
+      "Voici une petite ⟦astuce|ترفند⟧ : au lieu de prendre ton téléphone, ouvre la ⟦fenêtre|پنجره⟧ et laisse entrer la lumière du jour. Bois un grand ⟦verre|لیوان⟧ d'eau et ⟦étire-toi|کش‌وقوس برو⟧ quelques minutes. Ces gestes simples ⟦envoient|می‌فرستند⟧ un signal à ton corps : la journée commence !",
+    ],
+    morale: {
+      fr: "Un bon matin ne dépend pas de la chance, mais de quelques petites habitudes. Change ta routine du matin, et tu changeras toute ta journée.",
+      fa: "یک صبح خوب به شانس بستگی ندارد، بلکه به چند عادت کوچک. روتین صبحت را عوض کن، تا کل روزت عوض شود.",
+    },
+  },
+  {
+    titre: "La magie d'une courte promenade après le repas",
+    emoji: "🚶",
+    niveau: "B1",
+    paras: [
+      "Après un bon repas, on a souvent ⟦envie de|تمایل به⟧ s'asseoir sur le canapé et de ne rien faire. Pourtant, une courte promenade peut faire des ⟦merveilles|معجزه⟧ pour notre corps et notre esprit.",
+      "Les ⟦chercheurs|پژوهشگران⟧ expliquent que marcher dix ou quinze minutes après le repas aide à mieux ⟦digérer|هضم کردن⟧ et à ⟦stabiliser|تثبیت کردن⟧ le taux de sucre dans le sang. C'est particulièrement utile après un repas ⟦copieux|سنگین / مفصل⟧.",
+      "Mais les ⟦bienfaits|فواید⟧ ne sont pas seulement physiques. Une petite marche permet aussi de se ⟦détendre|آرام شدن⟧, de prendre l'air et de ⟦libérer|آزاد کردن⟧ l'esprit. C'est un moment simple pour ⟦ralentir|آهسته شدن⟧ et apprécier le ⟦calme|آرامش⟧.",
+    ],
+    morale: {
+      fr: "Pas besoin d'un grand effort pour prendre soin de soi. Parfois, quelques pas suffisent pour se sentir mieux.",
+      fa: "برای مراقبت از خودت به تلاش بزرگی نیاز نیست. گاهی چند قدم کافی است تا حالت بهتر شود.",
+    },
+  },
+  {
+    titre: "Le manque de sommeil n'est pas qu'une simple fatigue",
+    emoji: "😴",
+    niveau: "B2",
+    paras: [
+      "Quand on ne dort pas assez, on pense souvent que le seul ⟦problème|مشکل⟧ est la fatigue. Mais le manque de ⟦sommeil|خواب⟧ a des effets beaucoup plus ⟦profonds|عمیق⟧ sur notre corps et notre esprit.",
+      "Dormir trop peu ⟦affecte|تأثیر می‌گذارد بر⟧ la mémoire, la concentration et même l'⟦humeur|خلق‌وخو⟧. Une personne fatiguée devient plus facilement ⟦irritable|زودرنج⟧, plus ⟦stressée⟧ et a du mal à prendre de bonnes ⟦décisions|تصمیم‌ها⟧. Le manque de sommeil peut aussi ⟦affaiblir|تضعیف کردن⟧ le système immunitaire.",
+      "Les ⟦spécialistes|متخصصان⟧ ⟦recommandent|توصیه می‌کنند⟧ entre sept et huit heures de sommeil par nuit. Mais ce n'est pas seulement une question de ⟦durée|مدت⟧ : la ⟦qualité|کیفیت⟧ du sommeil compte tout autant. Une chambre calme et sombre, sans écran, aide à mieux dormir.",
+    ],
+    morale: {
+      fr: "Le sommeil n'est pas une perte de temps, c'est un investissement pour ta santé. Bien dormir, c'est déjà prendre soin de soi.",
+      fa: "خواب اتلاف وقت نیست، بلکه سرمایه‌گذاری برای سلامتی توست. خوب خوابیدن، یعنی همین حالا از خودت مراقبت کردن.",
+    },
+  },
+  {
+    titre: "L'art de dire « non » sans culpabiliser",
+    emoji: "🙅",
+    niveau: "B1",
+    paras: [
+      "Dire « non » est souvent plus ⟦difficile|سخت⟧ qu'il n'y paraît. Beaucoup de personnes ⟦acceptent|می‌پذیرند⟧ des choses qu'elles ne veulent pas faire, simplement pour ne pas ⟦décevoir|ناامید کردن⟧ les autres. Résultat : elles se sentent ⟦fatiguées|خسته⟧ et ⟦frustrées|سرخورده⟧.",
+      "Pourtant, dire « non » n'est pas ⟦égoïste|خودخواهانه⟧. C'est une façon de ⟦respecter|احترام گذاشتن⟧ son temps, son énergie et ses ⟦besoins|نیازها⟧. Quand on dit oui à tout, on finit par dire non à soi-même.",
+      "On peut refuser avec ⟦gentillesse|مهربانی⟧ et ⟦honnêteté|صداقت⟧. Par exemple : « Merci de penser à moi, mais je ne peux pas cette fois. » Pas besoin de longues ⟦excuses|بهانه‌ها⟧ : une réponse simple et claire ⟦suffit|کافی است⟧.",
+    ],
+    morale: {
+      fr: "Dire « non » aux autres, c'est parfois dire « oui » à soi-même. Poser des limites, c'est un acte de respect envers soi.",
+      fa: "گاهی «نه» گفتن به دیگران، یعنی «بله» گفتن به خودت. مرز گذاشتن، نوعی احترام به خویشتن است.",
+    },
+  },
+  {
+    titre: "Pourquoi sommes-nous plus à l'aise avec certaines personnes ?",
+    emoji: "🤝",
+    niveau: "B2",
+    paras: [
+      "Avez-vous remarqué qu'avec certaines personnes, tout ⟦semble|به نظر می‌رسد⟧ facile ? On se sent ⟦à l'aise|راحت⟧, on rit, le temps passe vite. Avec d'autres, au contraire, on se sent ⟦épuisé|خسته⟧ après quelques minutes.",
+      "Les psychologues parlent d'⟦énergie sociale|انرژی اجتماعی⟧. Chaque personne a une quantité ⟦limitée|محدود⟧ d'énergie pour les interactions. Certaines relations nous ⟦rechargent|دوباره شارژ می‌کنند⟧, tandis que d'autres nous ⟦vident|خالی می‌کنند⟧.",
+      "Cela ne ⟦signifie|به این معنا نیست⟧ pas que les personnes « fatigantes » sont mauvaises. Parfois, il s'agit simplement d'une différence de ⟦rythme|ریتم⟧ ou de ⟦caractère|شخصیت⟧. L'important est de ⟦reconnaître|تشخیص دادن⟧ ce dont on a besoin et de ⟦s'entourer|خود را احاطه کردن⟧ de personnes qui nous font du bien.",
+    ],
+    morale: {
+      fr: "Choisis bien les personnes avec qui tu passes ton temps. Les bonnes relations ne te fatiguent pas : elles te donnent de l'énergie.",
+      fa: "آدم‌هایی را که با آن‌ها وقت می‌گذرانی خوب انتخاب کن. روابط خوب خسته‌ات نمی‌کنند: به تو انرژی می‌دهند.",
+    },
+  },
+  {
+    titre: "L'écoute véritable, une compétence rare",
+    emoji: "👂",
+    niveau: "B1",
+    paras: [
+      "Écouter ⟦semble|به نظر می‌رسد⟧ simple, mais écouter ⟦vraiment|واقعاً⟧ est beaucoup plus rare qu'on ne le pense. Souvent, pendant que l'autre parle, on prépare déjà notre ⟦réponse|پاسخ⟧ dans notre tête, sans vraiment l'écouter.",
+      "L'écoute ⟦véritable|واقعی⟧ demande de la ⟦patience|صبر⟧ et de l'⟦attention|توجه⟧. Cela signifie ⟦poser|کنار گذاشتن⟧ son téléphone, regarder la personne et ⟦accueillir|پذیرفتن⟧ ses mots sans juger. C'est un ⟦cadeau|هدیه⟧ qu'on offre à l'autre.",
+      "Quand on se sent vraiment ⟦écouté|شنیده‌شده⟧, on se sent ⟦compris|درک‌شده⟧ et ⟦respecté|محترم‌شمرده‌شده⟧. C'est l'une des bases d'une bonne relation, que ce soit en ⟦amitié|دوستی⟧, en ⟦famille|خانواده⟧ ou au travail.",
+    ],
+    morale: {
+      fr: "Écouter, ce n'est pas attendre son tour de parler. C'est offrir toute son attention à l'autre, sans rien demander en retour.",
+      fa: "گوش‌دادن یعنی منتظر نوبت حرف‌زدنت نباشی. یعنی تمام توجهت را به دیگری بدهی، بی‌آنکه چیزی در عوض بخواهی.",
+    },
+  },
+  {
+    titre: "Les erreurs, nos vrais professeurs",
+    emoji: "🎓",
+    niveau: "B1",
+    paras: [
+      "Personne n'aime se ⟦tromper|اشتباه کردن⟧. Une erreur peut nous faire sentir ⟦honteux|شرمنده⟧ ou ⟦déçus|ناامید⟧. Pourtant, les erreurs sont souvent nos meilleurs ⟦professeurs|معلم‌ها⟧.",
+      "Quand on fait une erreur, on ⟦apprend|یاد می‌گیریم⟧ quelque chose de nouveau. On comprend ce qui ne ⟦marche|کار می‌کند⟧ pas et comment ⟦s'améliorer|بهتر شدن⟧. Sans erreurs, il n'y a pas de ⟦progrès|پیشرفت⟧. Même les grands artistes et scientifiques ont ⟦échoué|شکست خورده‌اند⟧ de nombreuses fois avant de ⟦réussir|موفق شدن⟧.",
+      "Le ⟦secret|راز⟧, c'est de ne pas avoir ⟦peur|ترس⟧ de se tromper. Au lieu de te ⟦punir|تنبیه کردن⟧ pour une erreur, demande-toi : « Qu'est-ce que je peux apprendre de ça ? » Cette simple question ⟦transforme|تبدیل می‌کند⟧ un échec en ⟦leçon|درس⟧.",
+    ],
+    morale: {
+      fr: "Ne crains pas l'erreur, crains de ne rien apprendre. Chaque faute est une chance de devenir un peu meilleur.",
+      fa: "از اشتباه نترس، از یاد نگرفتن بترس. هر خطا فرصتی است برای کمی بهتر شدن.",
+    },
+  },
+  {
+    titre: "Pourquoi se comparer aux autres nous épuise",
+    emoji: "🪞",
+    niveau: "B2",
+    paras: [
+      "Aujourd'hui, il est très facile de se ⟦comparer|مقایسه کردن⟧ aux autres. Sur les réseaux sociaux, on voit des gens qui ⟦semblent|به نظر می‌رسند⟧ plus heureux, plus beaux ou plus ⟦performants|موفق⟧ que nous. Et souvent, cela nous rend ⟦tristes|غمگین⟧.",
+      "Le ⟦problème|مشکل⟧, c'est qu'on compare notre vie réelle à une ⟦image|تصویر⟧ parfaite et souvent fausse. Les gens ne montrent que leurs meilleurs moments, jamais leurs ⟦doutes|تردیدها⟧ ni leurs ⟦difficultés|دشواری‌ها⟧.",
+      "Se comparer en ⟦permanence|دائماً⟧ nous ⟦épuise|خسته می‌کند⟧ et nous ⟦empêche|مانع می‌شود⟧ d'apprécier ce que nous avons. Chaque personne a son propre ⟦chemin|مسیر⟧ et son propre ⟦rythme|ریتم⟧. Le seul ⟦vrai|واقعی⟧ point de comparaison, c'est la personne que tu étais hier.",
+    ],
+    morale: {
+      fr: "Ne compare pas ton début au milieu de quelqu'un d'autre. Le seul concurrent qui compte, c'est toi-même.",
+      fa: "آغاز خودت را با میانه‌ی راه دیگران مقایسه نکن. تنها رقیبی که مهم است، خودِ تو هستی.",
+    },
+  },
+  {
+    titre: "Le pouvoir des petits débuts",
+    emoji: "🌱",
+    niveau: "B1",
+    paras: [
+      "On pense souvent qu'il faut un grand ⟦effort|تلاش⟧ ou un moment parfait pour commencer quelque chose. Alors on ⟦attend|منتظر می‌مانیم⟧... et on ne ⟦commence|شروع می‌کنیم⟧ jamais. Mais la ⟦vérité|حقیقت⟧, c'est que les grandes choses commencent toujours petit.",
+      "Lire une seule ⟦page|صفحه⟧ par jour, marcher dix minutes, écrire trois ⟦lignes|خط⟧ : ces petits gestes ⟦semblent|به نظر می‌رسند⟧ ⟦insignifiants|بی‌اهمیت⟧. Pourtant, ⟦répétés|تکرارشده⟧ chaque jour, ils ⟦produisent|تولید می‌کنند⟧ de grands résultats.",
+      "Le ⟦secret|راز⟧ n'est pas la ⟦motivation|انگیزه⟧, mais la ⟦régularité|نظم / مداومت⟧. Un petit pas chaque jour vaut mieux qu'un grand pas une seule fois. Commence petit, mais commence ⟦aujourd'hui|امروز⟧.",
+    ],
+    morale: {
+      fr: "Tu n'as pas besoin d'être grand pour commencer, mais tu dois commencer pour devenir grand. Le plus petit pas te rapproche déjà du but.",
+      fa: "برای شروع‌کردن لازم نیست بزرگ باشی، اما باید شروع کنی تا بزرگ شوی. کوچک‌ترین قدم، همین حالا تو را به هدف نزدیک‌تر می‌کند.",
+    },
+  },
+  {
+    titre: "Pourquoi sommes-nous toujours pressés ?",
+    emoji: "⏳",
+    niveau: "B2",
+    paras: [
+      "Dans la vie moderne, tout le monde ⟦semble|به نظر می‌رسد⟧ ⟦pressé|عجول⟧. On marche vite, on mange vite, on répond vite. On a toujours l'⟦impression|احساس⟧ de manquer de temps. Mais pourquoi cette ⟦course|دوندگی⟧ permanente ?",
+      "La technologie nous a ⟦habitués|عادت داده⟧ à tout obtenir ⟦immédiatement|فوراً⟧. Un message, une réponse, une livraison : tout doit aller vite. Résultat : on perd la ⟦capacité|توانایی⟧ d'attendre et d'⟦apprécier|قدر دانستن⟧ le moment présent.",
+      "Pourtant, aller vite ne ⟦signifie|به معنای⟧ pas vivre mieux. Quand on est toujours pressé, on ⟦oublie|فراموش می‌کنیم⟧ de ⟦profiter|لذت بردن⟧ des petites choses. Ralentir, ce n'est pas perdre du temps : c'est ⟦retrouver|دوباره یافتن⟧ le ⟦goût|طعم⟧ de la vie.",
+    ],
+    morale: {
+      fr: "La vie n'est pas une course. Parfois, ralentir est la meilleure façon d'avancer.",
+      fa: "زندگی یک مسابقه نیست. گاهی آهسته‌شدن، بهترین راه برای پیش‌رفتن است.",
+    },
+  },
+  {
+    titre: "La solitude à l'ère des réseaux sociaux",
+    emoji: "📱",
+    niveau: "B2",
+    paras: [
+      "Nous sommes plus ⟦connectés|متصل⟧ que jamais. Avec un téléphone, on peut parler à des gens du monde entier en quelques ⟦secondes|ثانیه⟧. Et pourtant, beaucoup de personnes se sentent plus ⟦seules|تنها⟧ qu'avant. Comment est-ce possible ?",
+      "Sur les réseaux sociaux, on a des ⟦centaines|صدها⟧ d'« amis », mais peu de ⟦véritables|واقعی⟧ relations. On ⟦échange|تبادل می‌کنیم⟧ des messages, des photos, des « j'aime », mais ces contacts ⟦restent|باقی می‌مانند⟧ souvent ⟦superficiels|سطحی⟧.",
+      "Le vrai lien humain ⟦demande|نیاز دارد⟧ du temps, de la ⟦présence|حضور⟧ et de vraies ⟦conversations|گفت‌وگوها⟧. Un appel, un café, un vrai moment ⟦partagé|به‌اشتراک‌گذاشته⟧ valent mieux que cent messages. La technologie est utile, mais elle ne ⟦remplace|جایگزین⟧ pas la chaleur humaine.",
+    ],
+    morale: {
+      fr: "Être connecté n'est pas la même chose qu'être proche. Cherche moins de contacts, mais de vraies connexions.",
+      fa: "متصل‌بودن با نزدیک‌بودن یکی نیست. دنبال ارتباط‌های کمتر، اما واقعی‌تر باش.",
+    },
+  },
+  {
+    titre: "Acheter moins, être plus heureux ?",
+    emoji: "🛍️",
+    niveau: "B1",
+    paras: [
+      "La ⟦publicité|تبلیغات⟧ nous répète chaque jour la même chose : pour être heureux, il faut ⟦acheter|خریدن⟧ plus. Un nouveau téléphone, de nouveaux ⟦vêtements|لباس‌ها⟧, de nouveaux objets. Mais est-ce que posséder plus nous rend vraiment plus heureux ?",
+      "Les ⟦recherches|پژوهش‌ها⟧ montrent le contraire. Après l'⟦achat|خرید⟧, le ⟦plaisir|لذت⟧ disparaît vite, et on veut déjà autre chose. C'est un ⟦cercle|چرخه⟧ sans fin. Acheter trop peut même créer du ⟦stress|استرس⟧ et du ⟦désordre|بی‌نظمی⟧ dans notre vie.",
+      "De plus en plus de personnes ⟦choisissent|انتخاب می‌کنند⟧ de vivre avec moins. Garder seulement ce qui est ⟦utile|مفید⟧ ou ce qu'on ⟦aime|دوست داریم⟧ vraiment apporte un sentiment de ⟦liberté|آزادی⟧ et de ⟦légèreté|سبکی⟧.",
+    ],
+    morale: {
+      fr: "Le bonheur ne se trouve pas dans ce qu'on possède, mais dans ce qu'on apprécie. Avoir moins, c'est parfois vivre mieux.",
+      fa: "خوشبختی در آنچه داریم نیست، در آن چیزی است که قدرش را می‌دانیم. کمتر داشتن، گاهی یعنی بهتر زیستن.",
+    },
+  },
 ];
