@@ -149,6 +149,18 @@ const LESSONS = [
     summary: "واژگان پیشرفته‌تر محیط‌زیست و انرژی — برای بیان دقیق و حرفه‌ای درباره‌ی چالش‌های زیست‌محیطی در آزمون.",
   },
   {
+    file: "VOCAB_zerodechet_avance.html",
+    title: "واژگان زباله‌ی صفر و بازیافت — پیشرفته",
+    titleFr: "Zéro déchet & recyclage",
+    category: "vocab",
+    level: "پیشرفته (B2→B2+)",
+    premium: false,
+    tags: ["زباله‌ی صفر", "بازیافت", "سطح پیشرفته"],
+    theme: "زباله‌ی صفر و بازیافت",
+    keywords: ["بازیافت", "کاهش زباله", "مصرف مسئولانه"],
+    summary: "واژگان تخصصی زباله‌ی صفر و بازیافت در سطح B2+ — با تعریف، ترجمه و مثال‌های نوع آزمون. موضوعی پرتکرار در بحث‌های محیط‌زیستی TCF.",
+  },
+  {
     link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000751533361",
     title: "InnerFrench — شغل‌های «کسل‌کننده»",
     titleFr: "InnerFrench — Le « job chiant »",

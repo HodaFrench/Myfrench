@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zéro déchet &amp; recyclage — Vocabulaire · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Zéro déchet <b>&amp; recyclage</b></h1>
+    <div class="b2">Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><div style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1rem;color:#C0392B;margin:6px 0 2px;">APERÇU GRATUIT · 10 premiers mots</div>
+    <p class="lead">Le vocabulaire du thème, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+) pour chaque mot.</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="zero dechet"><rect x="44" y="152" width="272" height="6" rx="3" fill="#46537d" opacity="0.22"/><path d="M250 66 C250 46 272 40 290 42 C290 62 272 70 250 66 Z" fill="#2E8B6B"/><path d="M252 64 C264 54 278 48 289 43" stroke="#1F6B52" stroke-width="2" fill="none"/><rect x="92" y="96" width="40" height="56" rx="8" fill="#2E6BD6" opacity="0.85"/><rect x="88" y="86" width="48" height="12" rx="4" fill="#46537d"/><line x1="100" y1="116" x2="124" y2="116" stroke="#FBF8F0" stroke-width="2"/><line x1="100" y1="128" x2="124" y2="128" stroke="#FBF8F0" stroke-width="2"/><polygon points="196,104 244,104 238,152 202,152" fill="#2E8B6B"/><rect x="192" y="94" width="56" height="12" rx="3" fill="#1F6B52"/><rect x="214" y="88" width="12" height="7" rx="2" fill="#1F6B52"/><path d="M220 116 C212 122 212 136 220 142 C228 136 228 122 220 116 Z" fill="#FBF8F0"/><line x1="220" y1="119" x2="220" y2="141" stroke="#2E8B6B" stroke-width="1.5"/></svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+{id:1,name:"Les déchets &amp; leur destination",fa:"زباله‌ها و مقصدشان",icon:"🗑️",color:"#5B5BD6"},
+{id:2,name:"La collecte &amp; le traitement",fa:"جمع‌آوری و پردازش",icon:"♻️",color:"#2E8B6B"},
+{id:3,name:"Les matières",fa:"مواد و متریال",icon:"🧱",color:"#C77A2E"},
+{id:4,name:"Les comportements",fa:"رفتارها و عادت‌ها",icon:"🌱",color:"#2E8B8B"},
+{id:5,name:"L'emballage &amp; la distribution",fa:"بسته‌بندی و توزیع",icon:"📦",color:"#C0392B"},
+{id:6,name:"Vers le zéro déchet",fa:"به‌سوی زباله‌ی صفر",icon:"♾️",color:"#2E6BD6"},
+{id:7,name:"Le débat &amp; l'opinion",fa:"بحث و دیدگاه",icon:"⚖️",color:"#7C5BD6"}
+];
+const D=[
+{c:1,term:"les déchets / les ordures ménagères",fa:"زباله / زباله‌ی خانگی / آت‌وآشغال",def:"Tout ce que l'on jette ; les ordures ménagères sont les déchets produits par les foyers.",syn:["les ordures","les détritus"],ex:[["Chaque famille produit une grande quantité de <b>déchets</b> chaque semaine.","هر خانواده هفته‌ای مقدار زیادی زباله تولید می‌کند."],["Les <b>ordures ménagères</b> sont ramassées deux fois par semaine.","زباله‌های خانگی هفته‌ای دو بار جمع‌آوری می‌شوند."],["Réduire ses <b>déchets</b> suppose que l'on repense entièrement sa façon de consommer.","کاهش زباله مستلزم آن است که آدم شیوه‌ی مصرفش را به‌کلی بازاندیشی کند."],["Aussi banals soient-ils, nos <b>déchets</b> quotidiens finissent par représenter des montagnes d'ordures.","زباله‌های روزمره‌ی ما، هر اندازه هم پیش‌پاافتاده باشند، سرانجام به کوه‌هایی از آشغال بدل می‌شوند."]]},
+{c:1,term:"une déchetterie / une décharge publique",fa:"مرکز جمع‌آوری زباله / محل دفن زباله",def:"Une déchetterie reçoit les objets encombrants à trier ; une décharge stocke les déchets courants.",syn:["un point de collecte","un dépôt de déchets"],ex:[["J'ai apporté mes vieux meubles à la <b>déchetterie</b>.","مبلمان کهنه‌ام را به مرکز جمع‌آوری زباله بردم."],["Les <b>décharges publiques</b> débordent de déchets.","محل‌های دفن زباله از زباله لبریزند."],["Plutôt que de jeter en <b>décharge</b>, mieux vaudrait réparer ou réemployer ce qui peut l'être.","به‌جای دور انداختن در محل دفن، بهتر است هر چیزی را که می‌توان تعمیر یا دوباره استفاده کرد."],["Tant que les <b>décharges</b> resteront la solution de facilité, le tri peinera à s'imposer.","تا زمانی که محل‌های دفن راهِ آسان باقی بمانند، تفکیک به‌سختی جا می‌افتد."]]},
+{c:1,term:"le compostage / composter",fa:"کمپوست‌سازی / کمپوست کردن",def:"Transformer les déchets organiques en humus, un engrais naturel.",syn:["le compost","la valorisation organique"],ex:[["Le <b>compostage</b> permet de recycler les épluchures.","کمپوست‌سازی امکان بازیافت پوست میوه و سبزی را فراهم می‌کند."],["Dans mon jardin, je <b>composte</b> tous mes déchets verts.","در باغم همه‌ی زباله‌های سبزم را کمپوست می‌کنم."],["Pour peu qu'on s'y mette, le <b>compostage</b> réduit d'un tiers le volume de nos poubelles.","به‌شرط آنکه آدم دست‌به‌کار شود، کمپوست‌سازی حجم سطل زباله را یک‌سوم کم می‌کند."],["Loin d'être réservé aux jardins, le <b>compostage</b> se pratique désormais jusqu'en appartement.","کمپوست‌سازی که به‌هیچ‌وجه ویژه‌ی باغ‌ها نیست، اکنون حتی در آپارتمان هم انجام می‌شود."]]},
+{c:1,term:"un conteneur / une poubelle de tri",fa:"مخزن / سطل تفکیک",def:"Un grand bac destiné à recevoir et à séparer les déchets selon leur matière.",syn:["un bac de tri","un container"],ex:[["Le verre se jette dans le <b>conteneur</b> vert.","شیشه را در مخزن سبز می‌اندازند."],["Il y a une <b>poubelle de tri</b> à chaque étage.","در هر طبقه یک سطل تفکیک هست."],["Encore faut-il que chaque <b>conteneur</b> soit clairement identifié, sans quoi le tri devient un casse-tête.","البته باید هر مخزن به‌روشنی مشخص باشد، وگرنه تفکیک به یک معما بدل می‌شود."],["C'est en multipliant les <b>poubelles de tri</b> dans l'espace public que l'on encourage les bons gestes.","با افزایش سطل‌های تفکیک در فضای عمومی است که رفتارهای درست تشویق می‌شوند."]]},
+{c:1,term:"un centre d'enfouissement",fa:"مرکز دفن زیرزمینی",def:"Un site où l'on stocke sous terre les déchets non recyclables ou dangereux.",syn:["un site d'enfouissement","le stockage souterrain"],ex:[["Les déchets non recyclables finissent dans un <b>centre d'enfouissement</b>.","زباله‌های غیرقابل‌بازیافت در یک مرکز دفن زیرزمینی پایان می‌یابند."],["Un <b>centre d'enfouissement</b> peut polluer les sols.","یک مرکز دفن می‌تواند خاک را آلوده کند."],["Tant que nous produirons autant de déchets, les <b>centres d'enfouissement</b> continueront de se multiplier.","تا زمانی که این‌همه زباله تولید کنیم، مراکز دفن همچنان پرشمارتر خواهند شد."],["Mieux vaudrait réduire à la source que de devoir sans cesse agrandir les <b>centres d'enfouissement</b>.","بهتر است از همان مبدأ کاهش دهیم تا اینکه مدام مجبور به گسترش مراکز دفن باشیم."]]},
+{c:2,term:"la collecte / ramasser / l'enlèvement",fa:"جمع‌آوری / برداشتن",def:"L'opération qui consiste à enlever les déchets pour les emporter.",syn:["le ramassage","l'enlèvement"],ex:[["La <b>collecte</b> des ordures a lieu le matin.","جمع‌آوری زباله صبح‌ها انجام می‌شود."],["Les éboueurs <b>ramassent</b> les poubelles chaque jour.","رفتگران هر روز سطل‌های زباله را برمی‌دارند."],["Si la <b>collecte</b> sélective était mieux organisée, le recyclage gagnerait nettement en efficacité.","اگر جمع‌آوری تفکیکی بهتر سازماندهی می‌شد، بازیافت به‌وضوح کارآمدتر می‌شد."],["C'est en repensant l'<b>enlèvement</b> des déchets que certaines villes ont réduit leurs coûts.","با بازاندیشی در جمع‌آوری زباله است که برخی شهرها هزینه‌هایشان را کاهش داده‌اند."]]},
+{c:2,term:"trier / le tri (sélectif)",fa:"تفکیک کردن / تفکیک انتخابی",def:"Séparer les déchets selon leur matière pour faciliter le recyclage.",syn:["le tri sélectif","séparer les matières"],ex:[["Il faut <b>trier</b> le papier, le verre et le plastique.","باید کاغذ، شیشه و پلاستیک را تفکیک کرد."],["Le <b>tri</b> est devenu un geste quotidien.","تفکیک به یک کار روزمره بدل شده است."],["Pour peu que le <b>tri</b> soit simplifié, les citoyens s'y prêtent bien plus volontiers.","به‌شرط آنکه تفکیک ساده شود، شهروندان با میل بیشتری به آن تن می‌دهند."],["On aurait tort de croire que <b>trier</b> suffit : encore faut-il d'abord réduire ses déchets.","اشتباه است اگر بپنداریم تفکیک کافی است؛ نخست باید زباله را کاهش داد."]]},
+{c:2,term:"recycler / le recyclage",fa:"بازیافت کردن / بازیافت",def:"Transformer un déchet en une nouvelle matière ou un nouvel objet.",syn:["la valorisation","réutiliser la matière"],ex:[["On peut <b>recycler</b> le plastique pour en faire des vêtements.","می‌توان پلاستیک را بازیافت کرد تا از آن لباس ساخت."],["Le <b>recyclage</b> économise de l'énergie et des ressources.","بازیافت در انرژی و منابع صرفه‌جویی می‌کند."],["Quoiqu'il soit indispensable, le <b>recyclage</b> ne dispense pas de produire moins.","بازیافت هرچند ضروری است، ما را از تولید کمتر بی‌نیاز نمی‌کند."],["C'est en concevant des produits faciles à <b>recycler</b> que l'on agit le plus en amont.","با طراحی محصولاتی که آسان بازیافت می‌شوند است که بیشترین اقدام را از سرچشمه انجام می‌دهیم."]]},
+{c:2,term:"incinérer / l'incinération",fa:"زباله‌سوزی کردن / زباله‌سوزی",def:"Brûler les déchets, parfois pour produire de l'énergie.",syn:["brûler les déchets","la combustion"],ex:[["Une partie des déchets est <b>incinérée</b>.","بخشی از زباله‌ها سوزانده می‌شوند."],["L'<b>incinération</b> produit de la fumée.","زباله‌سوزی دود تولید می‌کند."],["Bien qu'elle réduise le volume des déchets, l'<b>incinération</b> soulève la question des émissions.","زباله‌سوزی هرچند حجم زباله را کم می‌کند، مسئله‌ی انتشار آلاینده‌ها را پیش می‌کشد."],["Mieux vaudrait recycler que d'<b>incinérer</b> des matières qui pourraient connaître une seconde vie.","بهتر است موادی را که می‌توانند زندگی دوم داشته باشند بازیافت کنیم تا اینکه بسوزانیم."]]},
+{c:2,term:"la consigne / consigner",fa:"ودیعه‌ی بطری / بازپس‌گیری با ودیعه",def:"Système où l'on rend les emballages vides contre un remboursement.",syn:["le retour des emballages","la reprise consignée"],ex:[["Avec la <b>consigne</b>, on rapporte les bouteilles vides au magasin.","با سیستم ودیعه، بطری‌های خالی را به مغازه بازمی‌گردانند."],["La <b>consigne</b> du verre revient peu à peu.","ودیعه‌ی شیشه کم‌کم بازمی‌گردد."],["Pour peu qu'elle soit généralisée, la <b>consigne</b> réduirait considérablement les emballages jetés.","به‌شرط آنکه فراگیر شود، سیستم ودیعه زباله‌ی بسته‌بندیِ دورریز را به‌میزان چشمگیری کاهش می‌دهد."],["C'est en <b>consignant</b> les contenants que de nombreux pays ont fait reculer le gaspillage.","با اعمال سیستم ودیعه بر ظرف‌هاست که بسیاری از کشورها اتلاف را کاهش داده‌اند."]]}
+];
+const PHRASES=[
+["<b>À mon sens</b>, le zéro déchet absolu est un idéal vers lequel il faut tendre.","به نظر من، زباله‌ی صفرِ مطلق آرمانی است که باید به‌سویش حرکت کرد."],
+["<b>Force est de constater que</b> nous produisons beaucoup trop de déchets.","ناگزیر باید پذیرفت که ما بیش‌ازحد زباله تولید می‌کنیم."],
+["<b>D'un côté</b>, le recyclage est utile ; <b>d'un autre côté</b>, il ne suffit pas à lui seul.","از یک سو بازیافت مفید است؛ از سوی دیگر، به‌تنهایی کافی نیست."],
+["<b>Il convient de rappeler que</b> le meilleur déchet est celui que l'on ne produit pas.","شایان ذکر است که بهترین زباله همان است که تولید نمی‌شود."],
+["<b>En définitive</b>, réduire à la source reste la solution la plus efficace.","در نهایت، کاهش از مبدأ کارآمدترین راه‌حل باقی می‌ماند."],
+["<b>Pour conclure</b>, je dirais que chacun peut agir à son échelle.","برای جمع‌بندی، می‌گویم که هرکس می‌تواند در حد خود اقدام کند."]
+];
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+/* pb omis dans l'aperçu */;
+
+
+    var promo=document.createElement('section');
+    promo.className='cat'; promo.id='cpromo';
+    promo.innerHTML='<div class=\"secmark\">Aperçu</div>'
+      +'<div style=\"background:#FBF8F0;border:2px dashed #2E8B6B;border-radius:14px;padding:26px 22px;margin:26px 0 10px;text-align:center;box-shadow:0 12px 30px -16px rgba(27,42,107,.4);\">'
+      +'<div style=\"font-family:Fraunces,serif;font-weight:800;font-size:1.5rem;color:#1B2A6B;margin-bottom:6px;\">Ceci n\'est qu\'un aperçu \u2728</div>'
+      +'<div style=\"font-family:Vazirmatn,sans-serif;font-size:1rem;color:#46537d;direction:rtl;margin-bottom:8px;\">\u0627\u06cc\u0646 \u0641\u0642\u0637 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0627\u0633\u062a \u2014 \u0628\u0631\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0648\u0627\u0698\u06af\u0627\u0646 \u0648 \u0647\u0645\u0647\u200c\u06cc \u062a\u0645\u200c\u0647\u0627\u060c \u067e\u06a9\u06cc\u062c \u06a9\u0627\u0645\u0644 \u0631\u0627 \u062a\u0647\u06cc\u0647 \u06a9\u0646\u06cc\u062f.</div>'
+      +'<div style=\"font-family:Spectral,serif;font-size:.95rem;color:#1B2A6B;\">La version complète contient les 35 mots du thème, classés en 7 rubriques, avec 4 exemples traduits (du B2 au B2+) chacun \u2014 ainsi que la \u00ab\u00a0bo\u00eete \u00e0 phrases\u00a0\u00bb pour le d\u00e9bat.</div>'
+      +'<div style=\"font-family:Caveat,cursive;font-weight:700;font-size:1.4rem;color:#1B2A6B;margin-top:14px;\">Hoda KHEDMATI \u00b7 @TCFHODA</div></div>'
+      +'<div class=\"sig-foot\"><span class=\"name\">Hoda KHEDMATI</span><span class=\"handle\">@TCFHODA</span></div>';
+    document.getElementById('root').appendChild(promo);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>
