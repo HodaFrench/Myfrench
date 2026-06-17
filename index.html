@@ -568,6 +568,35 @@
         }
         .edito-ex-fa { font-size: 13px; color: var(--gray); line-height: 1.8; }
 
+        /* کارت راهنمای کامل تلفظ */
+        .pron-guide {
+            display: flex; align-items: center; gap: 16px;
+            background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+            color: var(--cream); border-radius: 16px; padding: 22px 24px;
+            margin-bottom: 20px; text-decoration: none;
+            box-shadow: 0 10px 28px rgba(31,58,95,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pron-guide:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(31,58,95,0.28); }
+        .pron-guide-icon {
+            font-size: 32px; width: 58px; height: 58px; flex-shrink: 0;
+            background: rgba(255,255,255,0.12); border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .pron-guide-body { flex: 1; }
+        .pron-guide-title {
+            font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 4px;
+        }
+        .pron-guide-fa { font-size: 13px; opacity: 0.88; line-height: 1.7; }
+        .pron-guide-go {
+            font-size: 13px; font-weight: 700; color: var(--gold-soft);
+            background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 10px; flex-shrink: 0;
+        }
+        @media(max-width:600px){
+            .pron-guide { flex-direction: column; text-align: center; gap: 12px; }
+            .pron-guide-go { width: 100%; }
+        }
+
         /* کارت‌های تمرین تلفظ */
         .pron-card {
             background: var(--white);
@@ -1432,11 +1461,21 @@
             const list = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
             document.getElementById("count").textContent = list.length + " تمرین";
             const grid = document.getElementById("grid");
+            // کارت راهنمای کامل تلفظ (بالای ویدیوها)
+            const guideCard = `
+                <a class="pron-guide" href="GUIDE_prononciation.html">
+                    <div class="pron-guide-icon">🔊</div>
+                    <div class="pron-guide-body">
+                        <div class="pron-guide-title">راهنمای کامل تلفظ فرانسوی</div>
+                        <div class="pron-guide-fa">از A تا Z — همه‌ی صداها، حروف ناخوانا، لیزون و زبان‌گردان‌ها در ۹ درس</div>
+                    </div>
+                    <div class="pron-guide-go">مطالعه ←</div>
+                </a>`;
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز تمرینی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = guideCard + '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
                 return;
             }
-            grid.innerHTML = list.map(p => {
+            grid.innerHTML = guideCard + list.map(p => {
                 const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
                 const lines = (p.texteFr || []).map((fr, i) => `
                     <div class="pron-line">

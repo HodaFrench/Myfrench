@@ -18,7 +18,6 @@ const CATEGORIES = [
   { id: "prononciation", label: "تمرین تلفظ",     icon: "🗣", color: "#3f8a9c" },
   { id: "editoa1",      label: "Édito A1 · واژگان", icon: "✎", color: "#5a8f4a" },
   { id: "miniarticle",  label: "مینی‌آرتیکل",      icon: "✑", color: "#b0506f" },
-  { id: "phonetique",   label: "تلفظ فرانسوی",     icon: "🔊", color: "#3f8a9c" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -330,16 +329,6 @@ const LESSONS = [
     premium: false,
     tags: ["après que", "subjonctif", "indicatif", "تمرین"],
     summary: "چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی.",
-  },
-  {
-    file: "GUIDE_prononciation.html",
-    title: "راهنمای کامل تلفظ فرانسوی",
-    titleFr: "La prononciation française — A à Z",
-    category: "phonetique",
-    level: "همه‌ی سطوح",
-    premium: false,
-    tags: ["تلفظ", "صداها", "لیزون", "زبان‌گردان"],
-    summary: "راهنمای جامع تلفظ فرانسه در ۹ درس: الفبا، حروف صدادار، صداهای نزل، C/S/Ç، حرف G، صداهای CH/QU/Y، تلفظ R، حروف ناخوانا و لیزون — با ده‌ها مثال و زبان‌گردان.",
   },
   {
     file: "TCF_EO_T3_expatriation.html",
