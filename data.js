@@ -17,6 +17,7 @@ const CATEGORIES = [
   { id: "reactions",    label: "چطور واکنش بدم؟", icon: "❝", color: "#d17b3f" },
   { id: "prononciation", label: "تمرین تلفظ",     icon: "🗣", color: "#3f8a9c" },
   { id: "editoa1",      label: "Édito A1 · واژگان", icon: "✎", color: "#5a8f4a" },
+  { id: "miniarticle",  label: "مینی‌آرتیکل",      icon: "✑", color: "#b0506f" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
   // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
@@ -891,4 +892,32 @@ const PRONONCIATION = [
 // ═══════════════════════════════════════════════════════════
 const EDITOA1 = [
   // نمونه — وقتی هدی واژگان درس را بفرستد، اینجا اضافه می‌شود
+];
+
+// ═══════════════════════════════════════════════════════════
+//  مینی‌آرتیکل — متن کوتاه با واژگان کلیکی
+//  هر آرتیکل:
+//    titre   : عنوان فرانسه
+//    emoji   : ایموجی
+//    niveau  : سطح (B1, B2...)
+//    paras   : آرایه‌ای از پاراگراف‌ها (رشته)
+//             واژه‌ی دشوار را به‌صورت ⟦mot|معنی فارسی⟧ بنویس
+//             تا روی سایت قابل کلیک شود و معنی‌اش ظاهر شود.
+//    morale  : (اختیاری) جمع‌بندی/نتیجه {fr, fa}
+// ═══════════════════════════════════════════════════════════
+const MINIARTICLES = [
+  {
+    titre: "Qu'est-ce qui fait durer l'amour ?",
+    emoji: "❤️",
+    niveau: "B1",
+    paras: [
+      "Aujourd'hui, les jeunes sont ⟦entourés|احاطه‌شده⟧ de messages sur l'amour romantique : dans les films, sur les réseaux sociaux et à travers les ⟦influenceurs|اینفلوئنسرها⟧. Ces messages montrent souvent l'amour comme quelque chose de facile et de parfait. Cela crée des ⟦attentes|انتظارات⟧ ⟦irréalistes|غیرواقعی⟧ sur les relations.",
+      "Pourtant, un amour ⟦sain|سالم⟧ ⟦repose sur|متکی است بر⟧ la ⟦confiance|اعتماد⟧, le ⟦respect|احترام⟧, une communication honnête et la capacité à gérer les ⟦désaccords|اختلاف‌نظرها⟧ avec ⟦bienveillance|مهربانی⟧. Apprendre ces ⟦compétences|مهارت‌ها⟧ tôt peut aider les jeunes à construire des relations plus ⟦solides|محکم⟧ à l'avenir.",
+      "Éduquer les jeunes à l'amour ne concerne pas seulement les relations amoureuses. Il s'agit aussi de les aider à comprendre leur ⟦valeur|ارزش⟧ personnelle, à développer leur ⟦empathie|همدلی⟧ et à apprendre l'importance de ⟦fixer des limites|تعیین مرز⟧ ⟦saines|سالم⟧.",
+    ],
+    morale: {
+      fr: "La plus grande leçon n'est pas « Trouve quelqu'un qui te complète », mais « Deviens une personne qui sait aimer et être aimée de façon saine. »",
+      fa: "بزرگ‌ترین درس این نیست که «کسی را پیدا کن که تو را کامل کند»، بلکه این است که «خودت کسی شو که بلد است سالم دوست بدارد و دوست داشته شود.»",
+    },
+  },
 ];

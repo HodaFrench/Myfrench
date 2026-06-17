@@ -454,6 +454,77 @@
             .news-body { padding: 16px 18px; }
         }
 
+        /* کارت‌های مینی‌آرتیکل */
+        .mini-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-top: 4px solid #b0506f;
+            border-radius: 16px;
+            padding: 28px 26px;
+            box-shadow: 0 8px 24px rgba(31,58,95,0.06);
+        }
+        .mini-head {
+            display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .mini-emoji { font-size: 26px; }
+        .mini-titre {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px; font-weight: 700; color: var(--navy); direction: ltr; line-height: 1.3;
+        }
+        .mini-niveau {
+            font-size: 12px; font-weight: 700; color: #b0506f;
+            background: rgba(176,80,111,0.1); padding: 3px 11px; border-radius: 12px;
+            margin-right: auto;
+        }
+        .mini-hint {
+            font-size: 12.5px; color: var(--gray); background: var(--cream);
+            padding: 8px 14px; border-radius: 8px; margin-bottom: 20px;
+        }
+        .mini-body { display: flex; flex-direction: column; gap: 16px; }
+        .mini-para {
+            direction: ltr; text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 19px; line-height: 1.9; color: var(--ink);
+        }
+        /* واژه‌ی کلیکی */
+        .cw {
+            position: relative;
+            background: rgba(176,80,111,0.1);
+            color: #8a3d56; font-weight: 600;
+            padding: 1px 5px; border-radius: 5px; cursor: pointer;
+            border-bottom: 1.5px dotted #b0506f;
+            transition: background 0.2s;
+        }
+        .cw:hover { background: rgba(176,80,111,0.2); }
+        .cw.open { background: #b0506f; color: #fff; }
+        .cw-pop {
+            position: absolute; bottom: 130%; left: 50%; transform: translateX(-50%);
+            background: var(--navy); color: var(--cream);
+            font-family: 'Vazirmatn', sans-serif; font-size: 13px; font-weight: 500;
+            direction: rtl; white-space: nowrap;
+            padding: 5px 12px; border-radius: 8px; z-index: 10;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+        .cw-pop::after {
+            content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            border: 6px solid transparent; border-top-color: var(--navy);
+        }
+        .mini-morale {
+            display: flex; gap: 14px; align-items: flex-start;
+            background: linear-gradient(135deg, rgba(176,80,111,0.07), rgba(196,165,114,0.06));
+            border-radius: 14px; padding: 20px; margin-top: 24px;
+            border-right: 4px solid #b0506f;
+        }
+        .mini-morale-icon { font-size: 24px; flex-shrink: 0; }
+        .mini-morale-body { flex: 1; }
+        .mini-morale-fr {
+            direction: ltr; text-align: left;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px; font-style: italic; color: var(--navy); line-height: 1.7; margin-bottom: 8px;
+        }
+        .mini-morale-fa { font-size: 14px; color: var(--ink); line-height: 1.9; }
+
         /* کارت‌های Édito A1 (واژگان با مثال) */
         .edito-card {
             background: var(--white);
@@ -1167,6 +1238,8 @@
                 renderPrononciation();
             } else if (catId === "editoa1") {
                 renderEditoA1();
+            } else if (catId === "miniarticle") {
+                renderMiniarticles();
             } else if (catId === "grammar" && !activeGroupe) {
                 // گرامر زیرپوشه‌ها (مودهای فعلی) دارد → اول پوشه‌ها را نشان بده
                 renderGroupes(catId);
@@ -1405,6 +1478,60 @@
                     <span class="sub-fa-l">${s.labelFa}</span>
                     <span class="sub-go">مشاهده ←</span>
                 </button>`).join("");
+        }
+
+        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
+        function parseClickWords(text) {
+            return text.replace(/⟦([^|⟧]+)\|([^⟧]+)⟧/g, function(_, mot, sens) {
+                const m = mot.replace(/"/g, '&quot;');
+                const s = sens.replace(/"/g, '&quot;');
+                return '<span class="cw" dir="ltr" onclick="toggleCw(this)" data-sens="' + s + '">' + m + '</span>';
+            });
+        }
+        function toggleCw(el) {
+            el.classList.toggle("open");
+            let pop = el.querySelector(".cw-pop");
+            if (!pop) {
+                pop = document.createElement("span");
+                pop.className = "cw-pop";
+                pop.textContent = el.getAttribute("data-sens");
+                el.appendChild(pop);
+            }
+        }
+
+        // نمایش مینی‌آرتیکل‌ها
+        function renderMiniarticles() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("miniarticle");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof MINIARTICLES !== "undefined") ? MINIARTICLES : [];
+            document.getElementById("count").textContent = list.length + " آرتیکل";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">✑</span>هنوز آرتیکلی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(a => `
+                <div class="mini-card">
+                    <div class="mini-head">
+                        ${a.emoji ? `<span class="mini-emoji">${a.emoji}</span>` : ""}
+                        <span class="mini-titre" dir="ltr">${a.titre}</span>
+                        ${a.niveau ? `<span class="mini-niveau">${a.niveau}</span>` : ""}
+                    </div>
+                    <div class="mini-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی</div>
+                    <div class="mini-body">
+                        ${(a.paras||[]).map(p => `<p class="mini-para" dir="ltr">${parseClickWords(p)}</p>`).join("")}
+                    </div>
+                    ${a.morale ? `
+                    <div class="mini-morale">
+                        <span class="mini-morale-icon">🌱</span>
+                        <div class="mini-morale-body">
+                            <div class="mini-morale-fr" dir="ltr">${parseClickWords(a.morale.fr)}</div>
+                            ${a.morale.fa ? `<div class="mini-morale-fa">${a.morale.fa}</div>` : ""}
+                        </div>
+                    </div>` : ""}
+                </div>`).join("");
         }
 
         // نمایش درس‌های Édito A1 (لیست درس‌ها)
