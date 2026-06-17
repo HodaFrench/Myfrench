@@ -954,7 +954,86 @@ const PRONONCIATION = [
 //        exemples : آرایه‌ای از ۳ مثال، هر کدام {fr, fa}
 // ═══════════════════════════════════════════════════════════
 const EDITOA1 = [
-  // نمونه — وقتی هدی واژگان درس را بفرستد، اینجا اضافه می‌شود
+  {
+    lecon: "Leçon 1",
+    titre: "سرگرمی‌ها، کشورها و اعداد",
+    mots: [
+      // ---- Les loisirs ----
+      { mot: "l'art", fa: "هنر", genre: "(m.)", exemples: [
+        { fr: "J'aime l'art moderne.", fa: "هنر مدرن را دوست دارم." },
+        { fr: "L'art est ma passion.", fa: "هنر علاقه‌ی من است." },
+        { fr: "Tu aimes l'art ?", fa: "تو هنر را دوست داری؟" },
+      ]},
+      { mot: "le cinéma", fa: "سینما", exemples: [
+        { fr: "Je vais au cinéma ce soir.", fa: "امشب به سینما می‌روم." },
+        { fr: "Tu aimes le cinéma ?", fa: "تو سینما را دوست داری؟" },
+        { fr: "Le cinéma français est célèbre.", fa: "سینمای فرانسه معروف است." },
+      ]},
+      { mot: "les langues", fa: "زبان‌ها", genre: "(f.)", exemples: [
+        { fr: "J'aime les langues étrangères.", fa: "زبان‌های خارجی را دوست دارم." },
+        { fr: "Les langues sont importantes.", fa: "زبان‌ها مهم هستند." },
+        { fr: "Elle parle trois langues.", fa: "او سه زبان صحبت می‌کند." },
+      ]},
+      { mot: "la musique", fa: "موسیقی", exemples: [
+        { fr: "J'écoute de la musique.", fa: "به موسیقی گوش می‌دهم." },
+        { fr: "La musique, c'est ma vie !", fa: "موسیقی، زندگی من است!" },
+        { fr: "Tu aimes la musique pop ?", fa: "موسیقی پاپ را دوست داری؟" },
+      ]},
+      { mot: "le sport", fa: "ورزش", exemples: [
+        { fr: "Je fais du sport le matin.", fa: "صبح‌ها ورزش می‌کنم." },
+        { fr: "Tu aimes le sport ?", fa: "ورزش را دوست داری؟" },
+        { fr: "Le sport, c'est bon pour la santé.", fa: "ورزش برای سلامتی خوب است." },
+      ]},
+      // ---- L'identité ----
+      { mot: "le nom", fa: "نام خانوادگی", exemples: [
+        { fr: "Quel est votre nom ?", fa: "نام خانوادگی شما چیست؟" },
+        { fr: "Mon nom est Karimi.", fa: "نام خانوادگی من کریمی است." },
+        { fr: "Écrivez votre nom ici.", fa: "نام خانوادگی‌تان را اینجا بنویسید." },
+      ]},
+      { mot: "le prénom", fa: "نام (کوچک)", exemples: [
+        { fr: "Mon prénom est Hoda.", fa: "نام من هدی است." },
+        { fr: "Quel est ton prénom ?", fa: "نام تو چیست؟" },
+        { fr: "C'est un joli prénom.", fa: "این نام قشنگی است." },
+      ]},
+      { mot: "la date de naissance", fa: "تاریخ تولد", exemples: [
+        { fr: "Quelle est ta date de naissance ?", fa: "تاریخ تولدت چیست؟" },
+        { fr: "Ma date de naissance est le 5 mai.", fa: "تاریخ تولد من پنجم مه است." },
+        { fr: "Écris ta date de naissance.", fa: "تاریخ تولدت را بنویس." },
+      ]},
+      { mot: "le lieu de naissance", fa: "محل تولد", exemples: [
+        { fr: "Mon lieu de naissance est Téhéran.", fa: "محل تولد من تهران است." },
+        { fr: "Quel est votre lieu de naissance ?", fa: "محل تولد شما کجاست؟" },
+        { fr: "Paris est son lieu de naissance.", fa: "پاریس محل تولد اوست." },
+      ]},
+      // ---- Les coordonnées ----
+      { mot: "l'adresse mail", fa: "آدرس ایمیل", genre: "(f.)", exemples: [
+        { fr: "Quelle est ton adresse mail ?", fa: "آدرس ایمیلت چیست؟" },
+        { fr: "Voici mon adresse mail.", fa: "این آدرس ایمیل من است." },
+        { fr: "J'ai une nouvelle adresse mail.", fa: "یک آدرس ایمیل جدید دارم." },
+      ]},
+      { mot: "le numéro de téléphone", fa: "شماره تلفن", exemples: [
+        { fr: "Quel est ton numéro de téléphone ?", fa: "شماره تلفنت چیست؟" },
+        { fr: "Je note ton numéro de téléphone.", fa: "شماره تلفنت را یادداشت می‌کنم." },
+        { fr: "Voici mon numéro de téléphone.", fa: "این شماره تلفن من است." },
+      ]},
+      // ---- Pays et nationalités (نمونه‌ی پرکاربرد) ----
+      { mot: "la France — français(e)", fa: "فرانسه — فرانسوی", exemples: [
+        { fr: "J'habite en France.", fa: "در فرانسه زندگی می‌کنم." },
+        { fr: "Elle est française.", fa: "او فرانسوی است (مؤنث)." },
+        { fr: "Il parle français.", fa: "او فرانسوی صحبت می‌کند." },
+      ]},
+      { mot: "l'Iran — iranien(ne)", fa: "ایران — ایرانی", exemples: [
+        { fr: "Je viens d'Iran.", fa: "من اهل ایران هستم." },
+        { fr: "Elle est iranienne.", fa: "او ایرانی است (مؤنث)." },
+        { fr: "Mon ami est iranien.", fa: "دوست من ایرانی است." },
+      ]},
+      { mot: "le Canada — canadien(ne)", fa: "کانادا — کانادایی", exemples: [
+        { fr: "Je voudrais aller au Canada.", fa: "دلم می‌خواهد به کانادا بروم." },
+        { fr: "Il est canadien.", fa: "او کانادایی است." },
+        { fr: "Le Canada est un grand pays.", fa: "کانادا کشور بزرگی است." },
+      ]},
+    ],
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════
