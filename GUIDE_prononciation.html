@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راهنمای کامل تلفظ فرانسوی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --purple:#7a5ba8; --teal:#3f8a9c;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.08) 31px, rgba(65,97,138,0.08) 32px);
+    color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:40px 30px; border-radius:20px; text-align:center; margin-bottom:24px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-50px;left:-50px;width:180px;height:180px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:600; margin-bottom:8px;}
+  .header .fa{font-size:15px; opacity:.92;}
+
+  .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:24px; font-size:15px; line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+
+  /* فهرست */
+  .toc{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:20px 24px; margin-bottom:26px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .toc-title{font-size:15px; font-weight:700; color:var(--navy); margin-bottom:14px;}
+  .toc-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  @media(max-width:600px){.toc-grid{grid-template-columns:1fr;}}
+  .toc a{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink);
+    background:var(--cream); padding:10px 14px; border-radius:10px; font-size:14px; transition:all .2s;}
+  .toc a:hover{background:rgba(63,138,156,0.1); color:var(--teal);}
+  .toc a .n{width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+
+  /* بخش‌ها */
+  .sec{background:var(--white); border:1px solid var(--line); border-radius:18px; padding:28px 26px;
+    margin-bottom:24px; box-shadow:0 8px 24px rgba(31,58,95,.06); scroll-margin-top:20px;}
+  .sec-num{display:inline-block; font-size:12px; font-weight:700; color:var(--teal);
+    background:rgba(63,138,156,0.1); padding:4px 14px; border-radius:20px; margin-bottom:12px; letter-spacing:1px;}
+  .sec-title{font-family:'Cormorant Garamond',serif; font-size:27px; font-weight:600; color:var(--navy); margin-bottom:6px; direction:ltr; text-align:left;}
+  .sec-title-fa{font-size:14px; color:var(--gold); font-weight:700; margin-bottom:18px;}
+  .sec p{font-size:14.5px; line-height:2.1; margin-bottom:12px;}
+  .sec p b{color:var(--navy);}
+
+  /* کارت صدا */
+  .son{background:var(--cream); border-radius:12px; padding:16px 18px; margin:14px 0; border-right:4px solid var(--teal);}
+  .son-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+  .son-ipa{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:var(--teal); direction:ltr;
+    background:var(--white); padding:2px 14px; border-radius:10px; border:1.5px solid var(--line);}
+  .son-spell{font-size:14px; color:var(--ink); font-weight:600;}
+  .son-spell .letters{color:var(--terracotta); font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700;}
+  .son-desc{font-size:13.5px; color:var(--ink); line-height:1.9; margin-bottom:10px;}
+  .son-ex{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .son-ex .w{font-family:'Cormorant Garamond',serif; font-size:16px; direction:ltr;
+    background:var(--white); padding:6px 12px; border-radius:8px; border:1px solid var(--line); color:var(--navy);}
+  .son-ex .w span{font-size:11px; color:var(--gray); margin-right:6px; font-family:'Vazirmatn';}
+
+  /* جعبه نکته */
+  .tip{background:linear-gradient(135deg,rgba(63,138,156,0.08),rgba(196,165,114,0.06));
+    border-right:5px solid var(--teal); border-radius:12px; padding:16px 20px; margin:18px 0; font-size:14px; line-height:2;}
+  .tip b{color:var(--teal);}
+  .tip.warn{border-right-color:var(--terracotta); background:linear-gradient(135deg,rgba(196,80,45,0.06),rgba(196,165,114,0.06));}
+  .tip.warn b{color:var(--terracotta);}
+
+  /* زبان‌گردان */
+  .virelangue{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    border-radius:14px; padding:20px 22px; margin:20px 0; text-align:center;}
+  .virelangue .vl-label{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:1px; margin-bottom:10px;}
+  .virelangue .vl-fr{font-family:'Cormorant Garamond',serif; font-size:19px; font-style:italic; line-height:1.6; direction:ltr; margin-bottom:8px;}
+  .virelangue .vl-fa{font-size:13px; opacity:.85; line-height:1.8;}
+
+  .footer{text-align:center; margin-top:34px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+  .backtop{display:block; text-align:center; margin-top:16px;}
+  .backtop a{font-size:12px; color:var(--teal); text-decoration:none;}
+</style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+
+    <div class="header">
+      <div class="tag">Prononciation</div>
+      <h1>La prononciation française</h1>
+      <div class="fa">راهنمای کامل تلفظ فرانسوی — از A تا Z</div>
+    </div>
+
+    <div class="lead">
+      تلفظ فرانسه برای خیلی‌ها در ابتدا گیج‌کننده است: بعضی حروف اصلاً خوانده نمی‌شوند، بعضی کاملاً متفاوت از چیزی که نوشته شده تلفظ می‌شوند. <b>نگران نباش، این کاملاً طبیعی است!</b> در این راهنما، قدم‌به‌قدم همه‌ی صداهای فرانسه را با مثال‌های فراوان و توضیح فارسی یاد می‌گیری. توصیه می‌کنم همه را یک‌جا نخوانی، بلکه کم‌کم و با تمرین جلو بروی. 🎧
+    </div>
+
+    <!-- فهرست -->
+    <div class="toc">
+      <div class="toc-title">📑 فهرست درس‌ها</div>
+      <div class="toc-grid">
+        <a href="#s1"><span class="n">1</span> الفبای فرانسه</a>
+        <a href="#s2"><span class="n">2</span> حروف صدادار (voyelles)</a>
+        <a href="#s3"><span class="n">3</span> صداهای نزل (nasaux)</a>
+        <a href="#s4"><span class="n">4</span> حروف C و S و Ç</a>
+        <a href="#s5"><span class="n">5</span> حرف G و صدای GN</a>
+        <a href="#s6"><span class="n">6</span> صداهای دیگر (CH, QU, Y...)</a>
+        <a href="#s7"><span class="n">7</span> تلفظ حرف R</a>
+        <a href="#s8"><span class="n">8</span> حروف ناخوانا (muettes)</a>
+        <a href="#s9"><span class="n">9</span> لیزون (liaisons)</a>
+      </div>
+    </div>
+
+    <!-- ۱. الفبا -->
+    <div class="sec" id="s1">
+      <span class="sec-num">LEÇON 1</span>
+      <div class="sec-title">L'alphabet</div>
+      <div class="sec-title-fa">الفبای فرانسه</div>
+      <p>الفبای فرانسه مثل انگلیسی <b>۲۶ حرف</b> دارد: <b>۶ حرف صدادار</b> (A, E, I, O, U, Y) و <b>۲۰ حرف بی‌صدا</b>.</p>
+      <p>تفاوت اصلی در <b>علامت‌ها (accents)</b> است که روی حروف صدادار می‌آیند و گاهی تلفظ را عوض می‌کنند: <b dir="ltr">À, Â, É, È, Ê, Ë, Î, Ï, Ô, Ù, Û, Ü</b> و همچنین <b dir="ltr">Ç</b> (سدیج).</p>
+      <div class="tip"><b>💡 نکته:</b> برخلاف فارسی، در فرانسه حرف‌ها همیشه یک‌جور تلفظ نمی‌شوند؛ صدای هر حرف به حرف‌های کنارش بستگی دارد. برای همین به‌جای حفظ‌کردن حرف‌به‌حرف، بهتر است <b>صداها (sons)</b> را یاد بگیری. در ادامه دقیقاً همین کار را می‌کنیم.</p>
+    </div>
+
+    <!-- ۲. حروف صدادار -->
+    <div class="sec" id="s2">
+      <span class="sec-num">LEÇON 2</span>
+      <div class="sec-title">Les voyelles</div>
+      <div class="sec-title-fa">حروف و صداهای صدادار</div>
+      <p>هر صدای صدادار را می‌توان به چند شکل نوشت. اینجا مهم‌ترین‌ها را با مثال می‌بینی:</p>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/a/</span><span class="son-spell">نوشتار: <span class="letters">a, à, â</span></span></div>
+        <div class="son-desc">صدای «آ» کوتاه. علامت روی a تلفظ را عوض نمی‌کند.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une banane <span>موز</span></span>
+          <span class="w" dir="ltr">déjà <span>قبلاً</span></span>
+          <span class="w" dir="ltr">un château <span>قصر</span></span>
+          <span class="w" dir="ltr">la table <span>میز</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/ə/</span><span class="son-spell">نوشتار: <span class="letters">e</span></span></div>
+        <div class="son-desc">صدای «اِ»ی خیلی نرم و کوتاه (شبیه «ə» که در گلو می‌ماند). گاهی تقریباً خوانده نمی‌شود.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">petit <span>کوچک</span></span>
+          <span class="w" dir="ltr">un pneu <span>لاستیک</span></span>
+          <span class="w" dir="ltr">le menu <span>منو</span></span>
+          <span class="w" dir="ltr">demain <span>فردا</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/e/</span><span class="son-spell">نوشتار: <span class="letters">é, er, ez, et</span></span></div>
+        <div class="son-desc">صدای «اِ»ی بسته و کشیده (مثل «ای» کوتاه). در انتهای مصدرهای گروه اول (er) همین صدا را داریم.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">l'été <span>تابستان</span></span>
+          <span class="w" dir="ltr">parler <span>حرف زدن</span></span>
+          <span class="w" dir="ltr">le nez <span>بینی</span></span>
+          <span class="w" dir="ltr">aimer <span>دوست داشتن</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/ɛ/</span><span class="son-spell">نوشتار: <span class="letters">è, ê, ai, ei</span></span></div>
+        <div class="son-desc">صدای «اِ»ی باز (دهان بازتر). تفاوتش با /e/ خیلی ظریف است و بسته به منطقه گاهی یکی می‌شوند — زیاد نگرانش نباش.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">treize <span>سیزده</span></span>
+          <span class="w" dir="ltr">la forêt <span>جنگل</span></span>
+          <span class="w" dir="ltr">Noël <span>کریسمس</span></span>
+          <span class="w" dir="ltr">un paiement <span>پرداخت</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/o/</span><span class="son-spell">نوشتار: <span class="letters">o, ô, au, eau</span></span></div>
+        <div class="son-desc">صدای «اُ». چند شکل نوشتاری دارد ولی همه یک صدا.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">un robot <span>ربات</span></span>
+          <span class="w" dir="ltr">jaune <span>زرد</span></span>
+          <span class="w" dir="ltr">un chapeau <span>کلاه</span></span>
+          <span class="w" dir="ltr">à bientôt <span>به‌زودی می‌بینمت</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/i/</span><span class="son-spell">نوشتار: <span class="letters">i, î, ï, y</span></span></div>
+        <div class="son-desc">صدای «ای» کشیده.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une bicyclette <span>دوچرخه</span></span>
+          <span class="w" dir="ltr">naïf <span>ساده‌لوح</span></span>
+          <span class="w" dir="ltr">un ami <span>دوست</span></span>
+          <span class="w" dir="ltr">le lit <span>تخت</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/u/</span><span class="son-spell">نوشتار: <span class="letters">ou</span></span></div>
+        <div class="son-desc">صدای «او» (مثل «او»ی فارسی در «موز»).</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">le loup <span>گرگ</span></span>
+          <span class="w" dir="ltr">la roue <span>چرخ</span></span>
+          <span class="w" dir="ltr">bonjour <span>سلام</span></span>
+          <span class="w" dir="ltr">vous <span>شما</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/y/</span><span class="son-spell">نوشتار: <span class="letters">u</span></span></div>
+        <div class="son-desc">صدای «او»ی غنچه‌ای — لب‌ها را غنچه کن و سعی کن «ای» بگویی. این صدا در فارسی نیست، پس تمرین می‌خواهد!</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">la vue <span>منظره</span></span>
+          <span class="w" dir="ltr">tu <span>تو</span></span>
+          <span class="w" dir="ltr">la lune <span>ماه</span></span>
+          <span class="w" dir="ltr">une rue <span>خیابان</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/wa/</span><span class="son-spell">نوشتار: <span class="letters">oi</span></span></div>
+        <div class="son-desc">صدای «وا».</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">la loi <span>قانون</span></span>
+          <span class="w" dir="ltr">moi <span>من</span></span>
+          <span class="w" dir="ltr">une boisson <span>نوشیدنی</span></span>
+          <span class="w" dir="ltr">noir <span>سیاه</span></span>
+        </div>
+      </div>
+
+      <div class="tip warn"><b>⚠️ تله‌ی پرتکرار:</b> صدای /y/ (در tu) با /u/ (در tout) فرق دارد! اولی لب غنچه + زبان جلو، دومی فقط لب غنچه. اشتباه‌گرفتنشان معنی را عوض می‌کند: <b dir="ltr">tu</b> (تو) ≠ <b dir="ltr">tout</b> (همه).</div>
+
+      <div class="virelangue">
+        <div class="vl-label">🗣️ زبان‌گردان تمرینی</div>
+        <div class="vl-fr">Le loup poilu a oublié le vol de la libellule ailée dans les étoiles.</div>
+        <div class="vl-fa">گرگ پشمالو پرواز سنجاقک بال‌دار را در میان ستاره‌ها فراموش کرد.</div>
+      </div>
+    </div>
+
+    <!-- ۳. صداهای نزل -->
+    <div class="sec" id="s3">
+      <span class="sec-num">LEÇON 3</span>
+      <div class="sec-title">Les sons nasaux</div>
+      <div class="sec-title-fa">صداهای نزل (تودماغی)</div>
+      <p>صداهای نزل از زیباترین ویژگی‌های فرانسه‌اند. هوا هم از دهان و هم از <b>بینی</b> خارج می‌شود. سه صدای اصلی داریم:</p>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/ɛ̃/</span><span class="son-spell">نوشتار: <span class="letters">in, im, ain, ein, un</span></span></div>
+        <div class="son-desc">صدای نزلِ «اَن» (شبیه «اَن» ولی از بینی، بدون اینکه n را کامل بگویی).</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">le matin <span>صبح</span></span>
+          <span class="w" dir="ltr">la faim <span>گرسنگی</span></span>
+          <span class="w" dir="ltr">la main <span>دست</span></span>
+          <span class="w" dir="ltr">plein <span>پُر</span></span>
+          <span class="w" dir="ltr">simple <span>ساده</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/ɑ̃/</span><span class="son-spell">نوشتار: <span class="letters">an, am, en, em</span></span></div>
+        <div class="son-desc">صدای نزلِ «آن» (دهان بازتر، از بینی).</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">les parents <span>والدین</span></span>
+          <span class="w" dir="ltr">les enfants <span>بچه‌ها</span></span>
+          <span class="w" dir="ltr">une ambulance <span>آمبولانس</span></span>
+          <span class="w" dir="ltr">le temps <span>زمان / هوا</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-ipa" dir="ltr">/ɔ̃/</span><span class="son-spell">نوشتار: <span class="letters">on, om</span></span></div>
+        <div class="son-desc">صدای نزلِ «اُن» (لب‌ها گردتر، از بینی).</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">un bonbon <span>آب‌نبات</span></span>
+          <span class="w" dir="ltr">une bombe <span>بمب</span></span>
+          <span class="w" dir="ltr">le pont <span>پل</span></span>
+          <span class="w" dir="ltr">la maison <span>خانه</span></span>
+        </div>
+      </div>
+
+      <div class="tip"><b>💡 ترفند:</b> برای حس‌کردن صدای نزل، انگشتت را روی بینی‌ات بگذار و کلمه را بگو — باید لرزش بینی را حس کنی. اگر n یا m را کامل تلفظ کنی، دیگر نزل نیست!</div>
+
+      <div class="virelangue">
+        <div class="vl-label">🗣️ زبان‌گردان تمرینی</div>
+        <div class="vl-fr">Cinq cents chatons chantent cinq cents chansons.</div>
+        <div class="vl-fa">پانصد بچه‌گربه پانصد آهنگ می‌خوانند.</div>
+      </div>
+    </div>
+
+    <!-- ۴. C, S, Ç -->
+    <div class="sec" id="s4">
+      <span class="sec-num">LEÇON 4</span>
+      <div class="sec-title">Les lettres C, S et Ç</div>
+      <div class="sec-title-fa">حروف C، S و سدیج</div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">C</span> + a, o, u → صدای /k/ «ک»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">le carnaval <span>کارناوال</span></span>
+          <span class="w" dir="ltr">les vacances <span>تعطیلات</span></span>
+          <span class="w" dir="ltr">une couleur <span>رنگ</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">C</span> + e, i → صدای /s/ «س»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une actrice <span>بازیگر زن</span></span>
+          <span class="w" dir="ltr">le ciel <span>آسمان</span></span>
+          <span class="w" dir="ltr">le cinéma <span>سینما</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">Ç</span> (سدیج) + a, o, u → صدای /s/ «س»</span></div>
+        <div class="son-desc">دُمِ زیر c باعث می‌شود حتی قبل از a/o/u هم صدای «س» بدهد.</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">ça va <span>خوبی؟</span></span>
+          <span class="w" dir="ltr">français <span>فرانسوی</span></span>
+          <span class="w" dir="ltr">déçu <span>ناامید</span></span>
+          <span class="w" dir="ltr">un garçon <span>پسر</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">S</span> بین دو حرف صدادار → صدای /z/ «ز»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">un oiseau <span>پرنده</span></span>
+          <span class="w" dir="ltr">la position <span>موقعیت</span></span>
+          <span class="w" dir="ltr">une rose <span>گل رز</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">SS</span> → صدای /s/ «س»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une promesse <span>قول</span></span>
+          <span class="w" dir="ltr">la passion <span>اشتیاق</span></span>
+          <span class="w" dir="ltr">un poisson <span>ماهی</span></span>
+        </div>
+      </div>
+      <div class="tip warn"><b>⚠️ تفاوت مهم:</b> <b dir="ltr">un poison</b> (یک s = صدای ز = «سَم») با <b dir="ltr">un poisson</b> (دو s = صدای س = «ماهی») فقط در یک حرف فرق دارند ولی معنی کاملاً متفاوت! پس به تعداد s دقت کن.</div>
+      <div class="tip"><b>💡 نکته:</b> کلمات پایان‌یافته به <b dir="ltr">-tion</b> با صدای «سیون» خوانده می‌شوند: <b dir="ltr">une action</b> (اَکسیون)، <b dir="ltr">une précaution</b>. و <b dir="ltr">-tiel</b> با «سیِل»: <b dir="ltr">essentiel</b>.</div>
+    </div>
+
+    <!-- ۵. G و GN -->
+    <div class="sec" id="s5">
+      <span class="sec-num">LEÇON 5</span>
+      <div class="sec-title">La lettre G et le son GN</div>
+      <div class="sec-title-fa">حرف G و صدای GN</div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">G</span> + a, o, u → صدای /g/ «گ»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">la gare <span>ایستگاه</span></span>
+          <span class="w" dir="ltr">un dragon <span>اژدها</span></span>
+          <span class="w" dir="ltr">un légume <span>سبزی</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">G</span> + e, i → صدای /ʒ/ «ژ»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">étrange <span>عجیب</span></span>
+          <span class="w" dir="ltr">une région <span>منطقه</span></span>
+          <span class="w" dir="ltr">une girafe <span>زرافه</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">GU</span> + e, i → صدای /g/ «گ» (U ناخوانا)</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une guitare <span>گیتار</span></span>
+          <span class="w" dir="ltr">une mangue <span>انبه</span></span>
+          <span class="w" dir="ltr">la guerre <span>جنگ</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">GN</span> → صدای /ɲ/ «نی» (مثل «نی» در «نیاکان»)</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">gagner <span>بردن</span></span>
+          <span class="w" dir="ltr">un agneau <span>بره</span></span>
+          <span class="w" dir="ltr">mignon <span>بامزه</span></span>
+          <span class="w" dir="ltr">la montagne <span>کوه</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ۶. صداهای دیگر -->
+    <div class="sec" id="s6">
+      <span class="sec-num">LEÇON 6</span>
+      <div class="sec-title">Autres sons : CH, QU, Y, F</div>
+      <div class="sec-title-fa">صداهای دیگر</div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">CH</span> → صدای /ʃ/ «ش»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">le chat <span>گربه</span></span>
+          <span class="w" dir="ltr">chercher <span>جستجو کردن</span></span>
+          <span class="w" dir="ltr">la chambre <span>اتاق</span></span>
+        </div>
+      </div>
+      <div class="tip warn"><b>⚠️ استثناها:</b> در چند کلمه‌ی یونانی‌تبار، CH صدای «ک» می‌دهد: <b dir="ltr">chorale</b> (کرال)، <b dir="ltr">un orchestre</b> (ارکستر)، <b dir="ltr">chrétien</b> (مسیحی).</div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">QU</span> → صدای /k/ «ک» (U ناخوانا)</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">qui <span>چه کسی</span></span>
+          <span class="w" dir="ltr">pourquoi <span>چرا</span></span>
+          <span class="w" dir="ltr">quatre <span>چهار</span></span>
+          <span class="w" dir="ltr">une question <span>سؤال</span></span>
+        </div>
+      </div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">-ill / y</span> → صدای /j/ «ی»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une fille <span>دختر</span></span>
+          <span class="w" dir="ltr">une abeille <span>زنبور</span></span>
+          <span class="w" dir="ltr">une feuille <span>برگ</span></span>
+          <span class="w" dir="ltr">un tuyau <span>لوله</span></span>
+        </div>
+      </div>
+      <div class="tip warn"><b>⚠️ استثناها:</b> در این کلمات، ill صدای «ل» می‌دهد نه «ی»: <b dir="ltr">une ville</b> (شهر)، <b dir="ltr">mille</b> (هزار)، <b dir="ltr">tranquille</b> (آرام).</div>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell"><span class="letters">f, ph</span> → صدای /f/ «ف»</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">la fumée <span>دود</span></span>
+          <span class="w" dir="ltr">un éléphant <span>فیل</span></span>
+          <span class="w" dir="ltr">une photo <span>عکس</span></span>
+        </div>
+      </div>
+
+      <div class="virelangue">
+        <div class="vl-label">🗣️ زبان‌گردان تمرینی</div>
+        <div class="vl-fr">Un chasseur sachant chasser sans son chien est un bon chasseur.</div>
+        <div class="vl-fa">شکارچی‌ای که بلد است بدون سگش شکار کند، شکارچی خوبی است.</div>
+      </div>
+    </div>
+
+    <!-- ۷. R -->
+    <div class="sec" id="s7">
+      <span class="sec-num">LEÇON 7</span>
+      <div class="sec-title">Prononcer le R</div>
+      <div class="sec-title-fa">تلفظ حرف R</div>
+      <p>تلفظ R فرانسوی از چیزی که فکر می‌کنی <b>ساده‌تر</b> است! این R از <b>ته گلو</b> می‌آید، نه از نوک زبان (برخلاف «ر» فارسی).</p>
+      <div class="tip"><b>💡 ترفند طلایی:</b> تصور کن داری <b>غرغره</b> می‌کنی، ولی بدون آب! صدا باید از <b>ته گلو</b> بیاید. اول آرام تمرین کن، بعد سریع‌تر.</div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell">تمرین صدای R در موقعیت‌های مختلف</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">rouge <span>قرمز</span></span>
+          <span class="w" dir="ltr">rond <span>گرد</span></span>
+          <span class="w" dir="ltr">la terre <span>زمین</span></span>
+          <span class="w" dir="ltr">prendre <span>گرفتن</span></span>
+          <span class="w" dir="ltr">octobre <span>اکتبر</span></span>
+          <span class="w" dir="ltr">un orage <span>طوفان</span></span>
+          <span class="w" dir="ltr">le marbre <span>مرمر</span></span>
+          <span class="w" dir="ltr">la mer <span>دریا</span></span>
+        </div>
+      </div>
+      <div class="virelangue">
+        <div class="vl-label">🗣️ زبان‌گردان تمرینی</div>
+        <div class="vl-fr">Les trois grandes grenouilles regardent les rares roses rouges.</div>
+        <div class="vl-fa">سه قورباغه‌ی بزرگ به گل‌های رز قرمزِ کمیاب نگاه می‌کنند.</div>
+      </div>
+    </div>
+
+    <!-- ۸. حروف ناخوانا -->
+    <div class="sec" id="s8">
+      <span class="sec-num">LEÇON 8</span>
+      <div class="sec-title">Les lettres muettes</div>
+      <div class="sec-title-fa">حروف ناخوانا</div>
+      <p>یکی از سخت‌ترین بخش‌های فرانسه: خیلی از حروف نوشته می‌شوند ولی <b>خوانده نمی‌شوند</b>.</p>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell">حرف بی‌صدای <span class="letters">آخر</span> کلمه معمولاً ناخوانا است</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">beaucoup <span>خیلی</span></span>
+          <span class="w" dir="ltr">différent <span>متفاوت</span></span>
+          <span class="w" dir="ltr">le respect <span>احترام</span></span>
+          <span class="w" dir="ltr">petit <span>کوچک</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell">حرف <span class="letters">E</span> آخر معمولاً ناخوانا یا خیلی نرم است</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">une amie <span>دوست (مؤنث)</span></span>
+          <span class="w" dir="ltr">la rue <span>خیابان</span></span>
+          <span class="w" dir="ltr">une fenêtre <span>پنجره</span></span>
+          <span class="w" dir="ltr">une étoile <span>ستاره</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell">حرف <span class="letters">H</span> همیشه ناخوانا است</span></div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">un homme <span>مرد</span></span>
+          <span class="w" dir="ltr">une horloge <span>ساعت دیواری</span></span>
+          <span class="w" dir="ltr">le bonheur <span>خوشبختی</span></span>
+          <span class="w" dir="ltr">l'heure <span>ساعت</span></span>
+        </div>
+      </div>
+      <div class="tip"><b>💡 نکته:</b> چون حرف آخر اغلب خوانده نمی‌شود، تلفظ فرانسه را باید با <b>گوش‌دادن</b> یاد گرفت، نه فقط از روی نوشتار. برای همین بخش «تمرین تلفظ» (ویدیوهای هدی) را هم حتماً ببین!</div>
+    </div>
+
+    <!-- ۹. لیزون -->
+    <div class="sec" id="s9">
+      <span class="sec-num">LEÇON 9</span>
+      <div class="sec-title">Les liaisons</div>
+      <div class="sec-title-fa">لیزون (اتصال صداها)</div>
+      <p>برای اینکه فرانسه <b>روان و سریع</b> شنیده شود، گاهی حرف بی‌صدای آخر یک کلمه به حرف صدادار اول کلمه‌ی بعدی <b>وصل</b> می‌شود. به این «liaison» می‌گویند. دو نوع داریم:</p>
+
+      <div class="son">
+        <div class="son-head"><span class="son-spell">✅ لیزون <span class="letters">اجباری</span> (obligatoire)</span></div>
+        <div class="son-desc">بعد از ضمیر یا حرف تعریف، و وقتی صفت قبل از اسم است:</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">nous‿avons <span>ما داریم</span></span>
+          <span class="w" dir="ltr">les‿enfants <span>بچه‌ها</span></span>
+          <span class="w" dir="ltr">mon‿oncle <span>عمویم</span></span>
+          <span class="w" dir="ltr">un petit‿arbre <span>درخت کوچک</span></span>
+        </div>
+      </div>
+      <div class="son">
+        <div class="son-head"><span class="son-spell">❌ لیزون <span class="letters">ممنوع</span> (interdite)</span></div>
+        <div class="son-desc">وقتی صفت بعد از اسم است، یا بین اسم و فعل:</div>
+        <div class="son-ex">
+          <span class="w" dir="ltr">un enfant | intelligent <span>کودک باهوش</span></span>
+          <span class="w" dir="ltr">le chien | aboie <span>سگ پارس می‌کند</span></span>
+        </div>
+      </div>
+      <div class="tip"><b>💡 استثنای معروف:</b> در عبارت <b dir="ltr">il était une fois</b> (روزی روزگاری) لیزون انجام می‌شود، چون یک عبارت ثابت است.</div>
+    </div>
+
+    <div class="footer">
+      ✦ تلفظ با تمرین و گوش‌دادن مداوم بهتر می‌شود. هر روز چند کلمه را بلند بخوان و تکرار کن!<br>
+      <b>Français avec Hoda</b>
+      <div class="backtop"><a href="#top">↑ بازگشت به فهرست</a></div>
+    </div>
+  </div>
+  <script src="protect.js"></script>
+</body>
+</html>
