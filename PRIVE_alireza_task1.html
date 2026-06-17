@@ -84,6 +84,32 @@
   .drill-box{background:var(--white); border:1.5px solid var(--green); border-radius:12px; padding:16px 18px;}
   .drill-title{font-size:13.5px; font-weight:700; color:var(--green); margin-bottom:10px;}
   .drill-text{font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.8; color:var(--ink); direction:ltr; text-align:left;}
+
+  .erreurs-link{display:block; text-align:center; text-decoration:none; background:rgba(196,80,45,.1);
+    color:var(--terracotta); font-size:14px; font-weight:700; padding:14px; border-radius:12px;
+    margin-bottom:26px; border:1.5px dashed var(--terracotta); transition:all .2s;}
+  .erreurs-link:hover{background:var(--terracotta); color:#fff;}
+  /* بخش اشتباه‌های گرامری */
+  .traps-section{margin-top:40px;}
+  .traps-header{background:linear-gradient(135deg,var(--terracotta),#9a3a20); color:#fff;
+    padding:24px 26px; border-radius:18px; margin-bottom:22px; box-shadow:0 12px 30px rgba(196,80,45,.24);}
+  .traps-header h2{font-size:21px; font-weight:700; margin-bottom:6px;}
+  .traps-header p{font-size:13.5px; opacity:.93; line-height:1.9;}
+  .trap-group{background:var(--white); border:1px solid var(--line); border-radius:16px;
+    padding:20px 22px; margin-bottom:18px; box-shadow:0 6px 18px rgba(31,58,95,.05);}
+  .trap-group-title{font-size:16px; font-weight:700; color:var(--navy); margin-bottom:16px;
+    padding-bottom:10px; border-bottom:2px solid var(--paper-warm);}
+  .trap-items{display:flex; flex-direction:column; gap:14px;}
+  .trap-item{background:var(--cream); border-radius:10px; padding:14px 16px; border-right:3px solid var(--gold-soft);}
+  .trap-wrong{font-family:'Cormorant Garamond',serif; font-size:16px; color:#a04030;
+    direction:ltr; text-align:left; text-decoration:line-through; text-decoration-color:rgba(196,80,45,.5); margin-bottom:6px;}
+  .trap-right{font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--green);
+    font-weight:600; direction:ltr; text-align:left; margin-bottom:8px;}
+  .trap-x{color:var(--terracotta); font-weight:700; text-decoration:none; display:inline-block;}
+  .trap-check{color:var(--green); font-weight:700; display:inline-block;}
+  .trap-why{font-size:12.5px; color:var(--gray); line-height:1.8; background:var(--white);
+    padding:8px 12px; border-radius:7px;}
+
   .footer{text-align:center; margin-top:30px; color:var(--gray); font-size:13px;}
   .footer b{color:var(--purple);}
   .backtop{display:block; text-align:center; margin-top:14px;}
@@ -115,6 +141,7 @@
       <div class="qnav-title">📑 هفت سؤال</div>
       <div class="qnav-grid"><a href="#q1"><span class="qn">۱</span> معرفی خود</a><a href="#q2"><span class="qn">۲</span> محل زندگی</a><a href="#q3"><span class="qn">۳</span> اهل کجایی</a><a href="#q4"><span class="qn">۴</span> توصیف شهر زادگاه</a><a href="#q5"><span class="qn">۵</span> بازگشت به زادگاه</a><a href="#q6"><span class="qn">۶</span> دلتنگی‌ها</a><a href="#q7"><span class="qn">۷</span> نظر دربارهٔ تهران</a></div>
     </div>
+    <a href="#erreurs" class="erreurs-link">⚠️ مستقیم به بخش «اشتباه‌های گرامری» برو ←</a>
     
     <div class="question-block" id="q1">
         <div class="q-header">
@@ -610,6 +637,504 @@
             
         </div>
     </div>
+
+    <div class="traps-section" id="erreurs">
+      <div class="traps-header">
+        <h2>⚠️ اشتباه‌های گرامری — یادآوری</h2>
+        <p>اینها اشتباه‌هایی هستند که ممکن است هنگام صحبت بگویی. هر کارت: نسخه‌ی <b>اشتباه</b> (خط‌خورده) و نسخه‌ی <b>درست</b> (سبز) با دلیلش. قبل از امتحان یک بار مرورشان کن تا در ذهنت تثبیت شوند. 🎯</p>
+      </div>
+      
+    <div class="trap-group">
+        <div class="trap-group-title">🏙️ شهرها: حرف اضافه‌ی à</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je vis dans Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je vis à Téhéran</span></div>
+            <div class="trap-why">💡 شهرها با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">basé dans Abu Dhabi</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">basé à Abu Dhabi</span></div>
+            <div class="trap-why">💡 شهر با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’ai admis Harvard</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’ai été admis à Harvard</span></div>
+            <div class="trap-why">💡 passive + à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">installer à Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">m’installer à Téhéran</span></div>
+            <div class="trap-why">💡 فعل reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">admis dans Harvard</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">admis à Harvard</span></div>
+            <div class="trap-why">💡 مؤسسات با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">partir en Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">partir à Téhéran</span></div>
+            <div class="trap-why">💡 شهر با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">dans Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">à Téhéran</span></div>
+            <div class="trap-why">💡 شهرها با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’habite dans Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’habite à Téhéran</span></div>
+            <div class="trap-why">💡 شهر با à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">m’a amené dans Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">m’a amené à Téhéran</span></div>
+            <div class="trap-why">💡 مقصد شهری</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">حذف یا جای اشتباه</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">J’habite actuellement à Téhéran</span></div>
+            <div class="trap-why">💡 اول جمله خوب است</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je suis arrivé dans Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je suis arrivé à Téhéran</span></div>
+            <div class="trap-why">💡 à ساده‌تر و امن‌تر</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je suis parti en Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je suis parti à Téhéran</span></div>
+            <div class="trap-why">💡 city</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">🏘️ محیط/فضا: حرف اضافه‌ی dans</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’ai grandi à une petite ville</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’ai grandi dans une petite ville</span></div>
+            <div class="trap-why">💡 برای محیط/شهر کوچک: dans</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">passer à une rue</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">passer dans une rue</span></div>
+            <div class="trap-why">💡 فضای خیابان</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">🌍 کشورها: au / aux / en</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ma femme étudie dans les États-Unis</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ma femme étudie aux États-Unis</span></div>
+            <div class="trap-why">💡 کشور plural: aux</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">immigration à Canada</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">immigration au Canada</span></div>
+            <div class="trap-why">💡 کشور masculine: au</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">à États-Unis</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">aux États-Unis</span></div>
+            <div class="trap-why">💡 plural country</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">à Canada</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">au Canada</span></div>
+            <div class="trap-why">💡 masculine country</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">vers Canada</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">vers le Canada</span></div>
+            <div class="trap-why">💡 pays with article</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">penser les États-Unis</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">penser aux États-Unis</span></div>
+            <div class="trap-why">💡 penser à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">penser États-Unis</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">penser aux États-Unis / au Canada</span></div>
+            <div class="trap-why">💡 country contractions</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">⚥ جنسیت اسم و توافق</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">Téhéran est devenu</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">Téhéran est devenue</span></div>
+            <div class="trap-why">💡 ville مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">destination final</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">destination finale</span></div>
+            <div class="trap-why">💡 destination مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">un vie sédentaire</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">une vie sédentaire</span></div>
+            <div class="trap-why">💡 vie مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">une logique plus international</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">une logique plus internationale</span></div>
+            <div class="trap-why">💡 logique مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">il était برای ville</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">elle était</span></div>
+            <div class="trap-why">💡 ville مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">situé برای ville</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">située</span></div>
+            <div class="trap-why">💡 ville مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">nouveau ville</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ville nouvelle</span></div>
+            <div class="trap-why">💡 ville مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">situé près</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">située près</span></div>
+            <div class="trap-why">💡 agreement</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">cette détail</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce détail</span></div>
+            <div class="trap-why">💡 détail مذکر</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">cadre scolaire développée</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">un cadre scolaire développé</span></div>
+            <div class="trap-why">💡 cadre مذکر</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">construit</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">construite</span></div>
+            <div class="trap-why">💡 ville مؤنث</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">son propre organisation</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">sa propre organisation</span></div>
+            <div class="trap-why">💡 organisation مؤنث</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">🔄 افعال انعکاسی (دوضمیره)</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je concentre sur</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je me concentre sur</span></div>
+            <div class="trap-why">💡 reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">repères construit</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">mes repères se sont construits</span></div>
+            <div class="trap-why">💡 reflexive/passive-like</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">connaissaient l’un l’autre</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">se connaissaient</span></div>
+            <div class="trap-why">💡 reflexive reciprocal</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je ne rendais pas compte</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je ne me rendais pas compte de sa spécificité</span></div>
+            <div class="trap-why">💡 reflexive + de</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">retrouvaient ensemble</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">se retrouvaient</span></div>
+            <div class="trap-why">💡 reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">chose spécial</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">quelque chose de spécial</span></div>
+            <div class="trap-why">💡 de + adjective</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">sentait libre</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">on se sentait libre</span></div>
+            <div class="trap-why">💡 reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">confronter avec</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">se confronter à</span></div>
+            <div class="trap-why">💡 fixed</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je ne vois pas moi</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je ne me vois pas</span></div>
+            <div class="trap-why">💡 reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">subjunctive?</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je ne pense pas que j’aimerais</span></div>
+            <div class="trap-why">💡 conditionnel acceptable</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">limiter à soi</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">se limiter à</span></div>
+            <div class="trap-why">💡 reflexive</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">se retrouver bloquer</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">se retrouver bloqué</span></div>
+            <div class="trap-why">💡 participle</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">🔗 ce qui / ce que</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que est pour moi</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui est pour moi</span></div>
+            <div class="trap-why">💡 subject = ce qui</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que rend</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui rend</span></div>
+            <div class="trap-why">💡 subject relative</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que représente</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui représente</span></div>
+            <div class="trap-why">💡 subject relative</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que m’a placé</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui m’a placé</span></div>
+            <div class="trap-why">💡 subject</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que m’a donné</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui m’a donné</span></div>
+            <div class="trap-why">💡 subject</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que je manque</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui me manque</span></div>
+            <div class="trap-why">💡 فاعل چیز است، نه من</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">ce que me frappe</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">ce qui me frappe</span></div>
+            <div class="trap-why">💡 subject</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">➡️ حرف اضافه + مصدر (de/à)</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">avant m’installer</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">avant de m’installer</span></div>
+            <div class="trap-why">💡 قبل از infinitif: de</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">pour que construire</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">pour construire</span></div>
+            <div class="trap-why">💡 pour + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’essaie construire</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’essaie de construire</span></div>
+            <div class="trap-why">💡 essayer de + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">retourner pour vivre là</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">retourner vivre là-bas</span></div>
+            <div class="trap-why">💡 infinitif مستقیم بعد از retourner</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">manière voir</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">manière de voir</span></div>
+            <div class="trap-why">💡 de + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">laisser la nostalgie décide</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">laisser la nostalgie décider</span></div>
+            <div class="trap-why">💡 laisser + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">éviter rester</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">éviter de rester</span></div>
+            <div class="trap-why">💡 de + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">il faut de gérer</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">il faut gérer</span></div>
+            <div class="trap-why">💡 infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’avais envie rester</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’avais envie de rester</span></div>
+            <div class="trap-why">💡 de + infinitif</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">laisser la vie me montre</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">laisser la vie me montrer</span></div>
+            <div class="trap-why">💡 infinitive</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">🧩 کالوکیشن و اصطلاح ثابت</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">relation de distance</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">relation à distance</span></div>
+            <div class="trap-why">💡 اصطلاح ثابت</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">en distance</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">à distance</span></div>
+            <div class="trap-why">💡 اصطلاح ثابت</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">vivre en distance</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">vivre à distance</span></div>
+            <div class="trap-why">💡 اصطلاح ثابت</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">travailler en distance</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">travailler à distance</span></div>
+            <div class="trap-why">💡 اصطلاح ثابت</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">rythme de la vie</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">rythme de vie</span></div>
+            <div class="trap-why">💡 collocation</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">dans l’intersection</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">à l’intersection de</span></div>
+            <div class="trap-why">💡 collocation</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">Il fait un an et demi que...</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">Cela fait un an et demi que...</span></div>
+            <div class="trap-why">💡 fixed expression</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">à origine</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">À l’origine</span></div>
+            <div class="trap-why">💡 fixed</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">lien à Téhéran</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">lien avec Téhéran</span></div>
+            <div class="trap-why">💡 collocation</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">définir à</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">définir comme</span></div>
+            <div class="trap-why">💡 collocation</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">dans niveau de</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">au niveau de</span></div>
+            <div class="trap-why">💡 fixed</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">dans cette taille</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">de cette taille</span></div>
+            <div class="trap-why">💡 collocation</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">⏰ بیان زمان (il y a / depuis)</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">avant quatorze ans</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">il y a quatorze ans</span></div>
+            <div class="trap-why">💡 ago = il y a</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">➕ کمیت: plus de / beaucoup de</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">plus des équipements</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">plus d’équipements</span></div>
+            <div class="trap-why">💡 de بعد از quantity</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">plus des possibilités</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">plus de possibilités</span></div>
+            <div class="trap-why">💡 quantity</div>
+        </div></div>
+    </div>
+    <div class="trap-group">
+        <div class="trap-group-title">📌 نکات دیگر</div>
+        <div class="trap-items">
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je suis original de Hamedan</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je suis originaire de la région de Hamedan</span></div>
+            <div class="trap-why">💡 originaire de ساختار درست است</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">domaine de investissement</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">domaine de l’investissement</span></div>
+            <div class="trap-why">💡 قبل از vowel: de l’</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">un fund</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">un fonds</span></div>
+            <div class="trap-why">💡 واژه فرانسوی</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">j’ai étudié ingénierie</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">j’ai étudié l’ingénierie</span></div>
+            <div class="trap-why">💡 رشته‌ها معمولاً article می‌گیرند</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">les démarches visa</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">les démarches de visa</span></div>
+            <div class="trap-why">💡 اسم + de</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">une stable vie</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">une vie plus stable</span></div>
+            <div class="trap-why">💡 صفت معمولاً بعد از اسم</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">lié avec la région</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">liée à la région</span></div>
+            <div class="trap-why">💡 être lié à</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">master dans management</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">un master en management</span></div>
+            <div class="trap-why">💡 رشته با en</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">fait la situation complexe</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">rend la situation plus complexe</span></div>
+            <div class="trap-why">💡 فعل دقیق‌تر</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">حذف article</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">entre le private equity, le venture capital, la stratégie...</span></div>
+            <div class="trap-why">💡 در list باید articleها را کنترل کنی</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">je travaille en investissement</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">je travaille dans l’investissement</span></div>
+            <div class="trap-why">💡 ساده و oral</div>
+        </div>
+        <div class="trap-item">
+            <div class="trap-wrong"><span class="trap-x">✗</span> <span dir="ltr">originaire à</span></div>
+            <div class="trap-right"><span class="trap-check">✓</span> <span dir="ltr">originaire de</span></div>
+            <div class="trap-why">💡 Je suis originaire de la région de Hamedan.</div>
+        </div></div>
+    </div>
+    </div>
+
     <div class="footer">
       ✦ هر روز یکی‌دو سؤال را با صدای بلند تمرین کن. هدف: روان‌بودن، نه بی‌نقص‌بودن.<br>
       <b>Français avec Hoda</b> · پرونده‌ی اختصاصی علیرضا
