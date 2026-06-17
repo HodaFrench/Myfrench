@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>افعال کمکی وجهی و ضمایر مفعولی | Grammaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --purple:#7a5ba8;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
+  .wrap{max-width:780px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:38px 30px; border-radius:20px; text-align:center; margin-bottom:26px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header .fa{font-size:15px; opacity:.92;}
+
+  .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:28px; font-size:15px; line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+
+  .sec{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px 24px;
+    margin-bottom:22px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .sec-title{font-family:'Cormorant Garamond',serif; font-size:25px; font-weight:600; color:var(--navy);
+    margin-bottom:8px; direction:ltr; text-align:left;}
+  .sec-title-fa{font-size:14px; color:var(--gold); font-weight:700; margin-bottom:18px;}
+  .sec p{font-size:14.5px; line-height:2.1; margin-bottom:12px;}
+  .sec p b{color:var(--navy);}
+
+  /* جدول صرف */
+  .conj-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:18px 0;}
+  @media(max-width:640px){.conj-grid{grid-template-columns:1fr;}}
+  .conj-card{background:var(--cream); border-radius:12px; padding:16px; border-top:3px solid var(--navy-soft);}
+  .conj-card h4{font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--navy); direction:ltr; text-align:center; margin-bottom:4px;}
+  .conj-mean{font-size:12px; color:var(--gold); text-align:center; margin-bottom:12px; font-weight:700;}
+  .conj-card .row{display:flex; justify-content:space-between; font-size:14px; padding:3px 0; direction:ltr; border-bottom:1px dashed var(--line);}
+  .conj-card .row:last-child{border-bottom:none;}
+  .conj-card .pron{color:var(--gray);}
+  .conj-card .form{font-weight:600; color:var(--navy);}
+
+  /* جعبه‌ی قاعده */
+  .rule{background:linear-gradient(135deg,rgba(122,91,168,0.08),rgba(196,165,114,0.07));
+    border-right:5px solid var(--purple); border-radius:12px; padding:18px 20px; margin:18px 0;}
+  .rule .rt{font-size:14px; font-weight:700; color:var(--purple); margin-bottom:10px;}
+  .ex{direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-size:17px;
+    color:var(--navy); background:var(--white); padding:10px 14px; border-radius:8px; margin:8px 0; line-height:1.7;}
+  .ex .hl{background:rgba(122,91,168,0.18); padding:1px 5px; border-radius:4px; font-weight:700;}
+  .ex-fa{font-size:13px; color:var(--gray); margin:2px 0 12px; line-height:1.8;}
+
+  /* تمرین */
+  .quiz-sec{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--green);
+    border-radius:16px; padding:26px 24px; margin-top:30px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz-sec h3{font-size:18px; color:var(--navy); font-weight:700; margin-bottom:6px;}
+  .quiz-sec .qsub{font-size:13.5px; color:var(--gray); margin-bottom:20px;}
+  .q-item{margin-bottom:22px; padding-bottom:22px; border-bottom:1px dashed var(--line);}
+  .q-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600;}
+  .q-fa{font-size:13px; color:var(--gray); margin-bottom:12px;}
+  .q-opts{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .q-opt{font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; direction:ltr;
+    background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .q-opt:hover:not(.done){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .q-opt.correct{background:rgba(46,139,107,0.15); border-color:var(--green); color:var(--green);}
+  .q-opt.wrong{background:rgba(196,80,45,0.1); border-color:var(--terracotta); color:var(--terracotta);}
+  .q-ans{display:none; font-size:13.5px; line-height:1.9; background:var(--paper-warm); border-right:3px solid var(--green);
+    border-radius:8px; padding:10px 14px;}
+  .q-ans.show{display:block; animation:fade .3s;}
+  .q-ans b{color:var(--green);}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+  .footer{text-align:center; margin-top:34px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+
+    <div class="header">
+      <div class="tag">Grammaire</div>
+      <h1>Auxiliaires modaux & pronoms compléments</h1>
+      <div class="fa">افعال کمکی وجهی و ضمایر مفعولی</div>
+    </div>
+
+    <div class="lead">
+      دو تا فعل پشت سر هم داری و نمی‌دونی ضمیر (مثل le, la, lui...) رو کجا بذاری؟ 🤔
+      این درس دقیقاً همین گره را باز می‌کند! اول با سه فعل پرکاربرد <b>pouvoir</b>، <b>vouloir</b> و <b>devoir</b> آشنا می‌شویم، بعد یاد می‌گیریم وقتی این‌ها با یک فعل مصدر می‌آیند، ضمیر مفعولی کجا می‌نشیند. نگران نباش، خیلی ساده‌تر از چیزیه که فکر می‌کنی! 😊
+    </div>
+
+    <!-- بخش ۱ -->
+    <div class="sec">
+      <div class="sec-title">1. Les trois verbes modaux</div>
+      <div class="sec-title-fa">سه فعل وجهی پرکاربرد</div>
+      <p>این سه فعل را «وجهی» (modaux) می‌نامیم چون <b>حالت و نیت</b> گوینده را نشان می‌دهند: توانایی، خواست، یا الزام. نکته‌ی مهم: تقریباً همیشه بعد از آن‌ها یک <b>فعل مصدر</b> (infinitif) می‌آید.</p>
+      <div class="conj-grid">
+        <div class="conj-card">
+          <h4 dir="ltr">pouvoir</h4>
+          <div class="conj-mean">توانستن (امکان/اجازه)</div>
+          <div class="row"><span class="pron">je</span><span class="form">peux</span></div>
+          <div class="row"><span class="pron">tu</span><span class="form">peux</span></div>
+          <div class="row"><span class="pron">il/elle</span><span class="form">peut</span></div>
+          <div class="row"><span class="pron">nous</span><span class="form">pouvons</span></div>
+          <div class="row"><span class="pron">vous</span><span class="form">pouvez</span></div>
+          <div class="row"><span class="pron">ils/elles</span><span class="form">peuvent</span></div>
+        </div>
+        <div class="conj-card">
+          <h4 dir="ltr">vouloir</h4>
+          <div class="conj-mean">خواستن (میل/اراده)</div>
+          <div class="row"><span class="pron">je</span><span class="form">veux</span></div>
+          <div class="row"><span class="pron">tu</span><span class="form">veux</span></div>
+          <div class="row"><span class="pron">il/elle</span><span class="form">veut</span></div>
+          <div class="row"><span class="pron">nous</span><span class="form">voulons</span></div>
+          <div class="row"><span class="pron">vous</span><span class="form">voulez</span></div>
+          <div class="row"><span class="pron">ils/elles</span><span class="form">veulent</span></div>
+        </div>
+        <div class="conj-card">
+          <h4 dir="ltr">devoir</h4>
+          <div class="conj-mean">بایستن (الزام/وظیفه)</div>
+          <div class="row"><span class="pron">je</span><span class="form">dois</span></div>
+          <div class="row"><span class="pron">tu</span><span class="form">dois</span></div>
+          <div class="row"><span class="pron">il/elle</span><span class="form">doit</span></div>
+          <div class="row"><span class="pron">nous</span><span class="form">devons</span></div>
+          <div class="row"><span class="pron">vous</span><span class="form">devez</span></div>
+          <div class="row"><span class="pron">ils/elles</span><span class="form">doivent</span></div>
+        </div>
+      </div>
+      <div class="ex">Je <b>peux</b> nager. <span class="ex-fa-inline"></span></div>
+      <div class="ex-fa">می‌توانم شنا کنم. (توانایی)</div>
+      <div class="ex">Tu <b>veux</b> partir maintenant ?</div>
+      <div class="ex-fa">می‌خواهی الان بروی؟ (خواست)</div>
+      <div class="ex">Nous <b>devons</b> étudier ce soir.</div>
+      <div class="ex-fa">امشب باید درس بخوانیم. (الزام)</div>
+    </div>
+
+    <!-- بخش ۲ -->
+    <div class="sec">
+      <div class="sec-title">2. Les pronoms compléments</div>
+      <div class="sec-title-fa">ضمایر مفعولی — یک یادآوری کوتاه</div>
+      <p>ضمایر مفعولی جای اسم را می‌گیرند تا تکرار نشود. دو نوع اصلی داریم:</p>
+      <div class="rule">
+        <div class="rt">◆ مفعول مستقیم (COD)</div>
+        <div class="ex"><span class="hl">me, te, le, la, nous, vous, les</span></div>
+        <div class="ex-fa">به سؤال «چه چیزی / چه کسی را؟» پاسخ می‌دهند. مثال: Je vois <b>Marie</b> → Je <b>la</b> vois (او را می‌بینم).</div>
+        <div class="rt">◆ مفعول غیرمستقیم (COI)</div>
+        <div class="ex"><span class="hl">me, te, lui, nous, vous, leur</span></div>
+        <div class="ex-fa">به سؤال «به چه کسی؟» پاسخ می‌دهند. مثال: Je parle <b>à Paul</b> → Je <b>lui</b> parle (به او حرف می‌زنم).</div>
+      </div>
+    </div>
+
+    <!-- بخش ۳ - قاعده‌ی اصلی -->
+    <div class="sec">
+      <div class="sec-title">3. La règle d'or ✨</div>
+      <div class="sec-title-fa">قاعده‌ی طلایی: ضمیر کجا می‌نشیند؟</div>
+      <p>حالا مهم‌ترین قسمت! وقتی یک فعل وجهی (pouvoir/vouloir/devoir) با یک <b>فعل مصدر</b> می‌آید، ضمیر مفعولی <b>درست قبل از فعل مصدر</b> قرار می‌گیرد، نه قبل از فعل صرف‌شده.</p>
+      <div class="rule">
+        <div class="rt">📐 ساختار: فاعل + فعل وجهی + <span style="color:var(--purple)">ضمیر</span> + مصدر</div>
+        <div class="ex">Je veux voir ce film. → Je veux <span class="hl">le</span> voir.</div>
+        <div class="ex-fa">می‌خواهم این فیلم را ببینم. → می‌خواهم آن را ببینم. (ضمیر le قبل از voir)</div>
+        <div class="ex">Tu peux aider Marie ? → Tu peux <span class="hl">l'</span>aider ?</div>
+        <div class="ex-fa">می‌توانی به ماری کمک کنی؟ → می‌توانی به او کمک کنی؟</div>
+        <div class="ex">Elle doit parler à ses parents. → Elle doit <span class="hl">leur</span> parler.</div>
+        <div class="ex-fa">او باید با والدینش حرف بزند. → او باید با آن‌ها حرف بزند.</div>
+        <div class="ex">Nous voulons téléphoner à toi. → Nous voulons <span class="hl">te</span> téléphoner.</div>
+        <div class="ex-fa">می‌خواهیم به تو زنگ بزنیم.</div>
+      </div>
+      <p>💡 <b>چرا؟</b> چون ضمیر در واقع به <b>فعل مصدر</b> مربوط است، نه به فعل وجهی. پس می‌رود کنار همان فعلی که معنایش به آن وابسته است. منطقی است، نه؟ 😉</p>
+      <div class="rule" style="border-right-color:var(--terracotta); background:linear-gradient(135deg,rgba(196,80,45,0.06),rgba(196,165,114,0.06));">
+        <div class="rt" style="color:var(--terracotta);">⚠️ اشتباه رایج</div>
+        <div class="ex" style="text-decoration:line-through; color:var(--terracotta);">Je le veux voir.</div>
+        <div class="ex-fa">❌ غلط! ضمیر را قبل از فعل وجهی نگذار.</div>
+        <div class="ex" style="color:var(--green);">Je veux le voir. ✓</div>
+        <div class="ex-fa">✅ درست! ضمیر قبل از مصدر.</div>
+      </div>
+    </div>
+
+    <!-- بخش ۴ - حالت منفی -->
+    <div class="sec">
+      <div class="sec-title">4. À la forme négative</div>
+      <div class="sec-title-fa">در حالت منفی</div>
+      <p>در حالت منفی، <b>ne...pas</b> دور فعل <b>وجهی</b> (فعل صرف‌شده) می‌آید، و ضمیر همچنان کنار مصدر می‌ماند.</p>
+      <div class="rule">
+        <div class="ex">Je <span class="hl">ne</span> peux <span class="hl">pas</span> <span style="color:var(--purple);font-weight:700;">le</span> faire.</div>
+        <div class="ex-fa">نمی‌توانم آن را انجام دهم.</div>
+        <div class="ex">Elle <span class="hl">ne</span> veut <span class="hl">pas</span> <span style="color:var(--purple);font-weight:700;">leur</span> répondre.</div>
+        <div class="ex-fa">او نمی‌خواهد به آن‌ها پاسخ دهد.</div>
+      </div>
+    </div>
+
+    <!-- تمرین -->
+    <div class="quiz-sec">
+      <h3>🎯 حالا تمرین کن!</h3>
+      <div class="qsub">گزینه‌ی درست را انتخاب کن. روی پاسخ کلیک کن تا درست/غلط بودنش و توضیح را ببینی.</div>
+
+      <div class="q-item">
+        <div class="q-text">Tu veux regarder ce film ? → Tu veux ___ regarder ?</div>
+        <div class="q-fa">می‌خواهی این فیلم را تماشا کنی؟ → می‌خواهی آن را تماشا کنی؟</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">le veux</button>
+          <button class="q-opt" onclick="ans(this,1,1)">le</button>
+          <button class="q-opt" onclick="ans(this,2,1)">lui</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: le</b> — «ce film» مفعول مستقیم است (مذکر)، پس با <b>le</b> جایگزین می‌شود و قبل از مصدر regarder می‌آید: Tu veux <b>le</b> regarder ?</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Je dois téléphoner à mes amis. → Je dois ___ téléphoner.</div>
+        <div class="q-fa">باید به دوستانم زنگ بزنم. → باید به آن‌ها زنگ بزنم.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,2)">les</button>
+          <button class="q-opt" onclick="ans(this,1,2)">leur</button>
+          <button class="q-opt" onclick="ans(this,2,2)">lui</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: leur</b> — «téléphoner à quelqu'un» مفعول غیرمستقیم می‌سازد. برای جمع از <b>leur</b> استفاده می‌کنیم: Je dois <b>leur</b> téléphoner.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Vous pouvez aider Sophie ? → Vous pouvez ___ aider ?</div>
+        <div class="q-fa">می‌توانید به سوفی کمک کنید؟ → می‌توانید به او کمک کنید؟</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">lui</button>
+          <button class="q-opt" onclick="ans(this,1,1)">l'</button>
+          <button class="q-opt" onclick="ans(this,2,1)">la veux</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: l'</b> — فعل «aider quelqu'un» مفعول مستقیم می‌گیرد. «Sophie» مؤنث است → la، که چون قبل از حرف صدادار (a) آمده، می‌شود <b>l'</b> : Vous pouvez <b>l'</b>aider ?</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">کدام جمله درست است؟</div>
+        <div class="q-fa">جایگاه درست ضمیر را پیدا کن.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">Je la veux acheter.</button>
+          <button class="q-opt" onclick="ans(this,1,1)">Je veux l'acheter.</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: Je veux l'acheter.</b> — ضمیر باید قبل از <b>مصدر</b> (acheter) بیاید، نه قبل از فعل وجهی (veux). پس «Je la veux acheter» غلط است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Elle ne veut pas parler à Paul. → Elle ne veut pas ___ parler.</div>
+        <div class="q-fa">او نمی‌خواهد با پل حرف بزند. → او نمی‌خواهد با او حرف بزند.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">le</button>
+          <button class="q-opt" onclick="ans(this,1,1)">lui</button>
+          <button class="q-opt" onclick="ans(this,2,1)">leur</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: lui</b> — «parler à quelqu'un» مفعول غیرمستقیم است. برای مفرد <b>lui</b> به کار می‌رود. توجه کن که در حالت منفی، ضمیر باز هم کنار مصدر می‌ماند: Elle ne veut pas <b>lui</b> parler.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ✦ هر وقت دو فعل دیدی، یادت باشد: ضمیر کنار مصدر می‌نشیند!<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+
+  <script>
+    function ans(el, idx, correctIdx){
+      const item = el.closest('.q-item');
+      if(item.dataset.done) return;
+      item.dataset.done = "1";
+      const opts = item.querySelectorAll('.q-opt');
+      opts.forEach((o,i)=>{ o.classList.add('done'); if(i===correctIdx) o.classList.add('correct'); });
+      if(idx!==correctIdx) el.classList.add('wrong');
+      item.querySelector('.q-ans').classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>

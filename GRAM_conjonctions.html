@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حروف ربط وابسته‌ساز | Grammaire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#b07a4a; --gold-soft:#c4a572; --terracotta:#c4502d;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --purple:#7a5ba8;
+  }
+  body{font-family:'Vazirmatn',Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{text-align:center; margin-bottom:24px;}
+  .topbar a{display:inline-block; color:var(--navy); text-decoration:none; font-size:14px;
+    border:1px solid var(--line); background:var(--cream); padding:8px 18px; border-radius:8px; transition:all .25s;}
+  .topbar a:hover{background:var(--navy); color:var(--cream);}
+
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:var(--cream);
+    padding:38px 30px; border-radius:20px; text-align:center; margin-bottom:26px;
+    box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
+  .header h1{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header .fa{font-size:15px; opacity:.92;}
+
+  .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:18px 22px; margin-bottom:24px; font-size:15px; line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+
+  /* راهنمای رنگ حالت فعل */
+  .legend{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:26px; font-size:13px;}
+  .legend span{display:inline-flex; align-items:center; gap:7px; background:var(--white); border:1px solid var(--line); padding:7px 14px; border-radius:20px;}
+  .dot{width:12px; height:12px; border-radius:50%; display:inline-block;}
+  .dot.ind{background:var(--navy-soft);}
+  .dot.sub{background:var(--purple);}
+  .dot.con{background:var(--terracotta);}
+
+  /* دسته‌ها */
+  .cat{background:var(--white); border:1px solid var(--line); border-radius:18px; padding:24px;
+    margin-bottom:22px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .cat-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; padding-bottom:14px; border-bottom:2px solid var(--line);}
+  .cat-emoji{font-size:26px;}
+  .cat-title{font-family:'Cormorant Garamond',serif; font-size:23px; font-weight:600; color:var(--navy); direction:ltr;}
+  .cat-title-fa{font-size:13px; color:var(--gold); font-weight:700;}
+
+  .conj{margin-bottom:16px; padding:14px 16px; background:var(--cream); border-radius:12px;}
+  .conj:last-child{margin-bottom:0;}
+  .conj-top{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px;}
+  .conj-mot{font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:700; color:var(--navy); direction:ltr;}
+  .conj-fa{font-size:13px; color:var(--ink); background:var(--white); padding:2px 10px; border-radius:12px;}
+  .mode-tag{font-size:11px; font-weight:700; padding:2px 9px; border-radius:10px; margin-right:auto;}
+  .mode-tag.ind{background:rgba(65,97,138,0.13); color:var(--navy-soft);}
+  .mode-tag.sub{background:rgba(122,91,168,0.13); color:var(--purple);}
+  .mode-tag.con{background:rgba(196,80,45,0.12); color:var(--terracotta);}
+  .conj-ex{direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-size:16px;
+    color:var(--navy-soft); font-style:italic; line-height:1.7; margin-top:6px;}
+  .conj-ex-fa{font-size:12.5px; color:var(--gray); line-height:1.8; margin-top:3px;}
+
+  /* جعبه‌ی نکته */
+  .tip{background:linear-gradient(135deg,rgba(122,91,168,0.07),rgba(196,165,114,0.06));
+    border-right:5px solid var(--purple); border-radius:12px; padding:16px 20px; margin:22px 0; font-size:14px; line-height:2;}
+  .tip b{color:var(--purple);}
+  .tip.warn{border-right-color:var(--terracotta); background:linear-gradient(135deg,rgba(196,80,45,0.06),rgba(196,165,114,0.06));}
+  .tip.warn b{color:var(--terracotta);}
+
+  /* تمرین */
+  .quiz-sec{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--green);
+    border-radius:16px; padding:26px 24px; margin-top:30px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz-sec h3{font-size:18px; color:var(--navy); font-weight:700; margin-bottom:6px;}
+  .quiz-sec .qsub{font-size:13.5px; color:var(--gray); margin-bottom:20px;}
+  .q-item{margin-bottom:22px; padding-bottom:22px; border-bottom:1px dashed var(--line);}
+  .q-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600;}
+  .q-fa{font-size:13px; color:var(--gray); margin-bottom:12px;}
+  .q-opts{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
+  .q-opt{font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; direction:ltr;
+    background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .q-opt:hover:not(.done){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .q-opt.correct{background:rgba(46,139,107,0.15); border-color:var(--green); color:var(--green);}
+  .q-opt.wrong{background:rgba(196,80,45,0.1); border-color:var(--terracotta); color:var(--terracotta);}
+  .q-ans{display:none; font-size:13.5px; line-height:1.9; background:var(--paper-warm); border-right:3px solid var(--green); border-radius:8px; padding:10px 14px;}
+  .q-ans.show{display:block; animation:fade .3s;}
+  .q-ans b{color:var(--green);}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+  .footer{text-align:center; margin-top:34px; color:var(--gray); font-size:13px;}
+  .footer b{color:var(--navy);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><a href="index.html">← بازگشت به کتابخانه</a></div>
+
+    <div class="header">
+      <div class="tag">Grammaire</div>
+      <h1>Conjonctions de subordination</h1>
+      <div class="fa">حروف ربط وابسته‌ساز و عبارت‌های ربطی</div>
+    </div>
+
+    <div class="lead">
+      حروف ربط وابسته‌ساز کلماتی هستند که دو جمله را به هم وصل می‌کنند و یکی را به دیگری <b>وابسته</b> می‌کنند — درست مثل پل! 🌉
+      این‌ها رابطه‌ی بین دو جمله را نشان می‌دهند: زمان، علت، هدف، تضاد، شرط و... .
+      مهم‌ترین نکته این است که هر کدام چه <b>حالتی از فعل</b> (indicatif یا subjonctif) را می‌خواهند. این درس همه را دسته‌بندی‌شده، با مثال و ترجمه به تو می‌دهد. آماده‌ای؟ بزن بریم! ✨
+    </div>
+
+    <div class="legend">
+      <span><span class="dot ind"></span> + Indicatif (وجه اخباری)</span>
+      <span><span class="dot sub"></span> + Subjonctif (وجه التزامی)</span>
+      <span><span class="dot con"></span> + Conditionnel (وجه شرطی)</span>
+    </div>
+
+    <!-- زمان -->
+    <div class="cat">
+      <div class="cat-head">
+        <span class="cat-emoji">⏰</span>
+        <div><div class="cat-title">Le temps</div><div class="cat-title-fa">زمان</div></div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">quand / lorsque</span><span class="conj-fa">وقتی که</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Quand je rentre à la maison, je prépare un thé.</div>
+        <div class="conj-ex-fa">وقتی به خانه برمی‌گردم، یک چای درست می‌کنم.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">pendant que</span><span class="conj-fa">در حالی که / همزمان</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Pendant que tu cuisines, je mets la table.</div>
+        <div class="conj-ex-fa">در حالی که تو آشپزی می‌کنی، من میز را می‌چینم.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">dès que</span><span class="conj-fa">به‌محض اینکه</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Dès que le soleil se lève, les oiseaux chantent.</div>
+        <div class="conj-ex-fa">به‌محض اینکه خورشید طلوع می‌کند، پرندگان آواز می‌خوانند.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">avant que</span><span class="conj-fa">پیش از اینکه</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Rentre avant qu'il fasse nuit.</div>
+        <div class="conj-ex-fa">پیش از اینکه هوا تاریک شود برگرد.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">jusqu'à ce que</span><span class="conj-fa">تا زمانی که</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Attends ici jusqu'à ce que je revienne.</div>
+        <div class="conj-ex-fa">اینجا منتظر بمان تا زمانی که برگردم.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">après que</span><span class="conj-fa">پس از اینکه</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Après qu'il a fini ses devoirs, il a joué dehors.</div>
+        <div class="conj-ex-fa">پس از اینکه تکالیفش را تمام کرد، بیرون بازی کرد.</div>
+      </div>
+      <div class="tip warn"><b>⚠️ تله‌ی معروف:</b> «avant que» با subjonctif می‌آید، ولی «après que» با indicatif! خیلی‌ها این دو را اشتباه می‌کنند. منطقش: «بعد از اینکه» یعنی کار قطعاً اتفاق افتاده (واقعیت = indicatif)، ولی «قبل از اینکه» هنوز قطعی نیست (= subjonctif).</div>
+    </div>
+
+    <!-- علت -->
+    <div class="cat">
+      <div class="cat-head">
+        <span class="cat-emoji">🎯</span>
+        <div><div class="cat-title">La cause</div><div class="cat-title-fa">علت و دلیل</div></div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">parce que</span><span class="conj-fa">چون / زیرا</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Je reste à la maison parce qu'il pleut.</div>
+        <div class="conj-ex-fa">خانه می‌مانم چون باران می‌بارد.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">puisque</span><span class="conj-fa">از آنجا که (علتِ آشکار)</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Puisque tu es fatigué, repose-toi.</div>
+        <div class="conj-ex-fa">از آنجا که خسته‌ای، استراحت کن.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">étant donné que</span><span class="conj-fa">با توجه به اینکه</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Étant donné qu'il fait froid, mets ton manteau.</div>
+        <div class="conj-ex-fa">با توجه به اینکه هوا سرد است، کتت را بپوش.</div>
+      </div>
+      <div class="tip"><b>💡 نکته:</b> «parce que» به سؤال «pourquoi؟» جواب می‌دهد و علت را معرفی می‌کند. اما «puisque» علتی را بیان می‌کند که گوینده فکر می‌کند طرف مقابل از قبل می‌داند (علت بدیهی).</div>
+    </div>
+
+    <!-- هدف -->
+    <div class="cat">
+      <div class="cat-head">
+        <span class="cat-emoji">🚀</span>
+        <div><div class="cat-title">Le but</div><div class="cat-title-fa">هدف</div></div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">pour que</span><span class="conj-fa">برای اینکه / تا</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Je t'explique tout pour que tu comprennes bien.</div>
+        <div class="conj-ex-fa">همه‌چیز را برایت توضیح می‌دهم تا خوب بفهمی.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">afin que</span><span class="conj-fa">به‌منظور اینکه (رسمی‌تر)</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Elle parle lentement afin que tout le monde comprenne.</div>
+        <div class="conj-ex-fa">او آهسته صحبت می‌کند تا همه بفهمند.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">de peur que</span><span class="conj-fa">از ترس اینکه</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Il chuchote de peur que les enfants se réveillent.</div>
+        <div class="conj-ex-fa">آهسته پچ‌پچ می‌کند از ترس اینکه بچه‌ها بیدار شوند.</div>
+      </div>
+      <div class="tip"><b>💡 قانون ساده:</b> تقریباً همه‌ی حروف ربطِ «هدف» با <b>subjonctif</b> می‌آیند، چون هدف چیزی است که هنوز محقق نشده و فقط یک خواسته است.</div>
+    </div>
+
+    <!-- تضاد -->
+    <div class="cat">
+      <div class="cat-head">
+        <span class="cat-emoji">⚔️</span>
+        <div><div class="cat-title">L'opposition / la concession</div><div class="cat-title-fa">تضاد و امتیاز</div></div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">bien que / quoique</span><span class="conj-fa">با اینکه / هرچند</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Bien qu'il soit malade, il travaille.</div>
+        <div class="conj-ex-fa">با اینکه بیمار است، کار می‌کند.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">alors que / tandis que</span><span class="conj-fa">در حالی که (در مقابل)</span><span class="mode-tag ind">indicatif</span></div>
+        <div class="conj-ex">Il aime le café, alors que je préfère le thé.</div>
+        <div class="conj-ex-fa">او قهوه دوست دارد، در حالی که من چای را ترجیح می‌دهم.</div>
+      </div>
+      <div class="tip warn"><b>⚠️ دقت:</b> «bien que» (با اینکه) همیشه <b>subjonctif</b> می‌خواهد، اما «alors que» (در حالی که) با <b>indicatif</b> می‌آید. جمله‌ی «Bien qu'il est malade» غلط است؛ درستش «Bien qu'il <b>soit</b> malade» است.</div>
+    </div>
+
+    <!-- شرط -->
+    <div class="cat">
+      <div class="cat-head">
+        <span class="cat-emoji">🔑</span>
+        <div><div class="cat-title">La condition</div><div class="cat-title-fa">شرط</div></div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">à condition que</span><span class="conj-fa">به‌شرط اینکه</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">Tu peux sortir à condition que tu finisses tes devoirs.</div>
+        <div class="conj-ex-fa">می‌توانی بیرون بروی به‌شرط اینکه تکالیفت را تمام کنی.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">à moins que</span><span class="conj-fa">مگر اینکه</span><span class="mode-tag sub">subjonctif</span></div>
+        <div class="conj-ex">On ira à la plage à moins qu'il pleuve.</div>
+        <div class="conj-ex-fa">به ساحل می‌رویم مگر اینکه باران ببارد.</div>
+      </div>
+      <div class="conj">
+        <div class="conj-top"><span class="conj-mot" dir="ltr">au cas où</span><span class="conj-fa">در صورتی که / اگر احیاناً</span><span class="mode-tag con">conditionnel</span></div>
+        <div class="conj-ex">Prends un parapluie au cas où il pleuvrait.</div>
+        <div class="conj-ex-fa">یک چتر بردار در صورتی که احیاناً باران بیاید.</div>
+      </div>
+      <div class="tip"><b>💡 نکته‌ی جالب:</b> «au cas où» تنها حرف ربطی است که با <b>conditionnel</b> (وجه شرطی) می‌آید، نه subjonctif. این را به خاطر بسپار چون خاص است!</div>
+    </div>
+
+    <!-- تمرین -->
+    <div class="quiz-sec">
+      <h3>🎯 حالا امتحان کن!</h3>
+      <div class="qsub">فعل یا حرف ربط درست را انتخاب کن. روی پاسخ کلیک کن تا توضیح را ببینی.</div>
+
+      <div class="q-item">
+        <div class="q-text">Bien qu'il ___ riche, il n'est pas heureux.</div>
+        <div class="q-fa">با اینکه ثروتمند است، خوشحال نیست.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">est</button>
+          <button class="q-opt" onclick="ans(this,1,1)">soit</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: soit</b> — «bien que» همیشه با <b>subjonctif</b> می‌آید. صرف être در subjonctif برای «il» می‌شود «soit».</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Je t'appelle ___ tu arrives à la maison.</div>
+        <div class="q-fa">به تو زنگ می‌زنم به‌محض اینکه به خانه برسی.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">pour que</button>
+          <button class="q-opt" onclick="ans(this,1,1)">dès que</button>
+          <button class="q-opt" onclick="ans(this,2,1)">avant que</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: dès que</b> — معنای جمله «به‌محض اینکه» است که زمان را نشان می‌دهد. «dès que» درست است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Rentre à la maison avant qu'il ___ nuit.</div>
+        <div class="q-fa">پیش از اینکه هوا تاریک شود به خانه برگرد.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">fait</button>
+          <button class="q-opt" onclick="ans(this,1,1)">fasse</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: fasse</b> — «avant que» با <b>subjonctif</b> می‌آید. صرف faire در subjonctif برای «il» می‌شود «fasse».</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">___ tu es fatigué, va te reposer.</div>
+        <div class="q-fa">از آنجا که خسته‌ای، برو استراحت کن.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">Pour que</button>
+          <button class="q-opt" onclick="ans(this,1,1)">Puisque</button>
+          <button class="q-opt" onclick="ans(this,2,1)">Avant que</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: Puisque</b> — «از آنجا که» علتی بدیهی را معرفی می‌کند. «Puisque» اینجا درست است و با indicatif (es) می‌آید.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Après qu'il ___ son travail, il est sorti.</div>
+        <div class="q-fa">پس از اینکه کارش را تمام کرد، بیرون رفت.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">ait fini</button>
+          <button class="q-opt" onclick="ans(this,1,1)">a fini</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: a fini</b> — برخلاف «avant que»، حرف ربط «après que» با <b>indicatif</b> می‌آید (چون کار قطعاً اتفاق افتاده). پس «a fini» درست است.</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-text">Prends ton manteau ___ il ferait froid ce soir.</div>
+        <div class="q-fa">کتت را بردار در صورتی که احیاناً امشب هوا سرد شود.</div>
+        <div class="q-opts">
+          <button class="q-opt" onclick="ans(this,0,1)">pour que</button>
+          <button class="q-opt" onclick="ans(this,1,1)">au cas où</button>
+          <button class="q-opt" onclick="ans(this,2,1)">bien que</button>
+        </div>
+        <div class="q-ans"><b>پاسخ: au cas où</b> — «در صورتی که احیاناً» با conditionnel (ferait) می‌آید. تنها گزینه‌ای که با این حالت می‌خواند «au cas où» است.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ✦ راز موفقیت: یاد بگیر هر حرف ربط چه حالتی از فعل می‌خواهد!<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+
+  <script>
+    function ans(el, idx, correctIdx){
+      const item = el.closest('.q-item');
+      if(item.dataset.done) return;
+      item.dataset.done = "1";
+      const opts = item.querySelectorAll('.q-opt');
+      opts.forEach((o,i)=>{ o.classList.add('done'); if(i===correctIdx) o.classList.add('correct'); });
+      if(idx!==correctIdx) el.classList.add('wrong');
+      item.querySelector('.q-ans').classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
