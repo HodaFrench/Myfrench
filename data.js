@@ -1047,6 +1047,7 @@ const MINIARTICLES = [
     titre: "Qu'est-ce qui fait durer l'amour ?",
     emoji: "❤️",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Aujourd'hui, les jeunes sont ⟦entourés|احاطه‌شده⟧ de messages sur l'amour romantique : dans les films, sur les réseaux sociaux et à travers les ⟦influenceurs|اینفلوئنسرها⟧. Ces messages montrent souvent l'amour comme quelque chose de facile et de parfait. Cela crée des ⟦attentes|انتظارات⟧ ⟦irréalistes|غیرواقعی⟧ sur les relations.",
       "Pourtant, un amour ⟦sain|سالم⟧ ⟦repose sur|متکی است بر⟧ la ⟦confiance|اعتماد⟧, le ⟦respect|احترام⟧, une communication honnête et la capacité à gérer les ⟦désaccords|اختلاف‌نظرها⟧ avec ⟦bienveillance|مهربانی⟧. Apprendre ces ⟦compétences|مهارت‌ها⟧ tôt peut aider les jeunes à construire des relations plus ⟦solides|محکم⟧ à l'avenir.",
@@ -1061,6 +1062,7 @@ const MINIARTICLES = [
     titre: "Faut-il éviter de prendre le petit-déjeuner ?",
     emoji: "🍳",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Pendant longtemps, le petit-déjeuner a été ⟦considéré comme|تلقی شده به‌عنوان⟧ « le repas le plus important de la journée ». Mais est-ce que tout le monde ⟦devrait|باید⟧ vraiment en prendre ?",
       "La réponse est plus ⟦nuancée|ظریف / دقیق⟧ qu'un simple oui ou non. ⟦Sauter|رد کردن / حذف کردن⟧ le petit-déjeuner peut ⟦convenir à|مناسب بودن برای⟧ certaines personnes, mais ce n'est pas ⟦automatiquement|به‌طور خودکار⟧ plus sain. Ce qui compte le plus, c'est votre ⟦alimentation|تغذیه⟧ globale et la qualité des aliments que vous ⟦consommez|مصرف می‌کنید⟧.",
@@ -1076,6 +1078,7 @@ const MINIARTICLES = [
     titre: "Le secret pour passer le meilleur été de votre vie",
     emoji: "☀️",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Beaucoup de personnes pensent qu'un été réussi ⟦nécessite|نیاز دارد به⟧ des voyages ⟦coûteux|پرهزینه⟧ ou des projets ⟦extraordinaires|خارق‌العاده⟧. Pourtant, les plus beaux ⟦souvenirs|خاطرات⟧ ⟦naissent|متولد می‌شوند⟧ souvent des moments les plus simples.",
       "Une promenade au ⟦coucher du soleil|غروب آفتاب⟧, un pique-nique entre amis, la lecture d'un livre dans un parc ou la ⟦découverte|کشف⟧ d'un nouveau ⟦quartier|محله⟧ de votre ville peuvent rendre l'été vraiment spécial. Les psychologues expliquent que vivre de nouvelles ⟦expériences|تجربه‌ها⟧ aide à créer des souvenirs plus ⟦marquants|ماندگار⟧.",
@@ -1090,6 +1093,7 @@ const MINIARTICLES = [
     titre: "La lumière du matin : l'antidépresseur que nous négligeons",
     emoji: "☀️",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Beaucoup d'entre nous commencent leur journée en regardant leur téléphone, alors que notre cerveau attend en réalité quelque chose de bien plus important : la lumière du soleil du matin.",
       "Selon les psychologues, ⟦s'exposer à|قرار گرفتن در معرض⟧ la lumière naturelle peu après le ⟦réveil|بیدار شدن⟧ aide à ⟦réguler|تنظیم کردن⟧ notre ⟦horloge biologique|ساعت زیستی⟧, améliore la qualité du ⟦sommeil|خواب⟧ et ⟦favorise|تقویت می‌کند⟧ une meilleure humeur. La lumière matinale ⟦signale|علامت می‌دهد⟧ au cerveau de réduire la production de ⟦mélatonine|ملاتونین⟧ et d'augmenter l'état d'⟦éveil|بیداری⟧.",
@@ -1105,6 +1109,7 @@ const MINIARTICLES = [
     titre: "« Sois heureux. » — mais est-ce le vrai but ?",
     emoji: "🌍",
     niveau: "B2",
+    cat: "general",
     paras: [
       "La société moderne ⟦considère|در نظر می‌گیرد⟧ souvent le ⟦bonheur|خوشبختی⟧ comme le ⟦but ultime|هدف نهایی⟧ de la vie. Pourtant, toutes les cultures ne voient pas la vie de cette manière.",
       "Une récente étude ⟦interculturelle|بین‌فرهنگی⟧ a montré que, dans de nombreux pays ⟦occidentaux|غربی⟧, les gens recherchent un « bonheur ⟦maximal|حداکثری⟧ », ⟦tandis que|در حالی که⟧ au Japon ou au Bhoutan, on préfère souvent une vie ⟦émotionnelle|عاطفی⟧ plus ⟦équilibrée|متعادل⟧. Pour eux, une belle vie ⟦repose aussi sur|متکی است بر⟧ l'⟦harmonie|هماهنگی⟧, le sens, les relations humaines et la ⟦paix intérieure|آرامش درونی⟧.",
@@ -1119,6 +1124,7 @@ const MINIARTICLES = [
     titre: "Pourquoi les matins sont-ils si difficiles ?",
     emoji: "🌅",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Pour beaucoup de gens, le matin est le moment le plus ⟦difficile|سخت⟧ de la journée. On se sent ⟦fatigué|خسته⟧, de mauvaise ⟦humeur|خلق‌وخو⟧, et l'idée de sortir du lit ⟦semble|به نظر می‌رسد⟧ presque impossible. Mais pourquoi ?",
       "Pendant la nuit, notre corps se ⟦repose|استراحت می‌کند⟧ et notre cerveau a besoin de temps pour se ⟦réveiller|بیدار شدن⟧ complètement. De plus, beaucoup de personnes regardent leur téléphone juste après le réveil, ce qui ⟦fatigue|خسته می‌کند⟧ l'esprit dès les premières minutes.",
@@ -1133,6 +1139,7 @@ const MINIARTICLES = [
     titre: "La magie d'une courte promenade après le repas",
     emoji: "🚶",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Après un bon repas, on a souvent ⟦envie de|تمایل به⟧ s'asseoir sur le canapé et de ne rien faire. Pourtant, une courte promenade peut faire des ⟦merveilles|معجزه⟧ pour notre corps et notre esprit.",
       "Les ⟦chercheurs|پژوهشگران⟧ expliquent que marcher dix ou quinze minutes après le repas aide à mieux ⟦digérer|هضم کردن⟧ et à ⟦stabiliser|تثبیت کردن⟧ le taux de sucre dans le sang. C'est particulièrement utile après un repas ⟦copieux|سنگین / مفصل⟧.",
@@ -1147,6 +1154,7 @@ const MINIARTICLES = [
     titre: "Le manque de sommeil n'est pas qu'une simple fatigue",
     emoji: "😴",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Quand on ne dort pas assez, on pense souvent que le seul ⟦problème|مشکل⟧ est la fatigue. Mais le manque de ⟦sommeil|خواب⟧ a des effets beaucoup plus ⟦profonds|عمیق⟧ sur notre corps et notre esprit.",
       "Dormir trop peu ⟦affecte|تأثیر می‌گذارد بر⟧ la mémoire, la concentration et même l'⟦humeur|خلق‌وخو⟧. Une personne fatiguée devient plus facilement ⟦irritable|زودرنج⟧, plus ⟦stressée⟧ et a du mal à prendre de bonnes ⟦décisions|تصمیم‌ها⟧. Le manque de sommeil peut aussi ⟦affaiblir|تضعیف کردن⟧ le système immunitaire.",
@@ -1161,6 +1169,7 @@ const MINIARTICLES = [
     titre: "L'art de dire « non » sans culpabiliser",
     emoji: "🙅",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Dire « non » est souvent plus ⟦difficile|سخت⟧ qu'il n'y paraît. Beaucoup de personnes ⟦acceptent|می‌پذیرند⟧ des choses qu'elles ne veulent pas faire, simplement pour ne pas ⟦décevoir|ناامید کردن⟧ les autres. Résultat : elles se sentent ⟦fatiguées|خسته⟧ et ⟦frustrées|سرخورده⟧.",
       "Pourtant, dire « non » n'est pas ⟦égoïste|خودخواهانه⟧. C'est une façon de ⟦respecter|احترام گذاشتن⟧ son temps, son énergie et ses ⟦besoins|نیازها⟧. Quand on dit oui à tout, on finit par dire non à soi-même.",
@@ -1175,6 +1184,7 @@ const MINIARTICLES = [
     titre: "Pourquoi sommes-nous plus à l'aise avec certaines personnes ?",
     emoji: "🤝",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Avez-vous remarqué qu'avec certaines personnes, tout ⟦semble|به نظر می‌رسد⟧ facile ? On se sent ⟦à l'aise|راحت⟧, on rit, le temps passe vite. Avec d'autres, au contraire, on se sent ⟦épuisé|خسته⟧ après quelques minutes.",
       "Les psychologues parlent d'⟦énergie sociale|انرژی اجتماعی⟧. Chaque personne a une quantité ⟦limitée|محدود⟧ d'énergie pour les interactions. Certaines relations nous ⟦rechargent|دوباره شارژ می‌کنند⟧, tandis que d'autres nous ⟦vident|خالی می‌کنند⟧.",
@@ -1189,6 +1199,7 @@ const MINIARTICLES = [
     titre: "L'écoute véritable, une compétence rare",
     emoji: "👂",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Écouter ⟦semble|به نظر می‌رسد⟧ simple, mais écouter ⟦vraiment|واقعاً⟧ est beaucoup plus rare qu'on ne le pense. Souvent, pendant que l'autre parle, on prépare déjà notre ⟦réponse|پاسخ⟧ dans notre tête, sans vraiment l'écouter.",
       "L'écoute ⟦véritable|واقعی⟧ demande de la ⟦patience|صبر⟧ et de l'⟦attention|توجه⟧. Cela signifie ⟦poser|کنار گذاشتن⟧ son téléphone, regarder la personne et ⟦accueillir|پذیرفتن⟧ ses mots sans juger. C'est un ⟦cadeau|هدیه⟧ qu'on offre à l'autre.",
@@ -1203,6 +1214,7 @@ const MINIARTICLES = [
     titre: "Les erreurs, nos vrais professeurs",
     emoji: "🎓",
     niveau: "B1",
+    cat: "general",
     paras: [
       "Personne n'aime se ⟦tromper|اشتباه کردن⟧. Une erreur peut nous faire sentir ⟦honteux|شرمنده⟧ ou ⟦déçus|ناامید⟧. Pourtant, les erreurs sont souvent nos meilleurs ⟦professeurs|معلم‌ها⟧.",
       "Quand on fait une erreur, on ⟦apprend|یاد می‌گیریم⟧ quelque chose de nouveau. On comprend ce qui ne ⟦marche|کار می‌کند⟧ pas et comment ⟦s'améliorer|بهتر شدن⟧. Sans erreurs, il n'y a pas de ⟦progrès|پیشرفت⟧. Même les grands artistes et scientifiques ont ⟦échoué|شکست خورده‌اند⟧ de nombreuses fois avant de ⟦réussir|موفق شدن⟧.",
@@ -1217,6 +1229,7 @@ const MINIARTICLES = [
     titre: "Pourquoi se comparer aux autres nous épuise",
     emoji: "🪞",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Aujourd'hui, il est très facile de se ⟦comparer|مقایسه کردن⟧ aux autres. Sur les réseaux sociaux, on voit des gens qui ⟦semblent|به نظر می‌رسند⟧ plus heureux, plus beaux ou plus ⟦performants|موفق⟧ que nous. Et souvent, cela nous rend ⟦tristes|غمگین⟧.",
       "Le ⟦problème|مشکل⟧, c'est qu'on compare notre vie réelle à une ⟦image|تصویر⟧ parfaite et souvent fausse. Les gens ne montrent que leurs meilleurs moments, jamais leurs ⟦doutes|تردیدها⟧ ni leurs ⟦difficultés|دشواری‌ها⟧.",
@@ -1231,6 +1244,7 @@ const MINIARTICLES = [
     titre: "Le pouvoir des petits débuts",
     emoji: "🌱",
     niveau: "B1",
+    cat: "general",
     paras: [
       "On pense souvent qu'il faut un grand ⟦effort|تلاش⟧ ou un moment parfait pour commencer quelque chose. Alors on ⟦attend|منتظر می‌مانیم⟧... et on ne ⟦commence|شروع می‌کنیم⟧ jamais. Mais la ⟦vérité|حقیقت⟧, c'est que les grandes choses commencent toujours petit.",
       "Lire une seule ⟦page|صفحه⟧ par jour, marcher dix minutes, écrire trois ⟦lignes|خط⟧ : ces petits gestes ⟦semblent|به نظر می‌رسند⟧ ⟦insignifiants|بی‌اهمیت⟧. Pourtant, ⟦répétés|تکرارشده⟧ chaque jour, ils ⟦produisent|تولید می‌کنند⟧ de grands résultats.",
@@ -1245,6 +1259,7 @@ const MINIARTICLES = [
     titre: "Pourquoi sommes-nous toujours pressés ?",
     emoji: "⏳",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Dans la vie moderne, tout le monde ⟦semble|به نظر می‌رسد⟧ ⟦pressé|عجول⟧. On marche vite, on mange vite, on répond vite. On a toujours l'⟦impression|احساس⟧ de manquer de temps. Mais pourquoi cette ⟦course|دوندگی⟧ permanente ?",
       "La technologie nous a ⟦habitués|عادت داده⟧ à tout obtenir ⟦immédiatement|فوراً⟧. Un message, une réponse, une livraison : tout doit aller vite. Résultat : on perd la ⟦capacité|توانایی⟧ d'attendre et d'⟦apprécier|قدر دانستن⟧ le moment présent.",
@@ -1259,6 +1274,7 @@ const MINIARTICLES = [
     titre: "La solitude à l'ère des réseaux sociaux",
     emoji: "📱",
     niveau: "B2",
+    cat: "general",
     paras: [
       "Nous sommes plus ⟦connectés|متصل⟧ que jamais. Avec un téléphone, on peut parler à des gens du monde entier en quelques ⟦secondes|ثانیه⟧. Et pourtant, beaucoup de personnes se sentent plus ⟦seules|تنها⟧ qu'avant. Comment est-ce possible ?",
       "Sur les réseaux sociaux, on a des ⟦centaines|صدها⟧ d'« amis », mais peu de ⟦véritables|واقعی⟧ relations. On ⟦échange|تبادل می‌کنیم⟧ des messages, des photos, des « j'aime », mais ces contacts ⟦restent|باقی می‌مانند⟧ souvent ⟦superficiels|سطحی⟧.",
@@ -1273,6 +1289,7 @@ const MINIARTICLES = [
     titre: "Acheter moins, être plus heureux ?",
     emoji: "🛍️",
     niveau: "B1",
+    cat: "general",
     paras: [
       "La ⟦publicité|تبلیغات⟧ nous répète chaque jour la même chose : pour être heureux, il faut ⟦acheter|خریدن⟧ plus. Un nouveau téléphone, de nouveaux ⟦vêtements|لباس‌ها⟧, de nouveaux objets. Mais est-ce que posséder plus nous rend vraiment plus heureux ?",
       "Les ⟦recherches|پژوهش‌ها⟧ montrent le contraire. Après l'⟦achat|خرید⟧, le ⟦plaisir|لذت⟧ disparaît vite, et on veut déjà autre chose. C'est un ⟦cercle|چرخه⟧ sans fin. Acheter trop peut même créer du ⟦stress|استرس⟧ et du ⟦désordre|بی‌نظمی⟧ dans notre vie.",
@@ -1283,7 +1300,87 @@ const MINIARTICLES = [
       fa: "خوشبختی در آنچه داریم نیست، در آن چیزی است که قدرش را می‌دانیم. کمتر داشتن، گاهی یعنی بهتر زیستن.",
     },
   },
-];
+  {
+    titre: "Faire des études permet-il de réussir sa carrière ?",
+    emoji: "🎓",
+    niveau: "B1",
+    cat: "tcf",
+    paras: [
+      "De nos jours, beaucoup de gens pensent que faire de longues ⟦études|تحصیلات⟧ est la clé pour ⟦réussir|موفق شدن⟧ sa carrière professionnelle. Cette idée est très ⟦répandue|رایج⟧, mais est-elle toujours vraie ? À mon avis, les études aident beaucoup, mais elles ne ⟦suffisent|کافی بودن⟧ pas à elles seules.",
+      "D'un côté, il est vrai que les études ⟦apportent|به ارمغان می‌آورند⟧ des connaissances et des ⟦compétences|مهارت‌ها⟧ importantes. Un ⟦diplôme|مدرک⟧ ouvre souvent des portes et ⟦facilite|آسان می‌کند⟧ l'accès à de bons emplois. Par exemple, pour devenir médecin ou ingénieur, les études sont ⟦indispensables|ضروری⟧.",
+      "D'un autre côté, le diplôme ne fait pas tout. De nombreuses ⟦qualités|ویژگی‌ها⟧ personnelles, comme la ⟦motivation|انگیزه⟧, la ⟦persévérance|پشتکار⟧ et la capacité à travailler en ⟦équipe|تیم⟧, sont aussi essentielles. D'ailleurs, certains ⟦entrepreneurs|کارآفرینان⟧ célèbres ont réussi sans diplôme.",
+      "En conclusion, je pense que les études ⟦constituent|تشکیل می‌دهند⟧ un atout important, mais elles ne ⟦garantissent|تضمین می‌کنند⟧ pas le succès. La réussite dépend aussi de l'effort personnel et des ⟦opportunités|فرصت‌ها⟧ que l'on sait ⟦saisir|قاپیدن / استفاده کردن از⟧.",
+    ],
+    morale: {
+      fr: "Les études sont une base solide, mais c'est la volonté et le travail qui construisent une vraie réussite.",
+      fa: "تحصیلات یک پایه‌ی محکم است، اما این اراده و تلاش است که موفقیت واقعی را می‌سازد.",
+    },
+  },
+  {
+    titre: "Vivre à l'étranger : plus d'avantages ou d'inconvénients ?",
+    emoji: "🌍",
+    niveau: "B1",
+    cat: "tcf",
+    paras: [
+      "Aujourd'hui, de plus en plus de personnes ⟦choisissent|انتخاب می‌کنند⟧ de vivre à l'⟦étranger|خارج از کشور⟧, que ce soit pour le travail, les études ou simplement par envie de ⟦changement|تغییر⟧. Mais cette expérience ⟦présente|دارد / ارائه می‌دهد⟧ à la fois des avantages et des inconvénients.",
+      "Parmi les avantages, vivre à l'étranger permet de ⟦découvrir|کشف کردن⟧ une nouvelle culture, d'apprendre une langue et de ⟦s'ouvrir|باز شدن⟧ l'esprit. C'est aussi une excellente occasion de ⟦développer|توسعه دادن⟧ son ⟦autonomie|استقلال⟧ et sa ⟦confiance en soi|اعتمادبه‌نفس⟧.",
+      "Cependant, il y a aussi des ⟦difficultés|دشواری‌ها⟧. Loin de sa famille et de ses amis, on peut ⟦ressentir|احساس کردن⟧ de la ⟦solitude|تنهایی⟧. De plus, la ⟦barrière|مانع⟧ de la langue et les différences culturelles ⟦rendent|می‌کنند⟧ parfois l'⟦adaptation|سازگاری⟧ difficile.",
+      "En conclusion, je pense que vivre à l'étranger ⟦présente|دارد⟧ plus d'avantages que d'inconvénients, à condition d'être bien ⟦préparé|آماده⟧. Cette expérience est ⟦enrichissante|غنی‌کننده⟧ et permet de grandir, malgré les ⟦défis|چالش‌ها⟧.",
+    ],
+    morale: {
+      fr: "Vivre à l'étranger n'est pas toujours facile, mais c'est une aventure qui transforme et fait grandir.",
+      fa: "زندگی در خارج همیشه آسان نیست، اما تجربه‌ای است که آدم را دگرگون می‌کند و رشد می‌دهد.",
+    },
+  },
+  {
+    titre: "Apprendre la langue du pays est-il essentiel pour s'intégrer ?",
+    emoji: "🗣️",
+    niveau: "B2",
+    cat: "tcf",
+    paras: [
+      "Lorsqu'on ⟦s'installe|مستقر می‌شویم⟧ dans un nouveau pays, la question de la langue se pose ⟦rapidement|به‌سرعت⟧. Faut-il absolument ⟦maîtriser|مسلط شدن بر⟧ la langue locale pour s'⟦intégrer|ادغام شدن⟧ ? Pour ma part, je suis ⟦convaincu|متقاعد⟧ que c'est un élément ⟦fondamental|اساسی⟧.",
+      "Tout d'abord, la langue est le principal ⟦outil|ابزار⟧ de communication. Sans elle, il est difficile d'accomplir les tâches du quotidien, comme faire ses courses, consulter un médecin ou chercher un emploi. La langue permet aussi de ⟦tisser|بافتن / ایجاد کردن⟧ des liens avec les habitants.",
+      "De plus, parler la langue du pays est une marque de ⟦respect|احترام⟧ envers la culture qui nous ⟦accueille|پذیرایی می‌کند⟧. Cela ⟦facilite|آسان می‌کند⟧ non seulement l'intégration sociale, mais aussi professionnelle. Une personne qui maîtrise la langue ⟦inspire|الهام می‌بخشد⟧ davantage confiance.",
+      "Cependant, l'intégration ne ⟦repose|متکی است⟧ pas uniquement sur la langue. Le respect des ⟦coutumes|آداب‌ورسوم⟧ et l'ouverture d'esprit comptent aussi. En conclusion, apprendre la langue est essentiel, car elle est la ⟦clé|کلید⟧ qui ouvre la porte de la société.",
+    ],
+    morale: {
+      fr: "La langue n'est pas seulement un outil : c'est un pont entre les cultures et la première clé de l'intégration.",
+      fa: "زبان فقط یک ابزار نیست: پلی است میان فرهنگ‌ها و نخستین کلید ادغام در جامعه.",
+    },
+  },
+  {
+    titre: "Quel rôle joue la télévision dans l'éducation des enfants ?",
+    emoji: "📺",
+    niveau: "B1",
+    cat: "tcf",
+    paras: [
+      "La ⟦télévision|تلویزیون⟧ occupe une place importante dans la vie de nombreuses familles. Certains la ⟦considèrent|در نظر می‌گیرند⟧ comme un outil ⟦éducatif|آموزشی⟧, tandis que d'autres la voient comme une mauvaise ⟦influence|تأثیر⟧. Quel est donc son véritable rôle dans l'éducation des enfants ?",
+      "D'un côté, la télévision peut être ⟦bénéfique|مفید⟧. Les ⟦documentaires|مستندها⟧ et les émissions éducatives ⟦permettent|اجازه می‌دهند⟧ aux enfants de découvrir le monde, d'⟦enrichir|غنی کردن⟧ leur vocabulaire et de ⟦stimuler|تحریک کردن⟧ leur curiosité.",
+      "D'un autre côté, un usage ⟦excessif|بیش‌ازحد⟧ peut être ⟦nuisible|مضر⟧. Trop de télévision peut ⟦réduire|کاهش دادن⟧ le temps consacré à la lecture, au sport ou aux ⟦échanges|تبادل‌ها⟧ familiaux. De plus, certains programmes ne sont pas ⟦adaptés|مناسب⟧ aux jeunes.",
+      "En conclusion, je pense que la télévision peut jouer un rôle positif, à condition d'être bien ⟦encadrée|نظارت‌شده⟧. Le rôle des parents est ⟦crucial|بسیار مهم⟧ : ils doivent ⟦choisir|انتخاب کردن⟧ les programmes et ⟦limiter|محدود کردن⟧ le temps d'écran.",
+    ],
+    morale: {
+      fr: "La télévision n'est ni bonne ni mauvaise en soi : tout dépend de la manière dont on l'utilise.",
+      fa: "تلویزیون نه ذاتاً خوب است نه بد: همه‌چیز به نحوه‌ی استفاده از آن بستگی دارد.",
+    },
+  },
+  {
+    titre: "Internet favorise-t-il l'isolement des individus ?",
+    emoji: "🌐",
+    niveau: "B2",
+    cat: "tcf",
+    paras: [
+      "Internet a ⟦profondément|عمیقاً⟧ transformé notre façon de communiquer. Si certains ⟦affirment|ادعا می‌کنند⟧ qu'il nous ⟦rapproche|نزدیک می‌کند⟧, d'autres ⟦estiment|معتقدند⟧ au contraire qu'il ⟦favorise|تقویت می‌کند⟧ l'⟦isolement|انزوا⟧. Qu'en est-il vraiment ?",
+      "Il est vrai qu'Internet peut ⟦éloigner|دور کردن⟧ les gens. Certaines personnes passent des heures devant leur écran et ⟦négligent|غفلت می‌کنند از⟧ les relations réelles. Les ⟦échanges|تبادل‌ها⟧ virtuels ⟦remplacent|جایگزین می‌کنند⟧ parfois les vraies ⟦rencontres|دیدارها⟧, ce qui peut créer un sentiment de ⟦solitude|تنهایی⟧.",
+      "Cependant, Internet permet aussi de ⟦maintenir|حفظ کردن⟧ le contact avec des proches ⟦éloignés|دور⟧ et de ⟦rencontrer|ملاقات کردن⟧ des personnes qui partagent les mêmes ⟦centres d'intérêt|علایق⟧. Pour les personnes ⟦timides|خجالتی⟧ ou isolées, il peut même être un véritable ⟦lien|پیوند⟧ social.",
+      "En conclusion, je pense qu'Internet n'est pas ⟦responsable|مسئول⟧ de l'isolement en lui-même. Tout dépend de l'usage que l'on en fait. Utilisé avec ⟦modération|اعتدال⟧, il reste un formidable outil de communication.",
+    ],
+    morale: {
+      fr: "Internet rapproche ceux qui sont loin, mais peut éloigner ceux qui sont proches. L'équilibre est la clé.",
+      fa: "اینترنت دورها را نزدیک می‌کند، اما می‌تواند نزدیکان را دور کند. تعادل، کلید ماجراست.",
+    },
+  },
+]; 
 
 // ═══════════════════════════════════════════════════════════
 //  InnerFrench — پادکست با متن کامل و واژگان کلیکی
