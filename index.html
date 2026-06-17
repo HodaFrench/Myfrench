@@ -1067,6 +1067,7 @@
         let activeSection = null;  // بخش فعال (مثل expression-orale)
         let activeTask = null;     // تکلیف فعال (مثل tache-3)
         let activeSujet = null;    // موضوع فعال (مثل immigration)
+        let activeGroupe = null;   // پوشه‌ی فعال در گرامر (مثل conditionnel)
 
         function lessonsIn(catId) {
             return LESSONS.filter(l => l.category === catId).length;
@@ -1107,6 +1108,7 @@
             activeSection = null;
             activeTask = null;
             activeSujet = null;
+            activeGroupe = null;
             document.getElementById("search").value = "";
             openResults();
             // دسته‌ی نکته‌های طلایی → نمایش مخصوص
@@ -1120,6 +1122,9 @@
                 renderReactions();
             } else if (catId === "prononciation") {
                 renderPrononciation();
+            } else if (catId === "grammar" && !activeGroupe) {
+                // گرامر زیرپوشه‌ها (مودهای فعلی) دارد → اول پوشه‌ها را نشان بده
+                renderGroupes(catId);
             } else if (catId !== "all" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
@@ -1357,6 +1362,61 @@
                 </button>`).join("");
         }
 
+        // اطلاعات پوشه‌های گرامر (مودهای فعلی و دسته‌بندی‌ها)
+        const GRAMMAR_GROUPES = {
+            "conditionnel": { fr: "Le Conditionnel", fa: "وجه شرطی", icon: "◈" },
+            "subjonctif":   { fr: "Le Subjonctif", fa: "وجه التزامی", icon: "◈" },
+            "indicatif":    { fr: "L'Indicatif", fa: "وجه اخباری", icon: "◈" },
+            "autres":       { fr: "Points divers", fa: "نکته‌های متفرقه", icon: "✦" },
+        };
+
+        // نمایش پوشه‌های گرامر (هر مود فعلی یک پوشه)
+        function renderGroupes(catId) {
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo(catId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            // گروه‌بندی محتواهای گرامر بر اساس فیلد groupe (پیش‌فرض: autres)
+            const lessons = LESSONS.filter(l => l.category === catId);
+            const groupesMap = {};
+            lessons.forEach(l => {
+                const g = l.groupe || "autres";
+                if (!groupesMap[g]) groupesMap[g] = [];
+                groupesMap[g].push(l);
+            });
+            // ترتیب نمایش: ابتدا مودهای تعریف‌شده، سپس autres
+            const order = ["conditionnel", "subjonctif", "indicatif", "autres"];
+            const keys = Object.keys(groupesMap).sort((a,b) => {
+                const ia = order.indexOf(a), ib = order.indexOf(b);
+                return (ia<0?99:ia) - (ib<0?99:ib);
+            });
+            document.getElementById("count").textContent = keys.length + " پوشه";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = keys.map(g => {
+                const info = GRAMMAR_GROUPES[g] || { fr: g, fa: "", icon: "✦" };
+                const n = groupesMap[g].length;
+                return `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openGroupe('${g}')">
+                    <span class="sub-fr-l" dir="ltr">${info.icon} ${info.fr}</span>
+                    <span class="sub-fa-l">${info.fa}</span>
+                    <span class="sub-go">${n} درس ←</span>
+                </button>`;
+            }).join("");
+        }
+
+        // باز کردن یک پوشه‌ی گرامر → نمایش محتواهای داخلش
+        function openGroupe(groupe) {
+            activeGroupe = groupe;
+            openResults();
+            const ci = catInfo("grammar");
+            const info = GRAMMAR_GROUPES[groupe] || { fr: groupe, fa: "" };
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + info.fr +
+                (info.fa ? ' <span style="font-size:15px;color:var(--gray)">· ' + info.fa + '</span>' : '');
+            render();
+        }
+
+
         // نمایش کارت‌های تکلیف (مثل Tâche 3)
         function openSection(catId, secId) {
             activeSection = secId;
@@ -1446,6 +1506,7 @@
             activeSection = null;
             activeTask = null;
             activeSujet = null;
+            activeGroupe = null;
             document.getElementById("search").value = "";
             document.getElementById("results").classList.remove("show");
             document.getElementById("hero").classList.remove("shrink");
@@ -1459,6 +1520,7 @@
 
             let filtered = LESSONS.filter(l => {
                 const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
+                const matchGroupe = !activeGroupe || (l.groupe || "autres") === activeGroupe;
                 const matchSection = !activeSection || l.section === activeSection;
                 const matchTask = !activeTask || l.task === activeTask;
                 const matchSujet = !activeSujet || l.sujet === activeSujet;
@@ -1466,7 +1528,7 @@
                     (l.title && l.title.toLowerCase().includes(q)) ||
                     (l.titleFr && l.titleFr.toLowerCase().includes(q)) ||
                     (l.tags && l.tags.join(" ").toLowerCase().includes(q));
-                return matchCat && matchSection && matchTask && matchSujet && matchSearch;
+                return matchCat && matchGroupe && matchSection && matchTask && matchSujet && matchSearch;
             });
 
             document.getElementById("count").textContent = filtered.length + " محتوا";
