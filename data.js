@@ -84,6 +84,52 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_prepositions.html",
+    title: "درسنامه: حروف اضافه‌ی فرانسه",
+    titleFr: "Les prépositions françaises",
+    category: "grammar",
+    level: "A2–B2",
+    tags: ["درسنامه", "حروف اضافه"],
+    summary: "حروف اضافهٔ پرکاربرد: à/de/en/dans/sur + فعل‌ها + حروف اضافه + اصطلاحات ثابت. با جدول، مثال و آزمون تعاملی.",
+  },
+  {
+    file: "LECON_prepositions_exercices.html",
+    title: "درسنامه: تمرین حروف اضافه",
+    titleFr: "Exercices sur les prépositions",
+    category: "grammar",
+    level: "A2–B1",
+    tags: ["درسنامه", "تمرین", "حروف اضافه"],
+    summary: "تمرین حروف اضافه در موقعیت‌های واقعی: سفر، زندگی روزمره، اصطلاحات ثابت grâce à/à cause de. با آزمون.",
+  },
+  {
+    file: "LECON_articles.html",
+    title: "درسنامه: آرتیکل‌ها در فرانسه",
+    titleFr: "Les articles en français",
+    category: "grammar",
+    level: "A1–B1",
+    tags: ["درسنامه", "آرتیکل", "le la les"],
+    summary: "سه نوع آرتیکل: défini (le/la)، indéfini (un/une)، partitif (du/de la). انقباض au/du + نفی → de. با آزمون.",
+  },
+  {
+    file: "LECON_sentir.html",
+    title: "درسنامه: SENTIR یا SE SENTIR؟",
+    titleFr: "Sentir vs Se sentir",
+    category: "grammar",
+    level: "A2–B1",
+    tags: ["درسنامه", "فعل انعکاسی", "sentir"],
+    summary: "تفاوت sentir (بوی دادن / حس کردن از بیرون) و se sentir (احساس کردن درباره‌ی خودت). sentir bon vs se sentir bien. با آزمون.",
+  },
+  {
+    file: "LECON_certain_quelque.html",
+    title: "درسنامه: CERTAIN یا QUELQUE؟",
+    titleFr: "Certain ou quelque ?",
+    category: "grammar",
+    level: "B1–B2",
+    tags: ["درسنامه", "واژگان", "certain quelque"],
+    summary: "تفاوت دقیق certain (بعضی‌های مشخص) و quelques (چند تا). ترکیب‌های ثابت: quelque chose، quelque part. با آزمون.",
+  },
+
+  {
     file: "ARTICLE_voleurs_energie.html",
     title: "۱۰ دزد انرژی در زندگی",
     titleFr: "10 voleurs de votre énergie",
