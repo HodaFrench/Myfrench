@@ -1701,6 +1701,11 @@ const PRIVE = [
         desc: "هفت سؤال با پنج نسخه‌ی جواب و تمرین کنترل‌شده",
         link: "PRIVE_alireza_task1.html",
       },
+      {
+        titre: "🗣️ Expression Orale — Tâche 3",
+        desc: "بیان دیدگاه: الگوی استاندارد + ساختارها + سه موضوع با استدلال",
+        link: "PRIVE_alireza_task3.html",
+      },
     ],
   },
 ];
