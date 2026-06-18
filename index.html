@@ -504,6 +504,35 @@
         .prive-item-go { font-size: 16px; color: #7a5ba8; }
         .prive-empty { font-size: 13px; color: var(--gray); text-align: center; padding: 20px; font-style: italic; }
 
+        /* پخش‌کننده‌ی کوچک پایین صفحه */
+        .mini-player {
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+            background: linear-gradient(135deg, #2e7bb5, #1a4f7a); color: #fff;
+            display: none; align-items: center; gap: 12px;
+            padding: 10px 16px; box-shadow: 0 -6px 24px rgba(31,58,95,0.25);
+            transform: translateY(100%); transition: transform 0.35s ease;
+        }
+        .mini-player.show { display: flex; transform: translateY(0); }
+        .mp-close {
+            background: rgba(255,255,255,0.15); color: #fff; border: none;
+            width: 28px; height: 28px; border-radius: 50%; cursor: pointer; flex-shrink: 0;
+            font-size: 13px; transition: background 0.2s;
+        }
+        .mp-close:hover { background: rgba(255,255,255,0.3); }
+        .mp-icon {
+            font-size: 16px; width: 38px; height: 38px; background: rgba(255,255,255,0.15);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .mp-info { flex-shrink: 0; max-width: 180px; }
+        .mp-title { font-size: 13.5px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .mp-sub { font-size: 11px; opacity: 0.8; }
+        #mpAudio { height: 36px; border-radius: 8px; }
+        @media(max-width:600px){
+            .mini-player { flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
+            .mp-info { max-width: none; flex: 1; }
+            #mpAudio { width: 100%; flex-basis: 100%; }
+        }
+
         /* بخش InnerFrench */
         .if-card {
             display: flex; align-items: center; gap: 14px;
@@ -532,13 +561,20 @@
         .if-ep-titre-fa { font-size: 15px; color: var(--ink); margin-top: 4px; }
         .if-ep-theme { font-size: 12.5px; color: #2e7bb5; margin-top: 8px; background: rgba(46,123,181,0.08); display: inline-block; padding: 3px 12px; border-radius: 12px; }
         .if-player { margin-bottom: 14px; }
+        .if-play-btn {
+            display: block; width: 100%; text-align: center; font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, #2e7bb5, #1a4f7a); color: #fff;
+            font-size: 15px; font-weight: 700; padding: 14px; border: none; border-radius: 12px;
+            cursor: pointer; margin-bottom: 10px; transition: transform 0.2s, opacity 0.2s;
+        }
+        .if-play-btn:hover { transform: translateY(-1px); opacity: 0.95; }
         .if-source {
             display: block; text-align: center; text-decoration: none;
-            background: linear-gradient(135deg,#2e7bb5,#1a4f7a); color: #fff;
-            font-size: 14px; font-weight: 600; padding: 12px; border-radius: 10px; margin-bottom: 18px;
-            transition: opacity 0.2s;
+            background: var(--cream); color: #2e7bb5; border: 1px solid var(--line);
+            font-size: 13px; font-weight: 600; padding: 9px; border-radius: 10px; margin-bottom: 18px;
+            transition: all 0.2s;
         }
-        .if-source:hover { opacity: 0.9; }
+        .if-source:hover { background: rgba(46,123,181,0.08); border-color: #2e7bb5; }
         .if-intro { background: var(--paper-warm); border-right: 4px solid var(--gold-soft);
             border-radius: 10px; padding: 14px 18px; font-size: 14px; line-height: 2; margin-bottom: 16px; }
         .if-hint { font-size: 12.5px; color: var(--gray); background: var(--cream); padding: 8px 14px; border-radius: 8px; margin-bottom: 20px; }
@@ -1677,6 +1713,26 @@
         }
 
         // نمایش لیست قسمت‌های InnerFrench
+        // ── پخش‌کننده‌ی کوچک ──
+        function playInPlayer(audioUrl, title) {
+            const player = document.getElementById("miniPlayer");
+            const audio = document.getElementById("mpAudio");
+            document.getElementById("mpTitle").textContent = title;
+            // فقط اگر منبع عوض شده، دوباره بارگذاری کن
+            if (audio.getAttribute("data-src") !== audioUrl) {
+                audio.src = audioUrl;
+                audio.setAttribute("data-src", audioUrl);
+            }
+            player.classList.add("show");
+            audio.play().catch(() => {}); // اگر مرورگر اجازه نداد، کاربر دستی پلی می‌کند
+        }
+        function closeMiniPlayer() {
+            const player = document.getElementById("miniPlayer");
+            const audio = document.getElementById("mpAudio");
+            audio.pause();
+            player.classList.remove("show");
+        }
+
         // ── بخش شاگردان خصوصی (با رمز) ──
         let priveUnlocked = false;
         function renderPrive() {
@@ -1790,13 +1846,11 @@
                         ${ep.theme ? `<div class="if-ep-theme">${ep.theme}</div>` : ""}
                     </div>
                     ${ep.audio ? `
-                    <div class="if-player">
-                        <audio controls preload="metadata" style="width:100%">
-                            <source src="${safeUrl(ep.audio)}" type="audio/mpeg">
-                        </audio>
-                    </div>` : ""}
+                    <button class="if-play-btn" onclick="playInPlayer('${safeUrl(ep.audio)}', 'InnerFrench #${ep.num} — ${ep.titreFa}')">
+                        ▶ پخش پادکست در همین صفحه
+                    </button>` : ""}
                     <a class="if-source" href="${ep.source}" target="_blank" rel="noopener">
-                        🎧 گوش‌دادن و منبع اصلی در InnerFrench.com
+                        🔗 منبع اصلی در InnerFrench.com
                     </a>
                     ${ep.intro ? `<div class="if-intro">${ep.intro}</div>` : ""}
                     <div class="if-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی</div>
@@ -2324,6 +2378,16 @@
         buildLatest();
         buildCatGrid();
     </script>
+    <!-- پخش‌کننده‌ی کوچک پایین صفحه -->
+    <div id="miniPlayer" class="mini-player">
+        <button class="mp-close" onclick="closeMiniPlayer()" title="بستن">✕</button>
+        <div class="mp-icon">▶</div>
+        <div class="mp-info">
+            <div class="mp-title" id="mpTitle">—</div>
+            <div class="mp-sub" id="mpSub">InnerFrench</div>
+        </div>
+        <audio id="mpAudio" controls preload="none" style="flex:1; min-width:0;"></audio>
+    </div>
     <script src="protect.js"></script>
 </body>
 </html>

@@ -1425,8 +1425,8 @@ const INNERFRENCH = [
     titre: "Apprendre le français naturellement",
     titreFa: "یادگیری طبیعی زبان فرانسه",
     theme: "یادگیری زبان · نظریه‌ی Krashen",
-    audio: "",
     source: "https://innerfrench.com/01-learn-french-naturally/",
+    audio: "https://mcdn.podbean.com/mf/web/9wt5br/01_LCP001_-_Apprendre_le_francais.mp3",
     intro: "در این قسمت اول، هوگو خودش را معرفی می‌کند و درباره‌ی نظریه‌ی معروف استیون کراشن صحبت می‌کند: چطور یک زبان را به‌طور طبیعی یاد بگیریم؟ پنج فرضیه‌ی کلیدی که نگاه تو به یادگیری زبان را عوض می‌کند.",
     paras: [
       { fr: "Bonjour et bienvenue dans ce premier épisode. Merci d'être avec moi aujourd'hui, je suis très content que vous écoutiez ce podcast. Pour commencer, je vais vous présenter l'idée de ce podcast. C'est tout simplement pour les gens qui apprennent le français et qui ne ⟦trouvent|پیدا می‌کنند⟧ pas de choses intéressantes à écouter.", fa: "سلام و به اولین قسمت این پادکست خوش آمدید. ممنون که امروز با من هستید، خیلی خوشحالم که به این پادکست گوش می‌دهید. برای شروع، ایده‌ی این پادکست را برایتان توضیح می‌دهم. این پادکست برای کسانی است که فرانسه یاد می‌گیرند و چیز جالبی برای گوش‌دادن پیدا نمی‌کنند." },
@@ -1454,8 +1454,8 @@ const INNERFRENCH = [
     titre: "Vivre avec les robots",
     titreFa: "زندگی با ربات‌ها",
     theme: "فناوری · جامعه · ربات‌های احساساتی",
-    audio: "",
     source: "https://innerfrench.com/02-vivre-avec-robots/",
+    audio: "https://mcdn.podbean.com/mf/web/2g2xr3/02_LCP002_-_Emotional_robots.mp3",
     intro: "در این قسمت، هوگو درباره‌ی ربات‌ها حرف می‌زند: ربات‌های احساساتی مثل Pepper که احساسات ما را می‌فهمند، ربات‌های کمکی مثل Roméo و Nao، و در پایان، خطر سلاح‌های خودمختار. آیا ربات‌ها می‌توانند جای ما را بگیرند؟",
     paras: [
       { fr: "Bonjour à tous et bienvenue dans ce deuxième épisode du Cottongue podcast. Je suis très content de vous ⟦retrouver|دوباره دیدن⟧ pour ce deuxième podcast, j'espère que vous allez bien, j'espère que vous êtes en ⟦forme|سرحال⟧.", fa: "سلام به همه و به دومین قسمت این پادکست خوش آمدید. خیلی خوشحالم که دوباره برای این پادکست دوم می‌بینمتان، امیدوارم حالتان خوب باشد، امیدوارم سرحال باشید." },
@@ -1490,8 +1490,8 @@ const INNERFRENCH = [
     titre: "Les pays les plus heureux",
     titreFa: "خوشبخت‌ترین کشورها",
     theme: "فلسفه · جامعه · خوشبختی · World Happiness Report",
-    audio: "",
     source: "https://innerfrench.com/03-pays-les-plus-heureux/",
+    audio: "https://mcdn.podbean.com/mf/web/yzm7sk/03_LCP003_-_World_s_Happiest_Countries.mp3",
     intro: "در این قسمت، هوگو درباره‌ی خوشبختی حرف می‌زند: از فلسفه‌ی یونان باستان (ارسطو و «هدف نهایی») تا گزارش جهانی شادی و شش معیارش (ثروت، امید به زندگی، حمایت اجتماعی، اعتماد، آزادی، سخاوت). و در پایان: آیا «دیکتاتوری خوشبختی» وجود دارد؟",
     paras: [
       { fr: "Bonjour à tous et bienvenue ! C'est le troisième épisode du Cottongue Podcast. J'espère que tout va bien chez vous et que vous ⟦profitez de|profiter DE qqch = «لذت بردن از» — حرف اضافه‌ی de اجباری⟧ du printemps !", fa: "سلام به همه و خوش آمدید! این سومین قسمت پادکست است. امیدوارم همه‌چیز نزدتان خوب باشد و از بهار لذت ببرید!" },
