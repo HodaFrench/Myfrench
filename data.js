@@ -2111,6 +2111,11 @@ const PRIVE = [
         link: "PRIVE_kaveh_task3.html",
       },
       {
+        titre: "🎯 کوچ TCF B2 — مسیر کامل Task 3",
+        desc: "تشخیص نقطه‌ضعف + اسکلت ذهنی رفلکسی + ۱۵ موضوع با نقشه + تایمر آزمون + برنامهٔ روزانه",
+        link: "PRIVE_kaveh_coach.html",
+      },
+      {
         titre: "✍️ Expression Écrite — تحلیل متن استدلالی",
         desc: "تحلیل کامل یک متن B2: ساختار، هایلایت واژگان/ساختارها، جعبه‌ی ابزار + سؤال دوم با نقشه",
         link: "PRIVE_kaveh_ecrit.html",
