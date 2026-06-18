@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>۱۰ دزد انرژی — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --accent:#b0506f; --accent2:#2e7bb5;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+    --green:#2e8b6b; --gold:#b07a4a;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(176,80,111,0.04) 31px,rgba(176,80,111,0.04) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+
+  /* هدر مقاله */
+  .art-header{background:linear-gradient(135deg,var(--navy),var(--navy-soft)); color:#fff; padding:32px 28px; border-radius:20px; margin-bottom:22px; box-shadow:0 14px 34px rgba(31,58,95,.22); position:relative; overflow:hidden;}
+  .art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:170px;height:170px;background:rgba(255,255,255,.06);border-radius:50%;}
+  .art-source{font-size:11.5px; color:rgba(255,255,255,.7); letter-spacing:1.5px; margin-bottom:10px;}
+  .art-title{font-family:'Roboto',serif; font-size:24px; font-weight:700; line-height:1.35; direction:ltr; text-align:left; margin-bottom:8px;}
+  .art-title-fa{font-size:16px; opacity:.92;}
+  .art-meta{font-size:12px; color:rgba(255,255,255,.65); margin-top:12px; direction:ltr; text-align:left;}
+
+  /* راهنمای هایلایت */
+  .art-legend{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:22px; padding:14px 18px; background:var(--white); border:1px solid var(--line); border-radius:12px; font-size:13px;}
+  .leg-item{display:flex; align-items:center; gap:7px;}
+  .leg-dot{width:28px; height:14px; border-radius:4px; flex-shrink:0;}
+
+  /* بدنه‌ی مقاله */
+  .art-section{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:24px 22px; margin-bottom:16px; box-shadow:0 6px 18px rgba(31,58,95,.04);}
+  .art-section-title{font-family:'Roboto',serif; font-size:19px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--paper-warm); display:flex; align-items:center; gap:10px;}
+  .art-section-num{flex-shrink:0; width:30px; height:30px; border-radius:50%; background:var(--navy); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700;}
+
+  /* پاراگراف */
+  .art-para-fr{font-family:'Roboto',serif; font-size:17px; line-height:2; color:var(--ink); direction:ltr; text-align:left; padding:12px 16px; background:var(--cream); border-radius:10px; margin-bottom:10px; border-right:4px solid var(--line);}
+  .art-para-fa{font-size:14px; line-height:2.15; color:var(--gray); padding:0 6px 14px; border-bottom:1px dashed var(--line); margin-bottom:14px;}
+  .art-para-fa:last-child{border-bottom:none; padding-bottom:0; margin-bottom:0;}
+
+  /* هایلایت‌ها */
+  .hw{background:rgba(176,80,111,.12); color:#8a2040; border-radius:4px; padding:1px 4px; cursor:pointer; position:relative; font-weight:500; border-bottom:2px solid rgba(176,80,111,.4); transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,80,111,.22);}
+  .hs{background:rgba(46,123,181,.11); color:#1a5580; border-radius:4px; padding:1px 4px; cursor:pointer; position:relative; font-weight:500; border-bottom:2px dashed rgba(46,123,181,.5); transition:all .2s;}
+  .hs:hover,.hs.open{background:rgba(46,123,181,.22);}
+  .hs::before{content:"⚙ "; font-size:10px; opacity:.6;}
+  .hp{background:rgba(176,122,74,.13); color:#7a4a1a; border-radius:4px; padding:1px 4px; cursor:pointer; position:relative; font-weight:500; border-bottom:2px dotted rgba(176,122,74,.6); transition:all .2s;}
+  .hp:hover,.hp.open{background:rgba(176,122,74,.24);}
+  /* پاپ‌آپ */
+  .pop{position:absolute; bottom:130%; left:50%; transform:translateX(-50%); background:var(--navy); color:var(--cream);
+    font-family:'Estedad',sans-serif; font-size:13px; font-weight:500; direction:rtl; white-space:nowrap; padding:5px 12px;
+    border-radius:8px; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,.22); opacity:0; visibility:hidden; transition:opacity .25s; pointer-events:none;}
+  .hw.open .pop,.hs.open .pop,.hp.open .pop{opacity:1; visibility:visible;}
+
+  /* مقدمه */
+  .art-intro{background:linear-gradient(135deg,rgba(176,80,111,.07),rgba(46,123,181,.05)); border-right:5px solid var(--accent); border-radius:14px; padding:18px 20px; margin-bottom:24px;}
+  .art-intro .art-para-fr{background:transparent; border-right:none; padding:0; margin-bottom:10px;}
+  .art-intro .art-para-fa{color:var(--ink); opacity:.8;}
+
+  /* نتیجه‌گیری */
+  .art-credit{text-align:center; margin-top:24px; font-size:12px; color:var(--gray); padding-top:16px; border-top:1px dashed var(--line);}
+  .art-credit a{color:var(--accent2); text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=miniarticle">← مقاله‌ها</a>
+  </div>
+
+  <div class="art-header">
+    <div class="art-source">📰 PSYCHOLOGUE.NET · Développement personnel</div>
+    <div class="art-title">10 voleurs de votre énergie selon le Dalaï-Lama</div>
+    <div class="art-title-fa">۱۰ دزد انرژی در زندگی‌مان — از دیدگاه دالایی‌لاما</div>
+    <div class="art-meta">Niveau : B1–B2 · ۷ دقیقه · تحلیل آموزشی</div>
+  </div>
+
+  <div class="art-legend">
+    <div class="leg-item"><span class="leg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b> — کلیک برای معنی</span></div>
+    <div class="leg-item"><span class="leg-dot" style="background:rgba(46,123,181,.3); border:1px dashed rgba(46,123,181,.6)"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b> — کلیک برای توضیح</span></div>
+    <div class="leg-item"><span class="leg-dot" style="background:rgba(176,122,74,.25); border:1px dotted rgba(176,122,74,.6)"></span><span><b style="color:#7a4a1a">کلوکیشن / حرف اضافه</b></span></div>
+  </div>
+
+  <!-- مقدمه -->
+  <div class="art-intro">
+    <div class="art-para-fr">
+      Selon le <span class="hw" onclick="t(this)">Dalaï-Lama<span class="pop">رهبر روحانی بودایی تبت</span></span>, nous <span class="hs" onclick="t(this)">serions souvent en contact avec<span class="pop">«serions» = شرطی ادبی (conditonnel) → «گفته می‌شود که...» / انتساب به منبع</span></span> dix situations <span class="hw" onclick="t(this)">voleuses d'énergie<span class="pop">صفت: dérober/voler → voleuse. «voleuses d'énergie» = دزدهای انرژی</span></span>. Nous ne nous <span class="hs" onclick="t(this)">en rendons pas compte<span class="pop">«se rendre compte de» = متوجه شدن. «en» جایگزین «de ces situations» است</span></span> car ces situations sont <span class="hw" onclick="t(this)">courantes<span class="pop">courant(e) = رایج / معمول (≠ courant électrique)</span></span> et simples, mais leur <span class="hw" onclick="t(this)">accumulation<span class="pop">accumulation (f) = انباشتن / تجمع → accumuler</span></span> peut réellement nous faire beaucoup de mal.
+    </div>
+    <div class="art-para-fa">طبق گفته‌ی دالایی‌لاما، ما اغلب با ده موقعیتِ دزدِ انرژی در تماسیم. متوجه‌شان نمی‌شویم چون رایج و ساده‌اند، اما انباشته‌شدن‌شان می‌تواند واقعاً برایمان مضر باشد.</div>
+
+    <div class="art-para-fr">
+      Chaque jour, nous sommes <span class="hw" onclick="t(this)">engagés<span class="pop">être engagé dans = درگیر بودن در / وارد شدن در</span></span> dans des situations <span class="hw" onclick="t(this)">banales<span class="pop">banal(e) = پیش‌پاافتاده / کلیشه‌ای (جمع: banals/banales)</span></span>, <span class="hw" onclick="t(this)">classiques<span class="pop">classique = معمول / سنتی / کلاسیک</span></span>, qui nous sont parfois <span class="hw" onclick="t(this)">pénibles<span class="pop">pénible = طاقت‌فرسا / دشوار / آزاردهنده</span></span> mais <span class="hs" onclick="t(this)">auxquelles nous ne prêtons pas plus d'attention que cela<span class="pop">«auxquelles» = à + lesquelles (relative با حرف اضافه). «prêter attention à» = توجه کردن به</span></span>. Et pourtant, ce sont des situations réellement <span class="hw" onclick="t(this)">voleuses d'énergie<span class="pop">ترکیب اسم + دو حرف (voleuse + de + nom) — یک ساختار پرکاربرد صفتی</span></span>, dont nous devons <span class="hs" onclick="t(this)">prendre conscience<span class="pop">«prendre conscience de» = آگاه شدن از (اصطلاح مهم). dont = de + lequel</span></span> pour y <span class="hp" onclick="t(this)">mettre fin<span class="pop">«mettre fin à» = پایان دادن به (کلوکیشن ثابت)</span></span> ou les éviter du mieux possible.
+    </div>
+    <div class="art-para-fa">هر روز درگیر موقعیت‌های پیش‌پاافتاده و معمولی می‌شویم که گاهی آزاردهنده‌اند اما بیشتر از این بهشان توجه نمی‌کنیم. با اینکه واقعاً دزد انرژی هستند و باید از آن‌ها آگاه شویم تا پایانشان بدهیم یا تا حد ممکن از آن‌ها دور بمانیم.</div>
+  </div>
+
+  <!-- بخش ۱ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">١</span> Ne pas prendre soin de soi</div>
+    <div class="art-para-fr">
+      On ne <span class="hs" onclick="t(this)">le répètera jamais assez<span class="pop">«on ne peut jamais trop + مصدر» یا «on ne + فعل + jamais assez» = هیچ‌وقت نمی‌توان به‌اندازه‌ی کافی ... کرد</span></span>, la santé est le plus important. Notre corps est une grande machine qui a besoin <span class="hs" onclick="t(this)">que l'on en prenne soin<span class="pop">«avoir besoin QUE» + subjonctif → «prenne» = subjonctif فعل prendre. «en prendre soin» = از آن مراقبت کنیم</span></span> pour bien <span class="hw" onclick="t(this)">tourner<span class="pop">tourner = (اینجا) کار کردن / عملکردن (مجازی: مثل ماشین)</span></span>. Avant tout, <span class="hp" onclick="t(this)">prenez soin de vous<span class="pop">«prendre soin DE» = مراقبت کردن از — حرف اضافه DE ثابت است</span></span> : <span class="hw" onclick="t(this)">reposez-vous<span class="pop">se reposer (فعل انعکاسی) = استراحت کردن. اینجا: امری</span></span>, prenez du temps pour vous, faites attention à ce que vous mangez et à <span class="hw" onclick="t(this)">l'activité physique<span class="pop">l'activité physique = فعالیت بدنی / ورزش</span></span> que vous faites. Avoir du succès, de l'argent ou des possessions est <span class="hw" onclick="t(this)">inutile<span class="pop">inutile = بی‌فایده / بی‌ارزش</span></span> si notre corps va mal.
+    </div>
+    <div class="art-para-fa">هیچ‌وقت نمی‌توان به‌اندازه‌ی کافی تکرار کرد: سلامتی مهم‌ترین چیز است. بدن ما یک ماشین بزرگ است که برای کار کردن نیاز دارد از آن مراقبت شود. قبل از هر چیز، از خودتان مراقبت کنید: استراحت کنید، برای خودتان وقت بگذارید، به تغذیه و فعالیت بدنی‌تان توجه کنید. موفقیت، پول یا دارایی بی‌فایده است اگر بدنمان حالش خوب نباشد.</div>
+  </div>
+
+  <!-- بخش ۲ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٢</span> Ceux qui se plaignent sans cesse</div>
+    <div class="art-para-fr">
+      Nous avons tous dans notre <span class="hw" onclick="t(this)">cercle de proches<span class="pop">cercle de proches = دایره‌ی نزدیکان / حلقه‌ی افراد نزدیک</span></span> quelqu'un qui <span class="hw" onclick="t(this)">se plaint sans cesse<span class="pop">«se plaindre» (انعکاسی) = شکایت کردن. «sans cesse» = بی‌وقفه / مدام</span></span>. Vous ne vous en <span class="hs" onclick="t(this)">rendez certainement pas compte<span class="pop">«se rendre compte de» = متوجه شدن از. «en» جایگزین «de ces personnes»</span></span>, mais ces personnes vous <span class="hw" onclick="t(this)">épuisent<span class="pop">épuiser = خسته/تحلیل بردن (قوی‌تر از «fatiguer»)</span></span>, car elles vous utilisent comme <span class="hw" onclick="t(this)">réceptacle<span class="pop">réceptacle (m) = ظرف / مخزن (مجازی: کسی که باری از دیگری می‌پذیرد)</span></span>, vous <span class="hw" onclick="t(this)">remplissant<span class="pop">remplissant = gerondif فعل remplir (پر کردن). اینجا: «با پر کردن شما از...»</span></span> de ce qui ne va pas. Comme un vase qui <span class="hs" onclick="t(this)">se remplit goutte à goutte<span class="pop">«goutte à goutte» = قطره‌قطره (تشبیه زیبا). «se remplir» = پر شدن (انعکاسی)</span></span>, vous vous <span class="hp" onclick="t(this)">imprégnez de<span class="pop">«s'imprégner de» = آغشته شدن به / جذب کردن (حرف اضافه DE ثابت)</span></span> ces soucis qui ne sont pas les vôtres et vous <span class="hw" onclick="t(this)">épuisez à soulager<span class="pop">«s'épuiser à + مصدر» = خود را تحلیل بردن برای کار کردن چیزی</span></span> <span class="hw" onclick="t(this)">l'ego<span class="pop">l'ego (m) = نفس / خود (روان‌شناسی: ego)</span></span> de quelqu'un d'autre. <span class="hw" onclick="t(this)">Éloignez-vous de<span class="pop">«s'éloigner de» = دور شدن از — حرف اضافه DE ثابت</span></span> ces personnes, ou n'acceptez plus leurs <span class="hw" onclick="t(this)">plaintes<span class="pop">plainte (f) = شکایت / گله. «se plaindre» → «plainte»</span></span>.
+    </div>
+    <div class="art-para-fa">همه‌مان در دایره‌ی نزدیکانمان کسی داریم که مدام شکایت می‌کند. احتمالاً متوجه نیستید، اما این آدم‌ها شما را تحلیل می‌برند، چون از شما به‌عنوان ظرف استفاده می‌کنند و شما را از چیزهایی که درست نیست پر می‌کنند. مثل گلدانی که قطره‌قطره پر می‌شود، شما هم آغشته به نگرانی‌هایی می‌شوید که مال شما نیست و خود را برای آرام‌کردن نفسِ دیگری تحلیل می‌برید. از این آدم‌ها دور شوید، یا دیگر شکایت‌هایشان را نپذیرید.</div>
+  </div>
+
+  <!-- بخش ۳ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٣</span> Vivre dans le désordre</div>
+    <div class="art-para-fr">
+      Le <span class="hw" onclick="t(this)">désordre<span class="pop">désordre (m) = بی‌نظمی / آشفتگی (≠ ordre)</span></span> qui <span class="hw" onclick="t(this)">encombre<span class="pop">encombrer = مسدود کردن / پرکردن / آشفته کردن. «encombré» = پر از وسایل</span></span> nos espaces encombre aussi notre <span class="hw" onclick="t(this)">moral<span class="pop">le moral (m) = روحیه / حال درونی (≠ la morale = اخلاق)</span></span>, nos vies. Il faut apprendre à <span class="hs" onclick="t(this)">faire du tri<span class="pop">«faire du tri» = مرتب‌سازی کردن / جدا کردن خوب از بد (اصطلاح)</span></span> et à <span class="hp" onclick="t(this)">se débarrasser de<span class="pop">«se débarrasser DE» = رها شدن از / خلاص شدن از — حرف اضافه DE ثابت</span></span> ce dont l'on ne veut plus, afin de <span class="hw" onclick="t(this)">désencombrer<span class="pop">désencombrer = پاک‌کردن از شلوغی (پیشوند dés- = نقیض)</span></span> nos vies quotidiennes et de retrouver l'équilibre. Un intérieur <span class="hw" onclick="t(this)">désordonné<span class="pop">désordonné = نامرتب / آشفته. «d'un intérieur» = محیط داخلی (خانه)</span></span> nous <span class="hw" onclick="t(this)">pompe de l'énergie<span class="pop">«pomper» (مجازی) = مکیدن / خالی کردن (مثل پمپ). «pomper l'énergie» = انرژی را مکیدن</span></span> et ne nous permet pas de nous sentir bien. Faire du tri dans ses affaires, c'est apprendre à faire le tri des choses de son passé que l'on veut voir <span class="hw" onclick="t(this)">disparaître<span class="pop">disparaître = ناپدید شدن / از بین رفتن. «voir disparaître» = ناپدید شدن را دیدن</span></span>.
+    </div>
+    <div class="art-para-fa">بی‌نظمی که فضاهایمان را پر می‌کند، روحیه و زندگی‌مان را هم آشفته می‌کند. باید یاد بگیریم مرتب‌سازی کنیم و از چیزهایی که دیگر نمی‌خواهیم خلاص شویم تا زندگی روزمره‌مان را از شلوغی پاک کنیم و تعادل را دوباره پیدا کنیم. یک محیط نامرتب انرژی‌مان را می‌مکد و نمی‌گذارد احساس خوبی داشته باشیم. مرتب‌کردن وسایل‌ یعنی یاد گرفتن مرتب‌کردن چیزهایی از گذشته‌مان که می‌خواهیم از بین بروند.</div>
+  </div>
+
+  <!-- بخش ۴ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٤</span> Avoir des finances désorganisées</div>
+    <div class="art-para-fr">
+      <span class="hw" onclick="t(this)">En règle générale<span class="pop">«en règle générale» = به‌طور کلی / به‌طور معمول (عبارت قیدی)</span></span>, l'aspect financier est <span class="hw" onclick="t(this)">source de<span class="pop">«être source de» = منشأ/سرچشمه‌ی ... بودن (ساختار اسمی بدون article)</span></span> grandes <span class="hw" onclick="t(this)">inquiétudes<span class="pop">inquiétude (f) = نگرانی / اضطراب. «s'inquiéter» → «inquiétude»</span></span>. Et pour ne pas <span class="hw" onclick="t(this)">générer<span class="pop">générer = ایجاد کردن / تولید کردن (رسمی)</span></span> d'<span class="hw" onclick="t(this)">angoisses<span class="pop">angoisse (f) = اضطراب شدید / دلهره (شدیدتر از «inquiétude»)</span></span> inutiles, il est <span class="hs" onclick="t(this)">fortement recommandé<span class="pop">«il est + adverbe + participe passé» = ساختار غیرشخصی برای توصیه: «اکیداً توصیه می‌شود»</span></span> d'avoir ses comptes à jour. Réglez vos <span class="hw" onclick="t(this)">dettes<span class="pop">dette (f) = بدهی. «régler une dette» = تسویه‌کردن بدهی</span></span> lorsque vous en avez, même s'il s'agit d'amis ou de la famille, et gardez une trace de ce que vous devez et de ce que l'on vous doit afin de <span class="hp" onclick="t(this)">le régler<span class="pop">«régler» = حل‌وفصل کردن / تسویه کردن. «le plus rapidement possible» = هرچه سریع‌تر</span></span> le plus rapidement possible. Les dettes sont de grandes <span class="hw" onclick="t(this)">voleuses d'énergie<span class="pop">تکرار اصطلاح محوری مقاله: «voleuse d'énergie» = دزد انرژی</span></span> car elles <span class="hw" onclick="t(this)">troublent<span class="pop">troubler = برهم‌زدن / آشفته کردن. «troubler la tranquillité» = آسایش را برهم زدن</span></span> notre tranquillité, créent un <span class="hw" onclick="t(this)">climat<span class="pop">climat (m) = (مجازی) فضا / جو. «créer un climat de» = فضایی از ... ایجاد کردن</span></span> d'angoisse et de <span class="hw" onclick="t(this)">honte<span class="pop">honte (f) = شرم. «avoir honte» = شرمیدن</span></span>.
+    </div>
+    <div class="art-para-fa">به‌طور کلی، جنبه‌ی مالی منشأ نگرانی‌های بزرگی است. و برای اینکه اضطراب‌های بی‌دلیل ایجاد نشود، اکیداً توصیه می‌شود حساب‌وکتاب‌هایتان به‌روز باشد. بدهی‌هایتان را تسویه کنید، حتی اگر طرف دوست یا خانواده باشد، و ردّ آنچه بدهکارید و آنچه طلبکارید را نگه دارید تا هرچه سریع‌تر حلش کنید. بدهی‌ها دزدهای بزرگ انرژی‌اند چون آسایشمان را برهم می‌زنند و فضایی از اضطراب و شرم ایجاد می‌کنند.</div>
+  </div>
+
+  <!-- بخش ۵ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٥</span> Ne pas tenir ses promesses</div>
+    <div class="art-para-fr">
+      Une bonne relation doit être <span class="hp" onclick="t(this)">basée sur<span class="pop">«être basé(e) sur» = مبتنی بودن بر / پایه داشتن در — حرف اضافه SUR ثابت</span></span> la confiance, c'est pourquoi il est important d'apprendre à <span class="hw" onclick="t(this)">considérer<span class="pop">considérer = در نظر گرفتن / ارج نهادن به (اینجا: احترام گذاشتن)</span></span> les autres et à leur montrer vos <span class="hw" onclick="t(this)">bonnes intentions<span class="pop">bonne intention (f) = نیت خوب / حسن‌نیت</span></span>. Être une personne de confiance, c'est d'abord être quelqu'un qui sait <span class="hp" onclick="t(this)">tenir ses promesses<span class="pop">«tenir une promesse» = عمل کردن به قول (کلوکیشن ثابت)</span></span>. <span class="hs" onclick="t(this)">Ne pas pouvoir le faire<span class="pop">«le faire» = اسم‌وارهٔ فعلی — جایگزین «tenir ses promesses». «ne pas pouvoir le faire» = نتوانستن انجامش دادن</span></span>, pour une raison ou pour une autre, ou être en relation avec quelqu'un qui ne sait pas les tenir est un <span class="hw" onclick="t(this)">mangeur d'énergie<span class="pop">«mangeur d'énergie» = خورنده‌ی انرژی (مترادف «voleur d'énergie»)</span></span>. Si l'on vous demande de tenir une promesse, soyez <span class="hw" onclick="t(this)">assuré<span class="pop">«être assuré de + مصدر» = مطمئن بودن از اینکه می‌توانید</span></span> de pouvoir le faire avant de dire oui. Si vous n'êtes pas sûr, <span class="hw" onclick="t(this)">préférez<span class="pop">«préférer + مصدر» = ترجیح دادن</span></span> dire non. Et si vous <span class="hs" onclick="t(this)">vous rendez compte après avoir accepté<span class="pop">«après avoir + participe passé» = ساختار گذشته‌ی مصدری (infinitif passé). «après avoir accepté» = بعد از اینکه قبول کردید</span></span> que vous ne pourrez pas la tenir, excusez-vous et proposez à la personne de <span class="hw" onclick="t(this)">renégocier<span class="pop">renégocier = بازمذاکره کردن (پیشوند re- = دوباره)</span></span> les termes du contrat ou proposez-lui une autre <span class="hw" onclick="t(this)">alternative<span class="pop">alternative (f) = گزینه‌ی جایگزین. «proposer une alternative» = پیشنهاد جایگزین دادن</span></span>.
+    </div>
+    <div class="art-para-fa">یک رابطه‌ی خوب باید بر اعتماد بنا شده باشد، به همین دلیل مهم است که یاد بگیریم دیگران را در نظر بگیریم و حسن‌نیت‌مان را نشانشان دهیم. آدمِ قابل‌اعتماد بودن اول از همه یعنی کسی بودن که می‌داند چطور به قولش عمل کند. نتوانستن این کار، به هر دلیلی، یا در رابطه بودن با کسی که نمی‌تواند قولش را نگه دارد، خورنده‌ی انرژی است. اگر از شما خواسته شد قولی بدهید، قبل از اینکه بله بگویید مطمئن شوید که می‌توانید. اگر مطمئن نیستید، نه گفتن را ترجیح بدهید. و اگر بعد از قبول‌کردن متوجه شدید نمی‌توانید، عذرخواهی کنید و به طرف مقابل پیشنهاد بازمذاکره بدهید یا گزینه‌ی دیگری ارائه دهید.</div>
+  </div>
+
+  <!-- بخش ۶ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٦</span> Ne pas gérer les situations difficiles</div>
+    <div class="art-para-fr">
+      Nous sommes souvent <span class="hp" onclick="t(this)">aux prises avec<span class="pop">«être aux prises avec» = دست‌وپنجه نرم کردن با / گرفتار بودن در (اصطلاح)</span></span> des situations difficiles qui nous <span class="hw" onclick="t(this)">soutirent<span class="pop">«soutirer» = بیرون کشیدن (مجازی: استخراج انرژی). «soutirer de l'énergie à qqn»</span></span> <span class="hw" onclick="t(this)">énormément d'énergie<span class="pop">«énormément de» = مقدار بسیار زیادی از (قید تقویتی)</span></span>. Il nous faut <span class="hw" onclick="t(this)">prendre conscience de<span class="pop">«prendre conscience de» = آگاه شدن از (تکرار اصطلاح مهم)</span></span> la manière dont nous les <span class="hw" onclick="t(this)">résolvons<span class="pop">résoudre → nous résolvons. «résoudre un problème» = حل کردن مسئله</span></span> afin de pouvoir le faire de nouveau lorsqu'elles <span class="hs" onclick="t(this)">se représenteront<span class="pop">«se représenter» = دوباره ظاهر شدن. آینده‌ی ساده: «lorsqu'elles se représenteront» — بعد از lorsque با آینده</span></span>. C'est une manière de <span class="hw" onclick="t(this)">reprendre le pouvoir<span class="pop">«reprendre le pouvoir» = دوباره کنترل را به دست گرفتن / بازگرفتن قدرت</span></span> et de ne pas <span class="hs" onclick="t(this)">se laisser aller à<span class="pop">«se laisser aller à» = تسلیم شدن به / رها کردن خود به (+ اسم یا مصدر)</span></span> ces situations. Mieux vaut en effet éviter de les <span class="hw" onclick="t(this)">laisser traîner<span class="pop">«laisser traîner» = ول‌کردن / رها کردن که کش بیاید (اصطلاح)</span></span> ou d'essayer de les <span class="hw" onclick="t(this)">ignorer<span class="pop">ignorer = نادیده گرفتن / کنارگذاشتن</span></span>, car cela ne créera en nous que du stress et de l'<span class="hw" onclick="t(this)">anxiété<span class="pop">anxiété (f) = اضطراب (پایدارتر و عمیق‌تر از «stress»)</span></span>.
+    </div>
+    <div class="art-para-fa">اغلب گرفتار موقعیت‌های دشواری هستیم که انرژی زیادی از ما می‌گیرند. باید از شیوه‌ای که آن‌ها را حل می‌کنیم آگاه شویم تا بتوانیم دفعه‌ی بعد هم همین کار را بکنیم. این راهی است برای دوباره به دست گرفتن کنترل و تسلیم این موقعیت‌ها نشدن. بهتر است از ول‌کردن آن‌ها یا نادیده‌گرفتنشان پرهیز کنیم، چون این کار فقط استرس و اضطراب در ما ایجاد می‌کند.</div>
+  </div>
+
+  <!-- بخش ۷ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٧</span> Ne pas savoir déléguer</div>
+    <div class="art-para-fr">
+      Nous devons tous, parfois, faire des <span class="hw" onclick="t(this)">tâches<span class="pop">tâche (f) = وظیفه / کار (محدود و مشخص). «faire une tâche» = انجام دادن وظیفه</span></span> que nous n'aimons pas, <span class="hs" onclick="t(this)">qu'elles soient professionnelles ou domestiques<span class="pop">«qu'elles soient... ou...» = «چه ... باشند چه...» ساختار امتیاز با subjonctif</span></span>. Mais si elles ne nous <span class="hw" onclick="t(this)">épanouissent<span class="pop">«épanouir» = شکوفا کردن / به رشد رساندن. «s'épanouir» = شکوفا شدن (استعداد)</span></span> pas, pourquoi les faisons-nous ? Car nous plaçons nos <span class="hw" onclick="t(this)">intérêts<span class="pop">intérêt (m) = منفعت / سود. «placer ses intérêts avant» = منافع خود را مقدم دانستن</span></span> avant. Nous pensons qu'en faisant ces tâches, nous y <span class="hw" onclick="t(this)">gagnerons<span class="pop">«y gagner» = از آن سود بردن. آینده: «nous y gagnerons»</span></span> quelque chose. Ce sont ces tâches qu'il faut apprendre à <span class="hw" onclick="t(this)">déléguer<span class="pop">déléguer = واگذار کردن / تفویض کردن (کلمه‌ی کلیدی این بخش)</span></span>, car peut-être que quelqu'un aimera les faire, qu'elles lui <span class="hw" onclick="t(this)">apporteront<span class="pop">«apporter» = آوردن / بخشیدن. «apporter quelque chose à qqn» = چیزی به کسی دادن</span></span> quelque chose qu'elles ne nous apportent pas. Déléguer les tâches qui nous <span class="hw" onclick="t(this)">pèsent<span class="pop">«peser» (مجازی) = سنگین بودن / سنگینی کردن. «les tâches qui me pèsent» = کارهایی که برایم سنگین‌اند</span></span> permet de ne pas remplir notre vie de <span class="hw" onclick="t(this)">négativité<span class="pop">négativité (f) = منفی‌گرایی / انرژی منفی</span></span>.
+    </div>
+    <div class="art-para-fa">همه‌مان گاهی باید کارهایی بکنیم که دوست نداریم، چه حرفه‌ای باشند چه خانگی. اما اگر ما را شکوفا نمی‌کنند، چرا انجام‌شان می‌دهیم؟ چون منافع خود را مقدم می‌دانیم. فکر می‌کنیم با انجام این کارها چیزی به دست می‌آوریم. اینجاست که باید یاد بگیریم واگذار کنیم، چون شاید دیگری این کارها را دوست داشته باشد و چیزی به او بدهند که به ما نمی‌دهند. واگذار کردن کارهایی که برایمان سنگین‌اند می‌گذارد زندگی‌مان را از منفی‌گرایی پر نکنیم.</div>
+  </div>
+
+  <!-- بخش ۸ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٨</span> Ne pas savoir accepter</div>
+    <div class="art-para-fr">
+      <span class="hs" onclick="t(this)">Combien de fois nous sommes-nous pourri la vie<span class="pop">«se pourrir la vie» = زندگی را به خود تلخ کردن. «combien de fois + passé composé»  = چند بار... (سؤال بلاغی)</span></span> à cause d'une situation que nous n'<span class="hw" onclick="t(this)">acceptions<span class="pop">«accepter» در imparfait: «n'acceptions pas» = نمی‌پذیرفتیم</span></span> pas et que nous voulions à <span class="hw" onclick="t(this)">tout prix<span class="pop">«à tout prix» = به هر قیمتی / حتماً (اصطلاح)</span></span> changer ? Parfois, nous ne pouvons pas changer les choses, et c'est une <span class="hw" onclick="t(this)">perte d'énergie<span class="pop">perte (f) = هدررفت / از دست دادن. «perte d'énergie» = هدررفت انرژی</span></span> et de temps que d'essayer de le faire. Pour votre <span class="hw" onclick="t(this)">bien-être émotionnel<span class="pop">bien-être émotionnel = بهزیستی عاطفی / آرامش روانی</span></span>, essayez de <span class="hp" onclick="t(this)">faire la paix avec vous-même<span class="pop">«faire la paix avec soi-même» = صلح کردن با خود / آشتی با خویشتن (کلوکیشن)</span></span> en acceptant ces situations, tout simplement. En comprenant que vous ne pourrez rien y changer, et que <span class="hs" onclick="t(this)">mieux vaut vivre avec<span class="pop">«mieux vaut + مصدر» = بهتر است ... (بدون sujét، غیرشخصی). «vivre avec» = کنار آمدن با</span></span> plutôt que d'<span class="hw" onclick="t(this)">engager<span class="pop">«engager» = وارد شدن در / شروع کردن. «engager une lutte» = وارد نبرد شدن</span></span> une lutte inutile.
+    </div>
+    <div class="art-para-fa">چند بار زندگی را به خودمان تلخ کرده‌ایم به خاطر موقعیتی که نمی‌پذیرفتیم و به هر قیمتی می‌خواستیم تغییرش دهیم؟ گاهی نمی‌توانیم چیزها را تغییر دهیم، و تلاش برای این کار هدررفت انرژی و زمان است. برای بهزیستی عاطفی‌تان، سعی کنید به‌سادگی با پذیرفتن این موقعیت‌ها با خود صلح کنید. با فهمیدن اینکه نمی‌توانید چیزی را عوض کنید، و اینکه بهتر است با آن‌ها زندگی کنید تا اینکه وارد یک نبرد بی‌فایده شوید.</div>
+  </div>
+
+  <!-- بخش ۹ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">٩</span> Ne pas savoir quand se reposer ni quand agir</div>
+    <div class="art-para-fr">
+      Nous <span class="hw" onclick="t(this)">estimons<span class="pop">estimer = برآورد کردن / تخمین زدن (اینجا: ارزیابی کردن)</span></span> souvent mal nos forces, agissant lorsque nous devrions nous reposer ou nous reposant alors que nous sentons que nous devrions <span class="hw" onclick="t(this)">agir<span class="pop">agir = عمل کردن / اقدام کردن</span></span>. Nous <span class="hw" onclick="t(this)">épuisons<span class="pop">épuiser = تحلیل بردن / خالی کردن. «épuiser ses forces» = نیروهایمان را تحلیل بردن</span></span> nos forces dans de mauvaises <span class="hw" onclick="t(this)">directions<span class="pop">direction (f) = جهت / مسیر (مجازی: مسیر غلط)</span></span>, et prenons le risque de prendre des <span class="hw" onclick="t(this)">décisions<span class="pop">décision (f) = تصمیم. «prendre une décision» = تصمیم گرفتن (کلوکیشن)</span></span> qui mèneront à des <span class="hw" onclick="t(this)">regrets<span class="pop">regret (m) = پشیمانی / افسوس. «mener à des regrets» = منجر به پشیمانی شدن</span></span> par la suite. Il nous faut apprendre à <span class="hw" onclick="t(this)">nous écouter<span class="pop">«s'écouter» (مجازی) = به درون خود گوش دادن / توجه به نیازهای خود</span></span> pour nous reposer lorsque nous en <span class="hw" onclick="t(this)">ressentons<span class="pop">«ressentir le besoin de» = احساس نیاز کردن. «en» جایگزین «du repos»</span></span> le besoin, et nous <span class="hs" onclick="t(this)">autoriser à agir<span class="pop">«s'autoriser à + مصدر» = به خود اجازه دادن که — ساختار زیبا و کاربردی</span></span> quand des <span class="hw" onclick="t(this)">opportunités<span class="pop">opportunité (f) = فرصت (رسمی‌تر از «chance»)</span></span> se présentent à nous.
+    </div>
+    <div class="art-para-fa">اغلب نیروهایمان را بد ارزیابی می‌کنیم، وقتی باید استراحت کنیم عمل می‌کنیم و وقتی باید عمل کنیم استراحت می‌کنیم. نیروهایمان را در مسیرهای اشتباه تحلیل می‌بریم و خطر می‌کنیم که تصمیم‌هایی بگیریم که بعداً منجر به پشیمانی شوند. باید یاد بگیریم به درون خود گوش دهیم تا وقتی نیاز داریم استراحت کنیم، و به خودمان اجازه دهیم که وقتی فرصت‌ها پیش می‌آیند اقدام کنیم.</div>
+  </div>
+
+  <!-- بخش ۱۰ -->
+  <div class="art-section">
+    <div class="art-section-title"><span class="art-section-num">١٠</span> Refuser le pardon</div>
+    <div class="art-para-fr">
+      La <span class="hw" onclick="t(this)">rancœur<span class="pop">rancœur (f) = کینه / دلخوری ریشه‌دار (قوی‌تر از «rancune»)</span></span> est humaine. Malheureusement, cette rancœur nous <span class="hw" onclick="t(this)">pollue<span class="pop">polluer (مجازی) = آلوده کردن / مسموم کردن (مثل آلودگی محیط)</span></span> souvent, <span class="hw" onclick="t(this)">menaçant<span class="pop">menaçant = gérondif فعل menacer. «menaçant notre équilibre» = که تعادل ما را تهدید می‌کند</span></span> notre équilibre émotionnel. Le pardon <span class="hp" onclick="t(this)">fait partie intégrante de<span class="pop">«faire partie intégrante de» = بخش لاینفک/جدایی‌ناپذیر ... بودن (اصطلاح مهم)</span></span> l'amour, et d'ailleurs on dit bien que <span class="hw" onclick="t(this)">qui n'aime pas ne pardonne pas<span class="pop">ضرب‌المثل: «آنکه دوست نمی‌دارد نمی‌بخشد». «qui» = relative بدون antécédent</span></span>. Pardonner, c'est <span class="hs" onclick="t(this)">permettre à une situation qui nous a blessée de s'éloigner<span class="pop">«permettre À qqch DE + مصدر» = اجازه دادن به چیزی که... — دو حرف اضافه‌ی آ و دُ هر دو ثابت</span></span>, c'est pouvoir commencer à <span class="hw" onclick="t(this)">se reconstruire<span class="pop">«se reconstruire» = دوباره ساختن خود / بازسازی کردن خویشتن</span></span>. Pardonner, c'est <span class="hw" onclick="t(this)">démontrer<span class="pop">démontrer = نشان دادن / به اثبات رساندن (رسمی‌تر از «montrer»)</span></span> son amour envers <span class="hw" onclick="t(this)">soi-même<span class="pop">soi-même = خود / خویشتن (ضمیر تأکیدی غیرشخصی)</span></span>, les autres et le monde.
+    </div>
+    <div class="art-para-fa">کینه انسانی است. متأسفانه این کینه اغلب ما را آلوده می‌کند و تعادل عاطفی‌مان را تهدید می‌کند. بخشش بخش لاینفک عشق است، و درواقع می‌گویند که آنکه دوست نمی‌دارد نمی‌بخشد. بخشیدن یعنی اجازه دادن به موقعیتی که به ما آسیب زده که دور شود، یعنی توانستنِ شروع کردن به بازسازی خویشتن. بخشیدن یعنی نشان دادن عشق به خود، به دیگران و به جهان.</div>
+  </div>
+
+  <div class="art-credit">
+    منبع: <a href="https://www.psychologue.net/articles/les-10-voleurs-denergie" target="_blank" rel="noopener">psychologue.net</a> · با احترام به نویسنده‌ی اثر · تحلیل آموزشی توسط Français avec Hoda
+  </div>
+</div>
+
+<script>
+function t(el){
+  const wasOpen = el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open,.hp.open").forEach(e=>{
+    e.classList.remove("open");
+    if(e._cwT){clearTimeout(e._cwT);e._cwT=null;}
+  });
+  if(!wasOpen){
+    el.classList.add("open");
+    el._cwT = setTimeout(()=>{el.classList.remove("open");el._cwT=null;}, 3500);
+  }
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

@@ -6,6 +6,7 @@
 
 // دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
 const CATEGORIES = [
+  { id: "article", label: "آرتیکل", icon: "📰", color: "#5a3b88" },
   { id: "roulette", label: "گردونه‌ی موضوع", icon: "🎡", color: "#7a5ba8", link: "ROULETTE.html" },
   { id: "phrases", label: "جملات کاربردی", icon: "💬", color: "#c77d3a", link: "PHRASES_utiles.html" },
   { id: "tcf",          label: "آمادگی TCF",   icon: "❖", color: "#1a4f7a" },
@@ -82,6 +83,17 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {
+    file: "ARTICLE_voleurs_energie.html",
+    title: "۱۰ دزد انرژی در زندگی",
+    titleFr: "10 voleurs de votre énergie",
+    category: "article",
+    level: "B1–B2",
+    premium: false,
+    tags: ["آرتیکل", "روانشناسی", "تحلیل"],
+    summary: "مقاله‌ای از psychologue.net با تحلیل کامل واژگان، ساختارها و کلوکیشن‌ها — همراه با ترجمه‌ی فارسی روان زیر هر پاراگراف.",
+  },
+
   {
     file: "LECON_consequence.html",
     title: "درسنامه: بیان نتیجه",
