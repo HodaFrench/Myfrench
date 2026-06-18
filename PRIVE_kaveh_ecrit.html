@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پرونده‌ی کاوه — Expression Écrite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --purple-deep:#5a3b88;
+    --gold:#b07a4a; --gold-soft:#c4a572; --green:#2e8b6b; --terracotta:#c4502d;
+    --pink:#b0506f; --blue:#2e7bb5;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,0.05) 31px,rgba(122,91,168,0.05) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 80px;}
+  .wrap{max-width:860px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--purple); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--purple); color:#fff;}
+
+  /* هدر */
+  .header{background:linear-gradient(135deg,var(--purple),var(--purple-deep)); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px rgba(122,91,168,.26); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .header .tag{font-size:11px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; margin-bottom:8px;}
+  .header h1{font-size:23px; font-weight:700; margin-bottom:5px;}
+  .header .sub{font-size:13.5px; opacity:.92;}
+
+  /* تب‌ها */
+  .tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; position:sticky; top:0;
+    background:var(--paper); padding:12px 0; z-index:10; border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
+    color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 18px; cursor:pointer; transition:all .2s;}
+  .tab:hover{border-color:var(--purple);}
+  .tab.active{background:var(--purple); color:#fff; border-color:var(--purple); box-shadow:0 4px 12px rgba(122,91,168,.3);}
+
+  .section{display:none; animation:fadeIn .35s ease;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* --- تب ۱: ساختار --- */
+  .struct-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:20px; font-size:14px; line-height:2.1;}
+  .struct-intro b{color:var(--purple-deep);}
+  .struct-block{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin-bottom:12px; position:relative;}
+  .struct-label{display:inline-flex; align-items:center; gap:8px; background:var(--purple); color:#fff;
+    font-size:12px; font-weight:700; padding:4px 14px; border-radius:12px; margin-bottom:12px;}
+  .struct-label .sl-time{font-size:11px; opacity:.8; margin-right:6px;}
+  .struct-fr{font-family:'Roboto',serif; font-size:16px; direction:ltr; text-align:left; color:var(--ink);
+    line-height:1.85; background:var(--cream); padding:12px 16px; border-radius:10px; margin-bottom:10px; border-right:3px solid var(--purple);}
+  .struct-fa{font-size:13px; color:var(--gray); line-height:2;}
+  .struct-tip{background:linear-gradient(135deg,rgba(122,91,168,.07),rgba(196,165,114,.05)); border-right:3px solid var(--gold-soft); border-radius:9px; padding:10px 14px; font-size:12.5px; line-height:1.9; margin-top:10px;}
+  .struct-tip b{color:var(--purple-deep);}
+
+  /* نشانگرهای پاراگراف */
+  .para-tag{display:inline-block; font-size:11px; font-weight:700; padding:2px 10px; border-radius:8px; margin-bottom:10px; color:#fff;}
+  .tag-intro{background:var(--navy);}
+  .tag-arg{background:var(--green);}
+  .tag-conc{background:var(--terracotta);}
+
+  /* --- تب ۲: متن با هایلایت --- */
+  .legend{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px; padding:12px 16px;
+    background:var(--white); border:1px solid var(--line); border-radius:12px; font-size:12.5px;}
+  .lg{display:flex; align-items:center; gap:6px;}
+  .lg-dot{width:26px; height:12px; border-radius:3px; flex-shrink:0;}
+
+  .text-block{background:var(--white); border:1px solid var(--line); border-radius:14px; padding:22px 20px; margin-bottom:16px;}
+  .para-head{font-size:12.5px; font-weight:700; color:var(--purple); margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .para-fr{font-family:'Roboto',serif; font-size:16.5px; line-height:2; color:var(--ink); direction:ltr; text-align:left; padding:12px 16px; background:var(--cream); border-radius:10px; margin-bottom:12px;}
+  .para-fa{font-size:13.5px; color:var(--gray); line-height:2.2; padding-right:4px;}
+
+  /* هایلایت‌ها */
+  .hw{background:rgba(176,80,111,.12); color:#8a2040; border-radius:4px; padding:1px 4px; cursor:pointer;
+    position:relative; font-weight:500; border-bottom:2px solid rgba(176,80,111,.4); transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,80,111,.22);}
+  .hs{background:rgba(46,123,181,.11); color:#1a5580; border-radius:4px; padding:1px 4px; cursor:pointer;
+    position:relative; font-weight:500; border-bottom:2px dashed rgba(46,123,181,.5); transition:all .2s;}
+  .hs:hover,.hs.open{background:rgba(46,123,181,.22);}
+  .hs::before{content:"⚙ "; font-size:10px; opacity:.6;}
+  .hc{background:rgba(46,139,107,.1); color:#1d6b50; border-radius:4px; padding:1px 4px; cursor:pointer;
+    position:relative; font-weight:500; border-bottom:2px dotted rgba(46,139,107,.6); transition:all .2s;}
+  .hc:hover,.hc.open{background:rgba(46,139,107,.2);}
+  .pop{position:absolute; bottom:130%; left:50%; transform:translateX(-50%); background:var(--navy); color:var(--cream);
+    font-family:'Estedad',sans-serif; font-size:12.5px; font-weight:500; direction:rtl; white-space:nowrap; padding:5px 12px;
+    border-radius:8px; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,.22); opacity:0; visibility:hidden; transition:opacity .25s; pointer-events:none;}
+  .hw.open .pop,.hs.open .pop,.hc.open .pop{opacity:1; visibility:visible;}
+
+  /* --- تب ۳: جعبهٔ ابزار --- */
+  .tool-section{margin-bottom:22px;}
+  .tool-title{font-size:15px; font-weight:700; color:var(--navy); margin-bottom:12px; display:flex; align-items:center; gap:8px; padding-bottom:8px; border-bottom:2px solid var(--paper-warm);}
+  .tool-title::before{content:""; width:4px; height:18px; background:var(--purple); border-radius:2px; flex-shrink:0;}
+  .tool-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  @media(max-width:600px){.tool-grid{grid-template-columns:1fr;}}
+  .tool-card{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:14px 16px;}
+  .tool-card .tc-label{font-size:11.5px; color:var(--purple); font-weight:700; margin-bottom:6px;}
+  .tool-card .tc-fr{font-family:'Roboto',serif; font-size:15px; color:var(--navy); direction:ltr; text-align:left; margin-bottom:5px; line-height:1.6;}
+  .tool-card .tc-fa{font-size:12.5px; color:var(--gray);}
+  .tool-card .tc-note{font-size:11.5px; color:var(--gold); margin-top:6px; font-style:italic;}
+  .dont-card{border-right:3px solid var(--terracotta);}
+  .do-card{border-right:3px solid var(--green);}
+  .do-tag{color:var(--green) !important;}
+  .dont-tag{color:var(--terracotta) !important;}
+  .tip-box{background:linear-gradient(135deg,rgba(122,91,168,.06),rgba(176,80,111,.04)); border-right:4px solid var(--purple); border-radius:12px; padding:16px 20px; margin-top:8px; font-size:13.5px; line-height:2.1;}
+  .tip-box b{color:var(--purple-deep);}
+
+  /* --- تب ۴: سؤال دوم --- */
+  .q2-intro{background:linear-gradient(135deg,rgba(46,123,181,.07),rgba(122,91,168,.04)); border-right:5px solid var(--blue); border-radius:14px; padding:20px 22px; margin-bottom:22px;}
+  .q2-question{font-family:'Roboto',serif; font-size:19px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:10px; line-height:1.45;}
+  .q2-question-fa{font-size:15px; color:var(--blue); font-weight:600; margin-bottom:10px;}
+  .q2-note{font-size:13px; color:var(--gray); line-height:1.9;}
+  .q2-plan{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:16px;}
+  .q2-plan-head{background:var(--navy); color:#fff; padding:12px 18px; font-size:14px; font-weight:700;}
+  .q2-plan-row{display:flex; gap:12px; padding:13px 18px; border-bottom:1px solid var(--line); align-items:flex-start;}
+  .q2-plan-row:last-child{border-bottom:none;}
+  .q2-plan-step{flex-shrink:0; font-size:12px; font-weight:700; color:var(--purple); min-width:90px;}
+  .q2-plan-body{flex:1;}
+  .q2-plan-fr{font-family:'Roboto',serif; font-size:15px; color:var(--ink); direction:ltr; text-align:left; line-height:1.65; margin-bottom:4px;}
+  .q2-plan-fa{font-size:12.5px; color:var(--gray);}
+
+  .footer{text-align:center; margin-top:30px; color:var(--gray); font-size:12.5px;}
+  .footer b{color:var(--purple);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">← کتابخانه</a>
+    <a href="index.html#cat=prive" id="backLink">⌂ فهرست کاوه</a>
+  </div>
+
+  <div class="header">
+    <div class="tag">DOSSIER PRIVÉ · TCF CANADA</div>
+    <h1>کاوه — Expression Écrite ✍️</h1>
+    <div class="sub">تحلیل کامل یک متن استدلالی — ساختار، واژگان، نکات و جعبهٔ ابزار</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('struct')">📐 ساختار متن</button>
+    <button class="tab" onclick="showTab('text')">🔍 متن با هایلایت</button>
+    <button class="tab" onclick="showTab('tools')">🛠️ جعبهٔ ابزار</button>
+    <button class="tab" onclick="showTab('q2')">❓ سؤال دوم</button>
+  </div>
+
+  <!-- ═══ تب ۱: ساختار ═══ -->
+  <div class="section active" id="sec-struct">
+    <div class="struct-intro">
+      سلام کاوه 👋 این متن یک <b>Expression Écrite استدلالی (Texte argumentatif)</b> کامل است — سطح B2. خوب بخوانش: نه فقط واژگان، بلکه <b>چطور فکر می‌کند</b> را یاد بگیر. هر پاراگراف یک نقش خاص دارد. این ساختار را حفظ کن.
+    </div>
+
+    <!-- پاراگراف ۱: مقدمه -->
+    <div class="struct-block">
+      <div class="struct-label"><span>🎯 مقدمه — Introduction</span><span class="sl-time">۳–۴ جمله</span></div>
+      <div class="struct-fr">
+        Aujourd'hui, la protection de l'environnement est devenue un enjeu majeur dans le monde entier. La pollution, l'accumulation des déchets et la dégradation de la nature inquiètent de plus en plus les populations. Parmi les solutions proposées, le tri des déchets est souvent présenté comme un geste simple et efficace. Personnellement, je suis tout à fait d'accord avec l'idée que tout le monde peut participer au tri des déchets, car il s'agit d'une action accessible, utile et indispensable pour préserver notre planète.
+      </div>
+      <div class="struct-fa">«امروز، حفاظت از محیط زیست تبدیل به یک چالش مهم در سراسر جهان شده است...»</div>
+      <div class="struct-tip">
+        📌 <b>فرمول طلایی مقدمه:</b>
+        ① موضوع کلی (امروزه...) → ② مشکل/بحث روز → ③ موضع سؤال → ④ <b>موضع شخصی واضح</b> («Personnellement, je suis tout à fait d'accord»)<br>
+        نکته: همیشه در آخر مقدمه <b>موضعت را صریح اعلام کن</b> — ارزیاب منتظرش است.
+      </div>
+    </div>
+
+    <!-- استدلال‌ها -->
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۱ — Argument 1</span></div>
+      <div class="struct-fr">Tout d'abord, le tri des déchets est une pratique très simple à mettre en place dans la vie quotidienne...</div>
+      <div class="struct-fa">«اول از همه، تفکیک زباله یک عمل بسیار ساده برای پیاده‌سازی در زندگی روزمره است...»</div>
+      <div class="struct-tip"><b>ساختار هر استدلال:</b> کانکتور (Tout d'abord) + ادعا + توضیح (En effet) + مثال/دلیل + نتیجه. این را الگو کن.</div>
+    </div>
+
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۲ — Argument 2</span></div>
+      <div class="struct-fr">Ensuite, le tri des déchets joue un rôle essentiel dans la protection de l'environnement...</div>
+      <div class="struct-fa">«بعد، تفکیک زباله نقش اساسی در حفاظت از محیط زیست دارد...»</div>
+      <div class="struct-tip"><b>کانکتور:</b> Ensuite → دومین استدلال. En effet برای توضیح. Par conséquent برای نتیجه.</div>
+    </div>
+
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۳ — Argument 3</span></div>
+      <div class="struct-fr">De plus, cette pratique améliore considérablement la gestion des déchets dans les villes...</div>
+      <div class="struct-fa">«علاوه بر این، این عمل به‌طور قابل‌توجهی مدیریت زباله در شهرها را بهبود می‌بخشد...»</div>
+    </div>
+
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۴ — Argument 4</span></div>
+      <div class="struct-fr">Par ailleurs, il est important de souligner que le tri des déchets est une responsabilité collective...</div>
+      <div class="struct-fa">«همچنین، مهم است تأکید شود که تفکیک زباله یک مسئولیت جمعی است...»</div>
+    </div>
+
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۵ — Argument 5</span></div>
+      <div class="struct-fr">En outre, le tri des déchets permet aussi de sensibiliser les nouvelles générations à l'importance de l'écologie...</div>
+      <div class="struct-fa">«علاوه بر این، تفکیک زباله اجازه می‌دهد نسل‌های جدید را نسبت به اهمیت محیط زیست آگاه کنیم...»</div>
+    </div>
+
+    <div class="struct-block">
+      <div class="struct-label"><span>💡 استدلال ۶ — Argument 6</span></div>
+      <div class="struct-fr">Enfin, on peut dire que le tri des déchets ne demande ni beaucoup de temps ni de grands moyens...</div>
+      <div class="struct-fa">«در نهایت، می‌توان گفت که تفکیک زباله نه وقت زیادی می‌خواهد نه امکانات بزرگ...»</div>
+      <div class="struct-tip"><b>Enfin</b> = آخرین استدلال. بعدش مستقیم نتیجه.</div>
+    </div>
+
+    <!-- نتیجه -->
+    <div class="struct-block">
+      <div class="struct-label"><span>🏁 نتیجه‌گیری — Conclusion</span><span class="sl-time">۳–۴ جمله</span></div>
+      <div class="struct-fr">Pour conclure, je pense que tout le monde peut participer au tri des déchets sans difficulté. C'est un geste simple, accessible à tous et essentiel pour protéger l'environnement. En adoptant cette habitude au quotidien, chacun contribue à construire un avenir plus propre, plus sain et plus durable pour les générations futures.</div>
+      <div class="struct-fa">«برای نتیجه‌گیری، فکر می‌کنم همه می‌توانند بدون مشکل در تفکیک زباله شرکت کنند...»</div>
+      <div class="struct-tip">
+        📌 <b>فرمول نتیجه:</b> Pour conclure + خلاصه‌ی موضع + جمله‌ی تأثیرگذار (آینده، نسل‌های بعدی، تصویر کلی).<br>
+        ⚠️ هیچ‌وقت استدلال جدید در نتیجه نیار!
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ تب ۲: متن با هایلایت ═══ -->
+  <div class="section" id="sec-text">
+    <div class="legend">
+      <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+      <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3); border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار</b></span></div>
+      <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.2); border:1px dotted #2e8b6b"></span><span><b style="color:#1d6b50">کانکتور / ربط</b></span></div>
+    </div>
+
+    <!-- مقدمه -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-intro">مقدمه</span> Introduction</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Aujourd'hui<span class="pop">کانکتور زمانی — شروع کلاسیک مقاله</span></hc>,
+        la protection de l'environnement est
+        <span class="hs" onclick="t(this)">devenue<span class="pop">⚙ «est devenue» = passé composé فعل devenir + être. «تبدیل شده است به»</span></span>
+        un <span class="hw" onclick="t(this)">enjeu majeur<span class="pop">enjeu (m) = چالش / موضوع مهم. «enjeu majeur» = چالش اصلی (کلوکیشن رسمی)</span></span>
+        dans le monde entier.
+        La pollution, l'<span class="hw" onclick="t(this)">accumulation<span class="pop">accumulation (f) = انباشتگی / تجمع</span></span> des déchets et la
+        <span class="hw" onclick="t(this)">dégradation<span class="pop">dégradation (f) = تخریب / فرسایش (رسمی)</span></span>
+        de la nature <span class="hw" onclick="t(this)">inquiètent de plus en plus<span class="pop">«de plus en plus» = هر چه بیشتر / روزبه‌روز بیشتر</span></span> les populations.
+        <hc class="hc" onclick="t(this)">Parmi les solutions proposées<span class="pop">«parmi les...» = در میانِ... — عبارت مقدمه‌ای رسمی</span></hc>,
+        le tri des déchets est
+        <span class="hs" onclick="t(this)">souvent présenté comme<span class="pop">⚙ passif: «est présenté» = ارائه می‌شود / نشان داده می‌شود. «être présenté comme» = به‌عنوان ... معرفی شدن</span></span>
+        un <span class="hw" onclick="t(this)">geste<span class="pop">geste (m) = اقدام / حرکت (مجازی: کار کوچک ولی معنادار)</span></span>
+        simple et efficace.
+        <hc class="hc" onclick="t(this)">Personnellement<span class="pop">«Personnellement» — شروع موضع شخصی. اینجا بگذار!</span></hc>,
+        je suis <span class="hw" onclick="t(this)">tout à fait d'accord avec<span class="pop">«tout à fait» = کاملاً. «être d'accord avec» = موافق بودن با</span></span>
+        l'idée que tout le monde peut participer au tri des déchets, car
+        <span class="hs" onclick="t(this)">il s'agit d'une action<span class="pop">⚙ «il s'agit de» = این درباره‌ی / این مربوط به است. ساختار غیرشخصی کلیدی</span></span>
+        accessible, utile et <span class="hw" onclick="t(this)">indispensable<span class="pop">indispensable = ضروری / لازم‌وملزوم (قوی‌تر از nécessaire)</span></span>
+        pour <span class="hw" onclick="t(this)">préserver<span class="pop">préserver = حفظ کردن / صیانت کردن از (رسمی)</span></span> notre planète.
+      </div>
+      <div class="para-fa">امروز، حفاظت از محیط زیست تبدیل به یک چالش اصلی در سراسر جهان شده است. آلودگی، انباشتگی زباله و تخریب طبیعت روزبه‌روز بیشتر مردم را نگران می‌کند. در میان راه‌حل‌های پیشنهادی، تفکیک زباله اغلب به‌عنوان یک اقدام ساده و مؤثر معرفی می‌شود. شخصاً کاملاً با این ایده موافقم که همه می‌توانند در تفکیک زباله شرکت کنند، زیرا این یک اقدام در دسترس، مفید و ضروری برای حفظ کره‌ی زمین است.</div>
+    </div>
+
+    <!-- استدلال ۱ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۱</span> Simplicité</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Tout d'abord<span class="pop">کانکتور اول — برای اولین استدلال. (Premièrement هم درست است)</span></hc>,
+        le tri des déchets est une pratique très simple
+        <span class="hs" onclick="t(this)">à mettre en place<span class="pop">⚙ «adj + à + مصدر» = «ساده برای اجرا کردن». mettre en place = راه‌اندازی کردن / عملی کردن</span></span>
+        dans la vie quotidienne.
+        <hc class="hc" onclick="t(this)">En effet<span class="pop">«En effet» = در واقع / چرا که — برای توضیح ادعا</span></hc>,
+        <span class="hs" onclick="t(this)">il suffit de respecter<span class="pop">⚙ «il suffit de + مصدر» = کافی است که / فقط لازم است. ساختار غیرشخصی پرکاربرد</span></span>
+        quelques règles de base, comme séparer le plastique, le papier, le verre et les
+        <span class="hw" onclick="t(this)">déchets organiques<span class="pop">déchet organique = زبالهٔ آلی / کمپوست</span></span>.
+        Grâce aux différentes
+        <span class="hw" onclick="t(this)">poubelles mises à disposition<span class="pop">«mettre à disposition» = در اختیار قرار دادن (passif: mises à disposition)</span></span>,
+        chacun peut facilement <span class="hw" onclick="t(this)">adopter<span class="pop">adopter = پذیرفتن / به‌کار گرفتن (رسمی). «adopter une habitude»</span></span>
+        ce geste sans <span class="hw" onclick="t(this)">difficulté particulière<span class="pop">«sans difficulté particulière» = بدون هیچ مشکل خاصی (عبارت کاربردی)</span></span>.
+        Même les enfants peuvent apprendre rapidement ces <span class="hw" onclick="t(this)">bonnes habitudes<span class="pop">«bonnes habitudes» = عادت‌های خوب (کلوکیشن)</span></span>.
+      </div>
+      <div class="para-fa">اول از همه، تفکیک زباله یک عمل بسیار ساده برای پیاده‌سازی در زندگی روزمره است. در واقع، کافی است چند قانون پایه را رعایت کنیم، مثل جدا کردن پلاستیک، کاغذ، شیشه و زباله‌های آلی. با سطل‌های مختلفی که در اختیار قرار می‌گیرد، هر کسی می‌تواند به‌راحتی این اقدام را بدون هیچ مشکل خاصی انجام دهد. حتی بچه‌ها هم می‌توانند این عادت‌های خوب را در مدرسه یا خانه یاد بگیرند.</div>
+    </div>
+
+    <!-- استدلال ۲ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۲</span> Environnement</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Ensuite<span class="pop">کانکتور دوم — برای استدلال بعدی</span></hc>,
+        le tri des déchets <span class="hs" onclick="t(this)">joue un rôle essentiel<span class="pop">⚙ «jouer un rôle» = نقشی ایفا کردن (کلوکیشن ثابت! — ✗ «avoir un rôle» اشتباه است)</span></span>
+        dans la protection de l'environnement.
+        <hc class="hc" onclick="t(this)">En effet<span class="pop">دوباره «En effet» برای توضیح — می‌تونی تکرارش کنی</span></hc>,
+        lorsqu'<span class="hs" onclick="t(this)">on trie correctement<span class="pop">⚙ «on» به جای «nous» — برای بیان عمومی در نوشتار. «lorsque» + présent</span></span>,
+        les matériaux peuvent être
+        <span class="hs" onclick="t(this)">recyclés et réutilisés<span class="pop">⚙ passif: «peuvent être + participe» = می‌توانند بازیافت شوند و مجدداً استفاده شوند</span></span>,
+        ce qui <span class="hw" onclick="t(this)">réduit la pollution<span class="pop">«réduire» = کاهش دادن. «ce qui réduit» = که این آلودگی را کاهش می‌دهد (relative)</span></span>
+        et limite
+        <span class="hw" onclick="t(this)">l'exploitation excessive<span class="pop">exploitation excessive (f) = بهره‌برداری بیش از حد (از منابع طبیعی)</span></span>
+        des ressources naturelles.
+        <hc class="hc" onclick="t(this)">Par conséquent<span class="pop">«Par conséquent» = در نتیجه (رسمی‌تر از «donc»)</span></hc>,
+        cela permet de
+        <span class="hw" onclick="t(this)">diminuer la quantité de<span class="pop">«diminuer» = کاهش دادن. «diminuer la quantité de» = کمیتِ... را کاهش دادن</span></span>
+        déchets envoyés dans les
+        <span class="hw" onclick="t(this)">décharges<span class="pop">décharge (f) = محل دفن زباله / زباله‌دان عمومی</span></span>
+        ou <span class="hw" onclick="t(this)">incinérés<span class="pop">incinérer = سوزاندن (زباله). «incinérés» = participe passé</span></span>,
+        ce qui <span class="hw" onclick="t(this)">contribue directement<span class="pop">«contribuer à» = کمک کردن به / سهیم بودن در (+ اسم یا مصدر)</span></span>
+        à la <span class="hw" onclick="t(this)">préservation<span class="pop">préservation (f) = صیانت / حفظ (اسم مصدر از «préserver»)</span></span>
+        de notre <span class="hw" onclick="t(this)">écosystème<span class="pop">écosystème (m) = اکوسیستم</span></span>.
+      </div>
+      <div class="para-fa">بعد، تفکیک زباله نقش اساسی در حفاظت از محیط زیست دارد. در واقع، وقتی درست تفکیک می‌کنیم، مواد می‌توانند بازیافت و مجدداً استفاده شوند، که این آلودگی را کاهش می‌دهد و استفاده‌ی بیش از حد از منابع طبیعی را محدود می‌کند. در نتیجه، این اجازه می‌دهد مقدار زباله‌هایی که به محل دفن یا برای سوزاندن فرستاده می‌شوند کاهش یابد، که مستقیماً به صیانت از اکوسیستم ما کمک می‌کند.</div>
+    </div>
+
+    <!-- استدلال ۳ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۳</span> Gestion urbaine</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">De plus<span class="pop">«De plus» = علاوه بر این — کانکتور اضافه</span></hc>,
+        cette pratique <span class="hw" onclick="t(this)">améliore considérablement<span class="pop">«considérablement» = به‌طور قابل‌توجهی (قید قوی)</span></span>
+        la <span class="hw" onclick="t(this)">gestion des déchets<span class="pop">gestion (f) = مدیریت. «gestion des déchets» = مدیریت پسماند</span></span>
+        dans les villes.
+        <hc class="hc" onclick="t(this)">En effet<span class="pop">«En effet» سومین بار — این کانکتور خیلی کاربردی است</span></hc>,
+        lorsque les déchets sont bien
+        <span class="hw" onclick="t(this)">séparés à la source<span class="pop">«à la source» = از مبدأ / از همان ابتدا (اصطلاح)</span></span>,
+        ils sont plus faciles à <span class="hw" onclick="t(this)">traiter<span class="pop">traiter = پردازش کردن / مدیریت کردن</span></span>
+        dans les <span class="hw" onclick="t(this)">centres de tri<span class="pop">centre de tri = مرکز پردازش و تفکیک زباله</span></span>.
+        Cela rend le processus de recyclage plus efficace et <span class="hw" onclick="t(this)">moins coûteux<span class="pop">«moins coûteux» = کم‌هزینه‌تر. «coûteux» = پرهزینه</span></span>
+        pour les <span class="hw" onclick="t(this)">collectivités locales<span class="pop">collectivité locale (f) = شهرداری / نهاد محلی</span></span>.
+        <hc class="hc" onclick="t(this)">Ainsi<span class="pop">«Ainsi» = بدین‌ترتیب / به این شکل — کانکتور نتیجه‌ی جزئی</span></hc>,
+        les villes peuvent mieux organiser la <span class="hw" onclick="t(this)">collecte<span class="pop">collecte (f) = جمع‌آوری. «collecte des déchets» = جمع‌آوری زباله</span></span>
+        et le traitement des déchets
+        <span class="hs" onclick="t(this)">tout en réduisant<span class="pop">⚙ «tout en + gérondif» = در عین حال که ... — بیان دو کار همزمان. مهم!</span></span>
+        leur impact environnemental.
+      </div>
+      <div class="para-fa">علاوه بر این، این عمل مدیریت زباله در شهرها را به‌طور قابل‌توجهی بهبود می‌بخشد. در واقع، وقتی زباله‌ها از همان مبدأ به‌درستی جدا می‌شوند، پردازش‌شان در مراکز تفکیک راحت‌تر است. این فرآیند بازیافت را مؤثرتر و کم‌هزینه‌تر برای شهرداری‌ها می‌کند. بدین‌ترتیب، شهرها می‌توانند جمع‌آوری و پردازش زباله را بهتر سازماندهی کنند در حالی که تأثیر محیط‌زیستی‌شان را کاهش می‌دهند.</div>
+    </div>
+
+    <!-- استدلال ۴ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۴</span> Responsabilité collective</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Par ailleurs<span class="pop">«Par ailleurs» = همچنین / از طرف دیگر — برای استدلال جدید با زاویه‌ای متفاوت</span></hc>,
+        <span class="hs" onclick="t(this)">il est important de souligner que<span class="pop">⚙ «il est important de + مصدر» = مهم است که. «souligner» = تأکید کردن / زیرخط کشیدن</span></span>
+        le tri des déchets est une
+        <span class="hw" onclick="t(this)">responsabilité collective<span class="pop">responsabilité collective = مسئولیت جمعی (کلوکیشن)</span></span>.
+        Chaque citoyen, même en faisant un petit effort,
+        <span class="hw" onclick="t(this)">contribue à un changement global<span class="pop">«contribuer à» = سهیم بودن در. «changement global» = تغییر جهانی</span></span>.
+        <hc class="hc" onclick="t(this)">En effet<span class="pop">«En effet» دوباره — اطمینان از درستی‌اش داری!</span></hc>,
+        si des millions de personnes <span class="hw" onclick="t(this)">adoptent ce geste simple au quotidien<span class="pop">«au quotidien» = در زندگی روزانه (عبارت قیدی)</span></span>,
+        les effets positifs deviennent très importants
+        <span class="hw" onclick="t(this)">à l'échelle de la société<span class="pop">«à l'échelle de» = در مقیاس / در سطحِ (اصطلاح مهم رسمی)</span></span>.
+        <hc class="hc" onclick="t(this)">C'est pourquoi<span class="pop">«C'est pourquoi» = به همین دلیل است که — کانکتور نتیجه‌گیری جزئی</span></hc>
+        la participation de tous est
+        <span class="hw" onclick="t(this)">essentielle<span class="pop">essentiel(le) = ضروری / اساسی</span></span>
+        pour obtenir des résultats
+        <span class="hw" onclick="t(this)">significatifs<span class="pop">significatif(ve) = معنادار / قابل‌توجه</span></span>.
+      </div>
+      <div class="para-fa">همچنین، مهم است تأکید شود که تفکیک زباله یک مسئولیت جمعی است. هر شهروند، حتی با انجام یک تلاش کوچک، به یک تغییر جهانی کمک می‌کند. در واقع، اگر میلیون‌ها نفر این اقدام ساده را در زندگی روزانه‌شان انجام دهند، تأثیرات مثبت در مقیاس جامعه بسیار مهم می‌شوند. به همین دلیل است که مشارکت همه برای به دست آوردن نتایج معنادار ضروری است.</div>
+    </div>
+
+    <!-- استدلال ۵ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۵</span> Sensibilisation</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">En outre<span class="pop">«En outre» = علاوه بر این (رسمی‌تر از «de plus»)</span></hc>,
+        le tri des déchets permet aussi de
+        <span class="hw" onclick="t(this)">sensibiliser<span class="pop">sensibiliser = آگاه کردن / حساس کردن. «sensibiliser à» = نسبت به ... آگاه کردن</span></span>
+        les nouvelles générations à l'importance de
+        <span class="hw" onclick="t(this)">l'écologie<span class="pop">l'écologie (f) = اکولوژی / علم محیط زیست</span></span>.
+        <span class="hs" onclick="t(this)">En apprenant ces gestes dès le plus jeune âge<span class="pop">⚙ gérondif «en apprenant» = با یاد گرفتن این اقدامات. «dès le plus jeune âge» = از کوچک‌ترین سن</span></span>,
+        les enfants <span class="hw" onclick="t(this)">développent des habitudes responsables<span class="pop">«développer des habitudes» = ایجاد کردن / پرورش دادن عادت‌ها</span></span>
+        <span class="hs" onclick="t(this)">qu'ils garderont à l'âge adulte<span class="pop">⚙ «qu'ils garderont» = که آن‌ها را در بزرگسالی حفظ خواهند کرد. «à l'âge adulte» = در بزرگسالی</span></span>.
+        Cela contribue à former des citoyens plus
+        <span class="hw" onclick="t(this)">conscients des enjeux environnementaux<span class="pop">«conscient de» = آگاه از. «enjeux environnementaux» = چالش‌های محیط زیستی</span></span>
+        et plus <span class="hw" onclick="t(this)">respectueux de la nature<span class="pop">«respectueux de» = محترم/پایبند به. «respectueux de la nature» = محترم به طبیعت</span></span>.
+      </div>
+      <div class="para-fa">علاوه بر این، تفکیک زباله اجازه می‌دهد نسل‌های جدید را نسبت به اهمیت محیط زیست آگاه کنیم. با یاد گرفتن این اقدامات از کوچک‌ترین سن، بچه‌ها عادت‌های مسئولانه‌ای ایجاد می‌کنند که در بزرگسالی هم حفظ خواهند کرد. این به تشکیل شهروندانی کمک می‌کند که بیشتر از چالش‌های محیط زیستی آگاه‌اند و بیشتر به طبیعت احترام می‌گذارند.</div>
+    </div>
+
+    <!-- استدلال ۶ -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-arg">استدلال ۶</span> Accessibilité</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Enfin<span class="pop">«Enfin» = در نهایت — کانکتور آخرین استدلال</span></hc>,
+        <span class="hs" onclick="t(this)">on peut dire que<span class="pop">⚙ «on peut dire que» = می‌توان گفت که — ساختار بیان نتیجه‌ی جزئی</span></span>
+        le tri des déchets
+        <span class="hs" onclick="t(this)">ne demande ni beaucoup de temps ni de grands moyens<span class="pop">⚙ «ne... ni... ni...» = نه ... نه ... — ساختار نفی دوگانه. «moyens» = امکانات / منابع</span></span>.
+        <span class="hs" onclick="t(this)">Il s'agit simplement d'un changement de comportement<span class="pop">⚙ «il s'agit de» = این درباره‌ی ... است — دومین بار در متن</span></span>
+        facile à adopter, mais qui peut avoir un
+        <span class="hw" onclick="t(this)">impact très positif sur le long terme<span class="pop">«sur le long terme» = در بلندمدت (اصطلاح). «avoir un impact sur» = تأثیر داشتن بر</span></span>.
+        Chaque personne a donc
+        <span class="hs" onclick="t(this)">un rôle à jouer<span class="pop">⚙ «avoir un rôle à jouer» = نقشی برای ایفا کردن داشتن. «à + مصدر» بعد از اسم = ساختار صفتی</span></span>
+        dans cette <span class="hw" onclick="t(this)">démarche écologique<span class="pop">démarche (f) = رویکرد / اقدام. «démarche écologique» = رویکرد زیست‌محیطی</span></span>.
+      </div>
+      <div class="para-fa">در نهایت، می‌توان گفت که تفکیک زباله نه وقت زیادی می‌خواهد نه امکانات بزرگ. این صرفاً تغییری در رفتار است که راحت می‌توان آن را پذیرفت، اما می‌تواند تأثیر بسیار مثبتی در بلندمدت داشته باشد. پس هر کسی نقشی برای ایفا کردن در این رویکرد زیست‌محیطی دارد.</div>
+    </div>
+
+    <!-- نتیجه -->
+    <div class="text-block">
+      <div class="para-head"><span class="para-tag tag-conc">نتیجه</span> Conclusion</div>
+      <div class="para-fr">
+        <hc class="hc" onclick="t(this)">Pour conclure<span class="pop">«Pour conclure» = برای نتیجه‌گیری — کانکتور کلاسیک</span></hc>,
+        je pense que tout le monde peut participer au tri des déchets sans difficulté.
+        <span class="hs" onclick="t(this)">C'est un geste simple, accessible à tous et essentiel<span class="pop">⚙ سه صفت پشت سر هم با کاما — ساختار بلاغی «tricolon» برای تأثیرگذاری</span></span>
+        pour protéger l'environnement.
+        <span class="hs" onclick="t(this)">En adoptant cette habitude au quotidien<span class="pop">⚙ gérondif ختمی «En adoptant» — جمله را با حالت می‌آغازد</span></span>,
+        chacun contribue à construire un avenir
+        <span class="hw" onclick="t(this)">plus propre, plus sain et plus durable<span class="pop">«plus... plus... plus...» — سه‌گانه‌ی تأکیدی. «durable» = پایدار / ماندگار</span></span>
+        pour les <span class="hw" onclick="t(this)">générations futures<span class="pop">générations futures = نسل‌های آینده — جمله‌ی پایانی تأثیرگذار کلاسیک</span></span>.
+      </div>
+      <div class="para-fa">برای نتیجه‌گیری، فکر می‌کنم همه می‌توانند بدون مشکل در تفکیک زباله شرکت کنند. این یک اقدام ساده، در دسترس همه و ضروری برای حفاظت از محیط زیست است. با پذیرفتن این عادت در زندگی روزانه، هر کسی به ساختن آینده‌ای پاک‌تر، سالم‌تر و پایدارتر برای نسل‌های آینده کمک می‌کند.</div>
+    </div>
+  </div>
+
+  <!-- ═══ تب ۳: جعبهٔ ابزار ═══ -->
+  <div class="section" id="sec-tools">
+
+    <div class="tool-section">
+      <div class="tool-title">🔗 کانکتورهای این متن — حفظشان کن</div>
+      <div class="tool-grid">
+        <div class="tool-card do-card"><div class="tc-label do-tag">شروع استدلال</div>
+          <div class="tc-fr" dir="ltr">Tout d'abord · Ensuite · De plus · Par ailleurs · En outre · Enfin</div>
+          <div class="tc-fa">اول از همه · بعد · علاوه بر این · همچنین · علاوه بر این · در نهایت</div>
+          <div class="tc-note">این ۶ را به ترتیب حفظ کن — ستون فقرات هر مقاله</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">توضیح و نتیجه</div>
+          <div class="tc-fr" dir="ltr">En effet · Par conséquent · Ainsi · C'est pourquoi</div>
+          <div class="tc-fa">در واقع · در نتیجه · بدین‌ترتیب · به همین دلیل است که</div>
+          <div class="tc-note">«En effet» را خیلی بیشتر از «car» استفاده کن</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-section">
+      <div class="tool-title">⚙ ساختارهای کلیدی — یاد بگیر و استفاده کن</div>
+      <div class="tool-grid">
+        <div class="tool-card do-card"><div class="tc-label do-tag">«il suffit de + مصدر»</div>
+          <div class="tc-fr" dir="ltr">Il suffit de respecter quelques règles.</div>
+          <div class="tc-fa">کافی است چند قانون را رعایت کنیم.</div>
+          <div class="tc-note">برای نشان دادن سادگی یک کار</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">«il s'agit de»</div>
+          <div class="tc-fr" dir="ltr">Il s'agit d'une action accessible.</div>
+          <div class="tc-fa">این یک اقدام در دسترس است.</div>
+          <div class="tc-note">به‌جای «c'est» در نوشتار رسمی</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">«tout en + gérondif»</div>
+          <div class="tc-fr" dir="ltr">...tout en réduisant leur impact.</div>
+          <div class="tc-fa">...در حالی که تأثیرشان را کاهش می‌دهند.</div>
+          <div class="tc-note">دو کار همزمان — ساختار B2</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">«jouer un rôle»</div>
+          <div class="tc-fr" dir="ltr">Ce geste joue un rôle essentiel.</div>
+          <div class="tc-fa">این اقدام نقش اساسی دارد.</div>
+          <div class="tc-note">✗ «avoir un rôle» — اشتباه رایج!</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">passif رسمی</div>
+          <div class="tc-fr" dir="ltr">Les déchets sont bien séparés à la source.</div>
+          <div class="tc-fa">زباله‌ها از همان مبدأ به‌درستی جدا می‌شوند.</div>
+          <div class="tc-note">نوشتار B2 پر از passive voice است</div>
+        </div>
+        <div class="tool-card do-card"><div class="tc-label do-tag">«ne... ni... ni...»</div>
+          <div class="tc-fr" dir="ltr">Cela ne demande ni temps ni moyens.</div>
+          <div class="tc-fa">این نه وقت می‌خواهد نه امکانات.</div>
+          <div class="tc-note">نفی دوگانه — نشانه‌ی تسلط</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-section">
+      <div class="tool-title">💎 واژگان محوری این موضوع — حفظشان کن</div>
+      <div class="tool-grid">
+        <div class="tool-card"><div class="tc-label">📦 اسم‌ها</div>
+          <div class="tc-fr" dir="ltr">un enjeu · la dégradation · la gestion · la collecte · une démarche · la préservation · un impact</div>
+          <div class="tc-fa">چالش · تخریب · مدیریت · جمع‌آوری · رویکرد · صیانت · تأثیر</div>
+        </div>
+        <div class="tool-card"><div class="tc-label">🔧 فعل‌ها</div>
+          <div class="tc-fr" dir="ltr">préserver · sensibiliser à · contribuer à · réduire · adopter · souligner</div>
+          <div class="tc-fa">حفظ کردن · آگاه کردن از · کمک کردن به · کاهش دادن · پذیرفتن · تأکید کردن</div>
+        </div>
+        <div class="tool-card"><div class="tc-label">✨ صفت‌ها و قیدها</div>
+          <div class="tc-fr" dir="ltr">significatif · considérablement · durable · indispensable · essentiel</div>
+          <div class="tc-fa">معنادار · به‌طور قابل‌توجه · پایدار · ضروری · اساسی</div>
+        </div>
+        <div class="tool-card"><div class="tc-label">🏷 اصطلاحات</div>
+          <div class="tc-fr" dir="ltr">à la source · à l'échelle de · sur le long terme · au quotidien · à l'âge adulte</div>
+          <div class="tc-fa">از مبدأ · در مقیاسِ · در بلندمدت · در زندگی روزانه · در بزرگسالی</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tool-section">
+      <div class="tool-title">✅ بکن / ❌ نکن</div>
+      <div class="tool-grid">
+        <div class="tool-card do-card">
+          <div class="tc-label do-tag">✅ همیشه</div>
+          <div class="tc-fr" dir="ltr">Personnellement, je suis tout à fait d'accord...</div>
+          <div class="tc-fa">موضعت را در مقدمه صریح بنویس</div>
+        </div>
+        <div class="tool-card dont-card">
+          <div class="tc-label dont-tag">❌ هیچ‌وقت</div>
+          <div class="tc-fr" dir="ltr">Moi, je pense que c'est bien...</div>
+          <div class="tc-fa">جمله‌های خیلی محاوره‌ای — نمره می‌برد!</div>
+        </div>
+        <div class="tool-card do-card">
+          <div class="tc-label do-tag">✅ برای هر پاراگراف</div>
+          <div class="tc-fr" dir="ltr">Ensuite... En effet... Par conséquent...</div>
+          <div class="tc-fa">یه کانکتور + توضیح + نتیجه‌ی جزئی</div>
+        </div>
+        <div class="tool-card dont-card">
+          <div class="tc-label dont-tag">❌ در نتیجه</div>
+          <div class="tc-fr" dir="ltr">استدلال جدید در بند آخر!</div>
+          <div class="tc-fa">نتیجه فقط خلاصه و تأکید می‌کند</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ تب ۴: سؤال دوم ═══ -->
+  <div class="section" id="sec-q2">
+    <div class="q2-intro">
+      <div class="q2-question" dir="ltr">Pensez-vous qu'il soit possible de développer l'économie tout en préservant l'environnement ?</div>
+      <div class="q2-question-fa">آیا فکر می‌کنید توسعهٔ اقتصادی در عین حفاظت از محیط زیست ممکن است؟</div>
+      <div class="q2-note">این هم یک سؤال استدلالی است — ولی این بار <b>دو طرف</b> دارد. کاوه، موضعت را انتخاب کن و دفاع کن. پیشنهاد من: <b>موافق</b> باش (دفاع‌پذیرتر است).</div>
+    </div>
+
+    <div class="q2-plan">
+      <div class="q2-plan-head">📐 نقشه‌ی پیشنهادی برای جواب</div>
+      <div class="q2-plan-row">
+        <div class="q2-plan-step">مقدمه</div>
+        <div class="q2-plan-body">
+          <div class="q2-plan-fr" dir="ltr">De nos jours, le développement économique et la préservation de l'environnement semblent souvent contradictoires. Pourtant, il est possible de concilier ces deux objectifs grâce à des stratégies innovantes. Personnellement, je pense que oui, cette conciliation est non seulement possible, mais également nécessaire.</div>
+          <div class="q2-plan-fa">امروزه رشد اقتصادی و حفظ محیط زیست اغلب متناقض به نظر می‌رسند. با این حال، با استراتژی‌های نوآورانه می‌توان این دو هدف را آشتی داد.</div>
+        </div>
+      </div>
+      <div class="q2-plan-row">
+        <div class="q2-plan-step">استدلال ۱</div>
+        <div class="q2-plan-body">
+          <div class="q2-plan-fr" dir="ltr">Tout d'abord, l'économie verte (green economy) crée de nouveaux emplois tout en réduisant l'impact environnemental. Les énergies renouvelables, par exemple, sont désormais plus compétitives que les énergies fossiles.</div>
+          <div class="q2-plan-fa">اقتصاد سبز شغل‌های جدید ایجاد می‌کند در حالی که تأثیر محیط‌زیستی را کاهش می‌دهد.</div>
+        </div>
+      </div>
+      <div class="q2-plan-row">
+        <div class="q2-plan-step">استدلال ۲</div>
+        <div class="q2-plan-body">
+          <div class="q2-plan-fr" dir="ltr">Ensuite, l'économie circulaire permet de réduire les déchets et de créer de la valeur économique en réutilisant les matériaux. C'est un modèle gagnant-gagnant pour les entreprises et pour l'environnement.</div>
+          <div class="q2-plan-fa">اقتصاد چرخشی اجازه می‌دهد زباله کاهش یابد و با استفاده‌ی مجدد از مواد، ارزش اقتصادی ایجاد شود.</div>
+        </div>
+      </div>
+      <div class="q2-plan-row">
+        <div class="q2-plan-step">ضداستدلال</div>
+        <div class="q2-plan-body">
+          <div class="q2-plan-fr" dir="ltr">Certes, certains secteurs industriels ont du mal à concilier croissance et écologie. Cependant, grâce aux innovations technologiques et aux réglementations environnementales, cette transition devient de plus en plus réalisable.</div>
+          <div class="q2-plan-fa">البته برخی صنایع در آشتی‌دادن رشد و اکولوژی مشکل دارند. اما با نوآوری‌ها این انتقال شدنی‌تر می‌شود.</div>
+        </div>
+      </div>
+      <div class="q2-plan-row">
+        <div class="q2-plan-step">نتیجه</div>
+        <div class="q2-plan-body">
+          <div class="q2-plan-fr" dir="ltr">Pour conclure, développer l'économie tout en préservant l'environnement est non seulement possible, mais c'est la seule voie durable pour l'avenir. Les gouvernements, les entreprises et les citoyens doivent travailler ensemble pour y parvenir.</div>
+          <div class="q2-plan-fa">توسعه‌ی اقتصادی در عین حفظ محیط زیست نه تنها ممکن، بلکه تنها مسیر پایدار برای آینده است.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      💡 <b>کلمات کلیدی برای این سؤال:</b><br>
+      <span dir="ltr">concilier · économie verte · économie circulaire · énergies renouvelables · développement durable · gagnant-gagnant · transition écologique · réglementation · innovation technologique</span>
+    </div>
+  </div>
+
+  <div class="footer">✦ متن از یک نمونه‌ی آموزشی — تحلیل توسط Français avec Hoda برای کاوه<br><b>DOSSIER PRIVÉ</b></div>
+</div>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.getElementById("sec-" + id).classList.add("active");
+    event.currentTarget.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+  function t(el) {
+    const wasOpen = el.classList.contains("open");
+    document.querySelectorAll(".hw.open,.hs.open,.hc.open").forEach(e => {
+      e.classList.remove("open");
+      if(e._cwT){ clearTimeout(e._cwT); e._cwT = null; }
+    });
+    if (!wasOpen) {
+      el.classList.add("open");
+      el._cwT = setTimeout(() => { el.classList.remove("open"); el._cwT = null; }, 3500);
+    }
+  }
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
