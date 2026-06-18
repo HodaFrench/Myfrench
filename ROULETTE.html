@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گردونه‌ی موضوع — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --accent:#7a5ba8; --accent-deep:#5a3b88; --gold:#c4a572;
+    --paper:#f4f3f5; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(122,91,168,0.05) 31px, rgba(122,91,168,0.05) 32px);
+    color:var(--ink); line-height:1.9; padding:20px 16px 70px; min-height:100vh;}
+  .wrap{max-width:620px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s; cursor:pointer;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+  .rl-header{text-align:center; margin-bottom:24px;}
+  .rl-header .rl-emoji{font-size:38px; margin-bottom:6px;}
+  .rl-header h1{font-size:25px; font-weight:700; color:var(--navy); margin-bottom:6px;}
+  .rl-header p{font-size:13.5px; color:var(--gray); line-height:1.9; max-width:440px; margin:0 auto;}
+  /* چرخ */
+  .wheel-wrap{position:relative; width:330px; height:330px; margin:10px auto 24px;}
+  .wheel-pointer{position:absolute; top:-6px; left:50%; transform:translateX(-50%); z-index:5;
+    width:0; height:0; border-left:16px solid transparent; border-right:16px solid transparent;
+    border-top:26px solid var(--accent-deep); filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));}
+  .wheel{width:330px; height:330px; border-radius:50%; position:relative;
+    transition:transform 4.5s cubic-bezier(.17,.67,.2,1);
+    box-shadow:0 14px 40px rgba(122,91,168,.3), inset 0 0 0 8px rgba(255,255,255,.6); }
+  .wheel-center{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4;
+    width:64px; height:64px; border-radius:50%; background:var(--white); border:4px solid var(--accent);
+    display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 4px 14px rgba(0,0,0,.18);}
+  /* دکمه */
+  .spin-btn{display:block; margin:0 auto 22px; font-family:'Estedad',sans-serif; font-size:17px; font-weight:700;
+    background:linear-gradient(135deg, var(--accent), var(--accent-deep)); color:#fff; border:none;
+    border-radius:30px; padding:14px 40px; cursor:pointer; box-shadow:0 8px 22px rgba(122,91,168,.32); transition:transform .15s, opacity .2s;}
+  .spin-btn:hover{transform:translateY(-2px);}
+  .spin-btn:active{transform:translateY(0);}
+  .spin-btn:disabled{opacity:.5; cursor:default; transform:none;}
+  /* نتیجه */
+  .result{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--accent);
+    border-radius:18px; padding:26px; text-align:center; box-shadow:0 10px 30px rgba(31,58,95,.07);
+    opacity:0; transform:translateY(12px); transition:all .4s ease; min-height:130px; display:flex; flex-direction:column; justify-content:center;}
+  .result.show{opacity:1; transform:translateY(0);}
+  .result-label{font-size:12px; color:var(--gray); margin-bottom:10px; letter-spacing:1px;}
+  .result-fr{font-family:'Roboto',serif; font-size:30px; font-weight:700; color:var(--navy); direction:ltr; margin-bottom:6px;}
+  .result-fa{font-size:17px; color:var(--accent); font-weight:600;}
+  .result-hint{font-size:12.5px; color:var(--gray); margin-top:14px; line-height:1.8; border-top:1px dashed var(--line); padding-top:12px;}
+  .result-empty{font-size:14px; color:var(--gray);}
+  .rl-footer{text-align:center; margin-top:26px; color:var(--gray); font-size:12.5px;}
+  .rl-footer b{color:var(--accent);}
+  .rl-count{display:inline-block; background:rgba(122,91,168,.1); color:var(--accent-deep);
+    font-size:11.5px; font-weight:600; padding:4px 12px; border-radius:12px; margin-top:8px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html">⌂ Français avec Hoda</a>
+    </div>
+    <div class="rl-header">
+      <div class="rl-emoji">🎡</div>
+      <h1>گردونه‌ی موضوع</h1>
+      <p>چرخ را بچرخان! یک موضوع تصادفی برایت می‌آید و تو باید <b>یک دقیقه</b> درباره‌اش به فرانسه حرف بزنی. بهترین راه برای غلبه بر ترسِ حرف زدن.</p>
+      <div class="rl-count" id="rlCount"></div>
+    </div>
+    <div class="wheel-wrap">
+      <div class="wheel-pointer"></div>
+      <div class="wheel" id="wheel"></div>
+      <div class="wheel-center">🎯</div>
+    </div>
+    <button class="spin-btn" id="spinBtn" onclick="spin()">بچرخان! 🎲</button>
+    <div class="result" id="result">
+      <div class="result-empty">چرخ را بچرخان تا موضوعت معلوم شود…</div>
+    </div>
+    <div class="rl-footer">
+      ✦ نکته: سعی کن بدون مکث، با جمله‌های ساده شروع کنی. مهم حرف‌زدن است، نه بی‌نقص بودن.<br>
+      <b>Français avec Hoda</b>
+    </div>
+  </div>
+  <script>
+    const TOPICS = [{"fr": "Le bonheur", "fa": "خوشبختی"}, {"fr": "La liberté", "fa": "آزادی"}, {"fr": "L'amitié", "fa": "دوستی"}, {"fr": "Le mensonge", "fa": "دروغ"}, {"fr": "La réussite", "fa": "موفقیت"}, {"fr": "L'échec", "fa": "شکست"}, {"fr": "Le temps", "fa": "زمان"}, {"fr": "La solitude", "fa": "تنهایی"}, {"fr": "L'argent", "fa": "پول"}, {"fr": "La peur", "fa": "ترس"}, {"fr": "Le courage", "fa": "شجاعت"}, {"fr": "La justice", "fa": "عدالت"}, {"fr": "La technologie", "fa": "فناوری"}, {"fr": "Les réseaux sociaux", "fa": "شبکه‌های اجتماعی"}, {"fr": "L'intelligence artificielle", "fa": "هوش مصنوعی"}, {"fr": "Le changement climatique", "fa": "تغییرات اقلیمی"}, {"fr": "La famille", "fa": "خانواده"}, {"fr": "L'éducation", "fa": "آموزش و پرورش"}, {"fr": "Le voyage", "fa": "سفر"}, {"fr": "La cuisine", "fa": "آشپزی"}, {"fr": "L'art", "fa": "هنر"}, {"fr": "La musique", "fa": "موسیقی"}, {"fr": "Le sport", "fa": "ورزش"}, {"fr": "La santé", "fa": "سلامتی"}, {"fr": "Le rêve", "fa": "رؤیا"}, {"fr": "La mémoire", "fa": "حافظه"}, {"fr": "L'amour", "fa": "عشق"}, {"fr": "La jalousie", "fa": "حسادت"}, {"fr": "Le pardon", "fa": "بخشش"}, {"fr": "La patience", "fa": "صبر"}, {"fr": "La curiosité", "fa": "کنجکاوی"}, {"fr": "L'imagination", "fa": "تخیل"}, {"fr": "La créativité", "fa": "خلاقیت"}, {"fr": "Le travail", "fa": "کار"}, {"fr": "Le repos", "fa": "استراحت"}, {"fr": "La nature", "fa": "طبیعت"}, {"fr": "Les animaux", "fa": "حیوانات"}, {"fr": "La ville", "fa": "شهر"}, {"fr": "La campagne", "fa": "روستا / حومه"}, {"fr": "La mode", "fa": "مد"}, {"fr": "La beauté", "fa": "زیبایی"}, {"fr": "Le vieillissement", "fa": "پیر شدن"}, {"fr": "L'enfance", "fa": "کودکی"}, {"fr": "Les souvenirs", "fa": "خاطرات"}, {"fr": "Le futur", "fa": "آینده"}, {"fr": "Le passé", "fa": "گذشته"}, {"fr": "Le changement", "fa": "تغییر"}, {"fr": "L'habitude", "fa": "عادت"}, {"fr": "Le risque", "fa": "ریسک / خطر"}, {"fr": "La chance", "fa": "شانس"}, {"fr": "Le destin", "fa": "سرنوشت"}, {"fr": "La religion", "fa": "دین"}, {"fr": "La philosophie", "fa": "فلسفه"}, {"fr": "La science", "fa": "علم"}, {"fr": "L'espace", "fa": "فضا"}, {"fr": "Le langage", "fa": "زبان"}, {"fr": "La culture", "fa": "فرهنگ"}, {"fr": "La tradition", "fa": "سنت"}, {"fr": "La modernité", "fa": "مدرنیته"}, {"fr": "L'immigration", "fa": "مهاجرت"}, {"fr": "L'identité", "fa": "هویت"}, {"fr": "La différence", "fa": "تفاوت"}, {"fr": "La tolérance", "fa": "مدارا"}, {"fr": "Le respect", "fa": "احترام"}, {"fr": "La confiance", "fa": "اعتماد"}, {"fr": "La trahison", "fa": "خیانت"}, {"fr": "L'honnêteté", "fa": "صداقت"}, {"fr": "La générosité", "fa": "سخاوت"}, {"fr": "L'égoïsme", "fa": "خودخواهی"}, {"fr": "Le bonheur au travail", "fa": "رضایت شغلی"}, {"fr": "Le télétravail", "fa": "دورکاری"}, {"fr": "L'équilibre vie-travail", "fa": "تعادل کار و زندگی"}, {"fr": "La consommation", "fa": "مصرف‌گرایی"}, {"fr": "Le minimalisme", "fa": "مینیمالیسم"}, {"fr": "Le gaspillage", "fa": "اسراف"}, {"fr": "Le recyclage", "fa": "بازیافت"}, {"fr": "La pollution", "fa": "آلودگی"}, {"fr": "L'énergie", "fa": "انرژی"}, {"fr": "Le bénévolat", "fa": "کار داوطلبانه"}, {"fr": "La politique", "fa": "سیاست"}, {"fr": "La démocratie", "fa": "دموکراسی"}, {"fr": "Les droits de l'homme", "fa": "حقوق بشر"}, {"fr": "L'égalité", "fa": "برابری"}, {"fr": "La pauvreté", "fa": "فقر"}, {"fr": "La richesse", "fa": "ثروت"}, {"fr": "Le bonheur matériel", "fa": "خوشبختی مادی"}, {"fr": "La spiritualité", "fa": "معنویت"}, {"fr": "La méditation", "fa": "مدیتیشن"}, {"fr": "Le stress", "fa": "استرس"}, {"fr": "Le sommeil", "fa": "خواب"}, {"fr": "L'alimentation", "fa": "تغذیه"}, {"fr": "Le bonheur des autres", "fa": "خوشبختی دیگران"}, {"fr": "La célébrité", "fa": "شهرت"}, {"fr": "L'influence", "fa": "تأثیرگذاری"}, {"fr": "Le pouvoir", "fa": "قدرت"}, {"fr": "La compétition", "fa": "رقابت"}, {"fr": "La collaboration", "fa": "همکاری"}, {"fr": "L'apprentissage", "fa": "یادگیری"}, {"fr": "La motivation", "fa": "انگیزه"}, {"fr": "Le perfectionnisme", "fa": "کمال‌گرایی"}, {"fr": "Le bonheur simple", "fa": "خوشبختی ساده"}];
+    document.getElementById("rlCount").textContent = TOPICS.length + " موضوع برای گفت‌وگو";
+
+    // ساخت بخش‌های رنگی چرخ (۱۲ بخش رنگی فقط برای ظاهر)
+    const SEG = 12;
+    const colors = ["#7a5ba8","#2e7bb5","#5a8f4a","#c4502d","#b0506f","#b07a4a"];
+    let grad = [];
+    for (let i=0; i<SEG; i++){
+      const c = colors[i % colors.length];
+      const a = (360/SEG)*i, b=(360/SEG)*(i+1);
+      grad.push(`${c} ${a}deg ${b}deg`);
+    }
+    document.getElementById("wheel").style.background = `conic-gradient(${grad.join(",")})`;
+
+    let currentRotation = 0;
+    let spinning = false;
+
+    function spin(){
+      if (spinning) return;
+      spinning = true;
+      const btn = document.getElementById("spinBtn");
+      btn.disabled = true;
+      const result = document.getElementById("result");
+      result.classList.remove("show");
+
+      // انتخاب تصادفی موضوع
+      const pick = Math.floor(Math.random() * TOPICS.length);
+      // چرخش: چند دور کامل + یک زاویه‌ی تصادفی
+      const extra = 360 * (5 + Math.floor(Math.random()*4)) + Math.floor(Math.random()*360);
+      currentRotation += extra;
+      document.getElementById("wheel").style.transform = `rotate(${currentRotation}deg)`;
+
+      setTimeout(() => {
+        const t = TOPICS[pick];
+        result.innerHTML = `
+          <div class="result-label">موضوع تو ✦ TON SUJET</div>
+          <div class="result-fr" dir="ltr">${t.fr}</div>
+          <div class="result-fa">${t.fa}</div>
+          <div class="result-hint">⏱️ یک دقیقه درباره‌اش حرف بزن — نظرت چیه؟ چه احساسی داری؟ یک مثال بزن.</div>`;
+        result.classList.add("show");
+        btn.disabled = false;
+        btn.textContent = "دوباره بچرخان! 🎲";
+        spinning = false;
+      }, 4600);
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>

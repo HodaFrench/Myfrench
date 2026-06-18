@@ -765,6 +765,35 @@
         .edito-ex-fa { font-size: 13px; color: var(--gray); line-height: 1.8; }
 
         /* کارت راهنمای کامل تلفظ */
+        .pron-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .pron-tab { font-family: 'Estedad', sans-serif; font-size: 13.5px; font-weight: 600;
+            background: var(--white); color: var(--ink); border: 1.5px solid var(--line);
+            border-radius: 22px; padding: 9px 18px; cursor: pointer; transition: all 0.2s; }
+        .pron-tab:hover { border-color: #c4502d; }
+        .pron-tab.active { background: #c4502d; color: #fff; border-color: #c4502d; box-shadow: 0 4px 12px rgba(196,80,45,0.3); }
+        .ech-intro { background: linear-gradient(135deg, rgba(196,80,45,.08), rgba(196,165,114,.05));
+            border-right: 4px solid #c4502d; border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; font-size: 13.5px; line-height: 2; }
+        .ech-intro b { color: #c4502d; }
+        .ech-card { background: var(--white); border: 1px solid var(--line); border-top: 4px solid #c4502d;
+            border-radius: 16px; padding: 22px 20px; margin-bottom: 16px; box-shadow: 0 6px 18px rgba(31,58,95,.05); position: relative; }
+        .ech-num { position: absolute; top: -12px; right: 18px; width: 30px; height: 30px; border-radius: 50%;
+            background: #c4502d; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; box-shadow: 0 4px 10px rgba(196,80,45,.3); }
+        .ech-fr { font-family: 'Roboto', serif; font-size: 21px; font-weight: 700; color: var(--navy); direction: ltr; text-align: left; line-height: 1.45; margin-bottom: 8px; }
+        .ech-fa { font-size: 14px; color: #c4502d; font-weight: 500; margin-bottom: 12px; }
+        .ech-focus { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+        .ech-focus span { font-family: 'Roboto', serif; font-size: 12.5px; background: rgba(196,80,45,.08); color: #a04030;
+            padding: 4px 12px; border-radius: 10px; direction: ltr; }
+        .ech-steps { background: var(--cream); border-radius: 11px; padding: 14px 16px; margin-bottom: 12px; }
+        .ech-step { font-size: 13.5px; color: var(--ink); padding: 6px 0; display: flex; align-items: center; gap: 9px; line-height: 1.8; }
+        .ech-step-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: #c4502d; color: #fff;
+            display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .ech-step b { color: #c4502d; }
+        .ech-step-fr { font-family: 'Roboto', serif; font-size: 12px; color: var(--gray); margin-right: auto; }
+        .ech-note { font-size: 12.5px; color: var(--gray); background: var(--paper-warm); padding: 10px 14px; border-radius: 9px; line-height: 1.85; margin-bottom: 12px; }
+        .ech-play { width: 100%; font-family: 'Estedad', sans-serif; font-size: 14px; font-weight: 700; color: #fff;
+            background: linear-gradient(135deg, #c4502d, #a04030); border: none; border-radius: 11px; padding: 12px; cursor: pointer; transition: transform .15s; }
+        .ech-play:hover { transform: translateY(-1px); }
+        .ech-soon { text-align: center; font-size: 12.5px; color: var(--gray); background: var(--cream); padding: 11px; border-radius: 10px; border: 1px dashed var(--line); }
         .pron-guide {
             display: flex; align-items: center; gap: 16px;
             background: linear-gradient(135deg, var(--navy), var(--navy-soft));
@@ -847,6 +876,12 @@
         }
 
         /* کارت‌های واکنش (چطور واکنش بدم؟) */
+        .react-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .react-tab { font-family: 'Estedad', sans-serif; font-size: 13.5px; font-weight: 600;
+            background: var(--white); color: var(--ink); border: 1.5px solid var(--line);
+            border-radius: 22px; padding: 9px 18px; cursor: pointer; transition: all 0.2s; }
+        .react-tab:hover { border-color: #d17b3f; }
+        .react-tab.active { background: #d17b3f; color: #fff; border-color: #d17b3f; box-shadow: 0 4px 12px rgba(209,123,63,0.3); }
         .react-card {
             background: var(--white);
             border: 1px solid var(--line);
@@ -1513,10 +1548,7 @@
                 renderInnerFrench();
             } else if (catId === "prive") {
                 renderPrive();
-            } else if (catId === "grammar" && !activeGroupe) {
-                // گرامر زیرپوشه‌ها (مودهای فعلی) دارد → اول پوشه‌ها را نشان بده
-                renderGroupes(catId);
-            } else if (catId !== "all" && sectionsOf(catId)) {
+            } else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
             } else {
@@ -1708,6 +1740,7 @@
         }
 
         // نمایش واکنش‌ها (چطور واکنش بدم؟)
+        let activeReact = 0;
         function renderReactions() {
             document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("reactions");
@@ -1720,9 +1753,23 @@
                 grid.innerHTML = '<div class="empty"><span class="big">❝</span>هنوز موضوعی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
                 return;
             }
-            grid.innerHTML = list.map(r => {
-                const col = r.couleur || "#d17b3f";
-                return `
+            activeReact = 0;
+            // فهرست تب‌ها بالا
+            const tabs = list.map((r, i) =>
+                `<button class="react-tab${i===0?' active':''}" onclick="showReact(${i})">${r.emoji||''} ${r.titreFa||r.titre}</button>`
+            ).join("");
+            grid.innerHTML = `<div class="react-tabs">${tabs}</div><div id="reactBody"></div>`;
+            showReact(0);
+        }
+
+        function showReact(idx) {
+            const list = (typeof REACTIONS !== "undefined") ? REACTIONS : [];
+            const r = list[idx];
+            if (!r) return;
+            activeReact = idx;
+            document.querySelectorAll(".react-tab").forEach((t, i) => t.classList.toggle("active", i === idx));
+            const col = r.couleur || "#d17b3f";
+            document.getElementById("reactBody").innerHTML = `
                 <div class="react-card" style="--rc:${col}">
                     <div class="react-head">
                         <span class="react-titre" dir="ltr">${r.titre}</span>
@@ -1741,60 +1788,101 @@
                             </div>`).join("")}
                     </div>
                 </div>`;
-            }).join("");
+            window.scrollTo({ top: 0, behavior: "instant" });
         }
 
         // نمایش تمرین‌های تلفظ
+        let activePron = "guide";
         function renderPrononciation() {
             document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("prononciation");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
-            const list = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
-            document.getElementById("count").textContent = list.length + " تمرین";
+            const vids = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
+            const ech = (typeof ECHAUFFEMENT !== "undefined") ? ECHAUFFEMENT : [];
+            document.getElementById("count").textContent = "۳ بخش";
             const grid = document.getElementById("grid");
-            // کارت راهنمای کامل تلفظ (بالای ویدیوها)
-            const guideCard = `
-                <a class="pron-guide" href="GUIDE_prononciation.html">
-                    <div class="pron-guide-icon">🔊</div>
-                    <div class="pron-guide-body">
-                        <div class="pron-guide-title">راهنمای کامل تلفظ فرانسوی</div>
-                        <div class="pron-guide-fa">از A تا Z — همه‌ی صداها، حروف ناخوانا، لیزون و زبان‌گردان‌ها در ۹ درس</div>
-                    </div>
-                    <div class="pron-guide-go">مطالعه ←</div>
-                </a>`;
-            if (!list.length) {
-                grid.innerHTML = guideCard + '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
-                return;
-            }
-            grid.innerHTML = guideCard + list.map(p => {
-                const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
-                const lines = (p.texteFr || []).map((fr, i) => `
-                    <div class="pron-line">
-                        <div class="pron-fr" dir="ltr">${fr}</div>
-                        ${p.texteFa && p.texteFa[i] ? `<div class="pron-fa">${p.texteFa[i]}</div>` : ""}
-                    </div>`).join("");
-                return `
-                <div class="pron-card">
-                    <div class="pron-head">
-                        <span class="pron-jour">🗣️ ${p.jour}</span>
-                        <span class="pron-titre">${p.titre}</span>
-                    </div>
-                    ${sounds ? `<div class="pron-sounds">${sounds}</div>` : ""}
-                    ${p.video ? `
-                    <div class="pron-video">
-                        <video controls preload="metadata" playsinline>
-                            <source src="${safeUrl(p.video)}" type="video/mp4">
-                            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-                        </video>
-                    </div>` : ""}
-                    <div class="pron-text">${lines}</div>
-                    <div class="pron-cta">📢 با من تکرار کن!</div>
+            const tabs = `
+                <div class="pron-tabs">
+                    <button class="pron-tab" data-p="guide" onclick="showPron('guide')">📖 درسنامه‌ی تلفظ</button>
+                    <button class="pron-tab" data-p="video" onclick="showPron('video')">🎬 ویدیوهای من</button>
+                    <button class="pron-tab" data-p="ech" onclick="showPron('ech')">🔥 زبانت رو گرم کن</button>
                 </div>`;
-            }).join("");
+            grid.innerHTML = tabs + '<div id="pronBody"></div>';
+            showPron("guide");
         }
 
-        // نمایش کارت‌های بخش (مثل Expression Orale)
+        function showPron(which) {
+            activePron = which;
+            document.querySelectorAll(".pron-tab").forEach(t => t.classList.toggle("active", t.getAttribute("data-p") === which));
+            const body = document.getElementById("pronBody");
+            const vids = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
+            const ech = (typeof ECHAUFFEMENT !== "undefined") ? ECHAUFFEMENT : [];
+
+            if (which === "guide") {
+                body.innerHTML = `
+                    <a class="pron-guide" href="GUIDE_prononciation.html">
+                        <div class="pron-guide-icon">🔊</div>
+                        <div class="pron-guide-body">
+                            <div class="pron-guide-title">راهنمای کامل تلفظ فرانسوی</div>
+                            <div class="pron-guide-fa">از A تا Z — همه‌ی صداها، حروف ناخوانا، لیزون و زبان‌گردان‌ها در ۹ درس</div>
+                        </div>
+                        <div class="pron-guide-go">مطالعه ←</div>
+                    </a>`;
+            } else if (which === "video") {
+                if (!vids.length) {
+                    body.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                } else {
+                    body.innerHTML = vids.map(p => {
+                        const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
+                        const lines = (p.texteFr || []).map((fr, i) => `
+                            <div class="pron-line">
+                                <div class="pron-fr" dir="ltr">${fr}</div>
+                                ${p.texteFa && p.texteFa[i] ? `<div class="pron-fa">${p.texteFa[i]}</div>` : ""}
+                            </div>`).join("");
+                        return `
+                        <div class="pron-card">
+                            <div class="pron-head">
+                                <span class="pron-jour">🗣️ ${p.jour}</span>
+                                <span class="pron-titre">${p.titre}</span>
+                            </div>
+                            ${sounds ? `<div class="pron-sounds">${sounds}</div>` : ""}
+                            ${p.video ? `
+                            <div class="pron-video">
+                                <video controls preload="metadata" playsinline>
+                                    <source src="${safeUrl(p.video)}" type="video/mp4">
+                                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                                </video>
+                            </div>` : ""}
+                            <div class="pron-text">${lines}</div>
+                            <div class="pron-cta">📢 با من تکرار کن!</div>
+                        </div>`;
+                    }).join("");
+                }
+            } else if (which === "ech") {
+                if (!ech.length) {
+                    body.innerHTML = '<div class="empty"><span class="big">🔥</span>به‌زودی</div>';
+                } else {
+                    const intro = `<div class="ech-intro">🔥 <b>زبان‌گردان (virelangue)</b> بهترین راه برای گرم‌کردن زبان و تمرین صداهای سخت است. هر جمله را ۳ بار بگو: اول آرام، بعد سریع‌تر، آخر همراه نوت صوتی.</div>`;
+                    body.innerHTML = intro + ech.map((e, i) => `
+                        <div class="ech-card">
+                            <div class="ech-num">${i+1}</div>
+                            <div class="ech-fr" dir="ltr">« ${e.fr} »</div>
+                            <div class="ech-fa">${e.fa}</div>
+                            ${(e.focus && e.focus.length) ? `<div class="ech-focus">${e.focus.map(f=>`<span dir="ltr">${f}</span>`).join("")}</div>` : ""}
+                            <div class="ech-steps">
+                                <div class="ech-step"><span class="ech-step-n">۱</span> یک‌بار <b>آرام</b> بگو <span dir="ltr" class="ech-step-fr">— lentement</span></div>
+                                <div class="ech-step"><span class="ech-step-n">۲</span> بار دوم <b>سریع‌تر</b> بگو <span dir="ltr" class="ech-step-fr">— plus rapidement</span></div>
+                                <div class="ech-step"><span class="ech-step-n">۳</span> به نوت صوتی گوش بده و <b>تکرار کن</b> <span dir="ltr" class="ech-step-fr">— écoute et répète</span></div>
+                            </div>
+                            ${e.note ? `<div class="ech-note">💡 ${e.note}</div>` : ""}
+                            ${e.audio ? `<button class="ech-play" onclick="playInPlayer('${safeUrl(e.audio)}','زبان‌گردان ${i+1}')">▶ پخش نوت صوتی</button>` : `<div class="ech-soon">🎤 نوت صوتی به‌زودی اضافه می‌شود</div>`}
+                        </div>`).join("");
+                }
+            }
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
         function renderSections(catId) {
             document.getElementById("grid").classList.remove("grid-single");
             const ci = catInfo(catId);

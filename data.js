@@ -6,6 +6,7 @@
 
 // دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
 const CATEGORIES = [
+  { id: "roulette", label: "گردونه‌ی موضوع", icon: "🎡", color: "#7a5ba8", link: "ROULETTE.html" },
   { id: "phrases", label: "جملات کاربردی", icon: "💬", color: "#c77d3a", link: "PHRASES_utiles.html" },
   { id: "tcf",          label: "آمادگی TCF",   icon: "❖", color: "#1a4f7a" },
   { id: "grammar",      label: "گرامر",        icon: "§", color: "#22618f" },
@@ -1001,6 +1002,27 @@ const REACTIONS = [
 //    texteFa : ترجمه‌ی فارسی (آرایه‌ای، هم‌ترتیب با جملات)
 //    focus   : صداهایی که تمرین می‌شوند
 // ═══════════════════════════════════════════════════════════
+const ECHAUFFEMENT = [
+  {
+    fr: "Une bête noire se baigne dans une baignoire noire",
+    fa: "یک جانورِ سیاه در یک وانِ سیاه آب‌تنی می‌کند",
+    focus: ["b / bê", "noire / baignoire"],
+    note: "تمرین صدای «بِ» و قافیه‌ی noire/baignoire. مواظب باش b و gn را قاطی نکنی!"
+  },
+  {
+    fr: "Il fait noir ce soir sur le trottoir, bonsoir",
+    fa: "امشب پیاده‌رو تاریک است، شب‌بخیر",
+    focus: ["oir (وار)", "soir / trottoir"],
+    note: "همه‌ی کلمه‌ها به صدای «وار» ختم می‌شوند — مثل یک آهنگ!"
+  },
+  {
+    fr: "Son chat Sasha chante sa chanson sans son",
+    fa: "گربه‌اش ساشا، ترانه‌اش را بی‌صدا می‌خواند",
+    focus: ["s / ch", "son / sans / chanson"],
+    note: "سخت‌ترین! تمرین تفاوت «س» و «ش». آرام شروع کن."
+  },
+];
+
 const PRONONCIATION = [
   {
     jour: "روز اول",
@@ -1189,6 +1211,55 @@ const EDITOA1 = [
 //    morale  : (اختیاری) جمع‌بندی/نتیجه {fr, fa}
 // ═══════════════════════════════════════════════════════════
 const MINIARTICLES = [
+  {
+    titre: "Ma routine du matin",
+    emoji: "☀️",
+    niveau: "A1",
+    cat: "general",
+    court: true,
+    paras: [
+      "Le matin, je ⟦me réveille|بیدار می‌شوم⟧ à sept heures. Je ⟪prends mon petit-déjeuner|صبحانه می‌خورم — prendre با وعده‌ی غذایی⟫ et je bois un café.",
+      "Ensuite, je ⟦m'habille|لباس می‌پوشم⟧ et je pars au travail. J'aime bien mes matins ⟦tranquilles|آرام⟧."
+    ],
+    morale: { fr: "Une bonne journée commence par un bon matin.", fa: "یک روز خوب با یک صبح خوب شروع می‌شود." }
+  },
+  {
+    titre: "J'aime le week-end",
+    emoji: "🎉",
+    niveau: "A1",
+    cat: "general",
+    court: true,
+    paras: [
+      "Le week-end, je ne ⟦travaille|کار می‌کنم⟧ pas. Je ⟦me repose|استراحت می‌کنم⟧ et je vois mes amis.",
+      "Parfois, je ⟪vais au cinéma|به سینما می‌روم — aller à⟫ ou je ⟦me promène|قدم می‌زنم⟧ dans le parc. C'est ⟦agréable|دلپذیر⟧ !"
+    ],
+    morale: { fr: "Le repos est aussi important que le travail.", fa: "استراحت به‌اندازه‌ی کار مهم است." }
+  },
+  {
+    titre: "Mon plat préféré",
+    emoji: "🍝",
+    niveau: "A2",
+    cat: "general",
+    court: true,
+    paras: [
+      "Mon plat préféré, ⟦c'est|این است⟧ les pâtes. C'est simple, ⟦rapide|سریع⟧ et délicieux.",
+      "Je les prépare avec de la ⟦sauce tomate|سس گوجه⟧ et du fromage. Quand j'ai des invités, j'⟪en fais toujours|همیشه درست می‌کنم — en جایگزین پاستا⟫."
+    ],
+    morale: { fr: "Les plaisirs simples sont souvent les meilleurs.", fa: "لذت‌های ساده اغلب بهترین‌اند." }
+  },
+  {
+    titre: "Pourquoi j'apprends le français",
+    emoji: "🇫🇷",
+    niveau: "A2",
+    cat: "general",
+    court: true,
+    paras: [
+      "J'apprends le français ⟦parce que|چون⟧ j'aime cette langue. Elle est ⟦belle|زیبا⟧ et musicale.",
+      "Je veux ⟪pouvoir voyager|بتوانم سفر کنم — pouvoir + مصدر⟫ en France et parler avec les gens. Chaque jour, je ⟦progresse|پیشرفت می‌کنم⟧ un peu."
+    ],
+    morale: { fr: "Chaque petit pas compte dans l'apprentissage.", fa: "در یادگیری، هر قدم کوچک ارزش دارد." }
+  },
+
   {
     titre: "Qu'est-ce qui fait durer l'amour ?",
     emoji: "❤️",
