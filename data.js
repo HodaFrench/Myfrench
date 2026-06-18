@@ -485,6 +485,39 @@ const TIPS = [
 // ═══════════════════════════════════════════════════════════
 const ASTUCES = [
   {
+    titre: "Se rendre compte — یکی از پرکاربردترین افعال دوضمیره",
+    sens: "«se rendre compte (de)» یعنی «متوجه شدن / پی بردن / به خود آمدن». یک فعل دوضمیره است و ضمیرش هیچ‌وقت حذف نمی‌شود.",
+    correct: "Je me rends compte de mon erreur.",
+    faux: "Je rends compte de mon erreur.",
+    note: "این فعل <b>دوضمیره</b> است: همیشه با ضمیر انعکاسی (me, te, se, nous, vous) می‌آید. نکته‌ی مهم: <b>se rendre compte DE</b> + اسم، یا <b>se rendre compte QUE</b> + جمله. در محاوره، «Tu te rends compte ?!» یعنی «باورت می‌شه؟! / فکرشو بکن!» برای بیان تعجب یا ناباوری.",
+    conjugaison: [
+      { p: "je", form: "me rends compte" },
+      { p: "tu", form: "te rends compte" },
+      { p: "il/elle", form: "se rend compte" },
+      { p: "nous", form: "nous rendons compte" },
+      { p: "vous", form: "vous rendez compte" },
+      { p: "ils/elles", form: "se rendent compte" },
+    ],
+    exemples: [
+      { fr: "Je me rends compte de mon erreur.", fa: "متوجه اشتباهم می‌شوم." },
+      { fr: "Tu te rends compte de ce qu'il a osé faire ?!", fa: "باورت می‌شه چه جرئتی کرد؟!" },
+      { fr: "Maintenant que tu te rends compte de ton erreur, tu dois t'excuser.", fa: "حالا که به اشتباهت پی بردی، باید عذرخواهی کنی." },
+      { fr: "Rends-toi compte ! (امری)", fa: "فکرشو بکن! / تصور کن!" },
+    ],
+    passe: {
+      intro: "در زمان گذشته (passé composé)، این فعل با <b>être</b> صرف می‌شود (چون دوضمیره است). نکته‌ی ظریف: چون مفعول مستقیم نیست (compte ثابت است)، اسم مفعول (participe) <b>توافق نمی‌کند</b> و همیشه «rendu compte» می‌ماند.",
+      ex: { fr: "Je me suis rendu compte que mes parents allaient divorcer.", fa: "متوجه شدم که والدینم می‌خواهند طلاق بگیرند." },
+    },
+    quiz: [
+      { q: "Je ___ compte de mon erreur. (présent)", options: ["me rends", "rends", "me rendre"], correct: 0, note: "حال: «je me rends compte» — ضمیر me اجباری است." },
+      { q: "Hier, elle ___ compte de la situation. (passé)", options: ["s'est rendu", "a rendu", "se rend"], correct: 0, note: "گذشته: با être صرف می‌شود → «elle s'est rendu compte». توجه: rendu توافق نمی‌کند." },
+      { q: "Vous ___ compte de ce problème ? (présent)", options: ["vous rendez", "rendez", "vous rendre"], correct: 0, note: "حال، دوم‌شخص جمع: «vous vous rendez compte»." },
+      { q: "Nous ___ compte trop tard. (passé composé)", options: ["nous sommes rendu", "avons rendu", "nous rendons"], correct: 0, note: "گذشته با être: «nous nous sommes rendu compte»." },
+      { q: "Tu ___ compte de ton erreur. (présent)", options: ["te rends", "rends", "tes rends"], correct: 0, note: "حال، دوم‌شخص مفرد: «tu te rends compte»." },
+    ],
+    source: "بر اساس Lawless French + منابع گرامری معتبر",
+  },
+  {
     titre: "سؤال پرسیدن هیچ‌وقت با demander نمی‌آید!",
     correct: "poser une question",
     faux: "demander une question",
