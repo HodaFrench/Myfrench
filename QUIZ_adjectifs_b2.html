@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Adjectifs Argumentatifs B2 — TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#F0EADB;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --pos:#2E7D5B; --posbg:#EAF4EF;
+    --neg:#C0392B; --negbg:#FBEDEA;
+    --neu:#3F66A6; --neubg:#EAF0F9;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.45);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;color:var(--ink);line-height:1.45;
+    font-family:"Spectral",Georgia,serif;
+    background:
+      repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.07) 31px, rgba(65,97,138,0.07) 32px), #f4f3f5;
+    padding:30px 16px 60px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+
+  header{text-align:center;max-width:780px;margin:4px auto 22px;}
+  .eyebrow{font-family:"Caveat",cursive;color:var(--margin);font-size:1.5rem;
+    display:inline-block;transform:rotate(-2deg);}
+  h1{font-family:"Fraunces",serif;font-weight:800;
+    font-size:clamp(1.8rem,5vw,2.9rem);line-height:1.04;margin:.1em 0 .2em;letter-spacing:-.01em;}
+  h1 b{color:var(--margin);}
+  .sub{color:var(--ink-soft);font-size:1rem;margin:0 auto;max-width:600px;}
+  .note{font-size:.82rem;color:var(--ink-soft);font-style:italic;margin:10px auto 0;max-width:560px;}
+
+  /* filtre */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 6px;}
+  .f-btn{font-family:"Fraunces",serif;font-weight:600;font-size:.84rem;cursor:pointer;
+    border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+    border-radius:999px;padding:7px 16px;transition:all .15s ease;display:inline-flex;align-items:center;gap:7px;}
+  .f-btn .dot{width:11px;height:11px;border-radius:3px;}
+  .f-btn[aria-pressed="true"]{background:var(--ink);color:#fff;}
+  .f-btn:focus-visible{outline:3px solid var(--margin);outline-offset:2px;}
+  .f-btn.print{margin-left:6px;border-style:dashed;}
+  .count{text-align:center;font-size:.8rem;color:var(--ink-soft);margin:4px 0 18px;font-family:"Fraunces",serif;}
+
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));}
+
+  .card{
+    position:relative;background:var(--paper);border:1px solid var(--paper-edge);
+    border-radius:13px;box-shadow:var(--shadow);overflow:hidden;
+    display:flex;flex-direction:column;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,var(--rule) 27px,var(--rule) 28px);
+    background-position:0 72px;
+    opacity:0;transform:translateY(12px);animation:rise .45s ease forwards;
+  }
+  @keyframes rise{to{opacity:1;transform:none;}}
+  .card::before{content:"";position:absolute;top:0;bottom:0;left:34px;width:1.4px;background:var(--margin);opacity:.5;z-index:1;}
+  .card .top{height:7px;background:var(--accent);}
+
+  .head{position:relative;z-index:2;padding:13px 16px 8px 46px;display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;}
+  .num{position:absolute;top:11px;left:14px;font-family:"Fraunces",serif;font-weight:800;
+    font-size:.95rem;color:var(--accent);opacity:.75;z-index:3;}
+  .word{font-family:"Fraunces",serif;font-weight:700;font-size:1.5rem;line-height:1;color:var(--ink);margin-right:auto;}
+  .chips{display:flex;gap:5px;flex-shrink:0;padding-top:3px;}
+  .chip{font-family:"Fraunces",serif;font-weight:600;font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;
+    color:#fff;border-radius:6px;padding:3px 7px;line-height:1.1;white-space:nowrap;}
+  .chip.lvl{background:var(--ink);}
+  .chip.fn{background:var(--accent);}
+
+  .fa-word{position:relative;z-index:2;padding:0 16px 0 46px;font-family:"Vazirmatn",sans-serif;
+    font-size:1.05rem;color:var(--ink-soft);direction:rtl;text-align:right;font-weight:500;}
+
+  .collo{position:relative;z-index:2;margin:8px 16px 0 46px;font-size:.78rem;color:var(--accent);
+    font-family:"Spectral",serif;font-style:italic;}
+  .collo::before{content:"💡 ";font-style:normal;}
+
+  .ex{position:relative;z-index:2;margin:8px 14px 0 44px;background:rgba(255,255,255,.55);
+    border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:8px 11px;flex:1;}
+  .ex-fr{margin:0;font-size:.9rem;color:var(--ink);}
+  .ex-fr::before{content:"« ";opacity:.5;} .ex-fr::after{content:" »";opacity:.5;}
+  .ex-fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.88rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig{position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:7px;
+    padding:8px 16px 11px;margin-top:6px;border-top:1px solid var(--paper-edge);}
+  .sig .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;letter-spacing:.04em;color:#fff;background:var(--accent);padding:3px 8px;border-radius:999px;}
+
+  footer{text-align:center;margin-top:40px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  .hidden{display:none !important;}
+
+  @media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none;}.f-btn{transition:none;}}
+  @media print{
+    body{background:#fff;padding:0;}
+    .filters,.count .live{display:none;}
+    .filters{display:none;}
+    .card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;animation:none;opacity:1;transform:none;}
+    .grid{gap:10px;grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>50 Adjectifs <b>Argumentatifs</b> · B2</h1>
+    <p class="sub">Le vocabulaire qui fait la différence à l'écrit comme à l'oral du TCF Canada : pour défendre, critiquer ou analyser un sujet de société.</p>
+    <p class="note">Les exemples reprennent le registre et les thèmes réels du TCF (environnement, numérique, télétravail, médias…). Le contenu exact des examens étant confidentiel, ce sont des phrases « type examen », pas des extraits officiels.</p>
+    <div class="filters" id="filters">
+      <button class="f-btn" data-f="all" aria-pressed="true">Tous</button>
+      <button class="f-btn" data-f="positif" aria-pressed="false"><span class="dot" style="background:var(--pos)"></span>Pour / avantage</button>
+      <button class="f-btn" data-f="négatif" aria-pressed="false"><span class="dot" style="background:var(--neg)"></span>Contre / inconvénient</button>
+      <button class="f-btn" data-f="neutre" aria-pressed="false"><span class="dot" style="background:var(--neu)"></span>Analyse / neutre</button>
+      <button class="f-btn print" onclick="window.print()">Imprimer / PDF</button>
+    </div>
+    <p class="count" id="count"></p>
+  </header>
+  <div class="grid" id="grid"></div>
+  <footer>50 cartes pour enrichir tes arguments et éviter les répétitions au niveau B2.<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const C = {positif:"var(--pos)", "négatif":"var(--neg)", neutre:"var(--neu)"};
+const FN = {positif:"Pour", "négatif":"Contre", neutre:"Analyse"};
+
+const DATA = [
+{fr:"bénéfique",fa:"مفید / سودمند",nu:"positif",collo:"bénéfique pour…",exFr:"Le sport régulier est bénéfique pour la santé physique et mentale.",exFa:"ورزش منظم برای سلامت جسمی و روانی مفیده."},
+{fr:"incontournable",fa:"اجتناب‌ناپذیر / ضروری",nu:"positif",collo:"un outil incontournable",exFr:"Le numérique est aujourd'hui incontournable dans l'éducation.",exFa:"امروزه فناوری دیجیتال در آموزش اجتناب‌ناپذیره."},
+{fr:"durable",fa:"پایدار",nu:"positif",collo:"un développement durable",exFr:"Les villes doivent privilégier un développement durable.",exFa:"شهرها باید توسعه‌ی پایدار رو در اولویت بذارن."},
+{fr:"équitable",fa:"عادلانه / منصفانه",nu:"positif",collo:"une répartition équitable",exFr:"Le commerce équitable garantit un revenu juste aux producteurs.",exFa:"تجارت عادلانه درآمدی منصفانه برای تولیدکننده‌ها تضمین می‌کنه."},
+{fr:"avantageux",fa:"به‌صرفه / سودمند",nu:"positif",collo:"une solution avantageuse",exFr:"Le covoiturage est une solution avantageuse et écologique.",exFa:"هم‌سواری راه‌حلی به‌صرفه و سازگار با محیط‌زیسته."},
+{fr:"enrichissant",fa:"غنی‌کننده / آموزنده",nu:"positif",collo:"une expérience enrichissante",exFr:"Vivre à l'étranger est une expérience particulièrement enrichissante.",exFa:"زندگی در خارج تجربه‌ای به‌ویژه غنی‌کننده‌ست."},
+{fr:"épanouissant",fa:"شکوفاکننده",nu:"positif",collo:"un métier épanouissant",exFr:"Beaucoup recherchent un métier épanouissant plutôt que bien payé.",exFa:"خیلی‌ها به‌جای شغل پردرآمد دنبال شغل شکوفاکننده‌ان."},
+{fr:"prometteur",fa:"امیدوارکننده",nu:"positif",collo:"un avenir prometteur",exFr:"Les énergies renouvelables ouvrent un avenir prometteur.",exFa:"انرژی‌های تجدیدپذیر آینده‌ای امیدوارکننده می‌گشایند."},
+{fr:"efficace",fa:"کارآمد / مؤثر",nu:"positif",collo:"une mesure efficace",exFr:"Le tri des déchets est une mesure simple mais efficace.",exFa:"تفکیک زباله اقدامی ساده اما مؤثره."},
+{fr:"accessible",fa:"در دسترس",nu:"positif",collo:"accessible à tous",exFr:"Internet a rendu la culture accessible à tous.",exFa:"اینترنت فرهنگ رو برای همه در دسترس کرده."},
+{fr:"indispensable",fa:"ضروری / لازم",nu:"positif",collo:"un rôle indispensable",exFr:"Le smartphone est devenu indispensable dans la vie quotidienne.",exFa:"گوشی هوشمند در زندگی روزمره ضروری شده."},
+{fr:"valorisant",fa:"ارزش‌آفرین",nu:"positif",collo:"une activité valorisante",exFr:"Le bénévolat est une activité valorisante pour les jeunes.",exFa:"کار داوطلبانه فعالیتی ارزش‌آفرین برای جوون‌هاست."},
+{fr:"fructueux",fa:"ثمربخش / پربار",nu:"positif",collo:"une collaboration fructueuse",exFr:"Les échanges entre les cultures sont souvent très fructueux.",exFa:"تبادل بین فرهنگ‌ها اغلب بسیار ثمربخشه."},
+{fr:"judicieux",fa:"عاقلانه / سنجیده",nu:"positif",collo:"un choix judicieux",exFr:"Limiter le temps d'écran des enfants est un choix judicieux.",exFa:"محدود کردن زمان صفحه‌نمایشِ بچه‌ها انتخابی عاقلانه‌ست."},
+{fr:"rentable",fa:"سودآور / به‌صرفه",nu:"positif",collo:"un investissement rentable",exFr:"Investir dans le solaire est rentable à long terme.",exFa:"سرمایه‌گذاری در انرژی خورشیدی در درازمدت سودآوره."},
+
+{fr:"néfaste",fa:"زیان‌بار",nu:"négatif",collo:"des effets néfastes",exFr:"La sédentarité a des effets néfastes sur la santé.",exFa:"کم‌تحرکی اثرات زیان‌باری بر سلامت داره."},
+{fr:"nocif",fa:"مضر",nu:"négatif",collo:"nocif pour la santé",exFr:"La pollution de l'air est nocive pour les poumons.",exFa:"آلودگی هوا برای ریه‌ها مضره."},
+{fr:"préoccupant",fa:"نگران‌کننده",nu:"négatif",collo:"un niveau préoccupant",exFr:"Le réchauffement climatique est de plus en plus préoccupant.",exFa:"گرمایش زمین بیش‌ازپیش نگران‌کننده‌ست."},
+{fr:"alarmant",fa:"هشداردهنده",nu:"négatif",collo:"un chiffre alarmant",exFr:"Le taux de chômage des jeunes reste alarmant.",exFa:"نرخ بیکاری جوون‌ها همچنان هشداردهنده‌ست."},
+{fr:"contraignant",fa:"دست‌وپاگیر / محدودکننده",nu:"négatif",collo:"des règles contraignantes",exFr:"Le télétravail évite les horaires contraignants du bureau.",exFa:"دورکاری از ساعت‌های دست‌وپاگیر اداره جلوگیری می‌کنه."},
+{fr:"nuisible",fa:"زیان‌رسان",nu:"négatif",collo:"nuisible à l'environnement",exFr:"L'usage des pesticides est nuisible à la biodiversité.",exFa:"استفاده از آفت‌کش‌ها برای تنوع زیستی زیان‌رسانه."},
+{fr:"inquiétant",fa:"نگران‌کننده",nu:"négatif",collo:"une tendance inquiétante",exFr:"La désinformation sur les réseaux est un phénomène inquiétant.",exFa:"انتشار اطلاعات نادرست در شبکه‌ها پدیده‌ای نگران‌کننده‌ست."},
+{fr:"dévastateur",fa:"ویرانگر",nu:"négatif",collo:"des conséquences dévastatrices",exFr:"Les catastrophes naturelles ont des effets dévastateurs.",exFa:"بلایای طبیعی اثرات ویرانگری دارن."},
+{fr:"excessif",fa:"افراطی / بیش‌ازحد",nu:"négatif",collo:"une consommation excessive",exFr:"Une consommation excessive de sucre nuit à la santé.",exFa:"مصرف بیش‌ازحد قند به سلامت آسیب می‌زنه."},
+{fr:"coûteux",fa:"پرهزینه / گران",nu:"négatif",collo:"un projet coûteux",exFr:"Les énergies propres restent coûteuses à mettre en place.",exFa:"انرژی‌های پاک هنوز برای راه‌اندازی پرهزینه‌ان."},
+{fr:"risqué",fa:"پرخطر",nu:"négatif",collo:"un comportement risqué",exFr:"Partager ses données personnelles en ligne est risqué.",exFa:"به اشتراک گذاشتن اطلاعات شخصی به‌صورت آنلاین پرخطره."},
+{fr:"trompeur",fa:"فریبنده / گمراه‌کننده",nu:"négatif",collo:"une apparence trompeuse",exFr:"La publicité est parfois trompeuse pour les consommateurs.",exFa:"تبلیغات گاهی برای مصرف‌کننده‌ها فریبنده‌ست."},
+{fr:"superficiel",fa:"سطحی",nu:"négatif",collo:"une relation superficielle",exFr:"Les échanges sur les réseaux restent souvent superficiels.",exFa:"ارتباطات در شبکه‌های اجتماعی اغلب سطحی می‌مونن."},
+{fr:"déplorable",fa:"اسف‌بار",nu:"négatif",collo:"un état déplorable",exFr:"Les conditions de travail y sont parfois déplorables.",exFa:"شرایط کاری اونجا گاهی اسف‌باره."},
+{fr:"abusif",fa:"نابجا / افراطی",nu:"négatif",collo:"un usage abusif",exFr:"L'usage abusif des écrans perturbe le sommeil.",exFa:"استفاده‌ی نابجا از صفحه‌نمایش خواب رو مختل می‌کنه."},
+
+{fr:"croissant",fa:"رو به افزایش",nu:"neutre",collo:"un nombre croissant",exFr:"Un nombre croissant de Français adopte le vélo en ville.",exFa:"شمار رو به افزایشی از فرانسوی‌ها در شهر دوچرخه‌سواری می‌کنن."},
+{fr:"considérable",fa:"چشمگیر / قابل‌توجه",nu:"neutre",collo:"un impact considérable",exFr:"Les réseaux sociaux ont une influence considérable sur les jeunes.",exFa:"شبکه‌های اجتماعی نفوذ چشمگیری بر جوون‌ها دارن."},
+{fr:"répandu",fa:"رایج / گسترده",nu:"neutre",collo:"une pratique répandue",exFr:"Le télétravail est devenu une pratique répandue.",exFa:"دورکاری به رویه‌ای رایج تبدیل شده."},
+{fr:"controversé",fa:"جنجالی / بحث‌برانگیز",nu:"neutre",collo:"un sujet controversé",exFr:"L'intelligence artificielle demeure un sujet controversé.",exFa:"هوش مصنوعی همچنان موضوعی جنجالیه."},
+{fr:"indéniable",fa:"انکارناپذیر",nu:"neutre",collo:"un avantage indéniable",exFr:"La rapidité d'Internet est un avantage indéniable.",exFa:"سرعت اینترنت مزیتی انکارناپذیره."},
+{fr:"pertinent",fa:"بجا / مرتبط",nu:"neutre",collo:"un argument pertinent",exFr:"L'auteur soulève un point pertinent sur le recyclage.",exFa:"نویسنده نکته‌ای بجا درباره‌ی بازیافت مطرح می‌کنه."},
+{fr:"significatif",fa:"معنادار / قابل‌توجه",nu:"neutre",collo:"une hausse significative",exFr:"On note une baisse significative des émissions de CO₂.",exFa:"کاهش معناداری در انتشار کربن دیده می‌شه."},
+{fr:"majeur",fa:"عمده / اصلی",nu:"neutre",collo:"un enjeu majeur",exFr:"Le climat est un enjeu majeur du XXIᵉ siècle.",exFa:"اقلیم یکی از چالش‌های عمده‌ی قرن بیست‌ویکمه."},
+{fr:"fréquent",fa:"پرتکرار / رایج",nu:"neutre",collo:"un phénomène fréquent",exFr:"Le stress au travail est de plus en plus fréquent.",exFa:"استرس کاری بیش‌ازپیش رایج شده."},
+{fr:"complexe",fa:"پیچیده",nu:"neutre",collo:"une question complexe",exFr:"L'immigration est une question complexe et sensible.",exFa:"مهاجرت موضوعی پیچیده و حساسه."},
+{fr:"mondial",fa:"جهانی",nu:"neutre",collo:"un phénomène mondial",exFr:"Le réchauffement climatique est un problème mondial.",exFa:"گرمایش زمین مشکلی جهانیه."},
+{fr:"actuel",fa:"کنونی / روز",nu:"neutre",collo:"un débat actuel",exFr:"La place de l'IA est un débat très actuel.",exFa:"جایگاه هوش مصنوعی بحثی کاملاً روزه."},
+{fr:"récent",fa:"اخیر",nu:"neutre",collo:"une étude récente",exFr:"Une étude récente montre les bienfaits du sommeil.",exFa:"پژوهشی اخیر فواید خواب رو نشون می‌ده."},
+{fr:"inévitable",fa:"ناگزیر / اجتناب‌ناپذیر",nu:"neutre",collo:"une conséquence inévitable",exFr:"La hausse des prix semble inévitable cette année.",exFa:"افزایش قیمت‌ها امسال ناگزیر به نظر می‌رسه."},
+{fr:"progressif",fa:"تدریجی",nu:"neutre",collo:"une évolution progressive",exFr:"On observe une disparition progressive des petits commerces.",exFa:"ناپدید شدن تدریجی مغازه‌های کوچک دیده می‌شه."},
+{fr:"divergent",fa:"واگرا / متفاوت",nu:"neutre",collo:"des points de vue divergents",exFr:"Les deux auteurs défendent des opinions divergentes.",exFa:"دو نویسنده دیدگاه‌های واگرایی رو دفاع می‌کنن."},
+{fr:"flagrant",fa:"آشکار / فاحش",nu:"neutre",collo:"une inégalité flagrante",exFr:"Il existe une inégalité flagrante entre les régions.",exFa:"نابرابری آشکاری بین مناطق وجود داره."},
+{fr:"paradoxal",fa:"متناقض‌نما",nu:"neutre",collo:"une situation paradoxale",exFr:"Il est paradoxal d'être connecté et pourtant si seul.",exFa:"متناقض‌نماست که آدم آنلاین باشه ولی این‌قدر تنها."},
+{fr:"incontestable",fa:"غیرقابل‌انکار",nu:"neutre",collo:"un fait incontestable",exFr:"Le progrès technologique est incontestable.",exFa:"پیشرفت فناوری غیرقابل‌انکاره."},
+{fr:"notable",fa:"قابل‌توجه / برجسته",nu:"neutre",collo:"une amélioration notable",exFr:"On constate une amélioration notable de la qualité de l'air.",exFa:"بهبود قابل‌توجهی در کیفیت هوا مشاهده می‌شه."}
+];
+
+const grid = document.getElementById('grid');
+DATA.forEach((c,i)=>{
+  const el=document.createElement('article');
+  el.className='card'; el.dataset.nu=c.nu;
+  el.style.setProperty('--accent',C[c.nu]);
+  el.style.animationDelay=(i*22)+'ms';
+  el.innerHTML=`
+    <div class="top"></div>
+    <span class="num">${String(i+1).padStart(2,'0')}</span>
+    <div class="head">
+      <span class="word">${c.fr}</span>
+      <span class="chips"><span class="chip lvl">B2</span><span class="chip fn">${FN[c.nu]}</span></span>
+    </div>
+    <div class="fa-word" dir="rtl" lang="fa">${c.fa}</div>
+    <div class="collo">${c.collo}</div>
+    <div class="ex">
+      <p class="ex-fr">${c.exFr}</p>
+      <p class="ex-fa" dir="rtl" lang="fa">${c.exFa}</p>
+    </div>
+    <div class="sig"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  grid.appendChild(el);
+});
+
+const countEl=document.getElementById('count');
+function setCount(n){countEl.textContent=`${n} adjectifs affichés`;}
+setCount(DATA.length);
+
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.f-btn[data-f]'); if(!b) return;
+  document.querySelectorAll('.f-btn[data-f]').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  const f=b.dataset.f; let shown=0;
+  document.querySelectorAll('.card').forEach(card=>{
+    const ok=(f==='all'||card.dataset.nu===f);
+    card.classList.toggle('hidden',!ok);
+    if(ok) shown++;
+  });
+  setCount(shown);
+});
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>

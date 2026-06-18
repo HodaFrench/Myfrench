@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50 Adverbes B2 — TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#F0EADB;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --lien:#5B4B8A; --degre:#C0392B; --opinion:#2E7D5B; --temps:#3F66A6;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.45);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;color:var(--ink);line-height:1.45;font-family:"Spectral",Georgia,serif;
+    background:
+      repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.07) 31px, rgba(65,97,138,0.07) 32px), #f4f3f5;
+    padding:30px 16px 60px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;}
+  header{text-align:center;max-width:780px;margin:4px auto 22px;}
+  h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(1.8rem,5vw,2.9rem);line-height:1.04;margin:.1em 0 .2em;letter-spacing:-.01em;}
+  h1 b{color:var(--margin);}
+  .sub{color:var(--ink-soft);font-size:1rem;margin:0 auto;max-width:600px;}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0 6px;}
+  .f-btn{font-family:"Fraunces",serif;font-weight:600;font-size:.84rem;cursor:pointer;
+    border:1.5px solid var(--ink);background:transparent;color:var(--ink);
+    border-radius:999px;padding:7px 16px;transition:all .15s ease;display:inline-flex;align-items:center;gap:7px;}
+  .f-btn .dot{width:11px;height:11px;border-radius:3px;}
+  .f-btn[aria-pressed="true"]{background:var(--ink);color:#fff;}
+  .f-btn:focus-visible{outline:3px solid var(--margin);outline-offset:2px;}
+  .f-btn.print{border-style:dashed;}
+  .count{text-align:center;font-size:.8rem;color:var(--ink-soft);margin:4px 0 18px;font-family:"Fraunces",serif;}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));}
+  .card{
+    position:relative;background:var(--paper);border:1px solid var(--paper-edge);
+    border-radius:13px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,var(--rule) 27px,var(--rule) 28px);
+    background-position:0 70px;opacity:0;transform:translateY(12px);animation:rise .45s ease forwards;
+  }
+  @keyframes rise{to{opacity:1;transform:none;}}
+  .card::before{content:"";position:absolute;top:0;bottom:0;left:34px;width:1.4px;background:var(--margin);opacity:.5;z-index:1;}
+  .card .top{height:7px;background:var(--accent);}
+  .head{position:relative;z-index:2;padding:13px 16px 6px 46px;display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;}
+  .num{position:absolute;top:11px;left:14px;font-family:"Fraunces",serif;font-weight:800;font-size:.95rem;color:var(--accent);opacity:.75;z-index:3;}
+  .word{font-family:"Fraunces",serif;font-weight:700;font-size:1.42rem;line-height:1.05;color:var(--ink);margin-right:auto;}
+  .chips{display:flex;gap:5px;flex-shrink:0;padding-top:3px;}
+  .chip{font-family:"Fraunces",serif;font-weight:600;font-size:.62rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;border-radius:6px;padding:3px 7px;line-height:1.1;white-space:nowrap;}
+  .chip.lvl{background:var(--ink);}
+  .chip.fn{background:var(--accent);}
+  .faw{position:relative;z-index:2;padding:0 16px 0 46px;font-family:"Vazirmatn",sans-serif;font-size:1.05rem;color:var(--ink-soft);direction:rtl;text-align:right;font-weight:500;}
+  .tip{position:relative;z-index:2;margin:7px 16px 0 46px;font-size:.78rem;color:var(--accent);font-style:italic;}
+  .tip::before{content:"↳ ";font-style:normal;font-weight:700;}
+  .ex{position:relative;z-index:2;margin:8px 14px 12px 44px;background:rgba(255,255,255,.55);border-left:3px solid var(--accent);border-radius:0 7px 7px 0;padding:8px 11px;flex:1;}
+  .ex-fr{margin:0;font-size:.9rem;color:var(--ink);}
+  .ex-fr::before{content:"« ";opacity:.5;} .ex-fr::after{content:" »";opacity:.5;}
+  .ex-fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.88rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+  .sig{position:relative;z-index:2;display:flex;align-items:center;justify-content:flex-end;gap:7px;padding:6px 16px 11px;border-top:1px solid var(--paper-edge);}
+  .sig .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;letter-spacing:.04em;color:#fff;background:var(--accent);padding:3px 8px;border-radius:999px;}
+  footer{text-align:center;margin-top:40px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+  .hidden{display:none !important;}
+  @media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none;}.f-btn{transition:none;}}
+  @media print{.filters{display:none;}.card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;animation:none;opacity:1;transform:none;}.grid{grid-template-columns:repeat(3,1fr);gap:10px;}body{background:#fff;padding:0;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>50 Adverbes <b>Argumentatifs</b> · B2</h1>
+    <p class="sub">Relier, renforcer, nuancer : les adverbes qui structurent une réponse fluide à l'écrit comme à l'oral du TCF Canada.</p>
+    <div class="filters" id="filters">
+      <button class="f-btn" data-f="all" aria-pressed="true">Tous</button>
+      <button class="f-btn" data-f="lien" aria-pressed="false"><span class="dot" style="background:var(--lien)"></span>Connecteurs</button>
+      <button class="f-btn" data-f="degre" aria-pressed="false"><span class="dot" style="background:var(--degre)"></span>Intensité</button>
+      <button class="f-btn" data-f="opinion" aria-pressed="false"><span class="dot" style="background:var(--opinion)"></span>Opinion</button>
+      <button class="f-btn" data-f="temps" aria-pressed="false"><span class="dot" style="background:var(--temps)"></span>Fréquence</button>
+      <button class="f-btn print" onclick="window.print()">Imprimer / PDF</button>
+    </div>
+    <p class="count" id="count"></p>
+  </header>
+  <div class="grid" id="grid"></div>
+  <footer>50 adverbes pour gagner en fluidité et en précision au niveau B2.<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+<script>
+const C={lien:"var(--lien)",degre:"var(--degre)",opinion:"var(--opinion)",temps:"var(--temps)"};
+const FN={lien:"Lien",degre:"Degré",opinion:"Opinion",temps:"Temps"};
+const DATA=[
+{fr:"cependant",fa:"با این‌حال",nu:"lien",tip:"oppose deux idées",exFr:"La technologie facilite la vie ; cependant, elle crée une dépendance.",exFa:"فناوری زندگی را آسان می‌کند؛ با این‌حال وابستگی ایجاد می‌کند."},
+{fr:"néanmoins",fa:"با وجود این",nu:"lien",tip:"concession, registre soutenu",exFr:"Le télétravail est pratique ; néanmoins, il isole certains salariés.",exFa:"دورکاری کاربردی است؛ با وجود این، برخی کارکنان را منزوی می‌کند."},
+{fr:"toutefois",fa:"با این‌همه / اما",nu:"lien",tip:"nuance ou réserve",exFr:"Internet informe ; toutefois, il diffuse aussi de fausses nouvelles.",exFa:"اینترنت اطلاع‌رسانی می‌کند؛ اما اخبار نادرست هم منتشر می‌کند."},
+{fr:"par conséquent",fa:"در نتیجه",nu:"lien",tip:"introduit une conséquence",exFr:"Les prix augmentent ; par conséquent, le pouvoir d'achat diminue.",exFa:"قیمت‌ها بالا می‌روند؛ در نتیجه قدرت خرید کاهش می‌یابد."},
+{fr:"ainsi",fa:"بدین‌ترتیب / این‌گونه",nu:"lien",tip:"conséquence ou exemple",exFr:"Le tri devient obligatoire ; ainsi, le recyclage progresse.",exFa:"تفکیک زباله اجباری می‌شود؛ بدین‌ترتیب بازیافت پیشرفت می‌کند."},
+{fr:"en effet",fa:"در واقع / چراکه",nu:"lien",tip:"justifie ce qui précède",exFr:"Le sport est essentiel ; en effet, il réduit le stress.",exFa:"ورزش ضروری است؛ در واقع استرس را کاهش می‌دهد."},
+{fr:"en revanche",fa:"در مقابل / برعکس",nu:"lien",tip:"opposition nette",exFr:"Les villes offrent des emplois ; en revanche, elles sont polluées.",exFa:"شهرها شغل ایجاد می‌کنند؛ در مقابل، آلوده‌اند."},
+{fr:"par ailleurs",fa:"از سوی دیگر / ضمناً",nu:"lien",tip:"ajoute un argument",exFr:"Ce projet est coûteux ; par ailleurs, il prend du temps.",exFa:"این پروژه پرهزینه است؛ از سوی دیگر، زمان‌بر هم هست."},
+{fr:"d'ailleurs",fa:"در ضمن / به‌علاوه",nu:"lien",tip:"renforce l'idée précédente",exFr:"Beaucoup recyclent ; d'ailleurs, c'est devenu une habitude.",exFa:"خیلی‌ها بازیافت می‌کنند؛ در ضمن، این به یک عادت تبدیل شده."},
+{fr:"notamment",fa:"به‌ویژه / از جمله",nu:"lien",tip:"introduit un exemple précis",exFr:"Les jeunes utilisent les réseaux, notamment pour s'informer.",exFa:"جوان‌ها از شبکه‌های اجتماعی استفاده می‌کنند، به‌ویژه برای کسب اطلاع."},
+{fr:"donc",fa:"پس / بنابراین",nu:"lien",tip:"conclut un raisonnement",exFr:"Les preuves sont claires ; il faut donc agir vite.",exFa:"شواهد روشن‌اند؛ پس باید سریع اقدام کرد."},
+{fr:"désormais",fa:"از این پس / دیگر",nu:"lien",tip:"marque un changement temporel",exFr:"Le télétravail est désormais une norme dans de nombreuses entreprises.",exFa:"دورکاری از این پس در بسیاری از شرکت‌ها به یک هنجار تبدیل شده."},
+{fr:"certes",fa:"البته / درست است که",nu:"lien",tip:"concède avant un « mais »",exFr:"Certes, la voiture est pratique, mais elle pollue.",exFa:"البته خودرو کاربردی است، اما آلودگی ایجاد می‌کند."},
+{fr:"de plus",fa:"به‌علاوه / افزون بر این",nu:"lien",tip:"ajoute un argument",exFr:"Ce métier est épanouissant ; de plus, il est bien payé.",exFa:"این شغل شکوفاکننده است؛ به‌علاوه، درآمد خوبی هم دارد."},
+{fr:"en outre",fa:"افزون بر این / علاوه‌براین",nu:"lien",tip:"addition, registre formel",exFr:"Le projet est utile ; en outre, il est rentable.",exFa:"پروژه مفید است؛ افزون بر این، سودآور هم هست."},
+
+{fr:"particulièrement",fa:"به‌ویژه / به‌خصوص",nu:"degre",tip:"devant un adjectif",exFr:"Ce sujet est particulièrement important pour les jeunes.",exFa:"این موضوع به‌ویژه برای جوان‌ها مهم است."},
+{fr:"extrêmement",fa:"بی‌نهایت / به‌غایت",nu:"degre",tip:"intensité très forte",exFr:"La pollution est extrêmement préoccupante dans les grandes villes.",exFa:"آلودگی در شهرهای بزرگ بی‌نهایت نگران‌کننده است."},
+{fr:"profondément",fa:"عمیقاً / به‌شدت",nu:"degre",tip:"devant un verbe",exFr:"Internet a profondément transformé nos habitudes.",exFa:"اینترنت عادت‌های ما را عمیقاً دگرگون کرده است."},
+{fr:"considérablement",fa:"به‌میزان چشمگیر",nu:"degre",tip:"ampleur, quantité",exFr:"Le coût de la vie a considérablement augmenté.",exFa:"هزینه‌ی زندگی به‌میزان چشمگیری افزایش یافته است."},
+{fr:"nettement",fa:"به‌وضوح / آشکارا",nu:"degre",tip:"différence claire",exFr:"La qualité de l'air s'est nettement améliorée.",exFa:"کیفیت هوا به‌وضوح بهتر شده است."},
+{fr:"largement",fa:"تا حد زیادی / بسیار",nu:"degre",tip:"intensité ou majorité",exFr:"Le télétravail est largement répandu aujourd'hui.",exFa:"دورکاری امروزه تا حد زیادی رایج شده است."},
+{fr:"davantage",fa:"بیشتر",nu:"degre",tip:"= plus, en fin de phrase",exFr:"Il faudrait investir davantage dans les énergies propres.",exFa:"باید بیشتر در انرژی‌های پاک سرمایه‌گذاری کرد."},
+{fr:"énormément",fa:"بی‌اندازه / خیلی زیاد",nu:"degre",tip:"très grande quantité",exFr:"Les réseaux sociaux influencent énormément l'opinion.",exFa:"شبکه‌های اجتماعی بی‌اندازه بر افکار عمومی اثر می‌گذارند."},
+{fr:"relativement",fa:"نسبتاً",nu:"degre",tip:"intensité modérée",exFr:"Cette solution reste relativement simple à appliquer.",exFa:"این راه‌حل نسبتاً ساده‌ای برای اجرا باقی می‌ماند."},
+{fr:"réellement",fa:"واقعاً / به‌راستی",nu:"degre",tip:"renforce un fait",exFr:"Peu de gens mesurent réellement l'impact du plastique.",exFa:"کم‌اند کسانی که واقعاً اثر پلاستیک را درک کنند."},
+{fr:"fortement",fa:"به‌شدت / قویاً",nu:"degre",tip:"devant un verbe/participe",exFr:"Le climat est fortement menacé par les activités humaines.",exFa:"اقلیم به‌شدت در معرض تهدید فعالیت‌های انسانی است."},
+{fr:"pleinement",fa:"به‌طور کامل / تماماً",nu:"degre",tip:"= totalement",exFr:"Les citoyens doivent pleinement s'impliquer dans la transition.",exFa:"شهروندان باید به‌طور کامل در این گذار مشارکت کنند."},
+
+{fr:"personnellement",fa:"شخصاً",nu:"opinion",tip:"introduit ton avis",exFr:"Personnellement, je pense que la lecture reste irremplaçable.",exFa:"شخصاً فکر می‌کنم مطالعه همچنان جایگزین‌ناپذیر است."},
+{fr:"honnêtement",fa:"راستش / صادقانه",nu:"opinion",tip:"marque la sincérité",exFr:"Honnêtement, je trouve cette mesure peu efficace.",exFa:"راستش، این اقدام را چندان مؤثر نمی‌دانم."},
+{fr:"franchement",fa:"رک‌وراست / واقعاً",nu:"opinion",tip:"avis direct",exFr:"Franchement, le coût me paraît exagéré.",exFa:"رک بگویم، هزینه به‌نظرم اغراق‌آمیز است."},
+{fr:"apparemment",fa:"ظاهراً",nu:"opinion",tip:"selon les apparences",exFr:"Apparemment, les jeunes lisent moins qu'avant.",exFa:"ظاهراً جوان‌ها کمتر از گذشته مطالعه می‌کنند."},
+{fr:"manifestement",fa:"آشکارا / بی‌تردید",nu:"opinion",tip:"= de toute évidence",exFr:"Manifestement, ce système a besoin de réformes.",exFa:"آشکارا این نظام نیازمند اصلاحات است."},
+{fr:"visiblement",fa:"به‌وضوح / آشکارا",nu:"opinion",tip:"constat évident",exFr:"Les habitudes changent visiblement avec le numérique.",exFa:"عادت‌ها با فناوری دیجیتال به‌وضوح در حال تغییرند."},
+{fr:"sans doute",fa:"بی‌شک / احتمالاً",nu:"opinion",tip:"forte probabilité",exFr:"C'est sans doute la meilleure solution à long terme.",exFa:"این بی‌شک بهترین راه‌حل در درازمدت است."},
+{fr:"probablement",fa:"احتمالاً",nu:"opinion",tip:"probabilité",exFr:"Les prix vont probablement continuer à grimper.",exFa:"قیمت‌ها احتمالاً به افزایش ادامه خواهند داد."},
+{fr:"certainement",fa:"قطعاً / مطمئناً",nu:"opinion",tip:"quasi-certitude",exFr:"Le numérique va certainement transformer l'éducation.",exFa:"فناوری دیجیتال قطعاً آموزش را دگرگون خواهد کرد."},
+{fr:"évidemment",fa:"بدیهی است / البته",nu:"opinion",tip:"= bien sûr",exFr:"Évidemment, le progrès a aussi ses limites.",exFa:"بدیهی است که پیشرفت هم محدودیت‌های خود را دارد."},
+{fr:"heureusement",fa:"خوشبختانه",nu:"opinion",tip:"jugement positif",exFr:"Heureusement, de plus en plus de gens se mobilisent.",exFa:"خوشبختانه افراد بیشتری دست‌به‌کار می‌شوند."},
+{fr:"malheureusement",fa:"متأسفانه",nu:"opinion",tip:"jugement négatif",exFr:"Malheureusement, la situation se dégrade chaque année.",exFa:"متأسفانه وضعیت هر سال بدتر می‌شود."},
+{fr:"effectivement",fa:"در واقع / به‌راستی",nu:"opinion",tip:"confirme un fait",exFr:"Les chiffres montrent effectivement une hausse du chômage.",exFa:"آمار در واقع افزایش بیکاری را نشان می‌دهد."},
+
+{fr:"généralement",fa:"معمولاً / به‌طور کلی",nu:"temps",tip:"= en règle générale",exFr:"Les gens préfèrent généralement le confort à l'effort.",exFa:"مردم معمولاً راحتی را به تلاش ترجیح می‌دهند."},
+{fr:"fréquemment",fa:"به‌کرات / مکرراً",nu:"temps",tip:"haute fréquence",exFr:"Ce problème revient fréquemment dans les débats.",exFa:"این مشکل به‌کرات در بحث‌ها مطرح می‌شود."},
+{fr:"rarement",fa:"به‌ندرت",nu:"temps",tip:"basse fréquence",exFr:"On parle rarement des effets positifs de cette réforme.",exFa:"به‌ندرت از آثار مثبت این اصلاح صحبت می‌شود."},
+{fr:"progressivement",fa:"به‌تدریج",nu:"temps",tip:"= peu à peu",exFr:"Les mentalités évoluent progressivement.",exFa:"طرز فکرها به‌تدریج تغییر می‌کنند."},
+{fr:"actuellement",fa:"در حال حاضر",nu:"temps",tip:"= en ce moment",exFr:"Actuellement, le pays connaît une forte inflation.",exFa:"در حال حاضر، کشور با تورم شدیدی روبه‌روست."},
+{fr:"principalement",fa:"عمدتاً / بیشتر",nu:"temps",tip:"= surtout",exFr:"Cette pollution provient principalement des transports.",exFa:"این آلودگی عمدتاً از حمل‌ونقل ناشی می‌شود."},
+{fr:"essentiellement",fa:"اساساً / عمدتاً",nu:"temps",tip:"= avant tout",exFr:"Le débat porte essentiellement sur la santé publique.",exFa:"بحث اساساً بر سلامت عمومی متمرکز است."},
+{fr:"efficacement",fa:"به‌طور مؤثر / کارآمد",nu:"temps",tip:"manière + résultat",exFr:"Il faut agir efficacement contre le gaspillage.",exFa:"باید به‌طور مؤثر با اسراف مقابله کرد."},
+{fr:"régulièrement",fa:"به‌طور منظم",nu:"temps",tip:"fréquence régulière",exFr:"Faire du sport régulièrement améliore la santé.",exFa:"ورزش‌کردن به‌طور منظم سلامت را بهبود می‌بخشد."},
+{fr:"concrètement",fa:"به‌طور عملی / مشخص",nu:"temps",tip:"introduit un exemple pratique",exFr:"Concrètement, que peut faire un citoyen au quotidien ?",exFa:"به‌طور مشخص، یک شهروند در زندگی روزمره چه می‌تواند بکند؟"}
+];
+const grid=document.getElementById('grid');
+DATA.forEach((c,i)=>{
+  const el=document.createElement('article');
+  el.className='card'; el.dataset.nu=c.nu;
+  el.style.setProperty('--accent',C[c.nu]);
+  el.style.animationDelay=(i*20)+'ms';
+  el.innerHTML=`
+    <div class="top"></div>
+    <span class="num">${String(i+1).padStart(2,'0')}</span>
+    <div class="head"><span class="word">${c.fr}</span>
+      <span class="chips"><span class="chip lvl">B2</span><span class="chip fn">${FN[c.nu]}</span></span></div>
+    <div class="faw" dir="rtl" lang="fa">${c.fa}</div>
+    <div class="tip">${c.tip}</div>
+    <div class="ex"><p class="ex-fr">${c.exFr}</p><p class="ex-fa" dir="rtl" lang="fa">${c.exFa}</p></div>
+    <div class="sig"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  grid.appendChild(el);
+});
+const countEl=document.getElementById('count');
+const setCount=n=>countEl.textContent=`${n} adverbes affichés`;
+setCount(DATA.length);
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.f-btn[data-f]'); if(!b) return;
+  document.querySelectorAll('.f-btn[data-f]').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  const f=b.dataset.f; let n=0;
+  document.querySelectorAll('.card').forEach(c=>{const ok=(f==='all'||c.dataset.nu===f);c.classList.toggle('hidden',!ok);if(ok)n++;});
+  setCount(n);
+});
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>
