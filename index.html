@@ -1456,6 +1456,16 @@
                     </span>
                 </button>`;
             CATEGORIES.forEach(c => {
+                if (c.link) {
+                    html += `
+                    <a class="cat-chip" href="${c.link}" style="--c:${c.color}; text-decoration:none;">
+                        <span class="chip-body">
+                            <span class="name">${c.label}</span>
+                            <span class="num">صفحه‌ی ویژه</span>
+                        </span>
+                    </a>`;
+                    return;
+                }
                 const n = lessonsIn(c.id);
                 html += `
                 <button class="cat-chip" onclick="openCat('${c.id}')" style="--c:${c.color}">

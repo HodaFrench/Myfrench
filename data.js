@@ -6,6 +6,7 @@
 
 // دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
 const CATEGORIES = [
+  { id: "phrases", label: "جملات کاربردی", icon: "💬", color: "#c77d3a", link: "PHRASES_utiles.html" },
   { id: "tcf",          label: "آمادگی TCF",   icon: "❖", color: "#1a4f7a" },
   { id: "grammar",      label: "گرامر",        icon: "§", color: "#22618f" },
   { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
