@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفکیک زباله: چرا مهم‌تر از آن چیزی است که فکر می‌کنیم؟ — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--navy-soft:#41618a;--accent:#2e8b6b;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--terracotta:#c4502d;--gold:#b07a4a;}
+  body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .art-header{background:linear-gradient(135deg,#2e8b6b,#1d6b50);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px #2e8b6b44;position:relative;overflow:hidden;}
+  .art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .art-source{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px;}
+  .art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left;margin-bottom:8px;}
+  .art-title-fa{font-size:16px;opacity:.92;}
+  .art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;direction:ltr;text-align:left;}
+  .art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px;}
+  .lg{display:flex;align-items:center;gap:6px;}
+  .lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0;}
+  .text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px;}
+  .sec-title{font-family:'Roboto',serif;font-size:18px;font-weight:700;color:var(--accent);direction:ltr;text-align:left;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--paper-warm);}
+  .para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;margin-bottom:12px;border-right:4px solid #2e8b6b;}
+  .para-fa{font-size:13.5px;color:var(--gray);line-height:2.2;padding-right:4px;}
+  .hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,80,111,.22);}
+  .hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s;}
+  .hs:hover,.hs.open{background:rgba(46,123,181,.22);}
+  .hs::before{content:"⚙ ";font-size:10px;opacity:.6;}
+  .hc{background:rgba(46,139,107,.1);color:#1d6b50;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dotted rgba(46,139,107,.6);transition:all .2s;}
+  .hc:hover,.hc.open{background:rgba(46,139,107,.2);}
+  .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--cream);font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none;}
+  .hw.open .pop,.hs.open .pop,.hc.open .pop{opacity:1;visibility:visible;}
+  .art-credit{text-align:center;margin-top:24px;font-size:12px;color:var(--gray);padding-top:16px;border-top:1px dashed var(--line);}
+  .art-credit a{color:var(--navy-soft);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=article">← آرتیکل‌ها</a>
+  </div>
+  <div class="art-header">
+    <div class="art-source">📰 CITEO · citoyens.citeo.com</div>
+    <div class="art-title">Trier ses déchets : pourquoi est-ce si important ?</div>
+    <div class="art-title-fa">تفکیک زباله: چرا مهم‌تر از آن چیزی است که فکر می‌کنیم؟</div>
+    <div class="art-meta">Niveau : B1–B2 · محیط زیست · اقتصاد چرخشی</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.2);border:1px dotted #2e8b6b"></span><span><b style="color:#1d6b50">کلوکیشن / ربط</b></span></div>
+  </div>
+  <div class="text-block"><div class="para-fr">Vous vous demandez si vos efforts de tri <span class="hw" onclick="t(this)">servent vraiment à quelque chose<span class="pop">servir à = مفید بودن برای / به‌دردخوردن برای</span></span> ? Entre ce que l'on trie dans les <span class="hw" onclick="t(this)">poubelles<span class="pop">poubelle (f) = سطل زباله</span></span> chez soi et ce qu'il faut amener en <span class="hw" onclick="t(this)">déchetterie<span class="pop">déchetterie (f) = مرکز دفع زباله / پذیرندهٔ پسماند</span></span> , <span class="hs" onclick="t(this)">il est possible de se sentir perdu<span class="pop">«il est possible de + مصدر» = ممکن است ... — ساختار غیرشخصی رسمی</span></span>. Pourtant, trier ses déchets est un <span class="hw" onclick="t(this)">geste civique<span class="pop">geste civique = اقدام مدنی</span></span> d'une grande importance ! C'est un acte concret qui génère de véritables <span class="hw" onclick="t(this)">bénéfices<span class="pop">bénéfice (m) = سود / مزیت (رسمی)</span></span> pour l'environnement et l'économie.</div>
+<div class="para-fa">آیا می‌پرسید که تلاش‌هایتان برای تفکیک زباله واقعاً به چیزی می‌رسد؟ بین آنچه در خانه جدا می‌کنید و آنچه باید به مرکز دفع زباله ببرید، ممکن است گیج شوید. با این حال، تفکیک زباله یک اقدام مدنی بسیار مهم است! این یک کار عینی است که مزایای واقعی برای محیط زیست و اقتصاد ایجاد می‌کند.</div>
+</div>
+<div class="text-block"><div class="sec-title">Quels sont les impacts environnementaux du tri ?</div>
+<div class="para-fr">Quand vous triez correctement vos emballages, vous contribuez directement à <span class="hw" onclick="t(this)">préserver les ressources naturelles<span class="pop">préserver = حفظ کردن / صیانت کردن (رسمی)</span></span>. Les chiffres <span class="hs" onclick="t(this)">parlent d'eux-mêmes<span class="pop">«parler de soi-même» = خود گویا بودن (اصطلاح)</span></span> : recycler des emballages permet d'éviter <span class="hw" onclick="t(this)">2,4 millions de tonnes de CO₂<span class="pop">chiffre = رقم واقعی از گزارش CITEO 2024</span></span>  , soit <span class="hs" onclick="t(this)">l'équivalent d'un million de voitures<span class="pop">«soit» (=) یعنی در اینجا مقایسه/برابری</span></span> qui circulent sur la route.</div>
+<div class="para-fa">وقتی بسته‌بندی‌هایتان را درست تفکیک می‌کنید، مستقیماً به حفظ منابع طبیعی کمک می‌کنید. ارقام خودشان گویا هستند: بازیافت بسته‌بندی‌ها اجازه می‌دهد ۲.۴ میلیون تن CO₂ جلوگیری شود، معادل یک میلیون ماشین در حال تردد.</div>
+<div class="para-fr">Chaque déchet <span class="hw" onclick="t(this)">recyclé<span class="pop">recyclé = بازیافت‌شده</span></span> représente autant de <span class="hw" onclick="t(this)">matière première vierge<span class="pop">matière première vierge = مادهٔ خام دست‌نخورده</span></span> économisée. <span class="hc" onclick="t(this)">En effet<span class="pop">En effet = در واقع — برای توضیح</span></span>, le recyclage permet de <span class="hs" onclick="t(this)">substituer l'utilisation de ressources vierges par des matières recyclées<span class="pop">«substituer A par B» = جایگزین کردن A با B — ساختار مهم</span></span> . Les <span class="hw" onclick="t(this)">emballages en verre<span class="pop">emballage en verre = بسته‌بندی شیشه‌ای</span></span> se recyclent parfaitement sans perte de qualité.</div>
+<div class="para-fa">هر زبالهٔ بازیافت‌شده به همان اندازه مادهٔ خام دست‌نخورده صرفه‌جویی می‌کند. در واقع، بازیافت اجازه می‌دهد استفاده از منابع خام با مواد بازیافتی جایگزین شود. بسته‌بندی‌های شیشه‌ای به‌طور کامل و بدون افت کیفیت بازیافت می‌شوند.</div>
+</div>
+<div class="text-block"><div class="sec-title">Pourquoi le tri est-il un pilier de l'économie circulaire ?</div>
+<div class="para-fr"><span class="hc" onclick="t(this)">En effet<span class="pop">En effet = در واقع</span></span> , 99 % des emballages et des papiers <span class="hs" onclick="t(this)">triés par les Français<span class="pop">passif gérondif: «triés par» = که توسط فرانسوی‌ها جدا شده‌اند</span></span> sont recyclés en France et en Europe, créant ainsi de l'emploi <span class="hc" onclick="t(this)">sur l'ensemble du territoire<span class="pop">«sur l'ensemble du territoire» = در سراسر کشور (اصطلاح)</span></span> . En 2024, l'industrie du recyclage <span class="hw" onclick="t(this)">réunit<span class="pop">réunir = جمع آوردن / گرد هم آوردن</span></span> 32 600 emplois et 11 milliards d'euros de <span class="hw" onclick="t(this)">chiffre d'affaires<span class="pop">chiffre d'affaires (m) = گردش مالی / درآمد سالانه</span></span> sur le territoire français.</div>
+<div class="para-fa">در واقع، ۹۹٪ از بسته‌بندی‌ها و کاغذهایی که توسط فرانسوی‌ها تفکیک می‌شود در فرانسه و اروپا بازیافت می‌شود و بدین‌ترتیب در سراسر کشور شغل ایجاد می‌کند. در ۲۰۲۴، صنعت بازیافت ۳۲٬۶۰۰ شغل و ۱۱ میلیارد یورو گردش مالی در فرانسه دارد.</div>
+</div>
+
+  <div class="art-credit">منبع: <a href="https://citoyens.citeo.com/le-mag/trier-ses-dechets-pourquoi-est-ce-si-important-et-plus-utile-quon-ne-le-pense/" target="_blank" rel="noopener">CITEO · citoyens.citeo.com</a> · تحلیل آموزشی توسط Français avec Hoda</div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open,.hc.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

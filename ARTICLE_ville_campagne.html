@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زندگی در شهر یا روستا: مزایا و معایب — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--navy-soft:#41618a;--accent:#7a5ba8;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--terracotta:#c4502d;--gold:#b07a4a;}
+  body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .art-header{background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px #7a5ba844;position:relative;overflow:hidden;}
+  .art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .art-source{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px;}
+  .art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left;margin-bottom:8px;}
+  .art-title-fa{font-size:16px;opacity:.92;}
+  .art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;direction:ltr;text-align:left;}
+  .art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px;}
+  .lg{display:flex;align-items:center;gap:6px;}
+  .lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0;}
+  .text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px;}
+  .sec-title{font-family:'Roboto',serif;font-size:18px;font-weight:700;color:var(--accent);direction:ltr;text-align:left;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--paper-warm);}
+  .para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;margin-bottom:12px;border-right:4px solid #7a5ba8;}
+  .para-fa{font-size:13.5px;color:var(--gray);line-height:2.2;padding-right:4px;}
+  .hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,80,111,.22);}
+  .hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s;}
+  .hs:hover,.hs.open{background:rgba(46,123,181,.22);}
+  .hs::before{content:"⚙ ";font-size:10px;opacity:.6;}
+  .hc{background:rgba(46,139,107,.1);color:#1d6b50;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dotted rgba(46,139,107,.6);transition:all .2s;}
+  .hc:hover,.hc.open{background:rgba(46,139,107,.2);}
+  .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--cream);font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none;}
+  .hw.open .pop,.hs.open .pop,.hc.open .pop{opacity:1;visibility:visible;}
+  .art-credit{text-align:center;margin-top:24px;font-size:12px;color:var(--gray);padding-top:16px;border-top:1px dashed var(--line);}
+  .art-credit a{color:var(--navy-soft);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=article">← آرتیکل‌ها</a>
+  </div>
+  <div class="art-header">
+    <div class="art-source">📰 Magnolia.fr · Deklic.eco</div>
+    <div class="art-title">Vivre en ville ou à la campagne : avantages et inconvénients</div>
+    <div class="art-title-fa">زندگی در شهر یا روستا: مزایا و معایب</div>
+    <div class="art-meta">Niveau : B1–B2 · جامعه · سبک زندگی</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.2);border:1px dotted #2e8b6b"></span><span><b style="color:#1d6b50">کلوکیشن / ربط</b></span></div>
+  </div>
+  <div class="text-block"><div class="para-fr">Chacun souhaite résider dans un environnement <span class="hw" onclick="t(this)">serein<span class="pop">serein(e) = آرام / بی‌دغدغه</span></span> , où il peut <span class="hw" onclick="t(this)">s'épanouir<span class="pop">s'épanouir = شکوفا شدن / رشد کردن</span></span> et toucher au plus près son idée du bonheur. La <span class="hw" onclick="t(this)">campagne<span class="pop">campagne (f) = روستا / حومه (مقابل: ville)</span></span> est-elle le cadre de vie idéal ? La ville, avec ses <span class="hw" onclick="t(this)">facilités<span class="pop">facilité (f) = سهولت / امکانات (جمع)</span></span> , offre-t-elle plus de perspectives ? <span class="hs" onclick="t(this)">Chaque univers présente des atouts et des points faibles<span class="pop">«présenter des atouts» = داشتن مزایا. «point faible» = نقطهٔ ضعف</span></span> , tout dépend de ses <span class="hw" onclick="t(this)">aspirations<span class="pop">aspiration (f) = آرزو / هدف / خواستهٔ درونی</span></span> propres.</div>
+<div class="para-fa">هر کسی می‌خواهد در محیطی آرام زندگی کند که بتواند در آن شکوفا شود و به ایدهٔ خوشبختی‌اش نزدیک شود. آیا روستا چارچوب ایدهٔ زندگی است؟ آیا شهر با امکاناتش دیدگاه‌های بیشتری ارائه می‌دهد؟ هر محیط مزایا و نقاط ضعف خود را دارد، همه چیز به آرزوهای شخصی بستگی دارد.</div>
+</div>
+<div class="text-block"><div class="sec-title">La ville : animation et opportunités</div>
+<div class="para-fr">La ville offre une <span class="hw" onclick="t(this)">concentration<span class="pop">concentration (f) = تراکم / تمرکز</span></span> de services, d'emplois et de loisirs <span class="hw" onclick="t(this)">inégalée<span class="pop">inégalé(e) = بی‌نظیر / بی‌مثل (مجازی)</span></span> . <span class="hs" onclick="t(this)">Grâce aux transports en commun<span class="pop">«grâce à» = به‌لطف / با کمک — حرف اضافه‌ی مثبت</span></span> , les <span class="hw" onclick="t(this)">déplacements<span class="pop">déplacement (m) = جابه‌جایی / رفت‌وآمد</span></span> sont facilités. Les <span class="hw" onclick="t(this)">commerces<span class="pop">commerce (m) = مغازه / تجارت</span></span> , hôpitaux, écoles et universités sont <span class="hw" onclick="t(this)">accessibles<span class="pop">accessible = قابل دسترس</span></span> à pied ou en quelques minutes. La ville est aussi un <span class="hw" onclick="t(this)">vivier<span class="pop">vivier (m) = بستر / منبع غنی (مجازی)</span></span> culturel : musées, théâtres, concerts.</div>
+<div class="para-fa">شهر تراکم بی‌نظیری از خدمات، مشاغل و اوقات فراغت ارائه می‌دهد. با حمل‌ونقل عمومی، رفت‌وآمد آسان‌تر است. مغازه‌ها، بیمارستان‌ها، مدارس و دانشگاه‌ها پیاده یا در چند دقیقه قابل دسترس‌اند. شهر همچنین یک بستر فرهنگی غنی است: موزه‌ها، تئاترها، کنسرت‌ها.</div>
+<div class="para-fr"><span class="hc" onclick="t(this)">Cependant<span class="pop">Cependant = با این حال — برای بیان ضداستدلال</span></span> , la vie citadine <span class="hw" onclick="t(this)">s'accompagne de<span class="pop">s'accompagner de = همراه بودن با (کلوکیشن)</span></span> <span class="hw" onclick="t(this)">nuisances<span class="pop">nuisance (f) = آزار / مزاحمت. «nuisances sonores» = آلودگی صوتی</span></span> : bruit, pollution, <span class="hw" onclick="t(this)">coût de la vie élevé<span class="pop">coût de la vie = هزینهٔ زندگی</span></span> et <span class="hw" onclick="t(this)">sentiment d'anonymat<span class="pop">sentiment d'anonymat = حس گمنامی / بی‌هویتی</span></span> . Le logement <span class="hw" onclick="t(this)">y est souvent exigu<span class="pop">exigu(ë) = کوچک / تنگ. «y est» = در آنجا هست</span></span> et <span class="hw" onclick="t(this)">onéreux<span class="pop">onéreux(se) = گران / پرهزینه (رسمی)</span></span> .</div>
+<div class="para-fa">با این حال، زندگی شهری با مزاحمت‌هایی همراه است: سر و صدا، آلودگی، هزینهٔ زندگی بالا و حس گمنامی. مسکن اغلب کوچک و گران است.</div>
+</div>
+<div class="text-block"><div class="sec-title">La campagne : calme et nature</div>
+<div class="para-fr">La campagne <span class="hw" onclick="t(this)">séduit<span class="pop">séduire = جذب کردن / دلربایی کردن</span></span> par son <span class="hw" onclick="t(this)">calme<span class="pop">calme (m) = آرامش</span></span> , ses <span class="hw" onclick="t(this)">grands espaces<span class="pop">grand espace = فضای وسیع</span></span> et un <span class="hw" onclick="t(this)">rythme de vie<span class="pop">rythme de vie = ریتم زندگی / سبک و آهنگ زندگی</span></span> plus <span class="hw" onclick="t(this)">apaisé<span class="pop">apaisé(e) = آرام‌شده / بدون تنش</span></span> . <span class="hc" onclick="t(this)">En outre<span class="pop">En outre = علاوه بر این (رسمی)</span></span> , le prix de l'immobilier y est <span class="hw" onclick="t(this)">nettement<span class="pop">nettement = به‌وضوح / به‌طور قابل‌توجه</span></span> inférieur à celui des grandes villes, permettant d'accéder à des logements plus spacieux.</div>
+<div class="para-fa">روستا با آرامش، فضاهای وسیع و ریتم زندگی آرام‌تری جذاب است. علاوه بر این، قیمت مسکن آنجا به‌طور قابل‌توجهی پایین‌تر از شهرهای بزرگ است و دسترسی به مسکن فضاهای بزرگ‌تر را ممکن می‌کند.</div>
+<div class="para-fr"><span class="hs" onclick="t(this)">Toutefois, il serait inexact de<span class="pop">«il serait inexact de» = صحیح نخواهد بود که — conditionnel + infinitif</span></span> <span class="hw" onclick="t(this)">négliger<span class="pop">négliger = نادیده گرفتن / کم‌توجهی کردن</span></span> les <span class="hw" onclick="t(this)">contraintes<span class="pop">contrainte (f) = محدودیت / اجبار</span></span> : l'éloignement des services, la <span class="hw" onclick="t(this)">nécessité<span class="pop">nécessité (f) = ضرورت</span></span> d'avoir une voiture et <span class="hw" onclick="t(this)">l'isolement social<span class="pop">isolement social = انزوای اجتماعی</span></span> peuvent <span class="hw" onclick="t(this)">peser lourd<span class="pop">peser lourd = سنگین بودن / آزاردهنده بودن (اصطلاح)</span></span> , <span class="hw" onclick="t(this)">notamment<span class="pop">notamment = به‌ویژه</span></span> pour les jeunes et les seniors.</div>
+<div class="para-fa">با این حال، نادیده گرفتن محدودیت‌ها درست نخواهد بود: دوری از خدمات، ضرورت داشتن ماشین و انزوای اجتماعی می‌توانند سنگین باشند، به‌ویژه برای جوانان و سالمندان.</div>
+</div>
+<div class="text-block"><div class="sec-title">Vers un modèle hybride ?</div>
+<div class="para-fr"><span class="hc" onclick="t(this)">De plus en plus<span class="pop">De plus en plus = هر چه بیشتر / روز به روز بیشتر</span></span> , des Français <span class="hs" onclick="t(this)">choisissent de s'installer<span class="pop">«choisir de + مصدر» = تصمیم گرفتن به / انتخاب کردن که</span></span> dans des <span class="hw" onclick="t(this)">zones périurbaines<span class="pop">zone périurbaine = منطقهٔ حومه‌ای / نیمه‌شهری</span></span> ou des <span class="hw" onclick="t(this)">villes moyennes<span class="pop">ville moyenne = شهر متوسط / میان‌اندازه</span></span> , <span class="hw" onclick="t(this)">bénéficiant<span class="pop">bénéficier de = بهره‌مند شدن از</span></span> à la fois de la <span class="hw" onclick="t(this)">proximité<span class="pop">proximité (f) = نزدیکی / دسترسی</span></span> des services urbains et d'un <span class="hw" onclick="t(this)">cadre de vie<span class="pop">cadre de vie = چارچوب/محیط زندگی</span></span> plus <span class="hw" onclick="t(this)">verdoyant<span class="pop">verdoyant(e) = سرسبز / پر از فضای سبز</span></span> . Le <span class="hw" onclick="t(this)">télétravail<span class="pop">télétravail (m) = دورکاری</span></span> a accéléré cette <span class="hw" onclick="t(this)">tendance<span class="pop">tendance (f) = روند / گرایش</span></span> .</div>
+<div class="para-fa">هر چه بیشتر، فرانسوی‌ها تصمیم می‌گیرند در مناطق حومه‌ای یا شهرهای متوسط مستقر شوند، از هر دوی نزدیکی به خدمات شهری و محیط زندگی سرسبزتر بهره‌مند می‌شوند. دورکاری این روند را تسریع کرده است.</div>
+</div>
+
+  <div class="art-credit">منبع: <a href="https://www.magnolia.fr/guide-immobilier/ville-ou-campagne-avantages-et-inconvenients" target="_blank" rel="noopener">Magnolia.fr · Deklic.eco</a> · تحلیل آموزشی توسط Français avec Hoda</div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open,.hc.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
