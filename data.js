@@ -1725,19 +1725,19 @@ const INNERFRENCH = [
 const PRIVE_PASSWORD = "X12X";
 const PRIVE = [
   {
-    nom: "علیرضا",
+    nom: "کاوه محمدی",
     emoji: "👤",
-    note: "محتوای اختصاصی و تمرین‌های ویژه‌ی علیرضا برای آزمون TCF Canada.",
+    note: "محتوای اختصاصی و تمرین‌های ویژه‌ی کاوه برای آزمون TCF Canada.",
     items: [
       {
         titre: "🎤 Expression Orale — Tâche 1",
         desc: "هفت سؤال با پنج نسخه‌ی جواب و تمرین کنترل‌شده",
-        link: "PRIVE_alireza_task1.html",
+        link: "PRIVE_kaveh_task1.html",
       },
       {
         titre: "🗣️ Expression Orale — Tâche 3",
         desc: "بیان دیدگاه: الگوی استاندارد + ساختارها + سه موضوع با استدلال",
-        link: "PRIVE_alireza_task3.html",
+        link: "PRIVE_kaveh_task3.html",
       },
     ],
   },
