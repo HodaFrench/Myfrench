@@ -81,6 +81,17 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_consequence.html",
+    title: "درسنامه: بیان نتیجه",
+    titleFr: "Exprimer la conséquence",
+    category: "grammar",
+    level: "B1–B2",
+    premium: false,
+    tags: ["درسنامه", "نتیجه", "حروف ربط"],
+    summary: "درسنامه‌ی کامل بیان نتیجه در فرانسه — از donc و du coup تا par conséquent و ساختارهای si...que. با فهرست تیترها، مثال و آزمون.",
+  },
+
+  {
     file: "VOCAB_teletravail_intermediaire.html",
     title: "واژگان دورکاری و فناوری — متوسط",
     titleFr: "Télétravail & Technologie",
