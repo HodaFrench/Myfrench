@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>۱۰۰ قید پرکاربرد فرانسه — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
+    --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b; --terracotta:#c4502d; --accent:#b07a4a;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+  .lc-header{background:linear-gradient(135deg, var(--accent), #b07a4acc); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #b07a4a40; position:relative; overflow:hidden;}
+  .lc-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .lc-header .lc-emoji{font-size:34px; margin-bottom:8px;}
+  .lc-header h1{font-size:26px; font-weight:700; margin-bottom:5px;}
+  .lc-header .lc-fr{font-family:'Roboto',serif; font-size:15px; opacity:.9; direction:ltr; text-align:left;}
+  .lc-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:20px; font-size:14.5px; line-height:2.1;}
+  .lc-intro b{color:var(--accent);}
+  /* فهرست تب‌ها */
+  .lc-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; position:sticky; top:0;
+    background:var(--paper); padding:12px 0; z-index:10; border-bottom:2px solid var(--line);}
+  .lc-tab{font-family:'Estedad',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
+    color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .lc-tab:hover{border-color:var(--accent);}
+  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #b07a4a40;}
+  /* بخش */
+  .lc-section{animation:fadeIn .35s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .lc-sec-title{font-size:21px; font-weight:700; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--paper-warm);}
+  .lc-p{font-size:14.5px; line-height:2.1; color:var(--ink); margin-bottom:18px;}
+  .lc-card{background:var(--white); border:1px solid var(--line); border-right:4px solid var(--accent);
+    border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 4px 14px rgba(31,58,95,.04);}
+  .lc-word{font-family:'Roboto',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:6px;}
+  .lc-tr{font-family:'Estedad',sans-serif; font-size:14px; font-weight:500; color:var(--accent); margin-right:8px;}
+  .lc-desc{font-size:13px; color:var(--gray); line-height:1.9; margin-bottom:12px;}
+  .lc-ex{font-family:'Roboto',serif; font-size:16px; color:var(--ink); direction:ltr; text-align:left;
+    background:var(--cream); padding:10px 14px; border-radius:9px; line-height:1.7;}
+  .lc-ex b{color:var(--accent); font-weight:700;}
+  .lc-ex-fa{font-size:13px; color:var(--gray); margin-top:6px; padding-right:4px;}
+  .lc-tip{background:linear-gradient(135deg, #b07a4a14, #b07a4a08); border-right:4px solid var(--accent);
+    border-radius:10px; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:2;}
+  .lc-tip b{color:var(--accent);}
+  /* جدول */
+  .lc-table{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0;}
+  .lc-tr-row{display:flex; border-bottom:1px solid var(--line);}
+  .lc-tr-row:last-child{border-bottom:none;}
+  .lc-tr-row span{flex:1; padding:12px 16px; font-size:13.5px;}
+  .lc-tr-row span:first-child{border-left:1px solid var(--line); color:var(--ink);}
+  .lc-tr-row span:last-child{font-family:'Roboto',serif; color:var(--accent); font-weight:600; direction:ltr; text-align:left;}
+  .lc-head{background:var(--paper-warm);}
+  .lc-head span{font-weight:700; color:var(--navy) !important;}
+  /* آزمون */
+  .lc-quiz-intro{font-size:14px; color:var(--ink); margin:18px 0 14px; font-weight:600;}
+  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #b07a4a08); border-radius:14px; padding:18px 20px; margin-top:8px;}
+  .lcq-q{margin-bottom:18px;}
+  .lcq-q:last-child{margin-bottom:0;}
+  .lcq-text{font-family:'Roboto',serif; font-size:16px; color:var(--navy); font-weight:500; direction:ltr; text-align:left; margin-bottom:10px;}
+  .lcq-opts{display:flex; flex-wrap:wrap; gap:8px;}
+  .lcq-opt{font-family:'Roboto',serif; font-size:15px; background:var(--white); border:1.5px solid var(--line);
+    border-radius:9px; padding:8px 16px; cursor:pointer; transition:all .2s; color:var(--ink);}
+  .lcq-opt:hover:not(:disabled){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .lcq-opt.correct{background:var(--green); color:#fff; border-color:var(--green);}
+  .lcq-opt.wrong{background:var(--terracotta); color:#fff; border-color:var(--terracotta);}
+  .lcq-opt:disabled{cursor:default;}
+  .lcq-fb{font-size:12.5px; color:var(--ink); line-height:1.9; margin-top:10px; max-height:0; overflow:hidden; transition:max-height .3s, padding .3s; padding:0;}
+  .lcq-fb.show{max-height:200px; padding:10px 14px; background:var(--white); border-radius:8px;}
+  .lc-footer{text-align:center; margin-top:30px; color:var(--gray); font-size:12.5px;}
+  .lc-footer b{color:var(--accent);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html">⌂ Français avec Hoda</a>
+      <a href="index.html#cat=grammar">→ همه‌ی درسنامه‌ها</a>
+    </div>
+    <div class="lc-header">
+      <div class="lc-emoji">🔤</div>
+      <h1>۱۰۰ قید پرکاربرد فرانسه</h1>
+      <div class="lc-fr" dir="ltr">Les 100 adverbes français les plus utilisés</div>
+    </div>
+    <div class="lc-intro">قیدها (adverbes) کلماتی هستند که فعل، صفت یا جملهٔ کامل را توصیف می‌کنند. در فرانسه خیلی‌شان با <b>-ment</b> ساخته می‌شوند (معادل «-ly» انگلیسی). اما پرکاربردترین‌ها یاد گرفتنی‌اند. این درسنامه ۱۰۰ قید پرکاربرد را با مثال دسته‌بندی می‌کند.</div>
+    <div class="lc-tabs"><button class="lc-tab active" onclick="showSection(0)">🔧 ساخت قید با -MENT</button><button class="lc-tab" onclick="showSection(1)">⏰ قیدهای زمان</button><button class="lc-tab" onclick="showSection(2)">📍 قیدهای مکان</button><button class="lc-tab" onclick="showSection(3)">📊 قیدهای کمیت و تأکید</button><button class="lc-tab" onclick="showSection(4)">🎭 قیدهای حالت — ment</button></div>
+    
+        <div class="lc-section" id="lc-sec-0" style="display:block">
+          <h2 class="lc-sec-title" style="color:#b07a4a">🔧 ساخت قید با -MENT</h2>
+          
+<p class="lc-p">اکثر قیدهای فرانسه از <b>صفت مؤنث + ment</b> ساخته می‌شوند:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>صفت (مذکر)</span><span>صفت (مؤنث)</span><span>قید</span></div>
+  <div class="lc-tr-row"><span dir="ltr">lent</span><span dir="ltr">lente</span><span dir="ltr"><b>lentement</b> (آهسته)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">rapide</span><span dir="ltr">rapide</span><span dir="ltr"><b>rapidement</b> (سریع)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">heureux</span><span dir="ltr">heureuse</span><span dir="ltr"><b>heureusement</b> (خوشبختانه)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">sérieux</span><span dir="ltr">sérieuse</span><span dir="ltr"><b>sérieusement</b> (جدی)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">doux</span><span dir="ltr">douce</span><span dir="ltr"><b>doucement</b> (ملایم)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">absolu</span><span dir="ltr">absolue</span><span dir="ltr"><b>absolument</b> (کاملاً)</span></div>
+</div>
+
+<div class="lc-tip">⚠️ استثناها: «vrai → vraiment» (نه vraïment) · «précis → précisément» · «évident → évidemment» (با -emment!)</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-1" style="display:none">
+          <h2 class="lc-sec-title" style="color:#b07a4a">⏰ قیدهای زمان</h2>
+          
+<p class="lc-p">پرکاربردترین قیدهای زمانی را باید حفظ کرد:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>قید</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>maintenant</b></span><span>الان / حالا</span><span dir="ltr">Je suis occupé maintenant.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>déjà</b></span><span>قبلاً / از قبل</span><span dir="ltr">Tu as déjà mangé ?</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>encore</b></span><span>هنوز / دوباره</span><span dir="ltr">Il pleut encore.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>toujours</b></span><span>همیشه / هنوز</span><span dir="ltr">Elle est toujours là.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>souvent</b></span><span>اغلب / زیاد</span><span dir="ltr">Je vais souvent au café.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>parfois</b></span><span>گاهی / بعضی اوقات</span><span dir="ltr">Parfois je me sens seul.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>jamais</b></span><span>هیچ‌وقت</span><span dir="ltr">Je ne fume jamais.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>bientôt</b></span><span>به‌زودی</span><span dir="ltr">À bientôt !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>tôt</b></span><span>زود</span><span dir="ltr">Je me lève tôt.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>tard</b></span><span>دیر</span><span dir="ltr">Il rentre tard.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>longtemps</b></span><span>مدت طولانی</span><span dir="ltr">J'ai attendu longtemps.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>tout à l'heure</b></span><span>الان / بعداً کمی</span><span dir="ltr">À tout à l'heure !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>tout de suite</b></span><span>فوراً / همین الان</span><span dir="ltr">Viens tout de suite !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>d'abord</b></span><span>اول از همه</span><span dir="ltr">D'abord, mange !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>ensuite / puis</b></span><span>بعد / سپس</span><span dir="ltr">Mange, ensuite dors.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>enfin</b></span><span>بالاخره / در نهایت</span><span dir="ltr">Enfin, tu es là !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>autrefois</b></span><span>در گذشته / سابقاً</span><span dir="ltr">Autrefois, la vie était plus simple.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>dorénavant</b></span><span>از این پس (رسمی)</span><span dir="ltr">Dorénavant, je ferai attention.</span></div>
+</div>
+
+<div class="lc-tip">💡 <b>toujours</b> دو معنی دارد: «همیشه» (Je le fais toujours) و «هنوز» (Il est toujours là). از سیاق جمله بفهم.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-2" style="display:none">
+          <h2 class="lc-sec-title" style="color:#b07a4a">📍 قیدهای مکان</h2>
+          
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>قید</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>ici</b></span><span>اینجا</span><span dir="ltr">Viens ici !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>là</b></span><span>آنجا / اینجا</span><span dir="ltr">Il est là.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>là-bas</b></span><span>آنجا (دورتر)</span><span dir="ltr">C'est là-bas.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>partout</b></span><span>همه‌جا</span><span dir="ltr">Des gens partout.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>nulle part</b></span><span>هیچ‌جا</span><span dir="ltr">Je ne vais nulle part.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>quelque part</b></span><span>یک‌جایی</span><span dir="ltr">Il est quelque part.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>ailleurs</b></span><span>جای دیگر</span><span dir="ltr">Pense à autre chose, regarde ailleurs.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>dehors</b></span><span>بیرون</span><span dir="ltr">Les enfants jouent dehors.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>dedans</b></span><span>داخل / توی</span><span dir="ltr">Il fait froid — reste dedans.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>dessus / dessous</b></span><span>روی / زیر (آن)</span><span dir="ltr">Pose le livre dessus.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>devant / derrière</b></span><span>جلو / پشت</span><span dir="ltr">Il marche devant.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>loin / près</b></span><span>دور / نزدیک</span><span dir="ltr">L'école est près.</span></div>
+</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-3" style="display:none">
+          <h2 class="lc-sec-title" style="color:#b07a4a">📊 قیدهای کمیت و تأکید</h2>
+          
+<p class="lc-p">این قیدها برای تأکید، مقایسه و بیان مقدار:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>قید</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>très</b></span><span>خیلی</span><span dir="ltr">Elle est très belle.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>trop</b></span><span>خیلی زیاد (منفی)</span><span dir="ltr">C'est trop cher !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>assez</b></span><span>کافی / نسبتاً</span><span dir="ltr">C'est assez bien.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>peu</b></span><span>کم / اندک</span><span dir="ltr">Il dort peu.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>beaucoup</b></span><span>زیاد</span><span dir="ltr">Je l'aime beaucoup.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>autant</b></span><span>به همان اندازه</span><span dir="ltr">Je travaille autant que toi.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>plus</b></span><span>بیشتر</span><span dir="ltr">Je veux plus de café.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>moins</b></span><span>کمتر</span><span dir="ltr">Mange moins !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>environ</b></span><span>حدوداً / تقریباً</span><span dir="ltr">Il y a environ 100 personnes.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>à peu près</b></span><span>تقریباً / حدود</span><span dir="ltr">C'est à peu près correct.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>presque</b></span><span>تقریباً / نزدیک به</span><span dir="ltr">C'est presque fini.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>surtout</b></span><span>مخصوصاً / به‌ویژه</span><span dir="ltr">J'aime surtout le chocolat.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>plutôt</b></span><span>بیشتر / ترجیحاً</span><span dir="ltr">Je préfère plutôt le thé.</span></div>
+</div>
+
+<div class="lc-tip">⚠️ مراقب: <b>très</b> فقط با صفت/قید می‌آید. <b>beaucoup</b> با فعل و اسم: «Je travaille <b>beaucoup</b>» · «<b>beaucoup de</b> café».</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-4" style="display:none">
+          <h2 class="lc-sec-title" style="color:#b07a4a">🎭 قیدهای حالت — ment</h2>
+          
+<p class="lc-p">این قیدهای -ment پرکاربردترین‌های نوشتار و گفتار رسمی‌اند:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>قید</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>vraiment</b></span><span>واقعاً</span><span dir="ltr">C'est vraiment bien !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>absolument</b></span><span>کاملاً / حتماً</span><span dir="ltr">Absolument pas !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>exactement</b></span><span>دقیقاً</span><span dir="ltr">Exactement, c'est ça !</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>probablement</b></span><span>احتمالاً</span><span dir="ltr">Il viendra probablement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>certainement</b></span><span>قطعاً</span><span dir="ltr">Tu as certainement raison.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>heureusement</b></span><span>خوشبختانه</span><span dir="ltr">Heureusement, il n'a pas plu.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>malheureusement</b></span><span>متأسفانه</span><span dir="ltr">Malheureusement, c'est trop tard.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>évidemment</b></span><span>واضحاً / البته</span><span dir="ltr">Évidemment, je suis d'accord.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>finalement</b></span><span>بالاخره / در نهایت</span><span dir="ltr">Finalement, elle a accepté.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>généralement</b></span><span>معمولاً / به‌طور کلی</span><span dir="ltr">Généralement, je me lève tôt.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>particulièrement</b></span><span>به‌ویژه / مخصوصاً</span><span dir="ltr">J'aime particulièrement le jazz.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>rapidement</b></span><span>سریعاً</span><span dir="ltr">Il a répondu rapidement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>lentement</b></span><span>آهسته</span><span dir="ltr">Parle lentement, s'il te plaît.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>soudainement</b></span><span>ناگهان</span><span dir="ltr">Il est parti soudainement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>sincèrement</b></span><span>صادقانه</span><span dir="ltr">Je vous remercie sincèrement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>étrangement</b></span><span>عجیب‌گونه / به‌طور عجیب</span><span dir="ltr">Il agit étrangement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>directement</b></span><span>مستقیماً</span><span dir="ltr">Dis-le-lui directement.</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>profondément</b></span><span>عمیقاً</span><span dir="ltr">Elle est profondément triste.</span></div>
+</div>
+
+<div class="lc-tip">💡 در TCF: قیدهایی مثل <b>particulièrement، considérablement، indéniablement</b> نشانهٔ B2 هستند. حفظشان کن!</div>
+
+          <div class="lc-quiz">
+                <div class="lcq-q" id="lcq-4-0">
+                  <div class="lcq-text" dir="ltr">C'est ___ beau ! («واقعاً زیباست»)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,0,1)">trop</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,1,1)">vraiment</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,2,1)">très</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-0" data-note="vraiment = واقعاً. très هم درست است ولی «واقعاً» = vraiment."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-1">
+                  <div class="lcq-text" dir="ltr">___, il n'a pas pu venir. (افسوس)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,0,2)">Heureusement</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,1,2)">Finalement</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,2,2)">Malheureusement</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-1" data-note="برای بیان تأسف → Malheureusement."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-2">
+                  <div class="lcq-text" dir="ltr">Il mange ___ de pain. (مقدار زیاد)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,0,1)">très</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,1,1)">beaucoup</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,2,1)">trop</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-2" data-note="با اسم (pain) → beaucoup DE. très فقط با صفت/قید."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-3">
+                  <div class="lcq-text" dir="ltr">Elle parle ___ — je ne comprends pas. (آهسته بودن مشکل است → باید سریع‌تر حرف بزند)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,0,1)">rapidement</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,1,1)">lentement</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,2,1)">doucement</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-3" data-note="آهسته صحبت کردن → lentement."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-4">
+                  <div class="lcq-text" dir="ltr">___, tout le monde était content. (در نهایت)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,0,1)">D'abord</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,1,1)">Finalement</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,2,1)">Autrefois</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-4" data-note="در نهایت = finalement (≠ enfin که بیشتر احساسی است)"></div>
+                </div></div>
+        </div>
+    <div class="lc-footer">✦ روی هر تیتر بالا بزن تا مستقیم همان بخش را ببینی.<br><b>Français avec Hoda</b></div>
+  </div>
+  <script>
+    function showSection(i) {
+      document.querySelectorAll('.lc-section').forEach((s, idx) => {
+        s.style.display = (idx === i) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lc-tab').forEach((t, idx) => {
+        t.classList.toggle('active', idx === i);
+      });
+      window.scrollTo(0, 0);
+    }
+    function answerLc(si, qi, chosen, correct) {
+      const q = document.getElementById('lcq-' + si + '-' + qi);
+      const fb = document.getElementById('lcqfb-' + si + '-' + qi);
+      const btns = q.querySelectorAll('.lcq-opt');
+      btns.forEach((b, i) => {
+        b.classList.remove('correct','wrong');
+        if (i === correct) b.classList.add('correct');
+        else if (i === chosen) b.classList.add('wrong');
+        b.disabled = true;
+      });
+      fb.innerHTML = (chosen === correct ? '✅ آفرین! ' : '❌ درست: ') + (fb.getAttribute('data-note') || '');
+      fb.classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>

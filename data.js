@@ -84,6 +84,31 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_quand_quant.html",
+    title: "درسنامه: QUAND یا QUANT؟",
+    titleFr: "Quand ou quant ?",
+    category: "grammar", level: "A2–B2",
+    tags: ["درسنامه", "homophone", "quand quant"],
+    summary: "QUAND (وقتی/کِی) در مقابل QUANT À (در موردِ). با ۲۰+ مثال، تله‌های رایج و آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_adverbes.html",
+    title: "درسنامه: ۱۰۰ قید پرکاربرد",
+    titleFr: "Les 100 adverbes les plus utilisés",
+    category: "grammar", level: "A1–B2",
+    tags: ["درسنامه", "قید", "adverbe", "ment"],
+    summary: "ساخت با -ment + قیدهای زمان/مکان/کمیت/حالت با مثال کامل. کلمات نشانهٔ B2 (considérablement...). آزمون ۵ سؤالی.",
+  },
+  {
+    file: "ARTICLE_voleurs_energie_nozbe.html",
+    title: "دزدان انرژی — Nozbe",
+    titleFr: "Les voleurs d'énergie les plus fréquents",
+    category: "article", level: "B1–B2",
+    tags: ["آرتیکل", "روانشناسی", "بهره‌وری"],
+    summary: "مقاله‌ای از Nozbe: ۵ دزد انرژی رایج (آدم‌های منفی، تعلل، کار بی‌وقفه، بی‌نظمی، چیزهای غیرقابل کنترل). واژگان و ساختارهای B2.",
+  },
+
+  {
     file: "LECON_etre_aller.html",
     title: "درسنامه: J'ai été یا Je suis allé؟",
     titleFr: "J'ai été ou je suis allé ?",

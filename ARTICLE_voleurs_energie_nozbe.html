@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دزدان انرژی — Nozbe · Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--navy-soft:#41618a;--accent:#2e7bb5;--accent-dark:#1a5580;
+    --paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+    --green:#2e8b6b;--terracotta:#c4502d;--gold:#b07a4a;}
+  body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,123,181,0.04) 31px,rgba(46,123,181,0.04) 32px);
+    color:var(--ink);line-height:1.95;padding:20px 16px 70px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);
+    background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .art-header{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+    padding:30px 28px;border-radius:20px;margin-bottom:20px;
+    box-shadow:0 14px 34px rgba(46,123,181,.28);position:relative;overflow:hidden;}
+  .art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;
+    background:rgba(255,255,255,.07);border-radius:50%;}
+  .art-source{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px;}
+  .art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;direction:ltr;text-align:left;margin-bottom:8px;line-height:1.35;}
+  .art-title-fa{font-size:16px;opacity:.92;}
+  .art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;direction:ltr;text-align:left;}
+  .art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;
+    background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px;}
+  .lg{display:flex;align-items:center;gap:6px;}
+  .lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0;}
+  .text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:22px 20px;margin-bottom:16px;}
+  .sec-title{font-family:'Roboto',serif;font-size:18px;font-weight:700;color:var(--accent);
+    direction:ltr;text-align:left;margin-bottom:14px;padding-bottom:10px;
+    border-bottom:2px solid var(--paper-warm);}
+  .para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2;color:var(--ink);
+    direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);
+    border-radius:10px;margin-bottom:12px;border-right:4px solid var(--accent);}
+  .para-fa{font-size:13.5px;color:var(--gray);line-height:2.2;padding-right:4px;}
+  .hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;
+    cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,80,111,.22);}
+  .hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;
+    cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s;}
+  .hs:hover,.hs.open{background:rgba(46,123,181,.22);}
+  .hs::before{content:"⚙ ";font-size:10px;opacity:.6;}
+  .hc{background:rgba(46,139,107,.1);color:#1d6b50;border-radius:4px;padding:1px 4px;
+    cursor:pointer;position:relative;font-weight:500;border-bottom:2px dotted rgba(46,139,107,.6);transition:all .2s;}
+  .hc:hover,.hc.open{background:rgba(46,139,107,.2);}
+  .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);
+    color:var(--cream);font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;
+    direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;
+    box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none;}
+  .hw.open .pop,.hs.open .pop,.hc.open .pop{opacity:1;visibility:visible;}
+  .art-num{display:inline-flex;align-items:center;justify-content:center;
+    width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;
+    font-size:13px;font-weight:700;flex-shrink:0;margin-left:10px;}
+  .art-credit{text-align:center;margin-top:24px;font-size:12px;color:var(--gray);
+    padding-top:16px;border-top:1px dashed var(--line);}
+  .art-credit a{color:var(--accent);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=article">← آرتیکل‌ها</a>
+  </div>
+
+  <div class="art-header">
+    <div class="art-source">📰 NOZBE BLOG · Productivité</div>
+    <div class="art-title">Les voleurs d'énergie les plus fréquents<br>et comment y faire face</div>
+    <div class="art-title-fa">رایج‌ترین دزدان انرژی و چطور با آن‌ها مقابله کنیم</div>
+    <div class="art-meta">Niveau : B1–B2 · روان‌شناسی · بهره‌وری · ۵ بخش</div>
+  </div>
+
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.2);border:1px dotted #2e8b6b"></span><span><b style="color:#1d6b50">کلوکیشن / ربط</b></span></div>
+  </div>
+
+  <!-- مقدمه -->
+  <div class="text-block">
+    <div class="para-fr">
+      Que ce soit à notre travail ou dans notre vie privée, nous sommes toujours
+      <span class="hw" onclick="t(this)">entourés de<span class="pop">être entouré de = احاطه شدن توسط / همیشه با de</span></span>
+      <span class="hw" onclick="t(this)">voleurs d'énergie<span class="pop">voleur d'énergie = دزد انرژی. «voleur» از voler = دزدیدن</span></span>
+      qui
+      <span class="hw" onclick="t(this)">brisent<span class="pop">briser = شکستن (قوی‌تر از casser). «briser l'équilibre» = برهم زدن تعادل</span></span>
+      notre équilibre.
+      <hc class="hc" onclick="t(this)">Ils travaillent dans l'underground<span class="pop">«dans l'underground» = در پنهان / زیرزمینی (مجازی: نامرئی)</span></hc>,
+      donc le vol est difficile à
+      <span class="hw" onclick="t(this)">percevoir<span class="pop">percevoir = درک کردن / احساس کردن (رسمی). «difficile à percevoir» = سخت برای درک</span></span>.
+    </div>
+    <div class="para-fa">چه در محل کار باشد چه در زندگی خصوصی، همیشه دور و برمان پر از دزدهای انرژی است که تعادلمان را بر هم می‌زنند. آن‌ها در پنهان عمل می‌کنند، پس درک این دزدی سخت است.</div>
+  </div>
+
+  <!-- بخش ۱ -->
+  <div class="text-block">
+    <div class="sec-title"><span class="art-num">١</span> Un environnement avec des personnes négatives</div>
+    <div class="para-fr">
+      La
+      <span class="hw" onclick="t(this)">plainte<span class="pop">plainte (f) = شکایت / گله. «se plaindre» → «plainte»</span></span>
+      est l'une des attitudes les plus dangereuses car elle est
+      <span class="hs" onclick="t(this)">pleine d'énergie négative<span class="pop">⚙ «plein de» = پر از — adjective + de (بدون article)</span></span>.
+      <hc class="hc" onclick="t(this)">Habituellement<span class="pop">«habituellement» = معمولاً (قید تکرار)</span></hc>,
+      <span class="hs" onclick="t(this)">se plaindre est toxique et n'est pas utile pour résoudre les problèmes<span class="pop">⚙ مصدر فاعل: «se plaindre» فاعل جمله — مصدر به‌عنوان فاعل</span></span>,
+      mais pour
+      <span class="hw" onclick="t(this)">s'y plonger<span class="pop">se plonger dans = فرو رفتن در / غوطه‌ور شدن. «y» = dedans (در آن)</span></span>
+      encore plus.
+    </div>
+    <div class="para-fa">شکایت کردن یکی از خطرناک‌ترین نگرش‌هاست چون پر از انرژی منفی است. معمولاً، شکایت کردن سمی است و برای حل مشکلات مفید نیست، بلکه باعث می‌شود بیشتر در آن‌ها فرو برویم.</div>
+
+    <div class="para-fr">
+      <span class="hw" onclick="t(this)">Abandonnez<span class="pop">abandonner = رها کردن / ترک کردن. اینجا: «ترک کنید» (امری)</span></span>
+      les personnes qui ne partagent que des plaintes, des peurs et des problèmes. Les personnes
+      <span class="hw" onclick="t(this)">toxiques<span class="pop">toxique = سمی / مضر (مجازی: آدم سمی)</span></span>
+      cassent votre
+      <span class="hw" onclick="t(this)">équilibre émotionnel<span class="pop">équilibre émotionnel = تعادل عاطفی (کلوکیشن)</span></span>
+      et
+      <span class="hw" onclick="t(this)">induisent<span class="pop">induire = ایجاد کردن / باعث شدن (رسمی). «induire des vibrations négatives»</span></span>
+      des vibrations négatives. Ils
+      <span class="hw" onclick="t(this)">empoisonnent<span class="pop">empoisonner = مسموم کردن (مجازی: فضا را مسموم کردن)</span></span>
+      votre atmosphère,
+      <span class="hw" onclick="t(this)">sèment la discorde<span class="pop">«semer la discorde» = بذر تفرقه پاشیدن (اصطلاح)</span></span>
+      ou changent votre bonne humeur.
+    </div>
+    <div class="para-fa">آدم‌هایی را که فقط شکایت، ترس و مشکل به اشتراک می‌گذارند رها کنید. آدم‌های سمی تعادل عاطفی‌تان را می‌شکنند و ارتعاشات منفی ایجاد می‌کنند. آن‌ها فضایتان را مسموم می‌کنند، تفرقه می‌اندازند یا حال خوبتان را خراب می‌کنند.</div>
+
+    <div class="para-fr">
+      Renoncez à ces gens et
+      <span class="hs" onclick="t(this)">entourez-vous de personnes aimantes<span class="pop">⚙ «s'entourer DE» = احاطه کردن خود با — حرف اضافه‌ی DE ثابت</span></span>,
+      qui font partie de vous et que vous aimez sincèrement. Les personnes qui vous font
+      <span class="hw" onclick="t(this)">sentir vivant<span class="pop">«faire sentir + adj» = احساس ... دادن. «vivant» = زنده (صفت)</span></span>
+      et libre d'être vous-même ont une
+      <span class="hw" onclick="t(this)">influence positive<span class="pop">influence positive (f) = تأثیر مثبت. «avoir une influence sur» = تأثیر داشتن بر</span></span>
+      dans vos vies.
+    </div>
+    <div class="para-fa">از این آدم‌ها دست بکشید و خود را با آدم‌های محبت‌بخش احاطه کنید، کسانی که بخشی از شما هستند و صادقانه دوستشان دارید. آدم‌هایی که باعث می‌شوند احساس زندگی و آزادی کنید، تأثیر مثبتی در زندگی‌تان دارند.</div>
+  </div>
+
+  <!-- بخش ۲ -->
+  <div class="text-block">
+    <div class="sec-title"><span class="art-num">٢</span> Ne pas retarder, ni éviter la prise de décision</div>
+    <div class="para-fr">
+      La
+      <span class="hw" onclick="t(this)">remise des choses à plus tard<span class="pop">remise à plus tard = تعویق انداختن. «remettre à plus tard» = به بعد موکول کردن</span></span>
+      en continu n'est pas
+      <span class="hw" onclick="t(this)">saine<span class="pop">sain(e) = سالم / سلامت‌بخش. «saine» مؤنث</span></span>,
+      car elle exerce un
+      <span class="hw" onclick="t(this)">stress inutile<span class="pop">exercer un stress = استرس ایجاد کردن. «inutile» = بی‌فایده / غیرضروری</span></span>
+      sur vos activités quotidiennes.
+      <hc class="hc" onclick="t(this)">C'est toujours plus stressant de se souvenir de quelque chose que vous avez à faire que d'y faire face et de l'exécuter<span class="pop">مقایسه: «plus... que» = بیشتر... تا. «y faire face» = با آن روبه‌رو شدن</span></hc>.
+    </div>
+    <div class="para-fa">به‌تعویق انداختن مداوم کارها سالم نیست، چون استرس غیرضروری بر فعالیت‌های روزانه‌تان وارد می‌کند. همیشه به خاطر سپردن چیزی که باید انجام دهی استرس‌زاتر از روبه‌رو شدن و انجام دادنش است.</div>
+
+    <div class="para-fr">
+      Le
+      <span class="hw" onclick="t(this)">report des décisions importantes<span class="pop">report (m) = تعویق. «reporter» = به تعویق انداختن</span></span>
+      enlève notre énergie parce que cela nous place dans un état d'
+      <span class="hw" onclick="t(this)">incertitude<span class="pop">incertitude (f) = عدم قطعیت / بلاتکلیفی (≠ certitude)</span></span>
+      et de malaise.
+      <span class="hs" onclick="t(this)">Débarrassez-vous de vos conflits internes<span class="pop">⚙ «se débarrasser DE» = خلاص شدن از — DE ثابت است</span></span>,
+      prenez la meilleure décision possible et
+      <span class="hw" onclick="t(this)">assumez-la<span class="pop">assumer = پذیرفتن (مسئولیت). «assumer les conséquences» = مسئولیت عواقب را پذیرفتن</span></span>,
+      quelles que soient les conséquences.
+    </div>
+    <div class="para-fa">به تعویق انداختن تصمیمات مهم انرژی‌مان را می‌گیرد چون ما را در حالت بلاتکلیفی و ناراحتی قرار می‌دهد. از کشمکش‌های درونی خلاص شوید، بهترین تصمیم ممکن را بگیرید و مسئولیتش را بپذیرید، هر چه عواقبش باشد.</div>
+  </div>
+
+  <!-- بخش ۳ -->
+  <div class="text-block">
+    <div class="sec-title"><span class="art-num">٣</span> Évitez de travailler en continu</div>
+    <div class="para-fr">
+      <span class="hw" onclick="t(this)">Offrez-vous<span class="pop">«s'offrir» = به خود هدیه دادن / برای خود فراهم کردن (ساختار زیبا)</span></span>
+      du temps pour vous reposer. La routine quotidienne,
+      <span class="hs" onclick="t(this)">même si elle ne contient pas d'activités extraordinaires<span class="pop">⚙ «même si» = حتی اگر — + indicatif (برخلاف bien que که subjonctif است)</span></span>,
+      <span class="hw" onclick="t(this)">draine<span class="pop">drainer = تخلیه کردن / خالی کردن (مجازی: انرژی را خالی کردن)</span></span>
+      notre énergie.
+    </div>
+    <div class="para-fa">برای استراحت برای خودتان وقت بگذارید. روال روزمره، حتی اگر فعالیت‌های خارق‌العاده‌ای نداشته باشد، انرژی‌مان را تخلیه می‌کند.</div>
+
+    <div class="para-fr">
+      Il est très important de savoir
+      <span class="hs" onclick="t(this)">quand sortir de la boucle quotidienne<span class="pop">⚙ «savoir + مصدر» = دانستن چطور / توانستن. «la boucle» = حلقه / چرخه‌ی روزانه</span></span>
+      des activités pour faire une
+      <span class="hw" onclick="t(this)">pause<span class="pop">pause (f) = مکث / استراحت کوتاه. «faire une pause» = استراحت کردن (کلوکیشن)</span></span>
+      et quand il faut agir. La capacité à
+      <span class="hw" onclick="t(this)">se détendre<span class="pop">se détendre = آرام گرفتن / استراحت کردن (انعکاسی)</span></span>
+      est essentielle pour
+      <span class="hw" onclick="t(this)">prévenir<span class="pop">prévenir = پیشگیری کردن (≠ prevenir = آگاه کردن)</span></span>
+      le stress et l'anxiété.
+    </div>
+    <div class="para-fa">دانستن اینکه کِی از چرخه‌ی روزمرهٔ فعالیت‌ها بیرون بیاییم تا استراحت کنیم و کِی باید عمل کنیم، خیلی مهم است. توانایی آرام گرفتن برای پیشگیری از استرس و اضطراب ضروری است.</div>
+  </div>
+
+  <!-- بخش ۴ -->
+  <div class="text-block">
+    <div class="sec-title"><span class="art-num">٤</span> La désorganisation</div>
+    <div class="para-fr">
+      Être
+      <span class="hw" onclick="t(this)">désorganisé<span class="pop">désorganisé = نامنظم / آشفته. پیشوند dés- = نقیض</span></span>
+      est
+      <span class="hw" onclick="t(this)">malsain<span class="pop">malsain = ناسالم. مقابل: sain. «malsain pour le corps et l'esprit»</span></span>
+      parce que cela
+      <span class="hw" onclick="t(this)">consomme<span class="pop">consommer = مصرف کردن / خرج کردن. «consommer de l'énergie» = انرژی مصرف کردن</span></span>
+      votre énergie et votre temps et nous donne un sentiment d'
+      <span class="hw" onclick="t(this)">incertitude<span class="pop">incertitude = بلاتکلیفی (دومین بار — مرور)</span></span>
+      qui mène à
+      <span class="hw" onclick="t(this)">l'épuisement<span class="pop">épuisement (m) = فرسودگی / خستگی شدید. از «épuiser» = تحلیل بردن</span></span>.
+    </div>
+    <div class="para-fa">نامنظم بودن ناسالم است چون انرژی و زمانتان را مصرف می‌کند و احساس بلاتکلیفی ایجاد می‌کند که به فرسودگی منجر می‌شود.</div>
+
+    <div class="para-fr">
+      <span class="hs" onclick="t(this)">Débarrassez-vous des choses dont vous n'avez plus besoin<span class="pop">⚙ «dont» = de + lequel/laquelle. «avoir besoin DE qqch» → relative با dont</span></span>.
+      <span class="hw" onclick="t(this)">Triez<span class="pop">trier = جدا کردن / مرتب‌سازی کردن (هم‌ریشه با «tri sélectif» = بازیافت)</span></span>
+      les choses et déterminez leur
+      <span class="hw" onclick="t(this)">utilité<span class="pop">utilité (f) = کاربرد / مفید بودن. «utile» → «utilité»</span></span>
+      pour vous. Organiser vos affaires vous aide à vous
+      <span class="hw" onclick="t(this)">sentir mieux<span class="pop">«se sentir mieux» = بهتر احساس کردن. مرور: se sentir + adjective</span></span>,
+      à
+      <span class="hw" onclick="t(this)">libérer<span class="pop">libérer = آزاد کردن. «libérer l'esprit» = ذهن را آزاد کردن</span></span>
+      votre esprit et à vous fournir une énergie positive.
+    </div>
+    <div class="para-fa">از چیزهایی که دیگر نیازی بهشان ندارید خلاص شوید. وسایل را مرتب کنید و کاربردشان را برای خودتان مشخص کنید. سازماندهی وسایل کمک می‌کند بهتر احساس کنید، ذهنتان را آزاد کنید و انرژی مثبت دریافت کنید.</div>
+  </div>
+
+  <!-- بخش ۵ -->
+  <div class="text-block">
+    <div class="sec-title"><span class="art-num">٥</span> La bataille contre des choses que vous ne pouvez pas contrôler</div>
+    <div class="para-fr">
+      Il faut parfois
+      <span class="hs" onclick="t(this)">accepter les choses telles qu'elles sont<span class="pop">⚙ «tel(le)(s) que» = همانطور که / آنچنان که — صفت موصوف با اسم موافقت می‌کند</span></span>,
+      car c'est la meilleure solution pour notre
+      <span class="hw" onclick="t(this)">santé mentale et physique<span class="pop">santé mentale et physique = سلامت روانی و جسمی (ترتیب متعارف در فرانسه)</span></span>.
+      <span class="hw" onclick="t(this)">Résister ou lutter contre<span class="pop">lutter contre = مبارزه کردن با / جنگیدن با (رسمی‌تر از combattre)</span></span>
+      des choses qui sont
+      <span class="hw" onclick="t(this)">hors de notre contrôle<span class="pop">«hors de» = خارج از / بیرون از. «hors de contrôle» = خارج از کنترل</span></span>
+      est une
+      <span class="hw" onclick="t(this)">perte d'énergie<span class="pop">perte (f) = هدررفت / از دست دادن. «perte d'énergie» = هدررفت انرژی</span></span>
+      énorme.
+    </div>
+    <div class="para-fa">گاهی باید چیزها را آنطور که هستند بپذیریم، چون این بهترین راه‌حل برای سلامت روانی و جسمی ماست. مقاومت یا مبارزه با چیزهایی که خارج از کنترل ما هستند یک هدررفت بزرگ انرژی است.</div>
+
+    <div class="para-fr">
+      Apprenez à
+      <span class="hw" onclick="t(this)">lâcher prise<span class="pop">«lâcher prise» = رها کردن / تسلیم شدن (اصطلاح بسیار مهم). lâcher = رها کردن، prise = چنگ زدن</span></span>
+      sur ce que vous ne pouvez pas changer. Chaque fois que vous
+      <span class="hw" onclick="t(this)">gaspillez<span class="pop">gaspiller = هدر دادن / اسراف کردن. «gaspiller son énergie» = انرژی را هدر دادن</span></span>
+      votre énergie sur l'
+      <span class="hw" onclick="t(this)">incontrôlable<span class="pop">incontrôlable = غیرقابل کنترل. پیشوند in- = نقیض + contrôlable</span></span>,
+      vous en avez moins pour les choses qui
+      <span class="hw" onclick="t(this)">comptent vraiment<span class="pop">«compter» (مجازی) = مهم بودن / ارزش داشتن. «ce qui compte» = آنچه مهم است</span></span>.
+      La
+      <span class="hw" onclick="t(this)">sérénité<span class="pop">sérénité (f) = آرامش / سکینه (عمیق‌تر از calme)</span></span>
+      vient de l'
+      <span class="hw" onclick="t(this)">acceptation<span class="pop">acceptation (f) = پذیرش. «accepter» → «acceptation»</span></span>,
+      pas de la résistance.
+    </div>
+    <div class="para-fa">یاد بگیرید از چیزهایی که نمی‌توانید تغییر دهید رها شوید. هر بار که انرژی‌تان را روی چیزهای غیرقابل کنترل هدر می‌دهید، کمتر برای چیزهایی که واقعاً مهم‌اند دارید. آرامش از پذیرش می‌آید، نه از مقاومت.</div>
+  </div>
+
+  <div class="art-credit">
+    منبع: <a href="https://nozbe.com/fr/blog/energy-thieves/" target="_blank" rel="noopener">nozbe.com/fr/blog</a> · تحلیل آموزشی توسط Français avec Hoda
+  </div>
+</div>
+
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open,.hc.open").forEach(e=>{
+    e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}
+  });
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
