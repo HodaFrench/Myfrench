@@ -1587,6 +1587,7 @@
             const isRight = chosen === correct;
             fb.innerHTML = (isRight ? "✅ آفرین! " : "❌ درست: ") + (fb.getAttribute("data-note") || "");
             fb.classList.add("show");
+        }
 
         function setResultsTitle(catId) {
             const ci = catInfo(catId);
