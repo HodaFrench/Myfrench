@@ -84,6 +84,62 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_etre_aller.html",
+    title: "درسنامه: J'ai été یا Je suis allé؟",
+    titleFr: "J'ai été ou je suis allé ?",
+    category: "grammar",
+    level: "A2–B1",
+    tags: ["درسنامه", "passé composé", "être aller"],
+    summary: "تفاوت دقیق j'ai été (بودم/تجربه) و je suis allé (رفتم — حرکت مشخص) با جدول مقایسه، نکات توافق و آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_possessifs.html",
+    title: "درسنامه: صفت‌های ملکی",
+    titleFr: "Les adjectifs possessifs",
+    category: "grammar",
+    level: "A1–B1",
+    tags: ["درسنامه", "صفت ملکی", "mon ma mes"],
+    summary: "جدول کامل صفت‌های ملکی + تله‌های رایج: mon amie (نه ma)، leur/leurs، و جنسیت اسم نه مالک. آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_a_ou_de.html",
+    title: "درسنامه: À یا DE بعد از صفت و اسم؟",
+    titleFr: "À ou DE en français ?",
+    category: "grammar",
+    level: "B1–B2",
+    tags: ["درسنامه", "حروف اضافه", "à de"],
+    summary: "صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی.",
+  },
+
+  {
+    file: "LECON_etre_aller.html",
+    title: "درسنامه: J'ai été یا Je suis allé؟",
+    titleFr: "J'ai été ou je suis allé ?",
+    category: "grammar",
+    level: "A2–B1",
+    tags: ["درسنامه", "passé composé", "être aller"],
+    summary: "تفاوت دقیق j'ai été (بودم/تجربه) و je suis allé (رفتم — حرکت مشخص) با جدول مقایسه، نکات توافق و آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_possessifs.html",
+    title: "درسنامه: صفت‌های ملکی",
+    titleFr: "Les adjectifs possessifs",
+    category: "grammar",
+    level: "A1–B1",
+    tags: ["درسنامه", "صفت ملکی", "mon ma mes"],
+    summary: "جدول کامل صفت‌های ملکی + تله‌های رایج: mon amie (نه ma)، leur/leurs، و جنسیت اسم نه مالک. آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_a_ou_de.html",
+    title: "درسنامه: À یا DE بعد از صفت و اسم؟",
+    titleFr: "À ou DE en français ?",
+    category: "grammar",
+    level: "B1–B2",
+    tags: ["درسنامه", "حروف اضافه", "à de"],
+    summary: "صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی.",
+  },
+
+  {
     file: "LECON_prepositions.html",
     title: "درسنامه: حروف اضافه‌ی فرانسه",
     titleFr: "Les prépositions françaises",
@@ -1309,6 +1365,69 @@ const EDITOA1 = [
 //    morale  : (اختیاری) جمع‌بندی/نتیجه {fr, fa}
 // ═══════════════════════════════════════════════════════════
 const MINIARTICLES = [
+  {
+    titre: "Le silence qui parle",
+    emoji: "🤫",
+    niveau: "B1",
+    cat: "general",
+    paras: [
+      "Dans notre société ⟦moderne|مدرن⟧, le silence est devenu une ⟦denrée rare|کالای کمیاب⟧. Partout, des sons nous ⟦envahissent|به ما هجوم می‌آورند⟧ : la musique dans les magasins, les notifications sur nos téléphones, les voix à la télévision. On a l'impression que le silence est quelque chose à ⟦éviter|پرهیز کردن⟧, presque une chose ⟦gênante|ناراحت‌کننده⟧.",
+      "Pourtant, les ⟦psychologues|روانشناسان⟧ et les ⟦neuroscientifiques|عصب‌شناسان⟧ nous disent le contraire. Le silence n'est pas un ⟦vide|خلاء / خلوت⟧ — c'est un espace ⟦précieux|ارزشمند⟧ pour notre cerveau. ⟪Quand on se tait, le cerveau ne s'arrête pas de travailler|«se taire» = ساکت شدن (فعل انعکاسی) — contraire de parler⟫. Au contraire, il commence à ⟦intégrer|یکپارچه کردن / جذب کردن⟧ les informations reçues, à ⟦consolider|تثبیت کردن⟧ les souvenirs et à ⟦résoudre|حل کردن⟧ des problèmes.",
+      "Il y a aussi une dimension ⟦sociale|اجتماعی⟧ très intéressante dans le silence. Dans certaines cultures, comme au Japon ou dans les pays nordiques, le silence entre deux personnes est vu comme un signe de ⟦confiance|اعتماد⟧ et de ⟦complicité|همدلی / رفاقت⟧. On n'a pas besoin de remplir chaque moment par des mots. En France, au contraire, les silences dans une conversation peuvent parfois ⟦mettre mal à l'aise|ناراحت کردن⟧. On dit d'ailleurs qu'un ⟦ange passe|فرشته‌ای عبور می‌کند — اصطلاح فرانسوی برای سکوت ناخوشایند⟧ quand un silence ⟦s'installe|برقرار می‌شود⟧ brusquement.",
+      "Dans le monde professionnel, la capacité à ⟦supporter|تحمل کردن⟧ le silence est souvent un signe de ⟦maturité|بلوغ / پختگی⟧. Lors d'une négociation, ⟪la personne qui parle en premier rompt souvent son avantage|«rompre» = شکستن / از دست دادن — اصطلاح مذاکره⟫. Savoir attendre, savoir laisser un silence ⟦s'étirer|کشیده شدن⟧, c'est un pouvoir. Les grands ⟦orateurs|سخنرانان⟧ savent aussi utiliser les silences pour donner plus de ⟦poids|وزن / تأثیر⟧ à leurs mots.",
+      "Sur le plan ⟦médical|پزشکی⟧, des études montrent que l'exposition prolongée au bruit peut provoquer ⟦de l'hypertension|فشار خون بالا⟧, des problèmes de ⟦sommeil|خواب⟧ et même des ⟦troubles de la concentration|اختلال تمرکز⟧. À l'inverse, quelques minutes de silence par jour peuvent ⟦réduire|کاهش دادن⟧ le ⟦cortisol|کورتیزول — هورمون استرس⟧, l'hormone du stress. Certains ⟦thérapeutes|درمانگران⟧ recommandent même de ⟦pratiquer|تمرین کردن⟧ le « bain de silence » — s'asseoir sans stimulation pendant 15 à 20 minutes.",
+      "Et toi, ⟦as-tu peur|می‌ترسی⟧ du silence ? Est-ce que tu ⟦allumes|روشن می‌کنی⟧ immédiatement la télévision ou la musique quand tu rentres chez toi ? Si oui, ⟪essaie pendant une semaine de t'offrir 10 minutes de silence quotidien|«s'offrir» = به خود هدیه دادن — ساختار زیبا⟫. Tu pourrais être ⟦surpris|شگفت‌زده⟧ de ce que tu découvres en toi-même.",
+    ],
+    morale: { fr: "Le silence n'est pas l'absence de bruit, c'est la présence de soi.", fa: "سکوت غیبتِ صدا نیست، حضورِ خودت است." }
+  },
+  {
+    titre: "Apprendre à dire non",
+    emoji: "🙅",
+    niveau: "B1",
+    cat: "general",
+    paras: [
+      "⟦Refuser|رد کردن / نه گفتن⟧ une demande, ⟦décliner|رد کردن (رسمی‌تر)⟧ une invitation, dire non à quelqu'un que l'on aime — pour beaucoup d'entre nous, c'est une des choses les plus difficiles dans la vie sociale. On a peur de ⟦blesser|آسیب رساندن به / آزردن⟧ l'autre, de paraître ⟦égoïste|خودخواه⟧, de ⟦rompre|شکستن (رابطه)⟧ une relation. Alors on dit oui, même quand on veut dire non.",
+      "Mais cette ⟦incapacité|ناتوانی⟧ à dire non a un prix ⟦élevé|بالا / سنگین⟧. Quand on ⟦accepte|قبول می‌کند⟧ des choses que l'on ne veut pas faire, on accumule du ⟦ressentiment|کینه / دلخوری⟧. On finit par en vouloir à l'autre, non pas parce qu'il a fait quelque chose de mal, mais parce qu'on n'a pas ⟦osé|جرأت کرده⟧ lui dire non. ⟪C'est une forme de violence passive envers soi-même|«envers soi-même» = نسبت به خودت — عبارت مهم⟫.",
+      "Les ⟦psychologues|روانشناسان⟧ parlent souvent de la notion de ⟦limites|حدود / مرزها⟧ — en anglais, on dit « boundaries ». Avoir des limites claires, c'est savoir ce qu'on accepte et ce qu'on n'accepte pas. Ce n'est pas de l'⟦égoïsme|خودخواهی⟧, c'est du ⟦respect de soi|احترام به خود⟧. Et paradoxalement, les personnes qui savent dire non ⟦inspirent|الهام می‌بخشند / الهام‌بخشند⟧ souvent plus le respect que celles qui ⟦cèdent|تسلیم می‌شوند⟧ à toutes les demandes.",
+      "Apprendre à dire non, c'est aussi une question de ⟦formulation|فرمول‌بندی / نحوه‌ی بیان⟧. Il y a une grande différence entre « Non, je ne veux pas » (direct et parfois brutal) et « Je ne peux pas m'engager là-dessus pour l'instant » (⟦honnête|صادقانه⟧ mais ⟦nuancé|ظریف / باملاحظه⟧). On peut aussi proposer une ⟦alternative|گزینهٔ جایگزین⟧ : « Je ne peux pas cette semaine, mais la semaine prochaine, ça ⟦me conviendrait|برایم مناسب است — conditionnel مؤدبانه⟫. »",
+      "Dans les cultures méditerranéennes et orientales, dont la France est une ⟦héritière|وارث / میراث‌بر⟧ partielle, le non direct peut être perçu comme ⟦impoli|بی‌ادبانه⟧. C'est pourquoi les Français ont souvent des façons indirectes de refuser : « C'est compliqué », « Je vais voir », « Peut-être ». Ces ⟦formules|فرمول‌ها / عبارات⟧ permettent de ne pas dire non frontalement tout en faisant comprendre que la réponse est ⟦négative|منفی⟧.",
+      "En fin de compte, dire non est un ⟦acte d'amour|اقدام محبت⟧ — envers soi-même, mais aussi envers l'autre. ⟪Quand on dit un oui qui cache un non|اصطلاح مجازی: وقتی بله‌ای که نه را پنهان می‌کند⟫, on ⟦trompe|فریب می‌دهیم⟧ la relation. Le non honnête est plus ⟦sain|سالم⟧ que le oui ⟦forcé|اجباری⟧. Apprendre à dire non avec ⟦douceur|ملایمت⟧ mais avec ⟦fermeté|قاطعیت⟧, c'est une compétence qui ⟦s'apprend|یاد گرفته می‌شود⟧ et qui change profondément la qualité de nos relations.",
+    ],
+    morale: { fr: "Dire non à l'autre, c'est souvent dire oui à soi-même.", fa: "نه گفتن به دیگری، اغلب یعنی بله گفتن به خودت." }
+  },
+  {
+    titre: "Le pouvoir des habitudes",
+    emoji: "🔄",
+    niveau: "B2",
+    cat: "general",
+    paras: [
+      "On ⟦estime|تخمین می‌زند⟧ que près de 45 % de nos actions quotidiennes sont des ⟦habitudes|عادت‌ها⟧ — des comportements ⟦automatiques|خودکار⟧ que nous ⟦exécutons|اجرا می‌کنیم⟧ sans vraiment y penser. Se brosser les dents, prendre son café le matin, vérifier son téléphone en se réveillant : tout cela se fait ⟦mécaniquement|مکانیکی / بدون فکر⟧. La question est : est-ce une bonne chose ou une mauvaise chose ?",
+      "Le cerveau humain est un organe ⟦extraordinairement|به‌طور فوق‌العاده⟧ efficace. Pour ⟦économiser|صرفه‌جویی کردن⟧ de l'énergie, il ⟦automatise|خودکار می‌کند⟧ les tâches ⟦répétitives|تکراری⟧. Ce processus, qu'on appelle la ⟦«boucle de l'habitude»|حلقهٔ عادت⟧, fonctionne en trois étapes : un ⟦déclencheur|محرک / عامل⟧, une ⟦routine|روتین⟧, et une ⟦récompense|پاداش⟧. Par exemple : tu vois ton téléphone (déclencheur) → tu le prends et vérifies les notifications (routine) → tu ressens une ⟦légère satisfaction|رضایت اندک⟧ (récompense).",
+      "⟪Ce qui rend les habitudes si puissantes, c'est aussi ce qui les rend si difficiles à changer|ساختار c'est... que... — تأکید با relative⟫. Quand une habitude est ⟦ancrée|ریشه‌دوانده / رسوخ کرده⟧ dans notre cerveau, le circuit ⟦neuronal|عصبی⟧ correspondant devient très ⟦solide|محکم⟧. Les ⟦neuroscientifiques|عصب‌شناسان⟧ disent que les vieilles habitudes ne disparaissent jamais vraiment — elles restent ⟦en sommeil|در خواب / غیرفعال⟧, prêtes à ⟦se réactiver|دوباره فعال شدن⟧ au moindre ⟦stimulus|محرک⟧.",
+      "Comment alors créer de nouvelles habitudes et ⟦se débarrasser|خلاص شدن از⟧ des mauvaises ? Les recherches montrent qu'il ne faut pas essayer de ⟦supprimer|حذف کردن⟧ une habitude, mais la ⟦remplacer|جایگزین کردن⟧. Garder le même déclencheur et la même récompense, mais changer la routine. Si tu as l'habitude de manger du sucre quand tu es ⟦stressé|تحت استرس⟧ (déclencheur : stress → routine : manger du chocolat → récompense : soulagement), essaie de ⟦substituer|جایگزین کردن⟧ le chocolat par une promenade courte.",
+      "⟦Par ailleurs|علاوه بر این⟧, la recherche sur les habitudes a mis en lumière un concept important : les « ⟦habitudes clés|عادت‌های کلیدی⟧ » (keystone habits en anglais). Ce sont des habitudes qui ⟦entraînent|به‌دنبال خود می‌کشانند⟧ d'autres habitudes positives. Par exemple, les personnes qui commencent à faire de l'exercice régulièrement ⟦tendent à|تمایل دارند به⟧ mieux manger, à mieux dormir, et même à être plus ⟦productives|مولد / کارآمد⟧ au travail. Une seule habitude peut ⟦déclencher|راه‌اندازی کردن⟧ tout un ⟦effet domino|اثر دومینو⟧.",
+      "Pour ⟦modifier|تغییر دادن⟧ une habitude, il est aussi crucial de comprendre son ⟦environnement|محیط⟧. Notre ⟦entourage|محیط اطراف / اطرافیان⟧ et notre espace physique ⟦influencent|تأثیر می‌گذارند⟧ énormément nos comportements. Si tu veux lire plus, ⟦place|قرار بده⟧ un livre sur ta table de nuit. Si tu veux moins utiliser ton téléphone le soir, ⟦charge-le|شارجش کن⟧ dans une autre pièce. Modifier l'environnement est souvent plus ⟦efficace|مؤثر⟧ que ⟦faire appel à|توسل جستن به⟧ sa seule ⟦volonté|اراده⟧.",
+      "En ⟦définitive|در نهایت / به طور قطع⟧, nous ne sommes pas les ⟦esclaves|بردگان⟧ de nos habitudes — nous en sommes les ⟦créateurs|سازندگان⟧. Prendre conscience de ses automatismes, comprendre leur ⟦mécanique|مکانیزم⟧, et agir intentionnellement pour les ⟦façonner|شکل دادن⟧ : c'est là que réside notre ⟦liberté|آزادی⟧. ⟪Comme le disait Aristote : «Nous sommes ce que nous faisons de manière répétée.|نقل قول مشهور ارسطو⟫ L'excellence n'est donc pas un acte, mais une ⟦habitude|عادت⟧. »",
+    ],
+    morale: { fr: "Nos habitudes définissent qui nous sommes, mais nous pouvons toujours en choisir de nouvelles.", fa: "عادت‌هایمان تعریف می‌کنند که چه کسی هستیم، اما می‌توانیم همیشه عادت‌های جدیدی انتخاب کنیم." }
+  },
+  {
+    titre: "Vivre loin de sa famille",
+    emoji: "✈️",
+    niveau: "B1",
+    cat: "general",
+    paras: [
+      "Pour des millions de personnes dans le monde, vivre ⟦loin de ses proches|دور از نزدیکان⟧ est une réalité quotidienne. Que ce soit pour des raisons professionnelles, ⟦académiques|دانشگاهی⟧ ou ⟦économiques|اقتصادی⟧, des gens ⟦quittent|ترک می‌کنند⟧ leur pays, leur ville, leur ⟦village natal|زادگاه⟧ pour construire une vie ailleurs. Ce choix — car c'est souvent un choix — vient avec ses joies et ses ⟦douleurs|دردها⟧.",
+      "Le sentiment le plus ⟦universel|جهانی⟧ dans cette situation est la ⟦nostalgie|نوستالژی / دلتنگی⟧. Ce mot vient du grec : «nostos» (retour) et «algos» (douleur). La nostalgie, c'est littéralement la douleur du retour ⟦impossible|غیرممکن⟧ ou ⟦différé|به‌تأخیر افتاده⟧. Elle se manifeste dans les petites choses : l'odeur d'un plat qu'on ne trouve pas ici, une chanson qui ⟦ramène|بازمی‌گرداند⟧ des souvenirs, une fête de famille à laquelle on ⟦ne peut pas assister|نمی‌توان شرکت کرد⟧.",
+      "Mais vivre loin de sa famille n'est pas uniquement une source de souffrance. ⟪Pour beaucoup, c'est aussi une opportunité de découvrir qui l'on est vraiment|که واقعاً چه کسی هستیم — relative avec «qui»⟫, en dehors du ⟦regard|نگاه / دیدگاه⟧ familial. Loin de ses parents, on prend des décisions seul, on ⟦fait face|مواجه می‌شود⟧ aux problèmes sans filet de ⟦sécurité|ایمنی⟧, on ⟦développe|توسعه می‌دهد⟧ une ⟦résilience|تاب‌آوری⟧ et une ⟦confiance en soi|اعتماد به نفس⟧ qu'on n'aurait peut-être jamais ⟦acquises|کسب کرده⟧ autrement.",
+      "La ⟦technologie|فناوری⟧ a profondément changé l'expérience de la distance. Les ⟦appels vidéo|تماس تصویری⟧, les messages instantanés, les photos partagées en temps réel : tout cela ⟦réduit|کاهش می‌دهد⟧ le ⟦fossé|شکاف / فاصله⟧ géographique. ⟪Pourtant, aucune technologie ne peut remplacer la chaleur d'une étreinte|«étreinte» = آغوش گرفتن⟫ ou le simple fait de ⟦partager|مشارکت کردن / به اشتراک گذاشتن⟧ un repas. La présence physique reste ⟦irremplaçable|جایگزین‌ناپذیر⟧.",
+      "Les ⟦psychologues|روانشناسان⟧ recommandent plusieurs stratégies pour ⟦maintenir|حفظ کردن⟧ des liens ⟦forts|قوی⟧ malgré la distance. La première est la ⟦régularité|منظم بودن / نظم⟧ : pas besoin de longues conversations, mais un contact ⟦régulier|منظم⟧, même court, ⟦nourrit|تغذیه می‌کند / تقویت می‌کند⟧ la relation. La deuxième est le ⟦rituel|آیین / رسم⟧ partagé : regarder le même film le même soir, jouer ensemble en ligne, cuisiner la même recette en même temps. Ces petits ⟦rituels|آیین‌ها⟧ créent un sentiment de ⟦proximité|نزدیکی⟧ malgré les kilomètres.",
+      "Il y a aussi la question du ⟦retour|بازگشت⟧. Beaucoup de personnes qui ont quitté leur pays témoignent d'une expérience ⟦paradoxale|متناقض / پارادوکسیکال⟧ : après plusieurs années à l'étranger, quand elles rentrent, elles se sentent ⟦étrangères|بیگانه⟧ dans leur propre pays. Elles ont changé, leur ⟦environnement|محیط⟧ a changé. On appelle ça le ⟦«choc du retour»|شوک بازگشت⟧ ou «reverse culture shock». Ce n'est pas une anomalie — c'est la preuve que l'expérience de l'étranger a vraiment ⟦transformé|تغییر داده⟧ la personne.",
+      "En fin de compte, vivre loin de sa famille apprend une chose ⟦essentielle|ضروری / اساسی⟧ : l'amour ne dépend pas de la ⟦proximité géographique|نزدیکی جغرافیایی⟧. ⟪Les liens les plus forts sont ceux qui résistent au temps et à la distance|روابطی که در برابر زمان و فاصله مقاوم‌اند⟫. Et parfois, c'est justement l'absence qui ⟦révèle|آشکار می‌کند⟧ à quel point les personnes nous sont ⟦chères|عزیز⟧.",
+    ],
+    morale: { fr: "La distance mesure l'amour : ce qui résiste à l'absence était vraiment là.", fa: "فاصله عشق را می‌سنجد: آنچه در برابر دوری مقاوم می‌ماند، واقعی بود." }
+  },
+
   {
     titre: "Ma routine du matin",
     emoji: "☀️",

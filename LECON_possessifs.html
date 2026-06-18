@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صفت‌های ملکی — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
+    --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b; --terracotta:#c4502d; --accent:#c4502d;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+  .lc-header{background:linear-gradient(135deg, var(--accent), #c4502dcc); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #c4502d40; position:relative; overflow:hidden;}
+  .lc-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .lc-header .lc-emoji{font-size:34px; margin-bottom:8px;}
+  .lc-header h1{font-size:26px; font-weight:700; margin-bottom:5px;}
+  .lc-header .lc-fr{font-family:'Roboto',serif; font-size:15px; opacity:.9; direction:ltr; text-align:left;}
+  .lc-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:20px; font-size:14.5px; line-height:2.1;}
+  .lc-intro b{color:var(--accent);}
+  /* فهرست تب‌ها */
+  .lc-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; position:sticky; top:0;
+    background:var(--paper); padding:12px 0; z-index:10; border-bottom:2px solid var(--line);}
+  .lc-tab{font-family:'Estedad',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
+    color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .lc-tab:hover{border-color:var(--accent);}
+  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #c4502d40;}
+  /* بخش */
+  .lc-section{animation:fadeIn .35s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .lc-sec-title{font-size:21px; font-weight:700; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--paper-warm);}
+  .lc-p{font-size:14.5px; line-height:2.1; color:var(--ink); margin-bottom:18px;}
+  .lc-card{background:var(--white); border:1px solid var(--line); border-right:4px solid var(--accent);
+    border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 4px 14px rgba(31,58,95,.04);}
+  .lc-word{font-family:'Roboto',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:6px;}
+  .lc-tr{font-family:'Estedad',sans-serif; font-size:14px; font-weight:500; color:var(--accent); margin-right:8px;}
+  .lc-desc{font-size:13px; color:var(--gray); line-height:1.9; margin-bottom:12px;}
+  .lc-ex{font-family:'Roboto',serif; font-size:16px; color:var(--ink); direction:ltr; text-align:left;
+    background:var(--cream); padding:10px 14px; border-radius:9px; line-height:1.7;}
+  .lc-ex b{color:var(--accent); font-weight:700;}
+  .lc-ex-fa{font-size:13px; color:var(--gray); margin-top:6px; padding-right:4px;}
+  .lc-tip{background:linear-gradient(135deg, #c4502d14, #c4502d08); border-right:4px solid var(--accent);
+    border-radius:10px; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:2;}
+  .lc-tip b{color:var(--accent);}
+  /* جدول */
+  .lc-table{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0;}
+  .lc-tr-row{display:flex; border-bottom:1px solid var(--line);}
+  .lc-tr-row:last-child{border-bottom:none;}
+  .lc-tr-row span{flex:1; padding:12px 16px; font-size:13.5px;}
+  .lc-tr-row span:first-child{border-left:1px solid var(--line); color:var(--ink);}
+  .lc-tr-row span:last-child{font-family:'Roboto',serif; color:var(--accent); font-weight:600; direction:ltr; text-align:left;}
+  .lc-head{background:var(--paper-warm);}
+  .lc-head span{font-weight:700; color:var(--navy) !important;}
+  /* آزمون */
+  .lc-quiz-intro{font-size:14px; color:var(--ink); margin:18px 0 14px; font-weight:600;}
+  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #c4502d08); border-radius:14px; padding:18px 20px; margin-top:8px;}
+  .lcq-q{margin-bottom:18px;}
+  .lcq-q:last-child{margin-bottom:0;}
+  .lcq-text{font-family:'Roboto',serif; font-size:16px; color:var(--navy); font-weight:500; direction:ltr; text-align:left; margin-bottom:10px;}
+  .lcq-opts{display:flex; flex-wrap:wrap; gap:8px;}
+  .lcq-opt{font-family:'Roboto',serif; font-size:15px; background:var(--white); border:1.5px solid var(--line);
+    border-radius:9px; padding:8px 16px; cursor:pointer; transition:all .2s; color:var(--ink);}
+  .lcq-opt:hover:not(:disabled){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .lcq-opt.correct{background:var(--green); color:#fff; border-color:var(--green);}
+  .lcq-opt.wrong{background:var(--terracotta); color:#fff; border-color:var(--terracotta);}
+  .lcq-opt:disabled{cursor:default;}
+  .lcq-fb{font-size:12.5px; color:var(--ink); line-height:1.9; margin-top:10px; max-height:0; overflow:hidden; transition:max-height .3s, padding .3s; padding:0;}
+  .lcq-fb.show{max-height:200px; padding:10px 14px; background:var(--white); border-radius:8px;}
+  .lc-footer{text-align:center; margin-top:30px; color:var(--gray); font-size:12.5px;}
+  .lc-footer b{color:var(--accent);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html">⌂ Français avec Hoda</a>
+      <a href="index.html#cat=grammar">→ همه‌ی درسنامه‌ها</a>
+    </div>
+    <div class="lc-header">
+      <div class="lc-emoji">👤</div>
+      <h1>صفت‌های ملکی</h1>
+      <div class="lc-fr" dir="ltr">Les adjectifs possessifs</div>
+    </div>
+    <div class="lc-intro">«کتابم»، «دوستت»، «خانه‌اش» — اینها در فرانسه با صفت ملکی (adjectif possessif) بیان می‌شوند. مشکل برای فارسی‌زبانان اینجاست: جنسیت صفت ملکی به <b>مالک</b> بستگی ندارد، بلکه به <b>چیزی که تعلق دارد</b> بستگی دارد!</div>
+    <div class="lc-tabs"><button class="lc-tab active" onclick="showSection(0)">📊 جدول کامل</button><button class="lc-tab" onclick="showSection(1)">⚠️ تله‌های رایج</button><button class="lc-tab" onclick="showSection(2)">💬 تمرین با جملات واقعی</button></div>
+    
+        <div class="lc-section" id="lc-sec-0" style="display:block">
+          <h2 class="lc-sec-title" style="color:#c4502d">📊 جدول کامل</h2>
+          
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>شخص</span><span>مذکر مفرد</span></div>
+  <div class="lc-tr-row"><span>من</span><span dir="ltr"><b>mon</b> livre</span></div>
+  <div class="lc-tr-row"><span>تو</span><span dir="ltr"><b>ton</b> livre</span></div>
+  <div class="lc-tr-row"><span>او (m/f)</span><span dir="ltr"><b>son</b> livre</span></div>
+  <div class="lc-tr-row"><span>ما</span><span dir="ltr"><b>notre</b> livre</span></div>
+  <div class="lc-tr-row"><span>شما</span><span dir="ltr"><b>votre</b> livre</span></div>
+  <div class="lc-tr-row"><span>آن‌ها</span><span dir="ltr"><b>leur</b> livre</span></div>
+</div>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>شخص</span><span>مؤنث مفرد</span></div>
+  <div class="lc-tr-row"><span>من</span><span dir="ltr"><b>ma</b> maison</span></div>
+  <div class="lc-tr-row"><span>تو</span><span dir="ltr"><b>ta</b> maison</span></div>
+  <div class="lc-tr-row"><span>او (m/f)</span><span dir="ltr"><b>sa</b> maison</span></div>
+  <div class="lc-tr-row"><span>ما</span><span dir="ltr"><b>notre</b> maison</span></div>
+  <div class="lc-tr-row"><span>شما</span><span dir="ltr"><b>votre</b> maison</span></div>
+  <div class="lc-tr-row"><span>آن‌ها</span><span dir="ltr"><b>leur</b> maison</span></div>
+</div>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>شخص</span><span>جمع</span></div>
+  <div class="lc-tr-row"><span>من</span><span dir="ltr"><b>mes</b> livres / maisons</span></div>
+  <div class="lc-tr-row"><span>تو</span><span dir="ltr"><b>tes</b> livres / maisons</span></div>
+  <div class="lc-tr-row"><span>او</span><span dir="ltr"><b>ses</b> livres / maisons</span></div>
+  <div class="lc-tr-row"><span>ما</span><span dir="ltr"><b>nos</b> livres / maisons</span></div>
+  <div class="lc-tr-row"><span>شما</span><span dir="ltr"><b>vos</b> livres / maisons</span></div>
+  <div class="lc-tr-row"><span>آن‌ها</span><span dir="ltr"><b>leurs</b> livres / maisons</span></div>
+</div>
+
+<div class="lc-tip">🔑 قانون اساسی: جنسیت با <b>اسمی که مالک آن هستی</b> هماهنگ می‌شود، نه با مالک! «کتاب او» = son livre (کتاب مذکر) — چه «او» مرد باشد چه زن.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-1" style="display:none">
+          <h2 class="lc-sec-title" style="color:#c4502d">⚠️ تله‌های رایج</h2>
+          
+<p class="lc-p">فارسی‌زبان‌ها این اشتباه‌ها را زیاد می‌کنند:</p>
+
+<div class="lc-card">
+  <div class="lc-word">تله ۱: son/sa بر اساس مالک نیست!</div>
+  <div class="lc-ex" dir="ltr">Marie aime <b>son</b> chien. (chien مذکر → son)</div>
+  <div class="lc-ex" dir="ltr">Pierre aime <b>sa</b> voiture. (voiture مؤنث → sa)</div>
+  <div class="lc-ex-fa">ماری سگش را دوست دارد · پیر ماشینش را دوست دارد</div>
+  <p class="lc-desc">❌ «Marie aime sa chien» غلط است! مالک زن است ولی chien مذکر است → son.</p>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">تله ۲: قبل از مصوت، ma/ta/sa → mon/ton/son</div>
+  <p class="lc-desc">وقتی اسم مؤنث با مصوت (a, e, i, o, u) یا h ساکت شروع شود، ma/ta/sa به mon/ton/son تبدیل می‌شوند.</p>
+  <div class="lc-ex" dir="ltr">❌ ma amie → ✅ <b>mon</b> amie</div>
+  <div class="lc-ex" dir="ltr">❌ ta école → ✅ <b>ton</b> école</div>
+  <div class="lc-ex" dir="ltr">❌ sa histoire → ✅ <b>son</b> histoire</div>
+  <div class="lc-ex-fa">دوستم (مؤنث) · مدرسه‌ات · داستانش</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">تله ۳: leur/leurs</div>
+  <p class="lc-desc">leur با اسم مفرد، leurs با اسم جمع. اشتباه رایج!</p>
+  <div class="lc-ex" dir="ltr">Ils aiment <b>leur</b> enfant. · Ils aiment <b>leurs</b> enfants.</div>
+  <div class="lc-ex-fa">بچه‌شان را دوست دارند · بچه‌هایشان را دوست دارند</div>
+</div>
+
+<div class="lc-tip">💡 ترفند: قبل از گفتن mon/ma/mes، اول جنسیتِ <b>اسم</b> را چک کن، بعد مالک را.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-2" style="display:none">
+          <h2 class="lc-sec-title" style="color:#c4502d">💬 تمرین با جملات واقعی</h2>
+          
+<div class="lc-card">
+  <div class="lc-word">معرفی خانواده</div>
+  <div class="lc-ex" dir="ltr"><b>Mon</b> père est professeur. <b>Ma</b> mère est médecin.<br><b>Mes</b> frères habitent à Paris. <b>Ma</b> sœur est architecte.</div>
+  <div class="lc-ex-fa">پدرم معلم است · مادرم دکتر است · برادرانم در پاریس زندگی می‌کنند · خواهرم معمار است</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">اشیاء و مکان‌ها</div>
+  <div class="lc-ex" dir="ltr">J'ai perdu <b>mon</b> téléphone et <b>mes</b> clés.<br>Tu peux m'envoyer <b>ton</b> adresse ? (<b>ton</b> چون adresse با مصوت شروع می‌شود)<br>Il a vendu <b>sa</b> voiture et <b>son</b> appartement.</div>
+</div>
+
+          <div class="lc-quiz">
+                <div class="lcq-q" id="lcq-2-0">
+                  <div class="lcq-text" dir="ltr">___ amie est très sympa. (mon/ma/ton→ قبل از مصوت!)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,0,0,1)">Ma</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,0,1,1)">Mon</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,0,2,1)">Sa</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-0" data-note="amie با مصوت شروع می‌شود: ma → mon. قاعده‌ی صوتی."></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-1">
+                  <div class="lcq-text" dir="ltr">Pierre adore ___ chien. (chien مذکر)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,1,0,1)">sa</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,1,1,1)">son</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,1,2,1)">ses</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-1" data-note="chien مذکر → son (جنسیت اسم مهم است، نه مالک)"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-2">
+                  <div class="lcq-text" dir="ltr">Ils ont vendu ___ maison. (leur/leurs)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,2,0,0)">leur</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,2,1,0)">leurs</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-2" data-note="maison مفرد → leur (نه leurs)"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-3">
+                  <div class="lcq-text" dir="ltr">C'est ___ stylo ou ___ stylo ? (mine or yours)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,3,0,0)">mon / ton</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,3,1,0)">ma / ta</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,3,2,0)">mes / tes</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-3" data-note="stylo مذکر مفرد → mon/ton"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-4">
+                  <div class="lcq-text" dir="ltr">Nous habitons dans ___ appartement. (ما)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,4,0,0)">notre</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,4,1,0)">votre</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,4,2,0)">nos</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-4" data-note="ما + مفرد = notre (نه nos که جمع است)"></div>
+                </div></div>
+        </div>
+    <div class="lc-footer">✦ روی هر تیتر بالا بزن تا مستقیم همان بخش را ببینی.<br><b>Français avec Hoda</b></div>
+  </div>
+  <script>
+    function showSection(i) {
+      document.querySelectorAll('.lc-section').forEach((s, idx) => {
+        s.style.display = (idx === i) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lc-tab').forEach((t, idx) => {
+        t.classList.toggle('active', idx === i);
+      });
+      window.scrollTo(0, 0);
+    }
+    function answerLc(si, qi, chosen, correct) {
+      const q = document.getElementById('lcq-' + si + '-' + qi);
+      const fb = document.getElementById('lcqfb-' + si + '-' + qi);
+      const btns = q.querySelectorAll('.lcq-opt');
+      btns.forEach((b, i) => {
+        b.classList.remove('correct','wrong');
+        if (i === correct) b.classList.add('correct');
+        else if (i === chosen) b.classList.add('wrong');
+        b.disabled = true;
+      });
+      fb.innerHTML = (chosen === correct ? '✅ آفرین! ' : '❌ درست: ') + (fb.getAttribute('data-note') || '');
+      fb.classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
