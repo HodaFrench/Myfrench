@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>پرونده‌ی کاوه محمدی — Expression Orale Tâche 3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
@@ -14,7 +14,7 @@
     --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa;
     --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b;
   }
-  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
     background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(122,91,168,0.05) 31px, rgba(122,91,168,0.05) 32px);
     color:var(--ink); line-height:1.9; padding:20px 16px 70px;}
   .wrap{max-width:860px; margin:0 auto;}
@@ -64,7 +64,7 @@
   .q-header{display:flex; align-items:center; gap:14px; margin-bottom:20px; padding-bottom:18px; border-bottom:2px solid var(--line);}
   .q-num{font-size:24px; flex-shrink:0;}
   .q-texts{flex:1;}
-  .q-fr{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--navy); direction:ltr; text-align:left; line-height:1.3;}
+  .q-fr{font-family:'Roboto',serif; font-size:22px; font-weight:600; color:var(--navy); direction:ltr; text-align:left; line-height:1.3;}
   .q-fa{font-size:14px; color:var(--gray); margin-top:4px;}
   .types-legend{background:var(--cream); border-radius:12px; padding:14px 18px; margin-bottom:18px; font-size:12.5px; line-height:2;}
   .types-legend b{color:var(--navy);}
@@ -80,30 +80,30 @@
   .answer-body{max-height:0; overflow:hidden; transition:max-height .4s ease;}
   .answer-card.open .answer-body{max-height:2400px;}
   .answer-desc{font-size:12.5px; color:var(--gray); line-height:1.9; padding:14px 18px 0; background:var(--white);}
-  .answer-text{font-family:'Cormorant Garamond',serif; font-size:16.5px; line-height:1.95; color:var(--ink); direction:ltr; text-align:left; padding:12px 18px 18px; background:var(--white);}
+  .answer-text{font-family:'Roboto',serif; font-size:16.5px; line-height:1.95; color:var(--ink); direction:ltr; text-align:left; padding:12px 18px 18px; background:var(--white);}
 
   .struct-section{margin-top:22px; background:linear-gradient(135deg,rgba(46,123,181,0.06),rgba(122,91,168,0.04)); border-right:5px solid var(--navy-soft); border-radius:14px; padding:20px 22px;}
   .struct-head{font-size:16px; font-weight:700; color:var(--navy); margin-bottom:14px;}
   .struct-para{background:var(--white); border-radius:10px; padding:14px 16px; margin-bottom:10px; border:1px solid var(--line);}
   .struct-func{font-size:12px; color:var(--purple); font-weight:600; margin-bottom:6px;}
-  .struct-text{font-family:'Cormorant Garamond',serif; font-size:15.5px; color:var(--ink); direction:ltr; text-align:left; line-height:1.8;}
+  .struct-text{font-family:'Roboto',serif; font-size:15.5px; color:var(--ink); direction:ltr; text-align:left; line-height:1.8;}
 
   .practice-section{margin-top:22px; background:linear-gradient(135deg,rgba(46,139,107,0.06),rgba(196,165,114,0.05)); border-right:5px solid var(--green); border-radius:14px; padding:20px 22px;}
   .practice-head{font-size:16px; font-weight:700; color:var(--green); margin-bottom:6px;}
   .practice-sub{font-size:12.5px; color:var(--ink); line-height:1.9; margin-bottom:16px;}
   .skel-item{background:var(--white); border-radius:9px; padding:12px 16px; border:1px solid var(--line); margin-bottom:10px;}
   .skel-label{font-size:11.5px; color:var(--purple); font-weight:700; margin-bottom:5px;}
-  .skel-text{font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--navy); direction:ltr; text-align:left; line-height:1.8;}
+  .skel-text{font-family:'Roboto',serif; font-size:15px; color:var(--navy); direction:ltr; text-align:left; line-height:1.8;}
   .golden-box{background:var(--white); border:1.5px solid var(--gold-soft); border-radius:12px; padding:14px 18px; margin-top:8px;}
   .golden-title{font-size:13px; font-weight:700; color:var(--gold); margin-bottom:10px;}
-  .golden-item{font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--ink); direction:ltr; text-align:left; padding:6px 0; border-bottom:1px dashed var(--line); line-height:1.7;}
+  .golden-item{font-family:'Roboto',serif; font-size:15px; color:var(--ink); direction:ltr; text-align:left; padding:6px 0; border-bottom:1px dashed var(--line); line-height:1.7;}
   .golden-item:last-child{border-bottom:none;}
 
   .traps-intro{background:linear-gradient(135deg,rgba(196,80,45,.07),rgba(196,165,114,.05)); border-right:4px solid var(--terracotta); border-radius:12px; padding:16px 20px; margin:22px 0 16px; font-size:13px; line-height:1.95;}
   .traps-intro b{color:var(--terracotta);}
   .trap-item{background:var(--white); border:1px solid var(--line); border-radius:10px; padding:14px 16px; border-right:3px solid var(--gold-soft); margin-bottom:12px;}
-  .trap-wrong{font-family:'Cormorant Garamond',serif; font-size:15.5px; color:#a04030; direction:ltr; text-align:left; text-decoration:line-through; text-decoration-color:rgba(196,80,45,.5); margin-bottom:6px;}
-  .trap-right{font-family:'Cormorant Garamond',serif; font-size:16.5px; color:var(--green); font-weight:600; direction:ltr; text-align:left; margin-bottom:8px;}
+  .trap-wrong{font-family:'Roboto',serif; font-size:15.5px; color:#a04030; direction:ltr; text-align:left; text-decoration:line-through; text-decoration-color:rgba(196,80,45,.5); margin-bottom:6px;}
+  .trap-right{font-family:'Roboto',serif; font-size:16.5px; color:var(--green); font-weight:600; direction:ltr; text-align:left; margin-bottom:8px;}
   .trap-x{color:var(--terracotta); font-weight:700; text-decoration:none; display:inline-block;}
   .trap-check{color:var(--green); font-weight:700; display:inline-block;}
   .trap-why{font-size:12px; color:var(--gray); line-height:1.8; background:var(--cream); padding:8px 12px; border-radius:7px;}
@@ -115,7 +115,7 @@
   .plan-step:last-child{border-bottom:none;}
   .plan-num{flex-shrink:0; font-size:13px; font-weight:700; color:var(--purple); min-width:90px;}
   .plan-body{flex:1;}
-  .plan-fr{font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--ink); direction:ltr; text-align:left; line-height:1.7; margin-bottom:4px;}
+  .plan-fr{font-family:'Roboto',serif; font-size:15px; color:var(--ink); direction:ltr; text-align:left; line-height:1.7; margin-bottom:4px;}
   .plan-fa{font-size:12.5px; color:var(--gray);}
   .plan-time{font-size:11px; color:var(--gold); font-weight:600;}
   .bareme-row{display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px dashed var(--line); gap:10px;}
@@ -131,7 +131,7 @@
   .dodont-item{border-radius:9px; padding:10px 13px; margin-bottom:8px; font-size:12.5px;}
   .do-item{background:rgba(46,139,107,0.07);}
   .dont-item{background:rgba(196,80,45,0.07);}
-  .dodont-fr{font-family:'Cormorant Garamond',serif; font-size:14px; direction:ltr; text-align:left; margin-bottom:3px;}
+  .dodont-fr{font-family:'Roboto',serif; font-size:14px; direction:ltr; text-align:left; margin-bottom:3px;}
   .do-item .dodont-fr{color:#1d6b50;}
   .dont-item .dodont-fr{color:#a04030;}
   .dodont-fa{font-size:11.5px; color:var(--gray);}

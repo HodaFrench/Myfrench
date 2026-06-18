@@ -6,7 +6,7 @@
 <title>Conditionnel présent | Grammaire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
@@ -16,7 +16,7 @@
     --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
     --green:#2e8b6b; --purple:#7a5ba8;
   }
-  body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
     background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.08) 31px, rgba(65,97,138,0.08) 32px);
     color:var(--ink); line-height:1.95; padding:24px 16px 70px;}
   .wrap{max-width:800px; margin:0 auto;}
@@ -30,7 +30,7 @@
     box-shadow:0 14px 34px rgba(31,58,95,.24); position:relative; overflow:hidden;}
   .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
   .header .tag{font-size:12px; color:var(--gold-soft); font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px;}
-  .header h1{font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:600; margin-bottom:8px; direction:ltr;}
+  .header h1{font-family:'Roboto',serif; font-size:32px; font-weight:600; margin-bottom:8px; direction:ltr;}
   .header .fa{font-size:15px; opacity:.92;}
 
   .lead{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
@@ -39,7 +39,7 @@
 
   .sec{background:var(--white); border:1px solid var(--line); border-radius:16px; padding:26px 24px;
     margin-bottom:22px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
-  .sec-title{font-family:'Cormorant Garamond',serif; font-size:25px; font-weight:600; color:var(--navy);
+  .sec-title{font-family:'Roboto',serif; font-size:25px; font-weight:600; color:var(--navy);
     margin-bottom:8px; direction:ltr; text-align:left;}
   .sec-title-fa{font-size:14px; color:var(--gold); font-weight:700; margin-bottom:18px;}
   .sec p{font-size:14.5px; line-height:2.1; margin-bottom:12px;}
@@ -48,13 +48,13 @@
   /* فرمول */
   .formula{background:linear-gradient(135deg,rgba(46,139,107,0.08),rgba(196,165,114,0.06));
     border:1.5px dashed var(--green); border-radius:12px; padding:18px; text-align:center; margin:18px 0;}
-  .formula .big{font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; line-height:1.8;}
+  .formula .big{font-family:'Roboto',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; line-height:1.8;}
   .formula .big .a{color:var(--terracotta);}
   .formula .big .b{color:var(--purple);}
 
   /* جدول صرف */
   .conj-card{background:var(--cream); border-radius:12px; padding:16px 18px; border-top:3px solid var(--navy-soft); margin:14px 0;}
-  .conj-card h4{font-family:'Cormorant Garamond',serif; font-size:19px; color:var(--navy); direction:ltr; text-align:center; margin-bottom:10px;}
+  .conj-card h4{font-family:'Roboto',serif; font-size:19px; color:var(--navy); direction:ltr; text-align:center; margin-bottom:10px;}
   .conj-card .row{display:flex; justify-content:space-between; font-size:14.5px; padding:4px 0; direction:ltr; border-bottom:1px dashed var(--line);}
   .conj-card .row:last-child{border-bottom:none;}
   .conj-card .pron{color:var(--gray);}
@@ -64,7 +64,7 @@
   /* کاربردها */
   .use{background:var(--cream); border-right:4px solid var(--purple); border-radius:10px; padding:14px 18px; margin:12px 0;}
   .use-t{font-size:15px; font-weight:700; color:var(--purple); margin-bottom:8px;}
-  .ex{direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-size:17px;
+  .ex{direction:ltr; text-align:left; font-family:'Roboto',serif; font-size:17px;
     color:var(--navy); background:var(--white); padding:9px 14px; border-radius:8px; margin:6px 0; line-height:1.7;}
   .ex .hl{background:rgba(122,91,168,0.18); padding:1px 5px; border-radius:4px; font-weight:700;}
   .ex-fa{font-size:13px; color:var(--gray); margin:2px 0 8px; line-height:1.8;}
@@ -82,10 +82,10 @@
   .quiz-sec .qsub{font-size:13.5px; color:var(--gray); margin-bottom:20px;}
   .q-item{margin-bottom:22px; padding-bottom:22px; border-bottom:1px dashed var(--line);}
   .q-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
-  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Cormorant Garamond',serif; font-weight:600;}
+  .q-text{font-size:16px; color:var(--ink); margin-bottom:6px; direction:ltr; text-align:left; font-family:'Roboto',serif; font-weight:600;}
   .q-fa{font-size:13px; color:var(--gray); margin-bottom:12px;}
   .q-opts{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;}
-  .q-opt{font-family:'Cormorant Garamond',serif; font-size:16px; font-weight:600; direction:ltr;
+  .q-opt{font-family:'Roboto',serif; font-size:16px; font-weight:600; direction:ltr;
     background:var(--cream); border:1.5px solid var(--line); border-radius:10px; padding:9px 16px; cursor:pointer; transition:all .2s;}
   .q-opt:hover:not(.done){border-color:var(--green); background:rgba(46,139,107,0.05);}
   .q-opt.correct{background:rgba(46,139,107,0.15); border-color:var(--green); color:var(--green);}
