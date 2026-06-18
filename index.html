@@ -629,6 +629,12 @@
             padding: 8px 16px; cursor: pointer; margin-bottom: 16px; transition: all 0.2s;
         }
         .mini-back:hover { background: var(--navy); color: var(--cream); }
+        .back-to-list {
+            font-family: 'Vazirmatn', sans-serif; font-size: 13px; color: #1a4f7a;
+            background: var(--cream); border: 1px solid var(--line); border-radius: 8px;
+            padding: 8px 16px; cursor: pointer; margin-bottom: 16px; transition: all 0.2s;
+        }
+        .back-to-list:hover { background: #2e7bb5; color: #fff; }
 
         /* کارت‌های مینی‌آرتیکل */
         .mini-card {
@@ -1348,7 +1354,7 @@
 <body>
     <div class="topbar">
         <div>
-            <h1>Français avec Hoda</h1>
+            <h1 onclick="goHome()" style="cursor:pointer;" title="بازگشت به صفحه‌ی اصلی">Français avec Hoda</h1>
             <div class="tag"><span class="name-fa">هدی خدمتی</span><span class="role-fa">مدرس زبان فرانسه</span></div>
         </div>
     </div>
@@ -1839,6 +1845,7 @@
             document.getElementById("count").textContent = "متن کامل";
             const grid = document.getElementById("grid");
             grid.innerHTML = `
+                <button class="back-to-list" onclick="openCat('innerfrench')">→ بازگشت به فهرست پادکست‌ها</button>
                 <div class="if-episode">
                     <div class="if-ep-head">
                         <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
@@ -1866,7 +1873,7 @@
                     </div>
                     <div class="if-credit">منبع: InnerFrench — Hugo Cotton · با احترام به سازنده‌ی اثر</div>
                 </div>`;
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: "instant" });
         }
 
         // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
@@ -1999,7 +2006,7 @@
                         </div>
                     </div>` : ""}
                 </div>`;
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: "instant" });
         }
 
         // نمایش درس‌های Édito A1 (لیست درس‌ها)
@@ -2191,9 +2198,7 @@
         function openResults() {
             document.getElementById("results").classList.add("show");
             document.getElementById("hero").classList.add("shrink");
-            setTimeout(() => {
-                document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
-            }, 250);
+            window.scrollTo({ top: 0, behavior: "instant" });
         }
 
         function goHome() {
@@ -2205,7 +2210,7 @@
             document.getElementById("search").value = "";
             document.getElementById("results").classList.remove("show");
             document.getElementById("hero").classList.remove("shrink");
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.scrollTo({ top: 0, behavior: "instant" });
         }
 
         function render() {
