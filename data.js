@@ -2111,6 +2111,11 @@ const PRIVE = [
         link: "PRIVE_kaveh_task3.html",
       },
       {
+        titre: "🎙️ Live Trainer — تمرین زنده Task 3",
+        desc: "انتخاب موضوع → تایمر ۴:۳۰ → راهنمای گام‌به‌گام هر مرحله → تیک و برو. دقیقاً مثل آزمون واقعی.",
+        link: "PRIVE_kaveh_trainer.html",
+      },
+      {
         titre: "🎯 کوچ TCF B2 — مسیر کامل Task 3",
         desc: "تشخیص نقطه‌ضعف + اسکلت ذهنی رفلکسی + ۱۵ موضوع با نقشه + تایمر آزمون + برنامهٔ روزانه",
         link: "PRIVE_kaveh_coach.html",
