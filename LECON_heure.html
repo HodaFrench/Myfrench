@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>گفتن ساعت — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
+    --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b; --terracotta:#c4502d; --accent:#2e7bb5;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+  .lc-header{background:linear-gradient(135deg, var(--accent), #2e7bb5cc); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #2e7bb540; position:relative; overflow:hidden;}
+  .lc-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .lc-header .lc-emoji{font-size:34px; margin-bottom:8px;}
+  .lc-header h1{font-size:26px; font-weight:700; margin-bottom:5px;}
+  .lc-header .lc-fr{font-family:'Roboto',serif; font-size:15px; opacity:.9; direction:ltr; text-align:left;}
+  .lc-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:20px; font-size:14.5px; line-height:2.1;}
+  .lc-intro b{color:var(--accent);}
+  /* فهرست تب‌ها */
+  .lc-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; position:sticky; top:0;
+    background:var(--paper); padding:12px 0; z-index:10; border-bottom:2px solid var(--line);}
+  .lc-tab{font-family:'Estedad',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
+    color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .lc-tab:hover{border-color:var(--accent);}
+  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #2e7bb540;}
+  /* بخش */
+  .lc-section{animation:fadeIn .35s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .lc-sec-title{font-size:21px; font-weight:700; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--paper-warm);}
+  .lc-p{font-size:14.5px; line-height:2.1; color:var(--ink); margin-bottom:18px;}
+  .lc-card{background:var(--white); border:1px solid var(--line); border-right:4px solid var(--accent);
+    border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 4px 14px rgba(31,58,95,.04);}
+  .lc-word{font-family:'Roboto',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:6px;}
+  .lc-tr{font-family:'Estedad',sans-serif; font-size:14px; font-weight:500; color:var(--accent); margin-right:8px;}
+  .lc-desc{font-size:13px; color:var(--gray); line-height:1.9; margin-bottom:12px;}
+  .lc-ex{font-family:'Roboto',serif; font-size:16px; color:var(--ink); direction:ltr; text-align:left;
+    background:var(--cream); padding:10px 14px; border-radius:9px; line-height:1.7;}
+  .lc-ex b{color:var(--accent); font-weight:700;}
+  .lc-ex-fa{font-size:13px; color:var(--gray); margin-top:6px; padding-right:4px;}
+  .lc-tip{background:linear-gradient(135deg, #2e7bb514, #2e7bb508); border-right:4px solid var(--accent);
+    border-radius:10px; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:2;}
+  .lc-tip b{color:var(--accent);}
+  /* جدول */
+  .lc-table{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0;}
+  .lc-tr-row{display:flex; border-bottom:1px solid var(--line);}
+  .lc-tr-row:last-child{border-bottom:none;}
+  .lc-tr-row span{flex:1; padding:12px 16px; font-size:13.5px;}
+  .lc-tr-row span:first-child{border-left:1px solid var(--line); color:var(--ink);}
+  .lc-tr-row span:last-child{font-family:'Roboto',serif; color:var(--accent); font-weight:600; direction:ltr; text-align:left;}
+  .lc-head{background:var(--paper-warm);}
+  .lc-head span{font-weight:700; color:var(--navy) !important;}
+  /* آزمون */
+  .lc-quiz-intro{font-size:14px; color:var(--ink); margin:18px 0 14px; font-weight:600;}
+  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #2e7bb508); border-radius:14px; padding:18px 20px; margin-top:8px;}
+  .lcq-q{margin-bottom:18px;}
+  .lcq-q:last-child{margin-bottom:0;}
+  .lcq-text{font-family:'Roboto',serif; font-size:16px; color:var(--navy); font-weight:500; direction:ltr; text-align:left; margin-bottom:10px;}
+  .lcq-opts{display:flex; flex-wrap:wrap; gap:8px;}
+  .lcq-opt{font-family:'Roboto',serif; font-size:15px; background:var(--white); border:1.5px solid var(--line);
+    border-radius:9px; padding:8px 16px; cursor:pointer; transition:all .2s; color:var(--ink);}
+  .lcq-opt:hover:not(:disabled){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .lcq-opt.correct{background:var(--green); color:#fff; border-color:var(--green);}
+  .lcq-opt.wrong{background:var(--terracotta); color:#fff; border-color:var(--terracotta);}
+  .lcq-opt:disabled{cursor:default;}
+  .lcq-fb{font-size:12.5px; color:var(--ink); line-height:1.9; margin-top:10px; max-height:0; overflow:hidden; transition:max-height .3s, padding .3s; padding:0;}
+  .lcq-fb.show{max-height:200px; padding:10px 14px; background:var(--white); border-radius:8px;}
+  .lc-footer{text-align:center; margin-top:30px; color:var(--gray); font-size:12.5px;}
+  .lc-footer b{color:var(--accent);}
+
+  /* ─── ساعت تعاملی ─── */
+  .clock-widget { background: var(--white); border: 1px solid var(--line);
+    border-radius: 16px; padding: 22px; margin-bottom: 18px;
+    box-shadow: 0 6px 18px rgba(31,58,95,.05); }
+  .clock-title { font-size: 15px; font-weight: 700; color: var(--navy);
+    margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .clock-face { display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px; }
+  .clock-svg { width: 220px; height: 220px; }
+  .clock-controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .clock-ctrl { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12.5px; color: var(--gray); }
+  .clock-ctrl label { font-weight: 600; color: var(--navy); }
+  .clock-ctrl input[type=range] { width: 120px; accent-color: var(--accent); }
+  .clock-ctrl span { font-family: 'Roboto', serif; font-size: 14px; color: var(--accent); font-weight: 700; min-width: 24px; text-align: center; }
+  .clock-result { text-align: center; margin-top: 4px; }
+  .clock-fr { font-family: 'Roboto', serif; font-size: 20px; font-weight: 700;
+    color: var(--navy); direction: ltr; margin-bottom: 6px; }
+  .clock-fr-off { font-size: 14px; color: var(--gray); font-family: 'Roboto', serif; direction: ltr; margin-bottom: 4px; }
+  .clock-fa { font-size: 14px; color: var(--accent); }
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html">⌂ Français avec Hoda</a>
+      <a href="index.html#cat=grammar">→ همه‌ی درسنامه‌ها</a>
+    </div>
+    <div class="lc-header">
+      <div class="lc-emoji">🕐</div>
+      <h1>گفتن ساعت</h1>
+      <div class="lc-fr" dir="ltr">Dire l'heure</div>
+    </div>
+    <div class="lc-intro">گفتن ساعت در فرانسه دو نظام کاملاً متفاوت دارد: <b>ساعت رسمی</b> (۰ تا ۲۳) که در برنامه‌های حمل‌ونقل، رادیو و تلویزیون استفاده می‌شود، و <b>ساعت روزمره</b> (۱ تا ۱۲) که در مکالمه به‌کار می‌رود. این درسنامه هر دو نظام را با مثال‌های فراوان توضیح می‌دهد.</div>
+    <div class="lc-tabs"><button class="lc-tab active" onclick="showSection(0)">❓ چطور ساعت بپرسیم؟</button><button class="lc-tab" onclick="showSection(1)">🗣️ ساعت روزمره (۱ تا ۱۲)</button><button class="lc-tab" onclick="showSection(2)">🚉 ساعت رسمی (۰ تا ۲۳)</button><button class="lc-tab" onclick="showSection(3)">📅 پرسیدن و دادن برنامه‌ی زمانی</button><button class="lc-tab" onclick="showSection(4)">⚠️ نکات و تله‌های مهم</button></div>
+    
+        <div class="lc-section" id="lc-sec-0" style="display:block">
+          <h2 class="lc-sec-title" style="color:#2e7bb5">❓ چطور ساعت بپرسیم؟</h2>
+          
+<p class="lc-p">فرانسوی‌ها ساعت را به چند روش می‌پرسند — از رسمی تا خودمونی:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>عبارت</span><span>سطح</span><span>معنی</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>Quelle heure est-il ?</b></span><span>رسمی ✅</span><span>ساعت چنده؟</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>Il est quelle heure ?</b></span><span>معمولی</span><span>ساعت چنده؟</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>Vous avez l'heure ?</b></span><span>مؤدبانه</span><span>ساعت دارید؟</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>Tu as l'heure ?</b></span><span>دوستانه</span><span>ساعت داری؟</span></div>
+  <div class="lc-tr-row"><span dir="ltr"><b>C'est quelle heure ?</b></span><span>خودمونی</span><span>ساعت چنده؟</span></div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">جواب دادن به سؤال ساعت</div>
+  <div class="lc-ex" dir="ltr">— Quelle heure est-il ? → <b>Il est dix heures.</b></div>
+  <div class="lc-ex" dir="ltr">— Vous avez l'heure ? → <b>Oui, il est midi et demi.</b></div>
+  <div class="lc-ex" dir="ltr">— Tu as l'heure ? → <b>Il est à peu près trois heures.</b></div>
+  <div class="lc-ex-fa">ساعت چنده؟ → ساعت ده است · تقریباً ساعت سه است</div>
+</div>
+
+<div class="lc-tip">💡 همیشه از <b>Il est...</b> استفاده کن (نه <b>C'est...</b>) در جواب رسمی. «C'est» فقط خیلی خودمانی است.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-1" style="display:none">
+          <h2 class="lc-sec-title" style="color:#2e7bb5">🗣️ ساعت روزمره (۱ تا ۱۲)</h2>
+          
+<p class="lc-p">در مکالمهٔ روزمره، فرانسوی‌ها از ساعت ۱ تا ۱۲ استفاده می‌کنند. برای روشن‌کردن صبح یا بعدازظهر، می‌گویند:</p>
+
+<div class="lc-card">
+  <div class="lc-word">du matin · de l'après-midi · du soir</div>
+  <div class="lc-ex" dir="ltr">Il est 8 heures <b>du matin</b>. → ساعت ۸ صبح است.</div>
+  <div class="lc-ex" dir="ltr">Il est 3 heures <b>de l'après-midi</b>. → ساعت ۳ بعدازظهر است.</div>
+  <div class="lc-ex" dir="ltr">Il est 9 heures <b>du soir</b>. → ساعت ۹ شب است.</div>
+</div>
+
+<p class="lc-p" style="margin-top:14px;margin-bottom:10px;"><b>ساختار کامل دقیقه‌ها:</b></p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>رقمی</span><span>فرانسوی (روزمره)</span><span>فارسی</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:00</span><span dir="ltr">Il est <b>une heure</b> (pile)</span><span>ساعت ۱ دقیقاً</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:05</span><span dir="ltr">Il est une heure <b>cinq</b></span><span>ساعت ۱ و ۵</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:10</span><span dir="ltr">Il est une heure <b>dix</b></span><span>ساعت ۱ و ۱۰</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:15</span><span dir="ltr">Il est une heure <b>et quart</b></span><span>ساعت ۱ و ربع</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:20</span><span dir="ltr">Il est une heure <b>vingt</b></span><span>ساعت ۱ و ۲۰</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:25</span><span dir="ltr">Il est une heure <b>vingt-cinq</b></span><span>ساعت ۱ و ۲۵</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:30</span><span dir="ltr">Il est une heure <b>et demie</b></span><span>ساعت ۱ و نیم</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:35</span><span dir="ltr">Il est deux heures <b>moins vingt-cinq</b></span><span>۲۵ مانده به ۲</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:40</span><span dir="ltr">Il est deux heures <b>moins vingt</b></span><span>۲۰ مانده به ۲</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:45</span><span dir="ltr">Il est deux heures <b>moins le quart</b></span><span>ربع مانده به ۲</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:50</span><span dir="ltr">Il est deux heures <b>moins dix</b></span><span>۱۰ مانده به ۲</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:55</span><span dir="ltr">Il est deux heures <b>moins cinq</b></span><span>۵ مانده به ۲</span></div>
+  <div class="lc-tr-row"><span dir="ltr">12:00</span><span dir="ltr">Il est <b>midi</b></span><span>ظهر (۱۲)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">00:00</span><span dir="ltr">Il est <b>minuit</b></span><span>نیمه‌شب</span></div>
+  <div class="lc-tr-row"><span dir="ltr">12:30</span><span dir="ltr">Il est <b>midi et demi</b></span><span>۱۲ و نیم</span></div>
+  <div class="lc-tr-row"><span dir="ltr">00:30</span><span dir="ltr">Il est <b>minuit et demi</b></span><span>نیمه‌شب و نیم</span></div>
+</div>
+
+<div class="lc-tip">⚠️ نکتهٔ مهم — <b>midi/minuit + et demi</b> (نه «et demie»!)<br>
+«Une heure <b>et demie</b>» ← demie چون با «heure» مؤنث توافق می‌کند.<br>
+«Midi <b>et demi</b>» / «Minuit <b>et demi</b>» ← بدون e چون midi/minuit مذکرند.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-2" style="display:none">
+          <h2 class="lc-sec-title" style="color:#2e7bb5">🚉 ساعت رسمی (۰ تا ۲۳)</h2>
+          
+<p class="lc-p">در رادیو، تلویزیون، قطار، هواپیما و نوشتار رسمی از ساعت ۰ تا ۲۳ استفاده می‌شود. در این نظام <b>هیچ «et quart»، «et demie» یا «moins»</b> وجود ندارد — فقط عدد:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>رقمی</span><span>ساعت رسمی</span><span>ساعت روزمره</span></div>
+  <div class="lc-tr-row"><span dir="ltr">08:00</span><span dir="ltr">Il est <b>huit heures</b></span><span dir="ltr">huit heures du matin</span></div>
+  <div class="lc-tr-row"><span dir="ltr">08:15</span><span dir="ltr">Il est <b>huit heures quinze</b></span><span dir="ltr">huit heures et quart</span></div>
+  <div class="lc-tr-row"><span dir="ltr">08:30</span><span dir="ltr">Il est <b>huit heures trente</b></span><span dir="ltr">huit heures et demie</span></div>
+  <div class="lc-tr-row"><span dir="ltr">08:45</span><span dir="ltr">Il est <b>huit heures quarante-cinq</b></span><span dir="ltr">neuf heures moins le quart</span></div>
+  <div class="lc-tr-row"><span dir="ltr">13:00</span><span dir="ltr">Il est <b>treize heures</b></span><span dir="ltr">une heure (de l'après-midi)</span></div>
+  <div class="lc-tr-row"><span dir="ltr">20:30</span><span dir="ltr">Il est <b>vingt heures trente</b></span><span dir="ltr">huit heures et demie du soir</span></div>
+  <div class="lc-tr-row"><span dir="ltr">23:55</span><span dir="ltr">Il est <b>vingt-trois heures cinquante-cinq</b></span><span dir="ltr">minuit moins cinq</span></div>
+  <div class="lc-tr-row"><span dir="ltr">00:00</span><span dir="ltr">Il est <b>zéro heure</b></span><span dir="ltr">minuit</span></div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">مثال‌های کاربردی — گوش کن فرانسوی می‌گوید:</div>
+  <div class="lc-ex" dir="ltr">L'avion pour Paris part à <b>dix-sept heures quarante</b>.</div>
+  <div class="lc-ex-fa">هواپیمای پاریس ساعت ۱۷:۴۰ می‌رود. (= ۵ و ۴۰ بعدازظهر)</div>
+  <div class="lc-ex" dir="ltr">Le journal télévisé commence à <b>vingt heures</b>.</div>
+  <div class="lc-ex-fa">اخبار تلویزیون ساعت ۲۰:۰۰ شروع می‌شود. (= ۸ شب)</div>
+  <div class="lc-ex" dir="ltr">La pharmacie ouvre à <b>neuf heures</b> et ferme à <b>dix-neuf heures trente</b>.</div>
+  <div class="lc-ex-fa">داروخانه ساعت ۹ باز می‌شود و ۱۹:۳۰ می‌بندد.</div>
+</div>
+
+<div class="lc-tip">💡 کِی از کدام استفاده کنی؟<br>
+→ صحبت با دوست: «On se voit à <b>sept heures et demie</b>.»<br>
+→ گوش دادن به رادیو/قطار: «Le train part à <b>dix-neuf heures trente</b>.»</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-3" style="display:none">
+          <h2 class="lc-sec-title" style="color:#2e7bb5">📅 پرسیدن و دادن برنامه‌ی زمانی</h2>
+          
+<p class="lc-p">وقتی از رویداد یا فعالیتی می‌پرسی (نه از ساعتِ الان)، از <b>À quelle heure... ?</b> استفاده کن:</p>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>پرسیدن</span><span>جواب دادن</span></div>
+  <div class="lc-tr-row"><span dir="ltr">C'est à quelle heure ?</span><span dir="ltr">C'est à 10 heures.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">À quelle heure tu commences ?</span><span dir="ltr">Je commence à 9 heures.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">À quelle heure part le train ?</span><span dir="ltr">Il part à 14h30.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">Le film commence quand ?</span><span dir="ltr">À vingt heures quinze.</span></div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">مکالمه‌های کامل</div>
+  <div class="lc-ex" dir="ltr">— <b>À quelle heure</b> est-ce que le musée ouvre ?<br>— Il ouvre <b>à neuf heures</b> et ferme <b>à dix-huit heures</b>.</div>
+  <div class="lc-ex-fa">موزه کِی باز می‌شود؟ / ساعت ۹ باز و ۱۸ می‌بندد.</div>
+  <div class="lc-ex" dir="ltr">— <b>À quelle heure</b> on se retrouve ?<br>— <b>À sept heures et demie</b>, devant le cinéma.</div>
+  <div class="lc-ex-fa">ساعت چند همدیگر را می‌بینیم؟ / ۷:۳۰، جلوی سینما.</div>
+  <div class="lc-ex" dir="ltr">— Tu travailles <b>de quelle heure à quelle heure</b> ?<br>— <b>De neuf heures à dix-sept heures trente</b>.</div>
+  <div class="lc-ex-fa">از چه ساعتی تا چه ساعتی کار می‌کنی؟ / از ۹ تا ۱۷:۳۰.</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">عبارت‌های مهم درباره‌ی برنامه</div>
+  <div class="lc-ex" dir="ltr">Je travaille <b>de</b> 9h <b>à</b> 17h. → از ۹ تا ۱۷ کار می‌کنم.</div>
+  <div class="lc-ex" dir="ltr">Le film dure <b>deux heures</b>. → فیلم ۲ ساعت طول می‌کشد.</div>
+  <div class="lc-ex" dir="ltr">On a <b>rendez-vous</b> à midi. → ساعت ۱۲ قرار داریم.</div>
+  <div class="lc-ex" dir="ltr">Je serai là <b>vers</b> 8 heures. → حدود ساعت ۸ اینجا خواهم بود.</div>
+  <div class="lc-ex" dir="ltr">Le magasin est ouvert <b>jusqu'à</b> 20h. → مغازه تا ۲۰ باز است.</div>
+</div>
+
+<div class="lc-tip">💡 <b>VERS</b> = «حدوداً / نزدیک به» برای زمان تقریبی. «Je viendrai <b>vers</b> 8 heures» = حدوداً ساعت ۸ می‌آیم.</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-4" style="display:none">
+          <h2 class="lc-sec-title" style="color:#2e7bb5">⚠️ نکات و تله‌های مهم</h2>
+          
+<div class="lc-card">
+  <div class="lc-word">۱. PILE = دقیقاً / سر وقت</div>
+  <div class="lc-ex" dir="ltr">Il est trois heures <b>pile</b>. → دقیقاً ساعت ۳ است.</div>
+  <div class="lc-ex" dir="ltr">Le train est arrivé <b>pile</b> à l'heure. → قطار دقیقاً سر وقت رسید.</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">۲. PASSÉ / ET DEMI(E) — توافق جنسیتی</div>
+  <div class="lc-ex" dir="ltr">Une heure et demi<b>e</b> (heure مؤنث → demie با e)</div>
+  <div class="lc-ex" dir="ltr">Midi et demi (midi مذکر → demi بدون e)</div>
+  <div class="lc-ex" dir="ltr">Minuit et demi (minuit مذکر → demi بدون e)</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">۳. ET QUART / MOINS LE QUART</div>
+  <div class="lc-ex" dir="ltr">Il est cinq heures <b>et quart</b>. (+ ربع → ۱۵ دقیقه بعد از ۵)</div>
+  <div class="lc-ex" dir="ltr">Il est six heures <b>moins le quart</b>. (ربع مانده به ۶ → ۵:۴۵)</div>
+  <div class="lc-ex-fa">⚠️ «et quart» بدون article · «moins <b>le</b> quart» با article!</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">۴. ENVIRON / À PEU PRÈS / VERS — تقریب</div>
+  <div class="lc-ex" dir="ltr">Il est <b>environ</b> trois heures. → حدوداً ساعت ۳ است.</div>
+  <div class="lc-ex" dir="ltr">Il est <b>à peu près</b> midi. → تقریباً ظهر است.</div>
+  <div class="lc-ex" dir="ltr">J'arrive <b>vers</b> huit heures. → حدود ساعت ۸ می‌رسم.</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">۵. خواندن ساعت در نوشتار: h</div>
+  <div class="lc-ex" dir="ltr">14h30 = quatorze heures trente (= deux heures et demie)</div>
+  <div class="lc-ex" dir="ltr">09h15 = neuf heures quinze (= neuf heures et quart)</div>
+  <div class="lc-ex" dir="ltr">00h00 = zéro heure / minuit</div>
+</div>
+
+          
+          <div class="clock-widget">
+            <div class="clock-title">🕐 ساعت تعاملی — خودت تنظیم کن</div>
+            <div id="clockWidget"></div>
+          </div>
+
+<div class="lc-quiz">
+                <div class="lcq-q" id="lcq-4-0">
+                  <div class="lcq-text" dir="ltr">Il est 8h15 → (روزمره)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,0,1)">huit heures et demie</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,1,1)">huit heures et quart</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,0,2,1)">neuf heures moins le quart</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-0" data-note="15 دقیقه بعد از ۸ = «et quart». «et demie» برای ۳۰ دقیقه است."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-1">
+                  <div class="lcq-text" dir="ltr">Il est 6h45 → (روزمره)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,0,2)">six heures et quart</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,1,2)">six heures quarante-cinq</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,1,2,2)">sept heures moins le quart</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-1" data-note="45 دقیقه = ربع مانده به ساعت بعد → «sept heures moins le quart»"></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-2">
+                  <div class="lcq-text" dir="ltr">Midi et ___ (نیم)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,0,1)">demie</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,1,1)">demi</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,2,2,1)">et quart</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-2" data-note="midi مذکر است → «demi» بدون e. «demie» فقط با «heure» (مؤنث)"></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-3">
+                  <div class="lcq-text" dir="ltr">à quelle heure part l'avion? → (ساعت ۲۰:۳۰ رسمی)</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,0,0)">vingt heures trente</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,1,0)">huit heures et demie du soir</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,3,2,0)">vingt heures et demie</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-3" data-note="در ساعت رسمی فقط عدد: «vingt heures trente». «et demie» فقط در ساعت روزمره."></div>
+                </div>
+                <div class="lcq-q" id="lcq-4-4">
+                  <div class="lcq-text" dir="ltr">Il est 3h pile → چه معنایی دارد؟</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,0,1)">تقریباً ۳</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,1,1)">دقیقاً ۳</button><button class="lcq-opt" dir="ltr" onclick="answerLc(4,4,2,1)">کمی بعد از ۳</button></div>
+                  <div class="lcq-fb" id="lcqfb-4-4" data-note="«pile» = دقیقاً / سر وقت. «Il est trois heures pile» = ۳:۰۰:۰۰ دقیق!"></div>
+                </div></div>
+        </div>
+    <div class="lc-footer">✦ روی هر تیتر بالا بزن تا مستقیم همان بخش را ببینی.<br><b>Français avec Hoda</b></div>
+  </div>
+  <script>
+    function showSection(i) {
+      document.querySelectorAll('.lc-section').forEach((s, idx) => {
+        s.style.display = (idx === i) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lc-tab').forEach((t, idx) => {
+        t.classList.toggle('active', idx === i);
+      });
+      window.scrollTo(0, 0);
+    }
+    function answerLc(si, qi, chosen, correct) {
+      const q = document.getElementById('lcq-' + si + '-' + qi);
+      const fb = document.getElementById('lcqfb-' + si + '-' + qi);
+      const btns = q.querySelectorAll('.lcq-opt');
+      btns.forEach((b, i) => {
+        b.classList.remove('correct','wrong');
+        if (i === correct) b.classList.add('correct');
+        else if (i === chosen) b.classList.add('wrong');
+        b.disabled = true;
+      });
+      fb.innerHTML = (chosen === correct ? '✅ آفرین! ' : '❌ درست: ') + (fb.getAttribute('data-note') || '');
+      fb.classList.add('show');
+    }
+  
+  // ─── ساعت تعاملی ───
+  function initClock() {
+    const el = document.getElementById('clockWidget');
+    if (!el) return;
+    el.innerHTML = `
+      <div class="clock-face">
+        <svg class="clock-svg" viewBox="0 0 220 220" id="clockSVG">
+          <circle cx="110" cy="110" r="100" fill="#f9f8fa" stroke="#e2e1e3" stroke-width="6"/>
+          ${[12,1,2,3,4,5,6,7,8,9,10,11].map((n,i)=>{
+            const a=(i*30-60)*Math.PI/180;
+            const x=110+82*Math.cos(a), y=110+82*Math.sin(a);
+            return `<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="central" font-family="Roboto" font-size="14" font-weight="600" fill="#2c2a26">${n}</text>`;
+          }).join('')}
+          <line id="hourHand" x1="110" y1="110" x2="110" y2="55" stroke="#1e3a5f" stroke-width="6" stroke-linecap="round"/>
+          <line id="minHand" x1="110" y1="110" x2="110" y2="40" stroke="#2e7bb5" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="110" cy="110" r="6" fill="#2e7bb5"/>
+        </svg>
+        <div class="clock-controls">
+          <div class="clock-ctrl">
+            <label>ساعت</label>
+            <input type="range" id="clkH" min="0" max="23" value="10" oninput="updateClock()">
+            <span id="clkHVal">10</span>
+          </div>
+          <div class="clock-ctrl">
+            <label>دقیقه</label>
+            <input type="range" id="clkM" min="0" max="59" value="15" oninput="updateClock()">
+            <span id="clkMVal">15</span>
+          </div>
+        </div>
+        <div class="clock-result">
+          <div class="clock-fr" id="clkFr"></div>
+          <div class="clock-fr-off" id="clkFrOff"></div>
+          <div class="clock-fa" id="clkFa"></div>
+        </div>
+      </div>`;
+    updateClock();
+  }
+
+  function updateClock() {
+    const h = parseInt(document.getElementById('clkH').value);
+    const m = parseInt(document.getElementById('clkM').value);
+    document.getElementById('clkHVal').textContent = h;
+    document.getElementById('clkMVal').textContent = m < 10 ? '0'+m : m;
+
+    // حرکت عقربه‌ها
+    const hDeg = (h % 12) * 30 + m * 0.5 - 90;
+    const mDeg = m * 6 - 90;
+    const hx = 110 + 55 * Math.cos(hDeg * Math.PI/180);
+    const hy = 110 + 55 * Math.sin(hDeg * Math.PI/180);
+    const mx = 110 + 70 * Math.cos(mDeg * Math.PI/180);
+    const my = 110 + 70 * Math.sin(mDeg * Math.PI/180);
+    document.getElementById('hourHand').setAttribute('x2', hx);
+    document.getElementById('hourHand').setAttribute('y2', hy);
+    document.getElementById('minHand').setAttribute('x2', mx);
+    document.getElementById('minHand').setAttribute('y2', my);
+
+    // تبدیل به فرانسه
+    const nums = ['zéro','un','deux','trois','quatre','cinq','six','sept','huit','neuf','dix',
+      'onze','douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf',
+      'vingt','vingt et un','vingt-deux','vingt-trois','vingt-quatre','vingt-cinq',
+      'vingt-six','vingt-sept','vingt-huit','vingt-neuf','trente'];
+    const h12 = h % 12 === 0 ? 12 : h % 12;
+    const nextH12 = h12 === 12 ? 1 : h12 + 1;
+    const numsFr = ['','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze'];
+    const numsFrN = ['',...nums.slice(1,13)];
+
+    // ساعت روزمره
+    let fr = '';
+    let fa = '';
+    if (h === 0 && m === 0) { fr = 'Il est minuit'; fa = 'نیمه‌شب'; }
+    else if (h === 12 && m === 0) { fr = 'Il est midi'; fa = 'ظهر'; }
+    else if (h === 0 || h === 12) {
+      const base = h === 0 ? 'minuit' : 'midi';
+      if (m === 30) { fr = 'Il est ' + base + ' et demi'; fa = base === 'minuit' ? 'نیمه‌شب و نیم' : 'ظهر و نیم'; }
+      else if (m === 15) { fr = 'Il est ' + base + ' et quart'; fa = base === 'minuit' ? 'نیمه‌شب و ربع' : 'ظهر و ربع'; }
+      else if (m === 45) { fr = 'Il est ' + (base === 'minuit' ? 'une heure' : 'treize heures') + ' moins le quart'; fa = 'ربع مانده به ۱'; }
+      else if (m < 30) { fr = 'Il est ' + base + ' ' + nums[m]; fa = base + ' و ' + m + ' دقیقه'; }
+      else { fr = 'Il est ' + (base === 'minuit' ? 'une heure' : 'treize heures') + ' moins ' + nums[60-m]; fa = (60-m) + ' مانده به ۱'; }
+    } else {
+      const h12s = numsFr[h12] || '';
+      const nextH12s = numsFr[nextH12] || '';
+      if (m === 0) { fr = 'Il est ' + h12s + (h12 === 1 ? ' heure' : ' heures') + ' pile'; fa = 'ساعت ' + h12 + ' دقیقاً'; }
+      else if (m === 15) { fr = 'Il est ' + h12s + (h12 === 1 ? ' heure' : ' heures') + ' et quart'; fa = 'ساعت ' + h12 + ' و ربع'; }
+      else if (m === 30) { fr = 'Il est ' + h12s + (h12 === 1 ? ' heure' : ' heures') + ' et demie'; fa = 'ساعت ' + h12 + ' و نیم'; }
+      else if (m === 45) { fr = 'Il est ' + nextH12s + (nextH12 === 1 ? ' heure' : ' heures') + ' moins le quart'; fa = 'ربع مانده به ' + nextH12; }
+      else if (m < 30) { fr = 'Il est ' + h12s + (h12 === 1 ? ' heure' : ' heures') + ' ' + nums[m]; fa = 'ساعت ' + h12 + ' و ' + m; }
+      else { fr = 'Il est ' + nextH12s + (nextH12 === 1 ? ' heure' : ' heures') + ' moins ' + nums[60-m]; fa = (60-m) + ' مانده به ' + nextH12; }
+    }
+
+    // ساعت رسمی
+    const hOff = h < 10 ? '0'+h : h;
+    const mOff = m < 10 ? '0'+m : m;
+    const hFrOff = nums[h] || String(h);
+    const mFrOff = nums[m] || String(m);
+    let frOff = '';
+    if (m === 0) frOff = 'Officiel: ' + hFrOff + ' heure' + (h > 1 ? 's' : '');
+    else frOff = 'Officiel: ' + hFrOff + ' heure' + (h > 1 ? 's' : '') + ' ' + mFrOff;
+
+    const period = h < 12 ? 'du matin' : h < 18 ? "de l'après-midi" : 'du soir';
+    if (fr && !fr.includes('midi') && !fr.includes('minuit')) {
+      fr += ' <span style="color:var(--gray);font-size:14px;">(' + period + ')</span>';
+    }
+
+    document.getElementById('clkFr').innerHTML = fr;
+    document.getElementById('clkFrOff').textContent = frOff;
+    document.getElementById('clkFa').textContent = fa;
+  }
+
+  document.addEventListener('DOMContentLoaded', initClock);
+
+</script>
+  <script src="protect.js"></script>
+</body>
+</html>

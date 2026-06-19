@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_heure.html",
+    title: "درسنامه: گفتن ساعت",
+    titleFr: "Dire l'heure",
+    category: "grammar", level: "A1–B1",
+    tags: ["درسنامه", "ساعت", "heure", "temps"],
+    summary: "ساعت روزمره (et quart / et demie / moins) و رسمی (0-23) + پرسیدن ساعت + برنامه‌ریزی + ساعت تعاملی بصری + آزمون ۵ سؤالی.",
+  },
+
+  {
     file: "LECON_quand_quant.html",
     title: "درسنامه: QUAND یا QUANT؟",
     titleFr: "Quand ou quant ?",
