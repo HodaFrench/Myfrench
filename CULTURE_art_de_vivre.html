@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Art de Vivre — فرهنگ فرانسه · Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#8a2040;--accent2:#c4502d;--gold:#b07a4a;--green:#2e8b6b;--blue:#2e7bb5;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(138,32,64,.04) 31px,rgba(138,32,64,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:840px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:7px 14px;border-radius:8px;transition:all .2s;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+
+  /* هدر جذاب */
+  .header{background:linear-gradient(135deg,var(--accent),#c4502d);color:#fff;
+    padding:32px 28px;border-radius:20px;margin-bottom:22px;
+    box-shadow:0 14px 34px rgba(138,32,64,.3);position:relative;overflow:hidden;}
+  .header::before{content:"🇫🇷";position:absolute;top:-10px;left:20px;font-size:100px;opacity:.1;}
+  .header h1{font-size:26px;font-weight:700;margin-bottom:8px;}
+  .header .sub{font-size:14px;opacity:.92;line-height:2;}
+  .header .tag{font-size:11px;color:rgba(255,255,255,.7);font-weight:700;letter-spacing:2px;margin-bottom:10px;}
+
+  /* تب‌ها */
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px;position:sticky;top:0;
+    background:var(--paper);padding:12px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;background:var(--white);
+    color:var(--ink);border:1.5px solid var(--line);border-radius:20px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tab:hover{border-color:var(--accent);}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .section{display:none;animation:fi .35s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* بلاک‌های محتوا */
+  .story-card{background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:24px 22px;margin-bottom:18px;box-shadow:0 5px 18px rgba(31,58,95,.05);}
+  .story-card.featured{border-top:5px solid var(--accent);}
+  .sc-label{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;
+    font-size:11px;font-weight:700;padding:4px 12px;border-radius:10px;margin-bottom:12px;}
+  .sc-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4;}
+  .sc-title-fr{font-family:'Roboto',serif;font-size:15px;color:var(--accent2);margin-bottom:14px;}
+  .sc-body{font-size:14.5px;line-height:2.2;color:var(--ink);}
+  .sc-body b{color:var(--accent);}
+  .sc-body .hl{color:var(--blue);font-weight:600;}
+  .sc-fact{background:linear-gradient(135deg,rgba(138,32,64,.07),rgba(196,80,45,.04));
+    border-right:4px solid var(--accent);border-radius:10px;padding:12px 16px;
+    margin:14px 0;font-size:13.5px;line-height:2;}
+  .sc-fact b{color:var(--accent);}
+  .sc-vocab{background:var(--cream);border-radius:10px;padding:14px 16px;margin-top:14px;}
+  .sc-vocab-title{font-size:12px;font-weight:700;color:var(--gold);margin-bottom:8px;}
+  .sc-vocab-item{font-family:'Roboto',serif;font-size:14.5px;direction:ltr;text-align:left;
+    padding:4px 0;border-bottom:1px solid var(--line);color:var(--navy);}
+  .sc-vocab-fa{font-size:12.5px;color:var(--gray);}
+  .sc-vocab-item:last-child{border-bottom:none;}
+  .sc-quote{font-family:'Roboto',serif;font-size:17px;font-style:italic;direction:ltr;text-align:left;
+    border-right:none;border-left:4px solid var(--accent);padding:10px 16px;color:var(--navy);
+    margin:14px 0;line-height:1.7;}
+  .sc-quote-fa{font-size:13px;color:var(--gray);text-align:right;margin-top:5px;}
+
+  /* grid */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:560px){.two-col{grid-template-columns:1fr;}}
+  .mini-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .mc-em{font-size:26px;margin-bottom:8px;}
+  .mc-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .mc-body{font-size:13px;line-height:1.95;color:var(--gray);}
+
+  /* فوتر */
+  .footer{text-align:center;margin-top:30px;color:var(--gray);font-size:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=culture">← فرهنگ فرانسه</a>
+  </div>
+
+  <div class="header">
+    <div class="tag">CULTURE FRANÇAISE · سری اول</div>
+    <h1>L'Art de Vivre à la Française</h1>
+    <div class="sub">هنرِ زندگی کردن به سبک فرانسوی — رازی که دنیا همیشه دنبالش گشته</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="s('vivre')">🥐 هنر زندگی</button>
+    <button class="tab" onclick="s('gastro')">🍷 غذا و سفره</button>
+    <button class="tab" onclick="s('mode')">👗 مد و زیبایی</button>
+    <button class="tab" onclick="s('cafe')">☕ فرهنگ کافه</button>
+    <button class="tab" onclick="s('fetes')">🎉 جشن‌ها</button>
+  </div>
+
+  <!-- هنر زندگی -->
+  <div class="section active" id="sec-vivre">
+    <div class="story-card featured">
+      <div class="sc-label">🌟 مفهوم اصلی</div>
+      <div class="sc-title">L'art de vivre — چیست این چیزی که همه می‌خواهند؟</div>
+      <div class="sc-body">
+        اگر کسی از یک فرانسوی بپرسد «l'art de vivre» چیست، احتمالاً شانه بالا می‌اندازد و می‌گوید: «C'est... vivre, tout simplement.» (یعنی زندگی کردن — به همین سادگی). ولی همین «به همین سادگی» یکی از <b>جذاب‌ترین رازهای فرهنگ فرانسوی</b> است.
+        <br><br>
+        L'art de vivre به معنی <b>توجه دقیق به لحظهٔ حال</b> است — نه برنامهٔ پنج‌ساله، نه بهره‌وری ماکزیمم. یعنی قهوه‌ات را ایستاده نخوری، نانت را همراه ماشین نبلعی، و برای صرف شام با دوست کافی است کمی نان، کمی پنیر، یک بطری شراب و یک مکالمهٔ خوب.
+      </div>
+      <div class="sc-fact">
+        💡 <b>یه جملهٔ فرانسوی معروف:</b><br>
+        <span dir="ltr" style="font-family:'Roboto',serif;font-size:16px;">«Savoir vivre, c'est savoir s'arrêter.»</span><br>
+        هنر زندگی کردن، هنر متوقف شدن است.
+      </div>
+      <div class="sc-vocab">
+        <div class="sc-vocab-title">📖 واژگان کلیدی</div>
+        <div class="sc-vocab-item">l'art de vivre <span class="sc-vocab-fa">← هنر زندگی کردن</span></div>
+        <div class="sc-vocab-item">la douceur de vivre <span class="sc-vocab-fa">← شیرینی زندگی</span></div>
+        <div class="sc-vocab-item">profiter du moment <span class="sc-vocab-fa">← از لحظه لذت بردن</span></div>
+        <div class="sc-vocab-item">la convivialité <span class="sc-vocab-fa">← گرمی و صمیمیت جمعی</span></div>
+        <div class="sc-vocab-item">le savoir-vivre <span class="sc-vocab-fa">← نزاکت / آداب معاشرت</span></div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="mini-card">
+        <div class="mc-em">⏱️</div>
+        <div class="mc-title">زمان = کیفیت، نه کمیت</div>
+        <div class="mc-body">فرانسوی‌ها کمتر از ۳۵ ساعت در هفته کار می‌کنند (قانون قدیمی‌ست) و vacation قانون است، نه لطف. اما این «کمتر کار کردن» با بی‌کاری فرق دارد — با <b>حضور کامل</b> در کارشان.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-em">💬</div>
+        <div class="mc-title">مکالمه یه هنر است</div>
+        <div class="mc-body">در فرانسه مکالمه — حتی یه گپ کوتاه در کافه — یه <b>هنر اجتماعی</b> است. بحث، نقد، اختلاف نظر: همه مجازند. سکوت سنگین نیست — ولی گفتگوی خوب طلاست.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-em">🌹</div>
+        <div class="mc-title">زیبایی در جزئیات</div>
+        <div class="mc-body">یه گل روی میز، یه ظرف قشنگ برای سرو، یه شمع کوچک — فرانسوی‌ها این چیزها را «سطحی» نمی‌دانند. این‌ها <b>احترام به لحظه</b> است.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-em">🚶</div>
+        <div class="mc-title">La flânerie</div>
+        <div class="mc-body">«Flâner» یعنی بدون هدف قدم زدن و از شهر لذت بردن. یه کلمهٔ فرانسوی است که <b>هیچ معادل دقیقی</b> در فارسی یا انگلیسی ندارد. هدف نداری — همین هدف است.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- غذا -->
+  <div class="section" id="sec-gastro">
+    <div class="story-card featured">
+      <div class="sc-label">🍷 گاسترونومی</div>
+      <div class="sc-title">وقتی غذا دین می‌شود — فرهنگ سفرهٔ فرانسوی</div>
+      <div class="sc-body">
+        <b>غذا در فرانسه یه وعده نیست — یه آئین است.</b> میانگین وقتی که یه فرانسوی برای ناهار می‌گذارد ۲۲ دقیقه است — که در مقایسه با آمریکا (یازده دقیقه) تقریباً دو برابر است. ولی این فقط زمان نیست — شیوه است. موبایل روی میز نمی‌آید. ناهار با همکاران در رستوران است، نه پشت میز با یه ساندویچ.
+        <br><br>
+        رستوران‌های فرانسوی <b>سه سرویس</b> دارند: entrée (پیش‌غذا)، plat principal (غذای اصلی)، dessert (دسر). این ترتیب از قرن هفدهم تغییر نکرده. <span class="hl">لیست وین (carte des vins)</span> اغلب از منو بلندتر است.
+      </div>
+      <div class="sc-fact">
+        <b>می‌دانستی؟</b> فرانسه رتبهٔ اول را در تعداد رستوران‌های Michelin Star دارد. و «repas gastronomique des Français» (وعدهٔ غذایی گاسترونومیک فرانسوی‌ها) در لیست میراث فرهنگی ناملموس UNESCO ثبت شده.
+      </div>
+      <div class="two-col" style="margin-top:14px;">
+        <div class="mini-card">
+          <div class="mc-em">🥐</div>
+          <div class="mc-title">Croissant — یه اسطوره</div>
+          <div class="mc-body">اعتقاد عمومی اینه که croissant فرانسوی است — ولی ریشه‌اش از اتریش (Kipferl) می‌آید. فرانسوی‌ها آن را با <b>کره</b> و <b>خمیرسازی لایه‌ای</b> به یه اثر هنری تبدیل کردند.</div>
+        </div>
+        <div class="mini-card">
+          <div class="mc-em">🧀</div>
+          <div class="mc-title">۱۲۰۰ نوع پنیر</div>
+          <div class="mc-body">فرانسه بیشتر از ۱۲۰۰ نوع پنیر دارد. دو گل (de Gaulle) گفت: «Comment voulez-vous gouverner un pays qui a 246 variétés de fromage?» (چطور می‌توان کشوری با ۲۴۶ نوع پنیر را اداره کرد؟)</div>
+        </div>
+      </div>
+      <div class="sc-vocab" style="margin-top:14px;">
+        <div class="sc-vocab-title">🍽️ واژگان سر میز</div>
+        <div class="sc-vocab-item">la gastronomie <span class="sc-vocab-fa">← هنر آشپزی / علم خوردن خوب</span></div>
+        <div class="sc-vocab-item">le terroir <span class="sc-vocab-fa">← خاک و اقلیم منطقه (برای شراب/پنیر)</span></div>
+        <div class="sc-vocab-item">l'entrée <span class="sc-vocab-fa">← پیش‌غذا</span></div>
+        <div class="sc-vocab-item">le plat du jour <span class="sc-vocab-fa">← غذای روز رستوران</span></div>
+        <div class="sc-vocab-item">la carte des vins <span class="sc-vocab-fa">← لیست شراب</span></div>
+        <div class="sc-vocab-item">bon appétit ! <span class="sc-vocab-fa">← نوش جان! (قبل از شروع غذا)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مد -->
+  <div class="section" id="sec-mode">
+    <div class="story-card featured">
+      <div class="sc-label">👗 مد پاریسی</div>
+      <div class="sc-title">چرا پاریسی‌ها همیشه شیک به نظر می‌رسند؟</div>
+      <div class="sc-body">
+        رمز زیبایی پاریسی به‌طرز عجیبی <b>سادگی</b> است. یه پاریسی واقعی <b>کمتر می‌پوشد، ولی بهتر</b>. کمد لباسش کوچک است ولی هر چیزی در آن باکیفیت و multipurpose است.
+        <br><br>
+        مفهوم «le je-ne-sais-quoi» (یه چیزی که نمی‌دانم چیست) در مد پاریسی همین را توصیف می‌کند — آن حالتی که نه خیلی آراسته است نه شلخته. یه دکمهٔ باز، یه شال نامرتب، یه موی «درست‌نشده» که انگار به خودی خود زیباست.
+      </div>
+      <div class="sc-quote" dir="ltr">«La mode se démode, le style jamais.»</div>
+      <div class="sc-quote-fa">مد از مد می‌افتد، سبک هیچ‌وقت. — Coco Chanel</div>
+
+      <div class="sc-fact">
+        <b>Haute Couture</b> یه لغت فرانسوی است که معنیش «دوخت بلند/عالی» است. این صنعت از قرن نوزدهم پاریس را پایتخت مد جهان کرده. <b>Chanel، Dior، Hermès، Louis Vuitton، Givenchy</b> — همه پاریسی هستند.
+      </div>
+
+      <div class="sc-vocab" style="margin-top:14px;">
+        <div class="sc-vocab-title">👗 واژگان مد</div>
+        <div class="sc-vocab-item">la haute couture <span class="sc-vocab-fa">← خیاطی عالی / هاوت کوتور</span></div>
+        <div class="sc-vocab-item">le chic <span class="sc-vocab-fa">← شیک بودن / ظرافت</span></div>
+        <div class="sc-vocab-item">le je-ne-sais-quoi <span class="sc-vocab-fa">← یه چیزی که توصیفش سخت است</span></div>
+        <div class="sc-vocab-item">la tenue <span class="sc-vocab-fa">← لباس / پوشش (برای یه موقعیت)</span></div>
+        <div class="sc-vocab-item">s'habiller <span class="sc-vocab-fa">← لباس پوشیدن</span></div>
+        <div class="sc-vocab-item">la tendance <span class="sc-vocab-fa">← ترند / مد روز</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- کافه -->
+  <div class="section" id="sec-cafe">
+    <div class="story-card featured">
+      <div class="sc-label">☕ فرهنگ کافه</div>
+      <div class="sc-title">کافه — پارلمان مردمی فرانسه</div>
+      <div class="sc-body">
+        در فرانسه، کافه فقط جایی برای نوشیدن قهوه نیست. از قرن هفدهم، کافه‌ها <b>مرکز تبادل ایده، بحث فلسفی و انقلاب</b> بوده‌اند. روسو، ولتر، و بعداً سارتر و سیمون دو بووار — همه در کافه‌های پاریس می‌نوشتند و فکر می‌کردند.
+        <br><br>
+        کافهٔ معروف <b>«Café de Flore»</b> و <b>«Les Deux Magots»</b> در محلهٔ Saint-Germain-des-Prés هنوز هم همان صندلی‌های قرمز قدیمی را دارند — همانجایی که سارتر «هستی و نیستی» را نوشت.
+      </div>
+      <div class="sc-fact">
+        <b>آداب کافه در فرانسه:</b><br>
+        ✓ یه نفر می‌تواند ساعت‌ها با یه فنجان نشسته باشد — کسی ناراحت نمی‌شود.<br>
+        ✓ گارسون «monsieur» یا «madame» است — نه «excuse me».<br>
+        ✓ «un café» = یه اسپرسو کوچک. اگر «café américain» می‌خواهی باید بگویی!
+      </div>
+      <div class="two-col" style="margin-top:14px;">
+        <div class="mini-card">
+          <div class="mc-em">🏛️</div>
+          <div class="mc-title">کافه‌های تاریخی پاریس</div>
+          <div class="mc-body">Café de Flore (۱۸۸۷) · Les Deux Magots (۱۸۸۴) · Le Procope (۱۶۸۶ — قدیمی‌ترین کافهٔ پاریس که ولتر و بنجامین فرانکلین هم رفتند)</div>
+        </div>
+        <div class="mini-card">
+          <div class="mc-em">☕</div>
+          <div class="mc-title">انواع قهوه در فرانسه</div>
+          <div class="mc-body">un café = اسپرسو · un crème = با شیر · un café au lait = صبحانه · un noisette = اسپرسو با کمی شیر · un allongé = رقیق‌تر</div>
+        </div>
+      </div>
+      <div class="sc-vocab" style="margin-top:14px;">
+        <div class="sc-vocab-title">☕ واژگان کافه</div>
+        <div class="sc-vocab-item">le garçon / le serveur <span class="sc-vocab-fa">← گارسون</span></div>
+        <div class="sc-vocab-item">la terrasse <span class="sc-vocab-fa">← تراس (فضای بیرونی کافه)</span></div>
+        <div class="sc-vocab-item">l'addition, s'il vous plaît <span class="sc-vocab-fa">← صورتحساب لطفاً</span></div>
+        <div class="sc-vocab-item">un café serré <span class="sc-vocab-fa">← اسپرسوی قوی‌تر</span></div>
+        <div class="sc-vocab-item">flâner en terrasse <span class="sc-vocab-fa">← بی‌هدف در تراس کافه نشستن</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- جشن‌ها -->
+  <div class="section" id="sec-fetes">
+    <div class="story-card featured">
+      <div class="sc-label">🎉 جشن‌های ملی</div>
+      <div class="sc-title">تقویم فرهنگی فرانسه — سال پر از جشن است</div>
+      <div class="sc-body">
+        فرانسوی‌ها <b>جشن‌هایی</b> دارند که خیلی‌هایشان ریشه‌ی عمیق فرهنگی دارند — نه صرفاً تعطیلی رسمی.
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="mini-card" style="border-top:4px solid #c4502d;">
+        <div class="mc-em">🎆</div>
+        <div class="mc-title">۱۴ juillet — روز باستیل</div>
+        <div class="mc-body">بزرگ‌ترین روز ملی فرانسه. ۱۷۸۹ — سقوط زندان باستیل و شروع انقلاب. هر سال رژه‌ی نظامی در Champs-Élysées و آتش‌بازی برج ایفل. همهٔ فرانسه به خیابان می‌آیند.</div>
+      </div>
+      <div class="mini-card" style="border-top:4px solid #2e7bb5;">
+        <div class="mc-em">🎵</div>
+        <div class="mc-title">Fête de la Musique — ۲۱ ژوئن</div>
+        <div class="mc-body">روز اول تابستان. <b>همه‌ی موسیقی‌دانان — حرفه‌ای یا آماتور</b> — در خیابان‌ها می‌نوازند. رایگان. همیشه. یه روز که پاریس به یه کنسرت بزرگ تبدیل می‌شود.</div>
+      </div>
+      <div class="mini-card" style="border-top:4px solid #5a8f4a;">
+        <div class="mc-em">🍷</div>
+        <div class="mc-title">Beaujolais Nouveau — نوامبر</div>
+        <div class="mc-body">سومین پنج‌شنبهٔ نوامبر — شراب جدید سال آزاد می‌شود. «Le Beaujolais Nouveau est arrivé!» هر کافه و بار فرانسه این روز را جشن می‌گیرد.</div>
+      </div>
+      <div class="mini-card" style="border-top:4px solid #b07a4a;">
+        <div class="mc-em">🕯️</div>
+        <div class="mc-title">Fête des Lumières — لیون</div>
+        <div class="mc-body">هر سال ۸ دسامبر، شهر لیون در نور غرق می‌شود. ساختمان‌ها، کوچه‌ها، همه با نور تزئین می‌شوند. یکی از زیباترین جشن‌های اروپاست.</div>
+      </div>
+    </div>
+    <div class="sc-vocab" style="margin-top:14px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;">
+      <div class="sc-vocab-title">🎉 واژگان جشن‌ها</div>
+      <div class="sc-vocab-item">la fête nationale <span class="sc-vocab-fa">← روز ملی</span></div>
+      <div class="sc-vocab-item">le feu d'artifice <span class="sc-vocab-fa">← آتش‌بازی</span></div>
+      <div class="sc-vocab-item">le défilé militaire <span class="sc-vocab-fa">← رژه‌ی نظامی</span></div>
+      <div class="sc-vocab-item">faire la fête <span class="sc-vocab-fa">← جشن گرفتن / خوش گذراندن</span></div>
+      <div class="sc-vocab-item">les lampions <span class="sc-vocab-fa">← فانوس‌های کوچک / چراغ‌های جشن</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    ✦ اولین شمارهٔ «فرهنگ فرانسه» — محتواهای بیشتر به‌زودی اضافه می‌شوند<br>
+    <b>Français avec Hoda</b>
+  </div>
+</div>
+<script>
+function s(id){
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

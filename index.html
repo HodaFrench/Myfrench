@@ -1545,7 +1545,10 @@
             } else if (catId === "miniarticle") {
                 renderMiniarticles();
             } else if (catId === "innerfrench") {
-                renderInnerFrench(); else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
+                renderInnerFrench();
+            } else if (catId === "culture") {
+                renderCulture();
+            } else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
             } else {
@@ -1967,6 +1970,28 @@
                                 </div>`).join("")}
                         </div>` : `<div class="prive-empty">هنوز محتوایی اضافه نشده — به‌زودی</div>`}
                     </div>`).join("")}`;
+        }
+
+        function renderCulture() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("culture");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const items = LESSONS.filter(l => l.category === "culture");
+            document.getElementById("count").textContent = items.length + " مقاله";
+            const grid = document.getElementById("grid");
+            if (!items.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">🥐</span>به‌زودی<br><span style="font-size:14px">محتوا اضافه می‌شود</span></div>';
+                return;
+            }
+            grid.innerHTML = items.map(item => {
+                return \`<a class="lesson-card" href="\${item.file}" style="text-decoration:none;display:block;">
+                    <div class="lc-tag" style="background:#8a2040;color:#fff">\${item.level||''}</div>
+                    <div class="lc-title">\${item.title}</div>
+                    <div class="lc-title-fr" dir="ltr">\${item.titleFr||''}</div>
+                    <div class="lc-summary">\${item.summary||''}</div>
+                </a>\`;
+            }).join("");
         }
 
         function renderInnerFrench() {

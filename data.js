@@ -6,6 +6,7 @@
 
 // دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
 const CATEGORIES = [
+  { id: "culture", label: "فرهنگ فرانسه", icon: "🥐", color: "#8a2040" },
   { id: "article", label: "آرتیکل", icon: "📰", color: "#5a3b88" },
   { id: "roulette", label: "گردونه‌ی موضوع", icon: "🎡", color: "#7a5ba8", link: "ROULETTE.html" },
   { id: "phrases", label: "جملات کاربردی", icon: "💬", color: "#c77d3a", link: "PHRASES_utiles.html" },
@@ -82,6 +83,15 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {
+    file: "CULTURE_art_de_vivre.html",
+    title: "L'Art de Vivre — هنر زندگی فرانسوی",
+    titleFr: "L'art de vivre à la française",
+    category: "culture", level: "B1–B2",
+    tags: ["فرهنگ","art de vivre","gastronomie","mode","café"],
+    summary: "هنر زندگی فرانسوی: سفره و غذا، مد پاریسی، فرهنگ کافه، جشن‌های ملی. با واژگان، نقل‌قول‌ها و حقایق جذاب.",
+  },
+
   {
     file: "LECON_mind_maps_temps.html",
     title: "Mind Maps — زمان‌های فرانسه",
