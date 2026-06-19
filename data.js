@@ -84,6 +84,31 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_mind_maps_temps.html",
+    title: "🗺️ Mind Maps — زمان‌های فرانسه",
+    titleFr: "Mind Maps des temps français A1 → C1",
+    category: "grammar", level: "A1–C1",
+    tags: ["mind map","زمان","présent","passé","futur","conditionnel","subjonctif"],
+    summary: "همهٔ ۶ زمان اصلی با مثال‌های A1 تا C1: Présent / PC / Imparfait / Futur / Conditionnel / Subjonctif — هر کدام با فرمول، سیگنال‌ها، ۵ سطح مثال با ترجمه و نکتهٔ کلیدی.",
+  },
+  {
+    file: "VOCAB_cuisine.html",
+    title: "واژگان: ابزار آشپزخانه",
+    titleFr: "Les ustensiles de cuisine",
+    category: "vocab", level: "A1–B1",
+    tags: ["واژگان","آشپزخانه","ustensiles","cuisine"],
+    summary: "۵۰+ ابزار آشپزخانه در ۶ دسته: ظرف‌ها / قابلمه و تابه / قاشق و چنگال / ابزار آماده‌سازی / قنادی / برقی. هر کدام با مثال روزمره.",
+  },
+  {
+    file: "CULTURE_desserts_francais.html",
+    title: "🍰 دسرهای فرانسوی",
+    titleFr: "Les desserts français dans le monde",
+    category: "culture", level: "B1–B2",
+    tags: ["فرهنگ","dessert","crème brûlée","mille-feuille","éclair"],
+    summary: "دسرهای مشهور فرانسوی با هایلایت دوزبانه: crème brûlée، tarte Tatin، mille-feuille، éclair. چرا مشهورند؟ + جهانی‌شدن (ژاپن، کره، کانادا...)",
+  },
+
+  {
     file: "CULTURE_macaron.html",
     title: "🍬 Le Macaron — تاریخ و هنر",
     titleFr: "Le macaron : histoire, science et maisons légendaires",

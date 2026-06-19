@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Ustensiles de Cuisine — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#c4502d;--green:#2e8b6b;--gold:#b07a4a;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(196,80,45,.035) 31px,rgba(196,80,45,.035) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);
+    background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .header{background:linear-gradient(135deg,#7a2e0a,var(--accent));color:#fff;
+    padding:26px 28px;border-radius:18px;margin-bottom:20px;
+    box-shadow:0 12px 30px rgba(196,80,45,.25);position:relative;overflow:hidden;}
+  .header::before{content:"🍳";position:absolute;top:-15px;left:10px;font-size:110px;opacity:.1;}
+  .header h1{font-size:22px;font-weight:700;margin-bottom:5px;}
+  .header .sub{font-size:13.5px;opacity:.9;}
+  /* تب‌ها */
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;position:sticky;top:0;
+    background:var(--paper);padding:11px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;
+    background:var(--white);color:var(--ink);border:1.5px solid var(--line);
+    border-radius:20px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .section{display:none;animation:fi .3s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  /* کارت واژگان */
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:560px){.vocab-grid{grid-template-columns:1fr;}}
+  .vc{background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px 15px;transition:border-color .2s;}
+  .vc:hover{border-color:var(--accent);}
+  .vc-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+  .vc-em{font-size:24px;flex-shrink:0;width:36px;text-align:center;}
+  .vc-fr{font-family:'Roboto',serif;font-size:15.5px;font-weight:700;color:var(--navy);}
+  .vc-genre{font-size:11px;color:var(--gray);font-style:italic;margin-right:4px;}
+  .vc-fa{font-size:13.5px;color:var(--accent);font-weight:600;margin-bottom:7px;}
+  .vc-ex{font-family:'Roboto',serif;font-size:13.5px;color:var(--ink);
+    direction:ltr;text-align:left;line-height:1.65;margin-bottom:4px;
+    background:var(--cream);padding:6px 10px;border-radius:7px;}
+  .vc-exfa{font-size:12px;color:var(--gray);}
+  .sec-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:14px;
+    display:flex;align-items:center;gap:8px;padding-bottom:10px;
+    border-bottom:2px solid var(--warm);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=vocab">← واژگان</a>
+  </div>
+  <div class="header">
+    <h1>🍽️ Les Ustensiles de Cuisine</h1>
+    <div class="sub">ابزار آشپزخانه — ۵۰+ وسیله با مثال روزمره · سطح A1–B1</div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="s('ظرف')">🥣 ظرف‌ها</button>
+    <button class="tab" onclick="s('قابلمه')">🥘 قابلمه و تابه</button>
+    <button class="tab" onclick="s('قاشق')">🥄 قاشق و چنگال</button>
+    <button class="tab" onclick="s('ابزار')">🔪 ابزار</button>
+    <button class="tab" onclick="s('شیرینی')">🎂 قنادی و فر</button>
+    <button class="tab" onclick="s('برقی')">⚡ برقی</button>
+  </div>
+
+  <!-- ظرف‌ها -->
+  <div class="section active" id="sec-ظرف">
+    <div class="sec-title">🥣 Les récipients — ظرف‌ها</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍽️</div><div><div class="vc-fr">l'assiette <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">بشقاب</div>
+        <div class="vc-ex">Tu peux mettre les assiettes sur la table, s'il te plaît ?</div>
+        <div class="vc-exfa">می‌تونی بشقاب‌ها رو روی میز بذاری لطفاً؟</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">☕</div><div><div class="vc-fr">la tasse <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">فنجان</div>
+        <div class="vc-ex">Je prends toujours une tasse de café le matin.</div>
+        <div class="vc-exfa">هر صبح یه فنجان قهوه می‌خورم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥣</div><div><div class="vc-fr">le bol <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">کاسه</div>
+        <div class="vc-ex">En France, les enfants mangent souvent leurs céréales dans un bol.</div>
+        <div class="vc-exfa">در فرانسه بچه‌ها اغلب غلاتشون رو توی کاسه می‌خورند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫗</div><div><div class="vc-fr">la cruche / carafe <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">پارچ</div>
+        <div class="vc-ex">Une carafe d'eau, s'il vous plaît. (رستوران)</div>
+        <div class="vc-exfa">یک پارچ آب لطفاً.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫖</div><div><div class="vc-fr">la bouilloire <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">کتری</div>
+        <div class="vc-ex">Je mets la bouilloire à chauffer pour faire du thé.</div>
+        <div class="vc-exfa">کتری رو می‌ذارم گرم بشه تا چای درست کنم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫖</div><div><div class="vc-fr">la théière <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">قوری</div>
+        <div class="vc-ex">Une belle théière en porcelaine trône sur la table.</div>
+        <div class="vc-exfa">یه قوری چینی زیبا روی میز خودنمایی می‌کند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥤</div><div><div class="vc-fr">le verre <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">لیوان</div>
+        <div class="vc-ex">Tu veux un verre d'eau ou de jus d'orange ?</div>
+        <div class="vc-exfa">لیوان آب می‌خوای یا آب‌پرتقال؟</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍾</div><div><div class="vc-fr">la bouteille <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">بطری</div>
+        <div class="vc-ex">Il a apporté une bouteille de vin pour le dîner.</div>
+        <div class="vc-exfa">برای شام یه بطری شراب آورد.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥗</div><div><div class="vc-fr">le saladier <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">ظرف سالاد</div>
+        <div class="vc-ex">Prépare la salade dans le grand saladier blanc.</div>
+        <div class="vc-exfa">سالاد رو توی ظرف سالاد بزرگ سفید درست کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫙</div><div><div class="vc-fr">le plateau <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">سینی</div>
+        <div class="vc-ex">Elle a apporté le petit-déjeuner sur un plateau.</div>
+        <div class="vc-exfa">صبحانه رو روی سینی آورد.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧺</div><div><div class="vc-fr">le panier <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">سبد</div>
+        <div class="vc-ex">Elle porte un panier de fruits du marché.</div>
+        <div class="vc-exfa">یه سبد میوه از بازار آورد.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍬</div><div><div class="vc-fr">la bonbonnière <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">جاشکلاتی / ظرف آب‌نبات</div>
+        <div class="vc-ex">La bonbonnière en cristal est posée sur le buffet.</div>
+        <div class="vc-exfa">جاشکلاتی کریستالی روی بوفه گذاشته شده.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- قابلمه -->
+  <div class="section" id="sec-قابلمه">
+    <div class="sec-title">🥘 Les casseroles et poêles — قابلمه و تابه</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥘</div><div><div class="vc-fr">la marmite <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">قابلمه (بزرگ)</div>
+        <div class="vc-ex">La soupe mijote doucement dans la marmite.</div>
+        <div class="vc-exfa">سوپ آرام‌آرام توی قابلمه در حال پختن است.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⏱️</div><div><div class="vc-fr">la cocotte-minute <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">زودپز</div>
+        <div class="vc-ex">Les lentilles cuisent en 15 minutes à la cocotte-minute.</div>
+        <div class="vc-exfa">عدس‌ها توی زودپز در ۱۵ دقیقه می‌پزند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍳</div><div><div class="vc-fr">la poêle <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">ماهی‌تابه</div>
+        <div class="vc-ex">Je fais revenir l'oignon dans une poêle avec de l'huile d'olive.</div>
+        <div class="vc-exfa">پیاز را توی ماهی‌تابه با روغن زیتون تفت می‌دهم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥛</div><div><div class="vc-fr">la casserole <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">شیرجوش / قابلمه‌ی کوچک</div>
+        <div class="vc-ex">Fais chauffer le lait dans une petite casserole.</div>
+        <div class="vc-exfa">شیر رو توی قابلمه‌ی کوچک گرم کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫕</div><div><div class="vc-fr">un wok <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">وک</div>
+        <div class="vc-ex">Le wok est idéal pour faire sauter les légumes à feu vif.</div>
+        <div class="vc-exfa">وک برای تفت دادن سبزیجات با حرارت زیاد ایده‌آله.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍲</div><div><div class="vc-fr">un fait-tout <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">قابلمه‌ی هرکاره</div>
+        <div class="vc-ex">Le fait-tout peut aller au four et sur la gazinière.</div>
+        <div class="vc-exfa">قابلمه‌ی هرکاره هم توی فر می‌ره هم روی گاز.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔲</div><div><div class="vc-fr">le couvercle <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">در قابلمه</div>
+        <div class="vc-ex">Mets le couvercle pour que ça cuise plus vite.</div>
+        <div class="vc-exfa">در رو بذار تا زودتر بپزه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔥</div><div><div class="vc-fr">le grill / la grille <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">گریل</div>
+        <div class="vc-ex">Je fais griller le poulet sur la grille du barbecue.</div>
+        <div class="vc-exfa">مرغ رو روی گریل باربیکیو کباب می‌کنم.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- قاشق و چنگال -->
+  <div class="section" id="sec-قاشق">
+    <div class="sec-title">🥄 Les couverts — قاشق، چنگال، چاقو</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥄</div><div><div class="vc-fr">la cuillère / cuillère à soupe <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">قاشق سوپ‌خوری</div>
+        <div class="vc-ex">Ajoute deux cuillères à soupe de farine.</div>
+        <div class="vc-exfa">دو قاشق سوپ‌خوری آرد اضافه کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍵</div><div><div class="vc-fr">la cuillère à café <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">قاشق چای‌خوری</div>
+        <div class="vc-ex">Une cuillère à café de sel suffit.</div>
+        <div class="vc-exfa">یه قاشق چای‌خوری نمک کافیه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍴</div><div><div class="vc-fr">la fourchette <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">چنگال</div>
+        <div class="vc-ex">En France, la fourchette se place à gauche de l'assiette.</div>
+        <div class="vc-exfa">در فرانسه، چنگال سمت چپ بشقاب می‌ذارند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔪</div><div><div class="vc-fr">le couteau <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">چاقو</div>
+        <div class="vc-ex">Ce couteau de chef est très bien aiguisé.</div>
+        <div class="vc-exfa">این چاقوی شف خیلی تیزه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥣</div><div><div class="vc-fr">la louche <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">ملاقه (برای سوپ)</div>
+        <div class="vc-ex">Sers la soupe avec une grande louche.</div>
+        <div class="vc-exfa">سوپ رو با ملاقه‌ی بزرگ بریز.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫧</div><div><div class="vc-fr">l'écumoire <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">کف‌گیر / ملاقه‌ی سوراخ‌دار</div>
+        <div class="vc-ex">Utilise l'écumoire pour retirer les légumes de l'eau bouillante.</div>
+        <div class="vc-exfa">از کف‌گیر برای در آوردن سبزیجات از آب جوش استفاده کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥄</div><div><div class="vc-fr">la spatule <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">لیسک / اسپاتول</div>
+        <div class="vc-ex">Mélange la pâte délicatement avec une spatule en silicone.</div>
+        <div class="vc-exfa">خمیر رو با لیسک سیلیکونی با ملایمت هم بزن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍳</div><div><div class="vc-fr">la pelle / la spatule de cuisson</div></div></div>
+        <div class="vc-fa">کفگیر</div>
+        <div class="vc-ex">Retourne l'omelette avec la pelle.</div>
+        <div class="vc-exfa">املت رو با کفگیر برگردون.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🤏</div><div><div class="vc-fr">la pince de cuisine <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">انبر آشپزخانه</div>
+        <div class="vc-ex">Utilise la pince pour retourner la viande sur le grill.</div>
+        <div class="vc-exfa">از انبر برای برگرداندن گوشت روی گریل استفاده کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥣</div><div><div class="vc-fr">le fouet <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">همزن دستی (ویسک)</div>
+        <div class="vc-ex">Bats les œufs avec le fouet jusqu'à obtenir une mousse légère.</div>
+        <div class="vc-exfa">تخم‌مرغ‌ها رو با همزن بزن تا کف سبک بشن.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ابزار -->
+  <div class="section" id="sec-ابزار">
+    <div class="sec-title">🔪 Les ustensiles de préparation — ابزار آماده‌سازی</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🪣</div><div><div class="vc-fr">la planche à découper <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">تخته‌ی برش</div>
+        <div class="vc-ex">Coupe les légumes sur la planche à découper en bois.</div>
+        <div class="vc-exfa">سبزیجات رو روی تخته‌ی چوبی خرد کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧀</div><div><div class="vc-fr">la râpe <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">رنده</div>
+        <div class="vc-ex">Râpe le parmesan finement sur les pâtes.</div>
+        <div class="vc-exfa">پارمزان رو ریز روی پاستا رنده کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔪</div><div><div class="vc-fr">le fondoir / le couperet <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">ساطور</div>
+        <div class="vc-ex">Le boucher utilise un grand couperet pour découper la viande.</div>
+        <div class="vc-exfa">قصاب با ساطور بزرگ گوشت رو تکه می‌کند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫙</div><div><div class="vc-fr">l'ouvre-boîte <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">کنسروبازکن</div>
+        <div class="vc-ex">Tu as vu l'ouvre-boîte ? J'ouvre une boîte de thon.</div>
+        <div class="vc-exfa">کنسروبازکن رو دیدی؟ می‌خوام کنسرو تون باز کنم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍾</div><div><div class="vc-fr">le décapsuleur / tire-bouchon <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">دربازکن / دربطری‌بازکن</div>
+        <div class="vc-ex">Passe-moi le tire-bouchon pour ouvrir ce vin.</div>
+        <div class="vc-exfa">دربطری‌بازکن رو بده تا این شراب رو باز کنم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫧</div><div><div class="vc-fr">la passoire <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">آبکش</div>
+        <div class="vc-ex">Égoutte les pâtes dans la passoire.</div>
+        <div class="vc-exfa">پاستا رو توی آبکش خالی کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⚖️</div><div><div class="vc-fr">le verre doseur <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">لیوان مدرج</div>
+        <div class="vc-ex">Mesure 250 ml de lait avec le verre doseur.</div>
+        <div class="vc-exfa">با لیوان مدرج ۲۵۰ میلی‌لیتر شیر اندازه بگیر.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧄</div><div><div class="vc-fr">le presse-ail <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">سیرله‌کن</div>
+        <div class="vc-ex">Écrase deux gousses d'ail avec le presse-ail.</div>
+        <div class="vc-exfa">دو حبه سیر رو با سیرله‌کن له کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⚗️</div><div><div class="vc-fr">l'entonnoir <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">قیف</div>
+        <div class="vc-ex">Utilise l'entonnoir pour remplir la bouteille sans renverser.</div>
+        <div class="vc-exfa">از قیف استفاده کن تا بطری رو بدون ریختن پر کنی.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🌿</div><div><div class="vc-fr">le moulin à légumes <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">خردکن سبزی</div>
+        <div class="vc-ex">Le moulin à légumes donne une purée plus fine que le mixeur.</div>
+        <div class="vc-exfa">خردکن سبزی پوره‌ی لطیف‌تری نسبت به میکسر می‌ده.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫧</div><div><div class="vc-fr">la passoire à pied <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">آبکش پایه‌دار</div>
+        <div class="vc-ex">La passoire à pied est pratique pour égoutter les légumes.</div>
+        <div class="vc-exfa">آبکش پایه‌دار برای خالی کردن آب سبزیجات عملیه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍋</div><div><div class="vc-fr">le presse-agrumes <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">آب‌مرکبات‌گیر</div>
+        <div class="vc-ex">Je fais du jus de citron frais avec le presse-agrumes.</div>
+        <div class="vc-exfa">با آب‌مرکبات‌گیر آب‌لیموی تازه درست می‌کنم.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧅</div><div><div class="vc-fr">le pilon à purée <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">سیب‌زمینی‌له‌کن</div>
+        <div class="vc-ex">Écrase les pommes de terre avec le pilon pour une purée maison.</div>
+        <div class="vc-exfa">سیب‌زمینی‌ها رو با له‌کن برای پوره‌ی خانگی له کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔨</div><div><div class="vc-fr">le mortier <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">هاون</div>
+        <div class="vc-ex">Pile les épices dans le mortier pour plus de saveur.</div>
+        <div class="vc-exfa">ادویه‌ها رو توی هاون بکوب تا خوش‌طعم‌تر بشند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🌿</div><div><div class="vc-fr">le moulin <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">آسیاب (نمک، فلفل...)</div>
+        <div class="vc-ex">Donne un tour de moulin à poivre sur le plat.</div>
+        <div class="vc-exfa">یه دور آسیاب فلفل روی غذا بریز.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧲</div><div><div class="vc-fr">le vide-pomme <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">هسته‌گیر سیب / آلبالو</div>
+        <div class="vc-ex">Utilise le vide-pomme pour retirer le cœur des pommes.</div>
+        <div class="vc-exfa">از هسته‌گیر برای خالی کردن وسط سیب‌ها استفاده کن.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- شیرینی و فر -->
+  <div class="section" id="sec-شیرینی">
+    <div class="sec-title">🎂 La pâtisserie et le four — قنادی و فر</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🎂</div><div><div class="vc-fr">le moule à gâteau / à tarte <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">قالب کیک / تارت</div>
+        <div class="vc-ex">Beurre le moule à gâteau avant d'y verser la pâte.</div>
+        <div class="vc-exfa">قالب کیک رو قبل از ریختن خمیر کره بمال.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🔲</div><div><div class="vc-fr">la plaque à gâteau / plaque de cuisson <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">سینی فر</div>
+        <div class="vc-ex">Dispose les biscuits sur la plaque de cuisson.</div>
+        <div class="vc-exfa">بیسکوئیت‌ها رو روی سینی فر بچین.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🎂</div><div><div class="vc-fr">la grille de refroidissement <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">توری/پایه‌ی سرد کردن</div>
+        <div class="vc-ex">Pose le gâteau sur la grille de refroidissement à la sortie du four.</div>
+        <div class="vc-exfa">کیک رو بعد از فر روی توری بذار سرد بشه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫧</div><div><div class="vc-fr">le chinois / le tamis <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">الک</div>
+        <div class="vc-ex">Tamise la farine pour éviter les grumeaux.</div>
+        <div class="vc-exfa">آرد رو الک کن تا گلوله نشه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥐</div><div><div class="vc-fr">le rouleau à pâtisserie <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">وردنه</div>
+        <div class="vc-ex">Étale la pâte finement avec le rouleau à pâtisserie.</div>
+        <div class="vc-exfa">خمیر رو با وردنه نازک باز کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🎨</div><div><div class="vc-fr">le pinceau <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">قلم‌موی آشپزخانه</div>
+        <div class="vc-ex">Badigeonne la tarte d'un peu de lait avec le pinceau.</div>
+        <div class="vc-exfa">با قلم‌مو کمی شیر روی تارت بمال.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧁</div><div><div class="vc-fr">la poche à douille <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">قیف ماسوره</div>
+        <div class="vc-ex">Décore les cupcakes avec une poche à douille en étoile.</div>
+        <div class="vc-exfa">کاپ‌کیک‌ها رو با قیف ماسوره‌ی ستاره‌ای تزئین کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⏱️</div><div><div class="vc-fr">le compte-minute / minuteur <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">تایمر</div>
+        <div class="vc-ex">Règle le minuteur sur 25 minutes pour le gâteau.</div>
+        <div class="vc-exfa">تایمر رو برای ۲۵ دقیقه برای کیک تنظیم کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧤</div><div><div class="vc-fr">le gant de four / gant isolant <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">دستکش فر</div>
+        <div class="vc-ex">Mets les gants de four avant de sortir le plat du four.</div>
+        <div class="vc-exfa">قبل از درآوردن ظرف از فر دستکش فر بپوش.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⚖️</div><div><div class="vc-fr">la balance <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">ترازو (آشپزخانه)</div>
+        <div class="vc-ex">Pèse exactement 200g de sucre avec la balance de cuisine.</div>
+        <div class="vc-exfa">دقیقاً ۲۰۰ گرم شکر با ترازوی آشپزخانه وزن کن.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- برقی -->
+  <div class="section" id="sec-برقی">
+    <div class="sec-title">⚡ Les appareils électriques — لوازم برقی</div>
+    <div class="vocab-grid">
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">⚡</div><div><div class="vc-fr">le batteur électrique <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">همزن برقی</div>
+        <div class="vc-ex">Bats les blancs d'œufs en neige avec le batteur électrique.</div>
+        <div class="vc-exfa">سفیدهٔ تخم‌مرغ‌ها رو با همزن برقی کوفته کن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥤</div><div><div class="vc-fr">le robot mixeur / blender <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">مخلوط‌کن / بلندر</div>
+        <div class="vc-ex">Mixe les fruits avec un peu de lait pour faire un smoothie.</div>
+        <div class="vc-exfa">میوه‌ها رو با کمی شیر بلند کن برای اسموتی.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">☕</div><div><div class="vc-fr">le thermos <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">فلاسک</div>
+        <div class="vc-ex">Je mets mon café dans le thermos pour le garder chaud.</div>
+        <div class="vc-exfa">قهوه‌ام رو توی فلاسک می‌ذارم تا گرم بمونه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🧤</div><div><div class="vc-fr">les gants de cuisine <span class="vc-genre">m.pl</span></div></div></div>
+        <div class="vc-fa">دستکش آشپزخانه</div>
+        <div class="vc-ex">Porte toujours des gants de cuisine quand tu manipules des plats chauds.</div>
+        <div class="vc-exfa">وقتی با ظرف‌های داغ کار می‌کنی همیشه دستکش بپوش.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">👕</div><div><div class="vc-fr">le tablier <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">پیشبند</div>
+        <div class="vc-ex">Mets ton tablier avant de cuisiner pour ne pas te salir.</div>
+        <div class="vc-exfa">قبل از آشپزی پیشبندت رو ببند تا کثیف نشی.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🟫</div><div><div class="vc-fr">la manique / sous-plat <span class="vc-genre">f./m.</span></div></div></div>
+        <div class="vc-fa">زیردیگی / ملایه</div>
+        <div class="vc-ex">Pose le plat chaud sur la manique pour protéger la table.</div>
+        <div class="vc-exfa">ظرف داغ رو روی زیردیگی بذار تا میز خراب نشه.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🫧</div><div><div class="vc-fr">l'égouttoir à vaisselle <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">آب‌چکان (ظرف‌شویی)</div>
+        <div class="vc-ex">Laisse les verres sécher dans l'égouttoir.</div>
+        <div class="vc-exfa">لیوان‌ها رو توی آب‌چکان بذار خشک بشند.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥣</div><div><div class="vc-fr">le batteur à œufs <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">تخم‌مرغ‌همزن</div>
+        <div class="vc-ex">Bats les œufs avec le batteur pour la mayonnaise.</div>
+        <div class="vc-exfa">تخم‌مرغ‌ها رو با همزن برای مایونز بزن.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🥔</div><div><div class="vc-fr">l'épluche-légumes / économe <span class="vc-genre">m.</span></div></div></div>
+        <div class="vc-fa">پوست‌کن (سبزیجات)</div>
+        <div class="vc-ex">Épluche les carottes avec l'économe avant de les couper.</div>
+        <div class="vc-exfa">قبل از خرد کردن هویج‌ها رو با پوست‌کن پوست بگیر.</div>
+      </div>
+
+      <div class="vc">
+        <div class="vc-top"><div class="vc-em">🍶</div><div><div class="vc-fr">la saucière <span class="vc-genre">f.</span></div></div></div>
+        <div class="vc-fa">سس‌خوری</div>
+        <div class="vc-ex">La sauce hollandaise est servie dans une saucière chauffée.</div>
+        <div class="vc-exfa">سس هلاندی توی سس‌خوری گرم‌شده سرو می‌شه.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<script>
+function s(id){
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

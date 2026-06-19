@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les Desserts Français — فرهنگ فرانسه · Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#b07a4a;--accent2:#8a2040;--green:#2e8b6b;--blue:#2e7bb5;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(176,122,74,.04) 31px,rgba(176,122,74,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:880px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);
+    background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  /* هدر */
+  .header{background:linear-gradient(135deg,#5a2010,#b07a4a,#c4a560);color:#fff;
+    padding:30px 28px;border-radius:20px;margin-bottom:22px;
+    box-shadow:0 14px 36px rgba(176,122,74,.3);position:relative;overflow:hidden;}
+  .header::before{content:"🍰";position:absolute;top:-15px;left:10px;font-size:120px;opacity:.1;}
+  .header h1{font-size:24px;font-weight:700;margin-bottom:8px;}
+  .header .sub{font-size:13.5px;opacity:.92;line-height:2;}
+  .header .sub-fr{font-family:'Roboto',serif;font-style:italic;margin-top:8px;opacity:.85;}
+  /* لید */
+  .lead{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:560px){.lead{grid-template-columns:1fr;}}
+  .lead-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;
+    line-height:1.9;color:var(--ink);}
+  .lead-fa{font-size:14px;line-height:2.1;color:var(--ink);}
+  .lead-title{font-size:12px;font-weight:700;letter-spacing:1.5px;
+    margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+  /* چرا مشهورند */
+  .reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+  @media(max-width:540px){.reasons{grid-template-columns:1fr;}}
+  .reason{background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px;text-align:center;}
+  .reason-em{font-size:28px;margin-bottom:8px;}
+  .reason-title{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .reason-fr{font-family:'Roboto',serif;font-size:13px;color:var(--gray);direction:ltr;text-align:left;line-height:1.7;}
+  /* دسرها */
+  .dessert-card{background:var(--white);border:1px solid var(--line);border-radius:18px;
+    overflow:hidden;margin-bottom:18px;box-shadow:0 6px 20px rgba(31,58,95,.06);}
+  .dc-image{width:100%;height:200px;object-fit:cover;display:block;}
+  .dc-image-placeholder{width:100%;height:180px;display:flex;align-items:center;justify-content:center;
+    font-size:70px;background:linear-gradient(135deg,var(--warm),var(--cream));}
+  .dc-body{padding:20px 22px;}
+  .dc-name{font-family:'Roboto',serif;font-size:20px;font-weight:700;color:var(--navy);
+    direction:ltr;text-align:left;margin-bottom:4px;}
+  .dc-fa{font-size:15px;color:var(--accent);font-weight:600;margin-bottom:12px;}
+  .dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:540px){.dc-grid{grid-template-columns:1fr;}}
+  .dc-fr{font-family:'Roboto',serif;font-size:14.5px;direction:ltr;text-align:left;
+    line-height:1.85;color:var(--ink);}
+  .dc-fa-text{font-size:13.5px;line-height:2;color:var(--ink);}
+  .dc-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;
+    border-radius:8px;margin-top:10px;margin-left:6px;}
+  /* هایلایت */
+  .hw{background:rgba(176,122,74,.15);color:#6b4010;border-radius:3px;
+    padding:1px 4px;font-weight:600;font-family:'Roboto',serif;cursor:pointer;
+    border-bottom:2px solid rgba(176,122,74,.4);position:relative;transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(176,122,74,.28);}
+  .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
+    background:var(--navy);color:var(--cream);font-family:'Estedad',sans-serif;
+    font-size:12px;direction:rtl;white-space:nowrap;padding:5px 12px;
+    border-radius:8px;z-index:20;opacity:0;visibility:hidden;transition:opacity .25s;}
+  .hw.open .pop{opacity:1;visibility:visible;}
+  /* کشورها */
+  .countries{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+  @media(max-width:560px){.countries{grid-template-columns:1fr 1fr;}}
+  .country{background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px;text-align:center;}
+  .country-flag{font-size:30px;margin-bottom:8px;}
+  .country-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+  .country-desc{font-size:12.5px;color:var(--gray);line-height:1.8;}
+  /* سکشن */
+  .sec-title{font-size:17px;font-weight:700;color:var(--navy);margin:24px 0 14px;
+    padding-bottom:10px;border-bottom:2px solid var(--warm);
+    display:flex;align-items:center;gap:8px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=culture">← فرهنگ فرانسه</a>
+  </div>
+
+  <div class="header">
+    <h1>🍰 Les Desserts Français</h1>
+    <div class="sub">دسرهای فرانسوی از مشهورترین و ظریف‌ترین دسرهای دنیا هستند.</div>
+    <div class="sub-fr">«Les desserts français comptent parmi les plus célèbres du monde. La France est réputée pour sa pâtisserie raffinée et son savoir-faire culinaire.»</div>
+  </div>
+
+  <!-- چرا مشهورند -->
+  <div class="sec-title">✨ چرا دسرهای فرانسوی مشهورند؟</div>
+  <div class="reasons">
+    <div class="reason">
+      <div class="reason-em">🧈</div>
+      <div class="reason-title">مواد اولیهٔ باکیفیت</div>
+      <div class="reason-fr">Beurre de qualité supérieure, crème fraîche, vanille naturelle de Madagascar...</div>
+    </div>
+    <div class="reason">
+      <div class="reason-em">🎨</div>
+      <div class="reason-title">ظاهر و تزئینات</div>
+      <div class="reason-fr">L'art de la présentation — chaque dessert doit être beau avant d'être bon.</div>
+    </div>
+    <div class="reason">
+      <div class="reason-em">🔬</div>
+      <div class="reason-title">تکنیک‌های حرفه‌ای</div>
+      <div class="reason-fr">Techniques transmises dans les grandes écoles de pâtisserie (Ferrandi, Le Cordon Bleu...).</div>
+    </div>
+    <div class="reason">
+      <div class="reason-em">⚖️</div>
+      <div class="reason-title">تعادل دقیق</div>
+      <div class="reason-fr">Équilibre parfait entre sucre, texture et arôme — rien n'est laissé au hasard.</div>
+    </div>
+  </div>
+
+  <!-- دسرها -->
+  <div class="sec-title">🍮 دسرهای معروف فرانسوی</div>
+
+  <!-- کرم بروله -->
+  <div class="dessert-card">
+    <div class="dc-image-placeholder">🍮</div>
+    <div class="dc-body">
+      <div class="dc-name">La Crème Brûlée</div>
+      <div class="dc-fa">کرم بروله — کرم کاراملی با قند سوخته</div>
+      <div class="dc-grid">
+        <div class="dc-fr">
+          La <span class="hw" onclick="t(this)">crème brûlée<span class="pop">brûlée = سوخته / کاراملی (از brûler = سوزاندن)</span></span>
+          est sans doute le dessert français le plus reconnu dans le monde.
+          Elle se compose d'une
+          <span class="hw" onclick="t(this)">crème anglaise<span class="pop">crème anglaise = کرم ونیلی پایه — از جنس کاستارد</span></span>
+          <span class="hw" onclick="t(this)">onctueuse<span class="pop">onctueux(se) = کرمی / لطیف / روان</span></span>
+          cuite au four, surmontée d'une fine couche de sucre
+          <span class="hw" onclick="t(this)">caramélisé<span class="pop">caramélisé = کاراملی‌شده — با شعله‌ور کردن با مشعل</span></span>
+          au
+          <span class="hw" onclick="t(this)">chalumeau<span class="pop">chalumeau (m) = مشعل — ابزار کاراملی کردن سطح</span></span>.
+          Le contraste entre la couche
+          <span class="hw" onclick="t(this)">craquante<span class="pop">craquant(e) = ترد / خرخری</span></span>
+          et la crème
+          <span class="hw" onclick="t(this)">veloutée<span class="pop">velouté(e) = مخملی / نرم و صاف — از «velours» = مخمل</span></span>
+          en dessous est
+          <span class="hw" onclick="t(this)">irrésistible<span class="pop">irrésistible = مقاومت‌ناپذیر</span></span>.
+        </div>
+        <div class="dc-fa-text">
+          کرم بروله احتمالاً شناخته‌شده‌ترین دسر فرانسوی در دنیاست. از یک کرم وانیلی لطیف پخته‌شده در فر تشکیل می‌شود که روی آن یک لایهٔ نازک قند با مشعل کاراملی می‌شود. تضاد بین لایهٔ ترد بالا و کرم مخملی زیر آن مقاومت‌ناپذیر است.
+        </div>
+      </div>
+      <span class="dc-tag" style="background:rgba(176,122,74,.15);color:#6b4010;">🍮 classique</span>
+      <span class="dc-tag" style="background:rgba(46,139,107,.12);color:#1d6b50;">A2 niveau vocabulaire</span>
+    </div>
+  </div>
+
+  <!-- تارت تاتن -->
+  <div class="dessert-card">
+    <div class="dc-image-placeholder">🍏</div>
+    <div class="dc-body">
+      <div class="dc-name">La Tarte Tatin</div>
+      <div class="dc-fa">تارت تاتن — تارت سیب معکوس</div>
+      <div class="dc-grid">
+        <div class="dc-fr">
+          La tarte Tatin est une
+          <span class="hw" onclick="t(this)">tarte renversée<span class="pop">renversé(e) = معکوس / برعکس. «tarte renversée» = تارت وارونه</span></span>
+          aux pommes
+          <span class="hw" onclick="t(this)">caramélisées<span class="pop">caramélisé = کاراملی‌شده — با کره و شکر پخته می‌شوند</span></span>.
+          Son histoire est
+          <span class="hw" onclick="t(this)">accidentelle<span class="pop">accidentel(le) = تصادفی — اشتباهاً کشف شد!</span></span>
+          : les sœurs Tatin, au XIXe siècle, ont oublié de mettre la pâte en premier.
+          <span class="hw" onclick="t(this)">Par inadvertance<span class="pop">par inadvertance = اشتباهاً / بدون توجه (ادبی)</span></span>,
+          elles ont créé un
+          <span class="hw" onclick="t(this)">chef-d'œuvre<span class="pop">chef-d'œuvre = شاهکار</span></span>.
+        </div>
+        <div class="dc-fa-text">
+          تارت تاتن یه تارت وارونهٔ سیب کاراملی است. تاریخش تصادفی است: خواهران تاتن در قرن نوزدهم فراموش کردند اول خمیر بذارند. ناخواسته یه شاهکار خلق کردند!
+        </div>
+      </div>
+      <span class="dc-tag" style="background:rgba(196,80,45,.12);color:#8a2040;">📖 histoire vraie</span>
+    </div>
+  </div>
+
+  <!-- میل‌فوی -->
+  <div class="dessert-card">
+    <div class="dc-image-placeholder">🍫</div>
+    <div class="dc-body">
+      <div class="dc-name">Le Mille-feuille</div>
+      <div class="dc-fa">میل‌فوی — هزار لایه</div>
+      <div class="dc-grid">
+        <div class="dc-fr">
+          Le
+          <span class="hw" onclick="t(this)">mille-feuille<span class="pop">mille-feuille = هزار لایه — mille = هزار / feuille = برگ</span></span>
+          est composé de trois couches de
+          <span class="hw" onclick="t(this)">pâte feuilletée<span class="pop">pâte feuilletée = خمیر هزارلایه — پف‌دار و ترد</span></span>
+          <span class="hw" onclick="t(this)">croustillante<span class="pop">croustillant(e) = ترد / خرخری — صدای قرچ می‌ده!</span></span>
+          et de deux couches de
+          <span class="hw" onclick="t(this)">crème pâtissière<span class="pop">crème pâtissière = کرم قنادی — اساس بسیاری از دسرها</span></span>
+          <span class="hw" onclick="t(this)">vanillée<span class="pop">vanillé(e) = وانیلی — با وانیل طبیعی</span></span>.
+          Le dessus est
+          <span class="hw" onclick="t(this)">glacé<span class="pop">glacé(e) = لعاب‌دار / یخ‌زده — اینجا: با فوندانت روکش شده</span></span>
+          au
+          <span class="hw" onclick="t(this)">fondant<span class="pop">fondant (m) = فوندانت — شکر آب‌شده برای تزئین</span></span>.
+        </div>
+        <div class="dc-fa-text">
+          میل‌فوی از سه لایه خمیر هزارلایهٔ ترد و دو لایه کرم قنادی وانیلی تشکیل می‌شود. روی آن با فوندانت لعاب می‌زنند.
+        </div>
+      </div>
+      <span class="dc-tag" style="background:rgba(46,123,181,.12);color:#1a5580;">🔧 technique avancée</span>
+    </div>
+  </div>
+
+  <!-- اکلر -->
+  <div class="dessert-card">
+    <div class="dc-image-placeholder">⚡</div>
+    <div class="dc-body">
+      <div class="dc-name">L'Éclair</div>
+      <div class="dc-fa">اکلر — برق (از سرعت خوردنش!)</div>
+      <div class="dc-grid">
+        <div class="dc-fr">
+          L'<span class="hw" onclick="t(this)">éclair<span class="pop">éclair = برق — چون «مثل برق» خورده می‌شود! (humor français)</span></span>
+          est une
+          <span class="hw" onclick="t(this)">pâtisserie allongée<span class="pop">allongé(e) = کشیده / دراز</span></span>
+          à base de
+          <span class="hw" onclick="t(this)">pâte à choux<span class="pop">pâte à choux = خمیر شو — پایهٔ اکلر، پروفیترول و گوگر</span></span>,
+          <span class="hw" onclick="t(this)">fourrée<span class="pop">fourré(e) de = پر شده از — از «fourrer» = پر کردن</span></span>
+          de crème
+          <span class="hw" onclick="t(this)">au chocolat ou au café<span class="pop">au chocolat / au café = شکلاتی / قهوه‌ای</span></span>
+          et
+          <span class="hw" onclick="t(this)">nappée<span class="pop">napper = روکش زدن با. «nappé de» = پوشیده‌شده با</span></span>
+          de
+          <span class="hw" onclick="t(this)">fondant<span class="pop">fondant = لعاب شکری</span></span>
+          <span class="hw" onclick="t(this)">lustré<span class="pop">lustré(e) = براق / برق‌انداخته‌شده</span></span>.
+        </div>
+        <div class="dc-fa-text">
+          اکلر یه شیرینی کشیده بر پایهٔ خمیر شو است که با کرم شکلاتی یا قهوه پر شده و با لعاب براق روکش می‌شود. اسمش به معنی «برق» است — چون آنقدر خوشمزه است که مثل برق خورده می‌شود!
+        </div>
+      </div>
+      <span class="dc-tag" style="background:rgba(176,122,74,.15);color:#6b4010;">⚡ célèbre dans 30 pays</span>
+    </div>
+  </div>
+
+  <!-- کشورهایی که عاشق دسر فرانسوی‌اند -->
+  <div class="sec-title">🌍 دسرهای فرانسوی در دنیا</div>
+  <div class="countries">
+    <div class="country">
+      <div class="country-flag">🇧🇪</div>
+      <div class="country-name">بلژیک</div>
+      <div class="country-desc">فرهنگ و زبان مشترک — شکلات بلژیکی + تکنیک فرانسوی = ترکیب بی‌نظیر</div>
+    </div>
+    <div class="country">
+      <div class="country-flag">🇨🇭</div>
+      <div class="country-name">سوئیس</div>
+      <div class="country-desc">بخش فرانسوی‌زبان (Romandie) — پاتیسری‌های سوئیسی معادل پاریسی هستند</div>
+    </div>
+    <div class="country">
+      <div class="country-flag">🇨🇦</div>
+      <div class="country-name">کانادا — کبک</div>
+      <div class="country-desc">Montreal و Quebec — پاتیسری‌های فرانسوی در هر محله. فرهنگ قنادی زنده است.</div>
+    </div>
+    <div class="country">
+      <div class="country-flag">🇯🇵</div>
+      <div class="country-name">ژاپن</div>
+      <div class="country-desc">علاقهٔ عمیق به قنادی فرانسوی. بسیاری تلفظ فرانسوی را یاد می‌گیرند. Ladurée Tokyo!</div>
+    </div>
+    <div class="country">
+      <div class="country-flag">🇰🇷</div>
+      <div class="country-name">کره‌ی جنوبی</div>
+      <div class="country-desc">نام فرانسوی = نشانهٔ لوکس بودن. کافه‌های مدرن کره از اصطلاحات فرانسوی استفاده می‌کنند.</div>
+    </div>
+    <div class="country">
+      <div class="country-flag">🇨🇳</div>
+      <div class="country-name">چین</div>
+      <div class="country-desc">در شانگهای و پکن، قنادی‌های فرانسوی = نماد کیفیت و ظرافت. بازار در حال رشد.</div>
+    </div>
+  </div>
+
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
