@@ -1922,7 +1922,28 @@
 
         // ── بخش شاگردان خصوصی (با رمز) ──
         let priveUnlocked = false;
-, 100);
+
+        function renderPrive() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("prive") || { icon: "🔒", label: "شاگردان خصوصی", color: "#7a5ba8" };
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + (ci.color||"#7a5ba8") + '">' + ci.icon + '</span> ' + ci.label;
+            const grid = document.getElementById("grid");
+            if (!priveUnlocked) {
+                grid.innerHTML = `
+                  <div style="background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 24px;text-align:center;">
+                    <div style="font-size:40px;margin-bottom:14px;">🔒</div>
+                    <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">دسترسی محدود</div>
+                    <div style="font-size:13.5px;color:var(--gray);margin-bottom:18px;">برای دانش‌آموزان خصوصی هدی</div>
+                    <input id="priveInput" type="password" placeholder="رمز ورود"
+                      style="font-family:'Roboto',serif;font-size:18px;letter-spacing:6px;text-align:center;border:2px solid var(--line);border-radius:10px;padding:12px 18px;width:180px;outline:none;display:block;margin:0 auto 12px;"
+                      onkeydown="if(event.key==='Enter')checkPrive()">
+                    <button onclick="checkPrive()"
+                      style="font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;background:#7a5ba8;color:#fff;border:none;border-radius:20px;padding:11px 28px;cursor:pointer;">
+                      ورود
+                    </button>
+                    <div id="priveError" style="color:#c4502d;font-size:13px;margin-top:10px;min-height:18px;"></div>
+                  </div>`;
                 return;
             }
             renderPriveContent();
