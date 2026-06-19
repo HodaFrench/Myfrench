@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واژگان: روتین روزانه — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#5a8f4a;--accent-d:#3a6a2e;--paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(90,143,74,.04) 31px,rgba(90,143,74,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:860px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .header{background:linear-gradient(135deg,var(--accent),var(--accent-d));color:#fff;
+    padding:28px;border-radius:18px;margin-bottom:20px;box-shadow:0 12px 30px rgba(90,143,74,.25);}
+  .header h1{font-size:22px;font-weight:700;margin-bottom:5px;}
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;position:sticky;top:0;
+    background:var(--paper);padding:11px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;background:var(--white);
+    color:var(--ink);border:1.5px solid var(--line);border-radius:20px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .section{display:none;animation:fi .3s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  /* واژه‌ها */
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;}
+  @media(max-width:560px){.vocab-grid{grid-template-columns:1fr;}}
+  .vocab-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+  .vc-fr{font-family:'Roboto',serif;font-size:16px;font-weight:700;color:var(--navy);direction:ltr;text-align:left;margin-bottom:4px;}
+  .vc-fa{font-size:13.5px;color:var(--accent-d);font-weight:600;margin-bottom:6px;}
+  .vc-ex{font-family:'Roboto',serif;font-size:14px;color:var(--gray);direction:ltr;text-align:left;line-height:1.6;margin-bottom:3px;}
+  .vc-ex-fa{font-size:12px;color:var(--gray);}
+  .section-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:12px;
+    padding:10px 0;border-bottom:2px solid var(--warm);display:flex;align-items:center;gap:8px;}
+  /* جملات روتین */
+  .routine-block{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+  .rb-time{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;}
+  .rb-fr{font-family:'Roboto',serif;font-size:15.5px;color:var(--ink);direction:ltr;text-align:left;line-height:1.8;margin-bottom:6px;}
+  .rb-fa{font-size:13px;color:var(--gray);}
+  .tip{background:rgba(90,143,74,.08);border-right:4px solid var(--accent);border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:2;margin-bottom:14px;}
+  .tip b{color:var(--accent-d);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=vocab">← واژگان</a>
+  </div>
+  <div class="header">
+    <h1>🌅 واژگان: La Routine Quotidienne</h1>
+    <div style="font-size:13.5px;opacity:.9;">روتین روزانه — واژگان + جملات + ساختارها. سطح A2</div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="s('matin')">🌅 صبح</button>
+    <button class="tab" onclick="s('journee')">☀️ روز</button>
+    <button class="tab" onclick="s('soir')">🌙 شب</button>
+    <button class="tab" onclick="s('verbes')">🔧 فعل‌های کلیدی</button>
+    <button class="tab" onclick="s('dialogue')">💬 مکالمه</button>
+  </div>
+
+  <!-- صبح -->
+  <div class="section active" id="sec-matin">
+    <div class="section-title">🌅 Le matin — صبح</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-fr">se réveiller</div><div class="vc-fa">بیدار شدن</div>
+        <div class="vc-ex">Je me réveille à 7h.</div><div class="vc-ex-fa">ساعت ۷ بیدار می‌شوم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se lever</div><div class="vc-fa">از خواب برخاستن</div>
+        <div class="vc-ex">Elle se lève tôt le matin.</div><div class="vc-ex-fa">صبح زود بلند می‌شود.</div></div>
+      <div class="vocab-card"><div class="vc-fr">s'étirer</div><div class="vc-fa">کش‌وقوس دادن</div>
+        <div class="vc-ex">Il s'étire avant de se lever.</div><div class="vc-ex-fa">قبل از بلند شدن کش‌وقوس می‌دهد.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se doucher</div><div class="vc-fa">دوش گرفتن</div>
+        <div class="vc-ex">Je me douche le matin.</div><div class="vc-ex-fa">صبح دوش می‌گیرم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se laver</div><div class="vc-fa">شستشو کردن</div>
+        <div class="vc-ex">Il se lave les mains.</div><div class="vc-ex-fa">دستش را می‌شوید.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se brosser les dents</div><div class="vc-fa">مسواک زدن</div>
+        <div class="vc-ex">Je me brosse les dents après le repas.</div><div class="vc-ex-fa">بعد از غذا مسواک می‌زنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se coiffer</div><div class="vc-fa">موها را شانه کردن</div>
+        <div class="vc-ex">Elle se coiffe devant le miroir.</div><div class="vc-ex-fa">جلوی آینه موهایش را شانه می‌کند.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se maquiller</div><div class="vc-fa">آرایش کردن</div>
+        <div class="vc-ex">Elle se maquille rapidement.</div><div class="vc-ex-fa">سریع آرایش می‌کند.</div></div>
+      <div class="vocab-card"><div class="vc-fr">s'habiller</div><div class="vc-fa">لباس پوشیدن</div>
+        <div class="vc-ex">Je m'habille pour le travail.</div><div class="vc-ex-fa">برای سر کار لباس می‌پوشم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">prendre le petit-déjeuner</div><div class="vc-fa">صبحانه خوردن</div>
+        <div class="vc-ex">On prend le petit-déjeuner à 8h.</div><div class="vc-ex-fa">ساعت ۸ صبحانه می‌خوریم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">partir au travail</div><div class="vc-fa">رفتن سر کار</div>
+        <div class="vc-ex">Je pars au travail à 8h30.</div><div class="vc-ex-fa">ساعت ۸:۳۰ سر کار می‌روم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">prendre les transports</div><div class="vc-fa">وسیلهٔ نقلیه گرفتن</div>
+        <div class="vc-ex">Je prends le métro.</div><div class="vc-ex-fa">مترو می‌گیرم.</div></div>
+    </div>
+    <div class="tip"><b>نکته:</b> فعل‌های روتین صبح همه <b>انعکاسی (verbes pronominaux)</b> هستند: se lever، se doucher، s'habiller... ← با ضمیر «se» می‌آیند.</div>
+  </div>
+
+  <!-- روز -->
+  <div class="section" id="sec-journee">
+    <div class="section-title">☀️ La journée — در طول روز</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-fr">travailler</div><div class="vc-fa">کار کردن</div>
+        <div class="vc-ex">Je travaille de 9h à 17h.</div><div class="vc-ex-fa">از ۹ تا ۱۷ کار می‌کنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">déjeuner</div><div class="vc-fa">ناهار خوردن</div>
+        <div class="vc-ex">On déjeune à midi.</div><div class="vc-ex-fa">ظهر ناهار می‌خوریم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">faire une pause</div><div class="vc-fa">استراحت کوتاه کردن</div>
+        <div class="vc-ex">Je fais une pause à 10h.</div><div class="vc-ex-fa">ساعت ۱۰ یه استراحت کوتاه می‌کنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">aller chercher les enfants</div><div class="vc-fa">دنبال بچه‌ها رفتن</div>
+        <div class="vc-ex">Elle va chercher les enfants à l'école.</div><div class="vc-ex-fa">دنبال بچه‌ها از مدرسه می‌رود.</div></div>
+      <div class="vocab-card"><div class="vc-fr">faire les courses</div><div class="vc-fa">خرید کردن (مواد غذایی)</div>
+        <div class="vc-ex">Je fais les courses le jeudi.</div><div class="vc-ex-fa">پنج‌شنبه‌ها خرید می‌کنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">faire du sport</div><div class="vc-fa">ورزش کردن</div>
+        <div class="vc-ex">Il fait du sport après le travail.</div><div class="vc-ex-fa">بعد از کار ورزش می‌کند.</div></div>
+      <div class="vocab-card"><div class="vc-fr">rentrer à la maison</div><div class="vc-fa">به خانه برگشتن</div>
+        <div class="vc-ex">Je rentre à 18h.</div><div class="vc-ex-fa">ساعت ۱۸ برمی‌گردم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">préparer le repas</div><div class="vc-fa">غذا درست کردن</div>
+        <div class="vc-ex">Il prépare le dîner.</div><div class="vc-ex-fa">شام درست می‌کند.</div></div>
+    </div>
+  </div>
+
+  <!-- شب -->
+  <div class="section" id="sec-soir">
+    <div class="section-title">🌙 Le soir — شب</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-fr">dîner</div><div class="vc-fa">شام خوردن</div>
+        <div class="vc-ex">On dîne en famille à 20h.</div><div class="vc-ex-fa">ساعت ۲۰ با خانواده شام می‌خوریم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">regarder la télévision</div><div class="vc-fa">تلویزیون تماشا کردن</div>
+        <div class="vc-ex">Je regarde les nouvelles le soir.</div><div class="vc-ex-fa">شب اخبار تماشا می‌کنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">lire</div><div class="vc-fa">کتاب/روزنامه خواندن</div>
+        <div class="vc-ex">Elle lit avant de dormir.</div><div class="vc-ex-fa">قبل از خواب می‌خواند.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se relaxer / se détendre</div><div class="vc-fa">استراحت کردن / آرام گرفتن</div>
+        <div class="vc-ex">Je me détends après le travail.</div><div class="vc-ex-fa">بعد از کار استراحت می‌کنم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se préparer pour la nuit</div><div class="vc-fa">آماده شدن برای خواب</div>
+        <div class="vc-ex">Je me prépare pour la nuit.</div><div class="vc-ex-fa">برای خواب آماده می‌شوم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">se coucher</div><div class="vc-fa">خوابیدن / رفتن به رختخواب</div>
+        <div class="vc-ex">Je me couche à 23h.</div><div class="vc-ex-fa">ساعت ۲۳ می‌خوابم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">s'endormir</div><div class="vc-fa">به خواب رفتن</div>
+        <div class="vc-ex">Je m'endors rapidement.</div><div class="vc-ex-fa">سریع به خواب می‌روم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">dormir</div><div class="vc-fa">خوابیدن (دوام)</div>
+        <div class="vc-ex">Je dors environ 8 heures.</div><div class="vc-ex-fa">حدوداً ۸ ساعت می‌خوابم.</div></div>
+    </div>
+  </div>
+
+  <!-- فعل‌ها -->
+  <div class="section" id="sec-verbes">
+    <div class="section-title">🔧 فعل‌های کلیدی روتین</div>
+    <div class="tip"><b>ساختار مهم:</b> «avoir + l'habitude de + مصدر» = عادت داشتن به<br>
+    J'ai l'habitude de me lever tôt. → عادت دارم زود بیدار شوم.</div>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="vc-fr">avoir l'habitude de</div><div class="vc-fa">عادت داشتن به</div>
+        <div class="vc-ex">J'ai l'habitude de boire du café.</div><div class="vc-ex-fa">عادت دارم قهوه بخورم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">être en train de</div><div class="vc-fa">داشتن ... می‌کردن</div>
+        <div class="vc-ex">Je suis en train de manger.</div><div class="vc-ex-fa">دارم می‌خورم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">être en retard</div><div class="vc-fa">دیر کردن</div>
+        <div class="vc-ex">Je suis en retard ce matin.</div><div class="vc-ex-fa">این صبح دیر کرده‌ام.</div></div>
+      <div class="vocab-card"><div class="vc-fr">être à l'heure</div><div class="vc-fa">سر وقت بودن</div>
+        <div class="vc-ex">Je suis toujours à l'heure.</div><div class="vc-ex-fa">همیشه سر وقتم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">ne pas avoir le temps</div><div class="vc-fa">وقت نداشتن</div>
+        <div class="vc-ex">Je n'ai pas le temps de déjeuner.</div><div class="vc-ex-fa">وقت ناهار خوردن ندارم.</div></div>
+      <div class="vocab-card"><div class="vc-fr">avoir besoin de</div><div class="vc-fa">نیاز داشتن به</div>
+        <div class="vc-ex">J'ai besoin de café le matin.</div><div class="vc-ex-fa">صبح به قهوه نیاز دارم.</div></div>
+    </div>
+  </div>
+
+  <!-- مکالمه -->
+  <div class="section" id="sec-dialogue">
+    <div class="section-title">💬 مکالمهٔ نمونه</div>
+    <div class="routine-block">
+      <div class="rb-time">📱 مکالمه — دو دوست درباره‌ی روتین صبح</div>
+      <div class="rb-fr">— <b>À quelle heure tu te lèves le matin ?</b></div>
+      <div class="rb-fa">— صبح چه ساعتی بیدار می‌شوی؟</div>
+      <div class="rb-fr">— <b>Je me lève à sept heures. D'abord, je me douche, ensuite je prends le petit-déjeuner.</b></div>
+      <div class="rb-fa">— ساعت ۷ بیدار می‌شوم. اول دوش می‌گیرم، بعد صبحانه می‌خورم.</div>
+      <div class="rb-fr">— <b>Et tu pars au travail à quelle heure ?</b></div>
+      <div class="rb-fa">— سر کار چه ساعتی می‌روی؟</div>
+      <div class="rb-fr">— <b>Je pars vers huit heures et demie. Je prends le métro.</b></div>
+      <div class="rb-fa">— حدود ۸:۳۰ می‌روم. مترو می‌گیرم.</div>
+      <div class="rb-fr">— <b>Tu manges souvent à la cantine ?</b></div>
+      <div class="rb-fa">— اغلب توی کافه‌تریا می‌خوری؟</div>
+      <div class="rb-fr">— <b>Oui, je déjeune avec mes collègues. Le soir, je rentre vers dix-neuf heures.</b></div>
+      <div class="rb-fa">— آره، با همکارانم ناهار می‌خورم. شب حدود ۱۹ برمی‌گردم.</div>
+    </div>
+    <div class="routine-block">
+      <div class="rb-time">✍️ متن توصیفی — Ma routine quotidienne</div>
+      <div class="rb-fr">Tous les jours, je me réveille à sept heures. Je me lève, je me douche et je m'habille. Ensuite, je prends mon petit-déjeuner : du café et des tartines. Je pars au travail à huit heures et demie en prenant le bus. Je travaille de neuf heures à dix-sept heures trente. Le midi, je mange à la cafétéria. Le soir, je rentre chez moi, je prépare le dîner et je me détends devant la télévision. Je me couche vers vingt-trois heures.</div>
+      <div class="rb-fa" style="margin-top:10px;">هر روز ساعت ۷ بیدار می‌شوم. بلند می‌شوم، دوش می‌گیرم و لباس می‌پوشم. بعد صبحانه می‌خورم: قهوه و نان. با اتوبوس سر کار می‌روم. از ۹ تا ۱۷:۳۰ کار می‌کنم. ظهر در کافه‌تریا می‌خورم. شب به خانه برمی‌گردم، شام درست می‌کنم و جلوی تلویزیون استراحت می‌کنم. حدود ۲۳ می‌خوابم.</div>
+    </div>
+  </div>
+
+</div>
+<script>
+function s(id){
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

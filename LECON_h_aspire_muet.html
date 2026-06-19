@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H aspiré یا H muet؟ — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
+    --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b; --terracotta:#c4502d; --accent:#c4502d;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
+    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
+    color:var(--ink); line-height:1.95; padding:20px 16px 70px;}
+  .wrap{max-width:820px; margin:0 auto;}
+  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
+  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
+    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
+  .topbar a:hover{background:var(--accent); color:#fff;}
+  .lc-header{background:linear-gradient(135deg, var(--accent), #c4502dcc); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #c4502d40; position:relative; overflow:hidden;}
+  .lc-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .lc-header .lc-emoji{font-size:34px; margin-bottom:8px;}
+  .lc-header h1{font-size:26px; font-weight:700; margin-bottom:5px;}
+  .lc-header .lc-fr{font-family:'Roboto',serif; font-size:15px; opacity:.9; direction:ltr; text-align:left;}
+  .lc-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:12px;
+    padding:16px 20px; margin-bottom:20px; font-size:14.5px; line-height:2.1;}
+  .lc-intro b{color:var(--accent);}
+  /* فهرست تب‌ها */
+  .lc-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; position:sticky; top:0;
+    background:var(--paper); padding:12px 0; z-index:10; border-bottom:2px solid var(--line);}
+  .lc-tab{font-family:'Estedad',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
+    color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 16px; cursor:pointer; transition:all .2s;}
+  .lc-tab:hover{border-color:var(--accent);}
+  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #c4502d40;}
+  /* بخش */
+  .lc-section{animation:fadeIn .35s ease;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .lc-sec-title{font-size:21px; font-weight:700; margin-bottom:18px; padding-bottom:12px; border-bottom:2px solid var(--paper-warm);}
+  .lc-p{font-size:14.5px; line-height:2.1; color:var(--ink); margin-bottom:18px;}
+  .lc-card{background:var(--white); border:1px solid var(--line); border-right:4px solid var(--accent);
+    border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 4px 14px rgba(31,58,95,.04);}
+  .lc-word{font-family:'Roboto',serif; font-size:20px; font-weight:700; color:var(--navy); direction:ltr; text-align:left; margin-bottom:6px;}
+  .lc-tr{font-family:'Estedad',sans-serif; font-size:14px; font-weight:500; color:var(--accent); margin-right:8px;}
+  .lc-desc{font-size:13px; color:var(--gray); line-height:1.9; margin-bottom:12px;}
+  .lc-ex{font-family:'Roboto',serif; font-size:16px; color:var(--ink); direction:ltr; text-align:left;
+    background:var(--cream); padding:10px 14px; border-radius:9px; line-height:1.7;}
+  .lc-ex b{color:var(--accent); font-weight:700;}
+  .lc-ex-fa{font-size:13px; color:var(--gray); margin-top:6px; padding-right:4px;}
+  .lc-tip{background:linear-gradient(135deg, #c4502d14, #c4502d08); border-right:4px solid var(--accent);
+    border-radius:10px; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:2;}
+  .lc-tip b{color:var(--accent);}
+  /* جدول */
+  .lc-table{background:var(--white); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:16px 0;}
+  .lc-tr-row{display:flex; border-bottom:1px solid var(--line);}
+  .lc-tr-row:last-child{border-bottom:none;}
+  .lc-tr-row span{flex:1; padding:12px 16px; font-size:13.5px;}
+  .lc-tr-row span:first-child{border-left:1px solid var(--line); color:var(--ink);}
+  .lc-tr-row span:last-child{font-family:'Roboto',serif; color:var(--accent); font-weight:600; direction:ltr; text-align:left;}
+  .lc-head{background:var(--paper-warm);}
+  .lc-head span{font-weight:700; color:var(--navy) !important;}
+  /* آزمون */
+  .lc-quiz-intro{font-size:14px; color:var(--ink); margin:18px 0 14px; font-weight:600;}
+  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #c4502d08); border-radius:14px; padding:18px 20px; margin-top:8px;}
+  .lcq-q{margin-bottom:18px;}
+  .lcq-q:last-child{margin-bottom:0;}
+  .lcq-text{font-family:'Roboto',serif; font-size:16px; color:var(--navy); font-weight:500; direction:ltr; text-align:left; margin-bottom:10px;}
+  .lcq-opts{display:flex; flex-wrap:wrap; gap:8px;}
+  .lcq-opt{font-family:'Roboto',serif; font-size:15px; background:var(--white); border:1.5px solid var(--line);
+    border-radius:9px; padding:8px 16px; cursor:pointer; transition:all .2s; color:var(--ink);}
+  .lcq-opt:hover:not(:disabled){border-color:var(--green); background:rgba(46,139,107,0.05);}
+  .lcq-opt.correct{background:var(--green); color:#fff; border-color:var(--green);}
+  .lcq-opt.wrong{background:var(--terracotta); color:#fff; border-color:var(--terracotta);}
+  .lcq-opt:disabled{cursor:default;}
+  .lcq-fb{font-size:12.5px; color:var(--ink); line-height:1.9; margin-top:10px; max-height:0; overflow:hidden; transition:max-height .3s, padding .3s; padding:0;}
+  .lcq-fb.show{max-height:200px; padding:10px 14px; background:var(--white); border-radius:8px;}
+  .lc-footer{text-align:center; margin-top:30px; color:var(--gray); font-size:12.5px;}
+  .lc-footer b{color:var(--accent);}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="index.html">⌂ Français avec Hoda</a>
+      <a href="index.html#cat=grammar">→ همه‌ی درسنامه‌ها</a>
+    </div>
+    <div class="lc-header">
+      <div class="lc-emoji">🔇</div>
+      <h1>H aspiré یا H muet؟</h1>
+      <div class="lc-fr" dir="ltr">Le H aspiré et le H muet</div>
+    </div>
+    <div class="lc-intro">در فرانسه حرف H هیچ‌وقت تلفظ نمی‌شود — ولی دو نوع H وجود دارد که کاملاً رفتار متفاوتی دارند: <b>H muet</b> (ساکت) که elision و liaison می‌پذیرد، و <b>H aspiré</b> (دمیده) که elision و liaison نمی‌پذیرد. این تفاوت باعث می‌شود بگوییم «l'homme» ولی «le hibou».</div>
+    <div class="lc-tabs"><button class="lc-tab active" onclick="showSection(0)">🔇 H muet — الیزیون و لیزون می‌پذیرد</button><button class="lc-tab" onclick="showSection(1)">💨 H aspiré — بدون الیزیون و لیزون</button><button class="lc-tab" onclick="showSection(2)">🔑 چطور بفهمیم کدام است؟</button></div>
+    
+        <div class="lc-section" id="lc-sec-0" style="display:block">
+          <h2 class="lc-sec-title" style="color:#c4502d">🔇 H muet — الیزیون و لیزون می‌پذیرد</h2>
+          
+<p class="lc-p">بعد از <b>H muet</b>، article یا کلمهٔ قبلی با صدای اتصال می‌آید — انگار H اصلاً وجود ندارد:</p>
+
+<div class="lc-card">
+  <div class="lc-word">Élision — le/la → l'</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>homme (نه «le homme») → مرد</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>heure (نه «la heure») → ساعت</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>hôpital → بیمارستان</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>herbe → علف</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>histoire → داستان/تاریخ</div>
+  <div class="lc-ex" dir="ltr"><b>l'</b>hiver → زمستان</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">Liaison — les/des → صدای Z اتصال</div>
+  <div class="lc-ex" dir="ltr">les hom<b>mes</b> → [ley‌ZOM] — مردان</div>
+  <div class="lc-ex" dir="ltr">des heu<b>res</b> → [day‌ZUR] — ساعت‌ها</div>
+  <div class="lc-ex" dir="ltr">deux hom<b>mes</b> → [deu‌ZOM] — دو مرد</div>
+</div>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>کلمه</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'homme</span><span>مرد</span><span dir="ltr">C'est l'homme parfait.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'heure</span><span>ساعت</span><span dir="ltr">À l'heure pile.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'hôtel</span><span>هتل</span><span dir="ltr">Je suis à l'hôtel.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'herbe</span><span>علف/گیاه</span><span dir="ltr">L'herbe est verte.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'histoire</span><span>تاریخ/داستان</span><span dir="ltr">J'aime l'histoire.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'hiver</span><span>زمستان</span><span dir="ltr">En hiver, il neige.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'huile</span><span>روغن</span><span dir="ltr">L'huile d'olive.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'habitude</span><span>عادت</span><span dir="ltr">Comme d'habitude.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'honnêteté</span><span>صداقت</span><span dir="ltr">L'honnêteté est rare.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">l'horizon</span><span>افق</span><span dir="ltr">À l'horizon.</span></div>
+</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-1" style="display:none">
+          <h2 class="lc-sec-title" style="color:#c4502d">💨 H aspiré — بدون الیزیون و لیزون</h2>
+          
+<p class="lc-p">بعد از <b>H aspiré</b>، article کامل می‌ماند — هیچ الیزیون یا لیزونی نیست:</p>
+
+<div class="lc-card">
+  <div class="lc-word">Le / La کامل می‌ماند (نه l')</div>
+  <div class="lc-ex" dir="ltr"><b>le</b> hibou (نه «l'hibou») → جغد</div>
+  <div class="lc-ex" dir="ltr"><b>le</b> haricot (نه «l'haricot») → لوبیا</div>
+  <div class="lc-ex" dir="ltr"><b>la</b> honte (نه «l'honte») → شرم</div>
+  <div class="lc-ex" dir="ltr"><b>la</b> hauteur (نه «l'hauteur») → ارتفاع</div>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">Liaison هم نیست!</div>
+  <div class="lc-ex" dir="ltr">les haricots → [ley a‌ri‌ko] — لوبیاها (بدون Z)</div>
+  <div class="lc-ex" dir="ltr">les hiboux → [ley i‌bu] — جغدها (بدون Z)</div>
+</div>
+
+<div class="lc-table">
+  <div class="lc-tr-row lc-head"><span>کلمه</span><span>معنی</span><span>مثال</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le hibou</span><span>جغد</span><span dir="ltr">Le hibou chasse la nuit.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le haricot</span><span>لوبیا</span><span dir="ltr">Les haricots verts.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">la honte</span><span>شرم</span><span dir="ltr">Quelle honte !</span></div>
+  <div class="lc-tr-row"><span dir="ltr">la hauteur</span><span>ارتفاع</span><span dir="ltr">La hauteur du mur.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le hasard</span><span>شانس/تصادف</span><span dir="ltr">Par hasard.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le héros</span><span>قهرمان</span><span dir="ltr">Le héros du film.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">la haine</span><span>نفرت</span><span dir="ltr">La haine détruit.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le hockey</span><span>هاکی</span><span dir="ltr">Le hockey sur glace.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">la halte</span><span>توقف</span><span dir="ltr">Faire une halte.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le homard</span><span>خرچنگ دریایی</span><span dir="ltr">Le homard est cher.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">le hamster</span><span>همستر</span><span dir="ltr">Mon hamster s'appelle Max.</span></div>
+  <div class="lc-tr-row"><span dir="ltr">la hiérarchie</span><span>سلسله‌مراتب</span><span dir="ltr">Respecter la hiérarchie.</span></div>
+</div>
+
+          
+        </div>
+        <div class="lc-section" id="lc-sec-2" style="display:none">
+          <h2 class="lc-sec-title" style="color:#c4502d">🔑 چطور بفهمیم کدام است؟</h2>
+          
+<p class="lc-p">هیچ قانون آوایی وجود ندارد — باید حفظ کرد. ولی چند ترفند کمک می‌کند:</p>
+
+<div class="lc-card">
+  <div class="lc-word">✅ ترفند ۱: دیکشنری</div>
+  <p class="lc-desc">در دیکشنری‌های فرانسوی، H aspiré معمولاً با علامت ‹†› یا ‹*› مشخص می‌شود.</p>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">✅ ترفند ۲: ریشهٔ لاتین/یونانی vs ژرمانیک</div>
+  <p class="lc-desc">کلمات با ریشهٔ <b>لاتین/یونانی</b> → معمولاً H muet: <em>homme, heure, hôpital</em><br>
+  کلمات با ریشهٔ <b>ژرمانیک/فرانکی</b> → معمولاً H aspiré: <em>hibou, haricot, honte</em></p>
+</div>
+
+<div class="lc-card">
+  <div class="lc-word">✅ ترفند ۳: این کلمات پرتکرار را حفظ کن</div>
+  <div class="lc-ex" dir="ltr"><b>H muet:</b> homme, heure, hôpital, hôtel, herbe, histoire, hiver, huile, habitude, honneur, honnête, humain, humour, horizon</div>
+  <div class="lc-ex" dir="ltr"><b>H aspiré:</b> hibou, haricot, honte, hasard, hauteur, héros, haine, hockey, hamburger, hamster, homard</div>
+</div>
+
+          <div class="lc-quiz">
+                <div class="lcq-q" id="lcq-2-0">
+                  <div class="lcq-text" dir="ltr">Je vais à ___ hôpital.</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,0,0,1)">le</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,0,1,1)">l'</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-0" data-note="hôpital از ریشهٔ لاتین → H muet → l'hôpital"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-1">
+                  <div class="lcq-text" dir="ltr">C'est ___ hibou.</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,1,0,1)">l'</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,1,1,1)">le</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-1" data-note="hibou ریشهٔ ژرمانیک → H aspiré → le hibou"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-2">
+                  <div class="lcq-text" dir="ltr">___ haricots sont verts.</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,2,0,1)">Les [ley‌Z]</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,2,1,1)">Les [ley]</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-2" data-note="haricot: H aspiré → بدون liaison → [ley] a‌ri‌ko"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-3">
+                  <div class="lcq-text" dir="ltr">___ hommes travaillent.</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,3,0,0)">Les [ley‌Z]</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,3,1,0)">Les [ley]</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-3" data-note="homme: H muet → با liaison → [ley‌ZOM]"></div>
+                </div>
+                <div class="lcq-q" id="lcq-2-4">
+                  <div class="lcq-text" dir="ltr">C'est ___ honte!</div>
+                  <div class="lcq-opts"><button class="lcq-opt" dir="ltr" onclick="answerLc(2,4,0,1)">l'</button><button class="lcq-opt" dir="ltr" onclick="answerLc(2,4,1,1)">la</button></div>
+                  <div class="lcq-fb" id="lcqfb-2-4" data-note="honte: H aspiré → la honte (نه l'honte)"></div>
+                </div></div>
+        </div>
+    <div class="lc-footer">✦ روی هر تیتر بالا بزن تا مستقیم همان بخش را ببینی.<br><b>Français avec Hoda</b></div>
+  </div>
+  <script>
+    function showSection(i) {
+      document.querySelectorAll('.lc-section').forEach((s, idx) => {
+        s.style.display = (idx === i) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.lc-tab').forEach((t, idx) => {
+        t.classList.toggle('active', idx === i);
+      });
+      window.scrollTo(0, 0);
+    }
+    function answerLc(si, qi, chosen, correct) {
+      const q = document.getElementById('lcq-' + si + '-' + qi);
+      const fb = document.getElementById('lcqfb-' + si + '-' + qi);
+      const btns = q.querySelectorAll('.lcq-opt');
+      btns.forEach((b, i) => {
+        b.classList.remove('correct','wrong');
+        if (i === correct) b.classList.add('correct');
+        else if (i === chosen) b.classList.add('wrong');
+        b.disabled = true;
+      });
+      fb.innerHTML = (chosen === correct ? '✅ آفرین! ' : '❌ درست: ') + (fb.getAttribute('data-note') || '');
+      fb.classList.add('show');
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>

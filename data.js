@@ -83,6 +83,55 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_mind_maps_temps.html",
+    title: "Mind Maps — زمان‌های فرانسه",
+    titleFr: "Mind Maps des temps français",
+    category: "grammar", level: "A1–B2",
+    tags: ["درسنامه","زمان","mind map","présent","passé","futur"],
+    summary: "۶ زمان اصلی فرانسه در یک نگاه: Présent / Passé composé / Imparfait / Futur / Conditionnel / Subjonctif — هر کدام با فرمول، سیگنال‌ها، مثال و جدول مقایسه.",
+  },
+  {
+    file: "LECON_h_aspire_muet.html",
+    title: "درسنامه: H aspiré یا H muet؟",
+    titleFr: "Le H aspiré et le H muet",
+    category: "grammar", level: "A2–B2",
+    tags: ["درسنامه","h aspiré","h muet","élision","liaison"],
+    summary: "تفاوت H muet (l'homme → الیزیون) و H aspiré (le hibou → بدون الیزیون) + جدول ۲۵ کلمه + ترفندهای حفظ + آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_aimer_adorer.html",
+    title: "درسنامه: aimer, adorer, détester",
+    titleFr: "Aimer, adorer, détester + infinitif ou nom",
+    category: "grammar", level: "A1–B1",
+    tags: ["درسنامه","aimer","adorer","détester","préférer"],
+    summary: "ساختار دقیق این افعال احساسی: + le/la/les یا + مصدر (بدون حرف اضافه)، درجه‌بندی شدت، préférer A à B، préférer que + subjonctif. آزمون ۵ سؤالی.",
+  },
+  {
+    file: "LECON_verbes_prepositions.html",
+    title: "درسنامه: فعل‌ها + à یا de",
+    titleFr: "Verbes avec les prépositions à et de",
+    category: "grammar", level: "A2–B2",
+    tags: ["درسنامه","verbes","prépositions","à","de"],
+    summary: "۳۰+ فعل با à یا de — دسته‌بندی مفهومی، مثال کامل برای هر کدام، فعل + اسم (parler à vs parler de)، jouer à vs jouer de. آزمون ۸ سؤالی.",
+  },
+  {
+    file: "VOCAB_routine.html",
+    title: "واژگان: روتین روزانه",
+    titleFr: "La Routine Quotidienne",
+    category: "vocab", level: "A2",
+    tags: ["واژگان","روتین","se lever","quotidien"],
+    summary: "۵۰+ واژهٔ روتین روزانه: صبح (انعکاسی‌ها) + روز + شب + فعل‌های کلیدی (avoir l'habitude de...) + مکالمهٔ نمونه + متن توصیفی کامل.",
+  },
+  {
+    file: "PAGE_examens_tcf.html",
+    title: "راهنمای کامل امتحانات TCF / TEF / DELF",
+    titleFr: "Guide des examens de français",
+    category: "tcf", level: "tous niveaux",
+    tags: ["TCF","TEF","DELF","DALF","امتحان","مهاجرت کانادا"],
+    summary: "مقایسهٔ TCF vs TEF vs DELF · ساختار TCF Canada (۴ مهارت) · سطوح A1-C2 · نمره‌دهی · استراتژی روز امتحان · منابع رایگان",
+  },
+
+  {
     file: "LECON_conditionnel.html",
     title: "درسنامه: Conditionnel Présent",
     titleFr: "Le conditionnel présent",

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind Maps — زمان‌های فرانسه · Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#2e7bb5;--paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+    --c1:#c4502d;--c2:#2e7bb5;--c3:#2e8b6b;--c4:#7a5ba8;--c5:#b07a4a;--c6:#b0506f;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,123,181,.04) 31px,rgba(46,123,181,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:900px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .header{background:linear-gradient(135deg,var(--navy),#2a4f7a);color:#fff;
+    padding:28px;border-radius:18px;margin-bottom:20px;
+    box-shadow:0 12px 30px rgba(31,58,95,.25);}
+  .header h1{font-size:23px;font-weight:700;margin-bottom:5px;}
+  .header .sub{font-size:13.5px;opacity:.9;}
+  /* تب‌ها */
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;position:sticky;top:0;
+    background:var(--paper);padding:12px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;background:var(--white);
+    color:var(--ink);border:1.5px solid var(--line);border-radius:20px;
+    padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .section{display:none;animation:fi .3s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  /* مایند مپ */
+  .mm-wrap{overflow-x:auto;padding:10px 0 20px;}
+  .mm-card{background:var(--white);border:1px solid var(--line);border-radius:18px;
+    padding:22px 22px;margin-bottom:16px;box-shadow:0 5px 16px rgba(31,58,95,.05);}
+  .mm-header{display:flex;align-items:center;gap:14px;margin-bottom:18px;
+    padding-bottom:14px;border-bottom:2px solid var(--warm);}
+  .mm-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;
+    justify-content:center;font-size:22px;flex-shrink:0;}
+  .mm-title{font-size:17px;font-weight:700;color:var(--navy);}
+  .mm-title-fr{font-family:'Roboto',serif;font-size:16px;color:var(--gray);}
+  /* برچسب‌ها */
+  .mm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:540px){.mm-grid{grid-template-columns:1fr;}}
+  .mm-cell{border-radius:10px;padding:12px 14px;}
+  .mm-cell-title{font-size:12px;font-weight:700;margin-bottom:8px;opacity:.85;}
+  .mm-ex{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;line-height:1.7;}
+  .mm-fa{font-size:12.5px;margin-top:5px;opacity:.8;}
+  /* فرمول */
+  .formula{font-family:'Roboto',serif;font-size:17px;direction:ltr;text-align:left;
+    background:var(--cream);border-radius:10px;padding:12px 16px;margin:10px 0;line-height:1.8;}
+  .f-base{color:var(--navy);font-weight:700;}
+  .f-end{font-weight:700;}
+  /* جدول مقایسه */
+  .comp-table{width:100%;border-collapse:collapse;font-family:'Roboto',serif;font-size:14px;direction:ltr;margin:12px 0;}
+  .comp-table th{padding:10px 12px;text-align:left;font-weight:600;color:#fff;}
+  .comp-table td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  .comp-table tr:last-child td{border-bottom:none;}
+  .comp-table tr:nth-child(even) td{background:var(--cream);}
+  .tip{background:linear-gradient(135deg,rgba(46,123,181,.08),rgba(46,123,181,.03));
+    border-right:4px solid var(--accent);border-radius:10px;padding:12px 16px;
+    font-size:13.5px;line-height:2;margin:12px 0;}
+  .tip b{color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=grammar">← گرامر</a>
+  </div>
+  <div class="header">
+    <h1>🗺️ Mind Maps — زمان‌های فرانسه</h1>
+    <div class="sub">هر زمان در یک نگاه: فرمول + کاربرد + مثال + مقایسه. از A1 تا B2.</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="s('present')">🔵 Présent</button>
+    <button class="tab" onclick="s('passe')">🟤 Passé composé</button>
+    <button class="tab" onclick="s('imparfait')">🟣 Imparfait</button>
+    <button class="tab" onclick="s('futur')">🟢 Futur simple</button>
+    <button class="tab" onclick="s('conditionnel')">🔴 Conditionnel</button>
+    <button class="tab" onclick="s('subjonctif')">🟠 Subjonctif</button>
+    <button class="tab" onclick="s('compare')">⚖️ مقایسه</button>
+  </div>
+
+  <!-- PRÉSENT -->
+  <div class="section active" id="sec-present">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(46,123,181,.12)">🔵</div>
+        <div><div class="mm-title">Présent de l'indicatif</div><div class="mm-title-fr">زمان حال</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">Radical</span> + <span class="f-end" style="color:var(--c2)">-e/-es/-e/-ons/-ez/-ent</span> (groupe 1)<br>
+        <span class="f-base">Radical</span> + <span class="f-end" style="color:var(--c2)">-is/-is/-it/-issons/-issez/-issent</span> (groupe 2)
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(46,123,181,.07);">
+          <div class="mm-cell-title" style="color:var(--c2);">📌 کاربرد اصلی</div>
+          <div class="mm-fa">✓ فعل و حالت فعلی<br>✓ حقایق و عادت‌ها<br>✓ برنامهٔ آینده (= futur proche)</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(46,123,181,.07);">
+          <div class="mm-cell-title" style="color:var(--c2);">💬 مثال</div>
+          <div class="mm-ex">Je <b>travaille</b> tous les jours.<br>Il <b>fait</b> du sport le matin.<br>Demain, je <b>pars</b> à Paris.</div>
+          <div class="mm-fa">هر روز کار می‌کنم · صبح‌ها ورزش می‌کند</div>
+        </div>
+      </div>
+      <div class="tip"><b>نکته:</b> با «maintenant، en ce moment، d'habitude، toujours، souvent» → Présent</div>
+    </div>
+  </div>
+
+  <!-- PASSÉ COMPOSÉ -->
+  <div class="section" id="sec-passe">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(176,122,74,.12)">🟤</div>
+        <div><div class="mm-title">Passé Composé</div><div class="mm-title-fr">گذشته‌ی ترکیبی</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">avoir / être</span> (présent) + <span class="f-end" style="color:var(--c5)">participe passé</span>
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(176,122,74,.07);">
+          <div class="mm-cell-title" style="color:var(--c5);">📌 کاربرد</div>
+          <div class="mm-fa">✓ رویداد مشخص در گذشته<br>✓ عملی که تمام شده<br>✓ تعداد مشخص بار</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(176,122,74,.07);">
+          <div class="mm-cell-title" style="color:var(--c5);">💬 مثال</div>
+          <div class="mm-ex">J'<b>ai mangé</b> une pizza.<br>Elle <b>est partie</b> hier.<br>Nous <b>avons vu</b> ce film.</div>
+          <div class="mm-fa">یه پیتزا خوردم · دیروز رفت</div>
+        </div>
+      </div>
+      <div class="tip"><b>با être:</b> aller, venir, partir, arriver, naître, mourir, rester, entrer, sortir + تمام انعکاسی‌ها<br>
+      <b>توافق:</b> با être: participe با فاعل توافق می‌کند. J'ai / Elle est parti<b>e</b>.</div>
+    </div>
+  </div>
+
+  <!-- IMPARFAIT -->
+  <div class="section" id="sec-imparfait">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(122,91,168,.12)">🟣</div>
+        <div><div class="mm-title">Imparfait</div><div class="mm-title-fr">گذشتهٔ استمراری</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">nous (présent) → radical</span> + <span class="f-end" style="color:var(--c4)">-ais/-ais/-ait/-ions/-iez/-aient</span>
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(122,91,168,.07);">
+          <div class="mm-cell-title" style="color:var(--c4);">📌 کاربرد</div>
+          <div class="mm-fa">✓ عادت در گذشته<br>✓ توصیف زمینه<br>✓ حالت مستمر در گذشته<br>✓ بعد از «Si» برای شرط</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(122,91,168,.07);">
+          <div class="mm-cell-title" style="color:var(--c4);">💬 مثال</div>
+          <div class="mm-ex">Quand j'étais petit, je <b>jouais</b>.<br>Il <b>pleuvait</b> et le vent <b>soufflait</b>.<br>Si j'<b>avais</b> le temps...</div>
+          <div class="mm-fa">وقتی بچه بودم بازی می‌کردم · باران می‌بارید</div>
+        </div>
+      </div>
+      <div class="tip"><b>Passé composé vs Imparfait:</b> PC = عمل کوتاه و مشخص · Imparfait = زمینه و استمرار<br>
+      «Il <b>lisait</b> quand le téléphone <b>a sonné</b>.» (داشت می‌خواند که زنگ زد)</div>
+    </div>
+  </div>
+
+  <!-- FUTUR SIMPLE -->
+  <div class="section" id="sec-futur">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(46,139,107,.12)">🟢</div>
+        <div><div class="mm-title">Futur Simple</div><div class="mm-title-fr">آینده‌ی ساده</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">Infinitif</span> + <span class="f-end" style="color:var(--c3)">-ai/-as/-a/-ons/-ez/-ont</span>
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(46,139,107,.07);">
+          <div class="mm-cell-title" style="color:var(--c3);">📌 کاربرد</div>
+          <div class="mm-fa">✓ آینده‌ی دور<br>✓ وعده و تعهد<br>✓ بعد از «quand/lorsque» → futur (مهم!)</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(46,139,107,.07);">
+          <div class="mm-cell-title" style="color:var(--c3);">💬 مثال</div>
+          <div class="mm-ex">L'année prochaine, je <b>voyagerai</b>.<br>Je te <b>téléphonerai</b> demain.<br>Quand tu <b>arriveras</b>, appelle.</div>
+          <div class="mm-fa">سال دیگر سفر می‌کنم · وقتی رسیدی زنگ بزن</div>
+        </div>
+      </div>
+      <div class="tip"><b>بی‌قاعده‌ها:</b> être→ser· avoir→aur· aller→ir· faire→fer· venir→viendr· voir→verr</div>
+    </div>
+  </div>
+
+  <!-- CONDITIONNEL -->
+  <div class="section" id="sec-conditionnel">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(196,80,45,.12)">🔴</div>
+        <div><div class="mm-title">Conditionnel Présent</div><div class="mm-title-fr">شرطی حال</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">Infinitif</span> + <span class="f-end" style="color:var(--c1)">-ais/-ais/-ait/-ions/-iez/-aient</span>
+        <br><small style="color:var(--gray);">(همان پایهٔ futur + پسوندهای imparfait)</small>
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(196,80,45,.07);">
+          <div class="mm-cell-title" style="color:var(--c1);">📌 کاربرد</div>
+          <div class="mm-fa">✓ شرط غیرواقعی (Si + imparfait)<br>✓ درخواست مؤدبانه<br>✓ توصیه (devrais)<br>✓ آرزو (j'aimerais)<br>✓ خبر غیرتأییدشده</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(196,80,45,.07);">
+          <div class="mm-cell-title" style="color:var(--c1);">💬 مثال</div>
+          <div class="mm-ex">Si j'avais de l'argent, je <b>voyagerais</b>.<br>Je <b>voudrais</b> un café.<br>Tu <b>devrais</b> dormir.<br>Il <b>serait</b> malade. (گفته می‌شود)</div>
+        </div>
+      </div>
+      <div class="tip">⚠️ هیچ‌وقت conditionnel بعد از «Si» نمی‌آید!<br>
+      ✅ Si j'<b>avais</b> (imparfait) → je <b>ferais</b> (conditionnel)</div>
+    </div>
+  </div>
+
+  <!-- SUBJONCTIF -->
+  <div class="section" id="sec-subjonctif">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(176,80,111,.12)">🟠</div>
+        <div><div class="mm-title">Subjonctif Présent</div><div class="mm-title-fr">التزامی حال</div></div>
+      </div>
+      <div class="formula">
+        <span class="f-base">ils (présent) → radical</span> + <span class="f-end" style="color:var(--c6)">-e/-es/-e/-ions/-iez/-ent</span>
+      </div>
+      <div class="mm-grid">
+        <div class="mm-cell" style="background:rgba(176,80,111,.07);">
+          <div class="mm-cell-title" style="color:var(--c6);">📌 کاربرد</div>
+          <div class="mm-fa">✓ بعد از «que» + احساس<br>✓ بعد از il faut que<br>✓ بعد از bien que / quoique<br>✓ بعد از pour que / afin que<br>✓ بعد از avant que</div>
+        </div>
+        <div class="mm-cell" style="background:rgba(176,80,111,.07);">
+          <div class="mm-cell-title" style="color:var(--c6);">💬 مثال</div>
+          <div class="mm-ex">Il faut que tu <b>viennes</b>.<br>Je veux qu'il <b>parte</b>.<br>Bien qu'elle <b>soit</b> fatiguée...<br>Pour que tu <b>comprennes</b>.</div>
+          <div class="mm-fa">باید بیایی · می‌خواهم برود</div>
+        </div>
+      </div>
+      <div class="tip"><b>بی‌قاعده‌های مهم:</b> être→sois/soit/soyons · avoir→aie/ait/ayons · aller→aille · faire→fasse · pouvoir→puisse · vouloir→veuille</div>
+    </div>
+  </div>
+
+  <!-- مقایسه -->
+  <div class="section" id="sec-compare">
+    <div class="mm-card">
+      <div class="mm-header">
+        <div class="mm-icon" style="background:rgba(46,123,181,.1)">⚖️</div>
+        <div><div class="mm-title">مقایسهٔ زمان‌ها — یه نگاه</div></div>
+      </div>
+      <table class="comp-table">
+        <tr>
+          <th style="background:var(--navy);">زمان</th>
+          <th style="background:var(--navy);">سیگنال‌های اصلی</th>
+          <th style="background:var(--navy);">مثال</th>
+        </tr>
+        <tr><td><b style="color:var(--c2)">Présent</b></td><td dir="ltr">maintenant, souvent, d'habitude, chaque jour</td><td dir="ltr">Je <b>mange</b>.</td></tr>
+        <tr><td><b style="color:var(--c5)">Passé composé</b></td><td dir="ltr">hier, l'année dernière, soudain, une fois</td><td dir="ltr">J'<b>ai mangé</b>.</td></tr>
+        <tr><td><b style="color:var(--c4)">Imparfait</b></td><td dir="ltr">quand j'étais..., toujours, autrefois, Si + cond</td><td dir="ltr">Je <b>mangeais</b>.</td></tr>
+        <tr><td><b style="color:var(--c3)">Futur simple</b></td><td dir="ltr">demain, bientôt, l'année prochaine, quand+futur</td><td dir="ltr">Je <b>mangerai</b>.</td></tr>
+        <tr><td><b style="color:var(--c1)">Conditionnel</b></td><td dir="ltr">Si+imparfait, je voudrais, on devrait, il serait</td><td dir="ltr">Je <b>mangerais</b>.</td></tr>
+        <tr><td><b style="color:var(--c6)">Subjonctif</b></td><td dir="ltr">que+sentiment, il faut que, bien que, pour que</td><td dir="ltr">que je <b>mange</b></td></tr>
+      </table>
+      <div class="tip">
+        <b>تفاوت PC vs Imparfait:</b><br>
+        «Hier, il <b>faisait</b> (imparfait - زمینه) beau quand l'orage <b>a éclaté</b> (PC - رویداد).»<br>
+        هوا خوب بود (imparfait = زمینه) که طوفان شروع شد (PC = رویداد کوتاه)
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+function s(id){
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
