@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Conditionnel Présent — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f;--navy-soft:#41618a;--accent:#7a5ba8;--accent-deep:#5a3b88;
+    --green:#2e8b6b;--gold:#b07a4a;--terracotta:#c4502d;--blue:#2e7bb5;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+  }
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,0.04) 31px,rgba(122,91,168,0.04) 32px);
+    color:var(--ink);line-height:1.95;padding:20px 16px 80px;}
+  .wrap{max-width:860px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);
+    background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+
+  /* هدر */
+  .header{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;
+    padding:30px 28px;border-radius:20px;margin-bottom:20px;
+    box-shadow:0 14px 34px rgba(122,91,168,.28);position:relative;overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;
+    background:rgba(255,255,255,.07);border-radius:50%;}
+  .header .tag{font-size:11px;color:rgba(255,255,255,.75);font-weight:700;letter-spacing:2px;margin-bottom:8px;}
+  .header h1{font-size:24px;font-weight:700;margin-bottom:6px;}
+  .header .sub{font-size:13.5px;opacity:.92;line-height:1.9;}
+
+  /* تب‌ها */
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;position:sticky;top:0;
+    background:var(--paper);padding:12px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;background:var(--white);
+    color:var(--ink);border:1.5px solid var(--line);border-radius:22px;
+    padding:9px 16px;cursor:pointer;transition:all .2s;}
+  .tab:hover{border-color:var(--accent);}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);
+    box-shadow:0 4px 12px rgba(122,91,168,.3);}
+  .section{display:none;animation:fi .35s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+  /* کارت‌ها */
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:14px;box-shadow:0 4px 14px rgba(31,58,95,.04);}
+  .card.purple{border-right:4px solid var(--accent);}
+  .card.green{border-right:4px solid var(--green);}
+  .card.gold{border-right:4px solid var(--gold);}
+  .card.red{border-right:4px solid var(--terracotta);}
+  .card.blue{border-right:4px solid var(--blue);}
+  .card-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px;
+    display:flex;align-items:center;gap:8px;}
+  .p{font-size:14px;line-height:2.1;}
+  .p b{color:var(--accent-deep);}
+  .sec-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:16px;
+    padding-bottom:10px;border-bottom:2px solid var(--warm);
+    display:flex;align-items:center;gap:8px;}
+  .sec-title::before{content:"";width:4px;height:20px;background:var(--accent);border-radius:2px;flex-shrink:0;}
+
+  /* جدول صرف */
+  .conj-table{width:100%;border-collapse:collapse;font-family:'Roboto',serif;font-size:14.5px;direction:ltr;}
+  .conj-table th{background:var(--accent);color:#fff;padding:10px 14px;text-align:left;font-weight:600;}
+  .conj-table td{padding:10px 14px;border-bottom:1px solid var(--line);}
+  .conj-table tr:last-child td{border-bottom:none;}
+  .conj-table tr:nth-child(even){background:var(--cream);}
+  .conj-table .verb{font-weight:700;color:var(--navy);}
+  .conj-table .ending{color:var(--accent);font-weight:700;}
+  .conj-table .fa-tr{font-family:'Estedad',sans-serif;font-size:12.5px;color:var(--gray);direction:rtl;}
+  .conj-note{font-size:12px;color:var(--gray);margin-top:8px;line-height:1.85;}
+
+  /* مثال */
+  .ex-fr{font-family:'Roboto',serif;font-size:16px;color:var(--ink);direction:ltr;
+    background:var(--cream);padding:10px 14px;border-radius:9px;margin-bottom:6px;
+    border-right:3px solid var(--accent);}
+  .ex-fa{font-size:13px;color:var(--gray);margin-bottom:14px;}
+
+  /* باکس کاربرد */
+  .usage-box{border-radius:12px;padding:16px 18px;margin-bottom:12px;}
+  .usage-box h4{font-size:14px;font-weight:700;margin-bottom:10px;}
+  .usage-box .ex-fr{font-size:15px;}
+
+  /* tip */
+  .tip-box{background:linear-gradient(135deg,rgba(122,91,168,.08),rgba(176,122,74,.05));
+    border-right:4px solid var(--accent);border-radius:12px;padding:14px 18px;
+    font-size:13.5px;line-height:2;margin-bottom:14px;}
+  .tip-box b{color:var(--accent-deep);}
+
+  /* ─── تمرین ─── */
+  .quiz-header{background:linear-gradient(135deg,var(--accent),var(--accent-deep));color:#fff;
+    border-radius:14px;padding:18px 20px;margin-bottom:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .qh-score{font-family:'Roboto',serif;font-size:32px;font-weight:700;}
+  .qh-label{font-size:13px;opacity:.85;margin-top:2px;}
+  .qh-progress{flex:1;min-width:160px;}
+  .qh-bar{height:8px;background:rgba(255,255,255,.2);border-radius:4px;overflow:hidden;margin-bottom:5px;}
+  .qh-fill{height:100%;background:#fff;border-radius:4px;transition:width .4s;}
+  .qh-text{font-size:12px;opacity:.8;}
+  .qh-btns{display:flex;gap:8px;margin-right:auto;}
+  .qh-btn{font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;
+    border:none;border-radius:20px;padding:9px 20px;cursor:pointer;transition:all .2s;}
+  .qh-btn.check{background:#fff;color:var(--accent);}
+  .qh-btn.reset{background:rgba(255,255,255,.15);color:#fff;}
+  .qh-btn:hover{opacity:.85;}
+
+  .q-group{margin-bottom:24px;}
+  .q-group-title{font-size:13px;font-weight:700;color:var(--accent);
+    letter-spacing:1px;margin-bottom:12px;padding-bottom:6px;border-bottom:1px dashed var(--line);}
+
+  .q-item{background:var(--white);border:1px solid var(--line);border-radius:12px;
+    padding:14px 16px;margin-bottom:10px;transition:border-color .2s;}
+  .q-item.correct{border-color:var(--green);background:rgba(46,139,107,.04);}
+  .q-item.wrong{border-color:var(--terracotta);background:rgba(196,80,45,.04);}
+  .q-num{font-size:11.5px;color:var(--gray);font-weight:700;margin-bottom:6px;}
+  .q-fr{font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;
+    line-height:1.7;margin-bottom:6px;color:var(--ink);}
+  .q-fa{font-size:13px;color:var(--gray);margin-bottom:10px;}
+  .q-input-wrap{display:flex;align-items:center;gap:8px;direction:ltr;}
+  .q-pre{font-family:'Roboto',serif;font-size:15px;color:var(--gray);}
+  .q-input{font-family:'Roboto',serif;font-size:16px;font-weight:600;
+    border:none;border-bottom:2px solid var(--line);background:transparent;
+    outline:none;color:var(--navy);min-width:120px;max-width:200px;
+    padding:4px 2px;text-align:center;transition:border-color .2s;}
+  .q-input:focus{border-bottom-color:var(--accent);}
+  .q-item.correct .q-input{border-bottom-color:var(--green);color:var(--green);}
+  .q-item.wrong .q-input{border-bottom-color:var(--terracotta);color:var(--terracotta);}
+  .q-verb{font-size:12px;color:var(--accent);font-weight:700;margin-right:8px;}
+  .q-answer{font-family:'Roboto',serif;font-size:14px;color:var(--green);
+    display:none;margin-top:8px;direction:ltr;}
+  .q-item.wrong .q-answer{display:block;}
+  .q-icon{font-size:16px;margin-right:4px;}
+
+  /* نتیجه */
+  .result-card{background:linear-gradient(135deg,var(--green),#1d6b50);color:#fff;
+    border-radius:14px;padding:24px;text-align:center;margin-bottom:16px;display:none;}
+  .result-card.show{display:block;}
+  .result-emoji{font-size:44px;margin-bottom:10px;}
+  .result-score{font-size:28px;font-weight:700;margin-bottom:6px;}
+  .result-msg{font-size:14px;opacity:.9;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=grammar">← گرامر</a>
+  </div>
+
+  <div class="header">
+    <div class="tag">GRAMMAIRE · B1–B2</div>
+    <h1>Le Conditionnel Présent</h1>
+    <div class="sub">ساخت، صرف، کاربردها — همراه با ۷۰ تمرین تعاملی</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('formation')">⚙️ ساخت</button>
+    <button class="tab" onclick="showTab('conjugaison')">📊 صرف کامل</button>
+    <button class="tab" onclick="showTab('usages')">💡 کاربردها</button>
+    <button class="tab" onclick="showTab('exercice')">✏️ تمرین (۷۰ جمله)</button>
+  </div>
+
+  <!-- ═══ تب ۱: ساخت ═══ -->
+  <div class="section active" id="sec-formation">
+    <div class="sec-title">⚙️ چطور ساخته می‌شود؟</div>
+
+    <div class="tip-box">
+      <b>فرمول طلایی:</b> پایهٔ Futur Simple + پسوندهای Imparfait<br>
+      یعنی: <b>مصدر + ais / ais / ait / ions / iez / aient</b>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">📐 قانون کلی</div>
+      <div class="p">برای <b>فعل‌های گروه اول (-er) و دوم (-ir)</b>: مصدر را کامل نگه می‌داریم و پسوند اضافه می‌کنیم.</div>
+      <div style="font-family:'Roboto',serif;font-size:17px;direction:ltr;text-align:left;background:var(--cream);padding:14px;border-radius:10px;margin:12px 0;line-height:2.2;">
+        parler → <b>parler<span style="color:var(--accent)">ais</span></b><br>
+        finir → <b>finir<span style="color:var(--accent)">ais</span></b>
+      </div>
+      <div class="p">برای <b>فعل‌های گروه سوم (-re)</b>: e پایانی مصدر حذف می‌شود.</div>
+      <div style="font-family:'Roboto',serif;font-size:17px;direction:ltr;text-align:left;background:var(--cream);padding:14px;border-radius:10px;margin:12px 0;line-height:2.2;">
+        prendre → prendr<b>e</b> → <b>prendr<span style="color:var(--accent)">ais</span></b><br>
+        vendre → vendr<b>e</b> → <b>vendr<span style="color:var(--accent)">ais</span></b>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">🔢 پسوندها — دقیقاً مثل Imparfait</div>
+      <table class="conj-table">
+        <tr><th>ضمیر</th><th>پسوند</th><th>مثال (parler)</th><th>فارسی</th></tr>
+        <tr><td>je</td><td class="ending">-ais</td><td class="verb">parlerais</td><td class="fa-tr">صحبت می‌کردم</td></tr>
+        <tr><td>tu</td><td class="ending">-ais</td><td class="verb">parlerais</td><td class="fa-tr">صحبت می‌کردی</td></tr>
+        <tr><td>il/elle/on</td><td class="ending">-ait</td><td class="verb">parlerait</td><td class="fa-tr">صحبت می‌کرد</td></tr>
+        <tr><td>nous</td><td class="ending">-ions</td><td class="verb">parlerions</td><td class="fa-tr">صحبت می‌کردیم</td></tr>
+        <tr><td>vous</td><td class="ending">-iez</td><td class="verb">parleriez</td><td class="fa-tr">صحبت می‌کردید</td></tr>
+        <tr><td>ils/elles</td><td class="ending">-aient</td><td class="verb">parleraient</td><td class="fa-tr">صحبت می‌کردند</td></tr>
+      </table>
+      <div class="conj-note">⚠️ je و tu هر دو -ais (با s) می‌گیرند — نه -ai. در تلفظ فرق ندارند ولی در نوشتار مهم است!</div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">⚠️ فعل‌های بی‌قاعده — پایهٔ ویژه دارند</div>
+      <table class="conj-table">
+        <tr><th>مصدر</th><th>پایه</th><th>مثال</th><th>فارسی</th></tr>
+        <tr><td dir="ltr">être</td><td dir="ltr" class="ending">ser-</td><td dir="ltr" class="verb">je serais</td><td class="fa-tr">می‌بودم</td></tr>
+        <tr><td dir="ltr">avoir</td><td dir="ltr" class="ending">aur-</td><td dir="ltr" class="verb">j'aurais</td><td class="fa-tr">داشتم</td></tr>
+        <tr><td dir="ltr">aller</td><td dir="ltr" class="ending">ir-</td><td dir="ltr" class="verb">j'irais</td><td class="fa-tr">می‌رفتم</td></tr>
+        <tr><td dir="ltr">faire</td><td dir="ltr" class="ending">fer-</td><td dir="ltr" class="verb">je ferais</td><td class="fa-tr">می‌کردم</td></tr>
+        <tr><td dir="ltr">pouvoir</td><td dir="ltr" class="ending">pourr-</td><td dir="ltr" class="verb">je pourrais</td><td class="fa-tr">می‌توانستم</td></tr>
+        <tr><td dir="ltr">vouloir</td><td dir="ltr" class="ending">voudr-</td><td dir="ltr" class="verb">je voudrais</td><td class="fa-tr">می‌خواستم</td></tr>
+        <tr><td dir="ltr">devoir</td><td dir="ltr" class="ending">devr-</td><td dir="ltr" class="verb">je devrais</td><td class="fa-tr">می‌بایستم</td></tr>
+        <tr><td dir="ltr">venir</td><td dir="ltr" class="ending">viendr-</td><td dir="ltr" class="verb">je viendrais</td><td class="fa-tr">می‌آمدم</td></tr>
+        <tr><td dir="ltr">tenir</td><td dir="ltr" class="ending">tiendr-</td><td dir="ltr" class="verb">je tiendrais</td><td class="fa-tr">نگه می‌داشتم</td></tr>
+        <tr><td dir="ltr">savoir</td><td dir="ltr" class="ending">saur-</td><td dir="ltr" class="verb">je saurais</td><td class="fa-tr">می‌دانستم</td></tr>
+        <tr><td dir="ltr">voir</td><td dir="ltr" class="ending">verr-</td><td dir="ltr" class="verb">je verrais</td><td class="fa-tr">می‌دیدم</td></tr>
+        <tr><td dir="ltr">envoyer</td><td dir="ltr" class="ending">enverr-</td><td dir="ltr" class="verb">j'enverrais</td><td class="fa-tr">می‌فرستادم</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ═══ تب ۲: صرف کامل ═══ -->
+  <div class="section" id="sec-conjugaison">
+    <div class="sec-title">📊 صرف کامل — ۱۲ فعل مهم</div>
+
+    <div style="display:grid;gap:14px;">
+
+      <div class="card purple">
+        <div class="card-title">ÊTRE — بودن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">serais</span></td><td>nous <span class="verb">serions</span></td></tr>
+          <tr><td>tu <span class="verb">serais</span></td><td>vous <span class="verb">seriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">serait</span></td><td>ils/elles <span class="verb">seraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Je <b>serais</b> plus heureux avec plus de temps libre.</div>
+        <div class="ex-fa">اگر وقت آزاد بیشتری داشتم خوشحال‌تر می‌بودم.</div>
+      </div>
+
+      <div class="card purple">
+        <div class="card-title">AVOIR — داشتن</div>
+        <table class="conj-table">
+          <tr><td>j'<span class="verb">aurais</span></td><td>nous <span class="verb">aurions</span></td></tr>
+          <tr><td>tu <span class="verb">aurais</span></td><td>vous <span class="verb">auriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">aurait</span></td><td>ils/elles <span class="verb">auraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Tu <b>aurais</b> plus d'argent si tu travaillais moins.</div>
+        <div class="ex-fa">اگر کمتر خرج می‌کردی پول بیشتری داشتی.</div>
+      </div>
+
+      <div class="card blue">
+        <div class="card-title">ALLER — رفتن</div>
+        <table class="conj-table">
+          <tr><td>j'<span class="verb">irais</span></td><td>nous <span class="verb">irions</span></td></tr>
+          <tr><td>tu <span class="verb">irais</span></td><td>vous <span class="verb">iriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">irait</span></td><td>ils/elles <span class="verb">iraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Si j'avais du temps, j'<b>irais</b> à Paris.</div>
+        <div class="ex-fa">اگر وقت داشتم به پاریس می‌رفتم.</div>
+      </div>
+
+      <div class="card blue">
+        <div class="card-title">FAIRE — کردن / ساختن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">ferais</span></td><td>nous <span class="verb">ferions</span></td></tr>
+          <tr><td>tu <span class="verb">ferais</span></td><td>vous <span class="verb">feriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">ferait</span></td><td>ils/elles <span class="verb">feraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Que <b>ferais</b>-tu à ma place ?</div>
+        <div class="ex-fa">اگر جای من بودی چه می‌کردی؟</div>
+      </div>
+
+      <div class="card green">
+        <div class="card-title">POUVOIR — توانستن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">pourrais</span></td><td>nous <span class="verb">pourrions</span></td></tr>
+          <tr><td>tu <span class="verb">pourrais</span></td><td>vous <span class="verb">pourriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">pourrait</span></td><td>ils/elles <span class="verb">pourraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;"><b>Pourriez</b>-vous répéter, s'il vous plaît ?</div>
+        <div class="ex-fa">می‌توانید تکرار کنید، لطفاً؟</div>
+      </div>
+
+      <div class="card green">
+        <div class="card-title">VOULOIR — خواستن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">voudrais</span></td><td>nous <span class="verb">voudrions</span></td></tr>
+          <tr><td>tu <span class="verb">voudrais</span></td><td>vous <span class="verb">voudriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">voudrait</span></td><td>ils/elles <span class="verb">voudraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Je <b>voudrais</b> un café, s'il vous plaît.</div>
+        <div class="ex-fa">می‌خواستم یک قهوه، لطفاً. (درخواست مؤدبانه)</div>
+      </div>
+
+      <div class="card gold">
+        <div class="card-title">DEVOIR — باید / مجبور بودن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">devrais</span></td><td>nous <span class="verb">devrions</span></td></tr>
+          <tr><td>tu <span class="verb">devrais</span></td><td>vous <span class="verb">devriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">devrait</span></td><td>ils/elles <span class="verb">devraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Tu <b>devrais</b> te reposer davantage.</div>
+        <div class="ex-fa">باید بیشتر استراحت کنی. (توصیه)</div>
+      </div>
+
+      <div class="card gold">
+        <div class="card-title">VENIR — آمدن</div>
+        <table class="conj-table">
+          <tr><td>je <span class="verb">viendrais</span></td><td>nous <span class="verb">viendrions</span></td></tr>
+          <tr><td>tu <span class="verb">viendrais</span></td><td>vous <span class="verb">viendriez</span></td></tr>
+          <tr><td>il/elle <span class="verb">viendrait</span></td><td>ils/elles <span class="verb">viendraient</span></td></tr>
+        </table>
+        <div class="ex-fr" style="margin-top:10px;">Elle <b>viendrait</b> si elle avait le temps.</div>
+        <div class="ex-fa">اگر وقت داشت می‌آمد.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ تب ۳: کاربردها ═══ -->
+  <div class="section" id="sec-usages">
+    <div class="sec-title">💡 ۵ کاربرد اصلی Conditionnel</div>
+
+    <!-- کاربرد ۱ -->
+    <div class="usage-box" style="background:rgba(122,91,168,.07);border-right:5px solid var(--accent);border-radius:12px;margin-bottom:14px;">
+      <h4 style="color:var(--accent-deep);">① شرط غیرواقعی در حال/آینده — جملهٔ «Si»</h4>
+      <div class="p" style="margin-bottom:10px;"><b>فرمول:</b> Si + Imparfait → Conditionnel Présent</div>
+      <div class="ex-fr">Si j'avais de l'argent, je <b>voyagerais</b> partout.</div>
+      <div class="ex-fa">اگر پول داشتم همه‌جا سفر می‌کردم. (ولی ندارم)</div>
+      <div class="ex-fr">Si tu travaillais plus, tu <b>réussirais</b>.</div>
+      <div class="ex-fa">اگر بیشتر کار کنی موفق می‌شوی.</div>
+      <div class="ex-fr">Si elle <b>était</b> libre, elle <b>viendrait</b> avec nous.</div>
+      <div class="ex-fa">اگر آزاد بود با ما می‌آمد.</div>
+    </div>
+
+    <!-- کاربرد ۲ -->
+    <div class="usage-box" style="background:rgba(46,123,181,.07);border-right:5px solid var(--blue);border-radius:12px;margin-bottom:14px;">
+      <h4 style="color:var(--navy);">② درخواست مؤدبانه و احترام‌آمیز</h4>
+      <div class="p" style="margin-bottom:10px;">به‌جای présent که مستقیم است، conditionnel نرم‌تر و مؤدبانه‌تر است.</div>
+      <div class="ex-fr">Je <b>voudrais</b> un café. (← Je veux un café = خیلی مستقیم)</div>
+      <div class="ex-fa">می‌خواستم یک قهوه لطفاً. (مؤدبانه)</div>
+      <div class="ex-fr"><b>Pourriez</b>-vous m'aider ?</div>
+      <div class="ex-fa">می‌توانستید کمکم کنید؟ (محترمانه)</div>
+      <div class="ex-fr">Est-ce que tu <b>pourrais</b> fermer la fenêtre ?</div>
+      <div class="ex-fa">می‌توانی پنجره را ببندی؟</div>
+    </div>
+
+    <!-- کاربرد ۳ -->
+    <div class="usage-box" style="background:rgba(46,139,107,.07);border-right:5px solid var(--green);border-radius:12px;margin-bottom:14px;">
+      <h4 style="color:var(--green);">③ توصیه و پیشنهاد — devoir/pouvoir/valoir mieux</h4>
+      <div class="ex-fr">Tu <b>devrais</b> aller chez le médecin.</div>
+      <div class="ex-fa">باید بروی پیش دکتر. (توصیه)</div>
+      <div class="ex-fr">Vous <b>pourriez</b> essayer cette méthode.</div>
+      <div class="ex-fa">می‌توانستید این روش را امتحان کنید. (پیشنهاد)</div>
+      <div class="ex-fr">Il <b>vaudrait</b> mieux partir tôt.</div>
+      <div class="ex-fa">بهتر بود زود بروی.</div>
+      <div class="ex-fr">À ta place, je <b>parlerais</b> à ton patron.</div>
+      <div class="ex-fa">اگر جای تو بودم با رئیست صحبت می‌کردم.</div>
+    </div>
+
+    <!-- کاربرد ۴ -->
+    <div class="usage-box" style="background:rgba(176,122,74,.07);border-right:5px solid var(--gold);border-radius:12px;margin-bottom:14px;">
+      <h4 style="color:var(--gold);">④ خبر غیرتأییدشده — اطلاعات تأییدنشده</h4>
+      <div class="p" style="margin-bottom:10px;">در خبرنگاری و گفتگو، وقتی اطمینان نداری از conditionnel استفاده می‌کنی.</div>
+      <div class="ex-fr">Selon les médias, le président <b>démissionnerait</b>.</div>
+      <div class="ex-fa">طبق رسانه‌ها، رئیس‌جمهور استعفا داده (گفته می‌شود).</div>
+      <div class="ex-fr">Il y <b>aurait</b> eu un accident sur l'autoroute.</div>
+      <div class="ex-fa">گفته می‌شود در اتوبان تصادفی رخ داده.</div>
+      <div class="ex-fr">Le vaccin <b>serait</b> efficace à 90%.</div>
+      <div class="ex-fa">گزارش شده که واکسن ۹۰٪ مؤثر است.</div>
+    </div>
+
+    <!-- کاربرد ۵ -->
+    <div class="usage-box" style="background:rgba(196,80,45,.07);border-right:5px solid var(--terracotta);border-radius:12px;margin-bottom:14px;">
+      <h4 style="color:var(--terracotta);">⑤ آرزو و فانتزی</h4>
+      <div class="ex-fr">J'<b>aimerais</b> vivre au bord de la mer.</div>
+      <div class="ex-fa">دوست داشتم کنار دریا زندگی کنم.</div>
+      <div class="ex-fr">Je <b>rêverais</b> de visiter le Japon.</div>
+      <div class="ex-fa">رؤیایم این است که ژاپن را ببینم.</div>
+      <div class="ex-fr">Nous <b>voudrions</b> un monde plus juste.</div>
+      <div class="ex-fa">می‌خواستیم دنیای عادلانه‌تری داشته باشیم.</div>
+    </div>
+
+    <div class="tip-box">
+      ⚠️ <b>مهم:</b> در جملهٔ Si، هیچ‌وقت Conditionnel بعد از Si نمی‌آید!<br>
+      ✅ Si j'<b>avais</b> (imparfait) du temps, je <b>viendrais</b> (conditionnel).<br>
+      ❌ Si j'<b>aurais</b> du temps... — غلط است!
+    </div>
+  </div>
+
+  <!-- ═══ تب ۴: تمرین ═══ -->
+  <div class="section" id="sec-exercice">
+    <div class="quiz-header">
+      <div>
+        <div class="qh-score" id="scoreDisplay">۰ / ۷۰</div>
+        <div class="qh-label">پاسخ درست</div>
+      </div>
+      <div class="qh-progress">
+        <div class="qh-bar"><div class="qh-fill" id="progressFill" style="width:0%"></div></div>
+        <div class="qh-text" id="progressText">۷۰ جمله در ۵ گروه</div>
+      </div>
+      <div class="qh-btns">
+        <button class="qh-btn check" onclick="checkAll()">✅ بررسی همه</button>
+        <button class="qh-btn reset" onclick="resetAll()">↺ ریست</button>
+      </div>
+    </div>
+    <div class="result-card" id="resultCard">
+      <div class="result-emoji" id="resultEmoji">🏆</div>
+      <div class="result-score" id="resultScore"></div>
+      <div class="result-msg" id="resultMsg"></div>
+    </div>
+    <div id="quizBody"></div>
+  </div>
+
+  <div style="text-align:center;margin-top:20px;color:var(--gray);font-size:12px;">
+    تمرین‌ها اقتباس از <a href="https://www.podcastfrancaisfacile.com" target="_blank" rel="noopener" style="color:var(--accent);">podcastfrancaisfacile.com</a> + تمرین‌های اختصاصی · <b>Français avec Hoda</b>
+  </div>
+</div>
+
+<script>
+// ═══ تب‌ها ═══
+function showTab(id){
+  document.querySelectorAll(".section").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+
+// ═══ داده‌ی تمرین‌ها ═══
+const GROUPS = [
+  {
+    title: "گروه ۱ — FAIRE و DIRE (بی‌قاعده!)",
+    items: [
+      {pre:"Je",blank:"ferais",suf:"mes devoirs sérieusement.",verb:"faire",fa:"تکالیفم را جدی انجام می‌دادم."},
+      {pre:"Je",blank:"dirais",suf:"la vérité à mes parents.",verb:"dire",fa:"حقیقت را به والدینم می‌گفتم."},
+      {pre:"Nous",blank:"ferions",suf:"du sport tous les jours.",verb:"faire",fa:"هر روز ورزش می‌کردیم."},
+      {pre:"Nous vous",blank:"dirions",suf:"tout.",verb:"dire",fa:"همه چیز را به شما می‌گفتیم."},
+      {pre:"Vous",blank:"diriez",suf:"quoi ?",verb:"dire",fa:"شما چه می‌گفتید؟"},
+      {pre:"Vous",blank:"feriez",suf:"quoi ?",verb:"faire",fa:"شما چه می‌کردید؟"},
+      {pre:"Ils",blank:"diraient",suf:"leur histoire.",verb:"dire",fa:"داستانشان را می‌گفتند."},
+      {pre:"Ils",blank:"feraient",suf:"du tennis depuis plusieurs années.",verb:"faire",fa:"سال‌ها تنیس بازی می‌کردند."},
+      {pre:"Elle",blank:"saurait",suf:"tout !",verb:"savoir",fa:"همه چیز را می‌دانست!"},
+      {pre:"Que",blank:"feriez",suf:"-vous à ma place ?",verb:"faire",fa:"شما جای من چه می‌کردید؟"},
+    ]
+  },
+  {
+    title: "گروه ۲ — فعل‌های گروه اول (-er)",
+    items: [
+      {pre:"Je",blank:"resterais",suf:"ici pour les vacances.",verb:"rester",fa:"برای تعطیلات اینجا می‌ماندم."},
+      {pre:"Nous",blank:"travaillerions",suf:"dur pour réussir.",verb:"travailler",fa:"برای موفقیت سخت کار می‌کردیم."},
+      {pre:"Vous",blank:"continueriez",suf:"cet exercice.",verb:"continuer",fa:"این تمرین را ادامه می‌دادید."},
+      {pre:"Vous",blank:"écouteriez",suf:"la radio.",verb:"écouter",fa:"رادیو گوش می‌دادید."},
+      {pre:"Ils",blank:"causeraient",suf:"des problèmes.",verb:"causer",fa:"مشکل ایجاد می‌کردند."},
+      {pre:"Ils",blank:"garderaient",suf:"le magasin.",verb:"garder",fa:"مغازه را نگه می‌داشتند."},
+      {pre:"Je",blank:"réagirais",suf:"à cette phrase.",verb:"réagir",fa:"به این جمله واکنش نشان می‌دادم."},
+      {pre:"Je",blank:"paierais",suf:"mes dettes.",verb:"payer",fa:"بدهی‌هایم را پرداخت می‌کردم."},
+      {pre:"Nous",blank:"enverrions",suf:"ce colis.",verb:"envoyer",fa:"این بسته را می‌فرستادیم."},
+      {pre:"Vous",blank:"produiriez",suf:"du pétrole dans votre pays.",verb:"produire",fa:"در کشورتان نفت تولید می‌کردید."},
+    ]
+  },
+  {
+    title: "گروه ۳ — فعل‌های گروه دوم (-ir)",
+    items: [
+      {pre:"J'",blank:"ouvrirais",suf:"la porte pour aérer.",verb:"ouvrir",fa:"در را برای تهویه باز می‌کردم."},
+      {pre:"Nous",blank:"offririons",suf:"ce livre à notre fils.",verb:"offrir",fa:"این کتاب را به پسرمان هدیه می‌دادیم."},
+      {pre:"Ils",blank:"ouvriraient",suf:"la fenêtre.",verb:"ouvrir",fa:"پنجره را باز می‌کردند."},
+      {pre:"Il",blank:"finirait",suf:"aujourd'hui.",verb:"finir",fa:"امروز تمام می‌کرد."},
+      {pre:"Pourquoi",blank:"obéiraient",suf:"-elles ?",verb:"obéir",fa:"چرا اطاعت می‌کردند؟"},
+      {pre:"Tu",blank:"grandirais",suf:"encore.",verb:"grandir",fa:"هنوز رشد می‌کردی."},
+      {pre:"Elles",blank:"choisiraient",suf:"ce livre.",verb:"choisir",fa:"این کتاب را انتخاب می‌کردند."},
+      {pre:"Ils",blank:"finiraient",suf:"la bouteille.",verb:"finir",fa:"بطری را تمام می‌کردند."},
+      {pre:"Nous",blank:"réagirions",suf:"mal.",verb:"réagir",fa:"بد واکنش نشان می‌دادیم."},
+      {pre:"On",blank:"obéirait",suf:"au chef.",verb:"obéir",fa:"از رئیس اطاعت می‌کردیم."},
+    ]
+  },
+  {
+    title: "گروه ۴ — فعل‌های بی‌قاعدهٔ پرکاربرد",
+    items: [
+      {pre:"Je",blank:"prendrais",suf:"le métro.",verb:"prendre",fa:"مترو می‌گرفتم."},
+      {pre:"Nous",blank:"voudrions",suf:"un autre plat.",verb:"vouloir",fa:"یک غذای دیگر می‌خواستیم."},
+      {pre:"Ils",blank:"reviendraient",suf:"dans quelques jours.",verb:"revenir",fa:"چند روز دیگر برمی‌گشتند."},
+      {pre:"Je",blank:"viendrais",suf:"de finir le travail.",verb:"venir",fa:"کار را تمام کرده بودم."},
+      {pre:"Ils",blank:"liraient",suf:"le journal le matin.",verb:"lire",fa:"صبح‌ها روزنامه می‌خواندند."},
+      {pre:"Tu",blank:"devrais",suf:"te reposer.",verb:"devoir",fa:"باید استراحت کنی."},
+      {pre:"Vous",blank:"pourriez",suf:"l'expliquer.",verb:"pouvoir",fa:"می‌توانستید توضیح بدهید."},
+      {pre:"J'",blank:"irais",suf:"à Paris par mes propres moyens.",verb:"aller",fa:"به پاریس با امکانات خودم می‌رفتم."},
+      {pre:"Ils",blank:"devraient",suf:"faire des efforts.",verb:"devoir",fa:"باید تلاش می‌کردند."},
+      {pre:"Je ne",blank:"pourrais",suf:"pas y aller.",verb:"pouvoir",fa:"نمی‌توانستم بروم."},
+    ]
+  },
+  {
+    title: "گروه ۵ — تمرین‌های موقعیتی TCF",
+    items: [
+      {pre:"Tu",blank:"partirais",suf:"à quelle heure ?",verb:"partir",fa:"چه ساعتی می‌رفتی؟"},
+      {pre:"Nous",blank:"conduirions",suf:"notre voiture.",verb:"conduire",fa:"با ماشین خودمان می‌رفتیم."},
+      {pre:"Tu",blank:"entendrais",suf:"mal à cause du bruit.",verb:"entendre",fa:"به خاطر سر و صدا بدتر می‌شنیدی."},
+      {pre:"Il",blank:"devrait",suf:"s'occuper de sa famille.",verb:"devoir",fa:"باید از خانواده‌اش مراقبت می‌کرد."},
+      {pre:"Ils",blank:"descendraient",suf:"leurs affaires.",verb:"descendre",fa:"وسایلشان را پایین می‌آوردند."},
+      {pre:"Vous",blank:"voudriez",suf:"quoi ?",verb:"vouloir",fa:"چه می‌خواستید؟"},
+      {pre:"Je",blank:"verrais",suf:"souvent mes amis.",verb:"voir",fa:"اغلب دوستانم را می‌دیدم."},
+      {pre:"Nous",blank:"croirions",suf:"que c'est possible.",verb:"croire",fa:"باور می‌کردیم که ممکن است."},
+      {pre:"Elle",blank:"connaîtrait",suf:"Paris comme sa poche.",verb:"connaître",fa:"پاریس را مثل کف دستش می‌شناخت."},
+      {pre:"Si j'étais riche, j'",blank:"achèterais",suf:"une maison au bord de la mer.",verb:"acheter",fa:"اگر پولدار بودم خانه‌ای کنار دریا می‌خریدم."},
+      {pre:"À votre place, je",blank:"chercherais",suf:"un autre emploi.",verb:"chercher",fa:"جای شما بودم دنبال شغل دیگری می‌گشتم."},
+      {pre:"",blank:"Pourriez",suf:"-vous répéter, s'il vous plaît ?",verb:"pouvoir",fa:"می‌توانید تکرار کنید، لطفاً؟"},
+      {pre:"Je",blank:"voudrais",suf:"réserver une table pour deux.",verb:"vouloir",fa:"می‌خواستم یک میز برای دو نفر رزرو کنم."},
+      {pre:"Ils",blank:"seraient",suf:"plus heureux à la campagne.",verb:"être",fa:"در روستا خوشحال‌تر بودند."},
+      {pre:"Tu",blank:"aurais",suf:"plus d'amis si tu souriais.",verb:"avoir",fa:"اگر لبخند می‌زدی دوستان بیشتری داشتی."},
+      {pre:"Elle",blank:"aimerait",suf:"apprendre le japonais.",verb:"aimer",fa:"دوست داشت ژاپنی یاد بگیرد."},
+      {pre:"Nous",blank:"irions",suf:"au restaurant ce soir.",verb:"aller",fa:"امشب به رستوران می‌رفتیم."},
+      {pre:"Vous",blank:"devriez",suf:"arriver plus tôt.",verb:"devoir",fa:"باید زودتر می‌رسیدید."},
+      {pre:"Selon les médias, il y",blank:"aurait",suf:"eu un accident.",verb:"avoir",fa:"طبق رسانه‌ها تصادفی رخ داده (گفته می‌شود)."},
+      {pre:"On",blank:"vivrait",suf:"mieux sans les guerres.",verb:"vivre",fa:"بدون جنگ‌ها بهتر زندگی می‌کردیم."},
+    ]
+  },
+];
+
+// ═══ ساخت UI تمرین ═══
+function buildQuiz(){
+  let html = '';
+  GROUPS.forEach((g, gi)=>{
+    html += `<div class="q-group"><div class="q-group-title">${g.title}</div>`;
+    g.items.forEach((q, qi)=>{
+      const id = `q_${gi}_${qi}`;
+      html += `
+        <div class="q-item" id="item_${gi}_${qi}">
+          <div class="q-num">سؤال ${gi*10+qi+1} / ۷۰</div>
+          <div class="q-fa">${q.fa}</div>
+          <div class="q-fr">
+            <div class="q-input-wrap">
+              <span class="q-pre">${q.pre}</span>
+              <input class="q-input" id="${id}" type="text" autocomplete="off"
+                spellcheck="false" placeholder="..."
+                onkeydown="if(event.key==='Enter'){checkOne(${gi},${qi});event.target.blur();}">
+              <span class="q-pre">${q.suf}</span>
+            </div>
+          </div>
+          <div class="q-answer" id="ans_${gi}_${qi}">✅ <b>${q.blank}</b> — (${q.verb})</div>
+          <span class="q-verb">(${q.verb})</span>
+        </div>`;
+    });
+    html += '</div>';
+  });
+  document.getElementById('quizBody').innerHTML = html;
+}
+
+function normalize(s){ return s.trim().toLowerCase().replace(/'/g,"'").replace(/é|è|ê/g,"e").replace(/à|â/g,"a").replace(/î/g,"i").replace(/ô/g,"o").replace(/û/g,"u").replace(/ç/g,"c"); }
+
+function checkOne(gi, qi){
+  const q = GROUPS[gi].items[qi];
+  const inp = document.getElementById(`q_${gi}_${qi}`);
+  const item = document.getElementById(`item_${gi}_${qi}`);
+  const correct = normalize(q.blank);
+  const given = normalize(inp.value);
+  // قبول کردن paierais هم
+  const alts = q.alts || [];
+  const ok = given === correct || alts.some(a=>normalize(a)===given);
+  item.classList.remove('correct','wrong');
+  item.classList.add(ok ? 'correct' : 'wrong');
+  if(ok) inp.value = q.blank;
+  updateScore();
+}
+
+function checkAll(){
+  GROUPS.forEach((g,gi)=>g.items.forEach((_,qi)=>checkOne(gi,qi)));
+  const total = document.querySelectorAll('.q-item.correct').length;
+  showResult(total);
+}
+
+function updateScore(){
+  const correct = document.querySelectorAll('.q-item.correct').length;
+  const total = 70;
+  document.getElementById('scoreDisplay').textContent = `${correct} / ${total}`;
+  document.getElementById('progressFill').style.width = (correct/total*100)+'%';
+  document.getElementById('progressText').textContent = `${correct} پاسخ درست از ${total}`;
+}
+
+function showResult(score){
+  const card = document.getElementById('resultCard');
+  card.classList.add('show');
+  const pct = Math.round(score/70*100);
+  let emoji='🏆', msg='';
+  if(pct>=90){emoji='🏆';msg='فوق‌العاده! تسلط کامل روی Conditionnel داری.';}
+  else if(pct>=70){emoji='⭐';msg='عالی! یه‌بار دیگه اشتباهات را مرور کن.';}
+  else if(pct>=50){emoji='📚';msg='خوب! نیاز به تمرین بیشتر روی بی‌قاعده‌هاست.';}
+  else{emoji='💪';msg='ادامه بده! برگرد به تب «ساخت» و دوباره امتحان کن.';}
+  document.getElementById('resultEmoji').textContent=emoji;
+  document.getElementById('resultScore').textContent=`${score} / ۷۰ — ${pct}%`;
+  document.getElementById('resultMsg').textContent=msg;
+  card.scrollIntoView({behavior:'smooth'});
+}
+
+function resetAll(){
+  document.querySelectorAll('.q-item').forEach(el=>{el.classList.remove('correct','wrong');});
+  document.querySelectorAll('.q-input').forEach(el=>{el.value='';});
+  document.getElementById('resultCard').classList.remove('show');
+  document.getElementById('scoreDisplay').textContent='۰ / ۷۰';
+  document.getElementById('progressFill').style.width='0%';
+  document.getElementById('progressText').textContent='۷۰ جمله در ۵ گروه';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+buildQuiz();
+</script>
+<script src="protect.js"></script>
+</body>
+</html>

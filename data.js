@@ -83,6 +83,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "LECON_conditionnel.html",
+    title: "درسنامه: Conditionnel Présent",
+    titleFr: "Le conditionnel présent",
+    category: "grammar", level: "B1–B2",
+    tags: ["درسنامه", "conditionnel", "si"],
+    summary: "ساخت (Futur+پسوندهای Imparfait) + صرف ۸ فعل بی‌قاعده + ۵ کاربرد (Si / درخواست مؤدبانه / توصیه / خبر غیرمستقیم / آرزو) + ۷۰ تمرین تعاملی در ۵ گروه.",
+  },
+
+  {
     file: "LECON_heure.html",
     title: "درسنامه: گفتن ساعت",
     titleFr: "Dire l'heure",
