@@ -15,7 +15,6 @@ const CATEGORIES = [
   { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
   { id: "podcast",      label: "معرفی پادکست",       icon: "♪", color: "#5a6f9e" },
   { id: "innerfrench",  label: "InnerFrench",       icon: "▶", color: "#2e7bb5" },
-  { id: "prive",        label: "شاگردان خصوصی",     icon: "🔒", color: "#7a5ba8" },
   { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
   { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
   { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
@@ -2127,38 +2126,3 @@ const INNERFRENCH = [
 //    note   : یادداشت/توضیح کوتاه
 //    items  : آرایه‌ای از محتواها {titre, desc, link?}
 // ═══════════════════════════════════════════════════════════
-const PRIVE_PASSWORD = "X12X";
-const PRIVE = [
-  {
-    nom: "کاوه محمدی",
-    emoji: "👤",
-    note: "محتوای اختصاصی و تمرین‌های ویژه‌ی کاوه برای آزمون TCF Canada.",
-    items: [
-      {
-        titre: "🎤 Expression Orale — Tâche 1",
-        desc: "هفت سؤال با پنج نسخه‌ی جواب و تمرین کنترل‌شده",
-        link: "PRIVE_kaveh_task1.html",
-      },
-      {
-        titre: "🗣️ Expression Orale — Tâche 3",
-        desc: "بیان دیدگاه: الگوی استاندارد + ساختارها + سه موضوع با استدلال",
-        link: "PRIVE_kaveh_task3.html",
-      },
-      {
-        titre: "🎙️ Live Trainer — تمرین زنده Task 3",
-        desc: "انتخاب موضوع → تایمر ۴:۳۰ → راهنمای گام‌به‌گام هر مرحله → تیک و برو. دقیقاً مثل آزمون واقعی.",
-        link: "PRIVE_kaveh_trainer.html",
-      },
-      {
-        titre: "🎯 کوچ TCF B2 — مسیر کامل Task 3",
-        desc: "تشخیص نقطه‌ضعف + اسکلت ذهنی رفلکسی + ۱۵ موضوع با نقشه + تایمر آزمون + برنامهٔ روزانه",
-        link: "PRIVE_kaveh_coach.html",
-      },
-      {
-        titre: "✍️ Expression Écrite — تحلیل متن استدلالی",
-        desc: "تحلیل کامل یک متن B2: ساختار، هایلایت واژگان/ساختارها، جعبه‌ی ابزار + سؤال دوم با نقشه",
-        link: "PRIVE_kaveh_ecrit.html",
-      },
-    ],
-  },
-];

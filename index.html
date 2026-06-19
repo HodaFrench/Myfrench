@@ -1545,10 +1545,7 @@
             } else if (catId === "miniarticle") {
                 renderMiniarticles();
             } else if (catId === "innerfrench") {
-                renderInnerFrench();
-            } else if (catId === "prive") {
-                renderPrive();
-            } else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
+                renderInnerFrench(); else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
                 // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
                 renderSections(catId);
             } else {
@@ -1922,25 +1919,7 @@
 
         // ── بخش شاگردان خصوصی (با رمز) ──
         let priveUnlocked = false;
-        function renderPrive() {
-            document.getElementById("grid").classList.add("grid-single");
-            const ci = catInfo("prive");
-            document.getElementById("resultsTitle").innerHTML =
-                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
-            const grid = document.getElementById("grid");
-            if (!priveUnlocked) {
-                document.getElementById("count").textContent = "محافظت‌شده";
-                grid.innerHTML = `
-                    <div class="prive-lock">
-                        <div class="prive-lock-icon">🔒</div>
-                        <div class="prive-lock-title">این بخش خصوصی است</div>
-                        <div class="prive-lock-sub">مخصوص شاگردان خصوصی. لطفاً رمز را وارد کن.</div>
-                        <input type="password" id="priveInput" class="prive-input" placeholder="رمز ورود" 
-                               onkeydown="if(event.key==='Enter') checkPrive()">
-                        <button class="prive-btn" onclick="checkPrive()">ورود</button>
-                        <div id="priveError" class="prive-error"></div>
-                    </div>`;
-                setTimeout(() => { const inp = document.getElementById("priveInput"); if (inp) inp.focus(); }, 100);
+, 100);
                 return;
             }
             renderPriveContent();
