@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "CULTURE_macaron.html",
+    title: "🍬 Le Macaron — تاریخ و هنر",
+    titleFr: "Le macaron : histoire, science et maisons légendaires",
+    category: "culture", level: "B1–B2",
+    tags: ["فرهنگ","macaron","Ladurée","Pierre Hermé","pâtisserie"],
+    summary: "پانصد سال تاریخ ماکارون: از کاترین دو مدیچی تا Pierre Hermé. Ladurée vs Hermé. علم ماکارون. دوزبانه با هایلایت‌های کلیکی.",
+  },
+
+  {
     file: "CULTURE_art_de_vivre.html",
     title: "L'Art de Vivre — هنر زندگی فرانسوی",
     titleFr: "L'art de vivre à la française",

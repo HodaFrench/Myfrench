@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Macaron — فرهنگ فرانسه · Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --rose:#c4506f;--rose-d:#8a2040;--rose-s:rgba(196,80,111,.08);
+    --green:#5a8f4a;--blue:#2e7bb5;--gold:#b07a4a;--purple:#7a5ba8;
+    --navy:#1e3a5f;--paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+  }
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(196,80,111,.035) 31px,rgba(196,80,111,.035) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:840px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--rose-d);text-decoration:none;font-size:13px;border:1px solid var(--line);
+    background:var(--cream);padding:7px 14px;border-radius:8px;transition:all .2s;}
+  .topbar a:hover{background:var(--rose-d);color:#fff;}
+
+  /* هدر */
+  .hero{background:linear-gradient(135deg,#6b1030,var(--rose-d),var(--rose));
+    color:#fff;padding:34px 28px 30px;border-radius:22px;margin-bottom:22px;
+    box-shadow:0 16px 44px rgba(138,32,64,.32);position:relative;overflow:hidden;}
+  .hero::before{content:"🍬";position:absolute;top:-20px;left:10px;font-size:130px;opacity:.08;line-height:1;}
+  .hero-tag{font-size:10.5px;color:rgba(255,255,255,.65);font-weight:700;letter-spacing:3px;margin-bottom:12px;}
+  .hero h1{font-size:30px;font-weight:700;margin-bottom:4px;line-height:1.15;}
+  .hero-sub{font-family:'Roboto',serif;font-size:15px;opacity:.88;font-style:italic;margin-top:10px;line-height:1.7;}
+  .hero-hashtags{margin-top:14px;font-size:12.5px;opacity:.75;direction:ltr;text-align:left;}
+
+  /* legend */
+  .legend{display:flex;gap:12px;flex-wrap:wrap;padding:12px 16px;
+    background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:20px;font-size:12.5px;}
+  .lg{display:flex;align-items:center;gap:6px;}
+  .lgd{width:26px;height:11px;border-radius:3px;flex-shrink:0;}
+
+  /* هایلایت‌ها */
+  .hw{background:rgba(196,80,111,.13);color:var(--rose-d);border-radius:4px;
+    padding:1px 5px;cursor:pointer;font-weight:600;font-family:'Roboto',serif;
+    border-bottom:2px solid rgba(196,80,111,.45);position:relative;transition:all .2s;}
+  .hw:hover,.hw.open{background:rgba(196,80,111,.24);}
+  .hg{background:rgba(90,143,74,.12);color:#2e6b1e;border-radius:4px;
+    padding:1px 5px;cursor:pointer;font-weight:600;font-family:'Roboto',serif;
+    border-bottom:2px solid rgba(90,143,74,.5);position:relative;transition:all .2s;}
+  .hg:hover,.hg.open{background:rgba(90,143,74,.22);}
+  .hb{background:rgba(46,123,181,.1);color:#1a5580;border-radius:4px;
+    padding:1px 5px;cursor:pointer;font-weight:600;font-family:'Roboto',serif;
+    border-bottom:2px dashed rgba(46,123,181,.5);position:relative;transition:all .2s;}
+  .hb:hover,.hb.open{background:rgba(46,123,181,.2);}
+  .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
+    background:var(--navy);color:var(--cream);font-family:'Estedad',sans-serif;
+    font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;
+    padding:5px 12px;border-radius:8px;z-index:30;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;visibility:hidden;
+    transition:opacity .25s;pointer-events:none;}
+  .hw.open .pop,.hg.open .pop,.hb.open .pop{opacity:1;visibility:visible;}
+
+  /* بلاک دوزبانه */
+  .bilingual{display:grid;grid-template-columns:1fr 1fr;gap:0;
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    overflow:hidden;margin-bottom:18px;box-shadow:0 5px 18px rgba(31,58,95,.05);}
+  .bl-fr{padding:20px 22px;border-left:1px solid var(--line);}
+  .bl-fa{padding:20px 22px;background:var(--rose-s);}
+  .bl-lang{font-size:11px;font-weight:700;letter-spacing:1.5px;margin-bottom:10px;
+    display:flex;align-items:center;gap:6px;}
+  .bl-lang.fr{color:var(--blue);}
+  .bl-lang.fa{color:var(--rose-d);}
+  .bl-text{font-family:'Roboto',serif;font-size:15.5px;line-height:2;color:var(--ink);}
+  .bl-text-fa{font-size:14px;line-height:2.3;color:var(--ink);}
+  @media(max-width:600px){
+    .bilingual{grid-template-columns:1fr;}
+    .bl-fr{border-left:none;border-bottom:1px solid var(--line);}
+  }
+
+  /* کارت‌ها */
+  .card{background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:22px 24px;margin-bottom:18px;box-shadow:0 5px 18px rgba(31,58,95,.05);}
+  .card-h{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:16px;
+    display:flex;align-items:center;gap:10px;padding-bottom:12px;
+    border-bottom:2px solid var(--warm);}
+  .card-h span{font-size:22px;}
+
+  /* تایم‌لاین */
+  .tl{position:relative;padding-right:28px;margin-bottom:4px;}
+  .tl::before{content:"";position:absolute;right:10px;top:6px;bottom:6px;
+    width:2px;background:linear-gradient(to bottom,var(--rose-d),var(--gold));}
+  .tl-item{position:relative;padding-right:28px;margin-bottom:22px;}
+  .tl-dot{position:absolute;right:-8px;top:6px;width:18px;height:18px;
+    border-radius:50%;background:var(--rose-d);border:3px solid #fff;
+    box-shadow:0 0 0 2px var(--rose-d);}
+  .tl-y{font-family:'Roboto',serif;font-size:13px;font-weight:700;
+    color:var(--rose-d);margin-bottom:5px;direction:ltr;text-align:left;}
+  .tl-text{font-size:14px;line-height:2;color:var(--ink);}
+  .tl-fr{font-family:'Roboto',serif;font-size:13.5px;color:var(--gray);
+    direction:ltr;text-align:left;margin-top:5px;line-height:1.75;
+    background:var(--cream);padding:8px 12px;border-radius:8px;}
+
+  /* برندها */
+  .brands{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
+  @media(max-width:540px){.brands{grid-template-columns:1fr;}}
+  .brand{border-radius:14px;padding:22px 18px;text-align:center;}
+  .b-laduree{background:linear-gradient(135deg,#f8f0ff,#edd5ff);border:2px solid #c9a4e8;}
+  .b-herme{background:linear-gradient(135deg,#fff5ee,#ffe5cc);border:2px solid #e0aa80;}
+  .b-em{font-size:38px;margin-bottom:10px;}
+  .b-name{font-family:'Roboto',serif;font-size:19px;font-weight:700;margin-bottom:4px;}
+  .b-since{font-size:11px;font-weight:700;letter-spacing:1.5px;opacity:.65;margin-bottom:12px;}
+  .b-desc{font-size:13.5px;line-height:2;color:var(--ink);}
+  .b-flavors{margin-top:10px;font-size:12.5px;line-height:1.9;}
+
+  /* علم */
+  .science-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px;}
+  @media(max-width:560px){.science-grid{grid-template-columns:1fr;}}
+  .sc{background:var(--cream);border-radius:12px;padding:14px 12px;text-align:center;
+    border-top:3px solid var(--rose);}
+  .sc-em{font-size:30px;margin-bottom:8px;}
+  .sc-cause{font-size:13px;font-weight:700;color:var(--rose-d);margin-bottom:6px;}
+  .sc-fr{font-family:'Roboto',serif;font-size:13px;color:var(--gray);
+    direction:ltr;text-align:left;line-height:1.7;}
+  .sc-fa{font-size:12px;color:var(--gray);margin-top:4px;}
+
+  /* نقل قول */
+  .quote{background:linear-gradient(135deg,rgba(138,32,64,.07),rgba(176,122,74,.05));
+    border-radius:16px;padding:24px;margin-bottom:18px;text-align:center;}
+  .q-fr{font-family:'Roboto',serif;font-size:19px;font-style:italic;
+    color:var(--navy);direction:ltr;line-height:1.65;margin-bottom:10px;}
+  .q-en{font-family:'Roboto',serif;font-size:15px;font-style:italic;
+    color:var(--blue);direction:ltr;margin-bottom:10px;}
+  .q-fa{font-size:14.5px;color:var(--rose-d);font-weight:600;}
+  .q-src{font-size:12px;color:var(--gray);margin-top:8px;}
+
+  /* واژگان */
+  .vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media(max-width:520px){.vocab-grid{grid-template-columns:1fr;}}
+  .vi{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:13px 15px;}
+  .vi-fr{font-family:'Roboto',serif;font-size:15px;font-weight:700;color:var(--navy);
+    direction:ltr;text-align:left;margin-bottom:3px;}
+  .vi-fa{font-size:13px;color:var(--rose-d);font-weight:600;margin-bottom:6px;}
+  .vi-ex{font-family:'Roboto',serif;font-size:13px;color:var(--gray);direction:ltr;text-align:left;line-height:1.65;}
+  .vi-exfa{font-size:12px;color:var(--gray);}
+
+  .footer{text-align:center;margin-top:28px;color:var(--gray);font-size:12px;line-height:2.2;}
+  .footer b{color:var(--rose-d);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=culture">← فرهنگ فرانسه</a>
+  </div>
+
+  <!-- هدر -->
+  <div class="hero">
+    <div class="hero-tag">🥐 CULTURE FRANÇAISE · PÂTISSERIE</div>
+    <h1>🍬 Le Macaron</h1>
+    <div class="hero-sub">«Une petite merveille qui cache cinq siècles d'histoire et un monde de savoir-faire.»<br>
+    یه معجزه‌ی کوچک که پانصد سال تاریخ و یه دنیا مهارت در خودش پنهان کرده.</div>
+    <div class="hero-hashtags">#dessert &nbsp;#Paris &nbsp;#PierreHermé &nbsp;#Ladurée &nbsp;#pâtisserie</div>
+  </div>
+
+  <!-- legend -->
+  <div class="legend">
+    <div class="lg"><span class="lgd" style="background:rgba(196,80,111,.38)"></span><b style="color:var(--rose-d)">واژهٔ کلیدی</b> — کلیک کن</div>
+    <div class="lg"><span class="lgd" style="background:rgba(90,143,74,.35)"></span><b style="color:#2e6b1e">کلوکیشن / اصطلاح</b></div>
+    <div class="lg"><span class="lgd" style="background:rgba(46,123,181,.28);border:1px dashed #2e7bb5"></span><b style="color:#1a5580">ساختار گرامری</b></div>
+  </div>
+
+  <!-- ══ بخش ۱: تعریف ══ -->
+  <div class="bilingual">
+    <div class="bl-fr">
+      <div class="bl-lang fr">🇫🇷 Français</div>
+      <div class="bl-text">
+        Le <span class="hw" onclick="t(this)">macaron<span class="pop">از ایتالیایی «maccherone» = خمیر لطیف / پاستا نازک</span></span>
+        est une <span class="hw" onclick="t(this)">pâtisserie<span class="pop">pâtisserie (f) = شیرینی / شیرینی‌پزی / قنادی</span></span>
+        <span class="hw" onclick="t(this)">raffinée<span class="pop">raffiné(e) = پیراسته، ظریف، اشرافی — از «raffiner» = تصفیه کردن</span></span>
+        <span class="hb" onclick="t(this)">à base de<span class="pop">à base de = بر پایهٔ / ساخته‌شده از — ساختار مهم!</span></span>
+        <span class="hw" onclick="t(this)">poudre d'amande<span class="pop">poudre d'amande = پودر بادام — ماده‌ی اصلی ماکارون</span></span>,
+        <span class="hw" onclick="t(this)">de meringue<span class="pop">meringue (f) = مرنگ — سفیدهٔ تخم‌مرغ زده‌شده با شکر</span></span>
+        et de <span class="hw" onclick="t(this)">sucre glace<span class="pop">sucre glace = پودر قند (شکر برفک)</span></span>,
+        <span class="hg" onclick="t(this)">garnie d'une<span class="pop">garni(e) de = پر شده از — participe passé با être در توصیف اسم مؤنث</span></span>
+        <span class="hw" onclick="t(this)">ganache<span class="pop">ganache (f) = گاناش — کرم شکلاتی غنی بین دو لایه</span></span>
+        ou d'une
+        <span class="hw" onclick="t(this)">crème au beurre<span class="pop">crème au beurre = کرم کره (باتر کریم)</span></span>.
+        Sa <span class="hw" onclick="t(this)">texture<span class="pop">texture (f) = بافت</span></span>
+        <span class="hg" onclick="t(this)">à la fois croquante et moelleuse<span class="pop">à la fois = در عین حال / هم...هم. croquant = ترد. moelleux = نرم و لطیف</span></span>
+        en fait
+        <span class="hw" onclick="t(this)">l'emblème<span class="pop">emblème (m) = نماد / آیکون — کلمهٔ مهم!</span></span>
+        de la
+        <span class="hw" onclick="t(this)">haute pâtisserie<span class="pop">haute pâtisserie = قنادی عالی / شیرینی‌پزی سطح بالا</span></span>
+        française.
+      </div>
+    </div>
+    <div class="bl-fa">
+      <div class="bl-lang fa">🇮🇷 فارسی</div>
+      <div class="bl-text-fa">
+        ماکارون یک شیرینی ظریف و اشرافی است بر پایهٔ پودر بادام، مرنگ و پودر قند، که با گاناش یا کرم کره پر می‌شود. بافت منحصربه‌فردش — که در عین حال هم ترد است هم نرم و لطیف — آن را به نماد قنادی عالی فرانسه تبدیل کرده است.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ بخش ۲: تاریخچه ══ -->
+  <div class="card">
+    <div class="card-h"><span>📜</span> تاریخچهٔ ۵۰۰ ساله — Une histoire sur 5 siècles</div>
+    <div class="tl">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-y">XVIe siècle · 1533 — آغاز ایتالیایی</div>
+        <div class="tl-text">
+          <span class="hw" onclick="t(this)">Catherine de Médicis<span class="pop">کاترین دو مدیچی = شاهزادهٔ ایتالیایی — همسر هانری دوم، پادشاه فرانسه</span></span>
+          با <span class="hw" onclick="t(this)">Henri II<span class="pop">Henri II = هانری دوم — پادشاه فرانسه (۱۵۴۷–۱۵۵۹)</span></span>
+          ازدواج کرد و
+          <span class="hg" onclick="t(this)">apporta avec elle<span class="pop">apporter avec soi = همراه خود آوردن (کلوکیشن)</span></span>
+          قنادان ایتالیایی‌اش را. آن‌ها «maccherone» —
+          یه <span class="hw" onclick="t(this)">biscuit simple<span class="pop">biscuit simple = بیسکوئیت ساده، تک‌لایه</span></span>
+          — به دربار فرانسه معرفی کردند.
+        </div>
+        <div class="tl-fr">En 1533, Catherine de Médicis épouse Henri II et apporte avec elle ses pâtissiers italiens. Le «maccherone» — un simple biscuit aux amandes — fait son entrée à la cour française.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-y">XVIIIe siècle — راهبه‌های نانسی</div>
+        <div class="tl-text">
+          در شهر <span class="hw" onclick="t(this)">Nancy<span class="pop">Nancy = شهری در شمال‌شرق فرانسه، مشهور به ماکارون تک‌لایه‌اش</span></span>،
+          دو <span class="hw" onclick="t(this)">religieuse<span class="pop">religieuse (f) = راهبه / خواهر دینی. جمع: religieuses</span></span>
+          به نام «Sœurs Macarons» شروع به
+          <span class="hg" onclick="t(this)">confectionner et vendre<span class="pop">confectionner = درست کردن (برای فروش). وندر = فروختن — دو مصدر با et</span></span>
+          ماکارون ساده کردند — هنوز تک‌لایه و بدون کرم.
+        </div>
+        <div class="tl-fr">À Nancy, les «Sœurs Macarons» commencent à confectionner et vendre des macarons simples — sans garniture — qui deviennent une spécialité locale encore célèbre aujourd'hui.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-y">XIXe siècle · ~1830 — انقلاب پاریسی</div>
+        <div class="tl-text">
+          <span class="hw" onclick="t(this)">La maison Ladurée<span class="pop">maison = خانه — در اینجا: برند / اتلیه. «la maison Ladurée» = برند لادوره</span></span>
+          ایدهٔ بزرگ را اجرا کرد: دو
+          <span class="hw" onclick="t(this)">coque<span class="pop">coque (f) = پوسته‌ی ماکارون — هر نیمهٔ گرد و رنگی</span></span>
+          با یک
+          <span class="hw" onclick="t(this)">ganache<span class="pop">ganache = کرم شکلاتی/میوه‌ای بین دو پوسته</span></span>
+          <span class="hg" onclick="t(this)">assembler<span class="pop">assembler = سر هم کردن / گرد آوردن — در اینجا: چسباندن دو پوسته</span></span>.
+          <span class="hw" onclick="t(this)">Le macaron parisien<span class="pop">macaron parisien = ماکارون پاریسی — نسخهٔ دولایه‌ی مدرن</span></span> متولد شد!
+        </div>
+        <div class="tl-fr">Vers 1830, Ladurée invente le «macaron parisien» : deux coques réunies par une ganache. Une révolution dans l'histoire de la pâtisserie française.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--gold);box-shadow:0 0 0 2px var(--gold);"></div>
+        <div class="tl-y" style="color:var(--gold);">1986 — انقلاب Pierre Hermé</div>
+        <div class="tl-text">
+          <span class="hw" onclick="t(this)">Pierre Hermé<span class="pop">Pierre Hermé (1961–) = بزرگ‌ترین قناد معاصر فرانسه — «پیکاسوی دنیای شیرینی»</span></span>
+          در آشپزخانهٔ
+          <span class="hw" onclick="t(this)">Fauchon<span class="pop">Fauchon = یکی از معتبرترین قنادی‌های تاریخی پاریس در Place de la Madeleine</span></span>
+          تکنیک جدیدی امتحان کرد:
+          <span class="hw" onclick="t(this)">meringue italienne<span class="pop">meringue italienne = مرنگ ایتالیایی — با شربت قند داغ. پایدارتر و لطیف‌تر از مرنگ فرانسوی</span></span>
+          به‌جای مرنگ فرانسوی. نتیجه؟ ماکارون مدرن — همان که امروز می‌شناسیم.
+        </div>
+        <div class="tl-fr">En 1986, chez Fauchon, Pierre Hermé teste la meringue italienne et révolutionne la texture du macaron. Le macaron moderne tel qu'on le connaît aujourd'hui est né.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ بخش ۳: دو برند ══ -->
+  <div class="card">
+    <div class="card-h"><span>👑</span> دو پادشاه ماکارون پاریس — Les deux maisons légendaires</div>
+
+    <div class="brands">
+      <div class="brand b-laduree">
+        <div class="b-em">🟣</div>
+        <div class="b-name" style="color:#5c2d80;">Ladurée</div>
+        <div class="b-since" style="color:#5c2d80;">DEPUIS 1862 · PARIS</div>
+        <div class="b-desc">
+          <span class="hb" onclick="t(this)">Considéré comme<span class="pop">être considéré comme = در نظر گرفته شدن به‌عنوان (passif رسمی)</span></span>
+          برند
+          <span class="hw" onclick="t(this)">iconique<span class="pop">iconique = آیکونیک / نمادین — از «icône»</span></span>
+          و
+          <span class="hw" onclick="t(this)">emblématique<span class="pop">emblématique = نمادین / سمبلیک — قوی‌تر از iconique</span></span>
+          ماکارون پاریسی.
+          بسته‌بندی‌های
+          <span class="hw" onclick="t(this)">luxueuses<span class="pop">luxueux(se) = لوکس / اشرافی</span></span>
+          به رنگ سبز
+          <span class="hw" onclick="t(this)">amande<span class="pop">amande = بادام — رنگ سبز کم‌رنگ خاص لادوره</span></span>
+          که خودش یه هنر است.
+        </div>
+        <div class="b-flavors" style="color:#5c2d80;">
+          <b>طعم‌های کلاسیک:</b><br>
+          وانیل · پسته · شکلات · کارامل شور · رز
+        </div>
+      </div>
+
+      <div class="brand b-herme">
+        <div class="b-em">🟠</div>
+        <div class="b-name" style="color:#7a3808;">Pierre Hermé</div>
+        <div class="b-since" style="color:#7a3808;">DEPUIS 1997 · PARIS</div>
+        <div class="b-desc">
+          <span class="hw" onclick="t(this)">Surnommé<span class="pop">surnommer = لقب دادن به. «surnommé» = که به او لقب داده‌اند — participe passé</span></span>
+          «le
+          <span class="hw" onclick="t(this)">Picasso<span class="pop">Picasso = نقاش اسپانیایی — نماد خلاقیت انقلابی</span></span>
+          de la pâtisserie».
+          <span class="hg" onclick="t(this)">Connu pour ses créations audacieuses<span class="pop">connu pour = معروف برای. audacieux = جسورانه / جرأت‌مندانه</span></span>
+          و
+          <span class="hw" onclick="t(this)">innovantes<span class="pop">innovant(e) = نوآورانه — از «innover» = نوآوری کردن</span></span>.
+          از ژاپن تا دبی و نیویورک.
+        </div>
+        <div class="b-flavors" style="color:#7a3808;">
+          <b>طعم‌های خاص:</b><br>
+          رز+لیچی+تمشک (Ispahan) · فویگراس! · زعفران · کارامل+نمک دریا
+        </div>
+      </div>
+    </div>
+
+    <!-- مقایسه دوزبانه -->
+    <div class="bilingual" style="margin-top:4px;">
+      <div class="bl-fr">
+        <div class="bl-lang fr">🇫🇷 Le débat parisien</div>
+        <div class="bl-text">
+          À Paris, le débat sur le
+          <span class="hg" onclick="t(this)">meilleur macaron<span class="pop">le meilleur = بهترین — superlatif از bon. «le meilleur macaron» کلوکیشن رایج پاریس</span></span>
+          est une question
+          <span class="hw" onclick="t(this)">sérieuse<span class="pop">sérieux(se) = جدی. در اینجا: «presque philosophique» — تقریباً فلسفی!</span></span>,
+          presque
+          <span class="hw" onclick="t(this)">philosophique<span class="pop">philosophique = فلسفی — فرانسوی‌ها واقعاً اینقدر جدی می‌گیرند!</span></span>.
+          Chaque maison
+          <span class="hg" onclick="t(this)">a ses fidèles<span class="pop">avoir ses fidèles = طرفداران وفادار داشتن. fidèle = وفادار — کلوکیشن زیبا</span></span>
+          et ses
+          <span class="hw" onclick="t(this)">défenseurs<span class="pop">défenseur (m) = مدافع. جمع: défenseurs</span></span>
+          <span class="hw" onclick="t(this)">passionnés<span class="pop">passionné(e) = پرشور / شیفته — از «passion»</span></span>.
+        </div>
+      </div>
+      <div class="bl-fa">
+        <div class="bl-lang fa">🇮🇷 بحث پاریسی</div>
+        <div class="bl-text-fa">
+          در پاریس، بحث درباره‌ی «بهترین ماکارون» یک موضوع جدی است — تقریباً فلسفی! هر برند طرفداران وفادار و مدافعان پرشور خودش را دارد. از یک پاریسی بپرس «Ladurée یا Hermé؟» — آماده‌ی یک بحث داغ باش!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ بخش ۴: علم ماکارون ══ -->
+  <div class="card">
+    <div class="card-h"><span>🔬</span> علم ماکارون — Pourquoi c'est si difficile ?</div>
+
+    <div class="bilingual">
+      <div class="bl-fr">
+        <div class="bl-lang fr">🇫🇷 La science du macaron</div>
+        <div class="bl-text">
+          Le macaron est
+          <span class="hg" onclick="t(this)">souvent qualifié de<span class="pop">être qualifié de = نامیده شدن به‌عنوان / توصیف شدن — passif با «de»</span></span>
+          «la pâtisserie la plus
+          <span class="hw" onclick="t(this)">délicate<span class="pop">délicat(e) = ظریف / حساس / نازک‌کار — هم «ظریف» هم «حساس»</span></span>
+          du monde». La moindre
+          <span class="hw" onclick="t(this)">variation<span class="pop">variation (f) = تغییر / نوسان — از «varier» = تفاوت داشتن</span></span>
+          dans la
+          <span class="hw" onclick="t(this)">technique de macaronnage<span class="pop">macaronnage (m) = تکنیک خاص هم‌زدن خمیر ماکارون — اصطلاح تخصصی قنادی!</span></span>,
+          le
+          <span class="hw" onclick="t(this)">taux d'humidité<span class="pop">taux d'humidité = میزان رطوبت. taux = نرخ / میزان</span></span>
+          ou la
+          <span class="hw" onclick="t(this)">cuisson<span class="pop">cuisson (f) = پخت — مرحله‌ی پختن در فر</span></span>
+          peut
+          <span class="hg" onclick="t(this)">compromettre le résultat<span class="pop">compromettre = به خطر انداختن / خراب کردن — فعل قوی و رسمی</span></span>.
+          Les
+          <span class="hw" onclick="t(this)">pâtissiers<span class="pop">pâtissier(ière) = قناد / شیرینی‌پز — حرفه‌ای</span></span>
+          <span class="hw" onclick="t(this)">professionnels<span class="pop">professionnel(le) = حرفه‌ای — در مقابل amateur</span></span>
+          disent :
+        </div>
+      </div>
+      <div class="bl-fa">
+        <div class="bl-lang fa">🇮🇷 فارسی</div>
+        <div class="bl-text-fa">
+          ماکارون اغلب «حساس‌ترین شیرینی دنیا» نامیده می‌شود. کوچک‌ترین تغییر در تکنیک هم‌زدن خمیر، میزان رطوبت هوا، یا مرحلهٔ پخت می‌تواند همه‌چیز را خراب کند. قنادان حرفه‌ای می‌گویند:
+        </div>
+      </div>
+    </div>
+
+    <div class="science-grid">
+      <div class="sc">
+        <div class="sc-em">💧</div>
+        <div class="sc-cause">رطوبت زیاد<br><span style="font-family:'Roboto',serif;font-size:11px;color:var(--gray);">Trop d'humidité</span></div>
+        <div class="sc-fr">La coque devient molle et collante — impossible à décoller</div>
+        <div class="sc-fa">پوسته نرم و چسبناک می‌شود</div>
+      </div>
+      <div class="sc">
+        <div class="sc-em">🌡️</div>
+        <div class="sc-cause">دمای نادرست<br><span style="font-family:'Roboto',serif;font-size:11px;color:var(--gray);">Mauvaise température</span></div>
+        <div class="sc-fr">Il se fissure, ne gonfle pas ou brûle en dessous</div>
+        <div class="sc-fa">ترک می‌خورد، پف نمی‌کند یا زیرش می‌سوزد</div>
+      </div>
+      <div class="sc">
+        <div class="sc-em">🌀</div>
+        <div class="sc-cause">هم‌زدن اشتباه<br><span style="font-family:'Roboto',serif;font-size:11px;color:var(--gray);">Macaronnage raté</span></div>
+        <div class="sc-fr">La texture est ruinée : trop dense ou trop liquide</div>
+        <div class="sc-fa">بافتش خراب می‌شود: خیلی سفت یا خیلی شل</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ نقل قول ══ -->
+  <div class="quote">
+    <div class="q-fr">«Si un jour tu réussis un macaron parfait,<br>ce jour-là, tu as créé un chef-d'œuvre.»</div>
+    <div class="q-en">"Macaron is a test of a pastry chef's ultimate skill."</div>
+    <div class="q-fa">«اگر یک روز ماکارون کاملی درآوری — همان روز یک شاهکار ساخته‌ای.»</div>
+    <div class="q-src">— قنادان حرفه‌ای پاریس</div>
+  </div>
+
+  <!-- ══ واژگان ══ -->
+  <div class="card" style="border-top:4px solid var(--rose);">
+    <div class="card-h"><span>📖</span> واژگان کلیدی این مقاله</div>
+    <div class="vocab-grid">
+      <div class="vi">
+        <div class="vi-fr">la pâtisserie</div><div class="vi-fa">شیرینی / قنادی</div>
+        <div class="vi-ex">Elle adore la pâtisserie française.</div>
+        <div class="vi-exfa">عاشق قنادی فرانسوی است.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">la coque</div><div class="vi-fa">پوستهٔ ماکارون</div>
+        <div class="vi-ex">Les coques doivent être bien lisses.</div>
+        <div class="vi-exfa">پوسته‌ها باید کاملاً صاف باشند.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">la ganache</div><div class="vi-fa">گاناش — کرم شکلاتی</div>
+        <div class="vi-ex">Une ganache à la framboise.</div>
+        <div class="vi-exfa">گاناش تمشک.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">raffiné(e)</div><div class="vi-fa">ظریف / پیراسته / اشرافی</div>
+        <div class="vi-ex">Un goût raffiné et élégant.</div>
+        <div class="vi-exfa">طعمی ظریف و باکلاس.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">délicat(e)</div><div class="vi-fa">ظریف / حساس / نازک‌کار</div>
+        <div class="vi-ex">C'est une opération très délicate.</div>
+        <div class="vi-exfa">این یک عمل بسیار حساس است.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">à la fois</div><div class="vi-fa">در عین حال / هم...هم</div>
+        <div class="vi-ex">À la fois croquant et moelleux.</div>
+        <div class="vi-exfa">هم ترد هم نرم و لطیف.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">l'emblème (m)</div><div class="vi-fa">نماد / سمبل</div>
+        <div class="vi-ex">Le macaron est l'emblème de Paris.</div>
+        <div class="vi-exfa">ماکارون نماد پاریس است.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">un chef-d'œuvre</div><div class="vi-fa">شاهکار</div>
+        <div class="vi-ex">Ce macaron est un vrai chef-d'œuvre.</div>
+        <div class="vi-exfa">این ماکارون یه شاهکار واقعی است.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">surnommer</div><div class="vi-fa">لقب دادن به</div>
+        <div class="vi-ex">On le surnomme le Picasso.</div>
+        <div class="vi-exfa">به او پیکاسو لقب داده‌اند.</div>
+      </div>
+      <div class="vi">
+        <div class="vi-fr">audacieux(se)</div><div class="vi-fa">جسورانه / جرأت‌مندانه</div>
+        <div class="vi-ex">Des saveurs audacieuses et créatives.</div>
+        <div class="vi-exfa">طعم‌های جسورانه و خلاقانه.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    منابع: Pierre Hermé · Ladurée · La Minute Gourmande Paris · Lapatisserienumerique.com · Sortiraparis.com<br>
+    <b>Français avec Hoda</b> · فرهنگ فرانسه 🥐
+  </div>
+</div>
+
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hg.open,.hb.open").forEach(e=>{
+    e.classList.remove("open");
+    if(e._t){clearTimeout(e._t);e._t=null;}
+  });
+  if(!w){
+    el.classList.add("open");
+    el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);
+  }
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
