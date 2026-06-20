@@ -43,6 +43,25 @@
             content: "";
             position: fixed; inset: 0;
             background-image: radial-gradient(circle at 50% 0%, rgba(168,135,79,0.04), transparent 60%);
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+              repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.10) 31px, rgba(65,97,138,0.10) 32px);
+            pointer-events: none;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; bottom: 0;
+            right: 58px;
+            width: 2px;
+            background: rgba(196,80,45,0.22);
+            z-index: -1;
+            pointer-events: none;
             pointer-events: none; z-index: 0;
         }
 
