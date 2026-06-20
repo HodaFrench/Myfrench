@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "VOCAB_mots_difficiles.html",
+    title: "📚 ۱۰۰ کلمهٔ دشوار فرانسه",
+    titleFr: "100 Mots Difficiles en Français",
+    category: "vocab", level: "B2–C1",
+    tags: ["واژگان","مشکل","avancé","B2","C1"],
+    summary: "۱۰۰ کلمهٔ سطح B2–C1 با تعریف فرانسوی، ترجمهٔ فارسی و ۲ مثال هر کدام. قابل جستجو و فیلتر بر اساس سطح و موضوع (احساس، اخلاق، ذهن، اجتماع...).",
+  },
+
+  {
     file: "LECON_mind_maps_temps.html",
     title: "🗺️ Mind Maps — زمان‌های فرانسه",
     titleFr: "Mind Maps des temps français A1 → C1",

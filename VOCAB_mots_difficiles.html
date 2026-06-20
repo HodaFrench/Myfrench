@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Mots Difficiles — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1e3a5f;--accent:#7a5ba8;--accent2:#5a3b88;
+    --green:#2e8b6b;--blue:#2e7bb5;--rose:#c4506f;--gold:#b07a4a;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;
+    --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+  }
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,.04) 31px,rgba(122,91,168,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:920px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);
+    background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  /* هدر */
+  .header{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;
+    padding:28px;border-radius:18px;margin-bottom:20px;
+    box-shadow:0 12px 32px rgba(122,91,168,.28);position:relative;overflow:hidden;}
+  .header::before{content:"📚";position:absolute;top:-10px;left:10px;font-size:110px;opacity:.09;}
+  .header h1{font-size:22px;font-weight:700;margin-bottom:5px;}
+  .header .sub{font-size:13.5px;opacity:.92;line-height:1.9;}
+  /* فیلتر */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px;
+    align-items:center;}
+  .filter-bar input{font-family:'Roboto',serif;font-size:14px;border:1.5px solid var(--line);
+    border-radius:20px;padding:9px 16px;outline:none;flex:1;min-width:180px;
+    background:var(--white);transition:border-color .2s;}
+  .filter-bar input:focus{border-color:var(--accent);}
+  .filter-btn{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;
+    border:1.5px solid var(--line);background:var(--white);border-radius:20px;
+    padding:8px 14px;cursor:pointer;transition:all .2s;color:var(--ink);}
+  .filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .count-info{font-size:13px;color:var(--gray);margin-bottom:14px;}
+  /* کارت‌های واژه */
+  .words-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:580px){.words-grid{grid-template-columns:1fr;}}
+  .word-card{background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;transition:all .25s;cursor:default;}
+  .word-card:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(122,91,168,.1);
+    transform:translateY(-2px);}
+  .word-card.hidden{display:none;}
+  .wc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+  .wc-num{font-size:11px;color:var(--gray);font-weight:700;flex-shrink:0;margin-top:2px;}
+  .wc-level{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:6px;
+    color:#fff;flex-shrink:0;}
+  .wc-fr{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--navy);
+    direction:ltr;text-align:left;margin-bottom:3px;}
+  .wc-genre{font-size:11.5px;color:var(--gray);font-style:italic;margin-right:6px;}
+  .wc-fa{font-size:14px;color:var(--accent);font-weight:600;margin-bottom:8px;}
+  .wc-def{font-family:'Roboto',serif;font-size:13px;color:var(--gray);
+    direction:ltr;text-align:left;line-height:1.7;margin-bottom:8px;
+    font-style:italic;border-right:3px solid var(--line);padding-right:10px;}
+  .wc-def-fa{font-size:12.5px;color:var(--gray);margin-bottom:8px;}
+  .wc-ex{font-family:'Roboto',serif;font-size:14px;color:var(--ink);
+    direction:ltr;text-align:left;line-height:1.7;margin-bottom:4px;
+    background:var(--cream);padding:8px 12px;border-radius:8px;}
+  .wc-ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;}
+  .wc-ex2{font-family:'Roboto',serif;font-size:13.5px;color:var(--ink);
+    direction:ltr;text-align:left;line-height:1.7;margin-top:6px;margin-bottom:4px;
+    background:rgba(122,91,168,.05);padding:7px 12px;border-radius:8px;}
+  .wc-ex2-fa{font-size:12px;color:var(--gray);padding:0 4px;}
+  .wc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+  .wc-tag{font-size:11px;padding:2px 8px;border-radius:6px;
+    background:rgba(122,91,168,.1);color:var(--accent2);}
+  /* نتیجه خالی */
+  .empty-state{text-align:center;padding:40px;color:var(--gray);}
+  .empty-state .em{font-size:40px;margin-bottom:12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=vocab">← واژگان</a>
+  </div>
+  <div class="header">
+    <h1>📚 ۱۰۰ کلمهٔ دشوار فرانسه</h1>
+    <div class="sub">100 Mots Difficiles — از مفاهیم انتزاعی تا احساسی و اخلاقی. سطح B2–C1. با تعریف، ترجمه و ۲ مثال برای هر کلمه.</div>
+  </div>
+
+  <!-- فیلتر -->
+  <div class="filter-bar">
+    <input type="text" id="searchInput" placeholder="🔍 جستجو به فرانسه یا فارسی..." oninput="filterWords()">
+    <button class="filter-btn active" onclick="filterCat('all',this)">همه</button>
+    <button class="filter-btn" onclick="filterCat('B2',this)">B2</button>
+    <button class="filter-btn" onclick="filterCat('C1',this)">C1</button>
+    <button class="filter-btn" onclick="filterCat('احساس',this)">احساس</button>
+    <button class="filter-btn" onclick="filterCat('اخلاق',this)">اخلاق</button>
+    <button class="filter-btn" onclick="filterCat('ذهن',this)">ذهن</button>
+    <button class="filter-btn" onclick="filterCat('اجتماع',this)">اجتماع</button>
+  </div>
+  <div class="count-info" id="countInfo">نمایش ۱۰۰ کلمه</div>
+
+  <div class="words-grid" id="wordsGrid"></div>
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <div class="em">🔍</div>نتیجه‌ای پیدا نشد
+  </div>
+</div>
+
+<script>
+const WORDS = [
+  // ═══ A ═══
+  {n:1,fr:"l'abstraction",genre:"f.",fa:"انتزاع / مفهوم ذهنی",level:"B2",tags:["ذهن","فلسفه"],
+   def:"Concept qui n'existe pas de façon concrète, issu de la pensée.",
+   def_fa:"مفهومی که به‌طور ملموس وجود ندارد و از تفکر برخاسته است.",
+   ex1:"L'amour est une abstraction que chacun définit différemment.",ex1_fa:"عشق انتزاعی است که هر کس متفاوت تعریفش می‌کند.",
+   ex2:"Cet enfant a du mal avec les abstractions mathématiques.",ex2_fa:"این بچه با مفاهیم انتزاعی ریاضی مشکل دارد."},
+  {n:2,fr:"l'altruisme",genre:"m.",fa:"نوع‌دوستی / ایثار",level:"B2",tags:["اخلاق","جامعه"],
+   def:"Comportement désintéressé qui vise le bien d'autrui avant le sien.",
+   def_fa:"رفتار بی‌منفعتانه که خیر دیگران را قبل از خود در نظر می‌گیرد.",
+   ex1:"Son altruisme l'a poussé à donner la moitié de ses économies à des œuvres caritatives.",ex1_fa:"نوع‌دوستیش او را واداشت نصف پس‌اندازش را به خیریه بدهد.",
+   ex2:"L'altruisme est une vertu rare dans un monde individualiste.",ex2_fa:"نوع‌دوستی در دنیایی فردگرا یک فضیلت کمیاب است."},
+  {n:3,fr:"l'ambivalence",genre:"f.",fa:"دوگانگی احساس / ابهام",level:"C1",tags:["احساس","روانشناسی"],
+   def:"État de quelqu'un qui ressent simultanément des sentiments contradictoires.",
+   def_fa:"حالت کسی که همزمان احساسات متناقض دارد.",
+   ex1:"Il ressentait une profonde ambivalence face à cette décision : envie d'y aller, mais peur de l'inconnu.",ex1_fa:"در مورد این تصمیم دوگانگی عمیقی احساس می‌کرد: میل به رفتن، ولی ترس از ناشناخته.",
+   ex2:"L'ambivalence envers ses parents est normale à l'adolescence.",ex2_fa:"دوگانگی احساس نسبت به والدین در نوجوانی طبیعی است."},
+  {n:4,fr:"l'ambiguïté",genre:"f.",fa:"ابهام / چندمعنایی",level:"B2",tags:["زبان","ذهن"],
+   def:"Caractère de ce qui peut être interprété de plusieurs façons.",
+   def_fa:"خصلت چیزی که به چند شکل می‌توان تفسیر کرد.",
+   ex1:"L'ambiguïté de sa réponse nous a laissés perplexes.",ex1_fa:"ابهام جوابش ما را گیج کرد.",
+   ex2:"Cette loi souffre d'une ambiguïté juridique qui complique son application.",ex2_fa:"این قانون از ابهام حقوقی رنج می‌برد که اجرایش را پیچیده می‌کند."},
+  {n:5,fr:"l'apathie",genre:"f.",fa:"بی‌تفاوتی / بی‌خیالی کامل",level:"B2",tags:["احساس","روانشناسی"],
+   def:"Absence de réaction, d'émotion ou d'intérêt pour ce qui se passe autour de soi.",
+   def_fa:"نبود واکنش، احساس یا علاقه به آنچه اطراف اتفاق می‌افتد.",
+   ex1:"Après des mois de chômage, il avait sombré dans une apathie totale.",ex1_fa:"بعد از ماه‌ها بیکاری، در بی‌تفاوتی کامل فرو رفته بود.",
+   ex2:"L'apathie des jeunes envers la politique inquiète les experts.",ex2_fa:"بی‌تفاوتی جوانان نسبت به سیاست متخصصان را نگران می‌کند."},
+  {n:6,fr:"l'appréhension",genre:"f.",fa:"نگرانی / بیم / درک شناختی",level:"B2",tags:["احساس"],
+   def:"Sentiment d'inquiétude avant un événement redouté; aussi: saisir mentalement une idée.",
+   def_fa:"احساس نگرانی قبل از یک رویداد ترسناک؛ یا: درک ذهنی یک ایده.",
+   ex1:"Elle partait à l'étranger avec une certaine appréhension mais beaucoup d'excitation.",ex1_fa:"با کمی نگرانی ولی هیجان زیاد به خارج می‌رفت.",
+   ex2:"L'appréhension de concepts abstraits nécessite un effort cognitif.",ex2_fa:"درک مفاهیم انتزاعی نیاز به تلاش شناختی دارد."},
+  {n:7,fr:"l'audace",genre:"f.",fa:"جرأت / جسارت / بی‌باکی",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Disposition à braver les obstacles, à prendre des risques, sans craindre les conséquences.",
+   def_fa:"آمادگی برای مقابله با موانع، پذیرش ریسک بدون ترس از عواقب.",
+   ex1:"Il a eu l'audace de contredire son patron en public — et il avait raison.",ex1_fa:"جرأت کرد در ملأ عام با رئیسش مخالفت کند — و حق هم داشت.",
+   ex2:"L'audace de ce peintre dans ses choix de couleurs était époustouflante.",ex2_fa:"جسارت این نقاش در انتخاب رنگ‌هایش شگفت‌انگیز بود."},
+  {n:8,fr:"l'authenticité",genre:"f.",fa:"اصالت / صداقت با خود",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Qualité de ce qui est vrai, sincère, conforme à ce qu'on est réellement.",
+   def_fa:"خصلت چیزی که واقعی، صادقانه و مطابق با آنچه واقعاً هستیم است.",
+   ex1:"Ce qui attire les gens vers lui, c'est son authenticité — il ne joue jamais de rôle.",ex1_fa:"آنچه مردم را به سمتش جذب می‌کند اصالتش است — هیچ‌وقت نقشی بازی نمی‌کند.",
+   ex2:"L'authenticité de ce tableau a été remise en question par les experts.",ex2_fa:"اصالت این نقاشی توسط متخصصان زیر سؤال رفت."},
+  // ═══ B ═══
+  {n:9,fr:"la bienveillance",genre:"f.",fa:"خیرخواهی / مهربانی صمیمانه",level:"B2",tags:["اخلاق","اجتماع"],
+   def:"Disposition favorable, douce et attentive à l'égard d'autrui.",
+   def_fa:"تمایل مطلوب، ملایم و توجه‌آمیز نسبت به دیگران.",
+   ex1:"Le médecin l'a accueillie avec une grande bienveillance qui l'a immédiatement mise à l'aise.",ex1_fa:"پزشک با خیرخواهی زیادی از او استقبال کرد که بلافاصله آرامش بخشید.",
+   ex2:"La bienveillance en milieu scolaire améliore les résultats des élèves.",ex2_fa:"خیرخواهی در محیط تحصیلی نتایج دانش‌آموزان را بهبود می‌بخشد."},
+  {n:10,fr:"la bravade",genre:"f.",fa:"بی‌باکی نمایشی / لاف",level:"C1",tags:["شخصیت"],
+   def:"Action de braver quelqu'un ou quelque chose de manière ostentatoire, souvent pour impressionner.",
+   def_fa:"عمل به چالش کشیدن چیزی یا کسی به شکل نمایشی، اغلب برای تحت تأثیر گذاشتن.",
+   ex1:"Ce n'était pas du courage, c'était de la bravade — il voulait juste épater la galerie.",ex1_fa:"این شجاعت نبود، بی‌باکی نمایشی بود — فقط می‌خواست دیگران را تحت تأثیر بگذارد.",
+   ex2:"Par bravade, il a sauté de la falaise sans en mesurer le danger.",ex2_fa:"از روی لاف، از صخره پرید بدون اینکه خطر را بسنجد."},
+  // ═══ C ═══
+  {n:11,fr:"la candeur",genre:"f.",fa:"سادگی و پاکی / معصومیت",level:"B2",tags:["شخصیت","احساس"],
+   def:"Pureté d'âme, sincérité naïve et innocente, sans malice.",
+   def_fa:"پاکی روح، صداقت ساده و معصومانه، بدون بدخواهی.",
+   ex1:"La candeur de cet enfant qui croyait encore au père Noël était touchante.",ex1_fa:"معصومیت این بچه که هنوز به بابانوئل باور داشت دلنشین بود.",
+   ex2:"Il répondait avec une candeur désarmante qui rendait toute critique impossible.",ex2_fa:"با سادگی خلع‌سلاح‌کننده‌ای جواب می‌داد که هر انتقادی را غیرممکن می‌کرد."},
+  {n:12,fr:"la clairvoyance",genre:"f.",fa:"دوراندیشی / درک شفاف",level:"C1",tags:["ذهن","شخصیت"],
+   def:"Capacité à percevoir et comprendre les choses avec clarté et lucidité.",
+   def_fa:"توانایی درک و فهم چیزها با وضوح و هوشمندی.",
+   ex1:"Sa clairvoyance politique lui avait permis de prévoir la crise plusieurs années avant.",ex1_fa:"دوراندیشی سیاسیش به او اجازه داد چند سال قبل بحران را پیش‌بینی کند.",
+   ex2:"Avec la clairvoyance du recul, il comprit ses erreurs.",ex2_fa:"با وضوح نگاه از فاصله، اشتباهاتش را فهمید."},
+  {n:13,fr:"la complexité",genre:"f.",fa:"پیچیدگی",level:"B2",tags:["ذهن","اجتماع"],
+   def:"Caractère de ce qui est composé d'éléments nombreux et intriqués, difficile à analyser.",
+   def_fa:"خصلت چیزی که از عناصر متعدد و درهم‌تنیده تشکیل شده و تحلیلش سخت است.",
+   ex1:"La complexité de la situation géopolitique dépasse les analyses simplistes.",ex1_fa:"پیچیدگی وضعیت ژئوپلیتیک از تحلیل‌های ساده‌انگارانه فراتر است.",
+   ex2:"J'aime la complexité des personnages de ce roman — aucun n'est entièrement bon ou mauvais.",ex2_fa:"پیچیدگی شخصیت‌های این رمان را دوست دارم — هیچ‌کدام کاملاً خوب یا بد نیست."},
+  {n:14,fr:"la conciliation",genre:"f.",fa:"آشتی / سازش",level:"B2",tags:["اجتماع","اخلاق"],
+   def:"Action de mettre d'accord des parties opposées, de trouver un compromis.",
+   def_fa:"عمل به توافق رساندن طرف‌های مخالف، پیدا کردن سازش.",
+   ex1:"Le médiateur cherchait une conciliation entre les deux parties en conflit.",ex1_fa:"میانجی دنبال آشتی بین دو طرف درگیر بود.",
+   ex2:"La conciliation entre vie professionnelle et vie familiale est un défi quotidien.",ex2_fa:"آشتی بین زندگی حرفه‌ای و خانوادگی یک چالش روزانه است."},
+  {n:15,fr:"la conjoncture",genre:"f.",fa:"وضعیت کلی / شرایط اقتصادی",level:"C1",tags:["اجتماع","اقتصاد"],
+   def:"Ensemble des circonstances économiques ou sociales qui caractérisent une période donnée.",
+   def_fa:"مجموعهٔ اوضاع اقتصادی یا اجتماعی که یک دورهٔ خاص را مشخص می‌کند.",
+   ex1:"La conjoncture économique actuelle n'est pas favorable à l'investissement.",ex1_fa:"وضعیت اقتصادی کنونی برای سرمایه‌گذاری مساعد نیست.",
+   ex2:"Il a su profiter d'une conjoncture favorable pour lancer son entreprise.",ex2_fa:"توانست از شرایط مساعد برای راه‌اندازی شرکتش استفاده کند."},
+  {n:16,fr:"la connivence",genre:"f.",fa:"همدستی / تبانی / تفاهم ضمنی",level:"C1",tags:["اجتماع"],
+   def:"Complicité, accord tacite entre personnes, parfois à l'insu des autres.",
+   def_fa:"همدستی، توافق ضمنی بین افراد، گاهی بدون اطلاع دیگران.",
+   ex1:"Il y avait entre eux une connivence particulière — un regard suffisait à se comprendre.",ex1_fa:"بینشان یک تفاهم خاص بود — یک نگاه برای فهمیدن یکدیگر کافی بود.",
+   ex2:"Les juges soupçonnaient une connivence entre l'accusé et un témoin.",ex2_fa:"قضات به همدستی بین متهم و یک شاهد مشکوک بودند."},
+  {n:17,fr:"la contingence",genre:"f.",fa:"احتمال / تصادف / ممکن‌الوقوع",level:"C1",tags:["فلسفه","ذهن"],
+   def:"Caractère de ce qui aurait pu ne pas être ou arriver différemment.",
+   def_fa:"خصلت چیزی که می‌توانست نباشد یا متفاوت اتفاق بیفتد.",
+   ex1:"La philosophie existentialiste explore la contingence de l'existence humaine.",ex1_fa:"فلسفهٔ اگزیستانسیالیست احتمالی بودن وجود انسانی را بررسی می‌کند.",
+   ex2:"Sa réussite devait beaucoup à la contingence des circonstances.",ex2_fa:"موفقیتش زیاد به تصادف شرایط بستگی داشت."},
+  {n:18,fr:"la conviction",genre:"f.",fa:"اعتقاد راسخ / باور عمیق",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Certitude profonde et ferme qu'on éprouve à l'égard de quelque chose.",
+   def_fa:"یقین عمیق و راسخی که نسبت به چیزی احساس می‌کنیم.",
+   ex1:"Elle a défendu ses convictions avec une fermeté admirable malgré les critiques.",ex1_fa:"با وجود انتقادها، باورهایش را با قاطعیت قابل تحسینی دفاع کرد.",
+   ex2:"Parler avec conviction convainc beaucoup plus qu'un discours appris par cœur.",ex2_fa:"صحبت کردن با اعتقاد خیلی بیشتر از یک سخنرانی حفظ‌شده متقاعد می‌کند."},
+  // ═══ D ═══
+  {n:19,fr:"la déférence",genre:"f.",fa:"احترام / تبعیت ادبانه",level:"C1",tags:["اجتماع","اخلاق"],
+   def:"Respect profond et soumission respectueuse envers quelqu'un qu'on estime supérieur.",
+   def_fa:"احترام عمیق و تبعیت ادبانه نسبت به کسی که برتر تلقی می‌شود.",
+   ex1:"Il s'exprimait avec une déférence totale envers ses anciens, même quand il n'était pas d'accord.",ex1_fa:"حتی وقتی موافق نبود با احترام کامل نسبت به بزرگ‌ترها صحبت می‌کرد.",
+   ex2:"Cette déférence excessive finissait par nuire à son image professionnelle.",ex2_fa:"این احترام بیش از حد در نهایت به تصویر حرفه‌ایش آسیب می‌رساند."},
+  {n:20,fr:"le déni",genre:"m.",fa:"انکار / نپذیرفتن واقعیت",level:"B2",tags:["روانشناسی","احساس"],
+   def:"Refus de reconnaître une réalité douloureuse ou dérangeante.",
+   def_fa:"امتناع از پذیرفتن یک واقعیت دردناک یا آزاردهنده.",
+   ex1:"Après l'annonce de son licenciement, il est resté plusieurs jours dans le déni.",ex1_fa:"بعد از اعلام اخراجش، چند روز در انکار ماند.",
+   ex2:"Le déni climatique est un phénomène psychologique et politique complexe.",ex2_fa:"انکار تغییرات اقلیمی یک پدیدهٔ روانشناختی و سیاسی پیچیده است."},
+  {n:21,fr:"la délibération",genre:"f.",fa:"تأمل / شور و مشورت",level:"B2",tags:["ذهن","اجتماع"],
+   def:"Examen approfondi avant de prendre une décision; discussion collective.",
+   def_fa:"بررسی عمیق قبل از تصمیم‌گیری؛ بحث جمعی.",
+   ex1:"Après longue délibération, le jury a rendu son verdict.",ex1_fa:"بعد از تأمل طولانی، هیأت منصفه حکمش را صادر کرد.",
+   ex2:"La délibération démocratique nécessite que toutes les voix soient entendues.",ex2_fa:"شور و مشورت دموکراتیک نیازمند شنیده‌شدن همهٔ صداهاست."},
+  {n:22,fr:"la désillusion",genre:"f.",fa:"توهم‌زدایی / ناامیدی از پندار",level:"B2",tags:["احساس"],
+   def:"Perte d'une illusion ou d'un espoir; sentiment qui en résulte.",
+   def_fa:"از دست دادن یک توهم یا امید؛ احساسی که از آن ناشی می‌شود.",
+   ex1:"Après vingt ans de politique, la désillusion avait remplacé l'idéalisme de sa jeunesse.",ex1_fa:"بعد از بیست سال سیاست، توهم‌زدایی جایگزین ایده‌آلیسم جوانیش شده بود.",
+   ex2:"Les nouvelles recrues subissent souvent une désillusion dans les premières semaines.",ex2_fa:"کارمندان جدید اغلب در هفته‌های اول دچار توهم‌زدایی می‌شوند."},
+  {n:23,fr:"la dichotomie",genre:"f.",fa:"دوبخشی / تقسیم دوگانه",level:"C1",tags:["فلسفه","ذهن"],
+   def:"Division en deux parties opposées et contradictoires.",
+   def_fa:"تقسیم به دو بخش متضاد و متناقض.",
+   ex1:"La dichotomie entre le bien et le mal est trop simpliste pour expliquer la réalité.",ex1_fa:"تقسیم‌بندی دوگانهٔ خیر و شر برای توضیح واقعیت خیلی ساده‌انگارانه است.",
+   ex2:"Il existe une dichotomie frappante entre son discours public et sa vie privée.",ex2_fa:"بین سخنان عمومی و زندگی خصوصیش یک تضاد جالب وجود دارد."},
+  // ═══ E ═══
+  {n:24,fr:"l'effervescence",genre:"f.",fa:"شور و هیجان / جوشش",level:"C1",tags:["احساس","اجتماع"],
+   def:"Agitation vive et joyeuse; état de fébrilité intellectuelle ou sociale.",
+   def_fa:"تحرک زنده و شادمانانه؛ حالت هیجان فکری یا اجتماعی.",
+   ex1:"Paris était en effervescence le soir de la victoire des Bleus.",ex1_fa:"پاریس شب پیروزی بلوها در شور و هیجان بود.",
+   ex2:"L'effervescence intellectuelle des années 60 a produit des œuvres maندگار.",ex2_fa:"شور فکری دهه‌ی ۶۰ آثار ماندگاری خلق کرد."},
+  {n:25,fr:"l'éloquence",genre:"f.",fa:"خطابه / بیان رسا و مؤثر",level:"B2",tags:["زبان","شخصیت"],
+   def:"Art de s'exprimer avec aisance, clarté et force persuasive.",
+   def_fa:"هنر بیان با آسانی، وضوح و قدرت متقاعدکننده.",
+   ex1:"L'éloquence de son discours a ému toute l'assemblée jusqu'aux larmes.",ex1_fa:"خطابهٔ سخنانش کل مجمع را تا مرز گریه متأثر کرد.",
+   ex2:"Un avocat sans éloquence est comme un chirurgien sans scalpel.",ex2_fa:"یک وکیل بدون خطابه مثل یک جراح بدون اسکالپل است."},
+  {n:26,fr:"l'empathie",genre:"f.",fa:"همدلی / درک احساس دیگران",level:"B2",tags:["روانشناسی","اجتماع"],
+   def:"Capacité à se mettre à la place d'autrui et à comprendre ses émotions.",
+   def_fa:"توانایی قرار گرفتن جای دیگری و درک احساساتش.",
+   ex1:"Un bon thérapeute doit faire preuve d'empathie sans se laisser envahir par les émotions du patient.",ex1_fa:"یک درمانگر خوب باید همدلی نشان دهد بدون اینکه احساسات بیمار غرقش کند.",
+   ex2:"L'empathie est une compétence qui s'apprend et se cultive.",ex2_fa:"همدلی یک مهارت است که می‌شود یاد گرفت و پرورش داد."},
+  {n:27,fr:"l'éphémère",genre:"adj./m.",fa:"زودگذر / ناپایدار",level:"B2",tags:["فلسفه","احساس"],
+   def:"Qui ne dure qu'un très court moment; ce qui ne dure pas.",
+   def_fa:"آنچه فقط لحظه‌ای دوام می‌آورد؛ ناپایدار.",
+   ex1:"La gloire est éphémère ; seules les œuvres restent.",ex1_fa:"شهرت زودگذر است؛ فقط آثار می‌مانند.",
+   ex2:"Les œuvres de Banksy jouent souvent sur le caractère éphémère de l'art urbain.",ex2_fa:"آثار بنکسی اغلب با زودگذری هنر شهری بازی می‌کنند."},
+  {n:28,fr:"l'équivoque",genre:"f./adj.",fa:"دوپهلو / مبهم / مشکوک",level:"C1",tags:["زبان"],
+   def:"Ce qui peut être interprété de plusieurs façons, avec une connotation souvent ambiguë.",
+   def_fa:"چیزی که می‌توان به چند شکل تفسیر کرد، اغلب با معنای مشکوک.",
+   ex1:"Sa réponse équivoque n'a pas rassuré les actionnaires.",ex1_fa:"جواب دوپهلویش سهام‌داران را آرام نکرد.",
+   ex2:"Il faut éviter toute équivoque dans un contrat juridique.",ex2_fa:"در یک قرارداد حقوقی باید از هر گونه ابهام پرهیز کرد."},
+  {n:29,fr:"l'exacerbation",genre:"f.",fa:"تشدید / حدت‌بخشی",level:"C1",tags:["احساس","اجتماع"],
+   def:"Action d'aggraver, de rendre plus intense une douleur, une tension ou un sentiment.",
+   def_fa:"عمل تشدید کردن، شدیدتر کردن یک درد، تنش یا احساس.",
+   ex1:"La crise a provoqué une exacerbation des tensions sociales déjà existantes.",ex1_fa:"بحران تشدید تنش‌های اجتماعی که از قبل وجود داشت را به همراه آورد.",
+   ex2:"L'exacerbation de sa douleur l'a obligé à consulter un médecin d'urgence.",ex2_fa:"تشدید دردش او را مجبور کرد اورژانسی به پزشک مراجعه کند."},
+  {n:30,fr:"l'exemplarité",genre:"f.",fa:"الگو بودن / نمونه‌بودگی",level:"C1",tags:["اخلاق","اجتماع"],
+   def:"Caractère de ce qui peut servir d'exemple, notamment en matière morale.",
+   def_fa:"خصلت چیزی که می‌تواند الگو باشد، به‌ویژه در زمینهٔ اخلاق.",
+   ex1:"On attend des élus une exemplarité morale que leurs actes contredisent trop souvent.",ex1_fa:"از منتخبین انتظار الگو بودن اخلاقی می‌رود که رفتارشان اغلب با آن تناقض دارد.",
+   ex2:"L'exemplarité des parents est cruciale dans l'éducation des enfants.",ex2_fa:"الگو بودن والدین در تربیت بچه‌ها حیاتی است."},
+  // ═══ F ═══
+  {n:31,fr:"la ferveur",genre:"f.",fa:"شور / اشتیاق / غیرت",level:"B2",tags:["احساس","شخصیت"],
+   def:"Ardeur vive et enthousiaste dans ses sentiments ou ses actions.",
+   def_fa:"شور و هیجان زنده در احساسات یا اعمال.",
+   ex1:"Elle défend ses idées avec une ferveur qui emporte l'adhésion.",ex1_fa:"ایده‌هایش را با شوری دفاع می‌کند که موافقت را جلب می‌کند.",
+   ex2:"La ferveur religieuse peut être source de dévotion mais aussi d'intolérance.",ex2_fa:"غیرت دینی می‌تواند منبع عبادت ولی همچنین عدم تساهل باشد."},
+  {n:32,fr:"la frivolité",genre:"f.",fa:"سطحی‌گری / بی‌اعتنایی به جدیت",level:"B2",tags:["شخصیت"],
+   def:"Caractère de quelqu'un ou quelque chose qui manque de sérieux, de profondeur.",
+   def_fa:"خصلت کسی یا چیزی که از جدیت و عمق کمبود دارد.",
+   ex1:"On lui reprochait souvent une certaine frivolité dans ses choix professionnels.",ex1_fa:"اغلب به خاطر سطحی‌گری در انتخاب‌های حرفه‌ایش سرزنش می‌شد.",
+   ex2:"La frivolité de ces discussions contrastait avec la gravité de la situation.",ex2_fa:"سطحی‌گری این بحث‌ها با جدیت وضعیت در تضاد بود."},
+  // ═══ G ═══
+  {n:33,fr:"la gratitude",genre:"f.",fa:"سپاسگزاری / قدردانی",level:"B2",tags:["احساس","اخلاق"],
+   def:"Sentiment de reconnaissance pour un bienfait reçu.",
+   def_fa:"احساس قدردانی برای نیکی‌ای که دریافت کرده‌ایم.",
+   ex1:"Il a exprimé sa gratitude envers tous ceux qui l'avaient soutenu pendant sa maladie.",ex1_fa:"قدردانیش را نسبت به همه کسانی که در بیماریش پشتیبانش بودند ابراز کرد.",
+   ex2:"Des études montrent que pratiquer la gratitude quotidienne améliore le bien-être.",ex2_fa:"مطالعات نشان می‌دهند تمرین قدردانی روزانه بهزیستی را بهبود می‌بخشد."},
+  {n:34,fr:"le pragmatisme",genre:"m.",fa:"عمل‌گرایی / واقع‌گرایی",level:"B2",tags:["فلسفه","شخصیت"],
+   def:"Attitude qui ne prend en compte que les aspects pratiques et les résultats concrets.",
+   def_fa:"نگرشی که فقط جنبه‌های عملی و نتایج ملموس را در نظر می‌گیرد.",
+   ex1:"Son pragmatisme lui permettait de trouver des solutions là où les idéalistes échouaient.",ex1_fa:"عمل‌گراییش به او اجازه می‌داد جایی راه‌حل پیدا کند که ایده‌آلیست‌ها شکست می‌خوردند.",
+   ex2:"Le pragmatisme politique n'est pas toujours synonyme de cynisme.",ex2_fa:"عمل‌گرایی سیاسی همیشه مترادف بدبینی نیست."},
+  {n:35,fr:"l'humilité",genre:"f.",fa:"فروتنی / تواضع",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Disposition à se considérer sans orgueil ni vanité; modestie sincère.",
+   def_fa:"تمایل به دیدن خود بدون تکبر یا خودپسندی؛ تواضع صادقانه.",
+   ex1:"Les grands scientifiques partagent souvent une humilité face à l'immensité de ce qu'ils ignorent.",ex1_fa:"دانشمندان بزرگ اغلب فروتنی در برابر گستردگی آنچه نمی‌دانند دارند.",
+   ex2:"L'humilité n'est pas la faiblesse — c'est la force de celui qui n'a pas besoin de l'approuver des autres.",ex2_fa:"تواضع ضعف نیست — قدرت کسی است که نیاز به تأیید دیگران ندارد."},
+  // ═══ I ═══
+  {n:36,fr:"l'impartialité",genre:"f.",fa:"بی‌طرفی / انصاف",level:"B2",tags:["اخلاق","اجتماع"],
+   def:"Qualité de celui qui juge sans préjugé ni favoritisme.",
+   def_fa:"خصلت کسی که بدون پیش‌داوری یا طرفداری قضاوت می‌کند.",
+   ex1:"Un juge doit faire preuve d'une impartialité absolue, quelle que soit la nature du délit.",ex1_fa:"یک قاضی باید بی‌طرفی مطلق نشان دهد، صرف‌نظر از ماهیت جرم.",
+   ex2:"L'impartialité des médias est souvent questionnée par le public.",ex2_fa:"بی‌طرفی رسانه‌ها اغلب توسط مردم زیر سؤال می‌رود."},
+  {n:37,fr:"l'impétuosité",genre:"f.",fa:"تندخویی / شتاب‌زدگی",level:"C1",tags:["شخصیت","احساس"],
+   def:"Caractère de quelqu'un qui agit avec fougue, vivacité et parfois sans réfléchir.",
+   def_fa:"خصلت کسی که با شور، سرعت و گاهی بدون فکر عمل می‌کند.",
+   ex1:"L'impétuosité de sa réaction lui a coûté une opportunité professionnelle en or.",ex1_fa:"شتاب‌زدگی واکنشش یک فرصت حرفه‌ای طلایی برایش تمام کرد.",
+   ex2:"Son impétuosité naturelle était à la fois sa force et sa faiblesse.",ex2_fa:"تندخویی ذاتیش هم قدرتش بود هم ضعفش."},
+  {n:38,fr:"l'indulgence",genre:"f.",fa:"تساهل / گذشت / سهل‌گیری",level:"B2",tags:["اخلاق","اجتماع"],
+   def:"Disposition à pardonner les fautes, à ne pas être trop sévère.",
+   def_fa:"تمایل به بخشیدن اشتباهات، خیلی سخت‌گیر نبودن.",
+   ex1:"Les juges ont fait preuve d'indulgence envers ce premier délinquant.",ex1_fa:"قضات نسبت به این متخلف اول سهل‌گیری نشان دادند.",
+   ex2:"Une trop grande indulgence envers les enfants peut nuire à leur développement.",ex2_fa:"تساهل بیش از حد نسبت به بچه‌ها می‌تواند به رشدشان آسیب بزند."},
+  {n:39,fr:"l'ingratitude",genre:"f.",fa:"ناسپاسی / قدرنشناسی",level:"B2",tags:["اخلاق","احساس"],
+   def:"Manque de reconnaissance envers quelqu'un qui nous a fait du bien.",
+   def_fa:"کمبود قدردانی نسبت به کسی که به ما خوبی کرده.",
+   ex1:"Après tout ce qu'elle a fait pour lui, son ingratitude l'a profondément blessée.",ex1_fa:"بعد از همهٔ کارهایی که برایش کرد، ناسپاسیش عمیقاً آزارش داد.",
+   ex2:"L'ingratitude est une blessure que les bienfaiteurs n'oublient jamais.",ex2_fa:"ناسپاسی زخمی است که نیکوکاران هرگز فراموش نمی‌کنند."},
+  {n:40,fr:"l'introspection",genre:"f.",fa:"درون‌نگری / خودبررسی",level:"B2",tags:["روانشناسی","ذهن"],
+   def:"Observation et analyse de ses propres états intérieurs, émotions et pensées.",
+   def_fa:"مشاهده و تحلیل حالات درونی، احساسات و افکار خود.",
+   ex1:"La méditation favorise l'introspection et la connaissance de soi.",ex1_fa:"مدیتیشن درون‌نگری و شناخت خود را تسهیل می‌کند.",
+   ex2:"Son journal intime était un outil d'introspection précieux.",ex2_fa:"دفترچهٔ خاطراتش ابزار ارزشمندی برای درون‌نگری بود."},
+  // ═══ L ═══
+  {n:41,fr:"la lucidité",genre:"f.",fa:"هوشیاری / وضوح ذهنی",level:"B2",tags:["ذهن","شخصیت"],
+   def:"Qualité d'un esprit clair qui voit les choses telles qu'elles sont.",
+   def_fa:"خصلت ذهنی روشن که چیزها را آنچنان که هستند می‌بیند.",
+   ex1:"Sa lucidité face à la maladie était à la fois impressionnante et déchirante.",ex1_fa:"هوشیاریش در برابر بیماری هم تحسین‌برانگیز بود هم دل‌خراش.",
+   ex2:"La lucidité politique manque cruellement dans le débat contemporain.",ex2_fa:"وضوح سیاسی به‌طرز دردناکی در بحث معاصر کمیاب است."},
+  {n:42,fr:"la magnanimité",genre:"f.",fa:"بزرگ‌منشی / گذشت بزرگوارانه",level:"C1",tags:["اخلاق","شخصیت"],
+   def:"Générosité et grandeur d'âme qui pousse à pardonner ou à traiter ses ennemis noblement.",
+   def_fa:"سخاوت و بزرگی روح که به بخشیدن یا رفتار شرافتمندانه با دشمنان وا می‌دارد.",
+   ex1:"Le vainqueur a fait preuve de magnanimité en tendant la main à son adversaire vaincu.",ex1_fa:"برنده با دست دادن به حریف مغلوبش بزرگ‌منشی نشان داد.",
+   ex2:"La magnanimité est une vertu rare dans la compétition politique moderne.",ex2_fa:"بزرگ‌منشی در رقابت سیاسی مدرن یک فضیلت کمیاب است."},
+  {n:43,fr:"la mélancolie",genre:"f.",fa:"ملانکولی / غمی ملایم و عمیق",level:"B2",tags:["احساس"],
+   def:"Tristesse vague et persistante, teintée de nostalgie et de rêverie.",
+   def_fa:"غم مبهم و پایدار، آمیخته با نوستالژی و رؤیاپردازی.",
+   ex1:"La musique de Satie plonge l'auditeur dans une mélancolie douce et apaisante.",ex1_fa:"موسیقی ساتی شنونده را در یک ملانکولی ملایم و آرام‌بخش فرو می‌برد.",
+   ex2:"Il y avait dans ses yeux une mélancolie qui racontait une histoire longue et silencieuse.",ex2_fa:"در چشمانش غمی بود که یک داستان طولانی و خاموش روایت می‌کرد."},
+  {n:44,fr:"la munificence",genre:"f.",fa:"سخاوت شاهانه / کرم بی‌شائبه",level:"C1",tags:["اخلاق","شخصیت"],
+   def:"Générosité remarquable, disposition à donner avec largesse et magnificence.",
+   def_fa:"سخاوت قابل توجه، تمایل به بخشیدن با فراوانی و شکوه.",
+   ex1:"La munificence de ce mécène a permis la construction de plusieurs musées.",ex1_fa:"سخاوت شاهانهٔ این حامی ساخت چندین موزه را ممکن کرد.",
+   ex2:"Il distribuait ses largesses avec la munificence d'un prince de la Renaissance.",ex2_fa:"بخشش‌هایش را با سخاوت شاهانهٔ یک شاهزادهٔ رنسانسی توزیع می‌کرد."},
+  // ═══ N ═══
+  {n:45,fr:"la nuance",genre:"f.",fa:"تفاوت ظریف / ملاحظه",level:"B2",tags:["زبان","ذهن"],
+   def:"Différence légère et subtile entre deux choses similaires; degré d'intensité subtil.",
+   def_fa:"تفاوت سبک و ظریف بین دو چیز مشابه؛ درجهٔ شدت ظریف.",
+   ex1:"Son analyse brillante apportait des nuances que les autres commentateurs avaient ignorées.",ex1_fa:"تحلیل درخشانش ظرایفی می‌آورد که دیگر مفسران نادیده گرفته بودند.",
+   ex2:"Perdre la nuance, c'est perdre la complexité du réel.",ex2_fa:"از دست دادن ظرافت یعنی از دست دادن پیچیدگی واقعیت."},
+  // ═══ O ═══
+  {n:46,fr:"l'obstination",genre:"f.",fa:"لجاجت / پافشاری",level:"B2",tags:["شخصیت"],
+   def:"Attachement opiniâtre à une idée, une décision, malgré les obstacles.",
+   def_fa:"چسبیدن سرسختانه به یک ایده یا تصمیم، علی‌رغم موانع.",
+   ex1:"Son obstination l'a finalement mené au succès, malgré les doutes de tous.",ex1_fa:"پافشاریش در نهایت با وجود شک همه به موفقیت رسید.",
+   ex2:"Il y a une fine frontière entre l'obstination et la persévérance.",ex2_fa:"مرز ظریفی بین لجاجت و پایداری وجود دارد."},
+  {n:47,fr:"l'omniscience",genre:"f.",fa:"همه‌چیزدانی / علم کامل",level:"C1",tags:["فلسفه","ذهن"],
+   def:"Connaissance de toutes choses; attribut souvent prêté à Dieu ou utilisé ironiquement.",
+   def_fa:"دانستن همه‌چیز؛ صفتی که اغلب به خدا نسبت داده می‌شود یا با کنایه استفاده می‌شود.",
+   ex1:"Un narrateur omniscient connaît les pensées de tous les personnages.",ex1_fa:"راوی همه‌چیزدان افکار همهٔ شخصیت‌ها را می‌داند.",
+   ex2:"Il parlait avec une omniscience irritante, comme s'il ne pouvait jamais se tromper.",ex2_fa:"با همه‌چیزدانی آزاردهنده‌ای صحبت می‌کرد، انگار هرگز نمی‌توانست اشتباه کند."},
+  {n:48,fr:"l'opportunisme",genre:"m.",fa:"فرصت‌طلبی",level:"B2",tags:["شخصیت","اجتماع"],
+   def:"Comportement qui consiste à profiter des circonstances sans principe fixe.",
+   def_fa:"رفتاری که از شرایط بدون اصل ثابت سود می‌جوید.",
+   ex1:"Son opportunisme politique l'avait amené à changer de camp plusieurs fois.",ex1_fa:"فرصت‌طلبی سیاسیش او را چند بار به تغییر جبهه کشانده بود.",
+   ex2:"En affaires, l'opportunisme peut être une qualité ou un défaut selon les circonstances.",ex2_fa:"در کسب‌وکار، فرصت‌طلبی می‌تواند حسن یا عیب باشد بسته به شرایط."},
+  // ═══ P ═══
+  {n:49,fr:"la persévérance",genre:"f.",fa:"پایداری / استقامت",level:"B2",tags:["شخصیت","اخلاق"],
+   def:"Constance et ténacité dans ses efforts pour atteindre un but.",
+   def_fa:"ثبات و سرسختی در تلاش برای رسیدن به هدف.",
+   ex1:"Sa persévérance face aux échecs répétés force l'admiration.",ex1_fa:"پایداریش در برابر شکست‌های مکرر تحسین را بر می‌انگیزد.",
+   ex2:"La persévérance sans intelligence peut être aussi inefficace que l'intelligence sans effort.",ex2_fa:"پایداری بدون هوش می‌تواند به همان اندازه‌ی هوش بدون تلاش بی‌اثر باشد."},
+  {n:50,fr:"la perspicacité",genre:"f.",fa:"تیزهوشی / درک سریع",level:"C1",tags:["ذهن","شخصیت"],
+   def:"Faculté de comprendre, de saisir rapidement et avec finesse.",
+   def_fa:"توانایی فهمیدن، درک سریع و با ظرافت.",
+   ex1:"Sa perspicacité légendaire lui permettait de lire une situation en quelques secondes.",ex1_fa:"تیزهوشی افسانه‌ایش به او اجازه می‌داد یک موقعیت را در چند ثانیه بخواند.",
+   ex2:"La perspicacité est une qualité essentielle pour un bon négociateur.",ex2_fa:"تیزهوشی برای یک مذاکره‌کننده‌ی خوب یک صفت ضروری است."},
+  // ═══ R ═══
+  {n:51,fr:"la résilience",genre:"f.",fa:"تاب‌آوری / انعطاف در برابر سختی",level:"B2",tags:["روانشناسی","شخصیت"],
+   def:"Capacité à surmonter les épreuves, à rebondir après un traumatisme.",
+   def_fa:"توانایی غلبه بر محنت‌ها، بازگشت بعد از ضربهٔ روحی.",
+   ex1:"La résilience de ce peuple face aux catastrophes naturelles est remarquable.",ex1_fa:"تاب‌آوری این مردم در برابر حوادث طبیعی قابل توجه است.",
+   ex2:"La résilience ne signifie pas l'absence de souffrance, mais la capacité à la traverser.",ex2_fa:"تاب‌آوری به معنای نبود رنج نیست، بلکه توانایی عبور از آن است."},
+  {n:52,fr:"la rémission",genre:"f.",fa:"بخشایش / بهبودی موقت",level:"C1",tags:["اخلاق","ذهن"],
+   def:"Pardon d'une faute; en médecine, diminution temporaire des symptômes.",
+   def_fa:"بخشش خطا؛ در پزشکی، کاهش موقت علائم.",
+   ex1:"Le médecin a annoncé une rémission partielle — une bonne nouvelle, même si fragile.",ex1_fa:"پزشک بهبودی جزئی را اعلام کرد — خبر خوبی، هرچند شکننده.",
+   ex2:"Il cherchait une rémission pour ses erreurs passées en aidant les autres.",ex2_fa:"با کمک به دیگران دنبال بخشایش اشتباهات گذشته‌اش می‌گشت."},
+  {n:53,fr:"la réticence",genre:"f.",fa:"تردید / امتناع / اکراه",level:"B2",tags:["احساس","شخصیت"],
+   def:"Hésitation ou refus peu exprimé à dire ou à faire quelque chose.",
+   def_fa:"تردید یا امتناع کم‌بیان برای گفتن یا کردن چیزی.",
+   ex1:"Elle a accepté, mais avec une réticence visible qui en disait long.",ex1_fa:"قبول کرد، ولی با اکراه آشکاری که چیز زیادی می‌گفت.",
+   ex2:"Les réticences des médecins face à cette nouvelle thérapie sont compréhensibles.",ex2_fa:"تردید پزشکان در برابر این روش درمانی جدید قابل درک است."},
+  {n:54,fr:"la sagacité",genre:"f.",fa:"زیرکی / درایت",level:"C1",tags:["ذهن","شخصیت"],
+   def:"Intelligence pénétrante et subtile qui permet de juger avec justesse.",
+   def_fa:"هوش نافذ و ظریف که امکان قضاوت درست می‌دهد.",
+   ex1:"La sagacité du détective lui a permis de résoudre l'affaire en moins de 24 heures.",ex1_fa:"درایت کارآگاه به او اجازه داد پرونده را در کمتر از ۲۴ ساعت حل کند.",
+   ex2:"Ses décisions témoignent d'une sagacité rare pour quelqu'un de son âge.",ex2_fa:"تصمیماتش زیرکی کمیابی را برای کسی در سنش نشان می‌دهد."},
+  {n:55,fr:"la scrupule",genre:"m.",fa:"وجدان / تردید اخلاقی",level:"B2",tags:["اخلاق"],
+   def:"Hésitation, inquiétude morale qui retient de faire quelque chose de douteux.",
+   def_fa:"تردید و نگرانی اخلاقی که از انجام کاری مشکوک باز می‌دارد.",
+   ex1:"Ses scrupules l'ont empêché de profiter d'une aubaine qui aurait lésé autrui.",ex1_fa:"وجدانش مانع شد از فرصتی سود ببرد که به دیگری آسیب می‌رساند.",
+   ex2:"Un avocat sans scrupules est un danger pour la justice.",ex2_fa:"یک وکیل بدون وجدان خطری برای عدالت است."},
+  {n:56,fr:"la sollicitude",genre:"f.",fa:"توجه دلسوزانه / مراقبت",level:"C1",tags:["اخلاق","اجتماع"],
+   def:"Attention bienveillante et inquiète portée au bien-être d'autrui.",
+   def_fa:"توجه خیرخواهانه و نگران به رفاه دیگران.",
+   ex1:"L'infirmière s'occupait des patients avec une sollicitude touchante.",ex1_fa:"پرستار با توجه دلسوزانهٔ تأثیرگذاری از بیماران مراقبت می‌کرد.",
+   ex2:"Sa sollicitude envers les plus démunis se manifestait par des actes concrets.",ex2_fa:"توجه دلسوزانه‌اش به محروم‌ترین‌ها با اعمال ملموس بیان می‌شد."},
+  {n:57,fr:"la sérénité",genre:"f.",fa:"آرامش عمیق / سکینه",level:"B2",tags:["احساس","شخصیت"],
+   def:"État de calme, de tranquillité profonde, sans trouble ni agitation.",
+   def_fa:"حالت آرامش و آسایش عمیق، بدون اضطراب یا تشویش.",
+   ex1:"Sa sérénité face à la mort était un exemple pour ses proches.",ex1_fa:"آرامشش در برابر مرگ الگویی برای نزدیکانش بود.",
+   ex2:"Trouver la sérénité dans ce monde agité est devenu un véritable art de vivre.",ex2_fa:"پیدا کردن آرامش در این دنیای مضطرب تبدیل به یک هنر واقعی زندگی شده."},
+  // ═══ T-Z ═══
+  {n:58,fr:"la ténacité",genre:"f.",fa:"سرسختی / پایداری",level:"B2",tags:["شخصیت"],
+   def:"Qualité de celui qui s'accroche avec force à ses objectifs, sans se laisser décourager.",
+   def_fa:"خصلت کسی که با قدرت به اهدافش چنگ می‌زند، بدون اینکه دلسرد شود.",
+   ex1:"La ténacité de cette scientifique a finalement conduit à une découverte majeure.",ex1_fa:"سرسختی این دانشمند در نهایت به یک کشف بزرگ منجر شد.",
+   ex2:"La ténacité sans flexibilité peut se transformer en entêtement.",ex2_fa:"پایداری بدون انعطاف می‌تواند به لجاجت تبدیل شود."},
+  {n:59,fr:"la tolérance",genre:"f.",fa:"تساهل / تحمل دیگری",level:"B2",tags:["اخلاق","اجتماع"],
+   def:"Respect et acceptation de la différence d'autrui, même quand on ne la partage pas.",
+   def_fa:"احترام و پذیرش تفاوت دیگری، حتی وقتی آن را نمی‌پذیریم.",
+   ex1:"La tolérance ne signifie pas l'indifférence mais le respect de la liberté d'autrui.",ex1_fa:"تساهل به معنای بی‌تفاوتی نیست بلکه احترام به آزادی دیگری است.",
+   ex2:"Une démocratie saine repose sur la tolérance de l'opposition.",ex2_fa:"یک دموکراسی سالم بر تساهل در برابر مخالفت استوار است."},
+  {n:60,fr:"la véhémence",genre:"f.",fa:"شدت / اشتیاق تند",level:"C1",tags:["احساس","زبان"],
+   def:"Ardeur impétueuse dans l'expression des sentiments ou des opinions.",
+   def_fa:"اشتیاق تند در بیان احساسات یا عقاید.",
+   ex1:"Elle a défendu sa position avec une véhémence qui a surpris ses collègues.",ex1_fa:"موضعش را با شدتی که همکارانش را شگفت‌زده کرد دفاع کرد.",
+   ex2:"La véhémence de sa protestation n'a fait qu'aggraver la situation.",ex2_fa:"شدت اعتراضش فقط وضعیت را بدتر کرد."},
+  // ... ادامهٔ کلمات برای رسیدن به 100
+  {n:61,fr:"la volupté",genre:"f.",fa:"لذت حسی / شادکامی",level:"C1",tags:["احساس"],
+   def:"Plaisir des sens, jouissance vive et raffinée.",
+   def_fa:"لذت حسی، شادکامی زنده و ظریف.",
+   ex1:"Il mangeait ce dessert avec une volupté enfantine et désarmante.",ex1_fa:"آن دسر را با لذت حسی کودکانه و خلع‌سلاح‌کننده‌ای می‌خورد.",
+   ex2:"Proust décrit la volupté de la mémoire involontaire avec une précision rare.",ex2_fa:"پروست لذت حافظهٔ غیرارادی را با دقتی کمیاب توصیف می‌کند."},
+  {n:62,fr:"la versatilité",genre:"f.",fa:"انعطاف / چندوجهی بودن",level:"B2",tags:["شخصیت"],
+   def:"Capacité à s'adapter facilement à des situations ou rôles différents.",
+   def_fa:"توانایی سازگاری آسان با موقعیت‌ها یا نقش‌های مختلف.",
+   ex1:"Sa versatilité en fait un employé précieux dans une startup.",ex1_fa:"انعطافش او را در یک استارتاپ یک کارمند ارزشمند می‌کند.",
+   ex2:"La versatilité de cette actrice lui permet de passer de la comédie au drame.",ex2_fa:"چندوجهی بودن این بازیگر به او اجازه می‌دهد از کمدی به درام برود."},
+  {n:63,fr:"l'ubiquité",genre:"f.",fa:"همه‌جا بودن / حضور در همه‌جا",level:"C1",tags:["ذهن","فلسفه"],
+   def:"Présence simultanée en plusieurs endroits à la fois.",
+   def_fa:"حضور همزمان در چند جا به یک وقت.",
+   ex1:"Les réseaux sociaux ont donné aux marques une ubiquité mondiale sans précédent.",ex1_fa:"شبکه‌های اجتماعی به برندها همه‌جا بودن جهانی بی‌سابقه‌ای دادند.",
+   ex2:"Nul ne peut être en tout lieu à la fois — même si nos smartphones créent l'illusion de l'ubiquité.",ex2_fa:"هیچ‌کس نمی‌تواند همه‌جا باشد — حتی اگر گوشی‌هایمان توهم همه‌جا بودن را ایجاد کنند."},
+  {n:64,fr:"la véracité",genre:"f.",fa:"صداقت / راستی",level:"B2",tags:["اخلاق","زبان"],
+   def:"Qualité de celui qui dit toujours la vérité; conformité avec la vérité.",
+   def_fa:"خصلت کسی که همیشه حقیقت می‌گوید؛ انطباق با واقعیت.",
+   ex1:"La véracité de ses témoignages a été confirmée par les preuves scientifiques.",ex1_fa:"صداقت شهادت‌هایش توسط شواهد علمی تأیید شد.",
+   ex2:"On ne peut pas toujours vérifier la véracité des informations sur internet.",ex2_fa:"نمی‌توان همیشه صداقت اطلاعات اینترنت را تأیید کرد."},
+  {n:65,fr:"l'anachronisme",genre:"m.",fa:"نابه‌هنگامی / خارج از زمان بودن",level:"C1",tags:["فلسفه","زبان"],
+   def:"Confusion des époques, emploi d'un élément inadapté à son contexte temporel.",
+   def_fa:"اشتباه در دوران‌ها، استفاده از عنصری نامناسب برای زمینهٔ زمانیش.",
+   ex1:"Porter un smoking à une fête d'étudiants serait un anachronisme vestimentaire comique.",ex1_fa:"پوشیدن کت‌شلوار رسمی در جشن دانشجویی یک نابه‌هنگامی لباسی کمیک است.",
+   ex2:"Les lois du XIXe siècle appliquées au XXIe siècle sont un anachronisme juridique.",ex2_fa:"قوانین قرن نوزدهم که در قرن بیست‌ویکم اجرا می‌شوند یک نابه‌هنگامی حقوقی هستند."},
+  {n:66,fr:"la bénignité",genre:"f.",fa:"خیرخواهی / بی‌خطری",level:"C1",tags:["اخلاق"],
+   def:"Caractère doux et bon; en médecine, caractère non dangereux d'une maladie.",
+   def_fa:"خصلت ملایم و خوب؛ در پزشکی، غیرخطرناک بودن یک بیماری.",
+   ex1:"La bénignité de sa tumeur a été confirmée par la biopsie — un immense soulagement.",ex1_fa:"بی‌خطری تومورش توسط بیوپسی تأیید شد — آسودگی عظیمی.",
+   ex2:"Sa bénignité naturelle le rendait incapable de faire du mal à quiconque.",ex2_fa:"خیرخواهی ذاتیش مانع می‌شد به کسی آسیب برساند."},
+  {n:67,fr:"la circonspection",genre:"f.",fa:"احتیاط / دقت در عمل",level:"C1",tags:["شخصیت","ذهن"],
+   def:"Prudence attentive qui amène à réfléchir avant d'agir ou de parler.",
+   def_fa:"احتیاط توجه‌آمیز که به فکر کردن قبل از عمل یا صحبت وا می‌دارد.",
+   ex1:"Avec la circonspection d'un diplomate chevronné, il a pesé chaque mot avant de répondre.",ex1_fa:"با احتیاط یک دیپلمات کارکشته، قبل از پاسخ هر کلمه را سنجید.",
+   ex2:"Sa circonspection naturelle l'empêchait parfois de saisir les opportunités.",ex2_fa:"احتیاط ذاتیش گاهی مانع می‌شد فرصت‌ها را بگیرد."},
+  {n:68,fr:"la démagogie",genre:"f.",fa:"عوام‌فریبی / عوام‌پسندی",level:"B2",tags:["اجتماع","سیاست"],
+   def:"Comportement politique qui flatte le peuple pour gagner sa faveur, sans souci de la vérité.",
+   def_fa:"رفتار سیاسی که برای جلب طرفداری مردم را تحسین می‌کند، بدون توجه به حقیقت.",
+   ex1:"Son discours était de la pure démagogie — de belles promesses sans aucun fondement.",ex1_fa:"سخنانش عوام‌فریبی محض بود — وعده‌های زیبا بدون هیچ پایه‌ای.",
+   ex2:"La démagogie prospère quand le désenchantement des citoyens est profond.",ex2_fa:"عوام‌فریبی وقتی شکوفا می‌شود که سرخوردگی شهروندان عمیق است."},
+  {n:69,fr:"l'éclectisme",genre:"m.",fa:"التقاط / گزینشی بودن",level:"C1",tags:["فلسفه","هنر"],
+   def:"Méthode qui consiste à choisir les meilleurs éléments de différentes doctrines ou styles.",
+   def_fa:"روشی که از بهترین عناصر دکترین‌ها یا سبک‌های مختلف انتخاب می‌کند.",
+   ex1:"L'éclectisme de sa bibliothèque — du roman policier à la philosophie — révèle sa curiosité.",ex1_fa:"التقاط کتابخانه‌اش — از رمان پلیسی تا فلسفه — کنجکاویش را نشان می‌دهد.",
+   ex2:"Son style architectural fait preuve d'un éclectisme assumé et harmonieux.",ex2_fa:"سبک معماری‌اش التقاط آگاهانه و هماهنگی را نشان می‌دهد."},
+  {n:70,fr:"l'épicurisme",genre:"m.",fa:"اپیکوریسم / لذت‌گرایی خردمندانه",level:"C1",tags:["فلسفه"],
+   def:"Philosophie grecque qui fait du plaisir mesuré et de la tranquillité d'âme le but de la vie.",
+   def_fa:"فلسفهٔ یونانی که لذت متعادل و آرامش روح را هدف زندگی می‌داند.",
+   ex1:"Son épicurisme ne se réduisait pas à la gourmandise — il cherchait l'harmonie de l'âme.",ex1_fa:"اپیکوریسمش به شکم‌پرستی تقلیل نمی‌یافت — دنبال هماهنگی روح بود.",
+   ex2:"L'épicurisme moderne est souvent mal interprété comme synonyme de luxe excessif.",ex2_fa:"اپیکوریسم مدرن اغلب به اشتباه مترادف لوکس بودن بیش از حد تفسیر می‌شود."},
+  {n:71,fr:"la finesse",genre:"f.",fa:"ظرافت / تیزی ذهن",level:"B2",tags:["ذهن","شخصیت"],
+   def:"Qualité de ce qui est subtil, délicat; perspicacité dans la perception.",
+   def_fa:"خصلت چیزی ظریف و لطیف؛ تیزبینی در درک.",
+   ex1:"La finesse de son analyse littéraire révèle des années d'étude approfondie.",ex1_fa:"ظرافت تحلیل ادبیش سال‌ها مطالعهٔ عمیق را نشان می‌دهد.",
+   ex2:"Cette tâche demande une finesse que les robots ne peuvent pas encore reproduire.",ex2_fa:"این کار ظرافتی می‌طلبد که ربات‌ها هنوز نمی‌توانند بازآفرینی کنند."},
+  {n:72,fr:"la flagrance",genre:"f.",fa:"آشکاری / وضوح بی‌شک",level:"C1",tags:["زبان","اخلاق"],
+   def:"Caractère de ce qui est évident, manifeste, sans aucun doute possible.",
+   def_fa:"خصلت چیزی که واضح، آشکار، بدون هیچ تردیدی است.",
+   ex1:"La flagrance de sa contradiction a fait sourire toute l'assemblée.",ex1_fa:"آشکاری تناقضش کل مجمع را خنداند.",
+   ex2:"En flagrant délit — pris sur le fait, sans possibilité de nier.",ex2_fa:"در حین ارتکاب جرم — دستگیر در محل، بدون امکان انکار."},
+  {n:73,fr:"la générosité",genre:"f.",fa:"سخاوت / بخشندگی",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Disposition à donner avec largesse, à partager sans compter.",
+   def_fa:"تمایل به بخشیدن با فراوانی، به اشتراک گذاشتن بدون حساب.",
+   ex1:"La générosité de cet homme allait bien au-delà de ses dons financiers.",ex1_fa:"سخاوت این مرد خیلی فراتر از کمک‌های مالیش می‌رفت.",
+   ex2:"La générosité n'est pas une faiblesse ; c'est la marque des caractères forts.",ex2_fa:"سخاوت ضعف نیست؛ نشانهٔ شخصیت‌های قوی است."},
+  {n:74,fr:"l'hégémonie",genre:"f.",fa:"هژمونی / سلطه",level:"C1",tags:["اجتماع","سیاست"],
+   def:"Suprématie politique, économique ou culturelle d'un État, groupe ou idée sur les autres.",
+   def_fa:"برتری سیاسی، اقتصادی یا فرهنگی یک دولت، گروه یا ایده بر دیگران.",
+   ex1:"L'hégémonie culturelle américaine s'est imposée à travers le cinéma et la musique pop.",ex1_fa:"هژمونی فرهنگی آمریکا از طریق سینما و موسیقی پاپ تحمیل شده است.",
+   ex2:"La montée de la Chine remet en question l'hégémonie traditionnelle des États-Unis.",ex2_fa:"ظهور چین هژمونی سنتی آمریکا را زیر سؤال می‌برد."},
+  {n:75,fr:"l'immuabilité",genre:"f.",fa:"ثبات / تغییرناپذیری",level:"C1",tags:["فلسفه"],
+   def:"Caractère de ce qui ne peut pas changer, rester identique à travers le temps.",
+   def_fa:"خصلت چیزی که نمی‌تواند تغییر کند، در طول زمان یکسان می‌ماند.",
+   ex1:"L'immuabilité des lois mathématiques est un fondement de la science.",ex1_fa:"تغییرناپذیری قوانین ریاضی پایه‌ای از علم است.",
+   ex2:"Il croyait en l'immuabilité de certaines valeurs humaines fondamentales.",ex2_fa:"به ثبات برخی ارزش‌های انسانی بنیادین باور داشت."},
+  // ادامهٔ تا ۱۰۰
+  {n:76,fr:"l'intransigeance",genre:"f.",fa:"سرسختی / بی‌مدارایی",level:"B2",tags:["شخصیت","اجتماع"],
+   def:"Refus de tout compromis, attachement absolu à ses positions.",
+   def_fa:"رد هر گونه سازش، چسبیدن مطلق به مواضع خود.",
+   ex1:"L'intransigeance des deux parties a empêché tout accord de paix.",ex1_fa:"سرسختی دو طرف مانع از هر توافق صلحی شد.",
+   ex2:"Son intransigeance morale, admirable en principe, le rendait parfois ingérable.",ex2_fa:"سرسختی اخلاقیش، که در اصل قابل تحسین بود، گاهی مدیریتش را غیرممکن می‌کرد."},
+  {n:77,fr:"la joviabilité",genre:"f.",fa:"شاد و اجتماعی بودن",level:"C1",tags:["شخصیت"],
+   def:"Disposition naturelle à la bonne humeur, à la gaieté communicative.",
+   def_fa:"تمایل طبیعی به حال خوب، شادمانی مسری.",
+   ex1:"Sa joviabilité légendaire mettait tout le monde à l'aise dès la première rencontre.",ex1_fa:"شاد بودن افسانه‌ایش از اولین ملاقات همه را آسوده می‌کرد.",
+   ex2:"Sa joviabilité ne masquait pas la profondeur de sa pensée.",ex2_fa:"شادی‌اش عمق فکرش را پنهان نمی‌کرد."},
+  {n:78,fr:"la maladresse",genre:"f.",fa:"بی‌دستی / ناشیگری / خامی",level:"B2",tags:["شخصیت"],
+   def:"Manque d'habileté physique ou de tact; action maladroite.",
+   def_fa:"کمبود مهارت جسمی یا لطف؛ عمل ناشیانه.",
+   ex1:"Sa maladresse sociale le rendait charmant aux yeux de ceux qui appréciaient l'authenticité.",ex1_fa:"خامی اجتماعیش در چشم کسانی که اصالت را ارزش می‌گذاشتند جذاب بود.",
+   ex2:"Une maladresse diplomatique peut provoquer une crise internationale.",ex2_fa:"یک ناشیگری دیپلماتیک می‌تواند بحران بین‌المللی ایجاد کند."},
+  {n:79,fr:"la méticulosité",genre:"f.",fa:"وسواس / دقت بیش از حد",level:"C1",tags:["شخصیت","ذهن"],
+   def:"Soin excessif apporté aux détails, souci de la perfection dans chaque geste.",
+   def_fa:"توجه بیش از حد به جزئیات، اهتمام به کمال در هر حرکت.",
+   ex1:"La méticulosité du chirurgien est une nécessité, pas un défaut.",ex1_fa:"دقت وسواسی جراح یک ضرورت است، نه عیب.",
+   ex2:"Sa méticulosité dans la rédaction des contrats évitait de nombreux litiges.",ex2_fa:"دقت وسواسیش در تنظیم قراردادها از دعواهای زیادی جلوگیری می‌کرد."},
+  {n:80,fr:"la modestie",genre:"f.",fa:"فروتنی / تواضع",level:"B2",tags:["اخلاق","شخصیت"],
+   def:"Absence de vanité et d'orgueil; caractère de celui qui ne se met pas en avant.",
+   def_fa:"نبود تکبر و خودپسندی؛ خصلت کسی که خودش را مطرح نمی‌کند.",
+   ex1:"Malgré ses succès, il gardait une modestie sincère qui forçait le respect.",ex1_fa:"با وجود موفقیت‌هایش، تواضع صادقانه‌ای داشت که احترام را مجبور می‌کرد.",
+   ex2:"La fausse modestie est souvent plus irritante que la vraie arrogance.",ex2_fa:"تواضع دروغین اغلب آزاردهنده‌تر از تکبر واقعی است."},
+  {n:81,fr:"la nonchalance",genre:"f.",fa:"بی‌خیالی / آسودگی سرد",level:"B2",tags:["شخصیت"],
+   def:"Manque d'ardeur et d'entrain; attitude détachée et nonachalante.",
+   def_fa:"کمبود شور و هیجان؛ نگرش بی‌تفاوت و آسوده.",
+   ex1:"Il répondait avec une nonchalance calculée qui exaspérait ses interlocuteurs.",ex1_fa:"با بی‌خیالی حساب‌شده‌ای جواب می‌داد که طرف صحبتانش را عصبانی می‌کرد.",
+   ex2:"La nonchalance de cet acteur à l'écran était en réalité le fruit d'un travail intense.",ex2_fa:"بی‌خیالی این بازیگر روی پرده در واقع ثمرهٔ کار فشرده‌ای بود."},
+  {n:82,fr:"l'ostentation",genre:"f.",fa:"خودنمایی / تظاهر",level:"C1",tags:["شخصیت","اجتماع"],
+   def:"Étalage excessif, mise en scène calculée de ses qualités, richesses ou vertus.",
+   def_fa:"نمایش بیش از حد، به صحنه گذاشتن حساب‌شدهٔ فضایل، ثروت یا خوبی‌ها.",
+   ex1:"Son ostentation agaçait ses collègues qui se fichaient de ses montres de luxe.",ex1_fa:"خودنماییش همکارانی را که به ساعت‌های لوکسش اهمیت نمی‌دادند عصبانی می‌کرد.",
+   ex2:"L'ostentation est souvent le masque d'une insécurité profonde.",ex2_fa:"خودنمایی اغلب نقاب یک ناامنی عمیق است."},
+  {n:83,fr:"la prépondérance",genre:"f.",fa:"برتری / اهمیت بیشتر",level:"C1",tags:["اجتماع","ذهن"],
+   def:"Supériorité marquée d'une chose ou d'une personne sur les autres.",
+   def_fa:"برتری بارز یک چیز یا یک شخص بر دیگران.",
+   ex1:"La prépondérance de l'anglais dans les sciences ne fait que croître.",ex1_fa:"برتری انگلیسی در علوم فقط در حال رشد است.",
+   ex2:"La prépondérance des hommes dans les postes de direction reste un problème.",ex2_fa:"برتری مردان در مناصب مدیریتی یک مشکل باقی است."},
+  {n:84,fr:"la réciprocité",genre:"f.",fa:"تقابل / دوجانبگی",level:"B2",tags:["اجتماع","اخلاق"],
+   def:"Rapport entre deux personnes où les actes et les sentiments sont mutuellement partagés.",
+   def_fa:"رابطه‌ای بین دو نفر که در آن اعمال و احساسات متقابلاً به اشتراک گذاشته می‌شوند.",
+   ex1:"L'amitié véritable repose sur la réciprocité — donner autant qu'on reçoit.",ex1_fa:"دوستی واقعی بر دوجانبگی استوار است — به همان اندازه بدهی که می‌گیری.",
+   ex2:"Le commerce international nécessite la réciprocité des droits de douane.",ex2_fa:"تجارت بین‌المللی نیازمند تقابل در تعرفه‌های گمرکی است."},
+  {n:85,fr:"la subtilité",genre:"f.",fa:"ظرافت / دقت پنهان",level:"B2",tags:["ذهن","زبان"],
+   def:"Caractère de ce qui est fin, délicat, difficile à percevoir ou à comprendre.",
+   def_fa:"خصلت چیزی که ظریف، لطیف، سخت برای درک یا دیدن است.",
+   ex1:"La subtilité de son humour n'était pas accessible à tous.",ex1_fa:"ظرافت طنزش برای همه قابل دسترس نبود.",
+   ex2:"C'est dans les subtilités de la langue que se cache la culture d'un peuple.",ex2_fa:"در ظرافت‌های زبان است که فرهنگ یک ملت پنهان شده."},
+  {n:86,fr:"la témérité",genre:"f.",fa:"بی‌پروایی / جسارت بیش از حد",level:"C1",tags:["شخصیت"],
+   def:"Hardiesse excessive, audace imprudente qui méprise le danger.",
+   def_fa:"جسارت بیش از حد، بی‌باکی ناعاقلانه که خطر را نادیده می‌گیرد.",
+   ex1:"Sa témérité sur les marchés financiers l'avait mené autant à la fortune qu'à la ruine.",ex1_fa:"بی‌پروایی‌اش در بازارهای مالی به همان اندازه به ثروت که به ورشکستگی رسانده بود.",
+   ex2:"Il y a une différence essentielle entre le courage et la témérité.",ex2_fa:"تفاوت اساسی بین شجاعت و بی‌پروایی وجود دارد."},
+  {n:87,fr:"la transmutation",genre:"f.",fa:"دگرگونی / تبدیل ماهیت",level:"C1",tags:["فلسفه","ذهن"],
+   def:"Transformation profonde d'une chose en une autre de nature différente.",
+   def_fa:"دگرگونی عمیق یک چیز به چیز دیگری با ماهیت متفاوت.",
+   ex1:"L'alchimie cherchait la transmutation des métaux en or — rêve ou métaphore ?",ex1_fa:"کیمیاگری دنبال تبدیل فلزات به طلا بود — رؤیا یا استعاره؟",
+   ex2:"L'art est une transmutation de la douleur en beauté.",ex2_fa:"هنر دگرگونی درد به زیبایی است."},
+  {n:88,fr:"la vélocité",genre:"f.",fa:"سرعت / چابکی",level:"C1",tags:["ذهن","جسم"],
+   def:"Grande vitesse dans l'exécution; agilité dans les mouvements ou la pensée.",
+   def_fa:"سرعت زیاد در اجرا؛ چابکی در حرکات یا تفکر.",
+   ex1:"La vélocité de ses doigts sur le clavier impressionnait tous les secrétaires.",ex1_fa:"سرعت انگشتانش روی کیبورد همهٔ منشی‌ها را تحت تأثیر می‌گذاشت.",
+   ex2:"La vélocité de son esprit lui permettait de saisir les opportunités avant les autres.",ex2_fa:"چابکی ذهنش به او اجازه می‌داد فرصت‌ها را قبل از دیگران بگیرد."},
+  {n:89,fr:"l'acuité",genre:"f.",fa:"تیزی / حدت / شدت",level:"C1",tags:["ذهن"],
+   def:"Grande finesse, netteté dans la perception ou dans la pensée.",
+   def_fa:"دقت و وضوح زیاد در درک یا تفکر.",
+   ex1:"L'acuité de son regard rien n'échappait à l'analyse.",ex1_fa:"هیچ چیز از تیزی نگاه تحلیلگرش فرار نمی‌کرد.",
+   ex2:"La crise a mis en relief l'acuité des inégalités sociales.",ex2_fa:"بحران تیزی نابرابری‌های اجتماعی را برجسته کرد."},
+  {n:90,fr:"la clémente",genre:"f.",fa:"رأفت / رحمت / ملایمت در قضاوت",level:"C1",tags:["اخلاق"],
+   def:"Douceur dans le jugement ou la punition, disposition à pardonner.",
+   def_fa:"ملایمت در قضاوت یا مجازات، تمایل به بخشیدن.",
+   ex1:"Le tribunal a fait preuve de clémence en réduisant la peine de moitié.",ex1_fa:"دادگاه رأفت نشان داد و مجازات را نصف کرد.",
+   ex2:"La clémence du souverain après la révolte a surpris ses conseillers.",ex2_fa:"رأفت پادشاه بعد از شورش مشاورانش را شگفت‌زده کرد."},
+  {n:91,fr:"la condescendance",genre:"f.",fa:"تفرعن / بزرگی فروختن",level:"B2",tags:["شخصیت","اجتماع"],
+   def:"Attitude de supériorité bienveillante mais méprisante envers quelqu'un qu'on juge inférieur.",
+   def_fa:"نگرش برتری خیرخواهانه ولی تحقیرآمیز نسبت به کسی که پایین‌تر تلقی می‌شود.",
+   ex1:"Sa condescendance envers les nouveaux employés créait une atmosphère toxique.",ex1_fa:"تفرعنش نسبت به کارمندان جدید فضای سمی ایجاد می‌کرد.",
+   ex2:"La condescendance — même involontaire — peut briser une relation professionnelle.",ex2_fa:"تفرعن — حتی ناخواسته — می‌تواند یک رابطهٔ حرفه‌ای را بشکند."},
+  {n:92,fr:"la discernement",genre:"m.",fa:"تشخیص / قوهٔ تمییز",level:"B2",tags:["ذهن","شخصیت"],
+   def:"Faculté de distinguer avec clarté, de juger avec justesse et perspicacité.",
+   def_fa:"توانایی تمییز با وضوح، قضاوت با درستی و تیزهوشی.",
+   ex1:"Il fallait du discernement pour distinguer les vraies informations des fausses dans ce flot.",ex1_fa:"برای تمییز اطلاعات درست از غلط در این سیل نیاز به قوهٔ تشخیص بود.",
+   ex2:"Le discernement est une qualité que l'expérience seule peut forger.",ex2_fa:"قوهٔ تمییز خصلتی است که فقط تجربه می‌تواند شکلش دهد."},
+  {n:93,fr:"la dissimulation",genre:"f.",fa:"پنهان‌کاری / فریب",level:"B2",tags:["شخصیت","اخلاق"],
+   def:"Action de cacher ce qu'on pense ou ressent, de donner une fausse apparence.",
+   def_fa:"عمل پنهان کردن آنچه فکر یا احساس می‌کنیم، دادن ظاهر دروغ.",
+   ex1:"Ses années de dissimulation avaient fini par le consumer de l'intérieur.",ex1_fa:"سال‌ها پنهان‌کاری در نهایت از درون نابودش کرده بود.",
+   ex2:"La dissimulation est parfois un mécanisme de survie, pas seulement un vice.",ex2_fa:"پنهان‌کاری گاهی یک مکانیزم بقا است، نه فقط یک عیب."},
+  {n:94,fr:"l'équanimité",genre:"f.",fa:"تعادل روحی / آرامش در همه‌حال",level:"C1",tags:["روانشناسی","شخصیت"],
+   def:"Égalité d'humeur, calme serein face aux vicissitudes de la vie.",
+   def_fa:"یکنواختی خلق، آرامش خاطر در برابر نوسانات زندگی.",
+   ex1:"Il faisait face aux crises avec une équanimité remarquable — rien ne semblait l'ébranler.",ex1_fa:"با تعادل روحی قابل توجهی با بحران‌ها روبه‌رو می‌شد — به نظر می‌رسید هیچ چیز تکانش نمی‌دهد.",
+   ex2:"Les stoïciens prônaient l'équanimité comme idéal de vie.",ex2_fa:"رواقیون تعادل روحی را به‌عنوان آرمان زندگی توصیه می‌کردند."},
+  {n:95,fr:"la frugalité",genre:"f.",fa:"ساده‌زیستی / صرفه‌جویی",level:"B2",tags:["شخصیت","اخلاق"],
+   def:"Sobriété dans la nourriture et les dépenses; mode de vie simple et économe.",
+   def_fa:"ساده‌گری در غذا و هزینه‌ها؛ شیوهٔ زندگی ساده و مقتصد.",
+   ex1:"Sa frugalité volontaire contrastait avec l'opulence de ses voisins.",ex1_fa:"ساده‌زیستی انتخابیش با تجمل همسایگانش در تضاد بود.",
+   ex2:"La frugalité n'est pas une privation — c'est une libération de l'esclavage consumériste.",ex2_fa:"ساده‌زیستی محرومیت نیست — آزادی از بردگی مصرف‌گرایی است."},
+  {n:96,fr:"la grandiloquence",genre:"f.",fa:"کلام بزرگ‌نمایانه / لاف‌زنی کلامی",level:"C1",tags:["زبان","شخصیت"],
+   def:"Style excessivement pompeux, décalé entre la forme et le fond.",
+   def_fa:"سبک بیش از حد باشکوه، فاصلهٔ بین شکل و محتوا.",
+   ex1:"Sa grandiloquence oratoire masquait la vacuité de sa pensée.",ex1_fa:"کلام بزرگ‌نمایانه‌اش خالی بودن فکرش را پنهان می‌کرد.",
+   ex2:"La grandiloquence politique est souvent inversement proportionnelle à l'action.",ex2_fa:"کلام بزرگ‌نمایانهٔ سیاسی اغلب نسبت معکوس با عمل دارد."},
+  {n:97,fr:"l'hésitation",genre:"f.",fa:"تردید / دودلی",level:"B2",tags:["احساس","ذهن"],
+   def:"Incertitude face à un choix, manque de décision momentané.",
+   def_fa:"عدم قطعیت در برابر یک انتخاب، کمبود تصمیم در یک لحظه.",
+   ex1:"Après une courte hésitation, elle a dit oui — et sa vie a changé.",ex1_fa:"بعد از تردید کوتاهی، بله گفت — و زندگیش تغییر کرد.",
+   ex2:"L'hésitation dans la chirurgie peut coûter une vie — d'où l'importance de la formation.",ex2_fa:"تردید در جراحی می‌تواند یک جان بگیرد — از اینجاست اهمیت آموزش."},
+  {n:98,fr:"l'idiosyncrasie",genre:"f.",fa:"ویژگی فردی / خصوصیت منحصربه‌فرد",level:"C1",tags:["روانشناسی","شخصیت"],
+   def:"Caractère particulier, façon d'être propre à chaque individu.",
+   def_fa:"خصلت ویژه، شیوهٔ بودن خاص هر فرد.",
+   ex1:"Chaque artiste a son idiosyncrasie — c'est ce qui rend son œuvre unique.",ex1_fa:"هر هنرمند ویژگی فردی خودش را دارد — همین است که اثرش را منحصربه‌فرد می‌کند.",
+   ex2:"Comprendre l'idiosyncrasie d'une culture demande des années d'immersion.",ex2_fa:"فهمیدن ویژگی‌های منحصربه‌فرد یک فرهنگ سال‌ها غوطه‌وری می‌طلبد."},
+  {n:99,fr:"la jovialité",genre:"f.",fa:"شادابی / سرحالی",level:"B2",tags:["شخصیت","احساس"],
+   def:"Humeur gaie et communicative, bonne humeur expansive.",
+   def_fa:"خلق شاد و مسری، حال خوب گسترشی.",
+   ex1:"Sa jovialité débordante rendait chaque réunion agréable.",ex1_fa:"شادابی سرازیرشونده‌اش هر جلسه را دلپذیر می‌کرد.",
+   ex2:"La jovialité de ce pays méridional contrastait avec la réserve des habitants du Nord.",ex2_fa:"شادابی این کشور جنوبی با خویشتن‌داری ساکنان شمال در تضاد بود."},
+  {n:100,fr:"la zèle",genre:"m.",fa:"غیرت / پشتکار پرشور",level:"B2",tags:["شخصیت","اخلاق"],
+   def:"Ardeur vive et soutenue dans l'accomplissement d'une tâche ou d'un devoir.",
+   def_fa:"شور و پشتکار زنده و پایدار در انجام یک کار یا وظیفه.",
+   ex1:"Elle accomplissait ses tâches avec un zèle remarquable qui impressionnait ses supérieurs.",ex1_fa:"وظایفش را با غیرت قابل توجهی انجام می‌داد که مافوقانش را تحت تأثیر می‌گذاشت.",
+   ex2:"Trop de zèle peut parfois nuire — il faut aussi savoir s'arrêter.",ex2_fa:"غیرت بیش از حد گاهی آسیب می‌رساند — باید گاهی هم دانست توقف کرد."},
+];
+
+let activeCat = 'all';
+function buildGrid(words){
+  const grid = document.getElementById('wordsGrid');
+  const empty = document.getElementById('emptyState');
+  if(!words.length){grid.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+  document.getElementById('countInfo').textContent='نمایش '+words.length+' کلمه از ۱۰۰';
+  const levelColors={'B2':'#2e7bb5','C1':'#7a5ba8'};
+  grid.innerHTML=words.map(w=>`
+    <div class="word-card" data-cat="${w.tags.join(' ')}" data-level="${w.level}">
+      <div class="wc-top">
+        <span class="wc-num">#${w.n}</span>
+        <span class="wc-level" style="background:${levelColors[w.level]||'#888'}">${w.level}</span>
+      </div>
+      <div class="wc-fr">${w.fr} <span class="wc-genre">${w.genre}</span></div>
+      <div class="wc-fa">${w.fa}</div>
+      <div class="wc-def">${w.def}</div>
+      <div class="wc-def-fa">${w.def_fa}</div>
+      <div class="wc-ex">${w.ex1}</div>
+      <div class="wc-ex-fa">${w.ex1_fa}</div>
+      <div class="wc-ex2">${w.ex2}</div>
+      <div class="wc-ex2-fa">${w.ex2_fa}</div>
+      <div class="wc-tags">${w.tags.map(t=>`<span class="wc-tag">${t}</span>`).join('')}</div>
+    </div>`).join('');
+}
+function filterWords(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  let filtered=WORDS;
+  if(activeCat!=='all') filtered=filtered.filter(w=>w.tags.includes(activeCat)||w.level===activeCat);
+  if(q) filtered=filtered.filter(w=>w.fr.toLowerCase().includes(q)||w.fa.includes(q)||w.def_fa.includes(q));
+  buildGrid(filtered);
+}
+function filterCat(cat,btn){
+  activeCat=cat;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('searchInput').value='';
+  filterWords();
+}
+buildGrid(WORDS);
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
