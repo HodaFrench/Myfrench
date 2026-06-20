@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0f0f0f;
+      --white: #ffffff;
+      --gray-100: #f7f7f7;
+      --gray-200: #e5e5e5;
+      --gray-400: #9ca3af;
+      --gray-600: #6b7280;
+      --purple: #7c3aed;
+      --purple-light: #ede9fe;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      min-height: 100vh;
+    }
+
+    /* PAGE SYSTEM */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--black);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--purple);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-link:hover { color: var(--black); }
+
+    .btn-nav-login {
+      color: var(--black);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-nav-cta {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn-nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .hero-badge span { color: var(--purple); font-weight: 600; }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--purple);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--black);
+      border: 1.5px solid var(--gray-200);
+      padding: 0.85rem 1.8rem;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--black); }
+
+    /* HERO VISUAL */
+    .hero-visual {
+      max-width: 900px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    .mockup {
+      background: var(--black);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+    }
+
+    .mockup-bar {
+      background: #1a1a1a;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #28ca41; }
+
+    .mockup-content {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1.5rem;
+      min-height: 280px;
+    }
+
+    .mockup-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .sidebar-item {
+      padding: 0.6rem 0.8rem;
+      border-radius: 8px;
+      color: #9ca3af;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .sidebar-item.active {
+      background: #2a2a2a;
+      color: white;
+    }
+
+    .mockup-main {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+
+    .lesson-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      background: #222;
+    }
+
+    .lesson-row-left { display: flex; align-items: center; gap: 0.8rem; }
+
+    .lesson-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--purple);
+    }
+
+    .lesson-dot.done { background: #10b981; }
+
+    .lesson-title { color: #e5e5e5; font-size: 0.82rem; font-weight: 500; }
+    .lesson-level { color: #6b7280; font-size: 0.72rem; }
+    .lesson-badge-mock {
+      background: var(--purple);
+      color: white;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .lesson-badge-mock.free { background: #10b981; }
+
+    /* STATS */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      margin-top: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--black);
+      letter-spacing: -0.03em;
+    }
+    .stat-label { color: var(--gray-600); font-size: 0.9rem; margin-top: 0.2rem; }
+
+    /* FEATURES */
+    .features {
+      max-width: 1000px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-sub {
+      color: var(--gray-600);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+      max-width: 500px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: var(--gray-100);
+      border-radius: 14px;
+      padding: 1.8rem;
+      transition: transform 0.2s;
+    }
+
+    .feature-card:hover { transform: translateY(-3px); }
+
+    .feature-icon {
+      width: 42px; height: 42px;
+      background: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature-card p { color: var(--gray-600); font-size: 0.88rem; line-height: 1.6; }
+
+    /* LESSONS PAGE */
+    .lessons-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .lesson-card {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .lesson-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .lesson-card-top {
+      background: var(--gray-100);
+      padding: 1.5rem;
+    }
+
+    .lc-level {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .lc-title { font-size: 1rem; font-weight: 700; }
+
+    .lesson-card-bottom { padding: 1.2rem 1.5rem; }
+    .lc-desc { color: var(--gray-600); font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem; }
+
+    .lc-meta { display: flex; gap: 1rem; font-size: 0.78rem; color: var(--gray-400); }
+
+    .lc-tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    .tag-free { background: #d1fae5; color: #065f46; }
+    .tag-premium { background: var(--purple-light); color: var(--purple); }
+
+    /* DASHBOARD */
+    .dash-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .dash-hello {
+      margin-bottom: 2rem;
+    }
+
+    .dash-hello h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .dash-hello p { color: var(--gray-600); margin-top: 0.3rem; }
+
+    .dash-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .dash-stat-card {
+      background: var(--gray-100);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .ds-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .ds-label { color: var(--gray-600); font-size: 0.85rem; margin-top: 0.2rem; }
+
+    .progress-bar-wrap {
+      background: var(--gray-200);
+      border-radius: 10px;
+      height: 6px;
+      margin-top: 0.8rem;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--purple);
+      border-radius: 10px;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--gray-100);
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.3rem; }
+    .modal > p { color: var(--gray-600); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+    .tabs {
+      display: flex;
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 0.25rem;
+      margin-bottom: 1.5rem;
+      gap: 0.25rem;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      background: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      color: var(--gray-600);
+      transition: all 0.15s;
+    }
+
+    .tab.active {
+      background: var(--white);
+      color: var(--black);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .form-group { margin-bottom: 1rem; }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--black);
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus { border-color: var(--purple); }
+
+    .auth-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .auth-btn:hover { opacity: 0.85; }
+
+    .msg {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .msg.error { background: #fee2e2; color: #dc2626; display: block; }
+    .msg.success { background: #d1fae5; color: #065f46; display: block; }
+    .msg.loading { background: var(--gray-100); color: var(--gray-600); display: block; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-logo { font-weight: 700; font-size: 0.95rem; }
+    footer p { color: var(--gray-400); font-size: 0.85rem; }
+
+    footer a {
+      color: var(--gray-600);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    footer a:hover { color: var(--black); }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.2rem; }
+      .hero { padding: 3rem 1.2rem 2rem; }
+      .mockup-content { grid-template-columns: 1fr; }
+      .mockup-sidebar { display: none; }
+      .stats-bar { gap: 2rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  
+
+/* ══ CSS کارت‌ها و grid از کتابخانه ══ */
+:root {
+  --navy: #1e3a5f;
+  --navy-deep: #16293f;
+  --gold: #b07a4a;
+  --gold-deep: #8a5a2b;
+  --gold-soft: #c4a572;
+  --terracotta: #c4502d;
+  --paper: #f4f3f5;
+  --paper-warm: #ebeaed;
+  --cream: #f9f8fa;
+  --ink: #2c2a26;
+  --gray: #8a8275;
+  --line: #e2e1e3;
+}
+
+/* library wrapper */
+.library-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+/* search */
+.search-box { margin: 1.5rem auto; max-width: 560px; }
+.search-box input {
+  width: 100%; padding: 12px 18px; border-radius: 999px;
+  border: 1.5px solid var(--gray-200); font-size: 15px;
+  font-family: 'Estedad','Inter',sans-serif;
+  background: var(--white); color: var(--black);
+  outline: none; transition: border .2s;
+}
+.search-box input:focus { border-color: var(--purple); }
+
+/* cat chips */
+.cat-grid { display: flex; flex-wrap: wrap; gap: 9px; margin: 1.2rem 0 1.8rem; }
+.cat-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 15px; border-radius: 999px;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white); cursor: pointer;
+  font-family: 'Estedad','Inter',sans-serif;
+  font-size: 13px; font-weight: 600; color: var(--black);
+  transition: all .2s; text-decoration: none;
+}
+.cat-chip:hover { border-color: var(--purple); color: var(--purple); }
+.chip-body { display: flex; flex-direction: column; line-height: 1.3; }
+.chip-body .name { font-size: 13px; font-weight: 700; }
+.chip-body .num { font-size: 11px; opacity: .6; }
+
+/* results header */
+.results-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.2rem; flex-wrap: wrap; gap: 10px;
+}
+.results-head h3 { font-size: 18px; font-weight: 700; }
+.count { font-size: 13px; color: var(--gray-600); margin-top: 2px; }
+.back-btn {
+  padding: 8px 18px; border-radius: 999px; border: 1.5px solid var(--gray-200);
+  background: var(--white); font-family: 'Estedad','Inter',sans-serif;
+  font-size: 13px; cursor: pointer; transition: all .2s;
+}
+.back-btn:hover { border-color: var(--purple); color: var(--purple); }
+
+/* grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 16px; }
+.grid-single { grid-template-columns: 1fr; }
+
+/* card */
+.card {
+  background: var(--white); border-radius: 12px;
+  border: 1.5px solid var(--gray-200);
+  overflow: hidden; transition: all .25s;
+  display: flex; flex-direction: column;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(124,58,237,.1);
+  border-color: var(--purple);
+}
+.card-top { height: 5px; background: var(--purple); }
+.card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.card-cat {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  color: var(--gray-600); margin-bottom: 10px;
+  align-self: flex-start; text-transform: uppercase;
+}
+.card h4 { font-size: 17px; font-weight: 700; margin-bottom: 5px; color: var(--black); }
+.card .fr {
+  font-family: 'Roboto',serif; font-size: 15px; color: #7c3aed;
+  direction: ltr; text-align: left;
+  margin-bottom: 12px; line-height: 1.4; font-style: italic;
+}
+.card-meta { margin-bottom: 14px; }
+.card-meta span {
+  display: inline-block; background: var(--gray-100);
+  color: var(--black); font-size: 12px;
+  padding: 3px 10px; border-radius: 6px; margin: 2px 2px 2px 0;
+}
+.theme-box {
+  background: var(--gray-100); border-radius: 8px;
+  padding: 9px 12px; margin: 8px 0 12px;
+  border-right: 3px solid var(--purple);
+}
+.theme-line { font-size: 12.5px; margin-bottom: 6px; }
+.theme-label { font-weight: 700; color: var(--purple); }
+.kw-line { display: flex; flex-wrap: wrap; gap: 5px; }
+.kw {
+  font-size: 11px; background: var(--white); color: var(--black);
+  border: 1px solid var(--gray-200); padding: 2px 9px; border-radius: 20px;
+}
+.card .open {
+  display: block; text-align: center;
+  background: var(--purple); color: #fff;
+  padding: 11px; border-radius: 8px;
+  text-decoration: none; font-weight: 600; font-size: 14px;
+  margin-top: auto; transition: background .2s;
+}
+.card .open:hover { background: #6d28d9; }
+.pod-cover {
+  position: relative; height: 140px; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--black);
+}
+.pod-cover svg { width: 100%; height: 100%; }
+.pod-play {
+  position: absolute; width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(255,255,255,.92); color: var(--black);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; padding-left: 3px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25); transition: all .25s;
+}
+.card-podcast:hover .pod-play { transform: scale(1.1); background: var(--purple); color: #fff; }
+.pod-desc {
+  background: var(--gray-100); border-radius: 8px;
+  padding: 10px 12px; margin-bottom: 12px;
+}
+.pod-fr { font-family: 'Roboto',serif; font-size: 14px; font-style: italic; margin-bottom: 5px; direction: ltr; text-align: left; }
+.pod-fa { font-size: 12.5px; line-height: 1.8; }
+.premium-tag { background: #fff3e0 !important; color: #e08a00 !important; }
+.empty { text-align: center; padding: 3rem; color: var(--gray-600); }
+.empty .big { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+
+/* latest */
+.latest { margin-top: 0.5rem; }
+.latest-title { font-size: 14px; font-weight: 700; color: var(--gray-600); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* tip corner — hide */
+.tip-corner { display: none; }
+
+/* hidden ids */
+#miniPlayer, #pronBody, #reactBody, #priveError { display: none; }
+
+/* results hidden by default */
+#page-home { display: block; }
+#page-results { display: none; }
+
+@media(max-width:600px){
+  .grid { grid-template-columns: 1fr; }
+  .library-wrap { padding: 1rem 1rem 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="nav-logo" onclick="goHome()" style="cursor:pointer;">🇫🇷 Français avec Hoda</div>
+  <div class="nav-right">
+    <button class="nav-link" onclick="goHome()">خانه</button>
+    <button class="nav-link" onclick="openCat('all')">درس‌ها</button>
+    <a href="https://t.me/TCFHODA" target="_blank" class="nav-link">تلگرام ✈</a>
+  </div>
+</nav>
+
+<!-- ══ HOME PAGE ══ -->
+<div id="page-home">
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-badge">🇫🇷 <span>فارسی‌زبانان سراسر جهان</span> — یادگیری فرانسه به روش درست</div>
+    <h1>Apprenez le français.<br>Avec <em>Hoda</em>.</h1>
+    <p class="hero-sub">یک جامعهٔ حرفه‌ای و صمیمی برای فارسی‌زبانان — از صفر تا روان، با سرعت خودت.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="openCat('all')">شروع یادگیری ←</button>
+      <a href="https://t.me/TCFHODA" target="_blank" class="btn-outline">کانال تلگرام ✈</a>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div class="stats">
+    <div class="stat"><div class="stat-num">۵۰+</div><div class="stat-label">زبان‌آموز فعال</div></div>
+    <div class="stat"><div class="stat-num" id="stat-count">—</div><div class="stat-label">درس و منبع</div></div>
+    <div class="stat"><div class="stat-num">A1→C1</div><div class="stat-label">همهٔ سطوح</div></div>
+  </div>
+
+  <!-- features -->
+  <div class="features">
+    <div class="section-label">چرا هدا</div>
+    <h2 class="section-title">Tout ce dont vous avez besoin<br>pour parler français.</h2>
+    <p class="section-sub">ساخته‌شده برای فارسی‌زبانان — هر توضیح، هر درس، هر منبع.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">📚</div><h3>Leçons structurées</h3><p>درس‌های ساختارمند — از اولین حرف تا مکالمهٔ روان.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎯</div><h3>Préparation TCF</h3><p>آمادگی کامل برای آزمون TCF Canada و مهاجرت.</p></div>
+      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>واژگان و گرامر با مثال‌های واقعی و ترجمهٔ فارسی.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎧</div><h3>Podcasts &amp; Culture</h3><p>پادکست‌های InnerFrench و محتوای فرهنگی فرانسه.</p></div>
+    </div>
+  </div>
+
+  <!-- library search + cats -->
+  <div class="library-wrap">
+    <div class="section-label">کتابخانه</div>
+    <h2 class="section-title">Commencez à apprendre aujourd'hui.</h2>
+    <p class="section-sub" style="color:var(--gray-600);margin-bottom:0">از A1 تا C1 — تمام مسیر فرانسهٔ تو، اینجا.</p>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="🔍 جستجو در محتواها..." oninput="onSearch()">
+    </div>
+    <div class="cat-grid" id="catGrid"></div>
+    <div id="latest"></div>
+  </div>
+</div>
+
+<!-- ══ RESULTS PAGE ══ -->
+<div id="page-results">
+  <div class="library-wrap">
+    <div class="results-head">
+      <div>
+        <h3 id="resultsTitle">همهٔ محتواها</h3>
+        <div class="count" id="count"></div>
+      </div>
+      <button class="back-btn" onclick="goHome()">↑ بازگشت به خانه</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</div>
+
+<!-- hidden required elements -->
+<div id="miniPlayer"></div>
+<div id="pronBody"></div>
+<div id="reactBody"></div>
+<div id="priveError"></div>
+
+<script src="data.js"></script>
+<script>
+
+        let activeCat = null;
+        let activeSection = null;  // بخش فعال (مثل expression-orale)
+        let activeTask = null;     // تکلیف فعال (مثل tache-3)
+        let activeSujet = null;    // موضوع فعال (مثل immigration)
+        let activeGroupe = null;   // پوشه‌ی فعال در گرامر (مثل conditionnel)
+
+        function lessonsIn(catId) {
+            return LESSONS.filter(l => l.category === catId).length;
+        }
+
+        // ساخت کارت‌های دسته در صفحه‌ی اول
+        function buildCatGrid() {
+            const el = document.getElementById("catGrid");
+            let html = `
+                <button class="cat-chip" onclick="openCat('all')" style="--c:var(--navy)">
+                    <span class="chip-body">
+                        <span class="name">همهٔ محتواها</span>
+                        <span class="num">${LESSONS.length} محتوا</span>
+                    </span>
+                </button>`;
+            CATEGORIES.forEach(c => {
+                if (c.link) {
+                    html += `
+                    <a class="cat-chip" href="${c.link}" style="--c:${c.color}; text-decoration:none;">
+                        <span class="chip-body">
+                            <span class="name">${c.label}</span>
+                            <span class="num">صفحه‌ی ویژه</span>
+                        </span>
+                    </a>`;
+                    return;
+                }
+                const n = lessonsIn(c.id);
+                html += `
+                <button class="cat-chip" onclick="openCat('${c.id}')" style="--c:${c.color}">
+                    <span class="chip-body">
+                        <span class="name">${c.label}</span>
+                        <span class="num">${n} محتوا</span>
+                    </span>
+                </button>`;
+            });
+            el.innerHTML = html;
+        }
+
+        function catInfo(id) {
+            return CATEGORIES.find(c => c.id === id) || { label: id, icon: "📄", color: "#2e7bb5" };
+        }
+        function sectionsOf(catId) {
+            return (typeof SECTIONS !== "undefined" && SECTIONS[catId]) ? SECTIONS[catId] : null;
+        }
+
+        function openCat(catId, skipHash) {
+            activeCat = catId;
+            activeSection = null;
+            activeTask = null;
+            activeSujet = null;
+            activeGroupe = null;
+            document.getElementById("search").value = "";
+            if (!skipHash) location.hash = "cat=" + catId;
+            openResults();
+            // دسته‌ی نکته‌های طلایی → نمایش مخصوص
+            if (catId === "astuces") {
+                renderAstuces();
+            } else if (catId === "adjectifs") {
+                renderAdjectifs();
+            } else if (catId === "quiz") {
+                renderQuiz();
+            } else if (catId === "reactions") {
+                renderReactions();
+            } else if (catId === "prononciation") {
+                renderPrononciation();
+            } else if (catId === "editoa1") {
+                renderEditoA1();
+            } else if (catId === "miniarticle") {
+                renderMiniarticles();
+            } else if (catId === "innerfrench") {
+                renderInnerFrench();
+            } else if (catId === "culture") {
+                renderCulture();
+            } else if (catId !== "all" && catId !== "grammar" && sectionsOf(catId)) {
+                // اگر این دسته زیرشاخه دارد، به‌جای محتواها زیرشاخه‌ها را نشان بده
+                renderSections(catId);
+            } else {
+                setResultsTitle(catId);
+                render();
+            }
+        }
+
+        // نمایش کارت‌های نکته‌ی طلایی
+        function renderAstuces() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("astuces");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof ASTUCES !== "undefined") ? ASTUCES : [];
+            document.getElementById("count").textContent = list.length + " نکته";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز نکته‌ای اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((a, ai) => `
+                <div class="astuce-card">
+                    <div class="astuce-badge">✦ نکته‌ی طلایی</div>
+                    <h4 class="astuce-titre" dir="ltr" style="text-align:right;">${a.titre}</h4>
+                    ${a.sens ? `<div class="astuce-sens">${a.sens}</div>` : ""}
+                    <div class="astuce-compare">
+                        ${a.correct ? `<div class="astuce-row correct"><span class="ar-icon">✅</span><span dir="ltr">${a.correct}</span></div>` : ""}
+                        ${a.faux ? `<div class="astuce-row faux"><span class="ar-icon">❌</span><span dir="ltr">${a.faux}</span></div>` : ""}
+                    </div>
+                    ${a.note ? `<div class="astuce-note">${a.note}</div>` : ""}
+                    ${a.conjugaison ? `
+                    <div class="astuce-conj">
+                        <div class="astuce-sub-title">🔄 صرف در زمان حال</div>
+                        <div class="conj-grid">
+                            ${a.conjugaison.map(c => `<div class="conj-row"><span class="conj-p" dir="ltr">${c.p}</span><span class="conj-f" dir="ltr">${c.form}</span></div>`).join("")}
+                        </div>
+                    </div>` : ""}
+                    ${a.exemples ? `
+                    <div class="astuce-exs">
+                        <div class="astuce-sub-title">📝 مثال‌ها</div>
+                        ${a.exemples.map(e => `<div class="astuce-ex"><div class="ax-fr" dir="ltr">${e.fr}</div><div class="ax-fa">${e.fa}</div></div>`).join("")}
+                    </div>` : ""}
+                    ${a.passe ? `
+                    <div class="astuce-passe">
+                        <div class="astuce-sub-title">⏳ در زمان گذشته</div>
+                        <div class="astuce-note">${a.passe.intro}</div>
+                        <div class="astuce-ex"><div class="ax-fr" dir="ltr">${a.passe.ex.fr}</div><div class="ax-fa">${a.passe.ex.fa}</div></div>
+                    </div>` : ""}
+                    ${a.quiz ? `
+                    <div class="astuce-quiz">
+                        <div class="astuce-sub-title">🎯 آزمون صرف (حال و گذشته)</div>
+                        ${a.quiz.map((q, qi) => `
+                            <div class="quiz-q" id="aq-${ai}-${qi}">
+                                <div class="quiz-q-text" dir="ltr">${q.q}</div>
+                                <div class="quiz-opts">
+                                    ${q.options.map((o, oi) => `<button class="quiz-opt" dir="ltr" onclick="answerAstuceQuiz(${ai},${qi},${oi},${q.correct})">${o}</button>`).join("")}
+                                </div>
+                                <div class="quiz-fb" id="aqfb-${ai}-${qi}" data-note="${(q.note||'').replace(/"/g,'&quot;')}"></div>
+                            </div>`).join("")}
+                    </div>` : ""}
+                    ${a.exemple ? `<div class="astuce-ex"><div class="ax-fr" dir="ltr">${a.exemple}</div>${a.exempleFa ? `<div class="ax-fa">${a.exempleFa}</div>` : ""}</div>` : ""}
+                    ${a.source ? `<div class="astuce-source">${a.source}</div>` : ""}
+                </div>`).join("");
+        }
+
+        // پاسخ به آزمون نکته‌ها
+        function answerAstuceQuiz(ai, qi, chosen, correct) {
+            const qEl = document.getElementById("aq-" + ai + "-" + qi);
+            const fb = document.getElementById("aqfb-" + ai + "-" + qi);
+            const btns = qEl.querySelectorAll(".quiz-opt");
+            btns.forEach((b, i) => {
+                b.classList.remove("correct", "wrong");
+                if (i === correct) b.classList.add("correct");
+                else if (i === chosen) b.classList.add("wrong");
+                b.disabled = true;
+            });
+            const isRight = chosen === correct;
+            fb.innerHTML = (isRight ? "✅ آفرین! " : "❌ درست: ") + (fb.getAttribute("data-note") || "");
+            fb.classList.add("show");
+        }
+
+        function setResultsTitle(catId) {
+            const ci = catInfo(catId);
+            if (catId === "all") {
+                document.getElementById("resultsTitle").innerHTML = "همه‌ی محتواها";
+            } else {
+                document.getElementById("resultsTitle").innerHTML =
+                    '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            }
+        }
+
+        // نمایش کارت‌های صفت
+        function renderAdjectifs() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("adjectifs");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof ADJECTIFS !== "undefined") ? ADJECTIFS : [];
+            document.getElementById("count").textContent = list.length + " صفت";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">◆</span>هنوز صفتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map(a => `
+                <div class="adj-card">
+                    <div class="adj-head">
+                        <span class="adj-mot" dir="ltr">${a.mot}</span>
+                        ${a.emoji ? `<span class="adj-emoji">${a.emoji}</span>` : ""}
+                    </div>
+                    ${(a.traductions && a.traductions.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔹 ترجمه</div>
+                        <div class="adj-trads">${a.traductions.map(t => `<span class="adj-trad">${t}</span>`).join("")}</div>
+                    </div>` : ""}
+                    ${(a.synonymes && a.synonymes.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔹 مترادف‌ها</div>
+                        <div class="adj-syns">
+                            ${a.synonymes.map(s => `<div class="adj-syn"><span class="syn-fr" dir="ltr">${s.fr}</span><span class="syn-arrow">←</span><span class="syn-fa">${s.fa}</span></div>`).join("")}
+                        </div>
+                    </div>` : ""}
+                    ${(a.combinaisons && a.combinaisons.length) ? `
+                    <div class="adj-block">
+                        <div class="adj-label">🔗 ترکیبات پرتکرار</div>
+                        <div class="adj-combos">
+                            ${a.combinaisons.map(c => `
+                            <div class="adj-combo">
+                                <span class="combo-icon">${c.icon || "•"}</span>
+                                <div class="combo-text">
+                                    <span class="combo-fr" dir="ltr">${c.fr}</span>
+                                    <span class="combo-fa">${c.fa}</span>
+                                </div>
+                            </div>`).join("")}
+                        </div>
+                    </div>` : ""}
+                    ${a.phrase ? `
+                    <div class="adj-phrase">
+                        <div class="adj-label">🔹 جمله</div>
+                        <div class="phrase-fr" dir="ltr">${a.phrase.fr}</div>
+                        <div class="phrase-fa">${a.phrase.fa}</div>
+                    </div>` : ""}
+                </div>`).join("");
+        }
+
+        // نمایش کوییزها
+        function renderQuiz() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("quiz");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof QUIZ !== "undefined") ? QUIZ : [];
+            document.getElementById("count").textContent = list.length + " کوییز";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">?</span>هنوز کوییزی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((q, qi) => `
+                <div class="quiz-card">
+                    <div class="quiz-badge">؟ کوییز کوتاه</div>
+                    <div class="quiz-q" dir="ltr">${q.question}</div>
+                    <div class="quiz-opts">
+                        ${q.options.map((opt, oi) => `
+                            <button class="quiz-opt" id="q${qi}o${oi}" onclick="answerQuiz(${qi},${oi},${q.correct})">
+                                <span class="opt-letter">${String.fromCharCode(65+oi)}</span>
+                                <span dir="ltr">${opt}</span>
+                            </button>`).join("")}
+                    </div>
+                    ${q.note ? `<div class="quiz-note" id="qn${qi}">${q.note}</div>` : ""}
+                </div>`).join("");
+        }
+
+        function answerQuiz(qi, oi, correct) {
+            const card = document.getElementById("q"+qi+"o0").parentElement;
+            if (card.dataset.answered) return;
+            card.dataset.answered = "1";
+            const opts = card.querySelectorAll(".quiz-opt");
+            opts.forEach((b, idx) => {
+                b.classList.add("disabled");
+                if (idx === correct) b.classList.add("correct");
+            });
+            if (oi !== correct) {
+                document.getElementById("q"+qi+"o"+oi).classList.add("wrong");
+            }
+            const note = document.getElementById("qn"+qi);
+            if (note) note.classList.add("show");
+        }
+
+        // نمایش واکنش‌ها (چطور واکنش بدم؟)
+        let activeReact = 0;
+        function renderReactions() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("reactions");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof REACTIONS !== "undefined") ? REACTIONS : [];
+            document.getElementById("count").textContent = list.length + " موضوع";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">❝</span>هنوز موضوعی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            activeReact = 0;
+            // فهرست تب‌ها بالا
+            const tabs = list.map((r, i) =>
+                `<button class="react-tab${i===0?' active':''}" onclick="showReact(${i})">${r.emoji||''} ${r.titreFa||r.titre}</button>`
+            ).join("");
+            grid.innerHTML = `<div class="react-tabs">${tabs}</div><div id="reactBody"></div>`;
+            showReact(0);
+        }
+
+        function showReact(idx) {
+            const list = (typeof REACTIONS !== "undefined") ? REACTIONS : [];
+            const r = list[idx];
+            if (!r) return;
+            activeReact = idx;
+            document.querySelectorAll(".react-tab").forEach((t, i) => t.classList.toggle("active", i === idx));
+            const col = r.couleur || "#d17b3f";
+            document.getElementById("reactBody").innerHTML = `
+                <div class="react-card" style="--rc:${col}">
+                    <div class="react-head">
+                        <span class="react-titre" dir="ltr">${r.titre}</span>
+                        ${r.emoji ? `<span class="react-emoji">${r.emoji}</span>` : ""}
+                    </div>
+                    ${r.titreFa ? `<div class="react-titre-fa">${r.titreFa}</div>` : ""}
+                    <div class="react-list">
+                        ${r.expressions.map(e => `
+                            <div class="react-item">
+                                <div class="react-expr">
+                                    <span class="react-ico">${e.emoji || "💬"}</span>
+                                    <span class="react-fr" dir="ltr">${e.fr}</span>
+                                    <span class="react-fa">${e.fa}</span>
+                                </div>
+                                ${e.ex ? `<div class="react-ex"><div class="rex-fr" dir="ltr">${e.ex}</div>${e.exFa ? `<div class="rex-fa">${e.exFa}</div>` : ""}</div>` : ""}
+                            </div>`).join("")}
+                    </div>
+                </div>`;
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        // نمایش تمرین‌های تلفظ
+        let activePron = "guide";
+        function renderPrononciation() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("prononciation");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const vids = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
+            const ech = (typeof ECHAUFFEMENT !== "undefined") ? ECHAUFFEMENT : [];
+            document.getElementById("count").textContent = "۳ بخش";
+            const grid = document.getElementById("grid");
+            const tabs = `
+                <div class="pron-tabs">
+                    <button class="pron-tab" data-p="guide" onclick="showPron('guide')">📖 درسنامه‌ی تلفظ</button>
+                    <button class="pron-tab" data-p="video" onclick="showPron('video')">🎬 ویدیوهای من</button>
+                    <button class="pron-tab" data-p="ech" onclick="showPron('ech')">🔥 زبانت رو گرم کن</button>
+                </div>`;
+            grid.innerHTML = tabs + '<div id="pronBody"></div>';
+            showPron("guide");
+        }
+
+        function showPron(which) {
+            activePron = which;
+            document.querySelectorAll(".pron-tab").forEach(t => t.classList.toggle("active", t.getAttribute("data-p") === which));
+            const body = document.getElementById("pronBody");
+            const vids = (typeof PRONONCIATION !== "undefined") ? PRONONCIATION : [];
+            const ech = (typeof ECHAUFFEMENT !== "undefined") ? ECHAUFFEMENT : [];
+
+            if (which === "guide") {
+                body.innerHTML = `
+                    <a class="pron-guide" href="GUIDE_prononciation.html">
+                        <div class="pron-guide-icon">🔊</div>
+                        <div class="pron-guide-body">
+                            <div class="pron-guide-title">راهنمای کامل تلفظ فرانسوی</div>
+                            <div class="pron-guide-fa">از A تا Z — همه‌ی صداها، حروف ناخوانا، لیزون و زبان‌گردان‌ها در ۹ درس</div>
+                        </div>
+                        <div class="pron-guide-go">مطالعه ←</div>
+                    </a>`;
+            } else if (which === "video") {
+                if (!vids.length) {
+                    body.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                } else {
+                    body.innerHTML = vids.map(p => {
+                        const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
+                        const lines = (p.texteFr || []).map((fr, i) => `
+                            <div class="pron-line">
+                                <div class="pron-fr" dir="ltr">${fr}</div>
+                                ${p.texteFa && p.texteFa[i] ? `<div class="pron-fa">${p.texteFa[i]}</div>` : ""}
+                            </div>`).join("");
+                        return `
+                        <div class="pron-card">
+                            <div class="pron-head">
+                                <span class="pron-jour">🗣️ ${p.jour}</span>
+                                <span class="pron-titre">${p.titre}</span>
+                            </div>
+                            ${sounds ? `<div class="pron-sounds">${sounds}</div>` : ""}
+                            ${p.video ? `
+                            <div class="pron-video">
+                                <video controls preload="metadata" playsinline>
+                                    <source src="${safeUrl(p.video)}" type="video/mp4">
+                                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                                </video>
+                            </div>` : ""}
+                            <div class="pron-text">${lines}</div>
+                            <div class="pron-cta">📢 با من تکرار کن!</div>
+                        </div>`;
+                    }).join("");
+                }
+            } else if (which === "ech") {
+                if (!ech.length) {
+                    body.innerHTML = '<div class="empty"><span class="big">🔥</span>به‌زودی</div>';
+                } else {
+                    const intro = `<div class="ech-intro">🔥 <b>زبان‌گردان (virelangue)</b> بهترین راه برای گرم‌کردن زبان و تمرین صداهای سخت است. هر جمله را ۳ بار بگو: اول آرام، بعد سریع‌تر، آخر همراه نوت صوتی.</div>`;
+                    body.innerHTML = intro + ech.map((e, i) => `
+                        <div class="ech-card">
+                            <div class="ech-num">${i+1}</div>
+                            <div class="ech-fr" dir="ltr">« ${e.fr} »</div>
+                            <div class="ech-fa">${e.fa}</div>
+                            ${(e.focus && e.focus.length) ? `<div class="ech-focus">${e.focus.map(f=>`<span dir="ltr">${f}</span>`).join("")}</div>` : ""}
+                            <div class="ech-steps">
+                                <div class="ech-step"><span class="ech-step-n">۱</span> یک‌بار <b>آرام</b> بگو <span dir="ltr" class="ech-step-fr">— lentement</span></div>
+                                <div class="ech-step"><span class="ech-step-n">۲</span> بار دوم <b>سریع‌تر</b> بگو <span dir="ltr" class="ech-step-fr">— plus rapidement</span></div>
+                                <div class="ech-step"><span class="ech-step-n">۳</span> به نوت صوتی گوش بده و <b>تکرار کن</b> <span dir="ltr" class="ech-step-fr">— écoute et répète</span></div>
+                            </div>
+                            ${e.note ? `<div class="ech-note">💡 ${e.note}</div>` : ""}
+                            ${e.audio ? `<button class="ech-play" onclick="playInPlayer('${safeUrl(e.audio)}','زبان‌گردان ${i+1}')">▶ پخش نوت صوتی</button>` : `<div class="ech-soon">🎤 نوت صوتی به‌زودی اضافه می‌شود</div>`}
+                        </div>`).join("");
+                }
+            }
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        function renderSections(catId) {
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo(catId);
+            const secs = sectionsOf(catId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            document.getElementById("count").textContent = secs.length + " بخش";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = secs.map(s => `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openSection('${catId}','${s.id}')">
+                    <span class="sub-fr-l" dir="ltr">${s.label}</span>
+                    <span class="sub-fa-l">${s.labelFa}</span>
+                    <span class="sub-go">مشاهده ←</span>
+                </button>`).join("");
+        }
+
+        // نمایش لیست قسمت‌های InnerFrench
+        // ── پخش‌کننده‌ی کوچک ──
+        function playInPlayer(audioUrl, title) {
+            const player = document.getElementById("miniPlayer");
+            const audio = document.getElementById("mpAudio");
+            document.getElementById("mpTitle").textContent = title;
+            // فقط اگر منبع عوض شده، دوباره بارگذاری کن
+            if (audio.getAttribute("data-src") !== audioUrl) {
+                audio.src = audioUrl;
+                audio.setAttribute("data-src", audioUrl);
+            }
+            player.classList.add("show");
+            audio.play().catch(() => {}); // اگر مرورگر اجازه نداد، کاربر دستی پلی می‌کند
+        }
+        function closeMiniPlayer() {
+            const player = document.getElementById("miniPlayer");
+            const audio = document.getElementById("mpAudio");
+            audio.pause();
+            player.classList.remove("show");
+        }
+
+        // ── بخش شاگردان خصوصی (با رمز) ──
+        let priveUnlocked = false;
+
+        function renderPrive() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("prive") || { icon: "🔒", label: "شاگردان خصوصی", color: "#7a5ba8" };
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + (ci.color||"#7a5ba8") + '">' + ci.icon + '</span> ' + ci.label;
+            const grid = document.getElementById("grid");
+            if (!priveUnlocked) {
+                grid.innerHTML = `
+                  <div style="background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 24px;text-align:center;">
+                    <div style="font-size:40px;margin-bottom:14px;">🔒</div>
+                    <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;">دسترسی محدود</div>
+                    <div style="font-size:13.5px;color:var(--gray);margin-bottom:18px;">برای دانش‌آموزان خصوصی هدی</div>
+                    <input id="priveInput" type="password" placeholder="رمز ورود"
+                      style="font-family:'Roboto',serif;font-size:18px;letter-spacing:6px;text-align:center;border:2px solid var(--line);border-radius:10px;padding:12px 18px;width:180px;outline:none;display:block;margin:0 auto 12px;"
+                      onkeydown="if(event.key==='Enter')checkPrive()">
+                    <button onclick="checkPrive()"
+                      style="font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;background:#7a5ba8;color:#fff;border:none;border-radius:20px;padding:11px 28px;cursor:pointer;">
+                      ورود
+                    </button>
+                    <div id="priveError" style="color:#c4502d;font-size:13px;margin-top:10px;min-height:18px;"></div>
+                  </div>`;
+                return;
+            }
+            renderPriveContent();
+        }
+
+        function checkPrive() {
+            const inp = document.getElementById("priveInput");
+            const err = document.getElementById("priveError");
+            if (!inp) return;
+            if (inp.value === PRIVE_PASSWORD) {
+                priveUnlocked = true;
+                renderPrive();
+            } else {
+                err.textContent = "رمز اشتباه است. دوباره امتحان کن.";
+                inp.value = "";
+                inp.focus();
+            }
+        }
+
+        function renderPriveContent() {
+            const ci = catInfo("prive");
+            const list = (typeof PRIVE !== "undefined") ? PRIVE : [];
+            document.getElementById("count").textContent = list.length + " شاگرد";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = `
+                <div class="prive-welcome">🔓 خوش آمدی! این بخش مخصوص شاگردان خصوصی است.</div>
+                ${list.map(s => `
+                    <div class="prive-card">
+                        <div class="prive-card-head">
+                            <span class="prive-emoji">${s.emoji || "👤"}</span>
+                            <span class="prive-nom">${s.nom}</span>
+                        </div>
+                        ${s.note ? `<div class="prive-note">${s.note}</div>` : ""}
+                        ${(s.items && s.items.length) ? `
+                        <div class="prive-items">
+                            ${s.items.map(it => it.link ? `
+                                <a class="prive-item" href="${it.link}">
+                                    <span class="prive-item-titre">${it.titre}</span>
+                                    ${it.desc ? `<span class="prive-item-desc">${it.desc}</span>` : ""}
+                                    <span class="prive-item-go">←</span>
+                                </a>` : `
+                                <div class="prive-item">
+                                    <span class="prive-item-titre">${it.titre}</span>
+                                    ${it.desc ? `<span class="prive-item-desc">${it.desc}</span>` : ""}
+                                </div>`).join("")}
+                        </div>` : `<div class="prive-empty">هنوز محتوایی اضافه نشده — به‌زودی</div>`}
+                    </div>`).join("")}`;
+        }
+
+        function renderCulture() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("culture");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const items = LESSONS.filter(l => l.category === "culture");
+            document.getElementById("count").textContent = items.length + " مقاله";
+            const grid = document.getElementById("grid");
+            if (!items.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">🥐</span>به‌زودی<br><span style="font-size:14px">محتوا اضافه می‌شود</span></div>';
+                return;
+            }
+            grid.innerHTML = items.map(function(item) {
+                return '<a class="lesson-card" href="' + item.file + '" style="text-decoration:none;display:block;">' +
+                    '<div class="lc-tag" style="background:#8a2040;color:#fff">' + (item.level||'') + '</div>' +
+                    '<div class="lc-title">' + item.title + '</div>' +
+                    '<div class="lc-title-fr" dir="ltr">' + (item.titleFr||'') + '</div>' +
+                    '<div class="lc-summary">' + (item.summary||'') + '</div>' +
+                    '</a>';
+            }).join("");
+        }
+
+        function renderInnerFrench() {
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo("innerfrench");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
+            document.getElementById("count").textContent = list.length + " قسمت";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">▶</span>هنوز قسمتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((ep, i) => `
+                <a class="if-card" href="innerfrench.html?ep=${ep.num}">
+                    <span class="if-num">#${ep.num}</span>
+                    <span class="if-body">
+                        <span class="if-titre" dir="ltr">${ep.titre}</span>
+                        <span class="if-titre-fa">${ep.titreFa}</span>
+                        ${ep.theme ? `<span class="if-theme">${ep.theme}</span>` : ""}
+                    </span>
+                    <span class="if-go">▶</span>
+                </a>`).join("");
+        }
+
+        // باز کردن یک قسمت → متن کامل با واژگان کلیکی + پخش‌کننده
+        function openInnerEpisode(idx) {
+            const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
+            const ep = list[idx];
+            if (!ep) return;
+            const ci = catInfo("innerfrench");
+            document.getElementById("grid").classList.add("grid-single");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> InnerFrench #' + ep.num;
+            document.getElementById("count").textContent = "متن کامل";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = `
+                <button class="back-to-list" onclick="openCat('innerfrench')">→ بازگشت به فهرست پادکست‌ها</button>
+                <div class="if-episode">
+                    <div class="if-ep-head">
+                        <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
+                        <div class="if-ep-titre-fa">${ep.titreFa}</div>
+                        ${ep.theme ? `<div class="if-ep-theme">${ep.theme}</div>` : ""}
+                    </div>
+                    ${ep.audio ? `
+                    <button class="if-play-btn" onclick="playInPlayer('${safeUrl(ep.audio)}', 'InnerFrench #${ep.num} — ${ep.titreFa}')">
+                        ▶ پخش پادکست در همین صفحه
+                    </button>` : ""}
+                    <a class="if-source" href="${ep.source}" target="_blank" rel="noopener">
+                        🔗 منبع اصلی در InnerFrench.com
+                    </a>
+                    ${ep.intro ? `<div class="if-intro">${ep.intro}</div>` : ""}
+                    <div class="if-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی</div>
+                    <div class="if-text">
+                        ${(ep.paras||[]).map(p => {
+                            const fr = (typeof p === "object") ? p.fr : p;
+                            const fa = (typeof p === "object") ? p.fa : "";
+                            return `<div class="if-block">
+                                <p class="if-para" dir="ltr">${parseClickWords(fr)}</p>
+                                ${fa ? `<p class="if-para-fa">${fa}</p>` : ""}
+                            </div>`;
+                        }).join("")}
+                    </div>
+                    <div class="if-credit">منبع: InnerFrench — Hugo Cotton · با احترام به سازنده‌ی اثر</div>
+                </div>`;
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
+        function parseClickWords(text) {
+            // نوع ۱: ساختار گرامری/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
+            text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens) {
+                const m = mot.replace(/"/g, '&quot;');
+                const s = sens.replace(/"/g, '&quot;');
+                return '<span class="cw cw-struct" dir="ltr" onclick="toggleCw(this)" data-sens="' + s + '">' + m + '</span>';
+            });
+            // نوع ۲: واژه‌ی دشوار ⟦mot|معنی⟧ (صورتی)
+            text = text.replace(/⟦([^|⟧]+)\|([^⟧]+)⟧/g, function(_, mot, sens) {
+                const m = mot.replace(/"/g, '&quot;');
+                const s = sens.replace(/"/g, '&quot;');
+                return '<span class="cw" dir="ltr" onclick="toggleCw(this)" data-sens="' + s + '">' + m + '</span>';
+            });
+            return text;
+        }
+        function toggleCw(el) {
+            // اگر باز است، فوراً ببند
+            if (el.classList.contains("open")) {
+                el.classList.remove("open");
+                if (el._cwTimer) { clearTimeout(el._cwTimer); el._cwTimer = null; }
+                return;
+            }
+            // ساخت حباب معنی اگر هنوز نیست
+            let pop = el.querySelector(".cw-pop");
+            if (!pop) {
+                pop = document.createElement("span");
+                pop.className = "cw-pop";
+                pop.textContent = el.getAttribute("data-sens");
+                el.appendChild(pop);
+            }
+            el.classList.add("open");
+            // محو خودکار بعد از ۵ ثانیه
+            if (el._cwTimer) clearTimeout(el._cwTimer);
+            el._cwTimer = setTimeout(() => {
+                el.classList.remove("open");
+                el._cwTimer = null;
+            }, 3000);
+        }
+
+        // نمایش مینی‌آرتیکل‌ها
+        let miniActiveCat = "general";  // بخش فعال: general یا tcf
+        let miniActiveNiveau = "all";    // سطح فعال: all, B1, B2
+
+        function renderMiniarticles() {
+            document.getElementById("grid").classList.add("grid-single");
+            const ci = catInfo("miniarticle");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const all = (typeof MINIARTICLES !== "undefined") ? MINIARTICLES : [];
+            const grid = document.getElementById("grid");
+            // فیلتر بر اساس بخش و سطح
+            const list = all.filter(a => (a.cat || "general") === miniActiveCat)
+                            .filter(a => miniActiveNiveau === "all" || a.niveau === miniActiveNiveau);
+            document.getElementById("count").textContent = list.length + " آرتیکل";
+
+            // دکمه‌های بخش
+            const catTabs = `
+                <div class="mini-tabs">
+                    <button class="mini-tab ${miniActiveCat==='general'?'active':''}" onclick="setMiniCat('general')">✨ عمومی</button>
+                    <button class="mini-tab ${miniActiveCat==='tcf'?'active':''}" onclick="setMiniCat('tcf')">📝 موضوعات TCF</button>
+                </div>`;
+            // فیلتر سطح
+            const niveauTabs = `
+                <div class="mini-niveaux">
+                    <span class="mini-niv-label">سطح:</span>
+                    <button class="mini-niv ${miniActiveNiveau==='all'?'active':''}" onclick="setMiniNiveau('all')">همه</button>
+                    <button class="mini-niv ${miniActiveNiveau==='B1'?'active':''}" onclick="setMiniNiveau('B1')">B1</button>
+                    <button class="mini-niv ${miniActiveNiveau==='B2'?'active':''}" onclick="setMiniNiveau('B2')">B2</button>
+                </div>`;
+
+            const intro = miniActiveCat === 'tcf'
+                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 آزمون TCF و لحن آزمونی نوشته شده‌اند. عالی برای تمرین استدلال و واژگان آزمون.</div>'
+                : '';
+
+            if (!list.length) {
+                grid.innerHTML = catTabs + niveauTabs + intro + '<div class="empty"><span class="big">✑</span>در این سطح آرتیکلی نیست<br><span style="font-size:14px">سطح دیگری را امتحان کن</span></div>';
+                return;
+            }
+            // لیست عناوین کلیکی
+            const listHtml = list.map(a => {
+                const realIdx = all.indexOf(a);
+                return `
+                <button class="mini-list-item" onclick="openMiniArticle(${realIdx})">
+                    <span class="mini-li-emoji">${a.emoji || "✑"}</span>
+                    <span class="mini-li-body">
+                        <span class="mini-li-titre" dir="ltr">${a.titre}</span>
+                    </span>
+                    ${a.niveau ? `<span class="mini-li-niveau">${a.niveau}</span>` : ""}
+                    <span class="mini-li-go">←</span>
+                </button>`;
+            }).join("");
+            grid.innerHTML = catTabs + niveauTabs + intro + '<div class="mini-list">' + listHtml + '</div>';
+        }
+
+        function setMiniCat(c) { miniActiveCat = c; miniActiveNiveau = "all"; renderMiniarticles(); }
+        function setMiniNiveau(n) { miniActiveNiveau = n; renderMiniarticles(); }
+
+        // باز کردن یک مینی‌آرتیکل کامل
+        function openMiniArticle(idx) {
+            const all = (typeof MINIARTICLES !== "undefined") ? MINIARTICLES : [];
+            const a = all[idx];
+            if (!a) return;
+            const ci = catInfo("miniarticle");
+            document.getElementById("grid").classList.add("grid-single");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            document.getElementById("count").textContent = a.niveau || "";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = `
+                <button class="mini-back" onclick="renderMiniarticles()">→ بازگشت به فهرست</button>
+                <div class="mini-card">
+                    <div class="mini-head">
+                        ${a.emoji ? `<span class="mini-emoji">${a.emoji}</span>` : ""}
+                        <span class="mini-titre" dir="ltr">${a.titre}</span>
+                        ${a.niveau ? `<span class="mini-niveau">${a.niveau}</span>` : ""}
+                    </div>
+                    <div class="mini-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی</div>
+                    <div class="mini-body">
+                        ${(a.paras||[]).map(p => `<p class="mini-para" dir="ltr">${parseClickWords(p)}</p>`).join("")}
+                    </div>
+                    ${a.morale ? `
+                    <div class="mini-morale">
+                        <span class="mini-morale-icon">🌱</span>
+                        <div class="mini-morale-body">
+                            <div class="mini-morale-fr" dir="ltr">${parseClickWords(a.morale.fr)}</div>
+                            ${a.morale.fa ? `<div class="mini-morale-fa">${a.morale.fa}</div>` : ""}
+                        </div>
+                    </div>` : ""}
+                </div>`;
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        // نمایش درس‌های Édito A1 (لیست درس‌ها)
+        let activeEdito = null;
+        function renderEditoA1() {
+            activeEdito = null;
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo("editoa1");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            const list = (typeof EDITOA1 !== "undefined") ? EDITOA1 : [];
+            document.getElementById("count").textContent = list.length + " درس";
+            const grid = document.getElementById("grid");
+            if (!list.length) {
+                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">به‌زودی واژگان درس‌ها با مثال اینجا می‌آید</span></div>';
+                return;
+            }
+            grid.innerHTML = list.map((l, i) => `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openEditoLecon(${i})">
+                    <span class="sub-fr-l" dir="ltr">✎ ${l.lecon || ("Leçon " + (i+1))}</span>
+                    <span class="sub-fa-l">${l.titre || ""}</span>
+                    <span class="sub-go">${(l.mots||[]).length} واژه ←</span>
+                </button>`).join("");
+        }
+
+        // باز کردن یک درس → نمایش واژگان با مثال
+        function openEditoLecon(idx) {
+            const list = (typeof EDITOA1 !== "undefined") ? EDITOA1 : [];
+            const l = list[idx];
+            if (!l) return;
+            activeEdito = idx;
+            const ci = catInfo("editoa1");
+            document.getElementById("grid").classList.add("grid-single");
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + (l.lecon || "") +
+                (l.titre ? ' <span style="font-size:15px;color:var(--gray)">· ' + l.titre + '</span>' : '');
+            document.getElementById("count").textContent = (l.mots||[]).length + " واژه";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = (l.mots||[]).map(m => `
+                <div class="edito-card">
+                    <div class="edito-head">
+                        <span class="edito-mot" dir="ltr">${m.genre ? m.genre + " " : ""}${m.mot}</span>
+                        <span class="edito-fa">${m.fa}</span>
+                    </div>
+                    <div class="edito-exemples">
+                        ${(m.exemples||[]).map((e, j) => `
+                            <div class="edito-ex">
+                                <span class="edito-ex-num">${j+1}</span>
+                                <div class="edito-ex-body">
+                                    <div class="edito-ex-fr" dir="ltr">${e.fr}</div>
+                                    ${e.fa ? `<div class="edito-ex-fa">${e.fa}</div>` : ""}
+                                </div>
+                            </div>`).join("")}
+                    </div>
+                </div>`).join("");
+        }
+
+        // اطلاعات پوشه‌های گرامر (مودهای فعلی و دسته‌بندی‌ها)
+        const GRAMMAR_GROUPES = {
+            "conditionnel": { fr: "Le Conditionnel", fa: "وجه شرطی", icon: "◈" },
+            "subjonctif":   { fr: "Le Subjonctif", fa: "وجه التزامی", icon: "◈" },
+            "indicatif":    { fr: "L'Indicatif", fa: "وجه اخباری", icon: "◈" },
+            "autres":       { fr: "Points divers", fa: "نکته‌های متفرقه", icon: "✦" },
+        };
+
+        // نمایش پوشه‌های گرامر (هر مود فعلی یک پوشه)
+        function renderGroupes(catId) {
+            document.getElementById("grid").classList.remove("grid-single");
+            const ci = catInfo(catId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            // گروه‌بندی محتواهای گرامر بر اساس فیلد groupe (پیش‌فرض: autres)
+            const lessons = LESSONS.filter(l => l.category === catId);
+            const groupesMap = {};
+            lessons.forEach(l => {
+                const g = l.groupe || "autres";
+                if (!groupesMap[g]) groupesMap[g] = [];
+                groupesMap[g].push(l);
+            });
+            // ترتیب نمایش: ابتدا مودهای تعریف‌شده، سپس autres
+            const order = ["conditionnel", "subjonctif", "indicatif", "autres"];
+            const keys = Object.keys(groupesMap).sort((a,b) => {
+                const ia = order.indexOf(a), ib = order.indexOf(b);
+                return (ia<0?99:ia) - (ib<0?99:ib);
+            });
+            document.getElementById("count").textContent = keys.length + " پوشه";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = keys.map(g => {
+                const info = GRAMMAR_GROUPES[g] || { fr: g, fa: "", icon: "✦" };
+                const n = groupesMap[g].length;
+                return `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openGroupe('${g}')">
+                    <span class="sub-fr-l" dir="ltr">${info.icon} ${info.fr}</span>
+                    <span class="sub-fa-l">${info.fa}</span>
+                    <span class="sub-go">${n} درس ←</span>
+                </button>`;
+            }).join("");
+        }
+
+        // باز کردن یک پوشه‌ی گرامر → نمایش محتواهای داخلش
+        function openGroupe(groupe) {
+            activeGroupe = groupe;
+            openResults();
+            const ci = catInfo("grammar");
+            const info = GRAMMAR_GROUPES[groupe] || { fr: groupe, fa: "" };
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + info.fr +
+                (info.fa ? ' <span style="font-size:15px;color:var(--gray)">· ' + info.fa + '</span>' : '');
+            render();
+        }
+
+
+        // نمایش کارت‌های تکلیف (مثل Tâche 3)
+        function openSection(catId, secId) {
+            activeSection = secId;
+            activeTask = null;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' + sec.label;
+            document.getElementById("count").textContent = (sec.tasks||[]).length + " تکلیف";
+            const grid = document.getElementById("grid");
+            grid.innerHTML = (sec.tasks||[]).map(t => `
+                <button class="sub-card" style="--c:${ci.color}" onclick="openTask('${catId}','${secId}','${t.id}')">
+                    <span class="sub-fr-l" dir="ltr">${t.label}</span>
+                    <span class="sub-fa-l">${t.labelFa}</span>
+                    <span class="sub-go">مشاهده ←</span>
+                </button>`).join("");
+        }
+
+        // نمایش محتواهای یک تکلیف
+        function openTask(catId, secId, taskId) {
+            document.getElementById("grid").classList.remove("grid-single");
+            activeTask = taskId;
+            activeSujet = null;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            const task = sec.tasks.find(t => t.id === taskId);
+            const crumb = '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' +
+                sec.label + ' <span style="color:var(--gray)">›</span> ' + task.label;
+            // اگر این تکلیف موضوع دارد، به‌جای محتواها موضوع‌ها را نشان بده
+            if (task.sujets && task.sujets.length) {
+                document.getElementById("resultsTitle").innerHTML = crumb;
+                document.getElementById("count").textContent = task.sujets.length + " موضوع";
+                const grid = document.getElementById("grid");
+                grid.innerHTML = task.sujets.map(s => {
+                    const n = LESSONS.filter(l => l.sujet === s.id).length;
+                    return `
+                    <button class="sub-card" style="--c:${ci.color}" onclick="openSujet('${catId}','${secId}','${taskId}','${s.id}')">
+                        <span class="sub-fr-l" dir="ltr">${s.label}</span>
+                        <span class="sub-fa-l">${s.labelFa}</span>
+                        <span class="sub-go">${n ? n + ' محتوا ←' : 'به‌زودی'}</span>
+                    </button>`;
+                }).join("");
+            } else {
+                document.getElementById("resultsTitle").innerHTML = crumb;
+                render();
+            }
+        }
+
+        function openSujet(catId, secId, taskId, sujetId) {
+            activeSujet = sujetId;
+            const ci = catInfo(catId);
+            const sec = sectionsOf(catId).find(s => s.id === secId);
+            const task = sec.tasks.find(t => t.id === taskId);
+            const suj = task.sujets.find(s => s.id === sujetId);
+            document.getElementById("resultsTitle").innerHTML =
+                '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' +
+                ci.label + ' <span style="color:var(--gray)">›</span> ' +
+                sec.label + ' <span style="color:var(--gray)">›</span> ' +
+                task.label + ' <span style="color:var(--gray)">›</span> ' + suj.label;
+            render();
+        }
+
+        function onSearch() {
+            const q = document.getElementById("search").value.trim();
+            if (q) {
+                activeCat = "all";
+                document.getElementById("resultsTitle").textContent = "نتایج جستجو";
+                // هنگام جستجو hero می‌ماند (چون باکس جستجو داخل آن است)
+                document.getElementById("results").classList.add("show");
+                document.getElementById("hero").classList.remove("hidden");
+                document.getElementById("hero").classList.add("shrink");
+                render();
+            } else {
+                goHome();
+            }
+        }
+
+        function openResults() {
+            document.getElementById("results").classList.add("show");
+            document.getElementById("hero").classList.add("hidden");
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        function goHome(skipHash) {
+            activeCat = null;
+            activeSection = null;
+            activeTask = null;
+            activeSujet = null;
+            activeGroupe = null;
+            document.getElementById("search").value = "";
+            document.getElementById("results").classList.remove("show");
+            document.getElementById("hero").classList.remove("shrink");
+            document.getElementById("hero").classList.remove("hidden");
+            if (!skipHash && location.hash) {
+                history.replaceState(null, "", location.pathname + location.search);
+            }
+            window.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        function render() {
+            document.getElementById("grid").classList.remove("grid-single");
+            const q = document.getElementById("search").value.trim().toLowerCase();
+            const grid = document.getElementById("grid");
+
+            let filtered = LESSONS.filter(l => {
+                const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
+                const matchGroupe = !activeGroupe || (l.groupe || "autres") === activeGroupe;
+                const matchSection = !activeSection || l.section === activeSection;
+                const matchTask = !activeTask || l.task === activeTask;
+                const matchSujet = !activeSujet || l.sujet === activeSujet;
+                const matchSearch = !q ||
+                    (l.title && l.title.toLowerCase().includes(q)) ||
+                    (l.titleFr && l.titleFr.toLowerCase().includes(q)) ||
+                    (l.tags && l.tags.join(" ").toLowerCase().includes(q));
+                return matchCat && matchGroupe && matchSection && matchTask && matchSujet && matchSearch;
+            });
+
+            document.getElementById("count").textContent = filtered.length + " محتوا";
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="empty"><span class="big">📚</span>هنوز محتوایی در این بخش نیست<br><span style="font-size:14px">به‌زودی اضافه می‌شود</span></div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(l => {
+                const c = catInfo(l.category);
+                const isPodcast = l.category === "podcast" || l.link;
+                // مقصد لینک: پادکست → لینک خارجی، بقیه → فایل HTML
+                const href = safeUrl(l.link || l.file || "#");
+                const target = l.link ? ' target="_blank" rel="noopener"' : "";
+                const btnText = isPodcast ? "شنیدن پادکست ♪" : "باز کردن ←";
+
+                // بخش توضیح دوزبانه (مخصوص پادکست)
+                let descBlock = "";
+                if (l.descFr || l.descFa) {
+                    descBlock = `
+                        <div class="pod-desc">
+                            ${l.descFr ? `<div class="pod-fr" dir="ltr">${l.descFr}</div>` : ""}
+                            ${l.descFa ? `<div class="pod-fa">${l.descFa}</div>` : ""}
+                        </div>`;
+                }
+
+                const coverBlock = (isPodcast && l.cover)
+                    ? `<div class="pod-cover">${l.cover}<span class="pod-play">▶</span></div>`
+                    : `<div class="card-top" style="background:${c.color}"></div>`;
+                return `
+                <div class="card${isPodcast ? ' card-podcast' : ''}">
+                    ${coverBlock}
+                    <div class="card-body">
+                        <span class="card-cat"><span style="color:${c.color}">${c.icon}</span> ${c.label}</span>
+                        <h4>${l.title || ""}</h4>
+                        ${l.titleFr ? `<div class="fr">${l.titleFr}</div>` : ""}
+                        ${descBlock}
+                        ${(l.theme || (l.keywords && l.keywords.length)) ? `
+                        <div class="theme-box">
+                            ${l.theme ? `<div class="theme-line"><span class="theme-label">تم:</span> ${l.theme}</div>` : ""}
+                            ${(l.keywords && l.keywords.length) ? `<div class="kw-line">${l.keywords.map(k => `<span class="kw">${k}</span>`).join("")}</div>` : ""}
+                        </div>` : ""}
+                        <div class="card-meta">
+                            ${l.level ? `<span>${l.level}</span>` : ""}
+                            ${(l.tags||[]).map(t => `<span>${t}</span>`).join("")}
+                            ${l.premium ? `<span class="premium-tag">⭐ ویژه</span>` : ""}
+                        </div>
+                        <a href="${href}"${target} class="open">${btnText}</a>
+                    </div>
+                </div>`;
+            }).join("");
+        }
+
+        // تولید تصویر SVG زیبا برای هر محتوا بر اساس دسته‌اش
+        // امن‌کردن URL برای قرارگیری در ویژگی href
+        function safeUrl(u) {
+            return (u || "#").replace(/&/g, "&amp;");
+        }
+
+        function coverFor(l) {
+            // ۱) عکس واقعی (فایل آپلودشده)
+            if (l.img) return '<img src="' + l.img + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">';
+            // ۲) تصویر SVG سفارشی (مثل پادکست)
+            if (l.cover) return l.cover;
+            const c = catInfo(l.category);
+            const col = c.color;
+            // رنگ روشن‌تر برای گرادیان (با ترکیب سفید)
+            const lite = col + "cc";
+
+            // موتیف‌های پخته و زیبا برای هر دسته
+            const motifs = {
+                tcf: '<g opacity="0.9"><rect x="148" y="44" width="104" height="76" rx="8" fill="#fffdf8" opacity="0.95"/><rect x="160" y="58" width="62" height="6" rx="3" fill="' + col + '" opacity="0.5"/><rect x="160" y="72" width="80" height="5" rx="2.5" fill="' + col + '" opacity="0.3"/><rect x="160" y="84" width="70" height="5" rx="2.5" fill="' + col + '" opacity="0.3"/><circle cx="232" cy="104" r="15" fill="#2e9e5b"/><path d="M225 104 l5 5 l9 -11" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>',
+                grammar: '<text x="200" y="118" font-size="130" fill="#fffdf8" opacity="0.16" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold">§</text><rect x="120" y="56" width="160" height="7" rx="3.5" fill="#fffdf8" opacity="0.4"/><rect x="140" y="74" width="120" height="6" rx="3" fill="#fffdf8" opacity="0.28"/>',
+                conversation: '<g><rect x="58" y="44" width="150" height="62" rx="18" fill="#fffdf8" opacity="0.95"/><circle cx="92" cy="75" r="6" fill="' + col + '" opacity="0.55"/><circle cx="118" cy="75" r="6" fill="' + col + '" opacity="0.55"/><circle cx="144" cy="75" r="6" fill="' + col + '" opacity="0.55"/><rect x="150" y="88" width="170" height="52" rx="16" fill="#fffdf8" opacity="0.55"/></g>',
+                vocab: '<text x="92" y="120" font-size="96" fill="#fffdf8" opacity="0.22" font-family="Georgia,serif" font-weight="bold">Aa</text><rect x="200" y="54" width="120" height="7" rx="3.5" fill="#fffdf8" opacity="0.4"/><rect x="200" y="74" width="150" height="6" rx="3" fill="#fffdf8" opacity="0.28"/><rect x="200" y="92" width="100" height="6" rx="3" fill="#fffdf8" opacity="0.22"/>',
+                podcast: '<g><circle cx="200" cy="76" r="46" fill="#fffdf8" opacity="0.1"/><rect x="184" y="44" width="32" height="54" rx="16" fill="#fffdf8" opacity="0.92"/><path d="M168 88 a32 32 0 0 0 64 0" stroke="#fffdf8" stroke-width="5" fill="none" opacity="0.7"/><rect x="197" y="120" width="6" height="18" rx="3" fill="#fffdf8" opacity="0.6"/><rect x="184" y="136" width="32" height="5" rx="2.5" fill="#fffdf8" opacity="0.5"/></g>'
+            };
+            const motif = motifs[l.category] || '';
+
+            // الگوی نقطه‌چین ظریف در پس‌زمینه
+            const dots = '<circle cx="40" cy="36" r="3" fill="#fff" opacity="0.12"/><circle cx="360" cy="130" r="4" fill="#fff" opacity="0.1"/><circle cx="330" cy="30" r="2.5" fill="#fff" opacity="0.14"/><circle cx="60" cy="128" r="2.5" fill="#fff" opacity="0.1"/>';
+
+            return '<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">' +
+                '<defs>' +
+                '<linearGradient id="bg' + l.category + '" x1="0" y1="0" x2="1" y2="1">' +
+                '<stop offset="0" stop-color="' + col + '"/>' +
+                '<stop offset="1" stop-color="' + col + '" stop-opacity="0.78"/></linearGradient>' +
+                '<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1">' +
+                '<stop offset="0.55" stop-color="#000" stop-opacity="0"/>' +
+                '<stop offset="1" stop-color="#000" stop-opacity="0.22"/></linearGradient>' +
+                '</defs>' +
+                '<rect width="400" height="160" fill="url(#bg' + l.category + ')"/>' +
+                dots + motif +
+                '<rect width="400" height="160" fill="url(#sh)"/>' +
+                '</svg>';
+        }
+
+        function buildLatest() {
+            const box = document.getElementById("latest");
+            if (!LESSONS.length) { box.innerHTML = ""; return; }
+            // جدیدترین = آخرین مواردی که به لیست اضافه شده‌اند (تا ۴ مورد)
+            const latest = LESSONS.slice(-4).reverse();
+            let html = `
+                <div class="latest-title">Derniers ajouts<span class="fa">جدیدترین محتواها</span></div>
+                <div class="latest-sub">تازه‌ترین چیزهایی که به کتابخانه اضافه شده</div>
+                <div class="news-list">`;
+            latest.forEach(l => {
+                const c = catInfo(l.category);
+                const href = safeUrl(l.link || l.file || "#");
+                const target = l.link ? ' target="_blank" rel="noopener"' : "";
+                const summary = l.summary || l.descFa || "";
+                html += `
+                    <a href="${href}"${target} class="news-card">
+                        <div class="news-img">${coverFor(l)}</div>
+                        <div class="news-body">
+                            <span class="news-cat" style="color:${c.color}">${c.label}${l.premium ? ' · ⭐ ویژه' : ''}</span>
+                            <h5 class="news-title">${l.title || ""}</h5>
+                            ${summary ? `<p class="news-excerpt">${summary}</p>` : ""}
+                            <span class="news-more" style="color:${c.color}">${l.link ? 'شنیدن ←' : 'خواندن ←'}</span>
+                        </div>
+                    </a>`;
+            });
+            html += `</div>`;
+            box.innerHTML = html;
+        }
+
+        let lastTip = -1;
+        function nextTip() {
+            const card = document.getElementById("tipCard");
+            if (typeof TIPS === "undefined" || !TIPS.length) { card.style.display = "none"; return; }
+            let i;
+            do { i = Math.floor(Math.random() * TIPS.length); }
+            while (TIPS.length > 1 && i === lastTip);
+            lastTip = i;
+            const t = TIPS[i];
+            const head = t.type === "rappel" ? "✦ یادت باشه که…" : "✦ می‌دونستی که…؟";
+            card.innerHTML = `
+                <span class="tip-close" onclick="closeTip(event)">×</span>
+                <div class="tip-head">${head}</div>
+                <div class="tip-fr" dir="ltr">${t.fr}</div>
+                <div class="tip-fa">${t.fa}</div>
+                <div class="tip-next">برای نکته‌ی بعدی لمس کن ↺</div>`;
+        }
+
+        function closeTip(e) {
+            e.stopPropagation();
+            document.getElementById("tipCard").style.display = "none";
+        }
+
+        nextTip();
+        buildLatest();
+        buildCatGrid();
+
+        // بازیابی وضعیت از آدرس (برای حفظ صفحه هنگام رفرش)
+        function restoreFromHash() {
+            const hash = location.hash.replace(/^#/, "");
+            if (hash.startsWith("cat=")) {
+                const catId = hash.slice(4);
+                const exists = (typeof CATEGORIES !== "undefined") && CATEGORIES.some(c => c.id === catId);
+                if (exists) {
+                    openCat(catId, true); // true = hash را دوباره ننویس
+                    return;
+                }
+            }
+            goHome(true);
+        }
+        restoreFromHash();
+        // اگر کاربر دکمه‌ی back/forward مرورگر را زد
+        window.addEventListener("hashchange", restoreFromHash);
+    
+
+// override goHome و results برای تم جدید
+function goHome() {
+  document.getElementById('page-home').style.display = 'block';
+  document.getElementById('page-results').style.display = 'none';
+  activeCat = null; activeGroupe = null; activeSection = null;
+  activeTask = null; activeSujet = null;
+  document.getElementById('search').value = '';
+  buildCatGrid();
+  buildLatest();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function showResults() {
+  document.getElementById('page-home').style.display = 'none';
+  document.getElementById('page-results').style.display = 'block';
+}
+
+const _origOpenCat = openCat;
+openCat = function(catId) {
+  showResults();
+  _origOpenCat(catId);
+};
+
+// آمار
+window.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('stat-count');
+  if (el && typeof LESSONS !== 'undefined') el.textContent = LESSONS.length + '+';
+  buildCatGrid();
+  buildLatest();
+  // اگه URL hash داشت
+  const hash = location.hash.replace('#cat=','');
+  if (hash) { showResults(); openCat(hash === 'all' ? 'all' : hash); }
+});
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
