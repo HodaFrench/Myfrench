@@ -545,9 +545,10 @@
         }
 
         function openCat(catId) {
+            const ci = catInfo(catId);
+            if (ci.link) { window.location.href = ci.link; return; }
             activeCat = catId;
             document.getElementById("search").value = "";
-            const ci = catInfo(catId);
             if (catId === "all") {
                 document.getElementById("resultsTitle").innerHTML = "همه‌ی محتواها";
             } else {
