@@ -136,11 +136,18 @@ async function doSignup(){
   if(pass.length<6) return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');
   if(pass!==pass2) return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');
   setLoading('signupBtn',true);
-  const {error}=await sb.auth.signUp({email,password:pass});
+  const {data, error}=await sb.auth.signUp({email,password:pass});
   setLoading('signupBtn',false);
   if(error) return showMsg('signupMsg',error.message,'error');
-  showMsg('signupMsg','✅ ثبت‌نام موفق! در حال ورود...','success');
-  setTimeout(()=>window.location.href='index.html',1000);
+  // Auto login after signup (no email confirmation needed)
+  if(data.session){
+    window.location.href='index.html';
+  } else {
+    // Try signing in immediately
+    const {error:err2}=await sb.auth.signInWithPassword({email,password:pass});
+    if(err2) return showMsg('signupMsg','ثبت‌نام شد! لطفاً وارد شوید.','success');
+    window.location.href='index.html';
+  }
 }
 
 async function doLogin(){
