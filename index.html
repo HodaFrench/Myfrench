@@ -3,156 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Français avec Hoda — مسیر یادگیری</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Estedad',sans-serif;background:#f7f3ea;min-height:100vh;direction:rtl;color:#1f3a5f}
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.07) 31px,rgba(65,97,138,0.07) 32px)}
-.page{position:relative;z-index:1;max-width:430px;margin:0 auto;padding:1.5rem 1rem 3rem}
-.top{text-align:center;padding:.5rem 0 1rem}
-.top .back{display:inline-block;font-size:12px;color:#a8874f;text-decoration:none;margin-bottom:1rem}
-.top .back:hover{color:#1f3a5f}
-.top h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:#1f3a5f;letter-spacing:.5px;white-space:nowrap}
-.top p{font-size:14px;color:#a8874f;margin-top:10px;letter-spacing:2px}
+body{
+  font-family:'Estedad',sans-serif;
+  background:#f5f0e8;
+  min-height:100vh;direction:rtl;color:#1f3a5f;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:repeating-linear-gradient(transparent,transparent 38px,rgba(65,97,138,0.05) 38px,rgba(65,97,138,0.05) 39px);
+}
+.page{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:1.5rem 1rem 5rem}
 
-/* ROAD + STATIONS */
-.road-wrap{position:relative;max-width:380px;margin:1rem auto 0}
-svg.road{width:100%;display:block}
-.stations{position:absolute;inset:0}
+/* HEADER */
+.header{text-align:center;padding:.8rem 0 1.5rem}
+.header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:600;color:#1f3a5f;
+  letter-spacing:.5px;white-space:nowrap;
+}
+.header p{font-size:12px;color:#a8874f;margin-top:8px;letter-spacing:2.5px;text-transform:uppercase}
 
-.node-card{position:absolute;transform:translateY(-50%);
-  background:#fbf8f1;border:1.5px solid #d9ceb8;border-radius:14px;
-  padding:.7rem .8rem;cursor:pointer;text-align:center;
-  box-shadow:0 4px 14px rgba(31,58,95,.08);transition:transform .15s,box-shadow .15s}
-.node-card:hover{transform:translateY(-50%) scale(1.04);box-shadow:0 8px 20px rgba(31,58,95,.16)}
-.nc-title{font-size:16px;font-weight:600;line-height:1.35}
-.nc-count{font-size:12px;color:#a8874f;margin-top:3px;line-height:1.3}
+/* AUTH BAR */
+.auth-bar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(245,240,232,.95);border-bottom:1px solid #e0d8c8;
+  padding:7px 18px;display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;color:#a8874f;backdrop-filter:blur(6px);
+}
+.auth-bar button{
+  border:1px solid #d9ceb8;background:transparent;border-radius:8px;
+  padding:3px 12px;font-family:'Estedad',sans-serif;font-size:11px;
+  color:#a8874f;cursor:pointer;transition:all .2s;
+}
+.auth-bar button:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
+body{padding-top:38px}
 
-.milestone{position:absolute;left:50%;transform:translate(-50%,-50%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  border-radius:50%;flex-shrink:0;box-shadow:0 4px 12px rgba(31,58,95,.18)}
-.ms-main{width:56px;height:56px;background:#1f3a5f;color:#f7f3ea;font-size:11px;font-weight:600}
-.ms-mid{width:52px;height:52px;background:#fbf8f1;border:2.5px solid #1f3a5f;color:#1f3a5f;font-size:12px;font-weight:700}
-.ms-b2{width:52px;height:52px;background:#fbf8f1;border:2.5px solid #a8874f;color:#a8874f;font-size:12px;font-weight:700}
-.ms-tcf{width:56px;height:56px;background:#1f3a5f;color:#f7f3ea;font-size:11px;font-weight:600}
-.ms-end{width:56px;height:56px;background:#a8874f;color:#f7f3ea;font-size:18px}
-.ms-label{font-size:9px;margin-top:2px;opacity:.8}
+/* ROAD WRAP */
+.road-wrap{position:relative;width:100%}
+svg.road{width:100%;display:block;overflow:visible}
+
+/* NODE CARDS */
+.stations{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none}
+.node-card{
+  position:absolute;pointer-events:all;
+  transform:translateY(-50%);
+  background:rgba(255,253,246,.92);
+  border:1.5px solid #d9ceb8;border-radius:14px;
+  padding:.65rem .9rem;cursor:pointer;text-align:center;
+  box-shadow:0 6px 22px rgba(31,58,95,.1);
+  transition:transform .2s,box-shadow .2s;
+  backdrop-filter:blur(4px);
+}
+.node-card:hover{transform:translateY(-50%) scale(1.06);box-shadow:0 10px 30px rgba(31,58,95,.18)}
+.node-card:active{transform:translateY(-50%) scale(.97)}
+.nc-icon{font-size:24px;margin-bottom:3px}
+.nc-title{font-size:15px;font-weight:600;line-height:1.3}
 
 /* MODAL */
-.overlay{display:none;position:fixed;inset:0;background:rgba(31,58,95,.3);z-index:200;align-items:center;justify-content:center;padding:1rem}
+.overlay{display:none;position:fixed;inset:0;background:rgba(31,58,95,.3);z-index:300;
+  align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px)}
 .overlay.open{display:flex}
-.modal{background:#f7f3ea;border-radius:18px;width:100%;max-width:420px;max-height:84vh;overflow:hidden;display:flex;flex-direction:column;border:1px solid #d9ceb8}
-.mhead{padding:1.2rem 1.4rem 1rem;border-bottom:1px solid #e8e0ce;display:flex;align-items:center;justify-content:space-between}
-.mtitle{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600}
-.mcount{font-size:11px;color:#a8874f;margin-top:3px}
-.mclose{width:30px;height:30px;border-radius:50%;border:1px solid #d9ceb8;background:#efe9db;cursor:pointer;font-size:14px;color:#41618a;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.modal{background:#f7f3ea;border-radius:20px;width:100%;max-width:440px;
+  max-height:86vh;overflow:hidden;display:flex;flex-direction:column;
+  border:1px solid #d9ceb8;box-shadow:0 20px 60px rgba(31,58,95,.2)}
+.mhead{padding:1.2rem 1.4rem 1rem;border-bottom:1px solid #e8e0ce;
+  display:flex;align-items:center;justify-content:space-between}
+.mtitle{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
+.mcount{font-size:12px;color:#a8874f;margin-top:3px}
+.mclose{width:34px;height:34px;border-radius:50%;border:1px solid #d9ceb8;
+  background:#efe9db;cursor:pointer;font-size:16px;color:#41618a;
+  display:flex;align-items:center;justify-content:center;transition:all .2s}
+.mclose:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
 .mbody{overflow-y:auto;padding:1rem 1.4rem 1.5rem}
-.item{display:flex;align-items:flex-start;gap:.7rem;padding:.65rem 0;border-bottom:1px solid #efe9db;text-decoration:none;transition:opacity .15s}
+.item{display:flex;align-items:flex-start;gap:.8rem;padding:.75rem 0;
+  border-bottom:1px solid #efe9db;text-decoration:none;transition:opacity .15s}
 .item:last-child{border-bottom:none}
 .item:hover{opacity:.65}
-.iico{font-size:16px;flex-shrink:0;margin-top:2px;width:22px;text-align:center}
-.ititle{font-size:13px;color:#1f3a5f;line-height:1.45;font-weight:500}
+.iico{font-size:18px;flex-shrink:0;margin-top:2px;width:24px;text-align:center}
+.ititle{font-size:14px;color:#1f3a5f;line-height:1.5;font-weight:500}
 .imeta{font-size:11px;color:#a8874f;margin-top:2px}
-.empty{text-align:center;padding:2rem;font-size:13px;color:#a8874f}
-
-        /* Auth bar */
-        .auth-bar{
-          position:fixed;top:0;left:0;right:0;z-index:100;
-          background:#fffdf6;border-bottom:1px solid #e8e0ce;
-          padding:8px 20px;display:flex;align-items:center;justify-content:space-between;
-          font-size:12px;color:#a8874f;
-          box-shadow:0 2px 8px rgba(31,58,95,.06);
-        }
-        .auth-bar button{
-          border:1px solid #d9ceb8;background:transparent;
-          border-radius:8px;padding:4px 12px;
-          font-family:'Estedad',sans-serif;font-size:11px;
-          color:#a8874f;cursor:pointer;transition:all .2s;
-        }
-        .auth-bar button:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
-        body{padding-top:40px}
-
+.empty{text-align:center;padding:2.5rem;font-size:14px;color:#a8874f}
+.lib-link{display:block;text-align:center;margin-top:2rem;font-size:13px;
+  color:#a8874f;text-decoration:none;letter-spacing:.5px}
+.lib-link:hover{color:#1f3a5f}
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const _sb = supabase.createClient(
-  'https://ifjsnasoxnalhttzhlpd.supabase.co',
-  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
-);
-// Redirect to login if not authenticated
-_sb.auth.getSession().then(({data:{session}})=>{
-  if(!session) window.location.href='auth.html';
-  else {
-    // Show username
-    const u = session.user.user_metadata?.username || session.user.email?.split('@')[0];
-    const el = document.getElementById('_username');
-    if(el) el.textContent = '👤 '+u;
-  }
-});
-function _logout(){
-  _sb.auth.signOut().then(()=>window.location.href='auth.html');
-}
-</script>
-
 </head>
 <body>
-<div class="auth-bar"><span id="_username">...</span><button onclick="_logout()">خروج</button></div>
+
+<div class="auth-bar">
+  <span id="_username">...</span>
+  <button onclick="_logout()">خروج</button>
+</div>
 
 <div class="page">
-<div class="top">
-  <a href="library.html" class="back">← کتابخانه</a>
-  <h1>Français avec Hoda</h1>
-  <p>مسیر یادگیری · A1 تا TCF Canada</p>
-</div>
+  <div class="header">
+    <h1>Français avec Hoda</h1>
+    <p>مسیر یادگیری · از صفر تا روان</p>
+  </div>
 
-<div class="road-wrap">
-<svg class="road" viewBox="0 0 360 1480" role="img" aria-label="نقشه یادگیری فرانسه">
-  <g opacity=".35">
-  <ellipse cx="38" cy="360" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 360)"/>
-  <ellipse cx="22" cy="352" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 22 352)"/>
-  <ellipse cx="325" cy="560" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 325 560)"/>
-  <ellipse cx="309" cy="552" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 309 552)"/>
-  <ellipse cx="35" cy="820" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 35 820)"/>
-  <ellipse cx="19" cy="812" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 19 812)"/>
-  <ellipse cx="322" cy="1010" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 322 1010)"/>
-  <ellipse cx="306" cy="1002" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 306 1002)"/>
-  <ellipse cx="38" cy="1180" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 1180)"/>
-  <ellipse cx="22" cy="1172" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 22 1172)"/>
-  <ellipse cx="325" cy="1300" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 325 1300)"/>
-  <ellipse cx="309" cy="1292" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 309 1292)"/>
-</g>
-<g opacity=".65" transform="translate(318,450)">
-  <ellipse cx="-7" cy="-3" rx="9" ry="5" fill="#fb923c" transform="rotate(-20 -7 -3)"/>
-  <ellipse cx="7" cy="-3" rx="9" ry="5" fill="#fdba74" transform="rotate(20 7 -3)"/>
-  <ellipse cx="-5" cy="4" rx="6" ry="3" fill="#ea580c" opacity=".5" transform="rotate(20 -5 4)"/>
-  <ellipse cx="5" cy="4" rx="6" ry="3" fill="#f97316" opacity=".5" transform="rotate(-20 5 4)"/>
-  <line x1="0" y1="-7" x2="0" y2="7" stroke="#7c2d12" stroke-width="1.5"/>
-</g></g>
-  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#e2ddd5" stroke-width="22" stroke-linecap="round" fill="none"/>
-  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#fff" stroke-width="2" stroke-dasharray="8 8" stroke-linecap="round" fill="none" opacity=".85"/>
-</svg>
-<div class="stations">
-<div class="milestone ms-main" style="top:3.716%;"><span>شروع</span><span class="ms-label">A1</span></div>
-<div class="node-card" style="top:10.135%;left:59.72%;width:36.11%;border-color:#1f3a5f" onclick="openCat('grammar')"><div class="nc-title" style="color:#1f3a5f">گرامر</div><div class="nc-count">۳۳ درس · A1 تا C1</div></div>
-<div class="node-card" style="top:16.554%;left:4.17%;width:36.11%;border-color:#22618f" onclick="openCat('vocab')"><div class="nc-title" style="color:#22618f">واژگان</div><div class="nc-count">۱۵ مجموعه</div></div>
-<div class="node-card" style="top:22.973%;left:59.72%;width:36.11%;border-color:#7a5ba8" onclick="openCat('roulette')"><div class="nc-title" style="color:#7a5ba8">گردونه موضوع</div></div>
-<div class="node-card" style="top:29.392%;left:4.17%;width:36.11%;border-color:#c77d3a" onclick="openCat('phrases')"><div class="nc-title" style="color:#c77d3a">جملات کاربردی</div></div>
-<div class="milestone ms-mid" style="top:35.811%;"><span>B1</span><span class="ms-label" style="color:#a8874f">متوسط</span></div>
-<div class="node-card" style="top:42.23%;left:59.72%;width:36.11%;border-color:#b0506f" onclick="openCat('miniarticle')"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div><div class="nc-count">۴۱ متن</div></div>
-<div class="node-card" style="top:48.649%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="openCat('innerfrench')"><div class="nc-title" style="color:#5a3b88">InnerFrench</div><div class="nc-count">۷ اپیزود</div></div>
-<div class="milestone ms-b2" style="top:55.068%;"><span>B2</span><span class="ms-label" style="color:#888">پیشرفته</span></div>
-<div class="node-card" style="top:61.486%;left:59.72%;width:36.11%;border-color:#2e8b6b" onclick="openCat('article')"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div><div class="nc-count">۶ مقاله دوزبانه</div></div>
-<div class="node-card" style="top:67.905%;left:4.17%;width:36.11%;border-color:#c4502d" onclick="openCat('podcast')"><div class="nc-title" style="color:#c4502d">پادکست</div><div class="nc-count">۸ اپیزود</div></div>
-<div class="milestone ms-tcf" style="top:74.324%;"><span>TCF</span><span class="ms-label">Canada</span></div>
-<div class="node-card" style="top:80.743%;left:59.72%;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div><div class="nc-count">۳ محتوا</div></div>
-<div class="node-card" style="top:87.162%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div><div class="nc-count">۶ محتوا · کانادا</div></div>
-<div class="milestone ms-end" style="top:93.581%;"><span>✈</span><span class="ms-label">Canada</span></div>
-</div>
-</div>
+  <div class="road-wrap" id="roadWrap"></div>
+
+  <a href="library.html" class="lib-link">📚 کتابخانه‌ی کامل ←</a>
 </div>
 
 <!-- MODAL -->
@@ -166,25 +121,182 @@ function _logout(){
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const _sb = supabase.createClient(
+  'https://ifjsnasoxnalhttzhlpd.supabase.co',
+  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
+);
+_sb.auth.getSession().then(({data:{session}})=>{
+  if(!session){window.location.href='auth.html';return;}
+  const u=session.user.email?.split('@')[0]||'';
+  const el=document.getElementById('_username');
+  if(el) el.textContent='👤 '+u;
+});
+function _logout(){_sb.auth.signOut().then(()=>window.location.href='auth.html');}
+</script>
+
 <script src="data.js"></script>
 <script>
+const STATIONS=[
+  {id:'grammar',    title:'گرامر',         icon:'📐', c:'#1f3a5f', side:'R'},
+  {id:'vocab',      title:'واژگان',        icon:'📚', c:'#22618f', side:'L'},
+  {id:'miniarticle',title:'مینی‌آرتیکل',   icon:'✍️', c:'#b0506f', side:'R'},
+  {id:'innerfrench',title:'InnerFrench',   icon:'🎧', c:'#5a3b88', side:'L'},
+  {id:'article',    title:'آرتیکل',        icon:'📰', c:'#2e8b6b', side:'R'},
+  {id:'podcast',    title:'پادکست',        icon:'🎙️', c:'#c4502d', side:'L'},
+  {id:'culture',    title:'فرهنگ فرانسه',  icon:'🗼', c:'#8a2040', side:'R'},
+  {id:'tcf',        title:'آمادگی TCF',    icon:'🎯', c:'#1a4f7a', side:'L'},
+  {id:'roulette',   title:'گردونه موضوع',  icon:'🎡', c:'#7a5ba8', side:'R'},
+  {id:'phrases',    title:'جملات کاربردی', icon:'💬', c:'#c77d3a', side:'L'},
+];
 const CAT_LINKS={roulette:'ROULETTE.html',phrases:'PHRASES_utiles.html'};
+
+// French landmark SVGs (simplified, elegant)
+function eiffelTower(x,y,h){
+  const w=h*0.38, bw=h*0.55;
+  return `<g opacity=".18" fill="#1f3a5f">
+    <!-- base -->
+    <path d="M${x-bw/2} ${y} Q${x-bw/2} ${y-h*0.3} ${x-w/2} ${y-h*0.55} L${x-w/3} ${y-h*0.65} L${x-w/5} ${y-h} L${x+w/5} ${y-h} L${x+w/3} ${y-h*0.65} L${x+w/2} ${y-h*0.55} Q${x+bw/2} ${y-h*0.3} ${x+bw/2} ${y} Z"/>
+    <!-- cross beams -->
+    <line x1="${x-bw/2}" y1="${y-h*0.28}" x2="${x+bw/2}" y2="${y-h*0.28}" stroke="#1f3a5f" stroke-width="${h*0.025}" fill="none"/>
+    <line x1="${x-w/2}" y1="${y-h*0.55}" x2="${x+w/2}" y2="${y-h*0.55}" stroke="#1f3a5f" stroke-width="${h*0.02}" fill="none"/>
+    <!-- antenna -->
+    <line x1="${x}" y1="${y-h}" x2="${x}" y2="${y-h*1.12}" stroke="#1f3a5f" stroke-width="${h*0.018}" stroke-linecap="round"/>
+  </g>`;
+}
+
+function arcDeTriomphe(x,y,h){
+  const w=h*0.9;
+  return `<g opacity=".15" fill="#a8874f">
+    <rect x="${x-w/2}" y="${y-h}" width="${w}" height="${h}" rx="2"/>
+    <rect x="${x-w/2+w*0.12}" y="${y-h}" width="${w*0.28}" height="${h*0.75}" rx="1" fill="#f5f0e8"/>
+    <rect x="${x+w/2-w*0.12-w*0.28}" y="${y-h}" width="${w*0.28}" height="${h*0.75}" rx="1" fill="#f5f0e8"/>
+    <path d="M${x-w*0.14} ${y-h*0.75} Q${x} ${y-h*0.95} ${x+w*0.14} ${y-h*0.75}" fill="#f5f0e8"/>
+  </g>`;
+}
+
+function louvre(x,y,h){
+  const w=h*1.4;
+  return `<g opacity=".15" fill="#1f3a5f">
+    <rect x="${x-w/2}" y="${y-h*0.6}" width="${w}" height="${h*0.6}" rx="2"/>
+    <rect x="${x-w*0.18}" y="${y-h}" width="${w*0.36}" height="${h*0.4}" rx="1"/>
+    <!-- pyramid -->
+    <polygon points="${x},${y-h*1.3} ${x-w*0.22},${y-h} ${x+w*0.22},${y-h}" fill="#a8874f" opacity=".5"/>
+    <line x1="${x}" y1="${y-h*1.3}" x2="${x-w*0.22}" y2="${y-h}" stroke="#a8874f" stroke-width="1.5" opacity=".6"/>
+    <line x1="${x}" y1="${y-h*1.3}" x2="${x+w*0.22}" y2="${y-h}" stroke="#a8874f" stroke-width="1.5" opacity=".6"/>
+  </g>`;
+}
+
+function sacreCoeur(x,y,h){
+  const w=h*0.7;
+  return `<g opacity=".15" fill="#f5f0e8" stroke="#1f3a5f" stroke-width="1">
+    <rect x="${x-w/2}" y="${y-h*0.6}" width="${w}" height="${h*0.6}" rx="2"/>
+    <path d="M${x-w/2} ${y-h*0.6} Q${x-w/2} ${y-h*0.85} ${x} ${y-h} Q${x+w/2} ${y-h*0.85} ${x+w/2} ${y-h*0.6}"/>
+    <circle cx="${x}" cy="${y-h*1.05}" r="${h*0.1}" fill="#1f3a5f" opacity=".5"/>
+    <circle cx="${x-w*0.22}" cy="${y-h*0.72}" r="${h*0.08}"/>
+    <circle cx="${x+w*0.22}" cy="${y-h*0.72}" r="${h*0.08}"/>
+  </g>`;
+}
+
+function buildRoad(){
+  const wrap=document.getElementById('roadWrap');
+  const W=wrap.clientWidth||380;
+  const CX=W/2;
+  const AMP=W*0.14;
+  const N=STATIONS.length;
+  const STEP=115;
+  const VBH=N*STEP+80;
+  const STROKE=Math.max(20,W*0.058);
+  const CARD_W=Math.min(128,W*0.33);
+
+  // Road path
+  let d='';
+  for(let y=25;y<=VBH-25;y+=6){
+    const x=CX+AMP*Math.sin((y-25)/(STEP*1.15));
+    d+=(y===25?'M':'L')+`${x.toFixed(1)} ${y} `;
+  }
+
+  // Landmarks at specific Y positions
+  const LH=VBH/N;
+  const landmarks=
+    eiffelTower(W*0.12, LH*1.5, W*0.22)+
+    arcDeTriomphe(W*0.86, LH*3.2, W*0.12)+
+    louvre(W*0.1, LH*5.5, W*0.1)+
+    sacreCoeur(W*0.88, LH*7.2, W*0.12)+
+    eiffelTower(W*0.88, LH*9.2, W*0.14);
+
+  // Subtle cobblestone hint (dots along road sides)
+  let cobbles='';
+  for(let y=60;y<VBH-40;y+=28){
+    const rx=CX+AMP*Math.sin((y-25)/(STEP*1.15));
+    const off=STROKE/2+8;
+    cobbles+=`<circle cx="${(rx-off).toFixed(1)}" cy="${y}" r="1.8" fill="#c8bfaa" opacity=".4"/>`;
+    cobbles+=`<circle cx="${(rx+off).toFixed(1)}" cy="${y}" r="1.8" fill="#c8bfaa" opacity=".4"/>`;
+  }
+
+  // French flag color stripes at start (subtle)
+  const startX=CX+AMP*Math.sin(0);
+  const flagDecor=`
+    <circle cx="${startX.toFixed(1)}" cy="25" r="${STROKE*0.6}" fill="#1f3a5f"/>
+    <text x="${startX.toFixed(1)}" y="30" text-anchor="middle" fill="#f5f0e8" font-size="13" font-family="Arial">🇫🇷</text>
+  `;
+
+  const svg=`<svg class="road" viewBox="0 0 ${W} ${VBH}" xmlns="http://www.w3.org/2000/svg">
+    ${landmarks}
+    ${cobbles}
+    <path d="${d}" stroke="#d4c9b0" stroke-width="${STROKE}" stroke-linecap="round" fill="none"/>
+    <path d="${d}" stroke="#e8e0cc" stroke-width="${STROKE-6}" stroke-linecap="round" fill="none" opacity=".5"/>
+    <path d="${d}" stroke="#fff" stroke-width="2" stroke-dasharray="10 9" stroke-linecap="round" fill="none" opacity=".7"/>
+    ${flagDecor}
+  </svg>`;
+
+  const stDiv=document.createElement('div');
+  stDiv.className='stations';
+  stDiv.style.height=VBH+'px';
+
+  STATIONS.forEach((s,i)=>{
+    const y=30+i*STEP+STEP/2;
+    const top=(y/VBH*100).toFixed(2);
+    const isR=s.side==='R';
+    const roadX=CX+AMP*Math.sin((y-25)/(STEP*1.15));
+    const leftPx=isR?roadX+STROKE/2+8:null;
+    const rightPx=!isR?W-(roadX-STROKE/2-8):null;
+
+    const card=document.createElement('div');
+    card.className='node-card';
+    card.style.cssText=`top:${top}%;${isR?`left:${((leftPx/W)*100).toFixed(1)}%`:`right:${((rightPx/W)*100).toFixed(1)}%`};width:${CARD_W}px;border-color:${s.c};animation-delay:${i*0.06}s`;
+    card.innerHTML=`<div class="nc-icon">${s.icon}</div><div class="nc-title" style="color:${s.c}">${s.title}</div>`;
+    card.onclick=()=>openCat(s.id);
+    stDiv.appendChild(card);
+  });
+
+  wrap.innerHTML=svg;
+  wrap.appendChild(stDiv);
+}
+
+buildRoad();
+window.addEventListener('resize',buildRoad);
+
+// MODAL
 function catInfo(id){return CATEGORIES.find(c=>c.id===id)||{label:id,icon:'§',color:'#1f3a5f'};}
 function openCat(id){
-  const ci=catInfo(id);
   if(CAT_LINKS[id]){window.location.href=CAT_LINKS[id];return;}
-  document.getElementById('mtitle').textContent=ci.label;
-  document.getElementById('mtitle').style.color=ci.color||'#1f3a5f';
+  const ci=catInfo(id);
+  const s=STATIONS.find(x=>x.id===id)||{};
+  document.getElementById('mtitle').textContent=s.title||ci.label;
+  document.getElementById('mtitle').style.color=s.c||ci.color||'#1f3a5f';
   const body=document.getElementById('mbody');
   body.innerHTML='';
-  if(id==='miniarticle'){
+  let items=[];
+  if(id==='miniarticle'&&typeof MINIARTICLES!=='undefined'){
     document.getElementById('mcount').textContent=MINIARTICLES.length+' متن';
     MINIARTICLES.forEach(m=>{
-      const a=document.createElement('a');a.className='item';a.href='index.html#cat=miniarticle';
+      const a=document.createElement('a');a.className='item';a.href='library.html#cat=miniarticle';
       a.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre}</div><div class="imeta">${m.niveau||''}</div></div>`;
       body.appendChild(a);
     });
-  } else if(id==='innerfrench'){
+  } else if(id==='innerfrench'&&typeof INNERFRENCH!=='undefined'){
     document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
     INNERFRENCH.forEach(e=>{
       const a=document.createElement('a');a.className='item';a.href=e.source||'#';a.target='_blank';
@@ -192,12 +304,12 @@ function openCat(id){
       body.appendChild(a);
     });
   } else {
-    const items=LESSONS.filter(l=>l.category===id);
+    if(typeof LESSONS!=='undefined') items=LESSONS.filter(l=>l.category===id);
     document.getElementById('mcount').textContent=items.length+' محتوا';
     if(!items.length){body.innerHTML='<div class="empty">محتوایی یافت نشد</div>';}
     else items.forEach(l=>{
       const a=document.createElement('a');a.className='item';a.href=l.file||'#';
-      a.innerHTML=`<span class="iico">${ci.icon||'§'}</span><div><div class="ititle">${l.title}</div><div class="imeta">${l.level||''}</div></div>`;
+      a.innerHTML=`<span class="iico">${s.icon||ci.icon||'§'}</span><div><div class="ititle">${l.title}</div><div class="imeta">${l.level||''}</div></div>`;
       body.appendChild(a);
     });
   }
