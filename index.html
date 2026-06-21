@@ -180,12 +180,12 @@ function openCat(id){
   if(id==='miniarticle'){
     const arts = typeof MINIARTICLES!=='undefined' ? MINIARTICLES : [];
     document.getElementById('mcount').textContent = arts.length ? arts.length+' متن' : '';
-    if(!arts.length){ body.innerHTML='<div class="empty">در حال بارگذاری...</div>'; }
-    else arts.forEach(m=>{
-      const a=document.createElement('a');a.className='item';
-      a.href=m.file||m.source||'library.html';
-      a.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre||m.title||''}</div><div class="imeta">${m.niveau||m.level||''}</div></div>`;
-      body.appendChild(a);
+    if(!arts.length){ body.innerHTML='<div class="empty">محتوایی یافت نشد</div>'; }
+    else arts.forEach((m,i)=>{
+      const div=document.createElement('div');div.className='item';div.style.cursor='pointer';
+      div.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre||''}</div><div class="imeta">${m.niveau||''}</div></div>`;
+      div.onclick=()=>openMiniArticle(m);
+      body.appendChild(div);
     });
   } else if(id==='innerfrench'){
     document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
@@ -206,6 +206,33 @@ function openCat(id){
   }
   document.getElementById('overlay').classList.add('open');
 }
+function openMiniArticle(m){
+  // Build article reader
+  const reader = document.getElementById('articleReader');
+  if(reader){ reader.remove(); }
+  const overlay2 = document.createElement('div');
+  overlay2.style.cssText='position:fixed;inset:0;background:rgba(31,58,95,.4);z-index:400;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(3px)';
+  const box = document.createElement('div');
+  box.style.cssText='background:#fffdf6;border-radius:20px;width:100%;max-width:560px;max-height:88vh;overflow-y:auto;padding:1.5rem;border:1px solid #d9ceb8;box-shadow:0 20px 60px rgba(31,58,95,.2)';
+  const header = `<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.2rem">
+    <div>
+      <div style="font-size:11px;color:#a8874f;letter-spacing:1px;margin-bottom:4px">${m.niveau||''} ${m.emoji||''}</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#1f3a5f">${m.titre||''}</div>
+    </div>
+    <button onclick="this.closest('div[style]').parentElement.remove()" style="width:34px;height:34px;border-radius:50%;border:1px solid #d9ceb8;background:#efe9db;cursor:pointer;font-size:16px;flex-shrink:0;margin-top:4px">✕</button>
+  </div>`;
+  const paras = (m.paras||[]).map(p=>{
+    // Replace ⟦word|translation⟧ with styled spans
+    const html = p.replace(/⟦([^|]+)\|([^⟧]+)⟧/g,
+      '<span style="border-bottom:1.5px solid #a8874f;cursor:help;color:#1f3a5f" title="$2">$1</span>');
+    return `<p style="line-height:2;font-size:15px;color:#2a3f5f;margin-bottom:1rem;direction:ltr;text-align:left">${html}</p>`;
+  }).join('');
+  box.innerHTML = header + paras;
+  overlay2.appendChild(box);
+  overlay2.onclick = e=>{ if(e.target===overlay2) overlay2.remove(); };
+  document.body.appendChild(overlay2);
+}
+
 function closeModal(e){
   if(!e||e.target===document.getElementById('overlay'))
     document.getElementById('overlay').classList.remove('open');
