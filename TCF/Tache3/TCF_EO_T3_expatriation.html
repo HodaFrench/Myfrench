@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tâche 3 — S'habituer à vivre à l'étranger | Hoda KHEDMATI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --navy:#1f3a5f; --navy-deep:#16293f; --navy-soft:#41618a;
+    --gold:#a8874f; --gold-soft:#c4a572;
+    --paper:#f7f3ea; --paper-warm:#efe9db; --cream:#fdfaf3;
+    --ink:#2c2a26; --gray:#8a8275; --line:#e4ddcd; --white:#fffdf8;
+  }
+  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper); background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(65,97,138,0.08) 31px, rgba(65,97,138,0.08) 32px); color:var(--ink); line-height:2; font-size:18px;}
+
+  .sidebar{position:fixed; right:0; top:0; width:280px; height:100vh;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);
+    color:var(--cream); padding:26px 0; overflow-y:auto; z-index:1000; box-shadow:-2px 0 14px rgba(0,0,0,0.18);}
+  .sidebar-header{padding:14px 20px 20px; text-align:center; border-bottom:1px solid rgba(196,165,114,0.3);
+    margin-bottom:18px; font-size:13px; color:var(--gold-soft); font-weight:700; line-height:1.9;}
+  .sidebar h2{padding:0 22px 14px; font-size:14px; color:var(--gold-soft); font-weight:700; letter-spacing:1px;}
+  .sidebar-item{padding:12px 22px; cursor:pointer; transition:all 0.25s; border-right:4px solid transparent; font-size:14.5px; font-weight:500;}
+  .sidebar-item:hover{background:rgba(255,255,255,0.07); border-right-color:var(--gold-soft); padding-right:28px;}
+  .sidebar-item.active{background:linear-gradient(270deg,rgba(196,165,114,0.18) 0%,transparent 100%); border-right-color:var(--gold-soft); font-weight:700;}
+
+  .main{margin-right:280px; padding:30px;}
+  .wrap{max-width:860px; margin:0 auto;}
+  .section{display:none; animation:fadeIn 0.45s;}
+  .section.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  .header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%); color:var(--cream);
+    padding:44px 40px; border-radius:20px; margin-bottom:40px; text-align:center;
+    box-shadow:0 16px 44px rgba(31,58,95,0.28); position:relative; overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-50px;left:-50px;width:180px;height:180px;background:rgba(255,255,255,0.05);border-radius:50%;}
+  .header h1{font-family:'Roboto',serif; font-size:40px; margin-bottom:12px; font-weight:600; line-height:1.3;}
+  .header .subtitle{font-size:16px; opacity:0.92; line-height:1.8;}
+  .header .info{font-size:14px; opacity:0.85; margin-top:16px; border-top:1px solid rgba(196,165,114,0.4); padding-top:14px; line-height:1.9;}
+
+  .card{background:var(--white); padding:34px; border-radius:18px; margin-bottom:34px;
+    box-shadow:0 8px 24px rgba(31,58,95,0.07); border-right:6px solid var(--gold-soft);}
+  .card h3{margin-bottom:24px; font-family:'Roboto',serif; font-size:30px; color:var(--navy); font-weight:600; direction:ltr; text-align:left;}
+
+  .texte-box{background:var(--cream); padding:24px; border-radius:14px; border-right:5px solid var(--navy-soft);
+    margin:18px 0; font-size:18px; line-height:2.2; direction:ltr; text-align:left;}
+
+  /* ── دو نوع هایلایت اصلی ── */
+  /* متصل‌کننده‌ها و گذرواژه‌های استدلال — پررنگ و همیشگی (مهم‌ترین) */
+  .connecteur{background:rgba(196,165,114,0.36); padding:3px 9px; border-radius:4px; font-weight:700; color:#806233; font-style:italic;}
+  /* واژگان مربوط به سوژه — خیلی کمرنگ */
+  .mot{background:rgba(65,97,138,0.09); padding:1px 4px; border-radius:3px; color:#34455a;}
+
+  .notes-box{background:var(--paper-warm); padding:20px 22px; border-radius:12px; margin:16px 0; border-right:4px solid var(--gold);}
+  .notes-box .nt-title{font-size:14px; font-weight:700; color:var(--gold); margin-bottom:12px; letter-spacing:0.5px;}
+  .nt-item{margin-bottom:11px; padding-bottom:11px; border-bottom:1px dashed var(--line); font-size:15px; line-height:1.9;}
+  .nt-item:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .nt-fr{direction:ltr; display:inline; font-family:'Roboto',serif; font-size:17px; font-style:italic; color:var(--navy); font-weight:600;}
+  .nt-fa{color:var(--ink);}
+
+  .traduction-box{background:linear-gradient(135deg,rgba(31,58,95,0.05),rgba(196,165,114,0.07));
+    padding:22px 24px; border-radius:14px; border-right:5px solid var(--gold-soft); margin:18px 0;
+    color:var(--navy-deep); font-size:16px; line-height:2.1;}
+  .traduction-box .tr-title{font-size:13px;font-weight:700;color:var(--gold);margin-bottom:10px;letter-spacing:0.5px;}
+
+  .footer{background:var(--navy); color:var(--cream); padding:40px; border-radius:18px; text-align:center; margin-top:50px; border-top:3px solid var(--gold-soft);}
+  .footer h3{font-family:'Roboto',serif; font-size:24px; margin-bottom:14px; color:var(--gold-soft);}
+  .author-info{margin-top:18px; padding-top:18px; border-top:1px solid rgba(196,165,114,0.3); font-size:14px; line-height:2;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:18px;font-size:13px;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:16px;height:16px;border-radius:3px;display:inline-block;}
+
+  @media(max-width:900px){.sidebar{width:100%;height:auto;position:relative;} .main{margin-right:0;} .sidebar-item{display:inline-block;}}
+  @media(max-width:600px){
+    .main{padding:14px 10px;}
+    .card{padding:18px 14px; border-radius:14px; margin-bottom:22px;}
+    .texte-box{padding:16px 14px; font-size:16px; line-height:2;}
+    .notes-box{padding:14px 16px;}
+    .traduction-box{padding:16px 16px;}
+    .header{padding:30px 18px;}
+    .footer{padding:26px 18px;}
+    .connecteur{padding:2px 5px;}
+    .mot{padding:1px 3px;}
+  }
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--paper-warm);}
+  ::-webkit-scrollbar-thumb{background:var(--gold-soft);border-radius:5px;}
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-header">Hoda KHEDMATI<br>Formatrice TCF Canada<br>Expression Orale · Tâche 3</div>
+    <h2>SECTIONS</h2>
+    <div class="sidebar-item active" onclick="showSection('intro',this)">Introduction</div>
+    <div class="sidebar-item" onclick="showSection('arg1',this)">Argument 1</div>
+    <div class="sidebar-item" onclick="showSection('arg2',this)">Argument 2</div>
+    <div class="sidebar-item" onclick="showSection('arg3',this)">Argument 3</div>
+    <div class="sidebar-item" onclick="showSection('arg4',this)">Argument 4</div>
+    <div class="sidebar-item" onclick="showSection('conclusion',this)">Conclusion</div>
+  </div>
+
+  <div class="main"><div class="wrap">
+    <div class="header">
+      <h1>S'habituer à vivre à l'étranger</h1>
+      <p class="subtitle">Pensez-vous qu'il soit compliqué de s'habituer à vivre dans un autre pays ?</p>
+      <div class="info">Expression Orale · Tâche 3 — Niveau B2</div>
+      <div class="legend">
+        <span><i style="background:rgba(196,165,114,0.7)"></i> متصل‌کننده / گذرواژه‌ی استدلال</span>
+        <span><i style="background:rgba(65,97,138,0.2)"></i> واژگان سوژه</span>
+      </div>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <div id="intro" class="section active">
+      <div class="card">
+        <h3>Introduction</h3>
+        <div class="texte-box">
+          Beaucoup de personnes considèrent qu'il est difficile de <span class="mot">s'habituer à vivre</span> dans un autre pays <span class="connecteur">en raison des</span> <span class="mot">différences culturelles</span>, linguistiques, climatiques ou sociales. Elles pensent que ces changements peuvent générer un <span class="mot">sentiment d'isolement</span>. <span class="connecteur">Pour ma part</span>, je ne partage pas cette opinion, <span class="connecteur">car</span> il est <span class="connecteur">tout à fait possible de</span> <span class="mot">s'adapter à</span> un nouvel environnement. <span class="connecteur">En réalité</span>, vivre à l'étranger peut être <span class="mot">enrichissant</span> plutôt que compliqué, et il existe plusieurs raisons qui permettent de relativiser les difficultés.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">en raison de</span> <span class="nt-fa">— به‌دلیلِ (متصل‌کننده‌ی علت)</span></div>
+          <div class="nt-item"><span class="nt-fr">pour ma part</span> <span class="nt-fa">— از نظر من / به‌سهم خودم (برای بیان نظر شخصی)</span></div>
+          <div class="nt-item"><span class="nt-fr">car</span> <span class="nt-fa">— زیرا (متصل‌کننده‌ی علت)</span></div>
+          <div class="nt-item"><span class="nt-fr">en réalité</span> <span class="nt-fa">— در واقع (متصل‌کننده‌ی تأکید/تصحیح)</span></div>
+          <div class="nt-item"><span class="nt-fr">tout à fait possible de</span> <span class="nt-fa">— کاملاً ممکن است که (عبارت تأکیدی پرکاربرد)</span></div>
+          <div class="nt-item"><span class="nt-fr">s'habituer à</span> / <span class="nt-fr">s'adapter à</span> <span class="nt-fa">— عادت کردن به / تطبیق یافتن با (واژگان کلیدی این سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">un sentiment d'isolement</span> <span class="nt-fa">— حس انزوا (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">enrichissant(e)</span> <span class="nt-fa">— غنی‌کننده (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          بسیاری از مردم معتقدند عادت‌کردن به زندگی در کشوری دیگر، به‌دلیل تفاوت‌های فرهنگی، زبانی، آب‌وهوایی یا اجتماعی دشوار است. آن‌ها فکر می‌کنند این تغییرات می‌توانند حس انزوا ایجاد کنند. اما من با این نظر موافق نیستم، چون کاملاً ممکن است که آدم خود را با محیطی تازه وفق دهد. در واقع، زندگی در خارج می‌تواند به‌جای آنکه پیچیده باشد، غنی‌کننده باشد؛ و دلایل متعددی وجود دارد که اجازه می‌دهد دشواری‌های تصورشده را نسبی ببینیم.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 1 -->
+    <div id="arg1" class="section">
+      <div class="card">
+        <h3>Argument 1 — La capacité d'adaptation</h3>
+        <div class="texte-box">
+          <span class="connecteur">Tout d'abord</span>, la <span class="mot">capacité d'adaptation</span> varie selon les individus, et beaucoup de personnes <span class="mot">s'ajustent</span> rapidement. Les jeunes, <span class="connecteur">en particulier</span>, et les personnes <span class="mot">ouvertes d'esprit</span> <span class="connecteur">ont tendance à</span> accepter les nouvelles expériences. Apprendre la langue locale, découvrir les <span class="mot">coutumes</span> ou <span class="mot">s'immerger dans le mode de vie</span> du pays devient alors une expérience <span class="mot">stimulante</span> plutôt qu'un obstacle. <span class="connecteur">Ainsi</span>, l'attitude positive et la motivation personnelle facilitent grandement l'adaptation.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">tout d'abord</span> <span class="nt-fa">— پیش از هر چیز / نخست (متصل‌کننده‌ی شروع اولین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">en particulier</span> <span class="nt-fa">— به‌ویژه (متصل‌کننده‌ی تأکید)</span></div>
+          <div class="nt-item"><span class="nt-fr">avoir tendance à</span> <span class="nt-fa">— تمایل داشتن به (عبارت ساختاری پرکاربرد)</span></div>
+          <div class="nt-item"><span class="nt-fr">ainsi</span> <span class="nt-fa">— بدین‌ترتیب (متصل‌کننده‌ی نتیجه‌گیری استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">la capacité d'adaptation</span> <span class="nt-fa">— توانایی تطبیق (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">s'immerger dans le mode de vie</span> <span class="nt-fa">— غرق‌شدن در سبک زندگی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">stimulant(e)</span> <span class="nt-fa">— محرک / انگیزه‌بخش (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          پیش از هر چیز، توانایی تطبیق از فردی به فرد دیگر فرق می‌کند و بسیاری از مردم به‌سرعت خود را وفق می‌دهند. به‌ویژه جوان‌ها و افراد گشاده‌ذهن، تمایل دارند تجربه‌های تازه را بپذیرند. آموختن زبان محلی، کشف آداب‌ورسوم یا غرق‌شدن در سبک زندگی آن کشور، آن‌گاه به تجربه‌ای انگیزه‌بخش بدل می‌شود، نه یک مانع. بدین‌ترتیب، نگرش مثبت و انگیزه‌ی شخصی، تطبیق را بسیار آسان می‌کنند.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 2 -->
+    <div id="arg2" class="section">
+      <div class="card">
+        <h3>Argument 2 — La technologie</h3>
+        <div class="texte-box">
+          <span class="connecteur">Ensuite</span>, les <span class="mot">outils technologiques</span> rendent l'<span class="mot">intégration</span> beaucoup plus facile aujourd'hui. Les <span class="mot">applications de traduction</span>, les guides en ligne et les <span class="mot">réseaux sociaux</span> permettent de se repérer rapidement et de se sentir moins <span class="mot">isolé</span>. <span class="connecteur">Même pour</span> les personnes qui ne maîtrisent pas parfaitement la langue, la technologie réduit considérablement les difficultés de la vie quotidienne. <span class="connecteur">Par conséquent</span>, <span class="mot">s'installer à l'étranger</span> n'est plus aussi intimidant qu'autrefois.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">ensuite</span> <span class="nt-fa">— سپس (متصل‌کننده‌ی ترتیب، شروع استدلال دوم)</span></div>
+          <div class="nt-item"><span class="nt-fr">même pour</span> <span class="nt-fa">— حتی برای (متصل‌کننده‌ی امتیاز/تأکید)</span></div>
+          <div class="nt-item"><span class="nt-fr">par conséquent</span> <span class="nt-fa">— در نتیجه (متصل‌کننده‌ی نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les outils technologiques</span> <span class="nt-fa">— ابزارهای فناوری (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">l'intégration</span> <span class="nt-fa">— ادغام در جامعه (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">s'installer à l'étranger</span> <span class="nt-fa">— ساکن‌شدن در خارج (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سپس، ابزارهای فناوری امروزه ادغام در جامعه را بسیار آسان‌تر کرده‌اند. اپلیکیشن‌های ترجمه، راهنماهای آنلاین و شبکه‌های اجتماعی این امکان را می‌دهند که آدم به‌سرعت جهت‌یابی کند و کمتر احساس انزوا کند. حتی برای کسانی که زبان را کامل بلد نیستند، فناوری دشواری‌های زندگی روزمره را به‌شکل چشمگیری کاهش می‌دهد. در نتیجه، ساکن‌شدن در خارج، دیگر مثل گذشته دلهره‌آور نیست.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 3 -->
+    <div id="arg3" class="section">
+      <div class="card">
+        <h3>Argument 3 — L'apprentissage personnel</h3>
+        <div class="texte-box">
+          <span class="connecteur">De plus</span>, vivre à l'étranger offre de nombreuses <span class="mot">opportunités d'apprentissage</span> et de <span class="mot">développement personnel</span>. <span class="mot">S'immerger dans une culture différente</span> permet de découvrir de <span class="mot">nouvelles perspectives</span>, de développer la <span class="mot">tolérance</span> et de renforcer la <span class="mot">confiance en soi</span>. <span class="connecteur">Chaque</span> expérience, même petite, <span class="connecteur">comme</span> faire ses courses ou participer à des <span class="mot">événements locaux</span>, enrichit le quotidien et transforme les défis en occasions d'apprentissage. <span class="connecteur">Ainsi</span>, ce changement devient <span class="mot">stimulant et motivant</span> plutôt que compliqué.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">de plus</span> <span class="nt-fa">— علاوه بر این (متصل‌کننده‌ی افزودن استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">comme</span> <span class="nt-fa">— مثلِ / مانند (برای آوردن مثال)</span></div>
+          <div class="nt-item"><span class="nt-fr">ainsi</span> <span class="nt-fa">— بدین‌ترتیب (متصل‌کننده‌ی نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">le développement personnel</span> <span class="nt-fa">— رشد شخصی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">renforcer la confiance en soi</span> <span class="nt-fa">— تقویت اعتماد به نفس (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">les événements locaux</span> <span class="nt-fa">— رویدادهای محلی (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          علاوه بر این، زندگی در خارج فرصت‌های فراوانی برای یادگیری و رشد شخصی فراهم می‌کند. غرق‌شدن در فرهنگی متفاوت، امکان کشف دیدگاه‌های تازه، پرورش مدارا و تقویت اعتماد به نفس را می‌دهد. هر تجربه، حتی کوچک — مثل خرید کردن یا شرکت در رویدادهای محلی — زندگی روزمره را غنی می‌کند و چالش‌ها را به فرصت یادگیری بدل می‌سازد. بدین‌ترتیب، این تغییر انگیزه‌بخش و محرک می‌شود.
+        </div>
+      </div>
+    </div>
+
+    <!-- ARGUMENT 4 -->
+    <div id="arg4" class="section">
+      <div class="card">
+        <h3>Argument 4 — Les communautés de soutien</h3>
+        <div class="texte-box">
+          <span class="connecteur">Enfin</span>, il existe souvent des <span class="mot">communautés</span> et des <span class="mot">réseaux de soutien</span> pour les <span class="mot">expatriés</span>. Dans presque toutes les villes, des <span class="mot">associations</span> ou des clubs pour étrangers permettent de <span class="mot">se faire des amis</span> et de <span class="mot">s'intégrer</span> plus facilement. Le <span class="mot">partage d'expériences</span> avec d'autres personnes aide à réduire le sentiment d'isolement. <span class="connecteur">En conséquence</span>, l'adaptation devient beaucoup plus <span class="mot">accessible</span> <span class="connecteur">grâce à</span> ces réseaux de soutien.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و واژگان سوژه</div>
+          <div class="nt-item"><span class="nt-fr">enfin</span> <span class="nt-fa">— سرانجام (متصل‌کننده‌ی آخرین استدلال)</span></div>
+          <div class="nt-item"><span class="nt-fr">en conséquence</span> <span class="nt-fa">— در نتیجه (متصل‌کننده‌ی نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">grâce à</span> <span class="nt-fa">— به‌لطفِ (متصل‌کننده‌ی علت مثبت)</span></div>
+          <div class="nt-item"><span class="nt-fr">un réseau de soutien</span> <span class="nt-fa">— شبکه‌ی حمایتی (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">un(e) expatrié(e)</span> <span class="nt-fa">— مهاجر (واژگان سوژه)</span></div>
+          <div class="nt-item"><span class="nt-fr">s'intégrer</span> <span class="nt-fa">— ادغام شدن در جامعه (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          سرانجام، اغلب جامعه‌ها و شبکه‌های حمایتی برای مهاجران وجود دارند. تقریباً در همه‌ی شهرها، انجمن‌ها یا باشگاه‌هایی برای خارجی‌ها این امکان را می‌دهند که آدم دوست پیدا کند و آسان‌تر در جامعه جا بیفتد. به‌اشتراک‌گذاشتن تجربه‌ها با دیگران به کاهش حس انزوا کمک می‌کند. در نتیجه، تطبیق به‌لطف این شبکه‌های حمایتی بسیار دسترس‌پذیرتر می‌شود.
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="section">
+      <div class="card">
+        <h3>Conclusion</h3>
+        <div class="texte-box">
+          <span class="connecteur">En conclusion</span>, je ne pense pas qu'il soit nécessairement compliqué de <span class="mot">s'habituer à vivre</span> dans un autre pays. Avec une <span class="mot">attitude ouverte</span>, l'<span class="mot">envie d'apprendre</span> et le <span class="mot">soutien</span> des communautés locales, il est possible de <span class="mot">s'intégrer rapidement</span> et de profiter pleinement de cette expérience. L'<span class="mot">expatriation</span> peut <span class="connecteur">ainsi</span> devenir une <span class="mot">aventure enrichissante</span>, <span class="connecteur">et non</span> une source de difficultés insurmontables.
+        </div>
+        <div class="notes-box">
+          <div class="nt-title">✦ متصل‌کننده‌ها و نکته‌ی گرامری</div>
+          <div class="nt-item"><span class="nt-fr">en conclusion</span> <span class="nt-fa">— در نتیجه / به‌عنوان جمع‌بندی (متصل‌کننده‌ی پایان)</span></div>
+          <div class="nt-item"><span class="nt-fr">ainsi</span> <span class="nt-fa">— بدین‌ترتیب (متصل‌کننده‌ی نتیجه)</span></div>
+          <div class="nt-item"><span class="nt-fr">et non</span> <span class="nt-fa">— و نه (برای تأکید بر تضاد پایانی)</span></div>
+          <div class="nt-item"><span class="nt-fr">⚠️ ne pas penser que + subjonctif</span> <span class="nt-fa">— نکته‌ی گرامری: بعد از «فکر نمی‌کنم که» فعل به وجه التزامی می‌آید: «il <b>soit</b>» به‌جای «il est»</span></div>
+          <div class="nt-item"><span class="nt-fr">une aventure enrichissante</span> <span class="nt-fa">— ماجراجویی‌ای غنی‌کننده (واژگان سوژه)</span></div>
+        </div>
+        <div class="traduction-box">
+          <div class="tr-title">ترجمه‌ی فارسی</div>
+          در نتیجه، فکر نمی‌کنم عادت‌کردن به زندگی در کشوری دیگر لزوماً پیچیده باشد. با نگرشی باز، اشتیاق به یادگیری و حمایت جامعه‌های محلی، ممکن است که آدم به‌سرعت جا بیفتد و کاملاً از این تجربه بهره ببرد. بدین‌ترتیب، مهاجرت می‌تواند به ماجراجویی‌ای غنی‌کننده بدل شود، نه سرچشمه‌ی دشواری‌های حل‌نشدنی.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h3>✦ Expression Orale — Tâche 3</h3>
+      <div class="author-info"><strong>Hoda KHEDMATI</strong><br>Formatrice Agréée TCF Canada<br><br>متصل‌کننده‌ها را به خاطر بسپار و در پاسخ خودت به کار ببر.</div>
+    </div>
+  </div></div>
+
+  <script>
+    function showSection(id, el){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.querySelectorAll('.sidebar-item').forEach(i=>i.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      if(el) el.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+  <script src="protect.js"></script>
+</body>
+</html>
