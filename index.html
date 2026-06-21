@@ -137,19 +137,19 @@ function _logout(){
 </svg>
 <div class="stations">
 <div class="milestone ms-main" style="top:3.716%;"><span>شروع</span><span class="ms-label">A1</span></div>
-<div class="node-card" style="top:10.135%;left:59.72%;width:36.11%;border-color:#1f3a5f" onclick="openCat('grammar')"><div class="nc-title" style="color:#1f3a5f">گرامر</div><div class="nc-count">۳۳ درس · A1 تا C1</div></div>
-<div class="node-card" style="top:16.554%;left:4.17%;width:36.11%;border-color:#22618f" onclick="openCat('vocab')"><div class="nc-title" style="color:#22618f">واژگان</div><div class="nc-count">۱۵ مجموعه</div></div>
+<div class="node-card" style="top:10.135%;left:59.72%;width:36.11%;border-color:#1f3a5f" onclick="openCat('grammar')"><div class="nc-title" style="color:#1f3a5f">گرامر</div></div>
+<div class="node-card" style="top:16.554%;left:4.17%;width:36.11%;border-color:#22618f" onclick="openCat('vocab')"><div class="nc-title" style="color:#22618f">واژگان</div></div>
 <div class="node-card" style="top:22.973%;left:59.72%;width:36.11%;border-color:#7a5ba8" onclick="openCat('roulette')"><div class="nc-title" style="color:#7a5ba8">گردونه موضوع</div></div>
 <div class="node-card" style="top:29.392%;left:4.17%;width:36.11%;border-color:#c77d3a" onclick="openCat('phrases')"><div class="nc-title" style="color:#c77d3a">جملات کاربردی</div></div>
 <div class="milestone ms-mid" style="top:35.811%;"><span>B1</span><span class="ms-label" style="color:#a8874f">متوسط</span></div>
-<div class="node-card" style="top:42.23%;left:59.72%;width:36.11%;border-color:#b0506f" onclick="openCat('miniarticle')"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div><div class="nc-count">۴۱ متن</div></div>
-<div class="node-card" style="top:48.649%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="openCat('innerfrench')"><div class="nc-title" style="color:#5a3b88">InnerFrench</div><div class="nc-count">۷ اپیزود</div></div>
+<div class="node-card" style="top:42.23%;left:59.72%;width:36.11%;border-color:#b0506f" onclick="openCat('miniarticle')"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div></div>
+<div class="node-card" style="top:48.649%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="openCat('innerfrench')"><div class="nc-title" style="color:#5a3b88">InnerFrench</div></div>
 <div class="milestone ms-b2" style="top:55.068%;"><span>B2</span><span class="ms-label" style="color:#888">پیشرفته</span></div>
-<div class="node-card" style="top:61.486%;left:59.72%;width:36.11%;border-color:#2e8b6b" onclick="openCat('article')"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div><div class="nc-count">۶ مقاله دوزبانه</div></div>
-<div class="node-card" style="top:67.905%;left:4.17%;width:36.11%;border-color:#c4502d" onclick="openCat('podcast')"><div class="nc-title" style="color:#c4502d">پادکست</div><div class="nc-count">۸ اپیزود</div></div>
+<div class="node-card" style="top:61.486%;left:59.72%;width:36.11%;border-color:#2e8b6b" onclick="openCat('article')"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div></div>
+<div class="node-card" style="top:67.905%;left:4.17%;width:36.11%;border-color:#c4502d" onclick="openCat('podcast')"><div class="nc-title" style="color:#c4502d">پادکست</div></div>
 <div class="milestone ms-tcf" style="top:74.324%;"><span>TCF</span><span class="ms-label">Canada</span></div>
-<div class="node-card" style="top:80.743%;left:59.72%;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div><div class="nc-count">۳ محتوا</div></div>
-<div class="node-card" style="top:87.162%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div><div class="nc-count">۶ محتوا · کانادا</div></div>
+<div class="node-card" style="top:80.743%;left:59.72%;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div></div>
+<div class="node-card" style="top:87.162%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div></div>
 <div class="milestone ms-end" style="top:93.581%;"><span>✈</span><span class="ms-label">Canada</span></div>
 </div>
 </div>
@@ -178,10 +178,13 @@ function openCat(id){
   const body=document.getElementById('mbody');
   body.innerHTML='';
   if(id==='miniarticle'){
-    document.getElementById('mcount').textContent=MINIARTICLES.length+' متن';
-    MINIARTICLES.forEach(m=>{
-      const a=document.createElement('a');a.className='item';a.href='index.html#cat=miniarticle';
-      a.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre}</div><div class="imeta">${m.niveau||''}</div></div>`;
+    const arts = typeof MINIARTICLES!=='undefined' ? MINIARTICLES : [];
+    document.getElementById('mcount').textContent = arts.length ? arts.length+' متن' : '';
+    if(!arts.length){ body.innerHTML='<div class="empty">در حال بارگذاری...</div>'; }
+    else arts.forEach(m=>{
+      const a=document.createElement('a');a.className='item';
+      a.href=m.file||m.source||'library.html';
+      a.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre||m.title||''}</div><div class="imeta">${m.niveau||m.level||''}</div></div>`;
       body.appendChild(a);
     });
   } else if(id==='innerfrench'){
