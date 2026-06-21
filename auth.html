@@ -12,76 +12,44 @@ body{
   background:#f7f3ea;
   min-height:100vh;
   display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;
-  direction:rtl;
+  padding:1.5rem;direction:rtl;
 }
-body::before{
-  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);
-}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);}
 .card{
   position:relative;z-index:1;
-  background:#fffdf6;
-  border:1px solid #d9ceb8;
-  border-radius:24px;
-  padding:2.5rem 2rem;
-  width:100%;max-width:400px;
+  background:#fffdf6;border:1px solid #d9ceb8;border-radius:24px;
+  padding:2.5rem 2rem;width:100%;max-width:400px;
   box-shadow:0 20px 60px rgba(31,58,95,.1);
 }
 .logo{text-align:center;margin-bottom:2rem}
-.logo h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:38px;font-weight:600;
-  color:#1f3a5f;letter-spacing:.5px;
-}
+.logo h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#1f3a5f;white-space:nowrap}
 .logo p{font-size:12px;color:#a8874f;margin-top:6px;letter-spacing:2px}
-
-/* TABS */
 .tabs{display:flex;background:#f0ebe0;border-radius:12px;padding:4px;margin-bottom:2rem;gap:4px}
-.tab{
-  flex:1;padding:.6rem;border:none;border-radius:9px;
-  background:transparent;cursor:pointer;
-  font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;
-  color:#a8874f;transition:all .2s;
-}
+.tab{flex:1;padding:.6rem;border:none;border-radius:9px;background:transparent;cursor:pointer;
+  font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;color:#a8874f;transition:all .2s}
 .tab.active{background:#fff;color:#1f3a5f;box-shadow:0 2px 8px rgba(31,58,95,.1)}
-
-/* FORM */
 .form{display:flex;flex-direction:column;gap:1rem}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:13px;font-weight:500;color:#1f3a5f}
 .field input{
-  padding:.8rem 1rem;
-  border:1.5px solid #d9ceb8;
-  border-radius:12px;
-  background:#fff;
-  font-family:'Estedad',sans-serif;
-  font-size:15px;color:#1f3a5f;
-  transition:border-color .2s;
-  direction:ltr;text-align:right;
+  padding:.8rem 1rem;border:1.5px solid #d9ceb8;border-radius:12px;
+  background:#fff;font-family:'Estedad',sans-serif;font-size:15px;color:#1f3a5f;
+  transition:border-color .2s;direction:ltr;text-align:left;
 }
 .field input:focus{outline:none;border-color:#1f3a5f}
-.field input::placeholder{color:#c9c0b0;direction:rtl}
-
+.field input::placeholder{color:#c9c0b0}
 .btn{
-  margin-top:.5rem;
-  padding:.9rem;
-  background:#1f3a5f;color:#f7f3ea;
-  border:none;border-radius:12px;
-  font-family:'Estedad',sans-serif;font-size:16px;font-weight:600;
-  cursor:pointer;transition:all .2s;
+  margin-top:.5rem;padding:.9rem;background:#1f3a5f;color:#f7f3ea;
+  border:none;border-radius:12px;font-family:'Estedad',sans-serif;
+  font-size:16px;font-weight:600;cursor:pointer;transition:all .2s;
 }
 .btn:hover{background:#2a4f7f}
 .btn:disabled{background:#a8b8c8;cursor:not-allowed}
-
-.msg{
-  text-align:center;font-size:13px;padding:.7rem;
-  border-radius:10px;display:none;
-}
+.msg{text-align:center;font-size:13px;padding:.7rem;border-radius:10px;display:none}
 .msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
 .msg.success{background:#f0fdf4;color:#2e7d52;border:1px solid #b7e4c7}
 .msg.show{display:block}
-
 .hint{font-size:11px;color:#b0a090;text-align:center;margin-top:.5rem}
 </style>
 </head>
@@ -91,7 +59,6 @@ body::before{
     <h1>Français avec Hoda</h1>
     <p>یادگیری فرانسه به روش درست</p>
   </div>
-
   <div class="tabs">
     <button class="tab active" onclick="showTab('login')">ورود</button>
     <button class="tab" onclick="showTab('signup')">ثبت‌نام</button>
@@ -100,8 +67,8 @@ body::before{
   <!-- LOGIN -->
   <div id="loginForm" class="form">
     <div class="field">
-      <label>نام کاربری</label>
-      <input type="text" id="loginUser" placeholder="نام کاربری خود را وارد کنید" autocomplete="username">
+      <label>ایمیل</label>
+      <input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email">
     </div>
     <div class="field">
       <label>رمز عبور</label>
@@ -115,8 +82,8 @@ body::before{
   <!-- SIGNUP -->
   <div id="signupForm" class="form" style="display:none">
     <div class="field">
-      <label>نام کاربری</label>
-      <input type="text" id="signupUser" placeholder="یک نام کاربری انتخاب کنید" autocomplete="username">
+      <label>ایمیل</label>
+      <input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email">
     </div>
     <div class="field">
       <label>رمز عبور</label>
@@ -134,12 +101,11 @@ body::before{
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const SUPA_URL = 'https://ifjsnasoxnalhttzhlpd.supabase.co';
-const SUPA_KEY = 'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
-const { createClient } = supabase;
-const sb = createClient(SUPA_URL, SUPA_KEY);
+const sb = supabase.createClient(
+  'https://ifjsnasoxnalhttzhlpd.supabase.co',
+  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
+);
 
-// Check if already logged in
 sb.auth.getSession().then(({data:{session}})=>{
   if(session) window.location.href='index.html';
 });
@@ -148,83 +114,46 @@ function showTab(tab){
   document.getElementById('loginForm').style.display = tab==='login'?'flex':'none';
   document.getElementById('signupForm').style.display = tab==='signup'?'flex':'none';
   document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active', (tab==='login'&&i===0)||(tab==='signup'&&i===1));
+    t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='signup'&&i===1));
   });
 }
 
-function showMsg(id, text, type){
+function showMsg(id,text,type){
   const el=document.getElementById(id);
-  el.textContent=text;
-  el.className='msg '+type+' show';
+  el.textContent=text;el.className='msg '+type+' show';
 }
-
-function setLoading(btnId, loading){
-  document.getElementById(btnId).disabled=loading;
-  document.getElementById(btnId).textContent=loading?'...' : btnId==='loginBtn'?'ورود':'ثبت‌نام';
+function setLoading(id,on){
+  const b=document.getElementById(id);
+  b.disabled=on;
+  b.textContent=on?'...':(id==='loginBtn'?'ورود':'ثبت‌نام');
 }
 
 async function doSignup(){
-  const username = document.getElementById('signupUser').value.trim();
-  const pass = document.getElementById('signupPass').value;
-  const pass2 = document.getElementById('signupPass2').value;
-
-  if(!username||!pass){return showMsg('signupMsg','همه فیلدها را پر کنید','error');}
-  if(username.length<3){return showMsg('signupMsg','نام کاربری باید حداقل ۳ کاراکتر باشد','error');}
-  if(!/^[a-zA-Z0-9_\u0600-\u06FF]+$/.test(username)){return showMsg('signupMsg','نام کاربری فقط می‌تواند شامل حروف، اعداد و _ باشد','error');}
-  if(pass.length<6){return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');}
-  if(pass!==pass2){return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');}
-
+  const email=document.getElementById('signupEmail').value.trim();
+  const pass=document.getElementById('signupPass').value;
+  const pass2=document.getElementById('signupPass2').value;
+  if(!email||!pass) return showMsg('signupMsg','همه فیلدها را پر کنید','error');
+  if(pass.length<6) return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');
+  if(pass!==pass2) return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');
   setLoading('signupBtn',true);
-
-  // Check username exists
-  const {data:exists} = await sb.rpc('username_exists',{uname:username});
-  if(exists){setLoading('signupBtn',false);return showMsg('signupMsg','این نام کاربری قبلاً استفاده شده','error');}
-
-  // Create fake email from username
-  const fakeEmail = `${username.toLowerCase()}@gmail.com`;
-
-  const {data,error} = await sb.auth.signUp({
-    email: fakeEmail,
-    password: pass,
-    options:{ data:{ username } }
-  });
-
-  if(error){setLoading('signupBtn',false);return showMsg('signupMsg',error.message,'error');}
-
-  // Save username to profiles
-  if(data.user){
-    await sb.from('profiles').insert({id:data.user.id, username});
-  }
-
+  const {error}=await sb.auth.signUp({email,password:pass});
   setLoading('signupBtn',false);
+  if(error) return showMsg('signupMsg',error.message,'error');
   showMsg('signupMsg','✅ ثبت‌نام موفق! در حال ورود...','success');
-  setTimeout(()=>window.location.href='index.html',1200);
+  setTimeout(()=>window.location.href='index.html',1000);
 }
 
 async function doLogin(){
-  const username = document.getElementById('loginUser').value.trim();
-  const pass = document.getElementById('loginPass').value;
-
-  if(!username||!pass){return showMsg('loginMsg','همه فیلدها را پر کنید','error');}
-
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  if(!email||!pass) return showMsg('loginMsg','همه فیلدها را پر کنید','error');
   setLoading('loginBtn',true);
-
-  const fakeEmail = `${username.toLowerCase()}@gmail.com`;
-
-  const {data,error} = await sb.auth.signInWithPassword({
-    email: fakeEmail,
-    password: pass,
-  });
-
-  if(error){
-    setLoading('loginBtn',false);
-    return showMsg('loginMsg','نام کاربری یا رمز عبور اشتباه است','error');
-  }
-
+  const {error}=await sb.auth.signInWithPassword({email,password:pass});
+  setLoading('loginBtn',false);
+  if(error) return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است','error');
   window.location.href='index.html';
 }
 
-// Enter key support
 document.addEventListener('keydown',e=>{
   if(e.key==='Enter'){
     if(document.getElementById('loginForm').style.display!=='none') doLogin();
