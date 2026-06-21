@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vivre loin de sa famille — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--accent:#b0506f;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px}
+.wrap{max-width:820px;margin:0 auto}
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--accent);color:#fff}
+.art-header{background:linear-gradient(135deg,#b0506f,#8a2040);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px rgba(176,80,111,.4);position:relative;overflow:hidden}
+.art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%}
+.art-level{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px}
+.art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left}
+.art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px}
+.art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px}
+.lg{display:flex;align-items:center;gap:6px}
+.lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0}
+.text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;border-right:4px solid #b0506f}
+.hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s}
+.hw:hover,.hw.open{background:rgba(176,80,111,.22)}
+.hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s}
+.hs:hover,.hs.open{background:rgba(46,123,181,.22)}
+.hs::before{content:"⚙ ";font-size:10px;opacity:.6}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none}
+.hw.open .pop,.hs.open .pop{opacity:1;visibility:visible}
+.nav-bar{display:flex;gap:12px;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1px dashed var(--line)}
+.nav-bar a{color:var(--navy);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:8px 16px;border-radius:9px;transition:all .2s}
+.nav-bar a:hover{background:var(--navy);color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html">← مسیر یادگیری</a>
+  </div>
+  <div class="art-header">
+    <div class="art-level">✍️ مینی‌آرتیکل · B1 · ✈️</div>
+    <div class="art-title">Vivre loin de sa famille</div>
+    <div class="art-meta">general</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b></span></div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Pour des millions de personnes dans le monde, vivre <span class="hw" onclick="t(this)">loin de ses proches<span class="pop">دور از نزدیکان</span></span> est une réalité quotidienne. Que ce soit pour des raisons professionnelles, <span class="hw" onclick="t(this)">académiques<span class="pop">دانشگاهی</span></span> ou <span class="hw" onclick="t(this)">économiques<span class="pop">اقتصادی</span></span>, des gens <span class="hw" onclick="t(this)">quittent<span class="pop">ترک می‌کنند</span></span> leur pays, leur ville, leur <span class="hw" onclick="t(this)">village natal<span class="pop">زادگاه</span></span> pour construire une vie ailleurs. Ce choix — car c'est souvent un choix — vient avec ses joies et ses <span class="hw" onclick="t(this)">douleurs<span class="pop">دردها</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Le sentiment le plus <span class="hw" onclick="t(this)">universel<span class="pop">جهانی</span></span> dans cette situation est la <span class="hw" onclick="t(this)">nostalgie<span class="pop">نوستالژی / دلتنگی</span></span>. Ce mot vient du grec : «nostos» (retour) et «algos» (douleur). La nostalgie, c'est littéralement la douleur du retour <span class="hw" onclick="t(this)">impossible<span class="pop">غیرممکن</span></span> ou <span class="hw" onclick="t(this)">différé<span class="pop">به‌تأخیر افتاده</span></span>. Elle se manifeste dans les petites choses : l'odeur d'un plat qu'on ne trouve pas ici, une chanson qui <span class="hw" onclick="t(this)">ramène<span class="pop">بازمی‌گرداند</span></span> des souvenirs, une fête de famille à laquelle on <span class="hw" onclick="t(this)">ne peut pas assister<span class="pop">نمی‌توان شرکت کرد</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Mais vivre loin de sa famille n'est pas uniquement une source de souffrance. <span class="hs" onclick="t(this)">Pour beaucoup, c'est aussi une opportunité de découvrir qui l'on est vraiment<span class="pop">که واقعاً چه کسی هستیم — relative avec «qui»</span></span>, en dehors du <span class="hw" onclick="t(this)">regard<span class="pop">نگاه / دیدگاه</span></span> familial. Loin de ses parents, on prend des décisions seul, on <span class="hw" onclick="t(this)">fait face<span class="pop">مواجه می‌شود</span></span> aux problèmes sans filet de <span class="hw" onclick="t(this)">sécurité<span class="pop">ایمنی</span></span>, on <span class="hw" onclick="t(this)">développe<span class="pop">توسعه می‌دهد</span></span> une <span class="hw" onclick="t(this)">résilience<span class="pop">تاب‌آوری</span></span> et une <span class="hw" onclick="t(this)">confiance en soi<span class="pop">اعتماد به نفس</span></span> qu'on n'aurait peut-être jamais <span class="hw" onclick="t(this)">acquises<span class="pop">کسب کرده</span></span> autrement.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">La <span class="hw" onclick="t(this)">technologie<span class="pop">فناوری</span></span> a profondément changé l'expérience de la distance. Les <span class="hw" onclick="t(this)">appels vidéo<span class="pop">تماس تصویری</span></span>, les messages instantanés, les photos partagées en temps réel : tout cela <span class="hw" onclick="t(this)">réduit<span class="pop">کاهش می‌دهد</span></span> le <span class="hw" onclick="t(this)">fossé<span class="pop">شکاف / فاصله</span></span> géographique. <span class="hs" onclick="t(this)">Pourtant, aucune technologie ne peut remplacer la chaleur d'une étreinte<span class="pop">«étreinte» = آغوش گرفتن</span></span> ou le simple fait de <span class="hw" onclick="t(this)">partager<span class="pop">مشارکت کردن / به اشتراک گذاشتن</span></span> un repas. La présence physique reste <span class="hw" onclick="t(this)">irremplaçable<span class="pop">جایگزین‌ناپذیر</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Les <span class="hw" onclick="t(this)">psychologues<span class="pop">روانشناسان</span></span> recommandent plusieurs stratégies pour <span class="hw" onclick="t(this)">maintenir<span class="pop">حفظ کردن</span></span> des liens <span class="hw" onclick="t(this)">forts<span class="pop">قوی</span></span> malgré la distance. La première est la <span class="hw" onclick="t(this)">régularité<span class="pop">منظم بودن / نظم</span></span> : pas besoin de longues conversations, mais un contact <span class="hw" onclick="t(this)">régulier<span class="pop">منظم</span></span>, même court, <span class="hw" onclick="t(this)">nourrit<span class="pop">تغذیه می‌کند / تقویت می‌کند</span></span> la relation. La deuxième est le <span class="hw" onclick="t(this)">rituel<span class="pop">آیین / رسم</span></span> partagé : regarder le même film le même soir, jouer ensemble en ligne, cuisiner la même recette en même temps. Ces petits <span class="hw" onclick="t(this)">rituels<span class="pop">آیین‌ها</span></span> créent un sentiment de <span class="hw" onclick="t(this)">proximité<span class="pop">نزدیکی</span></span> malgré les kilomètres.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Il y a aussi la question du <span class="hw" onclick="t(this)">retour<span class="pop">بازگشت</span></span>. Beaucoup de personnes qui ont quitté leur pays témoignent d'une expérience <span class="hw" onclick="t(this)">paradoxale<span class="pop">متناقض / پارادوکسیکال</span></span> : après plusieurs années à l'étranger, quand elles rentrent, elles se sentent <span class="hw" onclick="t(this)">étrangères<span class="pop">بیگانه</span></span> dans leur propre pays. Elles ont changé, leur <span class="hw" onclick="t(this)">environnement<span class="pop">محیط</span></span> a changé. On appelle ça le <span class="hw" onclick="t(this)">«choc du retour»<span class="pop">شوک بازگشت</span></span> ou «reverse culture shock». Ce n'est pas une anomalie — c'est la preuve que l'expérience de l'étranger a vraiment <span class="hw" onclick="t(this)">transformé<span class="pop">تغییر داده</span></span> la personne.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">En fin de compte, vivre loin de sa famille apprend une chose <span class="hw" onclick="t(this)">essentielle<span class="pop">ضروری / اساسی</span></span> : l'amour ne dépend pas de la <span class="hw" onclick="t(this)">proximité géographique<span class="pop">نزدیکی جغرافیایی</span></span>. <span class="hs" onclick="t(this)">Les liens les plus forts sont ceux qui résistent au temps et à la distance<span class="pop">روابطی که در برابر زمان و فاصله مقاوم‌اند</span></span>. Et parfois, c'est justement l'absence qui <span class="hw" onclick="t(this)">révèle<span class="pop">آشکار می‌کند</span></span> à quel point les personnes nous sont <span class="hw" onclick="t(this)">chères<span class="pop">عزیز</span></span>.</div>
+  </div>
+
+  <div class="nav-bar"><a href="MINI_002.html">← قبلی</a><a href="MINI_004.html">بعدی →</a></div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+</body>
+</html>
