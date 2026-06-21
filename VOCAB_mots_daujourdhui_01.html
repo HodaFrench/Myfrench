@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Les mots d'aujourd'hui — Modes de vie des jeunes — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1e3a5f;--paper:#f4f3f5;--cream:#f9f8fa;
+  --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+  --gold:#a8874f;--rose:#b0506f;--green:#2e8b6b;--blue:#22618f;
+}
+body{font-family:'Estedad',sans-serif;background:var(--paper);
+  background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);
+  color:var(--ink);line-height:1.9;padding:20px 16px 80px}
+.wrap{max-width:860px;margin:0 auto}
+
+/* NAV */
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--gold);text-decoration:none;font-size:13px;border:1px solid var(--line);
+  background:var(--cream);padding:8px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,#22618f,#1a4f7a);color:#fff;
+  padding:32px 28px;border-radius:20px;margin-bottom:24px;
+  box-shadow:0 14px 34px rgba(34,97,143,.35);position:relative;overflow:hidden}
+.header::before{content:"";position:absolute;top:-50px;right:-50px;
+  width:180px;height:180px;background:rgba(255,255,255,.06);border-radius:50%}
+.header::after{content:"";position:absolute;bottom:-30px;left:-30px;
+  width:120px;height:120px;background:rgba(255,255,255,.04);border-radius:50%}
+.header-tag{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.65);margin-bottom:8px}
+.header h1{font-family:'Roboto',serif;font-size:24px;font-weight:700;
+  direction:ltr;text-align:left;line-height:1.3;margin-bottom:6px}
+.header h1 em{font-style:italic;opacity:.85}
+.header-fa{font-size:16px;color:rgba(255,255,255,.9);margin-top:4px}
+.header-meta{font-size:12px;color:rgba(255,255,255,.55);margin-top:12px;direction:ltr}
+
+/* INTRO BOX */
+.intro{background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;margin-bottom:24px;font-size:14px;color:#3a4a5a;line-height:1.9}
+.intro strong{color:var(--navy)}
+
+/* SECTION HEADERS */
+.sec{display:flex;align-items:center;gap:10px;margin:28px 0 16px}
+.sec-badge{background:var(--navy);color:#fff;border-radius:50%;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;flex-shrink:0}
+.sec h2{font-family:'Roboto',serif;font-size:18px;font-weight:700;color:var(--navy)}
+.sec-sub{font-size:12px;color:var(--gray);margin-right:8px}
+
+/* ── METHOD 1: FLASH CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:8px}
+.flash-card{background:var(--white);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;
+  box-shadow:0 3px 12px rgba(31,58,95,.07)}
+.flash-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(31,58,95,.13)}
+.fc-front{padding:18px 16px 14px}
+.fc-word{font-family:'Roboto',serif;font-size:18px;font-weight:700;color:var(--navy);
+  direction:ltr;margin-bottom:4px}
+.fc-type{font-size:11px;color:var(--gray);letter-spacing:1px;margin-bottom:10px}
+.fc-example{font-family:'Roboto',serif;font-size:13px;font-style:italic;
+  color:#4a5a6a;direction:ltr;line-height:1.6;border-right:3px solid var(--line);
+  padding-right:10px}
+.fc-back{background:#f0f4f8;padding:12px 16px;border-top:1px solid var(--line)}
+.fc-translation{font-size:15px;font-weight:600;color:var(--navy)}
+.fc-note{font-size:12px;color:var(--gray);margin-top:3px;line-height:1.5}
+.fc-color{height:4px}
+
+/* ── METHOD 2: CONTEXT READER ── */
+.context-block{background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:20px;margin-bottom:14px}
+.ctx-title{font-family:'Roboto',serif;font-size:16px;font-weight:700;
+  color:var(--blue);direction:ltr;margin-bottom:12px;
+  padding-bottom:10px;border-bottom:2px solid #dce8f0}
+.ctx-fr{font-family:'Roboto',serif;font-size:16px;line-height:2.1;
+  direction:ltr;text-align:left;padding:12px 16px;
+  background:var(--cream);border-radius:10px;border-right:4px solid var(--blue);
+  margin-bottom:10px}
+.ctx-fa{font-size:13.5px;color:var(--gray);line-height:2.2}
+.kw{background:rgba(34,97,143,.13);color:#1a4f7a;border-radius:4px;
+  padding:1px 5px;font-weight:600;border-bottom:2px solid rgba(34,97,143,.4);
+  cursor:pointer;position:relative;transition:all .2s}
+.kw:hover,.kw.open{background:rgba(34,97,143,.23)}
+.kw-pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
+  background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;
+  font-size:12px;font-weight:500;direction:rtl;white-space:nowrap;
+  padding:5px 12px;border-radius:8px;z-index:20;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;
+  transition:opacity .2s;pointer-events:none}
+.kw.open .kw-pop{opacity:1;visibility:visible}
+
+/* ── METHOD 3: QUIZ ── */
+.quiz-block{background:var(--white);border:1px solid var(--line);
+  border-radius:14px;padding:20px;margin-bottom:14px}
+.quiz-q{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.6}
+.quiz-q span{font-family:'Roboto',serif;font-style:italic;color:var(--blue)}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:10px 16px;border:1.5px solid var(--line);border-radius:10px;
+  cursor:pointer;font-size:14px;transition:all .2s;background:var(--cream)}
+.opt:hover{border-color:var(--blue);background:#eef3f8}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.quiz-feedback{margin-top:12px;font-size:13px;padding:10px 14px;
+  border-radius:8px;display:none;line-height:1.6}
+.quiz-feedback.show{display:block}
+.quiz-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.quiz-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+
+/* SCORE */
+.score-bar{background:var(--cream);border:1px solid var(--line);border-radius:12px;
+  padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);
+  margin-top:6px}
+.score-bar span{font-size:24px;font-weight:700;color:var(--navy)}
+
+/* WORD LIST SUMMARY */
+.word-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.word-tag{background:var(--cream);border:1px solid var(--line);
+  border-radius:8px;padding:5px 12px;font-size:13px;color:var(--navy)}
+.word-tag b{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <a href="index.html">← مسیر یادگیری</a>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">📚 LES MOTS D'AUJOURD'HUI · واژگان روز</div>
+  <h1>Modes de vie des <em>jeunes</em></h1>
+  <div class="header-fa">سبک زندگی جوانان — نسل Z و رفتارهای نو</div>
+  <div class="header-meta">Niveau B1–B2 · 15 mots clés · 3 méthodes d'apprentissage</div>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+  <strong>چطور یاد بگیریم؟</strong> این درس ۳ مرحله داره:<br>
+  <strong>① کارت‌های واژه</strong> — هر کلمه با مثال و ترجمه<br>
+  <strong>② خواندن در بافت</strong> — کلمات در متن واقعی با هایلایت<br>
+  <strong>③ کوییز</strong> — تست خودت تا مطمئن بشی یاد گرفتی
+</div>
+
+<!-- ══════════════════════════════════════════
+     METHOD 1 — FLASH CARDS
+═══════════════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-badge">①</div>
+  <h2>کارت‌های واژه</h2>
+  <span class="sec-sub">روی هر کارت کلیک کن</span>
+</div>
+
+<div class="cards-grid">
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#22618f"></div>
+    <div class="fc-front">
+      <div class="fc-word">mode de vie</div>
+      <div class="fc-type">nm · اسم مذکر</div>
+      <div class="fc-example">« Les modes de vie des jeunes évoluent rapidement. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">سبک زندگی</div>
+      <div class="fc-note">جمع: modes de vie — مثال: mon mode de vie sain = سبک زندگی سالم من</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#b0506f"></div>
+    <div class="fc-front">
+      <div class="fc-word">économiser</div>
+      <div class="fc-type">verbe · فعل</div>
+      <div class="fc-example">« Les jeunes essaient d'économiser de l'argent. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">پس‌انداز کردن / صرفه‌جویی کردن</div>
+      <div class="fc-note">économiser du temps = وقت صرفه‌جویی کردن<br>économies (nf pl) = پس‌انداز</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#2e8b6b"></div>
+    <div class="fc-front">
+      <div class="fc-word">à bas prix / low-cost</div>
+      <div class="fc-type">locution adj · عبارت صفتی</div>
+      <div class="fc-example">« Ils choisissent les transports à bas prix. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">ارزان‌قیمت / کم‌هزینه</div>
+      <div class="fc-note">مترادف: bon marché · ضد: haut de gamme (لوکس)</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-front">
+      <div class="fc-word">l'habillement</div>
+      <div class="fc-type">nm · اسم مذکر</div>
+      <div class="fc-example">« L'habillement, c'est l'ensemble des vêtements. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">پوشاک / لباس (مجموع)</div>
+      <div class="fc-note">habiller (v) = لباس پوشاندن<br>s'habiller = لباس پوشیدن</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#7a5ba8"></div>
+    <div class="fc-front">
+      <div class="fc-word">d'occasion</div>
+      <div class="fc-type">locution adj · عبارت صفتی</div>
+      <div class="fc-example">« Ils utilisent les plateformes de vêtements d'occasion. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">دست‌دوم / کارکرده</div>
+      <div class="fc-note">une voiture d'occasion = ماشین دست‌دوم<br>ضد: neuf/neuve = نو</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#22618f"></div>
+    <div class="fc-front">
+      <div class="fc-word">végétalien / végan</div>
+      <div class="fc-type">adj/nm · صفت/اسم</div>
+      <div class="fc-example">« Ils consomment des produits végétaliens et végans. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">وگان / گیاه‌خوار سخت‌گیر</div>
+      <div class="fc-note">végétarien = گیاه‌خوار (می‌تواند لبنیات بخورد)<br>végan = هیچ محصول حیوانی نمی‌خورد</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#b0506f"></div>
+    <div class="fc-front">
+      <div class="fc-word">se différencier</div>
+      <div class="fc-type">verbe pronominal · فعل انعکاسی</div>
+      <div class="fc-example">« Ils aiment être différents, se différencier des autres. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">متمایز شدن / خود را از دیگران جدا کردن</div>
+      <div class="fc-note">différence (nf) = تفاوت<br>différent(e) = متفاوت</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#2e8b6b"></div>
+    <div class="fc-front">
+      <div class="fc-word">le nomadisme</div>
+      <div class="fc-type">nm · اسم مذکر</div>
+      <div class="fc-example">« Le nomadisme : un genre de vie caractérisé par le déplacement. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">کوچ‌نشینی / زندگی سیار</div>
+      <div class="fc-note">nomade (adj/n) = کوچ‌نشین / سیار<br>امروز: digital nomad = کارمند سیار دیجیتال</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-front">
+      <div class="fc-word">sobre / la sobriété</div>
+      <div class="fc-type">adj / nf</div>
+      <div class="fc-example">« Ils restent sobres, boivent très peu ou pas d'alcool. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">هوشیار / بدون الکل · پرهیز از الکل</div>
+      <div class="fc-note">sobre هم معنای «ساده و بی‌پیرایه» می‌دهد<br>مثال: un style sobre = سبک ساده</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#7a5ba8"></div>
+    <div class="fc-front">
+      <div class="fc-word">le tatouage</div>
+      <div class="fc-type">nm · اسم مذکر</div>
+      <div class="fc-example">« Le tatouage est un marché en pleine extension. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">خالکوبی / تاتو</div>
+      <div class="fc-note">tatouer (v) = خالکوبی کردن<br>je me suis fait tatouer = خالکوبی کردم (کاری)</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#22618f"></div>
+    <div class="fc-front">
+      <div class="fc-word">un tutoriel</div>
+      <div class="fc-type">nm · اسم مذکر</div>
+      <div class="fc-example">« Les tutoriels de beauté sont en plein essor chez les jeunes. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">آموزش ویدیویی / تیوتوریال</div>
+      <div class="fc-note">en plein essor = در اوج رشد<br>مترادف: guide pratique</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#2e8b6b"></div>
+    <div class="fc-front">
+      <div class="fc-word">en plein essor</div>
+      <div class="fc-type">locution · عبارت</div>
+      <div class="fc-example">« Le tatouage est un marché en plein essor. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">در اوج رشد / در حال شکوفایی</div>
+      <div class="fc-note">essor (nm) = پرواز / رشد سریع<br>مترادف: en pleine expansion, en plein développement</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#b0506f"></div>
+    <div class="fc-front">
+      <div class="fc-word">privilégier</div>
+      <div class="fc-type">verbe · فعل</div>
+      <div class="fc-example">« Ils privilégient le créatif et le personnel. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">اولویت دادن به / ترجیح دادن</div>
+      <div class="fc-note">مقایسه با préférer: privilégier رسمی‌تر و با معنای «در اولویت قرار دادن» است</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-front">
+      <div class="fc-word">l'intimité</div>
+      <div class="fc-type">nf · اسم مؤنث</div>
+      <div class="fc-example">« Ils veulent du collectif mais aussi de l'intimité. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">حریم خصوصی / فضای شخصی</div>
+      <div class="fc-note">intime (adj) = صمیمی / خصوصی<br>vie intime = زندگی خصوصی</div>
+    </div>
+  </div>
+
+  <div class="flash-card" onclick="flip(this)">
+    <div class="fc-color" style="background:#7a5ba8"></div>
+    <div class="fc-front">
+      <div class="fc-word">lucide</div>
+      <div class="fc-type">adj · صفت</div>
+      <div class="fc-example">« La génération Z est définie comme curieuse, lucide et informée. »</div>
+    </div>
+    <div class="fc-back">
+      <div class="fc-translation">واقع‌بین / آگاه / هوشیار</div>
+      <div class="fc-note">lucidité (nf) = واقع‌بینی<br>مثال: être lucide sur la situation = نسبت به وضعیت واقع‌بین بودن</div>
+    </div>
+  </div>
+
+</div><!-- end cards-grid -->
+
+<!-- ══════════════════════════════════════════
+     METHOD 2 — CONTEXT READING
+═══════════════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-badge">②</div>
+  <h2>در بافت بخوان</h2>
+  <span class="sec-sub">روی کلمات آبی کلیک کن</span>
+</div>
+
+<div class="context-block">
+  <div class="ctx-title">🛍️ پول و خرید</div>
+  <div class="ctx-fr">
+    Les jeunes essaient d'<span class="kw" onclick="kw(this)">économiser<span class="kw-pop">پس‌انداز کردن</span></span> de l'argent en se donnant des objectifs de dépenses. Ils choisissent les transports et les voyages
+    <span class="kw" onclick="kw(this)">à bas prix<span class="kw-pop">ارزان‌قیمت</span></span>. Pour l'
+    <span class="kw" onclick="kw(this)">habillement<span class="kw-pop">پوشاک</span></span>, ils
+    <span class="kw" onclick="kw(this)">privilégient<span class="kw-pop">اولویت می‌دهند به</span></span> les vêtements
+    <span class="kw" onclick="kw(this)">d'occasion<span class="kw-pop">دست‌دوم</span></span> et utilisent des plateformes comme Vinted.
+  </div>
+  <div class="ctx-fa">جوانان سعی می‌کنند با تعیین اهداف هزینه‌ای پس‌انداز کنند. سفر و حمل‌ونقل ارزان را انتخاب می‌کنند. برای پوشاک، اولویتشان لباس دست‌دوم است و از پلتفرم‌هایی مثل Vinted استفاده می‌کنند.</div>
+</div>
+
+<div class="context-block">
+  <div class="ctx-title">🌱 غذا و سبک زندگی</div>
+  <div class="ctx-fr">
+    De plus en plus de jeunes consomment des produits
+    <span class="kw" onclick="kw(this)">végétaliens<span class="kw-pop">وگان (هیچ محصول حیوانی)</span></span> et
+    <span class="kw" onclick="kw(this)">végans<span class="kw-pop">وگان سخت‌گیر</span></span>. Certains préfèrent même une vie sans alcool, ils restent
+    <span class="kw" onclick="kw(this)">sobres<span class="kw-pop">هوشیار / بدون الکل</span></span>. Cette volonté de
+    <span class="kw" onclick="kw(this)">se différencier<span class="kw-pop">متمایز شدن از دیگران</span></span> est un trait fort de la génération Z, qui est décrite comme
+    <span class="kw" onclick="kw(this)">lucide<span class="kw-pop">واقع‌بین / آگاه</span></span> et consciente de son
+    <span class="kw" onclick="kw(this)">mode de vie<span class="kw-pop">سبک زندگی</span></span>.
+  </div>
+  <div class="ctx-fa">روز به روز جوانان بیشتری محصولات وگان مصرف می‌کنند. برخی حتی زندگی بدون الکل را ترجیح می‌دهند. این تمایل به متمایز بودن، یک ویژگی قوی نسل Z است که واقع‌بین و آگاه از سبک زندگیشان توصیف می‌شوند.</div>
+</div>
+
+<div class="context-block">
+  <div class="ctx-title">🏠 مسکن و کار</div>
+  <div class="ctx-fr">
+    Le
+    <span class="kw" onclick="kw(this)">nomadisme<span class="kw-pop">زندگی سیار / کوچ‌نشینی</span></span> caractérise de nombreux jeunes actifs. Les résidences « Tout en un » répondent à leur désir de collectif et d'
+    <span class="kw" onclick="kw(this)">intimité<span class="kw-pop">حریم خصوصی / فضای شخصی</span></span>. Par ailleurs, les
+    <span class="kw" onclick="kw(this)">tutoriels<span class="kw-pop">آموزش ویدیویی</span></span> de beauté et le
+    <span class="kw" onclick="kw(this)">tatouage<span class="kw-pop">خالکوبی / تاتو</span></span> sont des marchés
+    <span class="kw" onclick="kw(this)">en plein essor<span class="kw-pop">در اوج رشد</span></span>.
+  </div>
+  <div class="ctx-fa">زندگی سیار ویژگی بسیاری از جوانان شاغل است. مجتمع‌های «همه در یکی» به تمایل آن‌ها به زندگی جمعی و حریم خصوصی پاسخ می‌دهد. علاوه بر این، آموزش‌های ویدیویی زیبایی و خالکوبی بازارهایی در اوج رشد هستند.</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     METHOD 3 — QUIZ
+═══════════════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-badge">③</div>
+  <h2>کوییز</h2>
+  <span class="sec-sub">۶ سوال — تست خودت</span>
+</div>
+
+<div class="quiz-block" data-correct="1">
+  <div class="quiz-q">«Ils <span>privilégient</span> les vêtements d'occasion.» — معنی این جمله چیست؟</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">آن‌ها از خرید لباس امتناع می‌کنند.</div>
+    <div class="opt" onclick="answer(this,1)">آن‌ها لباس دست‌دوم را در اولویت قرار می‌دهند.</div>
+    <div class="opt" onclick="answer(this,0)">آن‌ها لباس دست‌دوم می‌فروشند.</div>
+    <div class="opt" onclick="answer(this,0)">آن‌ها لباس گران می‌خرند.</div>
+  </div>
+  <div class="quiz-feedback ok">✅ آفرین! «privilégier» یعنی اولویت دادن به / ترجیح دادن.</div>
+  <div class="quiz-feedback ko">❌ نه. «privilégier» یعنی اولویت دادن به چیزی — در اینجا لباس دست‌دوم در اولویت است.</div>
+</div>
+
+<div class="quiz-block" data-correct="2">
+  <div class="quiz-q">کدام گزینه معادل «<span>à bas prix</span>» است؟</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">haut de gamme</div>
+    <div class="opt" onclick="answer(this,0)">de luxe</div>
+    <div class="opt" onclick="answer(this,2)">bon marché</div>
+    <div class="opt" onclick="answer(this,0)">personnalisé</div>
+  </div>
+  <div class="quiz-feedback ok">✅ درسته! «bon marché» و «à bas prix» هر دو یعنی ارزان‌قیمت.</div>
+  <div class="quiz-feedback ko">❌ «à bas prix» یعنی ارزان‌قیمت. مترادفش «bon marché» است. «haut de gamme» و «de luxe» ضد آن هستند.</div>
+</div>
+
+<div class="quiz-block" data-correct="0">
+  <div class="quiz-q">«La génération Z est <span>lucide</span>.» یعنی چه؟</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">نسل Z واقع‌بین و آگاه است.</div>
+    <div class="opt" onclick="answer(this,0)">نسل Z تنبل است.</div>
+    <div class="opt" onclick="answer(this,0)">نسل Z ثروتمند است.</div>
+    <div class="opt" onclick="answer(this,0)">نسل Z خلاق است.</div>
+  </div>
+  <div class="quiz-feedback ok">✅ عالی! «lucide» یعنی واقع‌بین و هوشیار نسبت به واقعیت.</div>
+  <div class="quiz-feedback ko">❌ «lucide» یعنی واقع‌بین / آگاه. گزینه اول درست بود.</div>
+</div>
+
+<div class="quiz-block" data-correct="3">
+  <div class="quiz-q">«<span>végétalien</span>» با «végétarien» چه تفاوتی دارد؟</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">فرقی ندارند، مترادف هستند.</div>
+    <div class="opt" onclick="answer(this,0)">végétarien سخت‌گیرتر است.</div>
+    <div class="opt" onclick="answer(this,0)">végétarien هیچ محصول حیوانی نمی‌خورد.</div>
+    <div class="opt" onclick="answer(this,3)">végétalien/végan هیچ محصول حیوانی نمی‌خورد، حتی لبنیات.</div>
+  </div>
+  <div class="quiz-feedback ok">✅ دقیقاً! végétalien/végan سخت‌گیرتر است — هیچ محصول حیوانی از جمله لبنیات و تخم‌مرغ هم نمی‌خورد.</div>
+  <div class="quiz-feedback ko">❌ végétalien سخت‌گیرتر است: هیچ محصول حیوانی (گوشت، ماهی، لبنیات، تخم‌مرغ) نمی‌خورد.</div>
+</div>
+
+<div class="quiz-block" data-correct="1">
+  <div class="quiz-q">«Le marché du tatouage est <span>en plein essor</span>.» یعنی:</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">بازار خالکوبی در حال افت است.</div>
+    <div class="opt" onclick="answer(this,1)">بازار خالکوبی در اوج رشد است.</div>
+    <div class="opt" onclick="answer(this,0)">بازار خالکوبی ثابت مانده است.</div>
+    <div class="opt" onclick="answer(this,0)">بازار خالکوبی گران شده است.</div>
+  </div>
+  <div class="quiz-feedback ok">✅ «en plein essor» = در اوج رشد / در حال شکوفایی. مترادف: en pleine expansion.</div>
+  <div class="quiz-feedback ko">❌ «en plein essor» یعنی در اوج رشد — ضدش «en déclin» (در حال افت) است.</div>
+</div>
+
+<div class="quiz-block" data-correct="2">
+  <div class="quiz-q">کدام جمله درست است؟</div>
+  <div class="options">
+    <div class="opt" onclick="answer(this,0)">«Je me suis économisé de l'argent.»</div>
+    <div class="opt" onclick="answer(this,0)">«J'ai économisé du l'argent.»</div>
+    <div class="opt" onclick="answer(this,2)">«J'ai économisé de l'argent.»</div>
+    <div class="opt" onclick="answer(this,0)">«J'économise des argents.»</div>
+  </div>
+  <div class="quiz-feedback ok">✅ عالی! «économiser de l'argent» — با partitif «de l'» درست است. argent مفرد است و du/de l' می‌گیرد.</div>
+  <div class="quiz-feedback ko">❌ جمله درست: «J'ai économisé de l'argent.» — بدون «du/des» و بدون انعکاسی.</div>
+</div>
+
+<div class="score-bar">امتیاز: <span id="scoreNum">0</span> از ۶</div>
+
+<!-- WORD SUMMARY -->
+<div class="sec" style="margin-top:28px">
+  <div class="sec-badge" style="background:var(--gold)">📋</div>
+  <h2>خلاصه واژه‌ها</h2>
+</div>
+<div class="word-list">
+  <div class="word-tag"><b>mode de vie</b> سبک زندگی</div>
+  <div class="word-tag"><b>économiser</b> پس‌انداز کردن</div>
+  <div class="word-tag"><b>à bas prix</b> ارزان‌قیمت</div>
+  <div class="word-tag"><b>l'habillement</b> پوشاک</div>
+  <div class="word-tag"><b>d'occasion</b> دست‌دوم</div>
+  <div class="word-tag"><b>végétalien/végan</b> وگان</div>
+  <div class="word-tag"><b>se différencier</b> متمایز شدن</div>
+  <div class="word-tag"><b>le nomadisme</b> زندگی سیار</div>
+  <div class="word-tag"><b>sobre</b> هوشیار/بدون الکل</div>
+  <div class="word-tag"><b>le tatouage</b> خالکوبی</div>
+  <div class="word-tag"><b>un tutoriel</b> آموزش ویدیویی</div>
+  <div class="word-tag"><b>en plein essor</b> در اوج رشد</div>
+  <div class="word-tag"><b>privilégier</b> اولویت دادن به</div>
+  <div class="word-tag"><b>l'intimité</b> حریم خصوصی</div>
+  <div class="word-tag"><b>lucide</b> واقع‌بین</div>
+</div>
+
+</div><!-- end wrap -->
+
+<script>
+// FLIP CARDS
+function flip(card){
+  const back = card.querySelector('.fc-back');
+  back.style.display = back.style.display==='block' ? 'none' : 'block';
+}
+document.querySelectorAll('.fc-back').forEach(b=>b.style.display='none');
+
+// KEYWORD POPUPS
+function kw(el){
+  const open=el.classList.contains('open');
+  document.querySelectorAll('.kw.open').forEach(e=>{e.classList.remove('open');if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!open){el.classList.add('open');el._t=setTimeout(()=>{el.classList.remove('open');el._t=null;},3000);}
+}
+
+// QUIZ
+let score=0;
+function answer(el, chosen){
+  const block=el.closest('.quiz-block');
+  if(block.dataset.done) return;
+  block.dataset.done='1';
+  const correct=parseInt(block.dataset.correct);
+  const opts=block.querySelectorAll('.opt');
+  opts.forEach((o,i)=>{
+    o.classList.add('disabled');
+    if(i===correct) o.classList.add('correct');
+    else if(o===el && chosen!==correct) o.classList.add('wrong');
+  });
+  const isRight = chosen===correct;
+  if(isRight){
+    score++;
+    document.getElementById('scoreNum').textContent=score;
+    block.querySelector('.quiz-feedback.ok').classList.add('show');
+  } else {
+    block.querySelector('.quiz-feedback.ko').classList.add('show');
+  }
+}
+</script>
+</body>
+</html>
