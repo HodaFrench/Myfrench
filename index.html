@@ -75,11 +75,43 @@ svg.road{width:100%;display:block}
         .auth-bar button:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
         body{padding-top:40px}
 
+
+        .auth-bar{
+          position:fixed;top:0;left:0;right:0;z-index:100;
+          background:rgba(245,240,232,.95);border-bottom:1px solid #e0d8c8;
+          padding:7px 18px;display:flex;align-items:center;justify-content:space-between;
+          font-size:12px;color:#a8874f;backdrop-filter:blur(6px);
+        }
+        .auth-bar button{
+          border:1px solid #d9ceb8;background:transparent;border-radius:8px;
+          padding:3px 12px;font-family:'Estedad',sans-serif;font-size:11px;
+          color:#a8874f;cursor:pointer;transition:all .2s;
+        }
+        .auth-bar button:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
+        body{padding-top:38px}
 </style>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const _sb = supabase.createClient(
+  'https://ifjsnasoxnalhttzhlpd.supabase.co',
+  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
+);
+_sb.auth.getSession().then(({data:{session}})=>{
+  if(!session){window.location.href='auth.html';return;}
+  const u=session.user.email?.split('@')[0]||'';
+  const el=document.getElementById('_username');
+  if(el) el.textContent='👤 '+u;
+});
+function _logout(){_sb.auth.signOut().then(()=>window.location.href='auth.html');}
+</script>
 </head>
 <body>
+<div class="auth-bar">
+  <span id="_username">...</span>
+  <button onclick="_logout()">خروج</button>
+</div>
 
 <div class="page">
 <div class="top">
