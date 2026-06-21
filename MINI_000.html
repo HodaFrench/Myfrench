@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le silence qui parle — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--accent:#b0506f;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px}
+.wrap{max-width:820px;margin:0 auto}
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--accent);color:#fff}
+.art-header{background:linear-gradient(135deg,#b0506f,#8a2040);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px rgba(176,80,111,.4);position:relative;overflow:hidden}
+.art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%}
+.art-level{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px}
+.art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left}
+.art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px}
+.art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px}
+.lg{display:flex;align-items:center;gap:6px}
+.lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0}
+.text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;border-right:4px solid #b0506f}
+.hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s}
+.hw:hover,.hw.open{background:rgba(176,80,111,.22)}
+.hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s}
+.hs:hover,.hs.open{background:rgba(46,123,181,.22)}
+.hs::before{content:"⚙ ";font-size:10px;opacity:.6}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none}
+.hw.open .pop,.hs.open .pop{opacity:1;visibility:visible}
+.nav-bar{display:flex;gap:12px;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1px dashed var(--line)}
+.nav-bar a{color:var(--navy);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:8px 16px;border-radius:9px;transition:all .2s}
+.nav-bar a:hover{background:var(--navy);color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html">← مسیر یادگیری</a>
+  </div>
+  <div class="art-header">
+    <div class="art-level">✍️ مینی‌آرتیکل · B1 · 🤫</div>
+    <div class="art-title">Le silence qui parle</div>
+    <div class="art-meta">general</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b></span></div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Dans notre société <span class="hw" onclick="t(this)">moderne<span class="pop">مدرن</span></span>, le silence est devenu une <span class="hw" onclick="t(this)">denrée rare<span class="pop">کالای کمیاب</span></span>. Partout, des sons nous <span class="hw" onclick="t(this)">envahissent<span class="pop">به ما هجوم می‌آورند</span></span> : la musique dans les magasins, les notifications sur nos téléphones, les voix à la télévision. On a l'impression que le silence est quelque chose à <span class="hw" onclick="t(this)">éviter<span class="pop">پرهیز کردن</span></span>, presque une chose <span class="hw" onclick="t(this)">gênante<span class="pop">ناراحت‌کننده</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Pourtant, les <span class="hw" onclick="t(this)">psychologues<span class="pop">روانشناسان</span></span> et les <span class="hw" onclick="t(this)">neuroscientifiques<span class="pop">عصب‌شناسان</span></span> nous disent le contraire. Le silence n'est pas un <span class="hw" onclick="t(this)">vide<span class="pop">خلاء / خلوت</span></span> — c'est un espace <span class="hw" onclick="t(this)">précieux<span class="pop">ارزشمند</span></span> pour notre cerveau. <span class="hs" onclick="t(this)">Quand on se tait, le cerveau ne s'arrête pas de travailler<span class="pop">«se taire» = ساکت شدن (فعل انعکاسی) — contraire de parler</span></span>. Au contraire, il commence à <span class="hw" onclick="t(this)">intégrer<span class="pop">یکپارچه کردن / جذب کردن</span></span> les informations reçues, à <span class="hw" onclick="t(this)">consolider<span class="pop">تثبیت کردن</span></span> les souvenirs et à <span class="hw" onclick="t(this)">résoudre<span class="pop">حل کردن</span></span> des problèmes.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Il y a aussi une dimension <span class="hw" onclick="t(this)">sociale<span class="pop">اجتماعی</span></span> très intéressante dans le silence. Dans certaines cultures, comme au Japon ou dans les pays nordiques, le silence entre deux personnes est vu comme un signe de <span class="hw" onclick="t(this)">confiance<span class="pop">اعتماد</span></span> et de <span class="hw" onclick="t(this)">complicité<span class="pop">همدلی / رفاقت</span></span>. On n'a pas besoin de remplir chaque moment par des mots. En France, au contraire, les silences dans une conversation peuvent parfois <span class="hw" onclick="t(this)">mettre mal à l'aise<span class="pop">ناراحت کردن</span></span>. On dit d'ailleurs qu'un <span class="hw" onclick="t(this)">ange passe<span class="pop">فرشته‌ای عبور می‌کند — اصطلاح فرانسوی برای سکوت ناخوشایند</span></span> quand un silence <span class="hw" onclick="t(this)">s'installe<span class="pop">برقرار می‌شود</span></span> brusquement.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Dans le monde professionnel, la capacité à <span class="hw" onclick="t(this)">supporter<span class="pop">تحمل کردن</span></span> le silence est souvent un signe de <span class="hw" onclick="t(this)">maturité<span class="pop">بلوغ / پختگی</span></span>. Lors d'une négociation, <span class="hs" onclick="t(this)">la personne qui parle en premier rompt souvent son avantage<span class="pop">«rompre» = شکستن / از دست دادن — اصطلاح مذاکره</span></span>. Savoir attendre, savoir laisser un silence <span class="hw" onclick="t(this)">s'étirer<span class="pop">کشیده شدن</span></span>, c'est un pouvoir. Les grands <span class="hw" onclick="t(this)">orateurs<span class="pop">سخنرانان</span></span> savent aussi utiliser les silences pour donner plus de <span class="hw" onclick="t(this)">poids<span class="pop">وزن / تأثیر</span></span> à leurs mots.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Sur le plan <span class="hw" onclick="t(this)">médical<span class="pop">پزشکی</span></span>, des études montrent que l'exposition prolongée au bruit peut provoquer <span class="hw" onclick="t(this)">de l'hypertension<span class="pop">فشار خون بالا</span></span>, des problèmes de <span class="hw" onclick="t(this)">sommeil<span class="pop">خواب</span></span> et même des <span class="hw" onclick="t(this)">troubles de la concentration<span class="pop">اختلال تمرکز</span></span>. À l'inverse, quelques minutes de silence par jour peuvent <span class="hw" onclick="t(this)">réduire<span class="pop">کاهش دادن</span></span> le <span class="hw" onclick="t(this)">cortisol<span class="pop">کورتیزول — هورمون استرس</span></span>, l'hormone du stress. Certains <span class="hw" onclick="t(this)">thérapeutes<span class="pop">درمانگران</span></span> recommandent même de <span class="hw" onclick="t(this)">pratiquer<span class="pop">تمرین کردن</span></span> le « bain de silence » — s'asseoir sans stimulation pendant 15 à 20 minutes.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Et toi, <span class="hw" onclick="t(this)">as-tu peur<span class="pop">می‌ترسی</span></span> du silence ? Est-ce que tu <span class="hw" onclick="t(this)">allumes<span class="pop">روشن می‌کنی</span></span> immédiatement la télévision ou la musique quand tu rentres chez toi ? Si oui, <span class="hs" onclick="t(this)">essaie pendant une semaine de t'offrir 10 minutes de silence quotidien<span class="pop">«s'offrir» = به خود هدیه دادن — ساختار زیبا</span></span>. Tu pourrais être <span class="hw" onclick="t(this)">surpris<span class="pop">شگفت‌زده</span></span> de ce que tu découvres en toi-même.</div>
+  </div>
+
+  <div class="nav-bar"><a href="MINI_001.html">بعدی →</a></div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+</body>
+</html>
