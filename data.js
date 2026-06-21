@@ -200,7 +200,7 @@ const LESSONS = [
     summary: "تسک ۱ — به زودی"
   },
   {
-    file: "PAGE_examens_tcf.html",
+    file: "TCF/PAGE_examens_tcf.html",
     title: "راهنمای کامل امتحانات TCF / TEF / DELF",
     titleFr: "Guide des examens de français",
     category: "tcf", level: "tous niveaux",
