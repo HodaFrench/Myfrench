@@ -92,7 +92,7 @@ const LESSONS = [
     summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
   },
   {
-    file: "TCF_EO_T2/jogging.html",
+    file: "TCF/Tache2/jogging.html",
     title: "🏃 Tâche 2 — Le jogging en groupe",
     titleFr: "Expression Orale — Jogging en groupe",
     category: "tcf", level: "B1",
@@ -190,6 +190,14 @@ const LESSONS = [
     category: "vocab", level: "A2",
     tags: ["واژگان","روتین","se lever","quotidien"],
     summary: "۵۰+ واژهٔ روتین روزانه: صبح (انعکاسی‌ها) + روز + شب + فعل‌های کلیدی (avoir l'habitude de...) + مکالمهٔ نمونه + متن توصیفی کامل.",
+  },
+  {
+    file: "TCF/Tache1/index.html",
+    title: "🎙️ Tâche 1 — Expression Orale",
+    titleFr: "Expression Orale Tâche 1",
+    category: "tcf", level: "B1–B2",
+    tags: ["TCF","expression orale","tâche 1"],
+    summary: "تسک ۱ — به زودی"
   },
   {
     file: "PAGE_examens_tcf.html",
@@ -760,7 +768,7 @@ const LESSONS = [
     summary: "چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی.",
   },
   {
-    file: "TCF_EO_T3_expatriation.html",
+    file: "TCF/Tache3/TCF_EO_T3_expatriation.html",
     title: "زندگی در کشوری دیگر",
     titleFr: "S'habituer à vivre à l'étranger",
     category: "tcf",
@@ -773,7 +781,7 @@ const LESSONS = [
     summary: "یک پاسخ کامل و تحلیل‌شده برای تکلیف ۳ — با ساختارها و متصل‌کننده‌های رنگی، نکات واژگانی و ترجمه‌ی فارسی هر پاراگراف.",
   },
   {
-    file: "TCF_EO_T3_autorite_enfant.html",
+    file: "TCF/Tache3/TCF_EO_T3_autorite_enfant.html",
     title: "اقتدار در تربیت کودک",
     titleFr: "L'autorité dans l'éducation",
     category: "tcf",
@@ -786,7 +794,7 @@ const LESSONS = [
     summary: "آیا برای تربیت درست کودک به اقتدار نیاز است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف.",
   },
   {
-    file: "TCF_EO_T3_relations_distance.html",
+    file: "TCF/Tache3/TCF_EO_T3_relations_distance.html",
     title: "روابط از راه دور",
     titleFr: "Les relations à distance",
     category: "tcf",
@@ -799,7 +807,7 @@ const LESSONS = [
     summary: "آیا روابط از راه دور به‌لطف اینترنت می‌توانند به اندازه‌ی روابط حضوری مستحکم باشند؟ پاسخی کامل با متصل‌کننده‌ها، واژگان سوژه و ترجمه‌ی فارسی.",
   },
   {
-    file: "TCF_EO_T3_travail_etranger.html",
+    file: "TCF/Tache3/TCF_EO_T3_travail_etranger.html",
     title: "کار کردن در کشوری دیگر",
     titleFr: "Travailler dans un autre pays",
     category: "tcf",
@@ -812,7 +820,7 @@ const LESSONS = [
     summary: "آیا کار کردن در کشوری دیگر آسان است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف.",
   },
   {
-    file: "TCF_EO_T3_travail_canada.html",
+    file: "TCF/Tache3/TCF_EO_T3_travail_canada.html",
     title: "پیدا کردن کار در کانادا",
     titleFr: "Trouver un travail au Canada",
     category: "tcf",
