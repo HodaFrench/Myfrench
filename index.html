@@ -77,30 +77,9 @@ svg.road{width:100%;display:block}
 
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const _sb = supabase.createClient(
-  'https://ifjsnasoxnalhttzhlpd.supabase.co',
-  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
-);
-// Redirect to login if not authenticated
-_sb.auth.getSession().then(({data:{session}})=>{
-  if(!session) window.location.href='auth.html';
-  else {
-    // Show username
-    const u = session.user.user_metadata?.username || session.user.email?.split('@')[0];
-    const el = document.getElementById('_username');
-    if(el) el.textContent = '👤 '+u;
-  }
-});
-function _logout(){
-  _sb.auth.signOut().then(()=>window.location.href='auth.html');
-}
-</script>
 
 </head>
 <body>
-<div class="auth-bar"><span id="_username">...</span><button onclick="_logout()">خروج</button></div>
 
 <div class="page">
 <div class="top">
