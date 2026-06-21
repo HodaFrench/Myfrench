@@ -84,6 +84,30 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "CULTURE_acadie_cayenne.html",
+    title: "🎉 جشن آکادی و کارناوال کاین",
+    titleFr: "Le Grand Tintamarre & Le Festival de Cayenne",
+    category: "culture", level: "B1",
+    tags: ["فرهنگ","کانادا","Acadie","Guyane","fête"],
+    summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
+  },
+  {
+    file: "TCF_EO_T2/index.html",
+    title: "🎙️ Tâche 2 — ابراز نظر",
+    titleFr: "Expression Orale Tâche 2 — Donner son opinion",
+    category: "tcf", level: "B1–B2",
+    tags: ["TCF","expression orale","tâche 2","opinion"],
+    summary: "سوال و جواب‌های تسک ۲ آزمون TCF با ۶ موضوع مختلف"
+  },
+  {
+    file: "TCF_EO_T2/jogging.html",
+    title: "🏃 Tâche 2 — Le jogging en groupe",
+    titleFr: "Expression Orale — Jogging en groupe",
+    category: "tcf", level: "B1",
+    tags: ["TCF","expression orale","tâche 2","jogging","sport"],
+    summary: "تمرین تسک ۲ با موضوع دویدن گروهی — ۱۲ سوال با تصویر"
+  },
+  {
     file: "VOCAB_mots_difficiles.html",
     title: "📚 ۱۰۰ کلمهٔ دشوار فرانسه",
     titleFr: "100 Mots Difficiles en Français",
