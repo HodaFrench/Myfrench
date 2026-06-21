@@ -464,6 +464,26 @@
             .cat-grid { grid-template-columns: 1fr; max-width: 360px; }
             .cat-chip { padding: 16px 18px; }
         }
+    
+        /* دکمه مسیر یادگیری */
+        .road-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding: 9px 20px;
+            background: transparent;
+            border: 1px solid var(--gold-soft);
+            border-radius: 4px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: all 0.25s;
+        }
+        .road-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+
     </style>
 </head>
 <body>
@@ -482,6 +502,8 @@
         <div class="search-box">
             <input type="text" id="search" placeholder="جستجو در محتواها..." oninput="onSearch()">
         </div>
+
+        <a href="roadmap.html" class="road-btn">🗺️ مسیر یادگیری A1 تا TCF</a>
 
         <a href="https://t.me/TCFHODA" target="_blank" class="channel-btn">
             <span class="tg">✈</span>
