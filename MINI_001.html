@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apprendre à dire non — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--accent:#b0506f;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px}
+.wrap{max-width:820px;margin:0 auto}
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--accent);color:#fff}
+.art-header{background:linear-gradient(135deg,#b0506f,#8a2040);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px rgba(176,80,111,.4);position:relative;overflow:hidden}
+.art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%}
+.art-level{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px}
+.art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left}
+.art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px}
+.art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px}
+.lg{display:flex;align-items:center;gap:6px}
+.lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0}
+.text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;border-right:4px solid #b0506f}
+.hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s}
+.hw:hover,.hw.open{background:rgba(176,80,111,.22)}
+.hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s}
+.hs:hover,.hs.open{background:rgba(46,123,181,.22)}
+.hs::before{content:"⚙ ";font-size:10px;opacity:.6}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none}
+.hw.open .pop,.hs.open .pop{opacity:1;visibility:visible}
+.nav-bar{display:flex;gap:12px;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1px dashed var(--line)}
+.nav-bar a{color:var(--navy);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:8px 16px;border-radius:9px;transition:all .2s}
+.nav-bar a:hover{background:var(--navy);color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html">← مسیر یادگیری</a>
+  </div>
+  <div class="art-header">
+    <div class="art-level">✍️ مینی‌آرتیکل · B1 · 🙅</div>
+    <div class="art-title">Apprendre à dire non</div>
+    <div class="art-meta">general</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b></span></div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr"><span class="hw" onclick="t(this)">Refuser<span class="pop">رد کردن / نه گفتن</span></span> une demande, <span class="hw" onclick="t(this)">décliner<span class="pop">رد کردن (رسمی‌تر)</span></span> une invitation, dire non à quelqu'un que l'on aime — pour beaucoup d'entre nous, c'est une des choses les plus difficiles dans la vie sociale. On a peur de <span class="hw" onclick="t(this)">blesser<span class="pop">آسیب رساندن به / آزردن</span></span> l'autre, de paraître <span class="hw" onclick="t(this)">égoïste<span class="pop">خودخواه</span></span>, de <span class="hw" onclick="t(this)">rompre<span class="pop">شکستن (رابطه)</span></span> une relation. Alors on dit oui, même quand on veut dire non.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Mais cette <span class="hw" onclick="t(this)">incapacité<span class="pop">ناتوانی</span></span> à dire non a un prix <span class="hw" onclick="t(this)">élevé<span class="pop">بالا / سنگین</span></span>. Quand on <span class="hw" onclick="t(this)">accepte<span class="pop">قبول می‌کند</span></span> des choses que l'on ne veut pas faire, on accumule du <span class="hw" onclick="t(this)">ressentiment<span class="pop">کینه / دلخوری</span></span>. On finit par en vouloir à l'autre, non pas parce qu'il a fait quelque chose de mal, mais parce qu'on n'a pas <span class="hw" onclick="t(this)">osé<span class="pop">جرأت کرده</span></span> lui dire non. <span class="hs" onclick="t(this)">C'est une forme de violence passive envers soi-même<span class="pop">«envers soi-même» = نسبت به خودت — عبارت مهم</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Les <span class="hw" onclick="t(this)">psychologues<span class="pop">روانشناسان</span></span> parlent souvent de la notion de <span class="hw" onclick="t(this)">limites<span class="pop">حدود / مرزها</span></span> — en anglais, on dit « boundaries ». Avoir des limites claires, c'est savoir ce qu'on accepte et ce qu'on n'accepte pas. Ce n'est pas de l'<span class="hw" onclick="t(this)">égoïsme<span class="pop">خودخواهی</span></span>, c'est du <span class="hw" onclick="t(this)">respect de soi<span class="pop">احترام به خود</span></span>. Et paradoxalement, les personnes qui savent dire non <span class="hw" onclick="t(this)">inspirent<span class="pop">الهام می‌بخشند / الهام‌بخشند</span></span> souvent plus le respect que celles qui <span class="hw" onclick="t(this)">cèdent<span class="pop">تسلیم می‌شوند</span></span> à toutes les demandes.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Apprendre à dire non, c'est aussi une question de <span class="hw" onclick="t(this)">formulation<span class="pop">فرمول‌بندی / نحوه‌ی بیان</span></span>. Il y a une grande différence entre « Non, je ne veux pas » (direct et parfois brutal) et « Je ne peux pas m'engager là-dessus pour l'instant » (<span class="hw" onclick="t(this)">honnête<span class="pop">صادقانه</span></span> mais <span class="hw" onclick="t(this)">nuancé<span class="pop">ظریف / باملاحظه</span></span>). On peut aussi proposer une <span class="hw" onclick="t(this)">alternative<span class="pop">گزینهٔ جایگزین</span></span> : « Je ne peux pas cette semaine, mais la semaine prochaine, ça ⟦me conviendrait|برایم مناسب است — conditionnel مؤدبانه⟫. »</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Dans les cultures méditerranéennes et orientales, dont la France est une <span class="hw" onclick="t(this)">héritière<span class="pop">وارث / میراث‌بر</span></span> partielle, le non direct peut être perçu comme <span class="hw" onclick="t(this)">impoli<span class="pop">بی‌ادبانه</span></span>. C'est pourquoi les Français ont souvent des façons indirectes de refuser : « C'est compliqué », « Je vais voir », « Peut-être ». Ces <span class="hw" onclick="t(this)">formules<span class="pop">فرمول‌ها / عبارات</span></span> permettent de ne pas dire non frontalement tout en faisant comprendre que la réponse est <span class="hw" onclick="t(this)">négative<span class="pop">منفی</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">En fin de compte, dire non est un <span class="hw" onclick="t(this)">acte d'amour<span class="pop">اقدام محبت</span></span> — envers soi-même, mais aussi envers l'autre. <span class="hs" onclick="t(this)">Quand on dit un oui qui cache un non<span class="pop">اصطلاح مجازی: وقتی بله‌ای که نه را پنهان می‌کند</span></span>, on <span class="hw" onclick="t(this)">trompe<span class="pop">فریب می‌دهیم</span></span> la relation. Le non honnête est plus <span class="hw" onclick="t(this)">sain<span class="pop">سالم</span></span> que le oui <span class="hw" onclick="t(this)">forcé<span class="pop">اجباری</span></span>. Apprendre à dire non avec <span class="hw" onclick="t(this)">douceur<span class="pop">ملایمت</span></span> mais avec <span class="hw" onclick="t(this)">fermeté<span class="pop">قاطعیت</span></span>, c'est une compétence qui <span class="hw" onclick="t(this)">s'apprend<span class="pop">یاد گرفته می‌شود</span></span> et qui change profondément la qualité de nos relations.</div>
+  </div>
+
+  <div class="nav-bar"><a href="MINI_000.html">← قبلی</a><a href="MINI_002.html">بعدی →</a></div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+</body>
+</html>
