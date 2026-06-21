@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>راهنمای امتحانات TCF / TEF / DELF — Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--accent:#c4502d;--blue:#2e7bb5;--green:#2e8b6b;--purple:#7a5ba8;--gold:#b07a4a;
+    --paper:#f4f3f5;--warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;}
+  body{font-family:'Estedad',Arial,sans-serif;background:var(--paper);color:var(--ink);
+    background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(196,80,45,.04) 31px,rgba(196,80,45,.04) 32px);
+    padding:20px 14px 70px;line-height:1.95;}
+  .wrap{max-width:860px;margin:0 auto;}
+  .topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
+  .topbar a{color:var(--accent);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:7px 14px;border-radius:8px;}
+  .topbar a:hover{background:var(--accent);color:#fff;}
+  .header{background:linear-gradient(135deg,#8a2040,var(--accent));color:#fff;
+    padding:28px;border-radius:18px;margin-bottom:20px;box-shadow:0 12px 30px rgba(196,80,45,.25);position:relative;overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:150px;height:150px;background:rgba(255,255,255,.07);border-radius:50%;}
+  .header h1{font-size:22px;font-weight:700;margin-bottom:6px;}
+  .header .sub{font-size:13.5px;opacity:.92;line-height:1.9;}
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px;position:sticky;top:0;
+    background:var(--paper);padding:11px 0;z-index:10;border-bottom:2px solid var(--line);}
+  .tab{font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;background:var(--white);
+    color:var(--ink);border:1.5px solid var(--line);border-radius:20px;padding:8px 14px;cursor:pointer;transition:all .2s;}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .section{display:none;animation:fi .3s ease;}
+  .section.active{display:block;}
+  @keyframes fi{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px;}
+  .card.blue{border-right:4px solid var(--blue);}
+  .card.green{border-right:4px solid var(--green);}
+  .card.red{border-right:4px solid var(--accent);}
+  .card.gold{border-right:4px solid var(--gold);}
+  .card.purple{border-right:4px solid var(--purple);}
+  .card-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .p{font-size:14px;line-height:2.1;}
+  .p b{color:var(--accent);}
+  .p .bb{color:var(--blue);}
+  .p .bg{color:var(--green);}
+  .skill-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+  @media(max-width:540px){.skill-grid{grid-template-columns:1fr;}}
+  .skill-box{border-radius:10px;padding:14px;text-align:center;}
+  .sk-title{font-size:13px;font-weight:700;margin-bottom:6px;}
+  .sk-detail{font-size:12.5px;line-height:1.85;color:var(--gray);}
+  .level-row{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line);}
+  .level-row:last-child{border-bottom:none;}
+  .lv-badge{font-family:'Roboto',serif;font-size:12px;font-weight:700;padding:3px 10px;border-radius:8px;color:#fff;flex-shrink:0;}
+  .lv-text{font-size:13.5px;line-height:1.8;}
+  .tip{background:rgba(196,80,45,.07);border-right:4px solid var(--accent);border-radius:10px;padding:12px 16px;font-size:13.5px;line-height:2;margin-bottom:14px;}
+  .tip b{color:var(--accent);}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:540px){.compare-grid{grid-template-columns:1fr;}}
+  .cmp{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .cmp-title{font-size:14px;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--warm);}
+  .cmp-row{font-size:13px;padding:5px 0;border-bottom:1px dashed var(--line);display:flex;gap:8px;}
+  .cmp-row:last-child{border-bottom:none;}
+  .cmp-key{font-weight:600;color:var(--gray);flex-shrink:0;min-width:80px;}
+  .checklist{list-style:none;}
+  .checklist li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px;display:flex;gap:10px;align-items:flex-start;}
+  .checklist li:last-child{border-bottom:none;}
+  .ci{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;margin-top:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html#cat=tcf">← آمادگی TCF</a>
+  </div>
+  <div class="header">
+    <h1>🎯 راهنمای کامل امتحانات فرانسه</h1>
+    <div class="sub">TCF · TEF · DELF · DALF — هر آنچه باید بدانی، با زبان ساده و صادقانه</div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="s('compare')">⚖️ TCF vs TEF vs DELF</button>
+    <button class="tab" onclick="s('tcf')">🇨🇦 TCF Canada</button>
+    <button class="tab" onclick="s('tef')">📋 TEF Canada</button>
+    <button class="tab" onclick="s('delf')">📜 DELF / DALF</button>
+    <button class="tab" onclick="s('niveaux')">📊 سطح‌های CECRL</button>
+    <button class="tab" onclick="s('conseils')">💡 نکات و استراتژی</button>
+  </div>
+
+  <!-- مقایسه -->
+  <div class="section active" id="sec-compare">
+    <div class="card blue">
+      <div class="card-title">⚖️ کدام امتحان برای کانادا؟</div>
+      <p class="p">برای مهاجرت به کانادا دو امتحان رسمی وجود دارد: <b>TCF Canada</b> (توسط France Éducation International) و <b>TEF Canada</b> (توسط CCIP پاریس). هر دو توسط IRCC کانادا پذیرفته می‌شوند.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="cmp" style="border-top:4px solid var(--blue);">
+        <div class="cmp-title" style="color:var(--blue);">🔵 TCF Canada</div>
+        <div class="cmp-row"><span class="cmp-key">سازنده:</span><span>France Éducation International</span></div>
+        <div class="cmp-row"><span class="cmp-key">نتیجه:</span><span>سطح مستقیم A1-C2 می‌دهد</span></div>
+        <div class="cmp-row"><span class="cmp-key">مدت:</span><span>~۳ ساعت (۴ مهارت)</span></div>
+        <div class="cmp-row"><span class="cmp-key">اعتبار:</span><span>۲ سال</span></div>
+        <div class="cmp-row"><span class="cmp-key">مزیت:</span><span>نتیجه واضح‌تر، قابل فهم‌تر</span></div>
+      </div>
+      <div class="cmp" style="border-top:4px solid var(--green);">
+        <div class="cmp-title" style="color:var(--green);">🟢 TEF Canada</div>
+        <div class="cmp-row"><span class="cmp-key">سازنده:</span><span>CCIP پاریس</span></div>
+        <div class="cmp-row"><span class="cmp-key">نتیجه:</span><span>امتیاز عددی (بدون سطح مستقیم)</span></div>
+        <div class="cmp-row"><span class="cmp-key">مدت:</span><span>~۴ ساعت</span></div>
+        <div class="cmp-row"><span class="cmp-key">اعتبار:</span><span>۲ سال</span></div>
+        <div class="cmp-row"><span class="cmp-key">مزیت:</span><span>مدولار — فقط مهارت‌های لازم</span></div>
+      </div>
+    </div>
+    <div class="tip"><b>توصیهٔ هدی:</b> برای مهاجرت اقتصادی (Entrée express) هر دو قبول می‌شوند. برای Quebec فقط TCF Québec یا TEF Québec. TCF نتیجه‌اش شفاف‌تر است — اکثر زبان‌آموزان همین را انتخاب می‌کنند.</div>
+    <div class="card purple">
+      <div class="card-title">📜 DELF / DALF — فرق با TCF/TEF</div>
+      <p class="p">DELF/DALF <b>مدرک دائمی</b> هستند (فقط یک بار لازم است بگیری). TCF/TEF <b>فقط ۲ سال</b> اعتبار دارند. برای مهاجرت → TCF/TEF. برای دانشگاه، مدرک حرفه‌ای، یا ارزش‌دهی شخصی → DELF/DALF.</p>
+    </div>
+  </div>
+
+  <!-- TCF -->
+  <div class="section" id="sec-tcf">
+    <div class="card blue">
+      <div class="card-title">🇨🇦 TCF Canada — ساختار دقیق</div>
+      <p class="p">۴ مهارت ارزیابی می‌شود — همه اجباری برای مهاجرت:</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-box" style="background:rgba(46,123,181,.08);">
+        <div class="sk-title" style="color:var(--blue);">👂 Compréhension Orale</div>
+        <div class="sk-detail">درک شنیداری<br>۲۹ سؤال چندگزینه‌ای<br>⏱ ۳۵ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(46,139,107,.08);">
+        <div class="sk-title" style="color:var(--green);">📖 Compréhension Écrite</div>
+        <div class="sk-detail">درک مطلب<br>۳۹ سؤال چندگزینه‌ای<br>⏱ ۶۰ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(176,122,74,.08);">
+        <div class="sk-title" style="color:var(--gold);">🗣️ Expression Orale</div>
+        <div class="sk-detail">بیان شفاهی<br>۳ تکلیف (Tâche 1/2/3)<br>⏱ ۱۲ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(122,91,168,.08);">
+        <div class="sk-title" style="color:var(--purple);">✍️ Expression Écrite</div>
+        <div class="sk-detail">بیان نوشتاری<br>۲ تکلیف (Task 1/2)<br>⏱ ۶۰ دقیقه</div>
+      </div>
+    </div>
+    <div class="card red">
+      <div class="card-title">📊 نمره‌دهی TCF</div>
+      <p class="p">هر مهارت از ۱۰۰ تا ۶۹۹ امتیاز می‌گیرد. برای B2 باید بین ۴۵۳ تا ۵۴۹ باشی. برای C1 باید بین ۵۵۰ تا ۶۹۹ باشی.</p>
+      <div style="margin-top:12px;">
+        <div class="level-row"><span class="lv-badge" style="background:#999;">A1</span><span class="lv-text">تا ۱۴۹ امتیاز — مبتدی</span></div>
+        <div class="level-row"><span class="lv-badge" style="background:#5a8f4a;">A2</span><span class="lv-text">۱۵۰–۳۴۹ — پایه</span></div>
+        <div class="level-row"><span class="lv-badge" style="background:#2e7bb5;">B1</span><span class="lv-text">۳۵۰–۴۵۲ — متوسط</span></div>
+        <div class="level-row"><span class="lv-badge" style="background:#c4502d;">B2</span><span class="lv-text">۴۵۳–۵۴۹ — متوسط پیشرفته ⭐ هدف مهاجرت</span></div>
+        <div class="level-row"><span class="lv-badge" style="background:#7a5ba8;">C1</span><span class="lv-text">۵۵۰–۶۴۹ — پیشرفته</span></div>
+        <div class="level-row"><span class="lv-badge" style="background:#1e3a5f;">C2</span><span class="lv-text">۶۵۰–۶۹۹ — تسلط کامل</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEF -->
+  <div class="section" id="sec-tef">
+    <div class="card green">
+      <div class="card-title">📋 TEF Canada — ساختار دقیق</div>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-box" style="background:rgba(46,139,107,.08);">
+        <div class="sk-title" style="color:var(--green);">👂 Compréhension Orale</div>
+        <div class="sk-detail">۶۰ سؤال<br>⏱ ۴۰ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(46,139,107,.08);">
+        <div class="sk-title" style="color:var(--green);">📖 Compréhension Écrite</div>
+        <div class="sk-detail">۵۰ سؤال<br>⏱ ۶۰ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(46,139,107,.08);">
+        <div class="sk-title" style="color:var(--green);">🗣️ Expression Orale</div>
+        <div class="sk-detail">۵ تکلیف<br>⏱ ۱۵ دقیقه</div>
+      </div>
+      <div class="skill-box" style="background:rgba(46,139,107,.08);">
+        <div class="sk-title" style="color:var(--green);">✍️ Expression Écrite</div>
+        <div class="sk-detail">۲ تکلیف<br>⏱ ۶۰ دقیقه</div>
+      </div>
+    </div>
+    <div class="card gold">
+      <div class="card-title">🔢 نمره‌دهی TEF</div>
+      <p class="p">هر بخش نمرهٔ جداگانه دارد. برای Entrée express امتیاز تبدیل به NCLC می‌شود. NCLC 7 معادل B2 است و امتیاز خوبی در سیستم points کانادا می‌آورد.</p>
+    </div>
+  </div>
+
+  <!-- DELF -->
+  <div class="section" id="sec-delf">
+    <div class="card purple">
+      <div class="card-title">📜 DELF — Diplôme d'Études en Langue Française</div>
+      <p class="p">DELF یک <b>مدرک دائمی</b> است — یک بار گرفتی، مادام‌العمر داری. چهار سطح دارد:</p>
+    </div>
+    <div class="level-row"><span class="lv-badge" style="background:#999;">A1</span><span class="lv-text">مبتدی — اولین قدم</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#5a8f4a;">A2</span><span class="lv-text">پایه — برای برخی مدارس</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#2e7bb5;">B1</span><span class="lv-text">متوسط — مهم برای ورود به دانشگاه</span></div>
+    <div class="level-row" style="margin-bottom:16px;"><span class="lv-badge" style="background:#c4502d;">B2</span><span class="lv-text">متوسط پیشرفته — برای ورود به دانشگاه‌های فرانسه</span></div>
+    <div class="card blue">
+      <div class="card-title">📜 DALF — Diplôme Approfondi de Langue Française</div>
+      <p class="p">برای سطوح بالاتر — C1 و C2. برای حرفه‌ای‌ها و کسانی که می‌خواهند در محیط‌های کاملاً فرانسه‌زبان کار کنند.</p>
+    </div>
+    <div class="tip"><b>DELF B2 vs TCF B2:</b> هر دو B2 هستند ولی DELF دائمی است. اگر قرار است در محیط فرانسه‌زبان کار کنی، DELF ارزشمندتر است. برای مهاجرت کانادا → TCF/TEF الزامی است نه DELF.</div>
+  </div>
+
+  <!-- سطح‌ها -->
+  <div class="section" id="sec-niveaux">
+    <div class="card blue">
+      <div class="card-title">📊 سطح‌های CECRL — دقیقاً چه می‌توانم بکنم؟</div>
+    </div>
+    <div class="level-row"><span class="lv-badge" style="background:#aaa;">A1</span><span class="lv-text"><b>مبتدی:</b> معرفی خود، خرید ساده، اسم چیزها را می‌دانم</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#5a8f4a;">A2</span><span class="lv-text"><b>پایه:</b> روتین روزمره، جمله‌های کوتاه، خریدن و پرسیدن</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#2e7bb5;">B1</span><span class="lv-text"><b>متوسط:</b> مکالمه دربارهٔ موضوعات آشنا، سفر بدون مشکل، نامهٔ ساده</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#c4502d;">B2</span><span class="lv-text"><b>متوسط پیشرفته ⭐:</b> دفاع از نظر، فهم اخبار، صحبت روان دربارهٔ موضوعات پیچیده</span></div>
+    <div class="level-row"><span class="lv-badge" style="background:#7a5ba8;">C1</span><span class="lv-text"><b>پیشرفته:</b> بیان خودانگیخته و روان، فهم متون تخصصی</span></div>
+    <div class="level-row" style="margin-bottom:14px;"><span class="lv-badge" style="background:#1e3a5f;">C2</span><span class="lv-text"><b>تسلط:</b> تقریباً مثل زبان‌مادری</span></div>
+    <div class="tip"><b>برای مهاجرت اقتصادی کانادا:</b> حداقل B1 لازم است ولی <b>B2 امتیاز خیلی بالاتری می‌دهد</b>. اگر C1 بگیری، امتیاز ماکزیمم می‌شود.</div>
+  </div>
+
+  <!-- نکات -->
+  <div class="section" id="sec-conseils">
+    <div class="card red">
+      <div class="card-title">💡 نکات طلایی برای آمادگی — از زبان مدرسان</div>
+    </div>
+    <div class="card green">
+      <div class="card-title">✅ ۶ ماه قبل از امتحان</div>
+      <ul class="checklist">
+        <li><span class="ci" style="background:var(--green);">۱</span><div>فرمت دقیق هر بخش را بشناس — ارزیاب چه انتظاری دارد؟</div></li>
+        <li><span class="ci" style="background:var(--green);">۲</span><div>هر روز به فرانسه گوش بده (InnerFrench، RFI Savoirs، TV5Monde)</div></li>
+        <li><span class="ci" style="background:var(--green);">۳</span><div>واژگان موضوعاتی بساز: محیط زیست، کار، خانواده، تکنولوژی</div></li>
+      </ul>
+    </div>
+    <div class="card blue">
+      <div class="card-title">✅ ۲ ماه قبل — تمرین تمرین تمرین</div>
+      <ul class="checklist">
+        <li><span class="ci" style="background:var(--blue);">۱</span><div>با تایمر واقعی تمرین کن — فشار زمان احساس کن</div></li>
+        <li><span class="ci" style="background:var(--blue);">۲</span><div>Expression Orale: خودت را ضبط کن. گوش بده. تکرار کن.</div></li>
+        <li><span class="ci" style="background:var(--blue);">۳</span><div>Expression Écrite: ساختار بساز — مقدمه + ۲-۳ استدلال + نتیجه</div></li>
+        <li><span class="ci" style="background:var(--blue);">۴</span><div>آزمون‌های نمونه از سایت رسمی France Éducation International حل کن</div></li>
+      </ul>
+    </div>
+    <div class="card gold">
+      <div class="card-title">⭐ روز امتحان — استراتژی</div>
+      <ul class="checklist">
+        <li><span class="ci" style="background:var(--gold);">★</span><div><b>Compréhension:</b> اول سؤال را بخوان، بعد گوش بده / بخوان. گزینه‌ی کاملاً درست پیدا کن.</div></li>
+        <li><span class="ci" style="background:var(--gold);">★</span><div><b>Expression Orale:</b> اسکلت ثابت داشته باش. در مقدمه موضع را بگو. ۳ استدلال + ۱ ضداستدلال.</div></li>
+        <li><span class="ci" style="background:var(--gold);">★</span><div><b>Expression Écrite:</b> ۵ دقیقه برای برنامه‌ریزی. پاراگراف‌بندی درست. بررسی در آخر.</div></li>
+        <li><span class="ci" style="background:var(--gold);">★</span><div>اگر جواب نمی‌دانی → حدس بزن! نمرهٔ منفی وجود ندارد.</div></li>
+      </ul>
+    </div>
+    <div class="tip">
+      <b>منابع رایگان:</b> <span dir="ltr">tv5monde.com/apprendre-le-francais · rfi.fr/fr/savoirs · france-education-international.fr</span><br>
+      <b>سایت‌های تمرین:</b> <span dir="ltr">tcfca.com · prepmyfuture.com · bonjour-de-france.com</span>
+    </div>
+  </div>
+
+</div>
+<script>
+function s(id){
+  document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  document.getElementById("sec-"+id).classList.add("active");
+  event.currentTarget.classList.add("active");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+</script>
+<script src="protect.js"></script>
+</body>
+</html>
