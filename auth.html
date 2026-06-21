@@ -181,7 +181,7 @@ async function doSignup(){
   if(exists){setLoading('signupBtn',false);return showMsg('signupMsg','این نام کاربری قبلاً استفاده شده','error');}
 
   // Create fake email from username
-  const fakeEmail = `${username.toLowerCase()}@frenchavechoda.app`;
+  const fakeEmail = `${username.toLowerCase()}@gmail.com`;
 
   const {data,error} = await sb.auth.signUp({
     email: fakeEmail,
@@ -209,7 +209,7 @@ async function doLogin(){
 
   setLoading('loginBtn',true);
 
-  const fakeEmail = `${username.toLowerCase()}@frenchavechoda.app`;
+  const fakeEmail = `${username.toLowerCase()}@gmail.com`;
 
   const {data,error} = await sb.auth.signInWithPassword({
     email: fakeEmail,
