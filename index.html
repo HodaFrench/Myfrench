@@ -57,9 +57,51 @@ svg.road{width:100%;display:block}
 .ititle{font-size:13px;color:#1f3a5f;line-height:1.45;font-weight:500}
 .imeta{font-size:11px;color:#a8874f;margin-top:2px}
 .empty{text-align:center;padding:2rem;font-size:13px;color:#a8874f}
+
+        /* Auth bar */
+        .auth-bar{
+          position:fixed;top:0;left:0;right:0;z-index:100;
+          background:#fffdf6;border-bottom:1px solid #e8e0ce;
+          padding:8px 20px;display:flex;align-items:center;justify-content:space-between;
+          font-size:12px;color:#a8874f;
+          box-shadow:0 2px 8px rgba(31,58,95,.06);
+        }
+        .auth-bar button{
+          border:1px solid #d9ceb8;background:transparent;
+          border-radius:8px;padding:4px 12px;
+          font-family:'Estedad',sans-serif;font-size:11px;
+          color:#a8874f;cursor:pointer;transition:all .2s;
+        }
+        .auth-bar button:hover{background:#1f3a5f;color:#fff;border-color:#1f3a5f}
+        body{padding-top:40px}
+
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const _sb = supabase.createClient(
+  'https://ifjsnasoxnalhttzhlpd.supabase.co',
+  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
+);
+// Redirect to login if not authenticated
+_sb.auth.getSession().then(({data:{session}})=>{
+  if(!session) window.location.href='auth.html';
+  else {
+    // Show username
+    const u = session.user.user_metadata?.username || session.user.email?.split('@')[0];
+    const el = document.getElementById('_username');
+    if(el) el.textContent = '👤 '+u;
+  }
+});
+function _logout(){
+  _sb.auth.signOut().then(()=>window.location.href='auth.html');
+}
+</script>
+
 </head>
 <body>
+<div class="auth-bar"><span id="_username">...</span><button onclick="_logout()">خروج</button></div>
+
 <div class="page">
 <div class="top">
   <a href="library.html" class="back">← کتابخانه</a>
