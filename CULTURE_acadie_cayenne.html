@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grand Tintamarre & Festival de Cayenne — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--accent:#8a2040;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px}
+.wrap{max-width:820px;margin:0 auto}
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--accent);color:#fff}
+
+/* HEADER */
+.art-header{background:linear-gradient(135deg,#8a2040,#5a1030);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px rgba(138,32,64,.4);position:relative;overflow:hidden}
+.art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%}
+.art-source{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px}
+.art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left;margin-bottom:8px}
+.art-title-fa{font-size:16px;opacity:.92}
+.art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px;direction:ltr;text-align:left}
+
+/* IMAGE */
+.art-img{width:100%;max-height:280px;object-fit:cover;border-radius:14px;margin-bottom:16px;border:1px solid var(--line)}
+
+/* LEGEND */
+.art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px}
+.lg{display:flex;align-items:center;gap:6px}
+.lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0}
+
+/* SECTIONS */
+.section-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--accent);direction:ltr;text-align:left;margin:24px 0 14px;padding-bottom:8px;border-bottom:2px solid #f0d0da}
+
+.text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;margin-bottom:12px;border-right:4px solid var(--accent)}
+.para-fa{font-size:13.5px;color:var(--gray);line-height:2.2;padding-right:4px}
+
+/* HIGHLIGHTS */
+.hw{background:rgba(138,32,64,.12);color:#6a1030;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(138,32,64,.4);transition:all .2s}
+.hw:hover,.hw.open{background:rgba(138,32,64,.22)}
+.hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s}
+.hs:hover,.hs.open{background:rgba(46,123,181,.22)}
+.hs::before{content:"⚙ ";font-size:10px;opacity:.6}
+.hc{background:rgba(46,139,107,.1);color:#1d6b50;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dotted rgba(46,139,107,.6);transition:all .2s}
+.hc:hover,.hc.open{background:rgba(46,139,107,.2)}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none}
+.hw.open .pop,.hs.open .pop,.hc.open .pop{opacity:1;visibility:visible}
+
+/* FOOTNOTES */
+.footnotes{background:#fff8f0;border:1px solid #f0dcc8;border-radius:12px;padding:16px 20px;margin-top:20px;font-size:13px}
+.footnotes h4{color:#a8874f;margin-bottom:10px;font-size:13px;letter-spacing:1px}
+.footnote{margin-bottom:6px;color:#5a4a3a;line-height:1.7}
+.footnote b{color:#8a2040}
+
+.art-credit{text-align:center;margin-top:24px;font-size:12px;color:var(--gray);padding-top:16px;border-top:1px dashed var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html">← مسیر یادگیری</a>
+  </div>
+
+  <div class="art-header">
+    <div class="art-source">🗼 فرهنگ فرانسه · B1</div>
+    <div class="art-title">Le Grand Tintamarre & Le Festival de Cayenne</div>
+    <div class="art-title-fa">جشن بزرگ آکادی و کارناوال کاین</div>
+    <div class="art-meta">Acadie · Guyane française · Traditions francophones</div>
+  </div>
+
+  <img class="art-img"
+    src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
+    onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Acadie.svg/320px-Flag_of_Acadie.svg.png';this.style.objectFit='contain';this.style.background='#f0e8d8';this.style.padding='20px'"
+    alt="جشن آکادی">
+
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(138,32,64,.35)"></span><span><b style="color:#6a1030">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.2);border:1px dotted #2e8b6b"></span><span><b style="color:#1d6b50">کلوکیشن / ربط</b></span></div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section-title">🎉 Le Grand Tintamarre — جشن ملی آکادی</div>
+
+  <div class="text-block">
+    <div class="para-fr">Dans la <span class="hw" onclick="t(this)">province<span class="pop">province (f) = استان</span></span> du Nouveau-Brunswick, au Canada, la journée du 15 août est
+    <span class="hw" onclick="t(this)">spéciale<span class="pop">spéciale = ویژه، خاص</span></span> : c'est la <span class="hw" onclick="t(this)">fête nationale<span class="pop">fête nationale = جشن ملی</span></span> de la province.
+    <span class="hs" onclick="t(this)">Même si cette fête n'est pas officiellement reconnue dans tout le Canada<span class="pop">«même si + subjonctif» = حتی اگر — برای تضاد</span></span>,
+    les <span class="hw" onclick="t(this)">Acadiens<span class="pop">Acadiens = آکادیایی‌ها — فرانسی‌زبانان نیوبرانزویک</span></span>, qui sont les
+    <span class="hw" onclick="t(this)">francophones<span class="pop">francophones = فرانسی‌زبانان</span></span> du Nouveau-Brunswick,
+    <span class="hc" onclick="t(this)">en profitent pour<span class="pop">«en profiter pour + مصدر» = از فرصت استفاده کردن برای</span></span>
+    <span class="hw" onclick="t(this)">renouer avec leurs racines<span class="pop">renouer avec ses racines = به ریشه‌هایش بازگشتن</span></span>.</div>
+    <div class="para-fa">در استان نیوبرانزویک کانادا، روز ۱۵ اوت روزی ویژه است: این روز جشن ملی استان است. حتی اگر این جشن به‌طور رسمی در سراسر کانادا به رسمیت شناخته نشده باشد، آکادیایی‌ها — که همان فرانسی‌زبانان نیوبرانزویک هستند — از این فرصت استفاده می‌کنند تا به ریشه‌هایشان بازگردند.</div>
+  </div>
+
+  <div class="text-block">
+    <div class="para-fr"><span class="hs" onclick="t(this)">À partir de 18 heures<span class="pop">«à partir de» = از ... به بعد</span></span>, ils
+    <span class="hw" onclick="t(this)">descendent dans les rues<span class="pop">descendre dans les rues = به خیابان‌ها آمدن (اصطلاح)</span></span>,
+    <span class="hw" onclick="t(this)">maquillés<span class="pop">maquillé(e) = آرایش‌کرده</span></span> et
+    <span class="hw" onclick="t(this)">vêtus de costumes particuliers<span class="pop">vêtu de = پوشیده به — participe passé از vêtir</span></span>,
+    pour <span class="hw" onclick="t(this)">faire du bruit<span class="pop">faire du bruit = سروصدا راه انداختن</span></span>.
+    Ils <span class="hw" onclick="t(this)">crient<span class="pop">crier = فریاد زدن</span></span>,
+    <span class="hw" onclick="t(this)">sifflent<span class="pop">siffler = سوت زدن</span></span>,
+    <span class="hw" onclick="t(this)">tapent<span class="pop">taper sur = کوبیدن روی</span></span> sur des
+    <span class="hw" onclick="t(this)">assiettes<span class="pop">assiette (f) = بشقاب</span></span>, des
+    <span class="hw" onclick="t(this)">marmites<span class="pop">marmite (f) = دیگ / قابلمه</span></span>
+    ou sur tout ce qu'ils trouvent sur leur chemin.</div>
+    <div class="para-fa">از ساعت ۶ عصر به خیابان‌ها می‌آیند، با آرایش و لباس‌های خاص، تا سروصدا راه بیندازند. فریاد می‌زنند، سوت می‌زنند، روی بشقاب‌ها، دیگ‌ها یا هر چیزی که سر راهشان پیدا می‌کنند می‌کوبند.</div>
+  </div>
+
+  <div class="text-block">
+    <div class="para-fr">Le <span class="hw" onclick="t(this)">but<span class="pop">but (m) = هدف</span></span> de ce
+    <span class="hw" onclick="t(this)">«grand tintamarre»<span class="pop">tintamarre (m) = سروصدای شدید / هیاهو</span></span> est de
+    <span class="hw" onclick="t(this)">démontrer<span class="pop">démontrer = نشان دادن / اثبات کردن</span></span> la
+    <span class="hw" onclick="t(this)">vivacité<span class="pop">vivacité (f) = سرزندگی / پویایی</span></span> du peuple acadien.
+    <hc class="hc" onclick="t(this)">Pendant les défilés<span class="pop">pendant = در طول — برای مدت زمان</span></hc>, les
+    <span class="hw" onclick="t(this)">manifestants<span class="pop">manifestant (m) = شرکت‌کننده در راهپیمایی</span></span> portent des
+    <span class="hw" onclick="t(this)">vêtements aux couleurs du drapeau<span class="pop">vêtements aux couleurs de = لباس‌هایی به رنگ‌های ...</span></span>
+    de la province du Nouveau-Brunswick.</div>
+    <div class="para-fa">هدف این «تینتامار بزرگ» نشان دادن سرزندگی مردم آکادی است. در طول راهپیمایی‌ها، شرکت‌کنندگان لباس‌هایی به رنگ‌های پرچم استان نیوبرانزویک می‌پوشند.</div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-title">👻 Le Festival de Cayenne — جشنواره‌ی ترس</div>
+
+  <div class="text-block">
+    <div class="para-fr">Le festival de la ville de
+    <span class="hw" onclick="t(this)">Cayenne<span class="pop">Cayenne = کاین، پایتخت گویان فرانسه</span></span>, la
+    <span class="hw" onclick="t(this)">capitale<span class="pop">capitale (f) = پایتخت</span></span> de la
+    <span class="hw" onclick="t(this)">Guyane française<span class="pop">Guyane française = گویان فرانسه — سرزمین ماورای دریای فرانسه در آمریکای جنوبی</span></span>,
+    est l'un des plus <span class="hw" onclick="t(this)">connus<span class="pop">connu = معروف، شناخته‌شده</span></span> dans le monde.
+    <span class="hs" onclick="t(this)">Même s'il a beaucoup changé aujourd'hui<span class="pop">«même si» + indicatif passé composé = حتی اگر چه تغییر کرده — تضاد با واقعیت</span></span>,
+    son but est resté de <span class="hw" onclick="t(this)">divertir<span class="pop">divertir = سرگرم کردن</span></span> les enfants
+    <span class="hc" onclick="t(this)">en leur faisant peur<span class="pop">«en + gérondif» = با ترساندنشان — روش/ابزار</span></span>.</div>
+    <div class="para-fa">جشنواره‌ی شهر کاین، پایتخت گویان فرانسه، یکی از معروف‌ترین جشنواره‌های جهان است. حتی اگر چه امروز خیلی تغییر کرده، هدفش همچنان سرگرم کردن کودکان از طریق ترساندنشان بوده است.</div>
+  </div>
+
+  <div class="text-block">
+    <div class="para-fr"><span class="hc" onclick="t(this)">Pendant plusieurs jours<span class="pop">pendant plusieurs jours = در طول چند روز</span></span>,
+    de grands <span class="hw" onclick="t(this)">défilés<span class="pop">défilé (m) = رژه / راهپیمایی</span></span>
+    <span class="hs" onclick="t(this)">sont organisés dans les rues<span class="pop">passif: «être + participe passé» = برگزار می‌شوند</span></span>.
+    L'un des plus importants est le passage des
+    <span class="hw" onclick="t(this)">«zombis»<span class="pop">zombi = زامبی — شخصیت ترسناک کارناوال گویان</span></span>.
+    <span class="hs" onclick="t(this)">Ce sont des personnes habillées avec des chemises de nuit blanches et des ceintures rouges<span class="pop">«habillées avec» = پوشیده با — participe passé adjectival</span></span>.</div>
+    <div class="para-fa">در طول چند روز، رژه‌های بزرگی در خیابان‌ها برگزار می‌شود. یکی از مهم‌ترین‌ها عبور «زامبی‌ها» است. اینها آدم‌هایی هستند که با پیراهن خواب سفید و کمربند قرمز لباس پوشیده‌اند.</div>
+  </div>
+
+  <div class="text-block">
+    <div class="para-fr">Ces «zombis»
+    <span class="hw" onclick="t(this)">pénètrent<span class="pop">pénétrer dans = وارد شدن به (با فشار)</span></span>
+    dans les maisons <span class="hw" onclick="t(this)">ouvertes<span class="pop">ouvertes = باز — یعنی خانه‌هایی که در باز دارند</span></span>
+    et <span class="hw" onclick="t(this)">crient très fort<span class="pop">crier fort = بلند فریاد زدن</span></span>.
+    Le jour le plus important est le
+    <span class="hw" onclick="t(this)">mardi-gras<span class="pop">mardi-gras = سه‌شنبه چرب — آخرین روز کارناوال قبل از روزه</span></span>.
+    <span class="hs" onclick="t(this)">Ce jour-là<span class="pop">«ce jour-là» = آن روز — اشاره به روز خاص</span></span>,
+    le <span class="hw" onclick="t(this)">«papadjab»<span class="pop">papadjab = شیطان پدر — شخصیت اصلی کارناوال</span></span>
+    sort de sa <span class="hw" onclick="t(this)">cachette<span class="pop">cachette (f) = مخفیگاه</span></span>,
+    <span class="hw" onclick="t(this)">habillé en rouge<span class="pop">habillé en + رنگ = پوشیده به رنگ ...</span></span>
+    avec six <span class="hw" onclick="t(this)">cornes<span class="pop">corne (f) = شاخ</span></span> noires sur la tête.
+    Il porte aussi une longue <span class="hw" onclick="t(this)">barbe tressée<span class="pop">barbe tressée = ریش بافته‌شده</span></span>.
+    Ces personnages <span class="hc" onclick="t(this)">font très peur aux enfants<span class="pop">«faire peur à» = ترساندن — فعل idiomatique</span></span>.</div>
+    <div class="para-fa">این «زامبی‌ها» وارد خانه‌هایی می‌شوند که در دارند باز است و بلند فریاد می‌زنند. مهم‌ترین روز، مارتی‌گرا است. آن روز، «پاپادژاب» از مخفیگاهش بیرون می‌آید، با لباس قرمز و شش شاخ سیاه روی سرش. ریش بلند بافته‌ای هم دارد. این شخصیت‌ها کودکان را خیلی می‌ترسانند.</div>
+  </div>
+
+  <!-- FOOTNOTES -->
+  <div class="footnotes">
+    <h4>📌 یادداشت‌ها</h4>
+    <div class="footnote"><b>* Acadiens</b> — مردمی که از فرانسوی‌های مهاجر به آمریکای شمالی در قرن ۱۷ نسب می‌برند و امروز عمدتاً در نیوبرانزویک کانادا زندگی می‌کنند.</div>
+    <div class="footnote"><b>* grand tintamarre</b> — به معنای «سروصدای بزرگ». این سنت از سال ۱۹۷۵ هر ساله در ۱۵ اوت برگزار می‌شود.</div>
+    <div class="footnote"><b>* mardi-gras</b> — «سه‌شنبه چرب»، آخرین روز شادی قبل از دوره روزه مسیحی (Carême). در فرانسه و مناطق فرانکوفون با کارناوال همراه است.</div>
+    <div class="footnote"><b>* papadjab</b> — از creole گویانی: «papa diable» یعنی «شیطان پدر». شخصیت اصلی و ترسناک کارناوال کاین است.</div>
+  </div>
+
+  <div class="art-credit">تحلیل آموزشی توسط <a href="index.html">Français avec Hoda</a></div>
+</div>
+
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open,.hc.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+</body>
+</html>
