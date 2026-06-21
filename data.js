@@ -92,14 +92,6 @@ const LESSONS = [
     summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
   },
   {
-    file: "TCF_EO_T2/index.html",
-    title: "🎙️ Tâche 2 — ابراز نظر",
-    titleFr: "Expression Orale Tâche 2 — Donner son opinion",
-    category: "tcf", level: "B1–B2",
-    tags: ["TCF","expression orale","tâche 2","opinion"],
-    summary: "سوال و جواب‌های تسک ۲ آزمون TCF با ۶ موضوع مختلف"
-  },
-  {
     file: "TCF_EO_T2/jogging.html",
     title: "🏃 Tâche 2 — Le jogging en groupe",
     titleFr: "Expression Orale — Jogging en groupe",
