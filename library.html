@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma bibliothèque de français — Hoda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1f3a5f;        /* سرمه‌ای جلد کتاب */
+            --navy-deep: #16293f;
+            --navy-soft: #41618a;
+            --gold: #a8874f;        /* طلایی/برنزی حروف */
+            --gold-soft: #c4a572;
+            --paper: #f7f3ea;       /* کاغذ استخوانی */
+            --paper-warm: #efe9db;
+            --cream: #fdfaf3;
+            --ink: #2c2a26;         /* مرکب */
+            --gray: #8a8275;
+            --line: #e4ddcd;
+            --white: #fffdf8;
+            /* نام‌های قدیمی برای سازگاری */
+            --blue-deep: #1f3a5f;
+            --blue: #41618a;
+            --blue-soft: #a8874f;
+            --blue-pale: #efe9db;
+            --blue-mist: #f7f3ea;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.9;
+            min-height: 100vh;
+        }
+        /* بافت ظریف کاغذ */
+        body::before {
+            content: "";
+            position: fixed; inset: 0;
+            background-image: radial-gradient(circle at 50% 0%, rgba(168,135,79,0.04), transparent 60%);
+            pointer-events: none; z-index: 0;
+        }
+
+        /* نوار بالا */
+        .topbar {
+            text-align: center;
+            padding: 16px;
+            background: var(--cream);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .topbar .logo {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--navy);
+            border: 2px solid var(--gold-soft);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+            color: var(--gold-soft);
+        }
+        .topbar h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px; font-weight: 600;
+            color: var(--navy); letter-spacing: 0.5px;
+        }
+        .topbar .tag { margin-top: 4px; }
+        .topbar .name-fa { display: block; font-size: 15px; color: var(--navy); font-weight: 500; }
+        .topbar .role-fa { display: block; font-size: 12px; color: var(--gray); margin-top: 1px; }
+
+        /* بخش معرفی */
+        .hero {
+            min-height: calc(100vh - 88px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px;
+            transition: min-height 0.5s ease;
+            position: relative; z-index: 1;
+        }
+        .hero.shrink { min-height: auto; padding: 48px 24px 26px; }
+
+        .hero .welcome {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+        .hero h2 {
+            font-size: 46px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--navy);
+            line-height: 1.4;
+        }
+        .hero .sub {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 12px;
+            max-width: 540px;
+        }
+        .hero .sub-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            font-style: italic;
+        }
+        .channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 40px;
+            padding: 11px 24px;
+            background: transparent;
+            border: 1px solid var(--gold-soft);
+            border-radius: 4px;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: inherit;
+            transition: all 0.25s;
+        }
+        .channel-btn:hover {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--cream);
+        }
+        .channel-btn .tg { font-size: 18px; }
+
+        /* جستجو */
+        .search-box {
+            width: 100%;
+            max-width: 560px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 18px 56px 18px 22px;
+            font-size: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-family: inherit;
+            background: var(--cream);
+            transition: all 0.25s;
+            color: var(--ink);
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gold-soft);
+            box-shadow: 0 6px 22px rgba(168,135,79,0.12);
+        }
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 21px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            opacity: 0.45;
+        }
+
+        /* دسته‌ها به‌صورت کارت در صفحه‌ی اول */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 560px;
+            width: 100%;
+        }
+        .cat-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 24px 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        /* نوار رنگی ظریف سمت راست هر کادر */
+        .cat-chip::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 4px;
+            background: var(--c);
+            opacity: 0.85;
+            transition: width 0.3s ease;
+        }
+        .cat-chip:hover {
+            border-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(31,58,95,0.13);
+        }
+        .cat-chip:hover::before { width: 8px; }
+        .cat-chip .chip-mark {
+            flex-shrink: 0;
+            width: 46px; height: 46px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; line-height: 1;
+            color: var(--c);
+            background: var(--cream);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .cat-chip:hover .chip-mark {
+            background: var(--c);
+            color: var(--white);
+        }
+        .cat-chip .chip-body { display: flex; flex-direction: column; }
+        .cat-chip .name {
+            font-size: 17px; font-weight: 500; color: var(--navy);
+            line-height: 1.5;
+        }
+        .cat-chip .num { font-size: 12px; color: var(--gray); margin-top: 2px; }
+
+        /* جدیدترین محتوا */
+        .latest {
+            margin-top: 46px;
+            width: 100%;
+            max-width: 720px;
+        }
+        .latest-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .latest-title .fa { font-family: 'Vazirmatn', sans-serif; font-size: 17px; display:block; }
+        .latest-sub { font-size: 13px; color: var(--gray); margin-bottom: 22px; }
+        .latest-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 14px;
+        }
+        .latest-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: right;
+            text-decoration: none;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .latest-card::before {
+            content: ""; position: absolute;
+            top: 0; right: 0; bottom: 0; width: 3px;
+            background: var(--c);
+        }
+        .latest-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 26px rgba(31,58,95,0.12);
+            border-color: transparent;
+        }
+        .latest-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        .latest-card h5 {
+            font-size: 16px; color: var(--navy);
+            margin-bottom: 4px; font-weight: 500;
+        }
+        .latest-card .lc-cat { font-size: 12px; color: var(--gray); }
+
+        /* نتایج */
+        .results {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.4s ease;
+        }
+        .results.show { opacity: 1; max-height: none; overflow: visible; }
+
+        .results-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--line);
+        }
+        .results-head h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px; font-weight: 600; color: var(--navy);
+        }
+        .results-head .count { font-size: 14px; color: var(--gray); }
+        .back-btn {
+            background: transparent;
+            color: var(--gray);
+            border: 1px solid var(--line);
+            padding: 9px 18px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .back-btn:hover { background: var(--navy); border-color: var(--navy); color: var(--cream); }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 22px;
+        }
+        .card {
+            background: var(--cream);
+            border-radius: 6px;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 34px rgba(31,58,95,0.12);
+            border-color: var(--gold-soft);
+        }
+        .card-top {
+            height: 4px;
+            background: var(--navy);
+        }
+        .card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .card-cat {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 12px;
+            align-self: flex-start;
+            text-transform: uppercase;
+        }
+        .card h4 { font-size: 19px; font-weight: 700; margin-bottom: 6px; color: var(--navy); }
+        .card .fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px; color: var(--gold);
+            direction: ltr; text-align: left;
+            margin-bottom: 14px; line-height: 1.4; font-style: italic;
+        }
+        .card-meta { margin-bottom: 16px; }
+        .card-meta span {
+            display: inline-block;
+            background: var(--paper-warm);
+            color: var(--navy);
+            font-size: 12px;
+            padding: 4px 11px;
+            border-radius: 3px;
+            margin: 3px 3px 3px 0;
+        }
+        .pod-cover {
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--navy);
+        }
+        .pod-cover svg { width: 100%; height: 100%; display: block; }
+        .pod-play {
+            position: absolute;
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: rgba(255,253,248,0.92);
+            color: var(--navy);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; padding-left: 4px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            transition: all 0.25s;
+        }
+        .card-podcast:hover .pod-play {
+            transform: scale(1.12);
+            background: var(--gold);
+            color: var(--white);
+        }
+        .pod-desc {
+            background: var(--paper-warm);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+        .pod-fr {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px; font-style: italic;
+            color: var(--navy); line-height: 1.5;
+            margin-bottom: 6px;
+        }
+        .pod-fa {
+            font-size: 13px; color: var(--ink);
+            line-height: 1.8;
+        }
+        .premium-tag {
+            background: #fff3e0 !important;
+            color: #e08a00 !important;
+        }
+        .card .open {
+            display: block; text-align: center;
+            background: var(--navy);
+            color: var(--cream); padding: 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500; font-size: 14px;
+            margin-top: auto;
+            transition: all 0.25s;
+        }
+        .card .open:hover { background: var(--gold); color: var(--white); }
+
+        .empty {
+            grid-column: 1/-1;
+            text-align: center;
+            color: var(--gray);
+            font-size: 18px;
+            padding: 70px 20px;
+        }
+        .empty .big { font-size: 50px; display: block; margin-bottom: 16px; opacity: 0.5; }
+
+        /* فوتر */
+        .footer {
+            text-align: center;
+            padding: 44px 20px;
+            background: var(--navy);
+            border-top: 3px solid var(--gold-soft);
+            color: var(--paper-warm);
+            font-size: 14px;
+            position: relative; z-index: 1;
+        }
+        .footer strong { color: var(--gold-soft); font-weight: 500; }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 30px; }
+            .hero .sub { font-size: 16px; }
+            .cat-grid { grid-template-columns: 1fr; max-width: 360px; }
+            .cat-chip { padding: 16px 18px; }
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div>
+            <h1>Français avec Hoda</h1>
+            <div class="tag"><span class="name-fa">هدی خدمتی</span><span class="role-fa">مدرس زبان فرانسه</span></div>
+        </div>
+    </div>
+
+    <div class="hero" id="hero">
+        <h2>کتابخانهٔ فرانسهٔ من</h2>
+        <p class="sub-fr" dir="ltr">Ma bibliothèque de français</p>
+        <p class="sub">همه‌چیز اینجاست تا فرانسه برای تو ساده‌تر بشه</p>
+
+        <div class="search-box">
+            <input type="text" id="search" placeholder="جستجو در محتواها..." oninput="onSearch()">
+        </div>
+
+        <a href="https://t.me/TCFHODA" target="_blank" class="channel-btn">
+            <span class="tg">✈</span>
+            <span>کانال تلگرام من</span>
+        </a>
+
+        <div class="cat-grid" id="catGrid"></div>
+
+        <div class="latest" id="latest"></div>
+    </div>
+
+    <div class="results" id="results">
+        <div class="results-head">
+            <div>
+                <h3 id="resultsTitle">همه‌ی محتواها</h3>
+                <div class="count" id="count"></div>
+            </div>
+            <button class="back-btn" onclick="goHome()">⬆ بازگشت به خانه</button>
+        </div>
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="footer">
+        <p>🇫🇷 <strong>Français avec Hoda</strong> — کتابخانه‌ی آموزش زبان فرانسه</p>
+        <p style="margin-top:6px; font-size:12px;">© 2025 — Hoda KHEDMATI</p>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        let activeCat = null;
+
+        function lessonsIn(catId) {
+            return LESSONS.filter(l => l.category === catId).length;
+        }
+
+        // ساخت کارت‌های دسته در صفحه‌ی اول
+        function buildCatGrid() {
+            const el = document.getElementById("catGrid");
+            let html = `
+                <button class="cat-chip" onclick="openCat('all')" style="--c:var(--navy)">
+                    <span class="chip-body">
+                        <span class="name">همهٔ محتواها</span>
+                        <span class="num">${LESSONS.length} محتوا</span>
+                    </span>
+                </button>`;
+            CATEGORIES.forEach(c => {
+                const n = lessonsIn(c.id);
+                html += `
+                <button class="cat-chip" onclick="openCat('${c.id}')" style="--c:${c.color}">
+                    <span class="chip-body">
+                        <span class="name">${c.label}</span>
+                        <span class="num">${n} محتوا</span>
+                    </span>
+                </button>`;
+            });
+            el.innerHTML = html;
+        }
+
+        function catInfo(id) {
+            return CATEGORIES.find(c => c.id === id) || { label: id, icon: "📄", color: "#2e7bb5" };
+        }
+
+        function openCat(catId) {
+            const ci = catInfo(catId);
+            if (ci.link) { window.location.href = ci.link; return; }
+            activeCat = catId;
+            document.getElementById("search").value = "";
+            if (catId === "all") {
+                document.getElementById("resultsTitle").innerHTML = "همه‌ی محتواها";
+            } else {
+                document.getElementById("resultsTitle").innerHTML =
+                    '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
+            }
+            openResults();
+            render();
+        }
+
+        function onSearch() {
+            const q = document.getElementById("search").value.trim();
+            if (q) {
+                activeCat = "all";
+                document.getElementById("resultsTitle").textContent = "نتایج جستجو";
+                openResults();
+                render();
+            } else {
+                goHome();
+            }
+        }
+
+        function openResults() {
+            document.getElementById("results").classList.add("show");
+            document.getElementById("hero").classList.add("shrink");
+            setTimeout(() => {
+                document.getElementById("results").scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 250);
+        }
+
+        function goHome() {
+            activeCat = null;
+            document.getElementById("search").value = "";
+            document.getElementById("results").classList.remove("show");
+            document.getElementById("hero").classList.remove("shrink");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function render() {
+            const q = document.getElementById("search").value.trim().toLowerCase();
+            const grid = document.getElementById("grid");
+
+            let filtered = LESSONS.filter(l => {
+                const matchCat = !activeCat || activeCat === "all" || l.category === activeCat;
+                const matchSearch = !q ||
+                    (l.title && l.title.toLowerCase().includes(q)) ||
+                    (l.titleFr && l.titleFr.toLowerCase().includes(q)) ||
+                    (l.tags && l.tags.join(" ").toLowerCase().includes(q));
+                return matchCat && matchSearch;
+            });
+
+            document.getElementById("count").textContent = filtered.length + " محتوا";
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="empty"><span class="big">📚</span>هنوز محتوایی در این بخش نیست<br><span style="font-size:14px">به‌زودی اضافه می‌شود</span></div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(l => {
+                const c = catInfo(l.category);
+                const isPodcast = l.category === "podcast" || l.link;
+                // مقصد لینک: پادکست → لینک خارجی، بقیه → فایل HTML
+                const href = l.link || l.file || "#";
+                const target = l.link ? ' target="_blank" rel="noopener"' : "";
+                const btnText = isPodcast ? "شنیدن پادکست ♪" : "باز کردن ←";
+
+                // بخش توضیح دوزبانه (مخصوص پادکست)
+                let descBlock = "";
+                if (l.descFr || l.descFa) {
+                    descBlock = `
+                        <div class="pod-desc">
+                            ${l.descFr ? `<div class="pod-fr" dir="ltr">${l.descFr}</div>` : ""}
+                            ${l.descFa ? `<div class="pod-fa">${l.descFa}</div>` : ""}
+                        </div>`;
+                }
+
+                const coverBlock = (isPodcast && l.cover)
+                    ? `<div class="pod-cover">${l.cover}<span class="pod-play">▶</span></div>`
+                    : `<div class="card-top" style="background:${c.color}"></div>`;
+                return `
+                <div class="card${isPodcast ? ' card-podcast' : ''}">
+                    ${coverBlock}
+                    <div class="card-body">
+                        <span class="card-cat"><span style="color:${c.color}">${c.icon}</span> ${c.label}</span>
+                        <h4>${l.title || ""}</h4>
+                        ${l.titleFr ? `<div class="fr">${l.titleFr}</div>` : ""}
+                        ${descBlock}
+                        <div class="card-meta">
+                            ${l.level ? `<span>${l.level}</span>` : ""}
+                            ${(l.tags||[]).map(t => `<span>${t}</span>`).join("")}
+                            ${l.premium ? `<span class="premium-tag">⭐ ویژه</span>` : ""}
+                        </div>
+                        <a href="${href}"${target} class="open">${btnText}</a>
+                    </div>
+                </div>`;
+            }).join("");
+        }
+
+        function buildLatest() {
+            const box = document.getElementById("latest");
+            if (!LESSONS.length) { box.innerHTML = ""; return; }
+            // جدیدترین = آخرین مواردی که به لیست اضافه شده‌اند (تا ۳ مورد)
+            const latest = LESSONS.slice(-3).reverse();
+            let html = `
+                <div class="latest-title">Derniers ajouts<span class="fa">جدیدترین محتواها</span></div>
+                <div class="latest-sub">تازه‌ترین چیزهایی که به کتابخانه اضافه شده</div>
+                <div class="latest-row">`;
+            latest.forEach(l => {
+                const c = catInfo(l.category);
+                html += `
+                    <a href="${l.file}" class="latest-card" style="--c:${c.color}">
+                        <span class="latest-badge">${l.premium ? '⭐ ویژه' : 'تازه'}</span>
+                        <h5>${l.title || ""}</h5>
+                        <span class="lc-cat">${c.label}</span>
+                    </a>`;
+            });
+            html += `</div>`;
+            box.innerHTML = html;
+        }
+
+        buildLatest();
+        buildCatGrid();
+    </script>
+</body>
+</html>
