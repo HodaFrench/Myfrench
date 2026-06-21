@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le pouvoir des habitudes — Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--accent:#b0506f;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.95;padding:20px 16px 70px}
+.wrap{max-width:820px;margin:0 auto}
+.topbar{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.topbar a{color:var(--accent);text-decoration:none;font-size:13.5px;border:1px solid var(--line);background:var(--cream);padding:9px 16px;border-radius:9px;transition:all .2s}
+.topbar a:hover{background:var(--accent);color:#fff}
+.art-header{background:linear-gradient(135deg,#b0506f,#8a2040);color:#fff;padding:30px 28px;border-radius:20px;margin-bottom:20px;box-shadow:0 14px 34px rgba(176,80,111,.4);position:relative;overflow:hidden}
+.art-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%}
+.art-level{font-size:11.5px;color:rgba(255,255,255,.7);letter-spacing:1.5px;margin-bottom:10px}
+.art-title{font-family:'Roboto',serif;font-size:22px;font-weight:700;line-height:1.35;direction:ltr;text-align:left}
+.art-meta{font-size:12px;color:rgba(255,255,255,.65);margin-top:12px}
+.art-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;padding:12px 16px;background:var(--white);border:1px solid var(--line);border-radius:12px;font-size:12.5px}
+.lg{display:flex;align-items:center;gap:6px}
+.lg-dot{width:26px;height:12px;border-radius:3px;flex-shrink:0}
+.text-block{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 20px;margin-bottom:16px}
+.para-fr{font-family:'Roboto',serif;font-size:16.5px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;padding:12px 16px;background:var(--cream);border-radius:10px;border-right:4px solid #b0506f}
+.hw{background:rgba(176,80,111,.12);color:#8a2040;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px solid rgba(176,80,111,.4);transition:all .2s}
+.hw:hover,.hw.open{background:rgba(176,80,111,.22)}
+.hs{background:rgba(46,123,181,.11);color:#1a5580;border-radius:4px;padding:1px 4px;cursor:pointer;position:relative;font-weight:500;border-bottom:2px dashed rgba(46,123,181,.5);transition:all .2s}
+.hs:hover,.hs.open{background:rgba(46,123,181,.22)}
+.hs::before{content:"⚙ ";font-size:10px;opacity:.6}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .25s;pointer-events:none}
+.hw.open .pop,.hs.open .pop{opacity:1;visibility:visible}
+.nav-bar{display:flex;gap:12px;justify-content:space-between;margin-top:24px;padding-top:16px;border-top:1px dashed var(--line)}
+.nav-bar a{color:var(--navy);text-decoration:none;font-size:13px;border:1px solid var(--line);background:var(--cream);padding:8px 16px;border-radius:9px;transition:all .2s}
+.nav-bar a:hover{background:var(--navy);color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a href="index.html">⌂ Français avec Hoda</a>
+    <a href="index.html">← مسیر یادگیری</a>
+  </div>
+  <div class="art-header">
+    <div class="art-level">✍️ مینی‌آرتیکل · B2 · 🔄</div>
+    <div class="art-title">Le pouvoir des habitudes</div>
+    <div class="art-meta">general</div>
+  </div>
+  <div class="art-legend">
+    <div class="lg"><span class="lg-dot" style="background:rgba(176,80,111,.35)"></span><span><b style="color:#8a2040">واژه / اصطلاح</b></span></div>
+    <div class="lg"><span class="lg-dot" style="background:rgba(46,123,181,.3);border:1px dashed #2e7bb5"></span><span><b style="color:#1a5580">⚙ ساختار گرامری</b></span></div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">On <span class="hw" onclick="t(this)">estime<span class="pop">تخمین می‌زند</span></span> que près de 45 % de nos actions quotidiennes sont des <span class="hw" onclick="t(this)">habitudes<span class="pop">عادت‌ها</span></span> — des comportements <span class="hw" onclick="t(this)">automatiques<span class="pop">خودکار</span></span> que nous <span class="hw" onclick="t(this)">exécutons<span class="pop">اجرا می‌کنیم</span></span> sans vraiment y penser. Se brosser les dents, prendre son café le matin, vérifier son téléphone en se réveillant : tout cela se fait <span class="hw" onclick="t(this)">mécaniquement<span class="pop">مکانیکی / بدون فکر</span></span>. La question est : est-ce une bonne chose ou une mauvaise chose ?</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Le cerveau humain est un organe <span class="hw" onclick="t(this)">extraordinairement<span class="pop">به‌طور فوق‌العاده</span></span> efficace. Pour <span class="hw" onclick="t(this)">économiser<span class="pop">صرفه‌جویی کردن</span></span> de l'énergie, il <span class="hw" onclick="t(this)">automatise<span class="pop">خودکار می‌کند</span></span> les tâches <span class="hw" onclick="t(this)">répétitives<span class="pop">تکراری</span></span>. Ce processus, qu'on appelle la <span class="hw" onclick="t(this)">«boucle de l'habitude»<span class="pop">حلقهٔ عادت</span></span>, fonctionne en trois étapes : un <span class="hw" onclick="t(this)">déclencheur<span class="pop">محرک / عامل</span></span>, une <span class="hw" onclick="t(this)">routine<span class="pop">روتین</span></span>, et une <span class="hw" onclick="t(this)">récompense<span class="pop">پاداش</span></span>. Par exemple : tu vois ton téléphone (déclencheur) → tu le prends et vérifies les notifications (routine) → tu ressens une <span class="hw" onclick="t(this)">légère satisfaction<span class="pop">رضایت اندک</span></span> (récompense).</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr"><span class="hs" onclick="t(this)">Ce qui rend les habitudes si puissantes, c'est aussi ce qui les rend si difficiles à changer<span class="pop">ساختار c'est... que... — تأکید با relative</span></span>. Quand une habitude est <span class="hw" onclick="t(this)">ancrée<span class="pop">ریشه‌دوانده / رسوخ کرده</span></span> dans notre cerveau, le circuit <span class="hw" onclick="t(this)">neuronal<span class="pop">عصبی</span></span> correspondant devient très <span class="hw" onclick="t(this)">solide<span class="pop">محکم</span></span>. Les <span class="hw" onclick="t(this)">neuroscientifiques<span class="pop">عصب‌شناسان</span></span> disent que les vieilles habitudes ne disparaissent jamais vraiment — elles restent <span class="hw" onclick="t(this)">en sommeil<span class="pop">در خواب / غیرفعال</span></span>, prêtes à <span class="hw" onclick="t(this)">se réactiver<span class="pop">دوباره فعال شدن</span></span> au moindre <span class="hw" onclick="t(this)">stimulus<span class="pop">محرک</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Comment alors créer de nouvelles habitudes et <span class="hw" onclick="t(this)">se débarrasser<span class="pop">خلاص شدن از</span></span> des mauvaises ? Les recherches montrent qu'il ne faut pas essayer de <span class="hw" onclick="t(this)">supprimer<span class="pop">حذف کردن</span></span> une habitude, mais la <span class="hw" onclick="t(this)">remplacer<span class="pop">جایگزین کردن</span></span>. Garder le même déclencheur et la même récompense, mais changer la routine. Si tu as l'habitude de manger du sucre quand tu es <span class="hw" onclick="t(this)">stressé<span class="pop">تحت استرس</span></span> (déclencheur : stress → routine : manger du chocolat → récompense : soulagement), essaie de <span class="hw" onclick="t(this)">substituer<span class="pop">جایگزین کردن</span></span> le chocolat par une promenade courte.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr"><span class="hw" onclick="t(this)">Par ailleurs<span class="pop">علاوه بر این</span></span>, la recherche sur les habitudes a mis en lumière un concept important : les « <span class="hw" onclick="t(this)">habitudes clés<span class="pop">عادت‌های کلیدی</span></span> » (keystone habits en anglais). Ce sont des habitudes qui <span class="hw" onclick="t(this)">entraînent<span class="pop">به‌دنبال خود می‌کشانند</span></span> d'autres habitudes positives. Par exemple, les personnes qui commencent à faire de l'exercice régulièrement <span class="hw" onclick="t(this)">tendent à<span class="pop">تمایل دارند به</span></span> mieux manger, à mieux dormir, et même à être plus <span class="hw" onclick="t(this)">productives<span class="pop">مولد / کارآمد</span></span> au travail. Une seule habitude peut <span class="hw" onclick="t(this)">déclencher<span class="pop">راه‌اندازی کردن</span></span> tout un <span class="hw" onclick="t(this)">effet domino<span class="pop">اثر دومینو</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">Pour <span class="hw" onclick="t(this)">modifier<span class="pop">تغییر دادن</span></span> une habitude, il est aussi crucial de comprendre son <span class="hw" onclick="t(this)">environnement<span class="pop">محیط</span></span>. Notre <span class="hw" onclick="t(this)">entourage<span class="pop">محیط اطراف / اطرافیان</span></span> et notre espace physique <span class="hw" onclick="t(this)">influencent<span class="pop">تأثیر می‌گذارند</span></span> énormément nos comportements. Si tu veux lire plus, <span class="hw" onclick="t(this)">place<span class="pop">قرار بده</span></span> un livre sur ta table de nuit. Si tu veux moins utiliser ton téléphone le soir, <span class="hw" onclick="t(this)">charge-le<span class="pop">شارجش کن</span></span> dans une autre pièce. Modifier l'environnement est souvent plus <span class="hw" onclick="t(this)">efficace<span class="pop">مؤثر</span></span> que <span class="hw" onclick="t(this)">faire appel à<span class="pop">توسل جستن به</span></span> sa seule <span class="hw" onclick="t(this)">volonté<span class="pop">اراده</span></span>.</div>
+  </div>
+  <div class="text-block">
+    <div class="para-fr">En <span class="hw" onclick="t(this)">définitive<span class="pop">در نهایت / به طور قطع</span></span>, nous ne sommes pas les <span class="hw" onclick="t(this)">esclaves<span class="pop">بردگان</span></span> de nos habitudes — nous en sommes les <span class="hw" onclick="t(this)">créateurs<span class="pop">سازندگان</span></span>. Prendre conscience de ses automatismes, comprendre leur <span class="hw" onclick="t(this)">mécanique<span class="pop">مکانیزم</span></span>, et agir intentionnellement pour les <span class="hw" onclick="t(this)">façonner<span class="pop">شکل دادن</span></span> : c'est là que réside notre <span class="hw" onclick="t(this)">liberté<span class="pop">آزادی</span></span>. <span class="hs" onclick="t(this)">Comme le disait Aristote : «Nous sommes ce que nous faisons de manière répétée.<span class="pop">نقل قول مشهور ارسطو</span></span> L'excellence n'est donc pas un acte, mais une <span class="hw" onclick="t(this)">habitude<span class="pop">عادت</span></span>. »</div>
+  </div>
+
+  <div class="nav-bar"><a href="MINI_001.html">← قبلی</a><a href="MINI_003.html">بعدی →</a></div>
+</div>
+<script>
+function t(el){
+  const w=el.classList.contains("open");
+  document.querySelectorAll(".hw.open,.hs.open").forEach(e=>{e.classList.remove("open");if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
+}
+</script>
+</body>
+</html>
