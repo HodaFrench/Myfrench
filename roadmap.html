@@ -3,217 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>مسیر یادگیری — Français avec Hoda</title>
+<title>Français avec Hoda — مسیر یادگیری</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Estedad',system-ui,sans-serif;background:#f8f6f1;color:#1a1a1a;min-height:100vh}
-.top{text-align:center;padding:3rem 1rem 1rem}
-.top a{font-size:13px;color:#999;text-decoration:none;display:inline-block;margin-bottom:1.5rem}
-.top a:hover{color:#6c63ff}
-.top h1{font-size:22px;font-weight:600;color:#1a1a1a;letter-spacing:.3px}
-.top p{font-size:11px;color:#aaa;margin-top:6px;letter-spacing:1.5px}
+body{font-family:'Estedad',sans-serif;background:#f7f3ea;min-height:100vh;direction:rtl;color:#1f3a5f}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.07) 31px,rgba(65,97,138,0.07) 32px)}
+.page{position:relative;z-index:1;max-width:430px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.top{text-align:center;padding:.5rem 0 1rem}
+.top .back{display:inline-block;font-size:12px;color:#a8874f;text-decoration:none;margin-bottom:1rem}
+.top .back:hover{color:#1f3a5f}
+.top h1{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;color:#1f3a5f;letter-spacing:.5px}
+.top p{font-size:11px;color:#a8874f;margin-top:7px;letter-spacing:2px}
 
-/* ROAD */
-.road-wrap{position:relative;max-width:480px;margin:0 auto;padding:1rem 1rem 3rem}
-svg.road{display:block;width:100%;overflow:visible}
+/* ROAD + STATIONS */
+.road-wrap{position:relative;max-width:380px;margin:1rem auto 0}
+svg.road{width:100%;display:block}
+.stations{position:absolute;inset:0}
+
+.node-card{position:absolute;transform:translateY(-50%);
+  background:#fbf8f1;border:1.5px solid #d9ceb8;border-radius:12px;
+  padding:.5rem .55rem;cursor:pointer;text-align:center;
+  box-shadow:0 4px 14px rgba(31,58,95,.08);transition:transform .15s,box-shadow .15s}
+.node-card:hover{transform:translateY(-50%) scale(1.04);box-shadow:0 8px 20px rgba(31,58,95,.16)}
+.nc-title{font-size:13px;font-weight:600;line-height:1.35}
+.nc-count{font-size:10px;color:#a8874f;margin-top:3px;line-height:1.3}
+
+.milestone{position:absolute;left:50%;transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-radius:50%;flex-shrink:0;box-shadow:0 4px 12px rgba(31,58,95,.18)}
+.ms-main{width:56px;height:56px;background:#1f3a5f;color:#f7f3ea;font-size:11px;font-weight:600}
+.ms-mid{width:52px;height:52px;background:#fbf8f1;border:2.5px solid #1f3a5f;color:#1f3a5f;font-size:12px;font-weight:700}
+.ms-b2{width:52px;height:52px;background:#fbf8f1;border:2.5px solid #a8874f;color:#a8874f;font-size:12px;font-weight:700}
+.ms-tcf{width:56px;height:56px;background:#1f3a5f;color:#f7f3ea;font-size:11px;font-weight:600}
+.ms-end{width:56px;height:56px;background:#a8874f;color:#f7f3ea;font-size:18px}
+.ms-label{font-size:9px;margin-top:2px;opacity:.8}
 
 /* MODAL */
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:100;align-items:center;justify-content:center;padding:1rem}
+.overlay{display:none;position:fixed;inset:0;background:rgba(31,58,95,.3);z-index:200;align-items:center;justify-content:center;padding:1rem}
 .overlay.open{display:flex}
-.modal{background:#fff;border-radius:20px;width:100%;max-width:440px;max-height:80vh;overflow:hidden;display:flex;flex-direction:column}
-.modal-head{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid #f0ece4;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.modal-head-title{font-size:16px;font-weight:600;color:#1a1a1a}
-.modal-head-sub{font-size:12px;color:#aaa;margin-top:3px}
-.modal-close{width:32px;height:32px;border-radius:50%;border:none;background:#f5f2ec;cursor:pointer;font-size:16px;color:#666;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.modal-body{overflow-y:auto;padding:1rem 1.5rem 1.5rem}
-.item{padding:.7rem 0;border-bottom:1px solid #f5f2ec;cursor:pointer;display:flex;align-items:flex-start;gap:.75rem;text-decoration:none;transition:opacity .15s}
+.modal{background:#f7f3ea;border-radius:18px;width:100%;max-width:420px;max-height:84vh;overflow:hidden;display:flex;flex-direction:column;border:1px solid #d9ceb8}
+.mhead{padding:1.2rem 1.4rem 1rem;border-bottom:1px solid #e8e0ce;display:flex;align-items:center;justify-content:space-between}
+.mtitle{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600}
+.mcount{font-size:11px;color:#a8874f;margin-top:3px}
+.mclose{width:30px;height:30px;border-radius:50%;border:1px solid #d9ceb8;background:#efe9db;cursor:pointer;font-size:14px;color:#41618a;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mbody{overflow-y:auto;padding:1rem 1.4rem 1.5rem}
+.item{display:flex;align-items:flex-start;gap:.7rem;padding:.65rem 0;border-bottom:1px solid #efe9db;text-decoration:none;transition:opacity .15s}
 .item:last-child{border-bottom:none}
-.item:hover{opacity:.75}
-.item-icon{font-size:18px;flex-shrink:0;margin-top:1px}
-.item-body{}
-.item-title{font-size:13px;font-weight:500;color:#1a1a1a;line-height:1.4}
-.item-meta{font-size:11px;color:#aaa;margin-top:2px}
-.badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;margin-top:4px}
+.item:hover{opacity:.65}
+.iico{font-size:16px;flex-shrink:0;margin-top:2px;width:22px;text-align:center}
+.ititle{font-size:13px;color:#1f3a5f;line-height:1.45;font-weight:500}
+.imeta{font-size:11px;color:#a8874f;margin-top:2px}
+.empty{text-align:center;padding:2rem;font-size:13px;color:#a8874f}
 </style>
 </head>
 <body>
-
+<div class="page">
 <div class="top">
-  <a href="index.html">← کتابخانه</a>
+  <a href="index.html" class="back">← کتابخانه</a>
   <h1>Français avec Hoda</h1>
   <p>مسیر یادگیری · A1 تا TCF Canada</p>
 </div>
 
 <div class="road-wrap">
-<svg class="road" viewBox="0 0 360 960" role="img" aria-label="نقشه یادگیری فرانسه">
-
-<!-- road fill -->
-<path d="M180 30 L180 115 Q255 115 255 185 L255 310 Q255 375 180 375 Q105 375 105 445 L105 570 Q105 635 180 635 Q255 635 255 705 L255 840 Q255 900 180 900" stroke="#e2ddd5" stroke-width="22" stroke-linecap="round" fill="none"/>
-<!-- center dashes -->
-<path d="M180 30 L180 115 Q255 115 255 185 L255 310 Q255 375 180 375 Q105 375 105 445 L105 570 Q105 635 180 635 Q255 635 255 705 L255 840 Q255 900 180 900" stroke="#fff" stroke-width="2" stroke-dasharray="8 7" stroke-linecap="round" fill="none" opacity=".85"/>
-
-<!-- foliage -->
-<g opacity=".38">
-  <ellipse cx="44" cy="152" rx="20" ry="11" fill="#a8cc90" transform="rotate(-18 44 152)"/>
-  <ellipse cx="28" cy="145" rx="14" ry="8" fill="#88bb6a" transform="rotate(8 28 145)"/>
-  <ellipse cx="328" cy="228" rx="18" ry="10" fill="#a8cc90" transform="rotate(14 328 228)"/>
-  <ellipse cx="342" cy="238" rx="12" ry="7" fill="#88bb6a" transform="rotate(-8 342 238)"/>
-  <ellipse cx="36" cy="402" rx="18" ry="10" fill="#a8cc90" transform="rotate(-14 36 402)"/>
-  <ellipse cx="22" cy="412" rx="12" ry="7" fill="#88bb6a" transform="rotate(6 22 412)"/>
-  <ellipse cx="330" cy="507" rx="18" ry="10" fill="#a8cc90" transform="rotate(12 330 507)"/>
-  <ellipse cx="344" cy="498" rx="13" ry="7" fill="#88bb6a" transform="rotate(-6 344 498)"/>
-  <ellipse cx="36" cy="660" rx="17" ry="9" fill="#a8cc90" transform="rotate(-10 36 660)"/>
-  <ellipse cx="336" cy="775" rx="19" ry="10" fill="#a8cc90" transform="rotate(16 336 775)"/>
-  <ellipse cx="350" cy="785" rx="12" ry="7" fill="#88bb6a" transform="rotate(-4 350 785)"/>
-</g>
-
-<!-- ===== MILESTONES ===== -->
-<!-- START -->
-<circle cx="180" cy="30" r="16" fill="#6c63ff"/>
-<text x="180" y="26" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="600" fill="#fff" font-family="Estedad,sans-serif">شروع</text>
-<text x="180" y="38" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)" font-family="Estedad,sans-serif">A1</text>
-
-<!-- A2→B1 node -->
-<circle cx="255" cy="185" r="20" fill="#fff" stroke="#6c63ff" stroke-width="2"/>
-<text x="255" y="182" text-anchor="middle" font-size="11" font-weight="600" fill="#6c63ff" font-family="Estedad,sans-serif">B1</text>
-<text x="255" y="196" text-anchor="middle" font-size="9" fill="#aaa" font-family="Estedad,sans-serif">متوسط</text>
-
-<!-- B2 node -->
-<circle cx="180" cy="375" r="20" fill="#fff" stroke="#f97316" stroke-width="2"/>
-<text x="180" y="372" text-anchor="middle" font-size="11" font-weight="600" fill="#f97316" font-family="Estedad,sans-serif">B2</text>
-<text x="180" y="386" text-anchor="middle" font-size="9" fill="#aaa" font-family="Estedad,sans-serif">پیشرفته</text>
-
-<!-- TCF node -->
-<circle cx="105" cy="445" r="22" fill="#f97316"/>
-<text x="105" y="441" text-anchor="middle" font-size="11" font-weight="600" fill="#fff" font-family="Estedad,sans-serif">TCF</text>
-<text x="105" y="454" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.85)" font-family="Estedad,sans-serif">Canada</text>
-
-<!-- End -->
-<circle cx="180" cy="900" r="22" fill="#10b981"/>
-<text x="180" y="896" text-anchor="middle" font-size="14" fill="#fff" font-family="Estedad,sans-serif">✈</text>
-<text x="180" y="910" text-anchor="middle" font-size="8" fill="rgba(255,255,255,.9)" font-family="Estedad,sans-serif">Canada</text>
-
-<!-- ===== FLOATING LABELS — clickable ===== -->
-
-<!-- گرامر -->
-<g class="node" onclick="openCat('grammar')" style="cursor:pointer">
-  <text x="152" y="70" text-anchor="end" font-size="14" font-weight="600" fill="#6c63ff" font-family="Estedad,sans-serif">گرامر</text>
-  <text x="152" y="86" text-anchor="end" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۳۳ درس · A1 تا C1</text>
-  <line x1="154" y1="74" x2="168" y2="74" stroke="#6c63ff" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- واژگان -->
-<g class="node" onclick="openCat('vocab')" style="cursor:pointer">
-  <text x="208" y="70" text-anchor="start" font-size="14" font-weight="600" fill="#06b6d4" font-family="Estedad,sans-serif">واژگان</text>
-  <text x="208" y="86" text-anchor="start" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۱۵ مجموعه</text>
-  <line x1="206" y1="74" x2="192" y2="74" stroke="#06b6d4" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- مینی‌آرتیکل -->
-<g class="node" onclick="openCat('miniarticle')" style="cursor:pointer">
-  <text x="238" y="240" text-anchor="end" font-size="14" font-weight="600" fill="#ec4899" font-family="Estedad,sans-serif">مینی‌آرتیکل</text>
-  <text x="238" y="256" text-anchor="end" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۴۱ متن با هایلایت</text>
-  <line x1="240" y1="244" x2="254" y2="244" stroke="#ec4899" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- InnerFrench -->
-<g class="node" onclick="openCat('innerfrench')" style="cursor:pointer">
-  <text x="272" y="240" text-anchor="start" font-size="14" font-weight="600" fill="#8b5cf6" font-family="Estedad,sans-serif">InnerFrench</text>
-  <text x="272" y="256" text-anchor="start" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۷ اپیزود پادکست</text>
-  <line x1="270" y1="244" x2="256" y2="244" stroke="#8b5cf6" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- آرتیکل -->
-<g class="node" onclick="openCat('article')" style="cursor:pointer">
-  <text x="88" y="500" text-anchor="end" font-size="14" font-weight="600" fill="#10b981" font-family="Estedad,sans-serif">آرتیکل</text>
-  <text x="88" y="516" text-anchor="end" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۶ مقاله دوزبانه</text>
-  <line x1="90" y1="504" x2="104" y2="504" stroke="#10b981" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- پادکست -->
-<g class="node" onclick="openCat('podcast')" style="cursor:pointer">
-  <text x="122" y="500" text-anchor="start" font-size="14" font-weight="600" fill="#f97316" font-family="Estedad,sans-serif">پادکست</text>
-  <text x="122" y="516" text-anchor="start" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۸ اپیزود فرانسوی</text>
-  <line x1="120" y1="504" x2="106" y2="504" stroke="#f97316" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- آمادگی TCF -->
-<g class="node" onclick="openCat('tcf')" style="cursor:pointer">
-  <text x="238" y="755" text-anchor="end" font-size="14" font-weight="600" fill="#f97316" font-family="Estedad,sans-serif">آمادگی TCF</text>
-  <text x="238" y="771" text-anchor="end" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۶ محتوا · مهاجرت کانادا</text>
-  <line x1="240" y1="759" x2="254" y2="759" stroke="#f97316" stroke-width="1" opacity=".5"/>
-</g>
-
-<!-- فرهنگ -->
-<g class="node" onclick="openCat('culture')" style="cursor:pointer">
-  <text x="272" y="755" text-anchor="start" font-size="14" font-weight="600" fill="#6c63ff" font-family="Estedad,sans-serif">فرهنگ</text>
-  <text x="272" y="771" text-anchor="start" font-size="10" fill="#aaa" font-family="Estedad,sans-serif">۳ محتوا · هنر زندگی فرانسوی</text>
-  <line x1="270" y1="759" x2="256" y2="759" stroke="#6c63ff" stroke-width="1" opacity=".5"/>
-</g>
-
+<svg class="road" viewBox="0 0 360 1480" role="img" aria-label="نقشه یادگیری فرانسه">
+  <g opacity=".4"><ellipse cx="44" cy="360" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 44 360)"/><ellipse cx="30" cy="354" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 30 354)"/><ellipse cx="330" cy="560" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 330 560)"/><ellipse cx="316" cy="554" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 316 554)"/><ellipse cx="40" cy="820" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 40 820)"/><ellipse cx="26" cy="814" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 26 814)"/><ellipse cx="326" cy="1010" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 326 1010)"/><ellipse cx="312" cy="1004" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 312 1004)"/><ellipse cx="44" cy="1180" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 44 1180)"/><ellipse cx="30" cy="1174" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 30 1174)"/><ellipse cx="330" cy="1300" rx="20" ry="11" fill="#a8cc90" transform="rotate(-16 330 1300)"/><ellipse cx="316" cy="1294" rx="13" ry="8" fill="#88bb6a" transform="rotate(8 316 1294)"/></g>
+  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#e2ddd5" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#fff" stroke-width="2" stroke-dasharray="8 8" stroke-linecap="round" fill="none" opacity=".85"/>
 </svg>
+<div class="stations">
+<div class="milestone ms-main" style="top:3.716%;"><span>شروع</span><span class="ms-label">A1</span></div>
+<div class="node-card" style="top:10.135%;left:59.72%;width:36.11%;border-color:#1f3a5f" onclick="openCat('grammar')"><div class="nc-title" style="color:#1f3a5f">گرامر</div><div class="nc-count">۳۳ درس · A1 تا C1</div></div>
+<div class="node-card" style="top:16.554%;left:4.17%;width:36.11%;border-color:#22618f" onclick="openCat('vocab')"><div class="nc-title" style="color:#22618f">واژگان</div><div class="nc-count">۱۵ مجموعه</div></div>
+<div class="node-card" style="top:22.973%;left:59.72%;width:36.11%;border-color:#7a5ba8" onclick="openCat('roulette')"><div class="nc-title" style="color:#7a5ba8">گردونه موضوع</div></div>
+<div class="node-card" style="top:29.392%;left:4.17%;width:36.11%;border-color:#c77d3a" onclick="openCat('phrases')"><div class="nc-title" style="color:#c77d3a">جملات کاربردی</div></div>
+<div class="milestone ms-mid" style="top:35.811%;"><span>B1</span><span class="ms-label" style="color:#a8874f">متوسط</span></div>
+<div class="node-card" style="top:42.23%;left:59.72%;width:36.11%;border-color:#b0506f" onclick="openCat('miniarticle')"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div><div class="nc-count">۴۱ متن</div></div>
+<div class="node-card" style="top:48.649%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="openCat('innerfrench')"><div class="nc-title" style="color:#5a3b88">InnerFrench</div><div class="nc-count">۷ اپیزود</div></div>
+<div class="milestone ms-b2" style="top:55.068%;"><span>B2</span><span class="ms-label" style="color:#888">پیشرفته</span></div>
+<div class="node-card" style="top:61.486%;left:59.72%;width:36.11%;border-color:#2e8b6b" onclick="openCat('article')"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div><div class="nc-count">۶ مقاله دوزبانه</div></div>
+<div class="node-card" style="top:67.905%;left:4.17%;width:36.11%;border-color:#c4502d" onclick="openCat('podcast')"><div class="nc-title" style="color:#c4502d">پادکست</div><div class="nc-count">۸ اپیزود</div></div>
+<div class="milestone ms-tcf" style="top:74.324%;"><span>TCF</span><span class="ms-label">Canada</span></div>
+<div class="node-card" style="top:80.743%;left:59.72%;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div><div class="nc-count">۳ محتوا</div></div>
+<div class="node-card" style="top:87.162%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div><div class="nc-count">۶ محتوا · کانادا</div></div>
+<div class="milestone ms-end" style="top:93.581%;"><span>✈</span><span class="ms-label">Canada</span></div>
+</div>
+</div>
 </div>
 
 <!-- MODAL -->
 <div class="overlay" id="overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal">
-    <div class="modal-head">
-      <div>
-        <div class="modal-head-title" id="modal-title"></div>
-        <div class="modal-head-sub" id="modal-sub"></div>
-      </div>
-      <button class="modal-close" onclick="closeModal()">✕</button>
+  <div class="modal">
+    <div class="mhead">
+      <div><div class="mtitle" id="mtitle"></div><div class="mcount" id="mcount"></div></div>
+      <button class="mclose" onclick="closeModal()">✕</button>
     </div>
-    <div class="modal-body" id="modal-body"></div>
+    <div class="mbody" id="mbody"></div>
   </div>
 </div>
 
+<script src="data.js"></script>
 <script>
-const _DATA = {"lessons":[{"f":"VOCAB_mots_difficiles.html","t":"📚 ۱۰۰ کلمهٔ دشوار فرانسه","c":"vocab","lv":"B2–C1","s":"۱۰۰ کلمهٔ سطح B2–C1 با تعریف فرانسوی، ترجمهٔ فارسی و ۲ مثال هر کدام. قابل جستجو و فیلتر بر اساس سطح و موضوع (احساس، اخلاق، ذهن، اجتماع...)."},{"f":"LECON_mind_maps_temps.html","t":"🗺️ Mind Maps — زمان‌های فرانسه","c":"grammar","lv":"A1–C1","s":"همهٔ ۶ زمان اصلی با مثال‌های A1 تا C1: Présent / PC / Imparfait / Futur / Conditionnel / Subjonctif — هر کدام با فرمول، سیگنال‌ها، ۵ سطح مثال با ترجمه و نکتهٔ کلیدی."},{"f":"VOCAB_cuisine.html","t":"واژگان: ابزار آشپزخانه","c":"vocab","lv":"A1–B1","s":"۵۰+ ابزار آشپزخانه در ۶ دسته: ظرف‌ها / قابلمه و تابه / قاشق و چنگال / ابزار آماده‌سازی / قنادی / برقی. هر کدام با مثال روزمره."},{"f":"CULTURE_desserts_francais.html","t":"🍰 دسرهای فرانسوی","c":"culture","lv":"B1–B2","s":"دسرهای مشهور فرانسوی با هایلایت دوزبانه: crème brûlée، tarte Tatin، mille-feuille، éclair. چرا مشهورند؟ + جهانی‌شدن (ژاپن، کره، کانادا...)"},{"f":"CULTURE_macaron.html","t":"🍬 Le Macaron — تاریخ و هنر","c":"culture","lv":"B1–B2","s":"پانصد سال تاریخ ماکارون: از کاترین دو مدیچی تا Pierre Hermé. Ladurée vs Hermé. علم ماکارون. دوزبانه با هایلایت‌های کلیکی."},{"f":"CULTURE_art_de_vivre.html","t":"L'Art de Vivre — هنر زندگی فرانسوی","c":"culture","lv":"B1–B2","s":"هنر زندگی فرانسوی: سفره و غذا، مد پاریسی، فرهنگ کافه، جشن‌های ملی. با واژگان، نقل‌قول‌ها و حقایق جذاب."},{"f":"LECON_mind_maps_temps.html","t":"Mind Maps — زمان‌های فرانسه","c":"grammar","lv":"A1–B2","s":"۶ زمان اصلی فرانسه در یک نگاه: Présent / Passé composé / Imparfait / Futur / Conditionnel / Subjonctif — هر کدام با فرمول، سیگنال‌ها، مثال و جدول مقایسه."},{"f":"LECON_h_aspire_muet.html","t":"درسنامه: H aspiré یا H muet؟","c":"grammar","lv":"A2–B2","s":"تفاوت H muet (l'homme → الیزیون) و H aspiré (le hibou → بدون الیزیون) + جدول ۲۵ کلمه + ترفندهای حفظ + آزمون ۵ سؤالی."},{"f":"LECON_aimer_adorer.html","t":"درسنامه: aimer, adorer, détester","c":"grammar","lv":"A1–B1","s":"ساختار دقیق این افعال احساسی: + le/la/les یا + مصدر (بدون حرف اضافه)، درجه‌بندی شدت، préférer A à B، préférer que + subjonctif. آزمون ۵ سؤالی."},{"f":"LECON_verbes_prepositions.html","t":"درسنامه: فعل‌ها + à یا de","c":"grammar","lv":"A2–B2","s":"۳۰+ فعل با à یا de — دسته‌بندی مفهومی، مثال کامل برای هر کدام، فعل + اسم (parler à vs parler de)، jouer à vs jouer de. آزمون ۸ سؤالی."},{"f":"VOCAB_routine.html","t":"واژگان: روتین روزانه","c":"vocab","lv":"A2","s":"۵۰+ واژهٔ روتین روزانه: صبح (انعکاسی‌ها) + روز + شب + فعل‌های کلیدی (avoir l'habitude de...) + مکالمهٔ نمونه + متن توصیفی کامل."},{"f":"PAGE_examens_tcf.html","t":"راهنمای کامل امتحانات TCF / TEF / DELF","c":"tcf","lv":"tous niveaux","s":"مقایسهٔ TCF vs TEF vs DELF · ساختار TCF Canada (۴ مهارت) · سطوح A1-C2 · نمره‌دهی · استراتژی روز امتحان · منابع رایگان"},{"f":"LECON_conditionnel.html","t":"درسنامه: Conditionnel Présent","c":"grammar","lv":"B1–B2","s":"ساخت (Futur+پسوندهای Imparfait) + صرف ۸ فعل بی‌قاعده + ۵ کاربرد (Si / درخواست مؤدبانه / توصیه / خبر غیرمستقیم / آرزو) + ۷۰ تمرین تعاملی در ۵ گروه."},{"f":"LECON_heure.html","t":"درسنامه: گفتن ساعت","c":"grammar","lv":"A1–B1","s":"ساعت روزمره (et quart / et demie / moins) و رسمی (0-23) + پرسیدن ساعت + برنامه‌ریزی + ساعت تعاملی بصری + آزمون ۵ سؤالی."},{"f":"LECON_quand_quant.html","t":"درسنامه: QUAND یا QUANT؟","c":"grammar","lv":"A2–B2","s":"QUAND (وقتی/کِی) در مقابل QUANT À (در موردِ). با ۲۰+ مثال، تله‌های رایج و آزمون ۵ سؤالی."},{"f":"LECON_adverbes.html","t":"درسنامه: ۱۰۰ قید پرکاربرد","c":"grammar","lv":"A1–B2","s":"ساخت با -ment + قیدهای زمان/مکان/کمیت/حالت با مثال کامل. کلمات نشانهٔ B2 (considérablement...). آزمون ۵ سؤالی."},{"f":"ARTICLE_voleurs_energie_nozbe.html","t":"دزدان انرژی — Nozbe","c":"article","lv":"B1–B2","s":"مقاله‌ای از Nozbe: ۵ دزد انرژی رایج (آدم‌های منفی، تعلل، کار بی‌وقفه، بی‌نظمی، چیزهای غیرقابل کنترل). واژگان و ساختارهای B2."},{"f":"LECON_etre_aller.html","t":"درسنامه: J'ai été یا Je suis allé؟","c":"grammar","lv":"A2–B1","s":"تفاوت دقیق j'ai été (بودم/تجربه) و je suis allé (رفتم — حرکت مشخص) با جدول مقایسه، نکات توافق و آزمون ۵ سؤالی."},{"f":"LECON_possessifs.html","t":"درسنامه: صفت‌های ملکی","c":"grammar","lv":"A1–B1","s":"جدول کامل صفت‌های ملکی + تله‌های رایج: mon amie (نه ma)، leur/leurs، و جنسیت اسم نه مالک. آزمون ۵ سؤالی."},{"f":"LECON_a_ou_de.html","t":"درسنامه: À یا DE بعد از صفت و اسم؟","c":"grammar","lv":"B1–B2","s":"صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی."},{"f":"LECON_etre_aller.html","t":"درسنامه: J'ai été یا Je suis allé؟","c":"grammar","lv":"A2–B1","s":"تفاوت دقیق j'ai été (بودم/تجربه) و je suis allé (رفتم — حرکت مشخص) با جدول مقایسه، نکات توافق و آزمون ۵ سؤالی."},{"f":"LECON_possessifs.html","t":"درسنامه: صفت‌های ملکی","c":"grammar","lv":"A1–B1","s":"جدول کامل صفت‌های ملکی + تله‌های رایج: mon amie (نه ma)، leur/leurs، و جنسیت اسم نه مالک. آزمون ۵ سؤالی."},{"f":"LECON_a_ou_de.html","t":"درسنامه: À یا DE بعد از صفت و اسم؟","c":"grammar","lv":"B1–B2","s":"صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی."},{"f":"LECON_prepositions.html","t":"درسنامه: حروف اضافه‌ی فرانسه","c":"grammar","lv":"A2–B2","s":"حروف اضافهٔ پرکاربرد: à/de/en/dans/sur + فعل‌ها + حروف اضافه + اصطلاحات ثابت. با جدول، مثال و آزمون تعاملی."},{"f":"LECON_prepositions_exercices.html","t":"درسنامه: تمرین حروف اضافه","c":"grammar","lv":"A2–B1","s":"تمرین حروف اضافه در موقعیت‌های واقعی: سفر، زندگی روزمره، اصطلاحات ثابت grâce à/à cause de. با آزمون."},{"f":"LECON_articles.html","t":"درسنامه: آرتیکل‌ها در فرانسه","c":"grammar","lv":"A1–B1","s":"سه نوع آرتیکل: défini (le/la)، indéfini (un/une)، partitif (du/de la). انقباض au/du + نفی → de. با آزمون."},{"f":"LECON_sentir.html","t":"درسنامه: SENTIR یا SE SENTIR؟","c":"grammar","lv":"A2–B1","s":"تفاوت sentir (بوی دادن / حس کردن از بیرون) و se sentir (احساس کردن درباره‌ی خودت). sentir bon vs se sentir bien. با آزمون."},{"f":"LECON_certain_quelque.html","t":"درسنامه: CERTAIN یا QUELQUE؟","c":"grammar","lv":"B1–B2","s":"تفاوت دقیق certain (بعضی‌های مشخص) و quelques (چند تا). ترکیب‌های ثابت: quelque chose، quelque part. با آزمون."},{"f":"ARTICLE_voleurs_energie.html","t":"۱۰ دزد انرژی در زندگی","c":"article","lv":"B1–B2","s":"مقاله‌ای از psychologue.net با تحلیل کامل واژگان، ساختارها و کلوکیشن‌ها — همراه با ترجمه‌ی فارسی روان زیر هر پاراگراف."},{"f":"ARTICLE_tri_dechets.html","t":"تفکیک زباله: چرا مهم‌تر از آن چیزی است که فکر می‌کنیم؟","c":"article","lv":"B1–B2","s":"تفکیک زباله — داده‌های واقعی از CITEO: صرفه‌جویی CO₂، اقتصاد چرخشی، بازیافت شیشه و آلومینیم. با تحلیل واژگان و ساختارهای B2."},{"f":"ARTICLE_especes_menacees.html","t":"۵ کاری که می‌توانید برای حفظ گونه‌های در خطر انقراض انجام دهید","c":"article","lv":"B1–B2","s":"۵ اقدام عملی برای حفظ گونه‌های در معرض خطر: کاهش ردپای کربن، مصرف مسئولانه، حمایت از انجمن‌ها، آگاه‌سازی، پرهیز از مواد مضر. تحلیل واژگان و ساختارهای B1."},{"f":"ARTICLE_surtourisme.html","t":"سورتوریسم: چه تأثیری بر شهرها و محیط زیست دارد؟","c":"article","lv":"B1–B2","s":"سورتوریسم: تأثیر گردشگری انبوه بر شهرها (فشار مسکن، اجاره‌بها) و محیط زیست (CO₂، اکوسیستم). واژگان پیشرفته‌ی B2 با تحلیل."},{"f":"ARTICLE_ville_campagne.html","t":"زندگی در شهر یا روستا: مزایا و معایب","c":"article","lv":"B1–B2","s":"شهر یا روستا؟ مقایسه‌ی کامل: امکانات شهر vs آرامش روستا + مدل ترکیبی جدید. واژگان مقایسه‌ای B1-B2 با تحلیل."},{"f":"LECON_consequence.html","t":"درسنامه: بیان نتیجه","c":"grammar","lv":"B1–B2","s":"درسنامه‌ی کامل بیان نتیجه در فرانسه — از donc و du coup تا par conséquent و ساختارهای si...que. با فهرست تیترها، مثال و آزمون."},{"f":"LECON_adjectifs_adverbes.html","t":"درسنامه: صفت یا قید؟","c":"grammar","lv":"A2–B1","s":"درسنامه‌ی کامل تفاوت صفت و قید — RAPIDE/VITE، BON/BIEN، MEILLEUR/MIEUX، جای صفت، ساخت قید با -ment. با فهرست تیترها و آزمون."},{"f":"LECON_genre.html","t":"درسنامه: جنسیت اسم‌ها (مذکر/مؤنث)","c":"grammar","lv":"A1–B1","s":"درسنامه‌ی کامل جنسیت اسم‌ها — نشانه‌های مذکر و مؤنث، تبدیل، و اسم‌های فریبنده. با قانون‌های کاربردی، فهرست تیترها و آزمون."},{"f":"LECON_concession.html","t":"درسنامه: تضاد و امتیاز","c":"grammar","lv":"B1–B2","s":"درسنامه‌ی کامل بیان تضاد و امتیاز — mais، pourtant، bien que (+subjonctif)، malgré، en revanche. با فهرست تیترها و آزمون."},{"f":"LECON_questions.html","t":"درسنامه: سؤال پرسیدن","c":"grammar","lv":"A1–B1","s":"درسنامه‌ی کامل سؤال پرسیدن — سه سطح (محاوره/معمولی/رسمی)، کلمات پرسشی، quel و qui/que، و اشتباه‌های رایج. با فهرست تیترها و آزمون."},{"f":"VOCAB_teletravail_intermediaire.html","t":"واژگان دورکاری و فناوری — متوسط","c":"vocab","lv":"متوسط (B1–B2)","s":"واژگان ضروری دورکاری و فناوری در سطح متوسط — با تعریف، مترادف و مثال. نقطه‌ی شروع خوبی برای ساختن دایره‌ی واژگان این موضوع."},{"f":"VOCAB_teletravail_avance.html","t":"واژگان دورکاری و فناوری — پیشرفته","c":"vocab","lv":"پیشرفته (B2+)","s":"واژگان پیشرفته‌تر و دقیق‌تر دورکاری و فناوری — برای کسانی که می‌خواهند بیان غنی‌تر و حرفه‌ای‌تری در آزمون داشته باشند."},{"f":"VOCAB_bienetre_intermediaire.html","t":"واژگان رفاه در محیط کار — متوسط","c":"vocab","lv":"متوسط (B1–B2)","s":"واژگان ضروری مربوط به رفاه و سلامت در محیط کار، در سطح متوسط — با تعریف و مثال."},{"f":"VOCAB_bienetre_avance.html","t":"واژگان رفاه در محیط کار — پیشرفته","c":"vocab","lv":"پیشرفته (B2+)","s":"واژگان پیشرفته‌تر رفاه در محیط کار — برای بیان دقیق‌تر و حرفه‌ای‌تر دربارهٔ این موضوع در آزمون."},{"f":"VOCAB_environnement_intermediaire.html","t":"واژگان محیط‌زیست و انرژی — متوسط","c":"vocab","lv":"متوسط (B1–B2)","s":"واژگان ضروری محیط‌زیست و انرژی در سطح متوسط — با تعریف و مثال. موضوعی کلیدی برای آزمون و مکالمه."},{"f":"VOCAB_environnement_avance.html","t":"واژگان محیط‌زیست و انرژی — پیشرفته","c":"vocab","lv":"پیشرفته (B2+)","s":"واژگان پیشرفته‌تر محیط‌زیست و انرژی — برای بیان دقیق و حرفه‌ای درباره‌ی چالش‌های زیست‌محیطی در آزمون."},{"f":"VOCAB_zerodechet_avance.html","t":"واژگان زباله‌ی صفر و بازیافت — پیشرفته","c":"vocab","lv":"پیشرفته (B2→B2+)","s":"واژگان تخصصی زباله‌ی صفر و بازیافت در سطح B2+ — با تعریف، ترجمه و مثال‌های نوع آزمون. موضوعی پرتکرار در بحث‌های محیط‌زیستی TCF."},{"f":"VOCAB_espace_avance.html","t":"واژگان فضا و فتح فضا — پیشرفته","c":"vocab","lv":"پیشرفته (B2–C1)","s":"واژگان موضوع فضا و فتح فضا در سطح پیشرفته — با تعریف، مترادف و مثال. عالی برای موضوعات علمی TCF."},{"f":"VOCAB_jeux_olympiques_avance.html","t":"واژگان المپیک و ورزش — پیشرفته","c":"vocab","lv":"پیشرفته (B2–C1)","s":"واژگان موضوع المپیک و ورزش در سطح پیشرفته — با تعریف، مترادف و مثال. مناسب موضوعات ورزش و رویدادهای جهانی TCF."},{"f":"VOCAB_drogues_avance.html","t":"واژگان مواد مخدر، قانون و جامعه — پیشرفته","c":"vocab","lv":"پیشرفته (B2–C1)","s":"واژگان موضوع مواد مخدر، قانون و جامعه در سطح پیشرفته — با تعریف، مترادف و مثال. مناسب موضوعات بحث‌برانگیز TCF."},{"f":"QUIZ_adjectifs_b2.html","t":"۵۰ صفت استدلالی B2 — کارت‌های آزمون","c":"vocab","lv":"پیشرفته (B2)","s":"۵۰ صفت کلیدی برای نگارش و گفتار استدلالی در سطح B2 — به‌صورت کارت با مثال. ابزار عالی برای تکلیف‌های TCF Canada."},{"f":"QUIZ_adverbes_b2.html","t":"۵۰ قید B2 — کارت‌های آزمون","c":"vocab","lv":"پیشرفته (B2)","s":"۵۰ قید کلیدی برای غنی‌کردن جملات در سطح B2 — به‌صورت کارت با مثال. مناسب تقویت بیان در TCF Canada."},{"t":"InnerFrench — شغل‌های «کسل‌کننده»","c":"podcast","s":""},{"t":"InnerFrench — مطالعات جنسیت","c":"podcast","s":""},{"t":"InnerFrench — ربات‌های احساساتی","c":"podcast","s":""},{"t":"Easy French — موفقیت در زندگی یا یک زندگی موفق؟","c":"podcast","s":""},{"t":"Easy French — نظرهای غیرعامه‌پسند","c":"podcast","s":""},{"t":"InnerFrench — بحران رستوران‌ها","c":"podcast","s":""},{"t":"InnerFrench — فرانسوی‌ها و کار","c":"podcast","s":""},{"t":"InnerFrench — دورکاری","c":"podcast","s":""},{"f":"GRAM_cedille_commencer.html","t":"قانون تلفظ ç (سدیج)","c":"grammar","lv":"پایه","s":"چرا می‌نویسیم « nous commençons » و نه « commencons »؟ یک قانون کوچک تلفظ که با فعل commencer یاد می‌گیری."},{"f":"GRAM_verbes_pronominaux.html","t":"تمرین افعال انعکاسی","c":"grammar","lv":"متوسط (B1)","s":"۳۵ جمله‌ی تمرینی برای صرف افعال انعکاسی (pronominaux) در زمان حال — با ترجمه‌ی فارسی هر جمله و پاسخ قابل‌نمایش با یک کلیک."},{"f":"GRAM_chiffre_nombre_numero.html","t":"تفاوت رقم، عدد و شماره","c":"grammar","lv":"متوسط","s":"تفاوت سه واژه‌ی نزدیک chiffre (رقم)، nombre (عدد) و numéro (شماره) — با توضیح صوتی هدی، تعریف هر کدام و نمونه‌های واقعی."},{"f":"GRAM_modaux_pronoms.html","t":"افعال وجهی و ضمایر مفعولی","c":"grammar","lv":"متوسط (B1)","s":"جایگاه ضمیر مفعولی (le, la, lui, leur…) با افعال وجهی pouvoir/vouloir/devoir — با توضیح روان، مثال‌های تازه و ۵ تمرین تعاملی با پاسخ."},{"f":"GRAM_conjonctions.html","t":"حروف ربط وابسته‌ساز","c":"grammar","lv":"پیشرفته (B2)","s":"همه‌ی حروف ربط مهم (زمان، علت، هدف، تضاد، شرط) دسته‌بندی‌شده — با مثال، ترجمه‌ی فارسی، اینکه هر کدام indicatif یا subjonctif می‌خواهد، و ۶ تمرین تعاملی."},{"f":"GRAM_conditionnel_present.html","t":"وجه شرطی حال","c":"grammar","lv":"متوسط (B1)","s":"وجه شرطی حال: تشکیل (ریشه‌ی futur + پایانه‌ی imparfait)، ۵ کاربرد (ادب، آرزو، شرط، نصیحت، خبر تأییدنشده)، قاعده‌ی طلایی «si» و ۶ تمرین تعاملی با پاسخ."},{"f":"GRAM_conditionnel_exercices.html","t":"تمرین جامع شرطی حال","c":"grammar","lv":"متوسط (B1)","s":"تمرین جامع conditionnel présent در سه بخش: صرف افعال بی‌قاعده، تشخیص آینده از شرطی، و کاربرد در موقعیت — همه تعاملی با پاسخ و توضیح."},{"f":"GRAM_apres_que.html","t":"après que: اخباری یا التزامی؟","c":"grammar","lv":"پیشرفته (B2)","s":"چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی."},{"f":"TCF_EO_T3_expatriation.html","t":"زندگی در کشوری دیگر","c":"tcf","lv":"B2","s":"یک پاسخ کامل و تحلیل‌شده برای تکلیف ۳ — با ساختارها و متصل‌کننده‌های رنگی، نکات واژگانی و ترجمه‌ی فارسی هر پاراگراف."},{"f":"TCF_EO_T3_autorite_enfant.html","t":"اقتدار در تربیت کودک","c":"tcf","lv":"B2","s":"آیا برای تربیت درست کودک به اقتدار نیاز است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف."},{"f":"TCF_EO_T3_relations_distance.html","t":"روابط از راه دور","c":"tcf","lv":"B2","s":"آیا روابط از راه دور به‌لطف اینترنت می‌توانند به اندازه‌ی روابط حضوری مستحکم باشند؟ پاسخی کامل با متصل‌کننده‌ها، واژگان سوژه و ترجمه‌ی فارسی."},{"f":"TCF_EO_T3_travail_etranger.html","t":"کار کردن در کشوری دیگر","c":"tcf","lv":"B2","s":"آیا کار کردن در کشوری دیگر آسان است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف."},{"f":"TCF_EO_T3_travail_canada.html","t":"پیدا کردن کار در کانادا","c":"tcf","lv":"B2","s":"آیا پیدا کردن کار در کانادا آسان است؟ پاسخی کامل و کاربردی برای متقاضیان مهاجرت — با متصل‌کننده‌ها، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف."}],"mini":[{"t":"Le silence qui parle","e":"🤫","n":"B1"},{"t":"Apprendre à dire non","e":"🙅","n":"B1"},{"t":"Le pouvoir des habitudes","e":"🔄","n":"B2"},{"t":"Vivre loin de sa famille","e":"✈️","n":"B1"},{"t":"Ma routine du matin","e":"☀️","n":"A1"},{"t":"J'aime le week-end","e":"🎉","n":"A1"},{"t":"Mon plat préféré","e":"🍝","n":"A2"},{"t":"Pourquoi j'apprends le français","e":"🇫🇷","n":"A2"},{"t":"Qu'est-ce qui fait durer l'amour ?","e":"❤️","n":"B1"},{"t":"Faut-il éviter de prendre le petit-déjeuner ?","e":"🍳","n":"B1"},{"t":"Le secret pour passer le meilleur été de votre vie","e":"☀️","n":"B1"},{"t":"La lumière du matin : l'antidépresseur que nous négligeons","e":"☀️","n":"B2"},{"t":"« Sois heureux. » — mais est-ce le vrai but ?","e":"🌍","n":"B2"},{"t":"Pourquoi les matins sont-ils si difficiles ?","e":"🌅","n":"B1"},{"t":"La magie d'une courte promenade après le repas","e":"🚶","n":"B1"},{"t":"Le manque de sommeil n'est pas qu'une simple fatigue","e":"😴","n":"B2"},{"t":"L'art de dire « non » sans culpabiliser","e":"🙅","n":"B1"},{"t":"Pourquoi sommes-nous plus à l'aise avec certaines personnes ?","e":"🤝","n":"B2"},{"t":"L'écoute véritable, une compétence rare","e":"👂","n":"B1"},{"t":"Les erreurs, nos vrais professeurs","e":"🎓","n":"B1"},{"t":"Pourquoi se comparer aux autres nous épuise","e":"🪞","n":"B2"},{"t":"Le pouvoir des petits débuts","e":"🌱","n":"B1"},{"t":"Pourquoi sommes-nous toujours pressés ?","e":"⏳","n":"B2"},{"t":"La solitude à l'ère des réseaux sociaux","e":"📱","n":"B2"},{"t":"Acheter moins, être plus heureux ?","e":"🛍️","n":"B1"},{"t":"Faire des études permet-il de réussir sa carrière ?","e":"🎓","n":"B1"},{"t":"Vivre à l'étranger : plus d'avantages ou d'inconvénients ?","e":"🌍","n":"B1"},{"t":"Apprendre la langue du pays est-il essentiel pour s'intégrer ?","e":"🗣️","n":"B2"},{"t":"Quel rôle joue la télévision dans l'éducation des enfants ?","e":"📺","n":"B1"},{"t":"Internet favorise-t-il l'isolement des individus ?","e":"🌐","n":"B2"},null,{"t":"Pourquoi la musique nous donne-t-elle des frissons ?","e":"🎵","n":"B1"},{"t":"Le silence est-il devenu un luxe ?","e":"🤫","n":"B2"},{"t":"Pourquoi rêvons-nous la nuit ?","e":"💤","n":"B1"},{"t":"Faut-il vraiment suivre ses passions ?","e":"🔥","n":"B2"},{"t":"Les animaux ont-ils des émotions ?","e":"🐘","n":"B1"},{"t":"Pourquoi le temps passe-t-il plus vite en vieillissant ?","e":"⏳","n":"B2"},{"t":"Le bonheur d'apprendre à tout âge","e":"📚","n":"B1"},{"t":"Pourquoi rougit-on quand on est gêné ?","e":"😳","n":"B1"},{"t":"Faut-il toujours dire la vérité ?","e":"🎭","n":"B2"},{"t":"Le pouvoir surprenant de la gratitude","e":"🙏","n":"B1"}],"inner":[{"n":1,"t":"یادگیری طبیعی زبان فرانسه","src":"https://innerfrench.com/01-learn-french-naturally/"},{"n":2,"t":"زندگی با ربات‌ها","src":"https://innerfrench.com/02-vivre-avec-robots/"},{"n":3,"t":"خوشبخت‌ترین کشورها","src":"https://innerfrench.com/03-pays-les-plus-heureux/"},{"n":4,"t":"نظریه‌ی جنسیت","src":"https://innerfrench.com/04-theorie-genre/"},{"n":5,"t":"رئیس‌جمهور جدید فرانسه: امانوئل ماکرون","src":"https://innerfrench.com/05-nouveau-president-francais-emmanuel-macron/"},{"n":6,"t":"یادگیری زبان: مزایای پنهان","src":"https://innerfrench.com/06-apprendre-langue-avantages-caches/"},{"n":7,"t":"نظریه‌های توطئه","src":"https://innerfrench.com/07-theories-complot/"}]};
-
-const COLORS = {grammar:'#6c63ff',vocab:'#06b6d4',miniarticle:'#ec4899',innerfrench:'#8b5cf6',article:'#10b981',podcast:'#f97316',tcf:'#f97316',culture:'#6c63ff'};
-const LABELS = {grammar:'گرامر',vocab:'واژگان',miniarticle:'مینی‌آرتیکل',innerfrench:'InnerFrench',article:'آرتیکل',podcast:'پادکست',tcf:'آمادگی TCF',culture:'فرهنگ فرانسه'};
-
-function openCat(cat){
-  const color = COLORS[cat]||'#6c63ff';
-  document.getElementById('modal-title').textContent = LABELS[cat]||cat;
-  document.getElementById('modal-title').style.color = color;
-  
-  const body = document.getElementById('modal-body');
+const CAT_LINKS={roulette:'ROULETTE.html',phrases:'PHRASES_utiles.html'};
+function catInfo(id){return CATEGORIES.find(c=>c.id===id)||{label:id,icon:'§',color:'#1f3a5f'};}
+function openCat(id){
+  const ci=catInfo(id);
+  if(CAT_LINKS[id]){window.location.href=CAT_LINKS[id];return;}
+  document.getElementById('mtitle').textContent=ci.label;
+  document.getElementById('mtitle').style.color=ci.color||'#1f3a5f';
+  const body=document.getElementById('mbody');
   body.innerHTML='';
-
-  if(cat==='miniarticle'){
-    document.getElementById('modal-sub').textContent = _DATA.mini.length+' متن';
-    _DATA.mini.forEach(m=>{
-      const a=document.createElement('a');
-      a.className='item'; a.href='index.html#cat=miniarticle'; 
-      a.innerHTML=`<span class="item-icon">${m.e}</span><div class="item-body"><div class="item-title">${m.t}</div><div class="item-meta">${m.n}</div></div>`;
+  if(id==='miniarticle'){
+    document.getElementById('mcount').textContent=MINIARTICLES.length+' متن';
+    MINIARTICLES.forEach(m=>{
+      const a=document.createElement('a');a.className='item';a.href='index.html#cat=miniarticle';
+      a.innerHTML=`<span class="iico">${m.emoji||'✑'}</span><div><div class="ititle">${m.titre}</div><div class="imeta">${m.niveau||''}</div></div>`;
       body.appendChild(a);
     });
-  } else if(cat==='innerfrench'){
-    document.getElementById('modal-sub').textContent = _DATA.inner.length+' اپیزود';
-    _DATA.inner.forEach(e=>{
-      const a=document.createElement('a');
-      a.className='item'; a.href=e.src||'index.html#cat=innerfrench'; a.target='_blank';
-      a.innerHTML=`<span class="item-icon">▶</span><div class="item-body"><div class="item-title">${e.t}</div><div class="item-meta">اپیزود ${e.n}</div></div>`;
+  } else if(id==='innerfrench'){
+    document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
+    INNERFRENCH.forEach(e=>{
+      const a=document.createElement('a');a.className='item';a.href=e.source||'#';a.target='_blank';
+      a.innerHTML=`<span class="iico">▶</span><div><div class="ititle">${e.titreFa}</div><div class="imeta">اپیزود ${e.num}</div></div>`;
       body.appendChild(a);
     });
   } else {
-    const items = _DATA.lessons.filter(l=>l.c===cat);
-    document.getElementById('modal-sub').textContent = items.length+' محتوا';
-    items.forEach(l=>{
-      const a=document.createElement('a');
-      a.className='item'; a.href=l.f||'index.html';
-      a.innerHTML=`<div class="item-body"><div class="item-title">${l.t}</div><div class="item-meta">${l.lv||''}</div></div>`;
+    const items=LESSONS.filter(l=>l.category===id);
+    document.getElementById('mcount').textContent=items.length+' محتوا';
+    if(!items.length){body.innerHTML='<div class="empty">محتوایی یافت نشد</div>';}
+    else items.forEach(l=>{
+      const a=document.createElement('a');a.className='item';a.href=l.file||'#';
+      a.innerHTML=`<span class="iico">${ci.icon||'§'}</span><div><div class="ititle">${l.title}</div><div class="imeta">${l.level||''}</div></div>`;
       body.appendChild(a);
     });
   }
-
   document.getElementById('overlay').classList.add('open');
 }
-
 function closeModal(e){
   if(!e||e.target===document.getElementById('overlay'))
     document.getElementById('overlay').classList.remove('open');
