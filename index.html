@@ -229,6 +229,9 @@ body{padding-top:38px!important}
 </style>
 
 <div id="stats-bar">
+  <a href="FORUM.html" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(46,139,107,.12);border-radius:20px;color:#2e8b6b;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">
+    ❓ انجمن سوال
+  </a>
   
   <div class="sb-item">⏱ <span class="sb-val" id="sb-time">۰</span><span class="sb-label">دقیقه مطالعه</span></div>
   <div class="sb-item">📖 <span class="sb-val" id="sb-lessons">۰</span><span class="sb-label">درس خوانده</span></div>
@@ -751,6 +754,100 @@ window.trackMistake = function(lessonTitle, question, correctAnswer, userAnswer)
   });
   localStorage.setItem('hoda_mistakes', JSON.stringify(mistakes.slice(0,100)));
 };
+</script>
+
+
+<!-- 📊 Welcome Dashboard -->
+<script>
+(function(){
+  const SB = 'https://ifjsnasoxnalhttzhlpd.supabase.co';
+  const KEY = 'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
+  
+  // Show personalized welcome after login
+  async function checkWelcome(){
+    const tokenRaw = localStorage.getItem('sb-ifjsnasoxnalhttzhlpd-auth-token');
+    if(!tokenRaw) return;
+    
+    let user = null;
+    try{ user = JSON.parse(tokenRaw); }catch(e){ return; }
+    if(!user?.user?.email) return;
+    
+    const visited = JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    const notes = JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    const time = parseInt(localStorage.getItem('hoda_time')||'0');
+    const status = JSON.parse(localStorage.getItem('hoda_status')||'{}');
+    
+    const email = user.user.email;
+    const name = email.split('@')[0];
+    
+    // Get last visit info
+    const lastVisit = visited[0];
+    const doneCount = Object.values(status).filter(s=>s==='done').length;
+    const hardCount = Object.values(status).filter(s=>s==='hard').length;
+    
+    // Only show if has history
+    if(!visited.length && !time) return;
+    
+    // Build welcome message
+    let msg = '';
+    if(lastVisit){
+      const LESSON_NAMES = {
+        'GRAMMAR_passe_recent.html': 'passé récent',
+        'GRAMMAR_cest_ilest.html': 'C'est / Il est',
+        'GRAMMAR_pronom_y.html': 'pronom Y',
+        'GRAMMAR_pouvoir_vouloir_devoir.html': 'pouvoir/vouloir/devoir',
+        'innerfrench.html': 'InnerFrench',
+        'VOCAB_decrire_look.html': 'توصیف ظاهر',
+        'IF_ep08.html': 'اپیزود ۸ InnerFrench',
+      };
+      const lessonName = LESSON_NAMES[lastVisit.file] || lastVisit.title || lastVisit.file;
+      msg = `آخرین بار روی «${lessonName}» کار کردی`;
+    }
+    
+    // Create welcome banner
+    const banner = document.createElement('div');
+    banner.id = 'welcome-banner';
+    banner.style.cssText = `
+      background:linear-gradient(135deg,rgba(30,58,95,.06),rgba(176,122,74,.06));
+      border:1px solid rgba(176,122,74,.2);
+      border-radius:14px;padding:14px 18px;
+      margin:16px auto;max-width:820px;
+      display:flex;align-items:center;gap:14px;
+      font-family:'Estedad',sans-serif;
+    `;
+    
+    const stats = [];
+    if(time>0) stats.push(`⏱ ${time} دقیقه مطالعه`);
+    if(doneCount>0) stats.push(`✅ ${doneCount} درس خوانده`);
+    if(hardCount>0) stats.push(`💪 ${hardCount} درس دشوار`);
+    if(notes.length>0) stats.push(`📝 ${notes.length} یادداشت`);
+    
+    banner.innerHTML = `
+      <div style="font-size:28px">👩‍🏫</div>
+      <div style="flex:1">
+        <div style="font-size:14px;font-weight:700;color:#1e3a5f;margin-bottom:3px">
+          خوش برگشتی! ${msg ? '— ' + msg : ''}
+        </div>
+        <div style="font-size:12px;color:#8a8275;display:flex;gap:10px;flex-wrap:wrap">
+          ${stats.map(s=>`<span>${s}</span>`).join('')}
+        </div>
+        ${hardCount>0 ? `<div style="font-size:11.5px;color:#b07a4a;margin-top:4px">💡 درس‌های دشوارت رو دوباره مرور کن</div>` : ''}
+      </div>
+      <button onclick="this.parentElement.remove()" style="background:none;border:none;color:#c4b8a8;font-size:18px;cursor:pointer;padding:4px">×</button>
+    `;
+    
+    // Insert after topbar/hero
+    const hero = document.querySelector('.hero-sub') || document.querySelector('.page');
+    if(hero && hero.parentNode){
+      hero.parentNode.insertBefore(banner, hero.nextSibling);
+    } else {
+      document.body.insertBefore(banner, document.body.children[2]);
+    }
+  }
+  
+  // Run after page loads
+  setTimeout(checkWelcome, 800);
+})();
 </script>
 
 </body>
