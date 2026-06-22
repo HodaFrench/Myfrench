@@ -9,224 +9,127 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Estedad',sans-serif;
-  min-height:100vh;
-  direction:rtl;
+  min-height:100vh;direction:rtl;
   background:#f5f0e8;
   background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);
   display:flex;
-  align-items:flex-start;
 }
+.page{display:flex;width:100%;min-height:100vh}
 
-/* LAYOUT: فرم سمت راست، جاده و کارت‌ها سمت چپ */
-.page{
-  display:flex;
-  width:100%;
-  min-height:100vh;
-}
-
-/* سمت چپ — جاده و کارت‌ها */
+/* سمت چپ — جاده S شکل */
 .preview-side{
-  flex:1;
-  position:relative;
-  display:flex;
-  flex-direction:column;
+  flex:1;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
   align-items:center;
-  padding:40px 20px;
-  overflow:hidden;
+  padding:40px 0 0;
 }
 .preview-title{
   font-family:'Cormorant Garamond',serif;
-  font-size:42px;font-weight:600;
-  color:#1f3a5f;
-  text-align:center;
-  margin-bottom:6px;
-  line-height:1.2;
+  font-size:46px;font-weight:600;color:#1f3a5f;
+  text-align:center;margin-bottom:4px;line-height:1.2;
+  z-index:2;position:relative;
 }
 .preview-sub{
-  font-size:13px;color:#a8874f;
-  letter-spacing:2px;margin-bottom:30px;
-  text-align:center;
+  font-size:13px;color:#a8874f;letter-spacing:2px;
+  margin-bottom:20px;text-align:center;
+  z-index:2;position:relative;
 }
-.road-wrap{
-  position:relative;
-  width:100%;
-  max-width:420px;
-}
-.road-line{
-  position:absolute;
-  left:50%;transform:translateX(-50%);
-  top:0;bottom:0;
-  width:50px;
-  background:#e2ddd5;
-  border-left:2px dashed rgba(255,255,255,.8);
-  border-right:2px dashed rgba(255,255,255,.8);
-  border-radius:4px;
-}
-.stations{
-  position:relative;
+.road-svg{
+  position:absolute;top:0;left:0;width:100%;height:100%;
   z-index:1;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  padding:10px 0;
 }
-.station{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.card-labels{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  z-index:3;pointer-events:none;
 }
-.station.right{flex-direction:row-reverse}
-.station-card{
-  background:#fffdf6;
-  border:1.5px solid #d9ceb8;
-  border-radius:12px;
-  padding:10px 16px;
-  font-size:14px;font-weight:600;
-  color:#1f3a5f;
-  box-shadow:0 4px 14px rgba(31,58,95,.08);
+.clabel{
+  position:absolute;
+  background:#fffdf6;border:1.5px solid #d9ceb8;
+  border-radius:12px;padding:8px 14px;
+  font-size:13px;font-weight:600;color:#1f3a5f;
+  box-shadow:0 4px 14px rgba(31,58,95,.1);
   white-space:nowrap;
 }
-.station-dot{
-  width:14px;height:14px;
-  background:#1f3a5f;
-  border-radius:50%;
-  border:3px solid #f5f0e8;
-  box-shadow:0 0 0 2px #1f3a5f;
-  flex-shrink:0;
-}
 
-/* سمت راست — فرم ورود */
+/* سمت راست — فرم */
 .auth-side{
-  width:380px;
-  min-height:100vh;
+  width:360px;min-height:100vh;
   background:#fffdf6;
   border-left:1px solid #e8e0ce;
-  box-shadow:-8px 0 40px rgba(31,58,95,.08);
-  display:flex;
-  flex-direction:column;
+  box-shadow:-8px 0 40px rgba(31,58,95,.1);
+  display:flex;flex-direction:column;
   justify-content:center;
   padding:2.5rem 2rem;
 }
-.logo{text-align:center;margin-bottom:1.8rem}
-.logo .flag{font-size:28px;margin-bottom:8px}
-.logo h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:26px;font-weight:600;
-  color:#1f3a5f;white-space:nowrap;
-}
+.logo{text-align:center;margin-bottom:1.6rem}
+.logo .flag{font-size:28px;margin-bottom:6px}
+.logo h1{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1f3a5f;white-space:nowrap}
 .logo p{font-size:11px;color:#a8874f;margin-top:5px;letter-spacing:2px}
 
-.tabs{display:flex;background:#f0ebe0;border-radius:12px;
-  padding:4px;margin-bottom:1.5rem;gap:4px}
-.tab{flex:1;padding:.55rem;border:none;border-radius:9px;
-  background:transparent;cursor:pointer;
-  font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;
-  color:#a8874f;transition:all .2s}
+.tabs{display:flex;background:#f0ebe0;border-radius:12px;padding:4px;margin-bottom:1.4rem;gap:4px}
+.tab{flex:1;padding:.55rem;border:none;border-radius:9px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;color:#a8874f;transition:all .2s}
 .tab.active{background:#fff;color:#1f3a5f;box-shadow:0 2px 8px rgba(31,58,95,.1)}
 
-.form{display:flex;flex-direction:column;gap:.85rem}
+.form{display:flex;flex-direction:column;gap:.8rem}
 .field{display:flex;flex-direction:column;gap:5px}
 .field label{font-size:12.5px;font-weight:500;color:#1f3a5f}
-.field input{
-  padding:.75rem 1rem;
-  border:1.5px solid #d9ceb8;border-radius:12px;
-  background:#fff;font-family:'Estedad',sans-serif;
-  font-size:15px;color:#1f3a5f;
-  transition:border-color .2s;
-  direction:ltr;text-align:left;
-}
+.field input{padding:.72rem 1rem;border:1.5px solid #d9ceb8;border-radius:12px;background:#fff;font-family:'Estedad',sans-serif;font-size:15px;color:#1f3a5f;transition:border-color .2s;direction:ltr;text-align:left}
 .field input:focus{outline:none;border-color:#1f3a5f}
 .field input::placeholder{color:#c9c0b0}
-.btn{
-  margin-top:.4rem;padding:.85rem;
-  background:#1f3a5f;color:#f7f3ea;
-  border:none;border-radius:12px;
-  font-family:'Estedad',sans-serif;
-  font-size:15px;font-weight:600;
-  cursor:pointer;transition:all .2s;
-}
+.btn{margin-top:.4rem;padding:.82rem;background:#1f3a5f;color:#f7f3ea;border:none;border-radius:12px;font-family:'Estedad',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s}
 .btn:hover{background:#2a4f7f}
 .btn:disabled{background:#a8b8c8;cursor:not-allowed}
 
-.msg{text-align:center;font-size:13px;padding:.7rem;
-  border-radius:10px;display:none;line-height:1.6}
+.msg{text-align:center;font-size:13px;padding:.65rem;border-radius:10px;display:none;line-height:1.6}
 .msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
 .msg.success{background:#f0fdf4;color:#2e7d52;border:1px solid #b7e4c7}
 .msg.show{display:block}
 
-.confirm-box{
-  display:none;text-align:center;
-  padding:1.2rem;
-  background:#fff8e8;
-  border:1px solid #e8d5a0;
-  border-radius:14px;
-  margin-top:.5rem;
-}
+.confirm-box{display:none;text-align:center;padding:1.1rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:14px;margin-top:.4rem}
 .confirm-box.show{display:block}
-.confirm-box .icon{font-size:34px;margin-bottom:.5rem}
-.confirm-box h3{font-size:15px;color:#1f3a5f;margin-bottom:.5rem;font-weight:700}
-.confirm-box p{font-size:12.5px;color:#6a5a3a;line-height:1.8}
+.confirm-box .icon{font-size:32px;margin-bottom:.4rem}
+.confirm-box h3{font-size:15px;color:#1f3a5f;margin-bottom:.4rem;font-weight:700}
+.confirm-box p{font-size:12px;color:#6a5a3a;line-height:1.8}
 .confirm-box .em{font-weight:700;color:#a8874f}
 
 .hint{font-size:11px;color:#b0a090;text-align:center;margin-top:.4rem}
 
-/* موبایل */
 @media(max-width:700px){
-  .page{flex-direction:column}
-  .preview-side{padding:30px 16px 20px}
-  .preview-title{font-size:28px}
-  .auth-side{width:100%;border-left:none;border-top:1px solid #e8e0ce;min-height:auto;padding:2rem 1.5rem}
+  .page{flex-direction:column-reverse}
+  .preview-side{min-height:45vh}
+  .auth-side{width:100%;border-left:none;border-top:1px solid #e8e0ce;min-height:auto}
+  .preview-title{font-size:30px}
 }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- سمت چپ: جاده و کارت‌ها -->
+  <!-- جاده S شکل -->
   <div class="preview-side">
     <div class="preview-title">Français avec Hoda</div>
     <div class="preview-sub">مسیر یادگیری · از صفر تا روان</div>
 
-    <div class="road-wrap">
-      <div class="road-line"></div>
-      <div class="stations">
-        <div class="station right">
-          <div class="station-card">📐 گرامر — ۳۳ درس</div>
-          <div class="station-dot"></div>
-        </div>
-        <div class="station">
-          <div class="station-dot"></div>
-          <div class="station-card">📚 واژگان — ۱۵ مجموعه</div>
-        </div>
-        <div class="station right">
-          <div class="station-card">✍️ مینی‌آرتیکل — ۴۰ متن</div>
-          <div class="station-dot"></div>
-        </div>
-        <div class="station">
-          <div class="station-dot"></div>
-          <div class="station-card">🎧 InnerFrench — ۷ اپیزود</div>
-        </div>
-        <div class="station right">
-          <div class="station-card">📰 آرتیکل دوزبانه</div>
-          <div class="station-dot"></div>
-        </div>
-        <div class="station">
-          <div class="station-dot"></div>
-          <div class="station-card">🗼 فرهنگ فرانسه</div>
-        </div>
-        <div class="station right">
-          <div class="station-card">🎙️ پادکست</div>
-          <div class="station-dot"></div>
-        </div>
-        <div class="station">
-          <div class="station-dot"></div>
-          <div class="station-card">🎯 آمادگی TCF Canada</div>
-        </div>
-      </div>
+    <svg class="road-svg" viewBox="0 0 700 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <g opacity=".5"><ellipse cx="80" cy="120" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 80 120)"/><ellipse cx="65" cy="112" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 65 112)"/><ellipse cx="600" cy="200" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 600 200)"/><ellipse cx="585" cy="192" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 585 192)"/><ellipse cx="90" cy="350" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 90 350)"/><ellipse cx="75" cy="342" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 75 342)"/><ellipse cx="580" cy="440" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 580 440)"/><ellipse cx="565" cy="432" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 565 432)"/><ellipse cx="75" cy="560" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 75 560)"/><ellipse cx="60" cy="552" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 60 552)"/><ellipse cx="610" cy="640" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 610 640)"/><ellipse cx="595" cy="632" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 595 632)"/><ellipse cx="85" cy="740" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 85 740)"/><ellipse cx="70" cy="732" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 70 732)"/><ellipse cx="590" cy="800" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 590 800)"/><ellipse cx="575" cy="792" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 575 792)"/></g>
+      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#e2ddd5" stroke-width="42" stroke-linecap="round" fill="none"/>
+      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#ece7da" stroke-width="34" stroke-linecap="round" fill="none" opacity=".5"/>
+      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#fff" stroke-width="2.5" stroke-dasharray="12 10" stroke-linecap="round" fill="none" opacity=".75"/>
+    </svg>
+
+    <!-- کارت‌های محتوا روی جاده -->
+    <div class="card-labels">
+      <div class="clabel" style="top:10%;left:5%">📐 گرامر — ۳۳ درس</div>
+      <div class="clabel" style="top:22%;right:4%">📚 واژگان — ۱۵ مجموعه</div>
+      <div class="clabel" style="top:36%;left:4%">✍️ مینی‌آرتیکل — ۴۰ متن</div>
+      <div class="clabel" style="top:50%;right:3%">🎧 InnerFrench</div>
+      <div class="clabel" style="top:62%;left:5%">📰 آرتیکل دوزبانه</div>
+      <div class="clabel" style="top:74%;right:4%">🗼 فرهنگ فرانسه</div>
+      <div class="clabel" style="top:86%;left:4%">🎯 آمادگی TCF</div>
     </div>
   </div>
 
-  <!-- سمت راست: فرم ورود -->
+  <!-- فرم ورود -->
   <div class="auth-side">
     <div class="logo">
       <div class="flag">🇫🇷</div>
@@ -278,7 +181,6 @@ body{
       <p class="hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
     </div>
   </div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
