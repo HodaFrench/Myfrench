@@ -84,6 +84,214 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "IMAGE/img_1166.html",
+    title: "📸 تکنسین داخل لوله",
+    titleFr: "Un technicien dans un tuyau",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/pNZhBKpQfAyjl5BXo7UqKlIeLDk4SDqwgMYP79SLbn9m1DzQEItci2QUQs3jP-RBkbx4iZoi6RjRt5eG4g3qL_ECCBq_347y-RWaO0dSCmN-l0rz2ssHMOf3cGwscz3beBnu0CZfOpiuAmDnAX_SAStulhyfDvHOlkUIqYY8JvbAVgiPKgMQF78x0koSwfgsBvrkEWFOdj-gLwp5UoMvkNJL8LL2N49LSRzeorstJyQzZs25xg-35GnpGd4JTvRC2Q5nVxqWAlALZvV-t9r3UR4OhRDpaE2fvxF9XuOGIdt5q7T5Tl-dBsz2RuoVK0OzGnQ5rQJ0zc_qraCkX9Ej-w.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "تکنسین داخل لوله — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1165.html",
+    title: "📸 فلامینگوها در آب",
+    titleFr: "Des flamants roses dans l'eau",
+    category: "image", level: "A2-B1",
+    image: "https://cdn4.telesco.pe/file/fzps9tdGu7M1pOyfRIKA7ZABTALH3Vd5V-t3NNMFWOrsF8tieb1vKJUehVDiThkRK9Hm4FkdjpVFmOffXmUsVymnCM-jGSYvSefr0cORN8jMoiYy2A1lkPNJPaLdcUzlFKIicp4-auNo80_2T1hZOrXmwko4LY9R0H7vqS_fDlNyA9SmKphdqaZT1lHxyLCj8m5yjABg3usTIM2V7vkBZAFXZiRZn6YBrQs-pNali_0ADXhLqKAAiLenjketFzXZJRwnne0eW7YdljYg0TghPi6dGzKgwbysYtNto2wxltq8H2nHiL6Gp_eJSjn7t-74UfULuVHB67Yh9rYrV38jow.jpg",
+    tags: ["image","décrire","description","A2-B1"],
+    summary: "فلامینگوها در آب — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1164.html",
+    title: "📸 سه دوست با پاپ‌کورن",
+    titleFr: "Trois amis avec du popcorn",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/EL-V6y30fmtfthaZxDy38om_lRiSceYYaT6VVG4XWkZxd-hUQOdirjVnnfzqWdj13Vz0Ha1QTBE9FstlAjujJDCNkzbclyTYJZVWjLyPjOJGtiZhnBUgOhFNWj5rXne4taTHLOGVV5R5-HhuvebDC8CKnl23jYrp9w6CI64_ZeZxyGjB7WYE7FI2-BYRQ04uubxarJwmCnJJDn-0mcjrJ-MB5YJItBY9k-46ZcMyhZK23BrXi0l4g_EUlqhxoKRlybGcPoEwTHIAxE3MsbAOlgo5XJpl1wzzy5czOxhFywymEDQGQcs2wHee-CB7LBs8PuvTZ4OU5z76r3wvOLblzg.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "سه دوست با پاپ‌کورن — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1163.html",
+    title: "📸 فروشنده میوه",
+    titleFr: "Un vendeur de fruits",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/kzt9JhNWxT75CDeVueVAXhpmS9cjqtcXQjBpvZP4_VsArY1UdPS-1HadwiKLjapcupCj2CQu2vIADmTN868GLh9fj8LIXN2GtyQiNbiIWUFtnKECJQM_NlWq9dUig5yU3gc5tat_j1GLGhl3JObq4EqGCKHUPY7MsHXTxnRwzvU77EsETqp0dSQQZVBbtVo-V_9Ji41YtFXd36EEYtJnHboOQjgi5-E7Vm0lkB-BaCuIANnQ5kyiCtzAje6KolVghTUVFkFzRL40FbqqfvDAUCMmnftq5__vJSNHmG5z3enqUz1DiOhgmu6qIOHHmYTlS-mPSy7yt43N1JdF78SfMA.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "فروشنده میوه — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1162.html",
+    title: "📸 فرآیند تأیید کیفیت",
+    titleFr: "Un processus de vérification",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/Mbq9P5ZHeYHFbSVxmaO6yt_rr-sCzZnGNMecMrQdxAt9ytfrEluR5VxoMFHZIlUdAn_1cX-IInjRoXHIr2CxHspg2vO8xq_UObBh6LaVBmOUMwKGE0jN0cUb2GaPYWv1WXImMPU8gJhUnDjpQ5Oy4-HE3kAvbBLn143vgS2nuglW_DaJNSkXzjlcIVy0L6-0Px2xDc6tGMklKK6Wtz5MiiByY_O-spmM4Tr83rGzR9gJW777oDC0VDgBY3fW1ZxzUQaNJp8CqGeyaZ793EY7aIxagitxpNoIpugLk2_3vY-TEG1AXKYNC19bAX_eJ9jhLbV5n_Bdgxab1wmAL2HMqw.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "فرآیند تأیید کیفیت — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1161.html",
+    title: "📸 سه حالت احساسی",
+    titleFr: "Trois expressions d'émotion",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/OK9eeCExZG1TshAFec2FzaEUf84233hd_uwwhvQ22lLi4YeH2gLAr61bF8m4w4yQ1-uAytJsX6ZIMSFfB4Q5WPpBZEstn7mwdo2HiTPtlXuPcNLYVQ12WX4Of4L1vtI1_RAWDgTbmSRGjAGZGDYw9lql6J8O44YSzr7Ncv1-xIdEtmMUSMsKQnLtl2IcGwftNdaq_N1K0xGEMlcBi0vFyWwq7OVZI4ytgyuYXAOuAoCK14h3N-fi85d_X9psW4gjGftEu-bxUio3aAG0EK2gL1ytI8VI9XbU_2t_LB0IZ-ZOlg094bHOP3tQR-INzBb35c3wVkSbR99VUZea-io80A.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "سه حالت احساسی — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1160.html",
+    title: "📸 بطری با پیام کمک",
+    titleFr: "Une bouteille avec HELP",
+    category: "image", level: "A2-B1",
+    image: "https://cdn4.telesco.pe/file/X518fOgBH3XkVvZhO_QDtKslLMALYLpWmo5j-34VODw15Vh7YYWtrf4-TpjaIROAoHslrbyTZPryNsCZFLIMPD0bGtqNjVCkc0sP5LF9Mqpz-EUk4Cfw_8JwblPd0R024hN-rgNigD1oOJ4BS003V0pi6Ad2Q1UL7rVvDzG7luR-KCs-uR2WYsr31rnT-eWP_4RCnwtO4MN722Uap57h5R6MJISqCpvU_sdYzHciAj_xrXLmNqGhT1iXsDBICn2D6h79lOnUHdehAY8pZbvX5QNNg4Vx3vut8_CEnCD32ag1u1nFvaY7zctLODdefep0KyBgzWM9Yc1Pk5N18ArjhA.jpg",
+    tags: ["image","décrire","description","A2-B1"],
+    summary: "بطری با پیام کمک — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1159.html",
+    title: "📸 مرکز تماس",
+    titleFr: "Un centre d'appels",
+    category: "image", level: "A2-B1",
+    image: "https://cdn4.telesco.pe/file/W7x8E_KYBrKkZS-Z3XLlcVDpuvnDr6Q_q8oSN02TRehB0PtxgTtDMuMKcJQ8R7zbTjHgJfXpzIGkCGhWhSZeRiCCm1JrrcPQeGQTB4sPCoafu3ZR0_b8qYWptMREgHDODteSSoTtsFmtki8-BLxHSrEEIBNmekxslGr0B-Qu_zsQZ_7s2J2tPCbM27jnRxy_yIVHmvicNDd4A8Gj6e5yw8cl50VeE4atUxagealMloY6lftxXBUe5ioHPEbNuFKA1xhSAsAn2INCmDLmlYi_DZxeMVK8Sz5yE3g0gZ-_oSNofCgv-aztgXkx_Ak2bZHY1eDy796AWq2zgO_y6jGRuA.jpg",
+    tags: ["image","décrire","description","A2-B1"],
+    summary: "مرکز تماس — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1158.html",
+    title: "📸 برشته کردن قهوه",
+    titleFr: "Torréfaction du café",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/OPg9nZo3GNvaOS_i4LbnBLLR8Ef84aCyg_UCF-5LAAe2WKM1hNa6PDCfxlb_J_vFWQOemN_8JpwlhPP76SDFAGa9xkqfRjZgmXmEhYDJHdTsS_772FCaX9LlU3Dakk_2gNcGfxs2GZjFU4CsN7kzpQeInRYiSrw8gJthhtv1dJWZeGY3ZMjrX-pHQJ1srB0ZdoBkj7gdiHorrCFXsiTYg5maXs4_X5_FiDrxN3MCPyz9c0jAoD5IHCIQQBMiYgwOmGsgarfi_Rw8HurVQ325WYvxz2ryHeJ-AToQi-DT_ub7SxEcYNsjJi2cfu7Qg6m-XGF3qcJNogqplQQiz16UQQ.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "برشته کردن قهوه — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1157.html",
+    title: "📸 آفتاب‌پرست روی شاخه",
+    titleFr: "Un caméléon sur une branche",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/fDb_xfmHo21GEsGKtwebImbS7qZwKGgf_qDtQyPrXDQBwcF3MpUcDmHVfG0r8BEcd3UBeb3_4mPjX80A5jLkcKBn8BMZTE_Y7AFpyOA5Z6cdW3k2J3zAbUwGXQvY4V1ytzIShLsDXCpUjYIv9CLkiNPmhP_A76GBJ-GDATdpidKnHB9ExP8vApFy42DWKQs2WZLrOVAyB8imw_RWjHfu7OM-UWPtNJAOQ4nI3vJh-ofhjAxWIco4zpc6p2fqpP6JDT3W2Y6PVPPvz1QSHHOrurYa2-oRUtWQ7nje_m-I-dNHCwpSQPbW8NE71-x1ko0_1OHBagsfiPtrlgi4uirenA.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "آفتاب‌پرست روی شاخه — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1156.html",
+    title: "📸 پنج ستاره طلایی",
+    titleFr: "Cinq étoiles dorées",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/Ie4jFp6RDHyX1vcMZb53a-BuibnI5meHYW6xh03a1_aJW-0LRKZwfRFqwA-OZO2611qVPg3bEnW5sfBxNsIax3Szeb4yPNDmvGutTum51iEkyJ5cVEnP4Klo3QJ3bPwd2Rvfl3KjrlL-NmPdKPQ5OiQbUzJdyzR4KcTeSsgEKZHTN92ZtQkMEM4jX0g67EOYMFC0wSWLU5sp5V7ugPjRxuFWLwCDc8NmE50XTkKweqQUv30_2q5ZFU8SQs77xgZyaiu9uDHjWl8maJ3ocqZBVKIzqfIZh11_6Ln7qVxP2nGUBzV7uYMb7qcf6j4JSjmNt1Ue5YS_lsSd9YBWs3KsRg.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "پنج ستاره طلایی — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1154.html",
+    title: "📸 دو نفر، یک دست حمایت",
+    titleFr: "Deux personnes, une main tendue",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/Jna07r6CTQm9sYp6ys0yLqh23UcIQ-Xl63N1z57y1rL1qnengYLJHjTGbapLVG0nPcyXjEi0M4cQdOStDPc41GHrpYgVdSTXj5oeKcNx79KLd-KkAV8HMHCTXgOK7OoRck9mkpk5_AtMtCG1YV5otOZXl2r2YLkSN1GBrX3liXJGIqlJSYf0sjrxush0pymyx6mr_YffiBWnWjJqYSJscmVwqcAd8jynXRoVobUJ9F1YdhZ47EdSB02604o9hVGELxI3O_mWERVaO0-wQ17R8J6Gk3Brdesb6CbEqopYRlc3luB1Rjhs0GfqDE041-BAnkS2Em_Hgwt69v-krGEgyA.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "دو نفر، یک دست حمایت — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1153.html",
+    title: "📸 گربه نارنجی و کار",
+    titleFr: "Un chat roux et le travail",
+    category: "image", level: "B1-B2",
+    image: "https://cdn4.telesco.pe/file/TgZNbPdJdEiJ9iHb-tKp11MPNVibTKYoybpnQNazvohpPi79VOfNbAwaamhh7iPBbCMQAAl-bU6TYax_SxAjGP6-1U6JG_HQuHpM1iDtD1s6YjjcCJwcUUxvmJP6ZIBvbn0kvur_UnU3k1wse3gX6qJ9wnlYymhheyYCJfiKp5h9XzOUMqZJAG3sDF1hKEQKTbPhqEaQ1MQSasgPnWqj5lWOjHGg5-FED55oI3_DTc83_7oTNGc8ES2hs5ThQdifqVBx3Xx1A6IKic5lU9T_TZNtOQjgQNXp7rZQMYlltruB8EwsFNBMUKlGXEOWfqN_7ukX0k4mUXq3oJiMcZN4-A.jpg",
+    tags: ["image","décrire","description","B1-B2"],
+    summary: "گربه نارنجی و کار — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1152.html",
+    title: "📸 دختر در میان گل‌های مارگریت",
+    titleFr: "Une femme dans les marguerites",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/X0a4BhvkVskbQgr0T4wlYCVgwUFzXARcxqrVdsOrBLNAd1sKgJBcpvz_ueKh8MU6HLZ-_iJNtyebVjQ4X3h9b6VDuiim7yWJhQ6WRT7YQlZuGj_tZ68cy_JS4yIul-tl_9L0k-GQs_oLVoTaCEOKWjcZdMlCRGg6XfOZLYDhee4secRs0KSlP_Qa6qMyllHw4FpAdJkzGDFWxhYKJ-uO4w3scKCc8IuBC4_dJr0lJGsumirzkkYT9BDlej738Px80A8ecTXZMtbT3DJH6FoMOCQNkBLPSR3VlZCPPm5rV4ybn7drGGJpsXtgZiAfmO0fwZ0RDgJZgo63M9TBE4gjcQ.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "دختر در میان گل‌های مارگریت — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1151.html",
+    title: "📸 دختر با دوربین عکاسی",
+    titleFr: "Une femme avec un appareil photo",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/kQpV-bRGXeQVAlsxh-2xjK9uETLtJ4-jQeRozxNYhi_c-lngzmjn__swjtDpfZk-XScW2206oB_j5_Qvne7SWS6EDofq8CJpQ3Xig6E-ITzH_VNuSyjK7aXWlISLtHeKOTeQXqZBBmUkcYrdRczT-H_obzJqxrJu9jC5HlZ5Bx7UOHzQZU0lg_xwK6-LaxBqRGXHa-oo2MUB_Qujl7jANiwV6lvT9p9W6YSghkeaUZ6fa0DUkI2sU_P5wimmz1H7ihUZWYHH1W8aqq8fE6sSc7T4ZhISAmCpDVSdqBVIFHDVfLRU0xwj89lLObcptTX2T4WBsvoDMdSRf5FCR8jGMA.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "دختر با دوربین عکاسی — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1150.html",
+    title: "📸 دختر کوچک و موشک",
+    titleFr: "Une petite fille et une fusée",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/s2jGi7218IkkFoBuFvxfc2SXm3TmgM63GSrwC_9Tce_uJ6TraLd1Mx9vHb2qENk1Uw2r0U29swIJGjLp78COFX-ygB6DhMBm-JoTsCBoH0xiRYexVgt4hbiXrxieRZUsixejPwWIfr8Hkmll0KgaiUlp4x77O2pMrQyOAZ417cfy6OGH0MY9Jb7H7Ym05F2eH49vJ_IuLZfcswIM9tBPHLAAkzt-wWjOCcVpcRxpOZ_0pnbpza0wA6uhd5iL9U6A-erMkyNNZ45VHbFkCozEMuvjpZfUwfcLU6L7exCRXQb7QaXzih5Y_qIOPTjVfaDfg_7TNKQWHoQj0ZKoHOsnfQ.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "دختر کوچک و موشک — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1149.html",
+    title: "📸 سبک ساده و طبیعی",
+    titleFr: "Style simple et naturel",
+    category: "image", level: "A2",
+    image: "https://cdn4.telesco.pe/file/o7qjqf4kEr2vFY3ZihN9CsxxmEFG01zR_HMc-q9aeJGDDMHslH0gfjf-yinzyZcXd80mK5cVLa68wmMcSlT5aTMzH_7YlIG-L4hlGyA5NB7K4bBAhIgMnBoQZS8oLTjVIu-gDzWY-Cr7ud5XShyDQAboRJaNZ1V3CG_4P-R7iZG0Ix6VZ6WI1nOsYw6VvZPIEuq5uCZQ6OKBvzQh14214XxK_ShQ5va1bm6SsnRBUsrZVq96bVkJDzdQsHRP9E9QI6sHkSWc_Hh0w-0uGCNE4_cDp5dlgI2pq0FZ6aRKejsIssyXMh9xo1VMmwnrJUpo6dXQpH8dAMx3HzyoRI1PNA.jpg",
+    tags: ["image","décrire","description","A2"],
+    summary: "سبک ساده و طبیعی — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1148.html",
+    title: "📸 دست شیک با ساعت",
+    titleFr: "Une main élégante avec une montre",
+    category: "image", level: "A2-B1",
+    image: "https://cdn4.telesco.pe/file/RnFftX7fvPd0Ro6Qfdi1cWqRmNSi15yN-wgckSOOtcb6ASskwX3XCzfXG-sIMRRftJ3i8riCP4RwShsPse9N41065BpHz6VCvu9mlSwfEWRAv-oQUTQve4SA4AfMJSYUS7GgKr17mmZEbfyF00tmUlJ78Lutd-sOwf8YN-LTXMrxHETWw3SlFmtGDdVO2UmhXrM6nn27go_bICt-mLHQEV5j8cHGAIZJbCMPlovvsj1ZAAqt4DU9boHcEAJJDP7HxF7Gqux6H0H_gTE9Cd_sGC0Tou7Tri3VU6g-ZoFAkMS5Kr_aTekJFuxJcFFWSRRhcmz_GCeQRjrT-5p2cPJJZQ.jpg",
+    tags: ["image","décrire","description","A2-B1"],
+    summary: "دست شیک با ساعت — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1147.html",
+    title: "📸 پرتره مرموز با نور رنگی",
+    titleFr: "Portrait mystérieux sous lumière colorée",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/SD8mLQT5ZGiVShxHK-p4kAbq1LtbvpNd7AVRwDNR3Ve9WtltV3ylngCygt_4-PB8lJOEAU4di8dbeIPzZGTEBv95OVpw8LMhAI2htk_yvCJXFWnFnBteSkRo7d8iHv80dacEL4xQfgmymEppfwSrZjdOBCSp3mEbvK_B1OXz-j5z9ACu00q4xDxJyVCGmBo4yE539W5EdNlpATBLhA3oGWI27xzJxw_YWHkAVC3wf18xku_3qdzMXgDf3JVsNanOFrSQ1CXw4T4AgoYnKtdXqSmW1A7HkiHzUPpIOsLoKlE05DhGDkcvULmRDcyFFmPHGL0i796FY-ZohZYQn_ZGpw.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "پرتره مرموز با نور رنگی — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1146.html",
+    title: "📸 هنر مادهوبانی هند",
+    titleFr: "Art Madhubani — peinture indienne",
+    category: "image", level: "B1-B2",
+    image: "https://cdn4.telesco.pe/file/piE3wqwwcw9XlIfl0GekolRiLlhauRjWheoZavJdKjkberIjbKUg88IfBufsr6fC57xKJXKkdRDIjYv33N4A7rpu4_DMxwzYDEtPWIbnrhD78_1NhpjJFkGZDh3U33q3fFnLv0tCjUO_gkI_eknuABGB7-Wp8lIAvK4Dwyuh_NukIhIj5gcvxCwErmM7aKCtbpRYPfkeGpvDjjzIph8IlKD71gZubKpjr0M6uSNvlOsOILrDRvXqE5xY120D-6_ZLwPMvQYC6f1SiEeQj5EBG9lwJr7fgD-pIO26JPRLCgNGDDWpVPjHnHOVOWGXYdMK_u0RQ-8cqwTo4dXBvqHuAg.jpg",
+    tags: ["image","décrire","description","B1-B2"],
+    summary: "هنر مادهوبانی هند — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1145.html",
+    title: "📸 شوالیه دورر",
+    titleFr: "Le Chevalier de Dürer",
+    category: "image", level: "B2",
+    image: "https://cdn4.telesco.pe/file/spcthlBK8t4VVtA9JA5hOjqOMIHA90EzLBqmE3dLmGc3JXbu9h4aRstAjvp4nj_y6CJIN2847VK4kfGu7nAAGG8e-itGEo2pSh5iIJBjj04clTsaaHNg3vRILsR8bqHfnRkP7pG4V58TCxV3azYUyf-mpB529Fj9VSAArQFJgmQlBvvQoIEveR0E9o0d8AwKIi2UeLu3I8uhQry47f1kuOCzubFvCH-WImPcRfBhZbuDaAVJgKwrRvHYBNv7zdcPopVnexAgRSPeIajAzoigYH-xFkSljOpUTa-jTY_MVFUQP-VXKOob2hJHtgpurGB-QV1lnmQMRa_LJm-wTBUGYw.jpg",
+    tags: ["image","décrire","description","B2"],
+    summary: "شوالیه دورر — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1144.html",
+    title: "📸 دست‌های پیر روی پیانو",
+    titleFr: "Mains âgées sur un piano",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/gcTSFxuyBqBQgoRnruQ7SvLKSnCmPmpVXx8wXYTjAT-MCBz1kjgBwN4j3Vn3bwGr_lOf5QuShq5B9WnuoUgpn94Q0ap8BM2vUyQgG3KP3Qvq1O-9LA2sfXgiCaiQciFe9LQHpPnvOwqrMv09yl1wgi_0DjtC2ItqNeAJ2XG9z_m-rR9abx3mgOW6fAJ_fpjIbww-pRhDWZjiz644vY-GQW2BR5AFx9Mwn1omOzfR5mcz80odk1ptLE1lwZE3suB3EDCPoKm89MF9vx8xM3smyCcnzHxRGOJAO5IQUKXHRpjOujMUs9R7uETLXeqRzpz_LcaFjwvHxbZIWJt7LdsxBA.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "دست‌های پیر روی پیانو — توصیف تصویر"
+  },
+  {
+    file: "IMAGE/img_1143.html",
+    title: "📸 آزادی بر فراز صخره",
+    titleFr: "Liberté au sommet d'un rocher",
+    category: "image", level: "A2-B1",
+    image: "https://cdn4.telesco.pe/file/ILKcpwBJxDUDEYC14LKDa8eQO7BGVt54SXUr0pO9H6KHMti7qXv4wSUoPGOYKWB3qUUaSMECM4_mTnsqsypVcBoed4YHhyjLLYxIcwEboDVzYVj1YTm08WbKzrin_0bKYbqxaIRblDf3ZgehJYn9KijfrMb-7eA1mefPt9jQwO3BpMLjaWssPfT_bfcOzDQ11oGujgtxy1xMoBNLP3IC8SvpEgJcnDoeuwvdA9mq7caZIrnSQrvuedCuXNyTeNed8yBuy231R_xKHXzuur4ESU-kPhXZFkYjzGlbybABMlp5QtSvaRaEHcLnGfBDUQFX_KbP-k69R7AyY8DQDdwroQ.jpg",
+    tags: ["image","décrire","description","A2-B1"],
+    summary: "آزادی بر فراز صخره — توصیف تصویر"
+  },
+
+  {
     file: "innerfrench.html?ep=1",
     title: "🎧 InnerFrench #1 — یادگیری طبیعی زبان فرانسه",
     titleFr: "#1 Apprendre le français naturellement",
