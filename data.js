@@ -84,6 +84,16 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "IMAGE_disque_dur.html",
+    title: "📸 توصیف تصویر — Disque dur sur le sable",
+    titleFr: "Décrire une image: disque dur",
+    category: "image",
+    level: "B1–B2",
+    image: "https://cdn4.telesco.pe/file/VUqOHPbkwClCT6qvJEsuNGdE9UV0NRm6pfjYLOrguapuHK6ucetor11J74deWRnRJQr9OGAXPTTCh-lkAgCVB6uKWsVHnuJjmrbkV2Xe2-1NcgUBkw-LP_4ao_oW8OxhfNqmaLyIeHPWyU2jYDO3YTszSnKlWXph5qTqHqc0vr7Rvz1LocXOoXmcFHjUdjSPWzxQAHZywF3RofhOkgj-hRPjQcmOzBIkmcDPcIA_gq28RI_I0Cx-fyxfXQ3kaJEOPAOZ6nMKJpKb3KjM6VdvXLd8CwhWGAeG1exdQ9qXfgrsyphbX2j460MFzOPQM19VWiGfSrbwdjdvR8ALO2sRsQ.jpg",
+    tags: ["image","décrire","description","B1","B2","vocabulaire"],
+    summary: "توصیف تصویر هارد دیسک روی شن — با هایلایت واژگان و ساختارها"
+  },
+  {
     file: "GRAMMAR_passe_recent.html",
     title: "📐 Le Passé Récent — venir de",
     titleFr: "Le Passé Récent",
