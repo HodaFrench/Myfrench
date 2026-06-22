@@ -137,6 +137,110 @@ input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:t
 </style>
 </head>
 <body>
+<!-- 📊 Stats Bar -->
+<style>
+#stats-bar{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,253,246,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(217,206,184,.5);
+  padding:7px 20px;
+  display:flex;align-items:center;gap:14px;
+  font-family:'Estedad',sans-serif;
+  font-size:12px;
+  color:#1e3a5f;
+}
+#stats-bar .sb-item{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 10px;
+  background:rgba(31,58,95,.06);
+  border-radius:20px;
+  white-space:nowrap;
+}
+#stats-bar .sb-val{font-weight:700;color:#1e3a5f}
+#stats-bar .sb-label{color:#8a8275;font-size:11px}
+#stats-bar .sb-top{
+  display:flex;align-items:center;gap:5px;
+  padding:4px 12px;
+  background:rgba(176,122,74,.12);
+  border-radius:20px;
+  color:#b07a4a;font-weight:600;
+  white-space:nowrap;
+  font-size:11.5px;
+}
+#stats-bar .sb-top span{font-weight:700}
+body{padding-top:38px!important}
+</style>
+
+<div id="stats-bar">
+  <div class="sb-item">⏱ <span class="sb-val" id="sb-time">۰</span><span class="sb-label">دقیقه مطالعه</span></div>
+  <div class="sb-item">📖 <span class="sb-val" id="sb-lessons">۰</span><span class="sb-label">درس خوانده</span></div>
+  <div class="sb-top">🏆 بیشترین وقت: <span id="sb-top-cat">—</span></div>
+</div>
+
+<script>
+(function(){
+  function toFa(n){return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d])}
+
+  const CAT_NAMES = {
+    grammar:'گرامر', vocab:'واژگان', miniarticle:'مینی‌آرتیکل',
+    innerfrench:'InnerFrench', article:'آرتیکل', podcast:'پادکست',
+    culture:'فرهنگ فرانسه', tcf:'آمادگی TCF', phrases:'جملات کاربردی'
+  };
+
+  function getCatFromFile(file){
+    if(!file)return null;
+    if(file.startsWith('GRAMMAR'))return 'grammar';
+    if(file.startsWith('VOCAB'))return 'vocab';
+    if(file.startsWith('MINI'))return 'miniarticle';
+    if(file.startsWith('INNER')||file.includes('innerfrench'))return 'innerfrench';
+    if(file.startsWith('CULTURE'))return 'culture';
+    if(file.startsWith('TCF')||file.includes('tcf'))return 'tcf';
+    if(file.startsWith('PODCAST'))return 'podcast';
+    return 'other';
+  }
+
+  function updateBar(){
+    const time=parseInt(localStorage.getItem('hoda_time')||'0');
+    const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    document.getElementById('sb-time').textContent=toFa(time);
+    document.getElementById('sb-lessons').textContent=toFa(visited.length);
+
+    // Count time per category from time_by_cat
+    const timeByCat=JSON.parse(localStorage.getItem('hoda_time_by_cat')||'{}');
+    if(Object.keys(timeByCat).length){
+      const top=Object.entries(timeByCat).sort((a,b)=>b[1]-a[1])[0];
+      document.getElementById('sb-top-cat').textContent=CAT_NAMES[top[0]]||top[0];
+    } else if(visited.length){
+      // fallback: most visited category
+      const catCount={};
+      visited.forEach(v=>{const c=getCatFromFile(v.file);if(c)catCount[c]=(catCount[c]||0)+1;});
+      const top=Object.entries(catCount).sort((a,b)=>b[1]-a[1])[0];
+      if(top) document.getElementById('sb-top-cat').textContent=CAT_NAMES[top[0]]||top[0];
+    }
+  }
+
+  // Track time per category for current page
+  const page=location.pathname.split('/').pop();
+  const cat=getCatFromFile(page);
+  if(cat&&cat!=='other'){
+    let pageStart=Date.now();
+    setInterval(()=>{
+      const mins=Math.floor((Date.now()-pageStart)/60000);
+      if(mins>0){
+        const tbc=JSON.parse(localStorage.getItem('hoda_time_by_cat')||'{}');
+        tbc[cat]=(tbc[cat]||0)+1;
+        localStorage.setItem('hoda_time_by_cat',JSON.stringify(tbc));
+        pageStart=Date.now();
+      }
+    },60000);
+  }
+
+  updateBar();
+  setInterval(updateBar,30000);
+})();
+</script>
+
 <div class="auth-bar">
   <span id="_username">...</span>
   <button onclick="_logout()">خروج</button>
