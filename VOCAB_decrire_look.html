@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Décrire le look | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f;--main:#6b3fa0}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#6b3fa0,#4a2570);color:#fff;padding:38px 28px 32px;text-align:center;box-shadow:0 14px 40px rgba(107,63,160,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:30px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85}
+.sec{background:var(--white);border-radius:16px;padding:22px;margin:20px 0;box-shadow:0 4px 16px rgba(31,58,95,.07);border-right:4px solid var(--main)}
+.sec-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--main);direction:ltr;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.word-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:14px}
+.word-card{background:var(--cream);border-radius:10px;padding:12px 14px;border-right:3px solid var(--main)}
+.word-fr{font-family:'Roboto',serif;font-size:15px;font-weight:600;color:var(--main)}
+.word-fa{font-size:13px;color:var(--gray);margin-top:2px}
+.word-ex{font-family:'Roboto',serif;font-size:12px;font-style:italic;color:#5a6a7a;margin-top:4px}
+.exs{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.ex{background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--main)}
+.ex-fr{font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;margin-bottom:4px}
+.ex-fa{font-size:13px;color:var(--gray)}
+.hl{color:var(--main);font-weight:700;background:rgba(107,63,160,.1);border-radius:3px;padding:0 3px}
+.portrait{background:linear-gradient(135deg,rgba(107,63,160,.06),rgba(31,58,95,.06));border:1px solid rgba(107,63,160,.2);border-radius:14px;padding:18px 20px;margin-bottom:16px;font-family:'Roboto',serif;font-size:15px;direction:ltr;line-height:2.2}
+.portrait-title{font-family:'Estedad',sans-serif;font-size:12px;color:var(--gold);font-weight:700;letter-spacing:1.5px;margin-bottom:10px}
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic;color:var(--main)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;background:var(--cream);transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--main)}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;border-radius:8px;display:none;line-height:1.7}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📚 واژگان · A2–B1</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📚 VOCABULAIRE · A2–B1</div>
+  <h1>Décrire le look de quelqu'un</h1>
+  <div class="sub">توصیف ظاهر و قیافه کسی</div>
+</div>
+<div class="wrap">
+
+<!-- قد و هیکل -->
+<div class="sec">
+  <div class="sec-title">① La taille et la corpulence — قد و هیکل</div>
+  <div class="word-grid">
+    <div class="word-card"><div class="word-fr">grand(e)</div><div class="word-fa">قد بلند</div><div class="word-ex">Il est grand.</div></div>
+    <div class="word-card"><div class="word-fr">petit(e)</div><div class="word-fa">کوتاه قد</div><div class="word-ex">Elle est petite.</div></div>
+    <div class="word-card"><div class="word-fr">de taille moyenne</div><div class="word-fa">قد متوسط</div><div class="word-ex">Il est de taille moyenne.</div></div>
+    <div class="word-card"><div class="word-fr">mince / svelte</div><div class="word-fa">لاغر / اندام‌دار</div><div class="word-ex">Elle est mince.</div></div>
+    <div class="word-card"><div class="word-fr">fort(e) / gros(se)</div><div class="word-fa">درشت هیکل / چاق</div><div class="word-ex">Il est fort.</div></div>
+    <div class="word-card"><div class="word-fr">musclé(e)</div><div class="word-fa">عضلانی</div><div class="word-ex">Il est musclé.</div></div>
+  </div>
+  <div class="exs">
+    <div class="ex"><div class="ex-fr">Mon frère est <span class="hl">grand et mince</span>.</div><div class="ex-fa">برادرم قد بلند و لاغر است.</div></div>
+    <div class="ex"><div class="ex-fr">Elle est <span class="hl">de taille moyenne</span>, ni grande ni petite.</div><div class="ex-fa">قدش متوسطه، نه بلند نه کوتاه.</div></div>
+  </div>
+</div>
+
+<!-- مو -->
+<div class="sec">
+  <div class="sec-title">② Les cheveux — مو</div>
+  <div class="word-grid">
+    <div class="word-card"><div class="word-fr">les cheveux courts</div><div class="word-fa">موی کوتاه</div></div>
+    <div class="word-card"><div class="word-fr">les cheveux longs</div><div class="word-fa">موی بلند</div></div>
+    <div class="word-card"><div class="word-fr">les cheveux bouclés</div><div class="word-fa">موی فر</div></div>
+    <div class="word-card"><div class="word-fr">les cheveux raides</div><div class="word-fa">موی صاف</div></div>
+    <div class="word-card"><div class="word-fr">blond(e) / brun(e)</div><div class="word-fa">بلوند / قهوه‌ای</div></div>
+    <div class="word-card"><div class="word-fr">roux / rousse</div><div class="word-fa">قرمز مو</div></div>
+    <div class="word-card"><div class="word-fr">châtain</div><div class="word-fa">قهوه‌ای روشن</div></div>
+    <div class="word-card"><div class="word-fr">chauve</div><div class="word-fa">طاس</div></div>
+  </div>
+  <div class="exs">
+    <div class="ex"><div class="ex-fr">Elle a <span class="hl">les cheveux longs et bouclés</span>, de couleur châtain.</div><div class="ex-fa">موهایش بلند و فری است، به رنگ قهوه‌ای روشن.</div></div>
+    <div class="ex"><div class="ex-fr">Il est <span class="hl">chauve</span> avec une petite barbe.</div><div class="ex-fa">طاس است با ریش کوچکی.</div></div>
+  </div>
+</div>
+
+<!-- چشم و صورت -->
+<div class="sec">
+  <div class="sec-title">③ Le visage et les yeux — صورت و چشم</div>
+  <div class="word-grid">
+    <div class="word-card"><div class="word-fr">les yeux bleus/verts/marron</div><div class="word-fa">چشم آبی/سبز/قهوه‌ای</div></div>
+    <div class="word-card"><div class="word-fr">un visage ovale/rond</div><div class="word-fa">صورت بیضی/گرد</div></div>
+    <div class="word-card"><div class="word-fr">des taches de rousseur</div><div class="word-fa">کک و مک</div></div>
+    <div class="word-card"><div class="word-fr">une barbe / une moustache</div><div class="word-fa">ریش / سبیل</div></div>
+    <div class="word-card"><div class="word-fr">des lunettes</div><div class="word-fa">عینک</div></div>
+    <div class="word-card"><div class="word-fr">jeune / âgé(e)</div><div class="word-fa">جوان / مسن</div></div>
+  </div>
+  <div class="exs">
+    <div class="ex"><div class="ex-fr">Elle a <span class="hl">les yeux verts</span> et un <span class="hl">visage ovale</span>.</div><div class="ex-fa">چشمانش سبز است و صورتش بیضی شکل.</div></div>
+    <div class="ex"><div class="ex-fr">Il porte <span class="hl">des lunettes</span> et a <span class="hl">une barbe</span> courte.</div><div class="ex-fa">عینک می‌زند و ریش کوتاهی دارد.</div></div>
+  </div>
+</div>
+
+<!-- پوشاک -->
+<div class="sec">
+  <div class="sec-title">④ Les vêtements et le style — لباس و سبک</div>
+  <div class="word-grid">
+    <div class="word-card"><div class="word-fr">élégant(e)</div><div class="word-fa">شیک و اناقت</div></div>
+    <div class="word-card"><div class="word-fr">décontracté(e)</div><div class="word-fa">راحت و کژوال</div></div>
+    <div class="word-card"><div class="word-fr">branché(e)</div><div class="word-fa">مد روز</div></div>
+    <div class="word-card"><div class="word-fr">classique</div><div class="word-fa">کلاسیک</div></div>
+    <div class="word-card"><div class="word-fr">porter un manteau</div><div class="word-fa">پالتو پوشیدن</div></div>
+    <div class="word-card"><div class="word-fr">être habillé(e) en...</div><div class="word-fa">پوشیده به رنگ...</div></div>
+  </div>
+</div>
+
+<!-- پرتره نمونه -->
+<div class="sec">
+  <div class="sec-title">⑤ Portrait complet — توصیف کامل</div>
+  <div class="portrait">
+    <div class="portrait-title">✍️ نمونه توصیف</div>
+    <span class="hl">Marie</span> est une femme d'une <span class="hl">quarantaine d'années</span>.
+    Elle est <span class="hl">de taille moyenne</span> et <span class="hl">mince</span>.
+    Elle a <span class="hl">les cheveux courts et raides</span>, de couleur <span class="hl">châtain foncé</span>.
+    Ses yeux sont <span class="hl">bleus</span> et elle porte <span class="hl">des lunettes</span>.
+    Elle a un <span class="hl">visage ovale</span> avec un sourire chaleureux.
+    Elle est toujours <span class="hl">élégamment habillée</span>.
+  </div>
+  <div style="font-size:13px;color:var(--gray);line-height:1.9">
+    ماری زنی حدوداً چهل‌ساله است. قدش متوسط و لاغر است. موهایش کوتاه و صاف، به رنگ قهوه‌ای تیره است. چشمانش آبی است و عینک می‌زند. صورتش بیضی شکل با لبخندی گرم. همیشه شیک لباس می‌پوشد.
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="q-card" data-c="1">
+  <div class="q-text">ترجمه: «موهایش فری و بلوند است.»</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Il a les cheveux raides et blonds.</div>
+    <div class="opt" onclick="a(this,1)">Il a les cheveux bouclés et blonds.</div>
+    <div class="opt" onclick="a(this,0)">Il a les cheveux courts et blonds.</div>
+  </div>
+  <div class="q-feedback ok">✅ «bouclés» = فری — درست!</div>
+  <div class="q-feedback ko">❌ فری = «bouclés»، نه «raides» (صاف).</div>
+</div>
+
+<div class="q-card" data-c="2">
+  <div class="q-text">کدام کلمه یعنی «طاس»؟</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">mince</div>
+    <div class="opt" onclick="a(this,0)">roux</div>
+    <div class="opt" onclick="a(this,2)">chauve</div>
+  </div>
+  <div class="q-feedback ok">✅ «chauve» = طاس.</div>
+  <div class="q-feedback ko">❌ «chauve» = طاس. mince = لاغر، roux = قرمزمو.</div>
+</div>
+
+<div class="q-card" data-c="0">
+  <div class="q-text">«او شیک لباس می‌پوشد.» چگونه می‌گوییم؟</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Elle est élégante.</div>
+    <div class="opt" onclick="a(this,0)">Elle est décontractée.</div>
+    <div class="opt" onclick="a(this,0)">Elle est branchée.</div>
+  </div>
+  <div class="q-feedback ok">✅ «élégante» = شیک.</div>
+  <div class="q-feedback ko">❌ شیک = «élégante».</div>
+</div>
+
+<div class="score-bar">امتیاز: <span id="sc">0</span> از ۳</div>
+</div>
+
+<script>
+let sc=0;
+function a(el,chosen){
+  const b=el.closest('.q-card');if(b.dataset.done)return;b.dataset.done='1';
+  const c=parseInt(b.dataset.c);
+  b.querySelectorAll('.opt').forEach((o,i)=>{o.classList.add('disabled');if(i===c)o.classList.add('correct');else if(o===el&&chosen!==c)o.classList.add('wrong');});
+  b.querySelector('.q-feedback.'+(chosen===c?'ok':'ko')).classList.add('show');
+  if(chosen===c){sc++;document.getElementById('sc').textContent=sc;}
+}
+</script>
+</body>
+</html>
