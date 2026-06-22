@@ -272,7 +272,8 @@ document.addEventListener('keydown',e=>{
 </script>
 
 
-<!-- 📌 Widget -->
+
+<!-- 📌 Widget v3 -->
 <style>
 #note-btn{
   position:fixed;bottom:1.5rem;left:1.5rem;z-index:500;
@@ -286,57 +287,69 @@ document.addEventListener('keydown',e=>{
 
 #note-panel{
   position:fixed;bottom:5rem;left:1.5rem;z-index:500;
-  width:300px;
+  width:310px;max-height:85vh;
   background:#fffdf6;
   border:1px solid rgba(217,206,184,.7);
   border-radius:18px;
   box-shadow:0 12px 40px rgba(31,58,95,.15);
   transform:translateY(20px);opacity:0;pointer-events:none;
   transition:all .3s;
-  overflow:hidden;
-  display:flex;flex-direction:column;
+  overflow-y:auto;
+  scrollbar-width:none;
 }
+#note-panel::-webkit-scrollbar{display:none}
 #note-panel.open{transform:translateY(0);opacity:1;pointer-events:all}
 
-/* هدر */
 .np-header{
+  position:sticky;top:0;z-index:10;
   background:#1e3a5f;color:#f5f0e8;
   padding:12px 16px;
   display:flex;align-items:center;justify-content:space-between;
-  flex-shrink:0;
 }
 .np-header h3{font-family:'Estedad',sans-serif;font-size:14px;font-weight:600}
-.np-close{background:none;border:none;color:#f5f0e8;font-size:20px;cursor:pointer;line-height:1}
+.np-close{background:none;border:none;color:#f5f0e8;font-size:20px;cursor:pointer}
 
-/* آمار — بالا */
-.np-stats{
-  padding:12px 14px;
-  background:#f5f0e8;
-  border-bottom:1px solid #e8e0ce;
-  flex-shrink:0;
-}
+/* آمار */
+.np-stats{padding:12px 14px;background:#f5f0e8;border-bottom:1px solid #e8e0ce}
 .np-stats-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1px;margin-bottom:8px}
-.np-stats-row{display:flex;gap:8px}
-.np-stat-box{flex:1;background:#fffdf6;border-radius:10px;padding:8px 6px;text-align:center;border:1px solid #e8e0ce}
+.np-stats-row{display:flex;gap:6px}
+.np-stat-box{flex:1;background:#fffdf6;border-radius:10px;padding:8px 4px;text-align:center;border:1px solid #e8e0ce}
 .np-stat-val{font-size:18px;font-weight:700;color:#1e3a5f;line-height:1}
-.np-stat-label{font-size:10px;color:#8a8275;margin-top:3px;line-height:1.3}
+.np-stat-label{font-size:9.5px;color:#8a8275;margin-top:3px;line-height:1.3}
 
-/* درس‌های خوانده‌شده */
-.np-lessons-wrap{padding:10px 14px;border-bottom:1px solid #e8e0ce;flex-shrink:0}
-.np-lessons-title{font-size:11px;font-weight:700;color:#1e3a5f;margin-bottom:6px}
-.np-lesson-item{font-size:11.5px;color:#2c2a26;padding:4px 8px;background:#f5f0e8;border-radius:6px;margin-bottom:4px;border-right:2px solid #b07a4a}
-.np-lessons-empty{font-size:12px;color:#b0a090;text-align:center;padding:6px 0}
+/* درس‌های خوانده */
+.np-sec{padding:10px 14px;border-bottom:1px solid #f0ebe0}
+.np-sec-title{font-size:11px;font-weight:700;color:#1e3a5f;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.np-lesson-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:11.5px;color:#2c2a26;
+  padding:5px 8px;background:#f5f0e8;border-radius:7px;margin-bottom:4px;
+}
+.np-lesson-title{flex:1;font-size:11px}
+.np-status-btns{display:flex;gap:3px}
+.np-sbtn{
+  border:1px solid #e2ddd5;border-radius:6px;
+  background:#fffdf6;font-size:9.5px;padding:2px 5px;
+  cursor:pointer;color:#8a8275;transition:all .15s;white-space:nowrap;
+}
+.np-sbtn.done{background:#e8f5ee;border-color:#2e8b6b;color:#1d6b50;font-weight:700}
+.np-sbtn.practice{background:#fff8e8;border-color:#b07a4a;color:#8a5a2a;font-weight:700}
+.np-sbtn.hard{background:#fdf0f0;border-color:#b0506f;color:#8a2040;font-weight:700}
+.np-lessons-empty{font-size:12px;color:#b0a090;text-align:center;padding:8px 0}
 
-/* یادداشت — پایین */
-.np-notes-wrap{padding:12px 14px;flex-shrink:0}
-.np-notes-title{font-size:11px;font-weight:700;color:#1e3a5f;letter-spacing:.5px;margin-bottom:8px}
+/* یادداشت‌ها */
+.np-notes-title{font-size:11px;font-weight:700;color:#1e3a5f;margin-bottom:6px}
+.np-subtabs{display:flex;gap:4px;margin-bottom:8px}
+.np-subtab{flex:1;padding:5px;border:1.5px solid #e2ddd5;border-radius:8px;
+  background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;
+  font-size:11.5px;color:#8a8275;transition:all .2s;text-align:center}
+.np-subtab.active{background:#1e3a5f;color:#f5f0e8;border-color:#1e3a5f;font-weight:600}
 .np-input{
-  width:100%;height:80px;
+  width:100%;height:75px;
   border:1.5px solid #e2ddd5;border-radius:10px;
   padding:8px 10px;
   font-family:'Estedad',sans-serif;font-size:13px;
-  color:#1e3a5f;resize:none;background:#f9f8fa;
-  direction:rtl;
+  color:#1e3a5f;resize:none;background:#f9f8fa;direction:rtl;
 }
 .np-input:focus{outline:none;border-color:#1e3a5f;background:#fff}
 .np-save-btn{
@@ -347,63 +360,68 @@ document.addEventListener('keydown',e=>{
 }
 .np-save-btn:hover{background:#2a4f7f}
 
-/* لیست یادداشت‌ها */
-.np-list-wrap{max-height:180px;overflow-y:auto;padding:0 14px 12px}
+/* لیست یادداشت */
 .np-note-item{
   background:#f5f0e8;border-radius:10px;padding:8px 10px;
   font-size:12px;color:#2c2a26;line-height:1.7;
-  border-right:3px solid #b07a4a;position:relative;
+  border-right:3px solid #b07a4a;
   margin-bottom:6px;
 }
+.np-note-item.question{border-right-color:#22618f;background:#f0f4f8}
+.np-note-actions{display:flex;gap:4px;margin-top:5px}
+.np-note-btn{border:none;background:none;font-size:11px;cursor:pointer;
+  padding:2px 7px;border-radius:5px;border:1px solid #e2ddd5;color:#8a8275}
+.np-note-btn:hover{background:#fff}
 .np-note-meta{font-size:10px;color:#8a8275;margin-top:3px}
-.np-note-del{position:absolute;top:6px;left:6px;background:none;border:none;
-  color:#c0392b;font-size:12px;cursor:pointer;opacity:.4}
-.np-note-del:hover{opacity:1}
-.np-notes-empty{font-size:12px;color:#b0a090;text-align:center;padding:10px 0}
+.np-edit-input{
+  width:100%;border:1.5px solid #1e3a5f;border-radius:8px;
+  padding:6px 8px;font-family:'Estedad',sans-serif;font-size:12px;
+  color:#1e3a5f;background:#fff;direction:rtl;resize:none;
+  height:60px;margin-top:4px;
+}
+.np-tag{display:inline-block;font-size:9.5px;padding:1px 6px;border-radius:10px;
+  margin-bottom:4px;font-weight:600}
+.np-tag.note{background:#f5f0e8;color:#b07a4a;border:1px solid #e8d5a0}
+.np-tag.question{background:#f0f4f8;color:#22618f;border:1px solid #b0c8e0}
+.np-empty{font-size:12px;color:#b0a090;text-align:center;padding:10px 0}
 </style>
 
 <button id="note-btn" onclick="toggleNP()" title="یادداشت‌ها و آمار">📌</button>
 
 <div id="note-panel">
   <div class="np-header">
-    <h3>📌 یادداشت و آمار من</h3>
+    <h3>📌 من در سایت</h3>
     <button class="np-close" onclick="toggleNP()">×</button>
   </div>
 
-  <!-- آمار بالا -->
+  <!-- آمار -->
   <div class="np-stats">
     <div class="np-stats-title">⏱ چقدر فرانسه خوندم</div>
     <div class="np-stats-row">
-      <div class="np-stat-box">
-        <div class="np-stat-val" id="s-time">۰</div>
-        <div class="np-stat-label">دقیقه مطالعه</div>
-      </div>
-      <div class="np-stat-box">
-        <div class="np-stat-val" id="s-lessons">۰</div>
-        <div class="np-stat-label">درس خوانده</div>
-      </div>
-      <div class="np-stat-box">
-        <div class="np-stat-val" id="s-days">۰</div>
-        <div class="np-stat-label">روز با ما</div>
-      </div>
+      <div class="np-stat-box"><div class="np-stat-val" id="s-time">۰</div><div class="np-stat-label">دقیقه مطالعه</div></div>
+      <div class="np-stat-box"><div class="np-stat-val" id="s-lessons">۰</div><div class="np-stat-label">درس خوانده</div></div>
+      <div class="np-stat-box"><div class="np-stat-val" id="s-days">۰</div><div class="np-stat-label">روز با ما</div></div>
     </div>
   </div>
 
-  <!-- درس‌های اخیر -->
-  <div class="np-lessons-wrap">
-    <div class="np-lessons-title">📖 آخرین درس‌های خوانده‌شده</div>
+  <!-- وضعیت درس‌ها -->
+  <div class="np-sec">
+    <div class="np-sec-title">📖 درس‌های من <span style="color:#b07a4a;font-weight:400;font-size:10px">(وضعیت هر درس رو مشخص کن)</span></div>
     <div id="s-lesson-list"></div>
   </div>
 
-  <!-- یادداشت -->
-  <div class="np-notes-wrap">
-    <div class="np-notes-title">✏️ سوال یا نکته مهم</div>
-    <textarea class="np-input" id="np-input" placeholder="سوالت رو یا نکته مهم رو اینجا بنویس..."></textarea>
+  <!-- یادداشت‌ها -->
+  <div class="np-sec" style="border-bottom:none">
+    <div class="np-notes-title">✏️ یادداشت‌های من</div>
+    <div class="np-subtabs">
+      <button class="np-subtab active" onclick="npSubTab('note',this)">📝 نکته مهم</button>
+      <button class="np-subtab" onclick="npSubTab('question',this)">❓ سوالم</button>
+    </div>
+    <input type="hidden" id="np-type" value="note">
+    <textarea class="np-input" id="np-input" placeholder="بنویس..."></textarea>
     <button class="np-save-btn" onclick="npSave()">ذخیره ✓</button>
+    <div style="margin-top:10px" id="np-list"></div>
   </div>
-
-  <!-- لیست یادداشت‌ها -->
-  <div class="np-list-wrap" id="np-list"></div>
 </div>
 
 <script>
@@ -412,26 +430,18 @@ document.addEventListener('keydown',e=>{
   if(!localStorage.getItem('hoda_joined'))
     localStorage.setItem('hoda_joined',new Date().toISOString());
 
-  // Track time
-  function getMin(){
-    return parseInt(localStorage.getItem('hoda_time')||'0')+
-           Math.floor((Date.now()-startTime)/60000);
-  }
+  function toFa(n){return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d])}
+  function getMin(){return parseInt(localStorage.getItem('hoda_time')||'0')+Math.floor((Date.now()-startTime)/60000)}
   setInterval(()=>localStorage.setItem('hoda_time',getMin()),60000);
 
   // Track page
   const page=location.pathname.split('/').pop();
   if(page&&page!=='index.html'&&page!=='auth.html'&&page.endsWith('.html')){
     const v=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-    const e={file:page,title:document.title.split('|')[0].trim(),
-              time:new Date().toLocaleDateString('fa-IR')};
+    const e={file:page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleDateString('fa-IR')};
     const i=v.findIndex(x=>x.file===page);
     if(i>=0)v[i]=e;else v.unshift(e);
     localStorage.setItem('hoda_visited',JSON.stringify(v.slice(0,30)));
-  }
-
-  function toFa(n){
-    return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
   }
 
   function loadStats(){
@@ -440,39 +450,103 @@ document.addEventListener('keydown',e=>{
     document.getElementById('s-lessons').textContent=toFa(v.length);
     const days=Math.max(1,Math.floor((Date.now()-new Date(localStorage.getItem('hoda_joined')))/86400000));
     document.getElementById('s-days').textContent=toFa(days);
+
+    const statuses=JSON.parse(localStorage.getItem('hoda_status')||'{}');
     const ll=document.getElementById('s-lesson-list');
     if(!v.length){ll.innerHTML='<div class="np-lessons-empty">هنوز درسی نخواندی!</div>';return;}
-    ll.innerHTML=v.slice(0,4).map(x=>
-      `<div class="np-lesson-item">📖 ${x.title}<span style="color:#b07a4a;font-size:10px"> · ${x.time}</span></div>`
-    ).join('');
+    ll.innerHTML=v.slice(0,8).map(x=>{
+      const st=statuses[x.file]||'';
+      return `<div class="np-lesson-item">
+        <div class="np-lesson-title">📄 ${x.title}</div>
+        <div class="np-status-btns">
+          <button class="np-sbtn ${st==='done'?'done':''}" onclick="setStatus('${x.file}','done',this.closest('.np-lesson-item'))">✅ خوندم</button>
+          <button class="np-sbtn ${st==='practice'?'practice':''}" onclick="setStatus('${x.file}','practice',this.closest('.np-lesson-item'))">🔄 تمرین</button>
+          <button class="np-sbtn ${st==='hard'?'hard':''}" onclick="setStatus('${x.file}','hard',this.closest('.np-lesson-item'))">💪 دشوار</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  window.setStatus=function(file,status,row){
+    const s=JSON.parse(localStorage.getItem('hoda_status')||'{}');
+    if(s[file]===status) delete s[file]; else s[file]=status;
+    localStorage.setItem('hoda_status',JSON.stringify(s));
+    // Update buttons
+    row.querySelectorAll('.np-sbtn').forEach(b=>{
+      b.classList.remove('done','practice','hard');
+    });
+    const cur=s[file];
+    if(cur) row.querySelector(`.np-sbtn.${cur===s[file]?cur:''}`)||
+      row.querySelectorAll('.np-sbtn').forEach(b=>{
+        if((b.textContent.includes('خوندم')&&cur==='done')||
+           (b.textContent.includes('تمرین')&&cur==='practice')||
+           (b.textContent.includes('دشوار')&&cur==='hard'))
+          b.classList.add(cur);
+      });
+    loadStats();
+  }
+
+  window.npSubTab=function(type,btn){
+    document.getElementById('np-type').value=type;
+    document.querySelectorAll('.np-subtab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    const ph=type==='note'?'نکته مهمی که یاد گرفتی...':'سوالی که داری...';
+    document.getElementById('np-input').placeholder=ph;
+    loadNotes();
   }
 
   function loadNotes(){
+    const type=document.getElementById('np-type').value;
     const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    const filtered=notes.filter(n=>n.type===type||(type==='note'&&!n.type));
     const list=document.getElementById('np-list');
-    if(!notes.length){list.innerHTML='<div class="np-notes-empty">یادداشتی نداری هنوز 📝</div>';return;}
-    list.innerHTML=notes.map((n,i)=>`
-      <div class="np-note-item">
-        <button class="np-note-del" onclick="npDel(${i})">🗑</button>
-        ${n.text}
+    if(!filtered.length){list.innerHTML=`<div class="np-empty">${type==='note'?'نکته‌ای ثبت نشده 📝':'سوالی ثبت نشده ❓'}</div>`;return;}
+    list.innerHTML=filtered.map((n,i)=>{
+      const realIdx=notes.indexOf(n);
+      return `<div class="np-note-item ${n.type==='question'?'question':''}">
+        <span class="np-tag ${n.type==='question'?'question':'note'}">${n.type==='question'?'❓ سوال':'📝 نکته'}</span>
+        <div id="note-text-${realIdx}">${n.text}</div>
+        <div id="note-edit-${realIdx}" style="display:none">
+          <textarea class="np-edit-input" id="note-edit-input-${realIdx}">${n.text}</textarea>
+          <div style="display:flex;gap:4px;margin-top:4px">
+            <button class="np-save-btn" style="padding:5px;font-size:12px" onclick="npEditSave(${realIdx})">ذخیره</button>
+            <button class="np-note-btn" onclick="npEditCancel(${realIdx})">لغو</button>
+          </div>
+        </div>
         <div class="np-note-meta">📄 ${n.page} · ${n.time}</div>
-      </div>`).join('');
+        <div class="np-note-actions">
+          <button class="np-note-btn" onclick="npEdit(${realIdx})">✏️ ویرایش</button>
+          <button class="np-note-btn" style="color:#c0392b" onclick="npDel(${realIdx})">🗑 حذف</button>
+        </div>
+      </div>`;
+    }).join('');
   }
 
-  window.toggleNP=function(){
-    const p=document.getElementById('note-panel');
-    p.classList.toggle('open');
-    if(p.classList.contains('open')){loadStats();loadNotes();}
-  }
   window.npSave=function(){
     const txt=document.getElementById('np-input').value.trim();
+    const type=document.getElementById('np-type').value;
     if(!txt)return;
     const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
-    notes.unshift({text:txt,
+    notes.unshift({text:txt,type,
       page:document.title.split('|')[0].trim(),
       time:new Date().toLocaleDateString('fa-IR',{month:'long',day:'numeric'})});
-    localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,50)));
+    localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,100)));
     document.getElementById('np-input').value='';
+    loadNotes();
+  }
+
+  window.npEdit=function(i){
+    document.getElementById('note-text-'+i).style.display='none';
+    document.getElementById('note-edit-'+i).style.display='block';
+  }
+  window.npEditCancel=function(i){
+    document.getElementById('note-text-'+i).style.display='block';
+    document.getElementById('note-edit-'+i).style.display='none';
+  }
+  window.npEditSave=function(i){
+    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    const newTxt=document.getElementById('note-edit-input-'+i).value.trim();
+    if(newTxt&&notes[i]){notes[i].text=newTxt;localStorage.setItem('hoda_notes',JSON.stringify(notes));}
     loadNotes();
   }
   window.npDel=function(i){
@@ -480,6 +554,12 @@ document.addEventListener('keydown',e=>{
     notes.splice(i,1);
     localStorage.setItem('hoda_notes',JSON.stringify(notes));
     loadNotes();
+  }
+
+  window.toggleNP=function(){
+    const p=document.getElementById('note-panel');
+    p.classList.toggle('open');
+    if(p.classList.contains('open')){loadStats();loadNotes();}
   }
 })();
 </script>
