@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Podcast #288 — L'amour idéalisé | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--pod:#7a3b88}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#7a3b88,#4a1f5a);color:#fff;padding:32px 28px 28px;text-align:center;box-shadow:0 14px 40px rgba(122,59,136,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.85;line-height:1.7}
+
+/* meta bar */
+.meta-bar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0;justify-content:center}
+.meta-chip{background:var(--white);border-radius:12px;padding:8px 16px;font-size:12.5px;font-weight:600;border:1px solid var(--line);color:var(--navy);display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(31,58,95,.06)}
+
+/* listen link */
+.listen-btn{display:flex;align-items:center;gap:12px;background:var(--white);border-radius:16px;padding:16px 20px;margin:18px 0;text-decoration:none;color:var(--ink);box-shadow:0 4px 16px rgba(31,58,95,.08);border:1px solid var(--line);transition:box-shadow .2s}
+.listen-btn:hover{box-shadow:0 8px 24px rgba(122,59,136,.15)}
+.listen-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#7a3b88,#4a1f5a);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.listen-texts .t1{font-size:14px;font-weight:700;color:var(--navy)}
+.listen-texts .t2{font-size:12px;color:var(--gray);margin-top:2px}
+.listen-arrow{margin-right:auto;color:#7a3b88;font-size:20px}
+
+/* cards */
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin-bottom:16px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.purple{border-right:4px solid #7a3b88}
+.card.gold{border-right:4px solid var(--gold)}
+.card-label{font-size:11px;font-weight:700;color:var(--pod);letter-spacing:2px;margin-bottom:12px}
+.card.gold .card-label{color:var(--gold)}
+
+/* description blocks */
+.desc-fr{font-family:'Roboto',serif;font-size:16px;line-height:2.3;direction:ltr;text-align:left;background:var(--cream);border-radius:10px;padding:14px 18px;border-right:4px solid #7a3b88;margin-bottom:12px}
+.desc-fa{font-size:13.5px;color:var(--gray);line-height:2.1}
+
+/* highlights */
+.hw{background:rgba(122,59,136,.12);color:#4a1f5a;border-radius:4px;padding:1px 5px;cursor:pointer;font-weight:700;border-bottom:2px solid rgba(122,59,136,.4);transition:all .2s;position:relative;display:inline}
+.hw:hover,.hw.open{background:rgba(122,59,136,.22)}
+.hs{background:rgba(176,122,74,.12);color:#8a5a2a;border-radius:4px;padding:1px 5px;cursor:pointer;font-weight:600;border-bottom:2px dashed rgba(176,122,74,.5);transition:all .2s;position:relative;display:inline}
+.hs:hover,.hs.open{background:rgba(176,122,74,.22)}
+.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12px;font-weight:500;direction:rtl;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .2s;pointer-events:none;max-width:260px;white-space:normal;text-align:right;line-height:1.7}
+.hw.open .pop,.hs.open .pop{opacity:1;visibility:visible}
+
+/* questions */
+.q-list{display:flex;flex-direction:column;gap:10px;margin:12px 0}
+.q-item{background:var(--cream);border-radius:10px;padding:12px 16px;font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;border-right:3px solid #7a3b88}
+.q-item-fa{font-family:'Estedad',sans-serif;font-size:12.5px;color:var(--gray);direction:rtl;text-align:right;margin-top:5px;border-top:1px solid var(--line);padding-top:5px}
+
+/* vocab */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:12px 0}
+.v-card{background:var(--cream);border-radius:10px;padding:11px 14px}
+.v-fr{font-family:'Roboto',serif;font-size:15px;font-weight:700;color:#7a3b88}
+.v-type{font-size:10.5px;color:var(--gray)}
+.v-fa{font-size:13px;margin-top:3px}
+.v-ex{font-family:'Roboto',serif;font-size:11.5px;font-style:italic;color:#8a8275;margin-top:3px}
+
+/* legend */
+.legend{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;align-items:center;margin-bottom:14px}
+.lg{display:flex;align-items:center;gap:5px}
+.lg-dot{width:18px;height:8px;border-radius:3px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">🎙️ پادکست فرانسوی · B2</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">🎙️ PODCAST · ÉPISODE 288</div>
+  <h1>L'amour idéalisé — entre rêve et réalité</h1>
+  <div class="sub">Psychologie et bien-être · Diane Sabbag · B2</div>
+</div>
+
+<div class="wrap">
+
+<!-- meta -->
+<div class="meta-bar">
+  <div class="meta-chip">🎙️ Psychologie et bien-être</div>
+  <div class="meta-chip">📌 Épisode #288</div>
+  <div class="meta-chip">🎯 سطح B2</div>
+  <div class="meta-chip">👩‍⚕️ Diane Sabbag</div>
+</div>
+
+<!-- listen -->
+<a class="listen-btn" href="https://podcasts.apple.com/us/podcast/psychologie-et-bien-%C3%AAtre-le-podcast-de-psychologue-net/id1513532213?i=1000773370741" target="_blank">
+  <div class="listen-icon">🎧</div>
+  <div class="listen-texts">
+    <div class="t1">گوش دادن به اپیزود کامل</div>
+    <div class="t2">Apple Podcasts · Psychologie et bien-être</div>
+  </div>
+  <div class="listen-arrow">←</div>
+</a>
+
+<!-- legend -->
+<div class="legend">
+  <div class="lg"><span class="lg-dot" style="background:rgba(122,59,136,.4)"></span><b style="color:#4a1f5a">واژه مهم</b></div>
+  <div class="lg"><span class="lg-dot" style="background:rgba(176,122,74,.4)"></span><b style="color:#8a5a2a">ساختار گرامری</b></div>
+  <span style="font-size:11px;color:#8a8275;margin-right:auto">👆 کلیک برای معنی</span>
+</div>
+
+<!-- ABOUT -->
+<div class="card purple">
+  <div class="card-label">📖 DE QUOI PARLE CE PODCAST ?</div>
+  <div class="desc-fr">
+    Dans cet épisode, on
+    <span class="hs" onclick="t(this)">remet en question<span class="pop">remettre en question = زیر سؤال بردن — ساختار مهم B2</span></span>
+    notre vision de
+    <span class="hw" onclick="t(this)">l'amour<span class="pop">l'amour (nm) = عشق</span></span>.
+    La
+    <span class="hw" onclick="t(this)">thérapeute<span class="pop">thérapeute (nf) = درمانگر، روان‌درمانگر</span></span>
+    Diane Sabbag explique comment nos
+    <span class="hw" onclick="t(this)">croyances<span class="pop">croyance (nf) = باور، اعتقاد — croire = باور کردن</span></span>,
+    nos
+    <span class="hw" onclick="t(this)">attentes<span class="pop">attente (nf) = انتظار — attendre = انتظار داشتن</span></span>
+    et les
+    <span class="hw" onclick="t(this)">mythes<span class="pop">mythe (nm) = اسطوره، افسانه</span></span>
+    autour de l'amour peuvent
+    <span class="hs" onclick="t(this)">fausser notre vision du couple<span class="pop">fausser = تحریف کردن · vision du couple = دیدگاه از رابطه</span></span>
+    et créer des
+    <span class="hw" onclick="t(this)">déceptions<span class="pop">déception (nf) = ناامیدی، سرخوردگی — décevoir = ناامید کردن</span></span>.
+    Diane
+    <span class="hs" onclick="t(this)">propose des pistes pour<span class="pop">proposer des pistes = راهکار پیشنهاد دادن — piste (nf) = مسیر، راهکار</span></span>
+    <span class="hw" onclick="t(this)">déconstruire<span class="pop">déconstruire = فرو ریختن، باز کردن ساختار — پیشوند dé- = معکوس کردن</span></span>
+    ces
+    <span class="hw" onclick="t(this)">illusions<span class="pop">illusion (nf) = توهم، خیال</span></span>
+    et avancer vers des liens plus
+    <span class="hw" onclick="t(this)">sincères<span class="pop">sincère = صادقانه، واقعی — sincérité (nf) = صداقت</span></span>.
+  </div>
+  <div class="desc-fa">
+    در این اپیزود، دیدگاه ما نسبت به عشق زیر سؤال می‌رود. درمانگر دیان صاباغ توضیح می‌دهد که چگونه باورها، انتظارات و افسانه‌های پیرامون عشق می‌توانند دیدگاه ما از رابطه را تحریف کرده و سرخوردگی ایجاد کنند. دیان راهکارهایی پیشنهاد می‌دهد تا این توهمات را فرو بریزیم و به سمت روابطی صادقانه‌تر پیش برویم.
+  </div>
+</div>
+
+<!-- سؤالات محوری -->
+<div class="card purple">
+  <div class="card-label">❓ LES QUESTIONS CLÉS DE L'ÉPISODE</div>
+  <div class="q-list">
+
+    <div>
+      <div class="q-item">
+        D'où viennent nos
+        <span class="hw" onclick="t(this)">idéaux amoureux<span class="pop">idéal amoureux = آرمان عاشقانه — idéal (nm) = آرمان، مثل اعلی</span></span> ?
+        <div class="q-item-fa">آرمان‌های عاشقانه‌مان از کجا می‌آیند؟</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="q-item">
+        Pourquoi
+        <span class="hs" onclick="t(this)">attend-on parfois de l'autre qu'il comble tous nos besoins<span class="pop">attendre de qqn que = انتظار داشتن از کسی که · combler = پر کردن، برآوردن · besoins = نیازها</span></span> ?
+        <div class="q-item-fa">چرا گاهی از دیگری انتظار داریم که تمام نیازهایمان را برآورده کند؟</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="q-item">
+        Comment construire une relation plus
+        <span class="hw" onclick="t(this)">authentique<span class="pop">authentique = اصیل، واقعی — authenticité (nf) = اصالت</span></span>,
+        <span class="hw" onclick="t(this)">réaliste<span class="pop">réaliste = واقع‌بینانه — réalisme (nm) = واقع‌بینی</span></span>
+        et
+        <span class="hw" onclick="t(this)">apaisée<span class="pop">apaisé = آرام، بدون تنش — apaiser = آرام کردن</span></span> ?
+        <div class="q-item-fa">چگونه رابطه‌ای اصیل‌تر، واقع‌بینانه‌تر و آرام‌تر بسازیم؟</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- واژگان کلیدی -->
+<div class="card gold">
+  <div class="card-label">📚 VOCABULAIRE CLÉ DE L'ÉPISODE</div>
+  <div class="vocab-grid">
+
+    <div class="v-card">
+      <div class="v-fr">idéalisation</div>
+      <div class="v-type">nf</div>
+      <div class="v-fa">آرمانی‌سازی، ایده‌آل کردن</div>
+      <div class="v-ex">l'idéalisation de l'amour</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">croyance</div>
+      <div class="v-type">nf</div>
+      <div class="v-fa">باور، اعتقاد</div>
+      <div class="v-ex">nos croyances sur le couple</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">attente</div>
+      <div class="v-type">nf</div>
+      <div class="v-fa">انتظار</div>
+      <div class="v-ex">des attentes irréalistes</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">fausser</div>
+      <div class="v-type">v</div>
+      <div class="v-fa">تحریف کردن</div>
+      <div class="v-ex">fausser notre vision</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">déception</div>
+      <div class="v-type">nf</div>
+      <div class="v-fa">سرخوردگی، ناامیدی</div>
+      <div class="v-ex">créer des déceptions</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">déconstruire</div>
+      <div class="v-type">v</div>
+      <div class="v-fa">فرو ریختن (باور)</div>
+      <div class="v-ex">déconstruire les illusions</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">combler un besoin</div>
+      <div class="v-type">locution</div>
+      <div class="v-fa">نیازی را برآوردن</div>
+      <div class="v-ex">combler tous nos besoins</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">apaisé(e)</div>
+      <div class="v-type">adj</div>
+      <div class="v-fa">آرام، بدون تنش</div>
+      <div class="v-ex">une relation apaisée</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">lien</div>
+      <div class="v-type">nm</div>
+      <div class="v-fa">پیوند، رابطه</div>
+      <div class="v-ex">des liens sincères</div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-fr">nuance</div>
+      <div class="v-type">nf</div>
+      <div class="v-fa">ظرافت، تفاوت ظریف</div>
+      <div class="v-ex">avec clarté et nuance</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ساختارهای گرامری -->
+<div class="card purple">
+  <div class="card-label">⚙ STRUCTURES GRAMMATICALES</div>
+
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+
+    <div style="background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--gold)">
+      <div style="font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;margin-bottom:6px">
+        <span class="hs" onclick="t(this)">remettre en question<span class="pop">رمتر آن کستیون = زیر سؤال بردن — فعل مرکب بسیار کاربردی در B2</span></span> notre vision de l'amour
+      </div>
+      <div style="font-size:12.5px;color:var(--gray)"><b>remettre en question</b> = زیر سؤال بردن — Il faut remettre en question nos croyances.</div>
+    </div>
+
+    <div style="background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--gold)">
+      <div style="font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;margin-bottom:6px">
+        <span class="hs" onclick="t(this)">attendre de l'autre qu'il<span class="pop">attendre de qqn que + subjonctif = انتظار داشتن از کسی که... — ساختار B2</span></span> comble nos besoins
+      </div>
+      <div style="font-size:12.5px;color:var(--gray)"><b>attendre de + qqn + que + subjonctif</b> = انتظار داشتن از کسی که...</div>
+    </div>
+
+    <div style="background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--gold)">
+      <div style="font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;margin-bottom:6px">
+        <span class="hs" onclick="t(this)">avancer vers<span class="pop">avancer vers = به سمت پیش رفتن — عبارت جهت‌دار</span></span> des liens plus sincères
+      </div>
+      <div style="font-size:12.5px;color:var(--gray)"><b>avancer vers</b> = به سمت ... پیش رفتن — نشان‌دهنده پیشرفت و هدف</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<script>
+function t(el){
+  const open=el.classList.contains('open');
+  document.querySelectorAll('.hw.open,.hs.open').forEach(e=>{e.classList.remove('open');if(e._t){clearTimeout(e._t);e._t=null;}});
+  if(!open){el.classList.add('open');el._t=setTimeout(()=>{el.classList.remove('open');el._t=null;},4000);}
+}
+</script>
+</body>
+</html>
