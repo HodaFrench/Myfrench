@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Passé Récent | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}.card.gold{border-right:5px solid var(--gold)}.card.green{border-right:5px solid var(--green)}.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.card.navy .card-label{color:var(--navy)}.card.gold .card-label{color:var(--gold)}.card.green .card-label{color:var(--green)}.card.rose .card-label{color:var(--rose)}
+.conj-table,.irr-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+.conj-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:right;font-weight:600}
+.conj-table td{padding:8px 12px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:7px 12px;font-weight:700}
+.irr-table td{padding:7px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.pron{color:var(--gold);font-weight:700}.vb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}.tr{font-size:12px;color:var(--gray)}
+.ex-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.warn{background:#fff8e8;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+.timeline-box{background:var(--cream);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+</style></head>
+<body>
+<div class="hoda-back"><a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a><span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Le Passé Récent</span></div>
+<div class="hero"><div class="hero-tag">📐 GRAMMAIRE · A2–B1</div><h1>Le Passé Récent</h1><div style="font-size:13px;opacity:.85">گذشته نزدیک — venir de</div></div>
+<div class="wrap">
+<div class="card navy">
+  <div class="card-label">🔷 DÉFINITION</div>
+  <p style="font-size:14px;margin-bottom:10px"><b>Passé récent</b> برای بیان عملی که <b>تازه اتفاق افتاده</b> استفاده می‌شود — مثل «تازه» در فارسی.</p>
+  <div class="ex-fr">Je <span class="hl">viens de manger</span>. → تازه خوردم.</div>
+</div>
+<div class="card gold">
+  <div class="card-label">⚙ FORMATION</div>
+  <div style="background:var(--cream);border-radius:10px;padding:14px;text-align:center;margin-bottom:14px">
+    <span style="font-family:'Roboto',serif;font-size:15px;direction:ltr"><span class="hl">VENIR de (présent)</span> + <span class="hl-g">INFINITIF</span></span>
+  </div>
+  <table class="conj-table">
+    <tr><th>ضمیر</th><th>VENIR</th><th>مثال</th><th>ترجمه</th></tr>
+    <tr><td class="pron">Je</td><td class="vb">viens de</td><td class="vb">viens de partir</td><td class="tr">تازه رفتم</td></tr>
+    <tr><td class="pron">Tu</td><td class="vb">viens de</td><td class="vb">viens de finir</td><td class="tr">تازه تموم کردی</td></tr>
+    <tr><td class="pron">Il/Elle</td><td class="vb">vient de</td><td class="vb">vient d'arriver</td><td class="tr">تازه رسیده</td></tr>
+    <tr><td class="pron">Nous</td><td class="vb">venons de</td><td class="vb">venons de manger</td><td class="tr">تازه خوردیم</td></tr>
+    <tr><td class="pron">Vous</td><td class="vb">venez de</td><td class="vb">venez de sortir</td><td class="tr">تازه رفتید بیرون</td></tr>
+    <tr><td class="pron">Ils/Elles</td><td class="vb">viennent de</td><td class="vb">viennent de partir</td><td class="tr">تازه رفتند</td></tr>
+  </table>
+  <div class="warn">⚠️ الیزیون: <span style="font-family:'Roboto',serif;direction:ltr">venir d'arriver / venir d'écrire</span></div>
+</div>
+<div class="card green">
+  <div class="card-label">📌 EXEMPLES</div>
+  <div class="ex-label">① گذشته نزدیک</div>
+  <div class="ex-fr">Il <span class="hl">vient d'appeler</span>. Tu l'as raté !</div><div class="ex-fa">تازه زنگ زد. از دستش دادی!</div>
+  <div class="ex-fr">Je <span class="hl">viens de recevoir</span> une bonne nouvelle.</div><div class="ex-fa">تازه یه خبر خوب گرفتم.</div>
+  <div class="ex-fr">Nous <span class="hl">venons d'emménager</span> dans notre nouvel appartement.</div><div class="ex-fa">تازه به آپارتمان جدیدمون نقل مکان کردیم.</div>
+  <div class="ex-label">② در گذشته — à l'imparfait</div>
+  <div class="ex-fr">Le film <span class="hl">venait de commencer</span> quand il est entré.</div><div class="ex-fa">فیلم تازه شروع شده بود که وارد شد.</div>
+  <div class="ex-fr">Elle <span class="hl">venait de partir</span> quand tu as appelé.</div><div class="ex-fa">تازه رفته بود که زنگ زدی.</div>
+</div>
+<div class="card navy">
+  <div class="card-label">🔄 COMPARAISON</div>
+  <table class="conj-table">
+    <tr><th>Temps</th><th>Exemple</th><th>ترجمه</th></tr>
+    <tr><td style="color:var(--rose);font-weight:700">Passé récent</td><td class="vb">Je viens de manger.</td><td>تازه خوردم.</td></tr>
+    <tr><td style="color:var(--navy);font-weight:700">Présent</td><td class="vb">Je mange.</td><td>دارم می‌خورم.</td></tr>
+    <tr><td style="color:var(--green);font-weight:700">Futur proche</td><td class="vb">Je vais manger.</td><td>قراره بخورم.</td></tr>
+  </table>
+</div></div>
+<div class="gram-nav"><a class="gnav-btn" href="GRAMMAR_pouvoir_vouloir_devoir.html">&#8594; Pouvoir, Vouloir, Devoir</a><span style="font-size:11px;color:#b0a898">گرامر</span><a class="gnav-btn" href="GRAM_passe_compose.html">Le Passé Composé &#8592;</a></div>
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ خوانده شد</button></div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body></html>
