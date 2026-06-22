@@ -137,6 +137,23 @@ input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:t
 </style>
 </head>
 <body>
+<style>
+#tg-btn{
+  position:fixed;top:0;left:0;z-index:300;
+  display:flex;align-items:center;gap:7px;
+  padding:0 18px;height:38px;
+  background:#22618f;color:#fff;
+  text-decoration:none;font-family:'Estedad',sans-serif;
+  font-size:14px;font-weight:700;
+  transition:background .2s;
+}
+#tg-btn:hover{background:#1a4f7a}
+#tg-btn svg{flex-shrink:0}
+</style>
+<a id="tg-btn" href="https://t.me/TCFhoda" target="_blank">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.767l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.792z"/></svg>
+  @TCFhoda
+</a>
 <!-- 📊 Stats Bar -->
 <style>
 #stats-bar{
@@ -144,7 +161,7 @@ input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:t
   background:rgba(255,253,246,.92);
   backdrop-filter:blur(10px);
   border-bottom:1px solid rgba(217,206,184,.5);
-  padding:7px 20px;
+  padding:7px 20px 7px 160px;
   display:flex;align-items:center;gap:14px;
   font-family:'Estedad',sans-serif;
   font-size:12px;
@@ -173,10 +190,7 @@ body{padding-top:38px!important}
 </style>
 
 <div id="stats-bar">
-  <a href="https://t.me/TCFhoda" target="_blank" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(34,97,143,.12);border-radius:20px;color:#22618f;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="#22618f"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.17 13.767l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.978.792z"/></svg>
-    @TCFhoda
-  </a>
+  
   <div class="sb-item">⏱ <span class="sb-val" id="sb-time">۰</span><span class="sb-label">دقیقه مطالعه</span></div>
   <div class="sb-item">📖 <span class="sb-val" id="sb-lessons">۰</span><span class="sb-label">درس خوانده</span></div>
   <div class="sb-top">🏆 بیشترین وقت: <span id="sb-top-cat">—</span></div>
@@ -254,8 +268,8 @@ body{padding-top:38px!important}
 <div class="top">
   <a href="library.html" class="back">← کتابخانه</a>
   <h1>Français avec Hoda</h1>
-  <p>مسیر یادگیری · A1 تا TCF Canada</p>
-  <p style="font-size:12px;color:#b07a4a;margin-top:4px;letter-spacing:.5px">هدی خدمتی · مدرس و کوچ زبان فرانسه</p>
+  
+  <p style="font-size:15px;font-weight:700;color:#1e3a5f;margin-top:6px;letter-spacing:.3px">هدی خدمتی</p><p style="font-size:12px;color:#b07a4a;margin-top:3px;font-weight:600;letter-spacing:.5px">مدرس و کوچ زبان فرانسه</p>
 </div>
 
 <div class="road-wrap">
