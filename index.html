@@ -270,5 +270,221 @@ document.addEventListener('keydown',e=>{
   if((e.ctrlKey||e.metaKey)&&['c','u','s','a'].includes(e.key.toLowerCase()))e.preventDefault();
 });
 </script>
+
+<!-- 📌 Floating Notes Widget -->
+<style>
+#note-btn{
+  position:fixed;bottom:1.5rem;left:1.5rem;z-index:500;
+  width:48px;height:48px;border-radius:50%;
+  background:#1e3a5f;color:#f5f0e8;border:none;
+  font-size:22px;cursor:pointer;
+  box-shadow:0 4px 20px rgba(31,58,95,.35);
+  transition:all .25s;display:flex;align-items:center;justify-content:center;
+}
+#note-btn:hover{background:#2a4f7f;transform:scale(1.08)}
+
+#note-panel{
+  position:fixed;bottom:5rem;left:1.5rem;z-index:500;
+  width:320px;
+  background:#fffdf6;
+  border:1px solid rgba(217,206,184,.7);
+  border-radius:18px;
+  box-shadow:0 12px 40px rgba(31,58,95,.15);
+  transform:translateY(20px);opacity:0;pointer-events:none;
+  transition:all .3s;
+  overflow:hidden;
+}
+#note-panel.open{transform:translateY(0);opacity:1;pointer-events:all}
+
+.np-header{
+  background:#1e3a5f;color:#f5f0e8;
+  padding:14px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.np-header h3{font-family:'Estedad',sans-serif;font-size:14px;font-weight:600}
+.np-tabs{display:flex;gap:6px;padding:12px 14px 0;border-bottom:1px solid #f0ebe0}
+.np-tab{padding:6px 12px;border:none;background:transparent;cursor:pointer;
+  font-family:'Estedad',sans-serif;font-size:12.5px;color:#8a8275;
+  border-bottom:2px solid transparent;transition:all .2s;margin-bottom:-1px}
+.np-tab.active{color:#1e3a5f;border-bottom-color:#1e3a5f;font-weight:600}
+.np-body{padding:14px;max-height:320px;overflow-y:auto}
+
+/* Notes tab */
+.np-note-input{
+  width:100%;height:90px;
+  border:1.5px solid #e2ddd5;border-radius:10px;
+  padding:8px 10px;
+  font-family:'Estedad',sans-serif;font-size:13px;
+  color:#1e3a5f;resize:none;background:#f9f8fa;
+  direction:rtl;
+}
+.np-note-input:focus{outline:none;border-color:#1e3a5f;background:#fff}
+.np-save-btn{
+  width:100%;margin-top:8px;padding:8px;
+  background:#1e3a5f;color:#f5f0e8;border:none;
+  border-radius:9px;font-family:'Estedad',sans-serif;
+  font-size:13px;font-weight:600;cursor:pointer;
+}
+.np-save-btn:hover{background:#2a4f7f}
+.np-notes-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.np-note-item{
+  background:#f5f0e8;border-radius:10px;padding:10px 12px;
+  font-size:12.5px;color:#2c2a26;line-height:1.7;
+  border-right:3px solid #b07a4a;position:relative;
+}
+.np-note-meta{font-size:10.5px;color:#8a8275;margin-top:4px}
+.np-note-del{position:absolute;top:8px;left:8px;background:none;border:none;
+  color:#c0392b;font-size:14px;cursor:pointer;opacity:.5}
+.np-note-del:hover{opacity:1}
+
+/* Stats tab */
+.np-stat{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0ebe0}
+.np-stat:last-child{border-bottom:none}
+.np-stat-icon{font-size:22px;width:36px;text-align:center;flex-shrink:0}
+.np-stat-val{font-size:20px;font-weight:700;color:#1e3a5f;line-height:1}
+.np-stat-label{font-size:11.5px;color:#8a8275;margin-top:2px}
+.np-lessons-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.np-lesson-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#1e3a5f}
+.np-empty{text-align:center;color:#b0a090;font-size:13px;padding:20px 0}
+</style>
+
+<button id="note-btn" onclick="toggleNotePanel()" title="یادداشت‌ها">📌</button>
+
+<div id="note-panel">
+  <div class="np-header">
+    <h3>📌 یادداشت‌های من</h3>
+    <button onclick="toggleNotePanel()" style="background:none;border:none;color:#f5f0e8;font-size:18px;cursor:pointer">×</button>
+  </div>
+  <div class="np-tabs">
+    <button class="np-tab active" onclick="npTab('notes',this)">📝 یادداشت</button>
+    <button class="np-tab" onclick="npTab('stats',this)">📊 آمار من</button>
+  </div>
+  <div id="np-notes" class="np-body">
+    <textarea class="np-note-input" id="np-input" placeholder="سوال یا نکته‌ای داری؟ اینجا بنویس..."></textarea>
+    <button class="np-save-btn" onclick="saveNote()">ذخیره یادداشت ✓</button>
+    <div class="np-notes-list" id="np-list"></div>
+  </div>
+  <div id="np-stats" class="np-body" style="display:none">
+    <div class="np-stat">
+      <div class="np-stat-icon">⏱</div>
+      <div><div class="np-stat-val" id="stat-time">0</div><div class="np-stat-label">دقیقه در سایت</div></div>
+    </div>
+    <div class="np-stat">
+      <div class="np-stat-icon">📖</div>
+      <div><div class="np-stat-val" id="stat-lessons">0</div><div class="np-stat-label">درس خوانده‌شده</div></div>
+    </div>
+    <div class="np-stat">
+      <div class="np-stat-icon">📅</div>
+      <div><div class="np-stat-val" id="stat-days">0</div><div class="np-stat-label">روز با ما</div></div>
+    </div>
+    <div style="font-size:12px;font-weight:600;color:#1e3a5f;margin-top:14px;margin-bottom:6px">آخرین درس‌های خوانده‌شده:</div>
+    <div class="np-lessons-list" id="stat-lesson-list"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const SB_URL='https://ifjsnasoxnalhttzhlpd.supabase.co';
+  const SB_KEY='sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
+  let notes=[], session=null, startTime=Date.now();
+
+  // Get session
+  async function getSession(){
+    try{
+      const r=await fetch(SB_URL+'/auth/v1/user',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+localStorage.getItem('sb-token')||''}});
+      if(r.ok) session=await r.json();
+    }catch(e){}
+  }
+
+  // Track time spent
+  function getTimeSpent(){
+    const stored=parseInt(localStorage.getItem('hoda_time')||'0');
+    return stored+Math.floor((Date.now()-startTime)/60000);
+  }
+  setInterval(()=>{
+    localStorage.setItem('hoda_time',getTimeSpent().toString());
+  },60000);
+
+  // Track lessons visited
+  const page=window.location.pathname.split('/').pop();
+  if(page && page!='index.html' && page!='auth.html' && page.endsWith('.html')){
+    const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    const entry={file:page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleDateString('fa-IR')};
+    const idx=visited.findIndex(v=>v.file===page);
+    if(idx>=0)visited[idx]=entry; else visited.unshift(entry);
+    localStorage.setItem('hoda_visited',JSON.stringify(visited.slice(0,20)));
+  }
+
+  // Track join date
+  if(!localStorage.getItem('hoda_joined')){
+    localStorage.setItem('hoda_joined',new Date().toISOString());
+  }
+
+  window.toggleNotePanel=function(){
+    const p=document.getElementById('note-panel');
+    p.classList.toggle('open');
+    if(p.classList.contains('open')){loadNotes();loadStats();}
+  }
+
+  window.npTab=function(tab,btn){
+    document.getElementById('np-notes').style.display=tab==='notes'?'block':'none';
+    document.getElementById('np-stats').style.display=tab==='stats'?'block':'none';
+    document.querySelectorAll('.np-tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    if(tab==='stats')loadStats();
+  }
+
+  window.saveNote=function(){
+    const txt=document.getElementById('np-input').value.trim();
+    if(!txt)return;
+    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    notes.unshift({
+      text:txt,
+      page:document.title.split('|')[0].trim()||window.location.pathname,
+      time:new Date().toLocaleDateString('fa-IR',{year:'numeric',month:'long',day:'numeric'})
+    });
+    localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,50)));
+    document.getElementById('np-input').value='';
+    loadNotes();
+  }
+
+  function loadNotes(){
+    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    const list=document.getElementById('np-list');
+    if(!notes.length){list.innerHTML='<div class="np-empty">هنوز یادداشتی نداری 📝</div>';return;}
+    list.innerHTML=notes.map((n,i)=>`
+      <div class="np-note-item">
+        <button class="np-note-del" onclick="delNote(${i})">🗑</button>
+        ${n.text}
+        <div class="np-note-meta">📄 ${n.page} · ${n.time}</div>
+      </div>`).join('');
+  }
+
+  window.delNote=function(i){
+    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    notes.splice(i,1);
+    localStorage.setItem('hoda_notes',JSON.stringify(notes));
+    loadNotes();
+  }
+
+  function loadStats(){
+    // Time
+    document.getElementById('stat-time').textContent=getTimeSpent();
+    // Lessons
+    const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    document.getElementById('stat-lessons').textContent=visited.length;
+    // Days
+    const joined=new Date(localStorage.getItem('hoda_joined')||new Date());
+    const days=Math.max(1,Math.floor((Date.now()-joined)/86400000));
+    document.getElementById('stat-days').textContent=days;
+    // Lesson list
+    const ll=document.getElementById('stat-lesson-list');
+    if(!visited.length){ll.innerHTML='<div class="np-empty">هنوز درسی نخواندی!</div>';return;}
+    ll.innerHTML=visited.slice(0,5).map(v=>`
+      <div class="np-lesson-item">📖 ${v.title} <span style="color:#b07a4a;font-size:11px">· ${v.time}</span></div>`).join('');
+  }
+})();
+</script>
+
 </body>
 </html>
