@@ -216,6 +216,10 @@ body{margin:0;overflow:hidden!important;height:100vh!important}
   .ahint{margin-top:.2rem!important}
 }
 </style>
+<style>
+* { -webkit-user-select:none; -moz-user-select:none; user-select:none; }
+input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:text; }
+</style>
 </head>
 <body>
 
@@ -355,6 +359,14 @@ if(road) {
   // Stop on user interaction
   road.addEventListener('touchstart', ()=>clearInterval(drift), {once:true});
 }
+</script>
+<script>
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&['c','u','s','a'].includes(e.key.toLowerCase()))e.preventDefault();
+});
 </script>
 </body>
 </html>
