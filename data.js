@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "PODCAST_ep288_amour.html",
+    title: "🎙️ L'amour idéalisé — entre rêve et réalité",
+    titleFr: "Ep.288 — L'amour idéalisé",
+    category: "podcast", level: "B2",
+    tags: ["podcast","psychologie","amour","couple","B2"],
+    summary: "اپیزود ۲۸۸: عشق آرمانی — بین رؤیا و واقعیت با درمانگر دیان صاباغ"
+  },
+
+  {
     file: "TCF/PAGE_examens_tcf.html",
     title: "📋 راهنمای امتحانات TCF / TEF / DELF",
     titleFr: "Guide des examens TCF",
