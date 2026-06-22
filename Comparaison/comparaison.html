@@ -661,6 +661,131 @@ function ans(el, chosen){
 }
 </script>
 
+
+<!-- 🎙️ Voice Recorder -->
+<style>
+#rec-widget{
+  background:var(--white,#fcfbfd);
+  border:1px solid rgba(217,206,184,.6);
+  border-radius:14px;padding:14px 16px;
+  margin:16px 0;box-shadow:0 3px 12px rgba(31,58,95,.06);
+}
+.rec-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1.5px;margin-bottom:10px}
+.rec-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#rec-btn{
+  display:flex;align-items:center;gap:6px;
+  padding:8px 16px;border:none;border-radius:10px;
+  background:#1e3a5f;color:#f5f0e8;
+  font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;transition:all .2s;
+}
+#rec-btn.recording{background:#c0392b;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+#rec-timer{font-size:12px;color:#8a8275;font-variant-numeric:tabular-nums}
+.rec-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.rec-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px}
+.rec-item audio{flex:1;height:30px;accent-color:#1e3a5f}
+.rec-item-date{font-size:10px;color:#8a8275;flex-shrink:0}
+.rec-del{background:none;border:none;color:#c0392b;cursor:pointer;font-size:14px;opacity:.5;flex-shrink:0}
+.rec-del:hover{opacity:1}
+.rec-empty{font-size:12px;color:#b0a090;text-align:center;padding:8px 0}
+</style>
+
+<div id="rec-widget">
+  <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
+  <div class="rec-controls">
+    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
+    <span id="rec-timer">۰:۰۰</span>
+    <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
+  </div>
+  <div class="rec-list" id="rec-list"></div>
+</div>
+
+<script>
+(function(){
+  const PAGE = location.pathname.split('/').pop().split('?')[0];
+  const REC_KEY = 'hoda_recs_' + PAGE;
+  let mediaRecorder = null, chunks = [], timerInterval = null, seconds = 0;
+  
+  function toFa(n){ return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]); }
+  function fmtTime(s){ return toFa(Math.floor(s/60))+':'+toFa(s%60<10?'0'+s%60:s%60); }
+  
+  window.toggleRec = async function(){
+    const btn = document.getElementById('rec-btn');
+    if(!mediaRecorder || mediaRecorder.state==='inactive'){
+      try{
+        const stream = await navigator.mediaDevices.getUserMedia({audio:true});
+        mediaRecorder = new MediaRecorder(stream);
+        chunks = [];
+        mediaRecorder.ondataavailable = e => chunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(chunks, {type:'audio/webm'});
+          saveRec(blob);
+          stream.getTracks().forEach(t=>t.stop());
+        };
+        mediaRecorder.start();
+        btn.textContent = '⏹ توقف ضبط';
+        btn.classList.add('recording');
+        seconds = 0;
+        timerInterval = setInterval(()=>{
+          seconds++;
+          document.getElementById('rec-timer').textContent = fmtTime(seconds);
+          if(seconds >= 300){ toggleRec(); } // max 5 min
+        },1000);
+      }catch(e){
+        alert('دسترسی به میکروفون لازمه. لطفاً اجازه بده.');
+      }
+    } else {
+      mediaRecorder.stop();
+      btn.textContent = '🎙️ ضبط جدید';
+      btn.classList.remove('recording');
+      clearInterval(timerInterval);
+      document.getElementById('rec-timer').textContent = toFa('0')+':'+toFa('00');
+    }
+  };
+  
+  function saveRec(blob){
+    const reader = new FileReader();
+    reader.onload = function(e){
+      const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
+      recs.unshift({
+        data: e.target.result,
+        date: new Date().toLocaleString('fa-IR'),
+        ts: Date.now()
+      });
+      localStorage.setItem(REC_KEY, JSON.stringify(recs.slice(0,20))); // max 20
+      renderRecs();
+    };
+    reader.readAsDataURL(blob);
+  }
+  
+  function delRec(ts){
+    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]').filter(r=>r.ts!==ts);
+    localStorage.setItem(REC_KEY, JSON.stringify(recs));
+    renderRecs();
+  }
+  window.delRec = delRec;
+  
+  function renderRecs(){
+    const list = document.getElementById('rec-list');
+    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
+    if(!recs.length){
+      list.innerHTML='<div class="rec-empty">هنوز ضبطی نداری — اولین ضبطت رو بکن! 🎙️</div>';
+      return;
+    }
+    list.innerHTML = recs.map(r=>`
+      <div class="rec-item">
+        <audio controls src="${r.data}" style="flex:1;height:30px;accent-color:#1e3a5f"></audio>
+        <span class="rec-item-date">${r.date}</span>
+        <button class="rec-del" onclick="delRec(${r.ts})" title="حذف">🗑</button>
+      </div>
+    `).join('');
+  }
+  
+  renderRecs();
+})();
+</script>
+
 <!-- ✅ Mark as Done -->
 <style>
 #done-bar{
