@@ -233,7 +233,7 @@ body{padding-top:38px!important}
   <a href="FORUM.html" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(46,139,107,.1);border-radius:20px;color:#2e8b6b;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">❓ سوال بپرس</a>
   
   <div class="sb-item">⏱ <span class="sb-val" id="sb-time">۰</span><span class="sb-label">دقیقه مطالعه</span></div>
-  <div class="sb-item">📖 <span class="sb-val" id="sb-lessons">۰</span><span class="sb-label">درس خوانده</span></div>
+  
   <div class="sb-top">🏆 بیشترین وقت: <span id="sb-top-cat">—</span></div>
 </div>
 
@@ -262,9 +262,11 @@ body{padding-top:38px!important}
   function updateBar(){
     const time=parseInt(localStorage.getItem('hoda_time')||'0');
     const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-    document.getElementById('sb-time').textContent=toFa(time);
-    document.getElementById('sb-lessons').textContent=toFa(visited.length);
-
+    const dispTime = time >= 60 
+    ? toFa(Math.floor(time/60)) + ' ساعت' + (time%60>0?' و '+toFa(time%60)+' دقیقه':'')
+    : toFa(time);
+  document.getElementById('sb-time').textContent=dispTime;
+    
     // Count time per category from time_by_cat
     const timeByCat=JSON.parse(localStorage.getItem('hoda_time_by_cat')||'{}');
     if(Object.keys(timeByCat).length){
