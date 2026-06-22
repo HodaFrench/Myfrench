@@ -344,10 +344,10 @@ document.addEventListener('keydown',e=>{if(e.key==='Enter'){if(document.getEleme
 // Auto-scroll road slowly to show content
 const road = document.querySelector('.page');
 if(road) {
-  const maxScroll = road.scrollHeight * 0.55;
+  const maxScroll = road.scrollHeight * 0.85;
   let dir = 1, pos = 0;
   const drift = setInterval(()=>{
-    pos += 0.4 * dir;
+    pos += 0.3 * dir;
     if(pos >= maxScroll) dir = -1;
     if(pos <= 0) dir = 1;
     road.scrollTop = pos;
