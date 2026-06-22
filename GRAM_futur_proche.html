@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Futur Proche | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 100px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:24px;font-weight:700;margin-bottom:4px}
+.hero .sub{font-size:13px;opacity:.85}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+
+/* cards */
+.card{background:var(--white);border-radius:16px;padding:22px 24px;margin:18px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}
+.card.gold{border-right:5px solid var(--gold)}
+.card.green{border-right:5px solid var(--green)}
+.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:14px}
+.card.navy .card-label{color:var(--navy)}
+.card.gold .card-label{color:var(--gold)}
+.card.green .card-label{color:var(--green)}
+.card.rose .card-label{color:var(--rose)}
+
+/* conjugation table */
+.conj-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.conj-table th{background:var(--navy);color:#fff;padding:9px 14px;text-align:right;font-weight:600}
+.conj-table td{padding:9px 14px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.conj-table .pron{color:var(--gold);font-weight:600}
+.conj-table .verb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}
+.conj-table .trans{font-size:12.5px;color:var(--gray)}
+
+/* examples */
+.ex-block{margin:8px 0}
+.ex-fr{font-family:'Roboto',serif;font-size:15.5px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:13px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+
+/* highlight spans */
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+
+/* comparison box */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+
+/* irregular table */
+.irr-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:8px 12px;font-weight:700}
+.irr-table td{padding:8px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.irr-table .inf{color:var(--gold);font-weight:700}
+.irr-table .rad{color:var(--navy);font-weight:700}
+</style>
+</head>
+<body>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a>
+  <span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Le Futur Proche</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · A2–B1</div>
+  <h1>Le Futur Proche</h1>
+  <div class="sub">آینده نزدیک — قصد و برنامه</div>
+</div>
+<div class="wrap">
+
+<div class="card navy">
+  <div class="card-label">🔷 DÉFINITION — تعریف</div>
+  <p style="font-size:14px;margin-bottom:12px">
+    <b>Futur proche</b> یا <b>futur périphrastique</b> برای بیان عمل یا رویدادی که <b>به زودی</b> اتفاق می‌افتد یا <b>قصد انجامش</b> وجود دارد استفاده می‌شود.
+    بسیار رایج در گفتار روزمره — مثل «قراره» در فارسی.
+  </p>
+  <div class="ex-fr"><span class="hl">Je vais</span> partir. → دارم می‌روم / قراره برم</div>
+  <div class="ex-fr"><span class="hl">Tu vas</span> comprendre. → داری می‌فهمی / قراره بفهمی</div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">⚙ FORMATION — ساختار</div>
+  <div style="background:var(--cream);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-family:'Roboto',serif;font-size:16px;text-align:center;direction:ltr">
+    <span class="hl">ALLER (présent)</span> + <span class="hl-g">INFINITIF</span>
+  </div>
+  <table class="conj-table">
+    <tr><th>ضمیر</th><th>ALLER</th><th>مثال با partir</th><th>ترجمه</th></tr>
+    <tr><td class="pron">Je</td><td class="verb">vais</td><td class="verb">vais partir</td><td class="trans">دارم می‌روم</td></tr>
+    <tr><td class="pron">Tu</td><td class="verb">vas</td><td class="verb">vas partir</td><td class="trans">داری می‌روی</td></tr>
+    <tr><td class="pron">Il/Elle</td><td class="verb">va</td><td class="verb">va partir</td><td class="trans">دارد می‌رود</td></tr>
+    <tr><td class="pron">Nous</td><td class="verb">allons</td><td class="verb">allons partir</td><td class="trans">داریم می‌رویم</td></tr>
+    <tr><td class="pron">Vous</td><td class="verb">allez</td><td class="verb">allez partir</td><td class="trans">دارید می‌روید</td></tr>
+    <tr><td class="pron">Ils/Elles</td><td class="verb">vont</td><td class="verb">vont partir</td><td class="trans">دارند می‌روند</td></tr>
+  </table>
+  <div style="background:#fff8e8;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px">
+    ⚠️ <b>نفی:</b> ne + aller + pas + infinitif<br>
+    <span style="font-family:'Roboto',serif;direction:ltr;display:inline-block;margin-top:4px">Je <span class="hl-r">ne vais pas</span> partir. → قرار نیست برم.</span>
+  </div>
+</div>
+
+<div class="card green">
+  <div class="card-label">📌 USAGES — کاربردها</div>
+  
+  <div class="ex-label">① قصد و برنامه (Intention / Plan)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Ce soir, je <span class="hl">vais regarder</span> un film.</div>
+    <div class="ex-fa">امشب قراره یه فیلم ببینم.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Nous <span class="hl">allons acheter</span> une nouvelle voiture.</div>
+    <div class="ex-fa">قراره یه ماشین نو بخریم.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Elle <span class="hl">va faire</span> ses devoirs après le dîner.</div>
+    <div class="ex-fa">قراره بعد از شام تکالیفش رو انجام بده.</div>
+  </div>
+
+  <div class="ex-label">② آینده نزدیک (Futur immédiat)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Attention ! Tu <span class="hl">vas tomber</span> !</div>
+    <div class="ex-fa">مواظب باش! داری می‌افتی!</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Le train <span class="hl">va arriver</span> dans deux minutes.</div>
+    <div class="ex-fa">قطار دو دقیقه دیگه می‌رسه.</div>
+  </div>
+
+  <div class="ex-label">③ پیش‌بینی قطعی (Prédiction certaine)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Il <span class="hl">va pleuvoir</span> cet après-midi.</div>
+    <div class="ex-fa">بعدازظهر باران می‌باره. (قطعیه)</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Ça <span class="hl">va être</span> magnifique !</div>
+    <div class="ex-fa">قراره عالی باشه!</div>
+  </div>
+
+  <div class="ex-label">④ در گذشته — futur proche au passé (با imparfait)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Il <span class="hl">allait partir</span> quand le téléphone a sonné.</div>
+    <div class="ex-fa">داشت می‌رفت که تلفن زنگ زد.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">On <span class="hl">allait manger</span> quand les invités sont arrivés.</div>
+    <div class="ex-fa">داشتیم شام می‌خوردیم که مهمون‌ها رسیدن.</div>
+  </div>
+</div>
+
+<div class="card navy">
+  <div class="card-label">💡 NUANCES — تفاوت‌های ظریف</div>
+  <div class="compare">
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--navy)">🔵 FUTUR PROCHE</div>
+      <div style="font-family:'Roboto',serif;font-size:13.5px;direction:ltr">Je vais travailler demain.</div>
+      <div style="font-size:12.5px;color:var(--gray);margin-top:4px">قراره فردا کار کنم. (برنامه شخصی، احساس نزدیکی)</div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--rose)">🟣 FUTUR SIMPLE</div>
+      <div style="font-family:'Roboto',serif;font-size:13.5px;direction:ltr">Je travaillerai demain.</div>
+      <div style="font-size:12.5px;color:var(--gray);margin-top:4px">فردا کار می‌کنم. (بیان کلی‌تر، رسمی‌تر)</div>
+    </div>
+  </div>
+  <div style="font-size:13px;background:#f9f7f0;border-radius:8px;padding:10px 14px;margin-top:8px">
+    <b>قانون طلایی:</b> در گفتار روزمره → futur proche / در نوشتار رسمی → futur simple<br>
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block;margin-top:4px;font-size:12.5px">Oral: Ce soir je vais manger une pizza. ✓<br>Écrit: Demain, le Président rencontrera ses ministres. ✓</span>
+  </div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">🗣 DIALOGUE — مکالمه نمونه</div>
+  <div style="background:var(--cream);border-radius:10px;padding:14px 16px;font-family:'Roboto',serif;direction:ltr;font-size:14px;line-height:2.2">
+    <b>— Qu'est-ce que tu <span class="hl">vas faire</span> ce week-end ?</b><br>
+    <span style="font-size:12px;color:var(--gray);font-family:'Estedad',sans-serif;direction:rtl;display:block">آخر هفته قراره چیکار کنی؟</span>
+    — Je <span class="hl">vais rester</span> à la maison. Je <span class="hl">vais regarder</span> des films et je <span class="hl">vais cuisiner</span>.<br>
+    <span style="font-size:12px;color:var(--gray);font-family:'Estedad',sans-serif;direction:rtl;display:block">قراره خونه بمونم. فیلم ببینم و آشپزی کنم.</span>
+    <b>— Tu <span class="hl">vas sortir</span> avec des amis ?</b><br>
+    <span style="font-size:12px;color:var(--gray);font-family:'Estedad',sans-serif;direction:rtl;display:block">با دوستات میری بیرون؟</span>
+    — Non, je <span class="hl-r">ne vais pas sortir</span>. J'ai besoin de repos.<br>
+    <span style="font-size:12px;color:var(--gray);font-family:'Estedad',sans-serif;direction:rtl;display:block">نه، بیرون نمیرم. استراحت لازم دارم.</span>
+  </div>
+</div>
+</div>
+
+<!-- done bar + recorder -->
+<style>
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+body{padding-bottom:70px!important}
+</style>
+<div id="done-bar">
+  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
+</div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  const title=document.title.split('|')[0].trim();
+  h.unshift({page,title,time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    const s=JSON.parse(localStorage.getItem('hoda_status')||'{}');
+    s[page]='done';localStorage.setItem('hoda_status',JSON.stringify(s));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
