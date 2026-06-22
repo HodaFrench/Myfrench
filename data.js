@@ -83,6 +83,7 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+
   {
     file: "VIDEO_intro.html",
     title: "🎬 ویدیوهای آموزشی فرانسه",
