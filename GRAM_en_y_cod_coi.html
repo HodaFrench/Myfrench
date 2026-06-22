@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EN · Y · COD · COI — Pronoms compléments | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}.card.gold{border-right:5px solid var(--gold)}.card.green{border-right:5px solid var(--green)}.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.card.navy .card-label{color:var(--navy)}.card.gold .card-label{color:var(--gold)}.card.green .card-label{color:var(--green)}.card.rose .card-label{color:var(--rose)}
+.conj-table,.irr-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+.conj-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:right;font-weight:600}
+.conj-table td{padding:8px 12px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:7px 12px;font-weight:700}
+.irr-table td{padding:7px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.pron{color:var(--gold);font-weight:700}.vb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}.tr{font-size:12px;color:var(--gray)}
+.ex-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.warn{background:#fff8e8;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+.timeline-box{background:var(--cream);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+</style>
+</head>
+<body>
+<div class="hoda-back"><a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a><span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 EN · Y · COD · COI — Pronoms compléments</span></div>
+<div class="hero"><div class="hero-tag">📐 GRAMMAIRE · B1–B2</div><h1>EN · Y · COD · COI — Pronoms compléments</h1><div style="font-size:13px;opacity:.85">ضمایر مفعولی کامل</div></div>
+<div class="wrap">
+<div class="card navy">
+  <div class="card-label">🗺 VUE D'ENSEMBLE</div>
+  <table class="conj-table">
+    <tr><th>Pronom</th><th>Remplace</th><th>مثال</th><th>ترجمه</th></tr>
+    <tr><td style="font-weight:700;color:var(--navy)">le/la/l'/les</td><td>COD (personne ou chose)</td><td class="vb">Je le vois.</td><td>می‌بینمش.</td></tr>
+    <tr><td style="font-weight:700;color:var(--green)">lui/leur</td><td>COI à + personne</td><td class="vb">Je lui parle.</td><td>باهاش حرف می‌زنم.</td></tr>
+    <tr><td style="font-weight:700;color:var(--rose)">y</td><td>à + lieu / à + chose</td><td class="vb">J'y vais.</td><td>می‌روم آنجا.</td></tr>
+    <tr><td style="font-weight:700;color:var(--gold)">en</td><td>de + chose / quantité</td><td class="vb">J'en veux.</td><td>می‌خواهم از آن.</td></tr>
+  </table>
+</div>
+
+<div class="card gold">
+  <div class="card-label">① PRONOMS COD — مفعول مستقیم</div>
+  <div style="background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px">
+    <b>سؤال:</b> <span style="font-family:'Roboto',serif;direction:ltr">verbe + qui ? (personne) / verbe + quoi ? (chose)</span>
+  </div>
+  <table class="conj-table">
+    <tr><th>Pronom COD</th><th>مثال اصلی</th><th>با ضمیر</th><th>ترجمه</th></tr>
+    <tr><td class="pron">me / m'</td><td class="vb">Il me regarde.</td><td class="vb">Il me regarde.</td><td>مرا نگاه می‌کند.</td></tr>
+    <tr><td class="pron">te / t'</td><td class="vb">Je t'aime.</td><td class="vb">Je t'aime.</td><td>دوستت دارم.</td></tr>
+    <tr><td class="pron">le / l'</td><td class="vb">Je connais Pierre.</td><td class="vb">Je le connais.</td><td>می‌شناسمش.</td></tr>
+    <tr><td class="pron">la / l'</td><td class="vb">J'aime la pizza.</td><td class="vb">Je l'aime.</td><td>دوستش دارم.</td></tr>
+    <tr><td class="pron">nous</td><td class="vb">Il nous voit.</td><td class="vb">Il nous voit.</td><td>می‌بیندمان.</td></tr>
+    <tr><td class="pron">vous</td><td class="vb">Je vous comprends.</td><td class="vb">Je vous comprends.</td><td>می‌فهمتان.</td></tr>
+    <tr><td class="pron">les</td><td class="vb">Je connais tes parents.</td><td class="vb">Je les connais.</td><td>می‌شناسمشان.</td></tr>
+  </table>
+  <div class="warn">⚠️ <b>Accord au passé composé:</b><br><span style="font-family:'Roboto',serif;direction:ltr">La robe que j'ai achet<b>ée</b>. / Je les ai vu<b>es</b>.</span><br>وقتی COD قبل از فعل — پسوند جنس و شمار اضافه می‌شود</div>
+</div>
+
+<div class="card green">
+  <div class="card-label">② PRONOMS COI — مفعول غیرمستقیم</div>
+  <div style="background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px">
+    <b>سؤال:</b> <span style="font-family:'Roboto',serif;direction:ltr">verbe + à qui ?</span> — فقط برای اشخاص!
+  </div>
+  <table class="conj-table">
+    <tr><th>Pronom COI</th><th>مثال اصلی</th><th>با ضمیر</th><th>ترجمه</th></tr>
+    <tr><td class="pron">me / m'</td><td class="vb">Il parle à moi.</td><td class="vb">Il me parle.</td><td>باهام حرف می‌زند.</td></tr>
+    <tr><td class="pron">te / t'</td><td class="vb">Je téléphone à toi.</td><td class="vb">Je te téléphone.</td><td>بهت زنگ می‌زنم.</td></tr>
+    <tr><td class="pron">lui</td><td class="vb">Je parle à Paul/Marie.</td><td class="vb">Je lui parle.</td><td>باهاش حرف می‌زنم.</td></tr>
+    <tr><td class="pron">nous</td><td class="vb">Il parle à nous.</td><td class="vb">Il nous parle.</td><td>باهامون حرف می‌زند.</td></tr>
+    <tr><td class="pron">vous</td><td class="vb">Il répond à vous.</td><td class="vb">Il vous répond.</td><td>جوابتان را می‌دهد.</td></tr>
+    <tr><td class="pron">leur</td><td class="vb">Je parle à mes amis.</td><td class="vb">Je leur parle.</td><td>باهاشون حرف می‌زنم.</td></tr>
+  </table>
+  <div class="ex-label">افعال مهم با COI (à + personne)</div>
+  <div style="font-family:'Roboto',serif;direction:ltr;font-size:13px;background:var(--cream);border-radius:8px;padding:10px 14px;line-height:2">
+    parler à · téléphoner à · écrire à · répondre à<br>
+    demander à · dire à · donner à · offrir à<br>
+    ressembler à · mentir à · obéir à · plaire à
+  </div>
+</div>
+
+<div class="card rose">
+  <div class="card-label">③ PRONOM Y</div>
+  <div class="ex-label">① lieu (à/en/dans/sur...) — جا و مکان</div>
+  <div class="ex-fr">Je vais <b>à Paris</b>. → J'<span class="hl-r">y</span> vais.</div><div class="ex-fa">می‌روم آنجا.</div>
+  <div class="ex-fr">Elle habite <b>en France</b>. → Elle <span class="hl-r">y</span> habite.</div><div class="ex-fa">آنجا زندگی می‌کند.</div>
+  <div class="ex-fr">Il est <b>à la maison</b>. → Il <span class="hl-r">y</span> est.</div><div class="ex-fa">آنجاست.</div>
+  
+  <div class="ex-label">② à + chose (پیشنهاد، کار، ایده)</div>
+  <div class="ex-fr">Je pense <b>à ce projet</b>. → J'<span class="hl-r">y</span> pense.</div><div class="ex-fa">به آن فکر می‌کنم.</div>
+  <div class="ex-fr">Tu joues <b>aux échecs</b>? → Tu <span class="hl-r">y</span> joues?</div><div class="ex-fa">آن را بازی می‌کنی؟</div>
+  <div class="ex-fr">Elle réfléchit <b>à cette décision</b>. → Elle <span class="hl-r">y</span> réfléchit.</div><div class="ex-fa">درباره‌اش فکر می‌کند.</div>
+  
+  <div class="warn">⚠️ Y برای اشخاص استفاده نمی‌شود:<br>
+  <span style="font-family:'Roboto',serif;direction:ltr">Je pense à Marie. → Je pense à <b>elle</b>. ✓ (نه: j'y pense ✗)</span></div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">④ PRONOM EN</div>
+  <div class="ex-label">① de + chose (از آن / از آنها)</div>
+  <div class="ex-fr">Je parle <b>de ce film</b>. → J'<span class="hl">en</span> parle.</div><div class="ex-fa">از آن صحبت می‌کنم.</div>
+  <div class="ex-fr">Il a besoin <b>d'argent</b>. → Il <span class="hl">en</span> a besoin.</div><div class="ex-fa">به آن نیاز دارد.</div>
+  <div class="ex-fr">Elle revient <b>de Paris</b>. → Elle <span class="hl">en</span> revient.</div><div class="ex-fa">از آنجا برمی‌گردد.</div>
+  
+  <div class="ex-label">② مقدار و کمیت</div>
+  <div class="ex-fr">Tu veux <b>du café</b> ? → Tu <span class="hl">en</span> veux ?</div><div class="ex-fa">از آن می‌خواهی؟</div>
+  <div class="ex-fr">J'ai <b>trois chats</b>. → J'<span class="hl">en</span> ai <b>trois</b>.</div><div class="ex-fa">سه‌تا دارم.</div>
+  <div class="ex-fr">Il mange <b>beaucoup de légumes</b>. → Il <span class="hl">en</span> mange <b>beaucoup</b>.</div><div class="ex-fa">زیاد از آنها می‌خورد.</div>
+  
+  <div class="ex-label">③ عبارات ثابت با EN</div>
+  <div style="font-family:'Roboto',serif;direction:ltr;font-size:13px;background:var(--cream);border-radius:8px;padding:10px 14px;line-height:2">
+    s'en aller (رفتن) · en avoir marre (خسته شدن) · s'en souvenir<br>
+    en vouloir à qqn (دلخور بودن از) · en avoir l'air<br>
+    Il en est question. (صحبتش هست) · Qu'est-ce qu'il en pense ?
+  </div>
+</div>
+
+<div class="card navy">
+  <div class="card-label">⚙ PLACE DES PRONOMS</div>
+  <div class="ex-label">① قبل از فعل (règle générale)</div>
+  <div class="ex-fr">Je <span class="hl">le</span> vois. / Je ne <span class="hl">le</span> vois pas. / Je vais <span class="hl">le</span> voir.</div>
+  
+  <div class="ex-label">② با temps composés — قبل از auxiliaire</div>
+  <div class="ex-fr">Je <span class="hl">l'</span>ai vu. / Il <span class="hl">leur</span> a parlé. / Elle <span class="hl">y</span> est allée.</div>
+  
+  <div class="ex-label">③ Impératif affirmatif — بعد از فعل با trait d'union</div>
+  <div class="ex-fr">Mange-<span class="hl">le</span>! / Parle-<span class="hl">lui</span>! / Vas-<span class="hl-r">y</span>! / Manges-<span class="hl">en</span>!</div>
+  <div class="warn">⚠️ me → moi / te → toi: Regarde-<b>moi</b>! / Dépêche-<b>toi</b>!<br>
+  + S اضافه قبل از Y و EN: Vas-<b>y</b>! / Manges-<b>en</b>!</div>
+  
+  <div class="ex-label">④ Impératif négatif — قبل از فعل</div>
+  <div class="ex-fr">Ne <span class="hl">le</span> mange pas! / Ne <span class="hl">lui</span> parle pas! / N'<span class="hl-r">y</span> va pas!</div>
+  
+  <div class="ex-label">⑤ ORDRE DES DOUBLES PRONOMS</div>
+  <div style="background:var(--cream);border-radius:10px;padding:12px 14px;margin:10px 0;overflow-x:auto">
+    <div style="font-family:'Roboto',serif;font-size:14px;direction:ltr;white-space:nowrap;text-align:center">
+      <span class="hl" style="margin:0 4px">me/te/se/nous/vous</span> →
+      <span class="hl" style="margin:0 4px">le/la/les</span> →
+      <span class="hl" style="margin:0 4px">lui/leur</span> →
+      <span class="hl-r" style="margin:0 4px">y</span> →
+      <span class="hl-g" style="margin:0 4px">en</span>
+    </div>
+  </div>
+  <div class="ex-fr">Il me <span class="hl">le</span> donne. → مرا به من می‌دهد.</div>
+  <div class="ex-fr">Je le <span class="hl">lui</span> offre. → آن را به او هدیه می‌دهم.</div>
+  <div class="ex-fr">Il nous <span class="hl-r">y</span> emmène. → ما را آنجا می‌برد.</div>
+  <div class="ex-fr">Elle leur <span class="hl-g">en</span> parle. → از آن برایشان صحبت می‌کند.</div>
+  
+  <div class="ex-label">⑥ À L'IMPÉRATIF AFFIRMATIF — ترتیب فرق می‌کند!</div>
+  <div style="background:var(--cream);border-radius:10px;padding:12px 14px;font-family:'Roboto',serif;direction:ltr;font-size:13.5px;direction:ltr">
+    <span class="hl">le/la/les</span> → <span class="hl">moi/toi/lui/nous/vous/leur</span> → <span class="hl-r">y</span> → <span class="hl-g">en</span>
+  </div>
+  <div class="ex-fr">Donne-<span class="hl">le</span>-<span class="hl">moi</span>! ✓ (نه: Donne-moi-le ✗)</div>
+  <div class="ex-fr">Donne-<span class="hl-g">m'en</span>! ← me + en = m'en (استثنا!)</div>
+</div>
+
+<div class="card rose">
+  <div class="card-label">⚠️ Y vs LUI/LEUR — COI personne vs Y</div>
+  <table class="conj-table">
+    <tr><th>نوع</th><th>سؤال</th><th>ضمیر</th><th>مثال</th></tr>
+    <tr><td>à + <b>personne</b></td><td>à qui?</td><td class="pron">lui / leur</td><td class="vb">Je lui parle. ✓</td></tr>
+    <tr><td>à + <b>chose</b></td><td>à quoi?</td><td class="pron">y</td><td class="vb">J'y pense. ✓</td></tr>
+    <tr><td>à + <b>lieu</b></td><td>où?</td><td class="pron">y</td><td class="vb">J'y vais. ✓</td></tr>
+  </table>
+  <div class="ex-fr">Je pense <b>à mon ami</b>. → Je pense <span class="hl">à lui</span>. ✓ (نه: j'y pense ✗)</div>
+  <div class="ex-fr">Je pense <b>à mon examen</b>. → J'<span class="hl-r">y</span> pense. ✓</div>
+  <div class="ex-fr">J'obéis <b>à mes parents</b>. → Je leur obéis. ✓</div>
+  <div class="ex-fr">Je m'habitue <b>à ce pays</b>. → Je m'<span class="hl-r">y</span> habitue. ✓</div>
+</div></div>
+<div class="gram-nav"><a class="gnav-btn" href="GRAM_subjonctif.html">&#8594; Subjonctif vs Indicatif</a><span style="font-size:11px;color:#b0a898">گرامر</span><span></span></div>
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ خوانده شد</button></div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body></html>
