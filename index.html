@@ -106,6 +106,10 @@ _sb.auth.getSession().then(({data:{session}})=>{
 });
 function _logout(){_sb.auth.signOut().then(()=>window.location.href='auth.html');}
 </script>
+<style>
+* { -webkit-user-select:none; -moz-user-select:none; user-select:none; }
+input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:text; }
+</style>
 </head>
 <body>
 <div class="auth-bar">
@@ -223,6 +227,14 @@ function closeModal(e){
   if(!e||e.target===document.getElementById('overlay'))
     document.getElementById('overlay').classList.remove('open');
 }
+</script>
+<script>
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+document.addEventListener('copy',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&['c','u','s','a'].includes(e.key.toLowerCase()))e.preventDefault();
+});
 </script>
 </body>
 </html>
