@@ -84,6 +84,359 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "MINI_000.html",
+    title: "✍️ Le silence qui parle",
+    titleFr: "Le silence qui parle",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "سکوت که حرف می‌زند"
+  },
+  {
+    file: "MINI_001.html",
+    title: "✍️ Apprendre à dire non",
+    titleFr: "Apprendre à dire non",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "یاد گرفتن نه گفتن"
+  },
+  {
+    file: "MINI_002.html",
+    title: "✍️ Le pouvoir des habitudes",
+    titleFr: "Le pouvoir des habitudes",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "قدرت عادت‌ها"
+  },
+  {
+    file: "MINI_003.html",
+    title: "✍️ Vivre loin de sa famille",
+    titleFr: "Vivre loin de sa famille",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "زندگی دور از خانواده"
+  },
+  {
+    file: "MINI_004.html",
+    title: "✍️ Ma routine du matin",
+    titleFr: "Ma routine du matin",
+    category: "miniarticle", level: "A2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "روتین صبحگاهی من"
+  },
+  {
+    file: "MINI_005.html",
+    title: "✍️ J'aime le week-end",
+    titleFr: "J'aime le week-end",
+    category: "miniarticle", level: "A1-A2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آخر هفته را دوست دارم"
+  },
+  {
+    file: "MINI_006.html",
+    title: "✍️ Mon plat préféré",
+    titleFr: "Mon plat préféré",
+    category: "miniarticle", level: "A1-A2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "غذای مورد علاقه‌ام"
+  },
+  {
+    file: "MINI_007.html",
+    title: "✍️ Pourquoi j'apprends le français",
+    titleFr: "Pourquoi j'apprends le français",
+    category: "miniarticle", level: "A2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا فرانسه یاد می‌گیرم"
+  },
+  {
+    file: "MINI_008.html",
+    title: "✍️ Qu'est-ce qui fait durer l'amour ?",
+    titleFr: "Qu'est-ce qui fait durer l'amour ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چه چیزی عشق را ماندگار می‌کند؟"
+  },
+  {
+    file: "MINI_009.html",
+    title: "✍️ Faut-il éviter le petit-déjeuner ?",
+    titleFr: "Faut-il éviter le petit-déjeuner ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا باید از صبحانه اجتناب کرد؟"
+  },
+  {
+    file: "MINI_010.html",
+    title: "✍️ Le secret pour le meilleur été",
+    titleFr: "Le secret pour le meilleur été",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "راز بهترین تابستان"
+  },
+  {
+    file: "MINI_011.html",
+    title: "✍️ La lumière du matin",
+    titleFr: "La lumière du matin",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "نور صبح — ضدافسردگی طبیعی"
+  },
+  {
+    file: "MINI_012.html",
+    title: "✍️ « Sois heureux. » — le vrai but ?",
+    titleFr: "« Sois heureux. » — le vrai but ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "خوشبخت باش — هدف واقعی است؟"
+  },
+  {
+    file: "MINI_013.html",
+    title: "✍️ Pourquoi les matins sont-ils difficiles ?",
+    titleFr: "Pourquoi les matins sont-ils difficiles ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا صبح‌ها سخت‌اند؟"
+  },
+  {
+    file: "MINI_014.html",
+    title: "✍️ La magie d'une courte promenade",
+    titleFr: "La magie d'une courte promenade",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "جادوی یک پیاده‌روی کوتاه"
+  },
+  {
+    file: "MINI_015.html",
+    title: "✍️ Le manque de sommeil",
+    titleFr: "Le manque de sommeil",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "کمبود خواب فراتر از خستگی"
+  },
+  {
+    file: "MINI_016.html",
+    title: "✍️ L'art de dire « non » sans culpabiliser",
+    titleFr: "L'art de dire « non » sans culpabiliser",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "هنر نه گفتن بدون احساس گناه"
+  },
+  {
+    file: "MINI_017.html",
+    title: "✍️ Pourquoi à l'aise avec certaines personnes ?",
+    titleFr: "Pourquoi à l'aise avec certaines personnes ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا با برخی راحت‌تریم؟"
+  },
+  {
+    file: "MINI_018.html",
+    title: "✍️ L'écoute véritable",
+    titleFr: "L'écoute véritable",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "گوش دادن واقعی — مهارت نادر"
+  },
+  {
+    file: "MINI_019.html",
+    title: "✍️ Les erreurs, nos vrais professeurs",
+    titleFr: "Les erreurs, nos vrais professeurs",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "اشتباهات، معلمان واقعی ما"
+  },
+  {
+    file: "MINI_020.html",
+    title: "✍️ Pourquoi se comparer aux autres nous épuise",
+    titleFr: "Pourquoi se comparer aux autres nous épuise",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا مقایسه خسته‌مان می‌کند"
+  },
+  {
+    file: "MINI_021.html",
+    title: "✍️ Le pouvoir des petits débuts",
+    titleFr: "Le pouvoir des petits débuts",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "قدرت شروع‌های کوچک"
+  },
+  {
+    file: "MINI_022.html",
+    title: "✍️ Pourquoi sommes-nous toujours pressés ?",
+    titleFr: "Pourquoi sommes-nous toujours pressés ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا همیشه عجله داریم؟"
+  },
+  {
+    file: "MINI_023.html",
+    title: "✍️ La solitude à l'ère des réseaux sociaux",
+    titleFr: "La solitude à l'ère des réseaux sociaux",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "تنهایی در عصر شبکه‌های اجتماعی"
+  },
+  {
+    file: "MINI_024.html",
+    title: "✍️ Acheter moins, être plus heureux ?",
+    titleFr: "Acheter moins, être plus heureux ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "کمتر خریدن، خوشحال‌تر بودن؟"
+  },
+  {
+    file: "MINI_025.html",
+    title: "✍️ Les études permettent-elles de réussir ?",
+    titleFr: "Les études permettent-elles de réussir ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا تحصیل موفقیت می‌آورد؟"
+  },
+  {
+    file: "MINI_026.html",
+    title: "✍️ Vivre à l'étranger : avantages ou inconvénients ?",
+    titleFr: "Vivre à l'étranger : avantages ou inconvénients ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "زندگی در خارج: مزایا یا معایب؟"
+  },
+  {
+    file: "MINI_027.html",
+    title: "✍️ Apprendre la langue du pays est-il essentiel ?",
+    titleFr: "Apprendre la langue du pays est-il essentiel ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "یادگیری زبان کشور مقصد ضروری است؟"
+  },
+  {
+    file: "MINI_028.html",
+    title: "✍️ La télévision dans l'éducation des enfants",
+    titleFr: "La télévision dans l'éducation des enfants",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "نقش تلویزیون در تربیت کودکان"
+  },
+  {
+    file: "MINI_029.html",
+    title: "✍️ Internet favorise-t-il l'isolement ?",
+    titleFr: "Internet favorise-t-il l'isolement ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا اینترنت انزوا می‌آورد؟"
+  },
+  {
+    file: "MINI_030.html",
+    title: "✍️ Pourquoi la musique nous donne des frissons ?",
+    titleFr: "Pourquoi la musique nous donne des frissons ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا موسیقی لرزه‌مان می‌اندازد؟"
+  },
+  {
+    file: "MINI_031.html",
+    title: "✍️ Le silence est-il devenu un luxe ?",
+    titleFr: "Le silence est-il devenu un luxe ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا سکوت تبدیل به لوکس شده؟"
+  },
+  {
+    file: "MINI_032.html",
+    title: "✍️ Pourquoi rêvons-nous la nuit ?",
+    titleFr: "Pourquoi rêvons-nous la nuit ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا شب خواب می‌بینیم؟"
+  },
+  {
+    file: "MINI_033.html",
+    title: "✍️ Faut-il vraiment suivre ses passions ?",
+    titleFr: "Faut-il vraiment suivre ses passions ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا باید دنبال اشتیاق‌هایمان باشیم؟"
+  },
+  {
+    file: "MINI_034.html",
+    title: "✍️ Les animaux ont-ils des émotions ?",
+    titleFr: "Les animaux ont-ils des émotions ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا حیوانات احساس دارند؟"
+  },
+  {
+    file: "MINI_035.html",
+    title: "✍️ Pourquoi le temps passe-t-il plus vite ?",
+    titleFr: "Pourquoi le temps passe-t-il plus vite ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا زمان سریع‌تر می‌گذرد؟"
+  },
+  {
+    file: "MINI_036.html",
+    title: "✍️ Le bonheur d'apprendre à tout âge",
+    titleFr: "Le bonheur d'apprendre à tout âge",
+    category: "miniarticle", level: "A2-B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "خوشبختی یادگیری در هر سن"
+  },
+  {
+    file: "MINI_037.html",
+    title: "✍️ Pourquoi rougit-on quand on est gêné ?",
+    titleFr: "Pourquoi rougit-on quand on est gêné ?",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "چرا موقع خجالت سرخ می‌شویم؟"
+  },
+  {
+    file: "MINI_038.html",
+    title: "✍️ Faut-il toujours dire la vérité ?",
+    titleFr: "Faut-il toujours dire la vérité ?",
+    category: "miniarticle", level: "B1-B2",
+    tags: ["mini","article","lecture","B1"],
+    summary: "آیا باید همیشه حقیقت را گفت؟"
+  },
+  {
+    file: "MINI_039.html",
+    title: "✍️ Le pouvoir surprenant de la gratitude",
+    titleFr: "Le pouvoir surprenant de la gratitude",
+    category: "miniarticle", level: "B1",
+    tags: ["mini","article","lecture","B1"],
+    summary: "قدرت شگفت‌انگیز قدردانی"
+  },
+  {
+    file: "PHRASES_utiles.html",
+    title: "💬 جملات کاربردی فرانسوی",
+    titleFr: "Phrases utiles",
+    category: "phrases", level: "A1–B2",
+    tags: ["phrases","expressions","communication","parler"],
+    summary: "جملات کاربردی روزمره فرانسوی"
+  },
+  {
+    file: "GUIDE_prononciation.html",
+    title: "🔊 راهنمای کامل تلفظ فرانسوی",
+    titleFr: "Guide de prononciation",
+    category: "grammar", level: "A1–B2",
+    tags: ["prononciation","phonétique","accent","sons"],
+    summary: "راهنمای جامع تلفظ از A1 تا B2"
+  },
+  {
+    file: "VOCAB_mots_daujourdhui_01.html",
+    title: "📚 Les mots d'aujourd'hui — Modes de vie",
+    titleFr: "Les mots d'aujourd'hui",
+    category: "vocab", level: "B1–B2",
+    tags: ["vocabulaire","modes de vie","jeunes","B1"],
+    summary: "واژگان سبک زندگی جوانان فرانسوی"
+  },
+  {
+    file: "GRAMMAR_comparaison.html",
+    title: "📐 La Comparaison — مقایسه در فرانسه",
+    titleFr: "La Comparaison",
+    category: "grammar", level: "A2–C1",
+    tags: ["comparaison","plus","moins","aussi","autant"],
+    summary: "مقایسه کامل در فرانسه از A2 تا C1"
+  },
+
+  {
     file: "VOCAB_prison_justice.html",
     title: "📚 La prison & la justice pénale",
     titleFr: "La prison & la justice pénale",
