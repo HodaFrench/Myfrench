@@ -84,6 +84,22 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "GRAMMAR_pronom_y.html",
+    title: "📐 Le Pronom Y — Complément de lieu",
+    titleFr: "Le Pronom Y",
+    category: "grammar", level: "A2–B2",
+    tags: ["grammaire","pronom","y","lieu","complément"],
+    summary: "ضمیر Y برای جایگزینی مکان و «à + چیز» — با تحلیل و تمرین"
+  },
+  {
+    file: "GRAMMAR_pouvoir_vouloir_devoir.html",
+    title: "📐 Pouvoir · Vouloir · Devoir",
+    titleFr: "Verbes modaux: Pouvoir, Vouloir, Devoir",
+    category: "grammar", level: "A1–B1",
+    tags: ["grammaire","modal","pouvoir","vouloir","devoir","verbes"],
+    summary: "افعال وجهی — توانستن، خواستن، باید — با مثال، ترجمه و تمرین"
+  },
+  {
     file: "Comparaison/superlatifs.html",
     title: "📐 Les Comparatifs et Superlatifs",
     titleFr: "Comparatifs et Superlatifs",
