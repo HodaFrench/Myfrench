@@ -3,147 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>پادکست فرانسوی | Français avec Hoda</title>
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<title>معرفی پادکست | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--pod:#7a3b88}
-body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 60px}
-.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
-.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
-.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:32px 28px 28px;text-align:center;box-shadow:0 14px 40px rgba(122,59,136,.3)}
-.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
-.hero h1{font-family:'Roboto',serif;font-size:26px;font-weight:700;margin-bottom:6px}
-.hero .sub{font-size:13px;opacity:.85}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,.04) 31px,rgba(30,58,95,.04) 32px);color:var(--ink);padding-bottom:60px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap;transition:background .2s}
+.hoda-back-btn:hover{background:#2a5080}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.hero-sub{font-size:13px;opacity:.85}
 
-/* section headers */
-.sec-title{font-size:12px;font-weight:700;color:var(--gold);letter-spacing:2px;margin:20px 0 10px;padding-right:4px}
+/* filter tabs */
+.filter-bar{display:flex;gap:7px;padding:16px 0 10px;flex-wrap:wrap}
+.f-btn{padding:6px 14px;border:1.5px solid var(--line);border-radius:20px;background:var(--white);font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:600;color:var(--gray);cursor:pointer;transition:all .2s}
+.f-btn.on{background:var(--navy);color:#f5f0e8;border-color:var(--navy)}
 
-/* featured (our) episode */
-.feat-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(31,58,95,.08);margin-bottom:20px;border:2px solid rgba(122,59,136,.2)}
-.feat-badge{background:linear-gradient(90deg,#7a3b88,#4a1f5a);color:#fff;font-size:11px;font-weight:700;padding:6px 16px;letter-spacing:1px}
-.feat-body{padding:16px 20px}
-.feat-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:4px;direction:ltr;text-align:left}
-.feat-fa{font-size:13px;color:var(--gray);margin-bottom:12px}
-.feat-meta{font-size:11.5px;color:var(--pod);margin-bottom:10px;display:flex;gap:10px;flex-wrap:wrap}
-.feat-link{display:inline-flex;align-items:center;gap:6px;background:#7a3b88;color:#fff;text-decoration:none;border-radius:10px;padding:8px 16px;font-size:13px;font-weight:600;margin-top:4px}
-.feat-link:hover{background:#4a1f5a}
-
-/* RSS episodes */
-.rss-card{background:var(--white);border-radius:14px;padding:14px 18px;margin-bottom:10px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line)}
-.rss-title{font-family:'Roboto',serif;font-size:15px;font-weight:600;color:var(--navy);direction:ltr;text-align:left;margin-bottom:4px}
-.rss-date{font-size:11px;color:var(--gray);margin-bottom:8px}
-.rss-desc{font-size:12.5px;color:#5a5248;line-height:1.7;margin-bottom:10px;direction:ltr;text-align:left}
-.rss-audio{width:100%;height:36px;accent-color:#7a3b88;margin-bottom:4px}
-.loading{text-align:center;padding:40px;color:var(--gray);font-size:14px}
-.err{text-align:center;padding:20px;color:#c0392b;font-size:13px}
+/* episode cards */
+.ep-card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(31,58,95,.08);margin-bottom:18px;border:1px solid var(--line)}
+.ep-show-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;color:#fff}
+.ep-show-img{width:42px;height:42px;border-radius:8px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.3)}
+.ep-show-name{font-family:'Roboto',serif;font-size:13px;font-weight:700}
+.ep-show-fa{font-size:11px;opacity:.85;margin-top:1px}
+.ep-level{margin-right:auto;font-size:10px;font-weight:800;padding:3px 9px;border-radius:10px;background:rgba(255,255,255,.2);flex-shrink:0}
+.ep-body{padding:16px 18px}
+.ep-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.ep-title-fa{font-size:14px;color:var(--ink);margin-bottom:8px}
+.ep-meta{font-size:11.5px;color:var(--gray);margin-bottom:10px}
+.ep-desc-fr{font-family:'Roboto',serif;font-size:14px;line-height:1.9;color:#3a3530;background:var(--cream);border-radius:8px;padding:10px 14px;border-right:3px solid var(--navy);margin-bottom:8px}
+.ep-desc-fa{font-size:13px;color:var(--gray);line-height:1.9;margin-bottom:12px}
+.ep-words{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.ep-word{font-size:11.5px;padding:3px 10px;background:rgba(30,58,95,.07);border-radius:8px;color:var(--navy);font-family:'Roboto',serif}
+.ep-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#fff;padding:9px 18px;border-radius:10px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;background:var(--navy);transition:background .2s}
+.ep-link:hover{background:#2a5080}
+.ep-badge{font-size:11px}
+.ep-badge.local{}
+.ep-badge.ext{}
 </style>
 </head>
 <body>
-<style>
-.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
-.hoda-back-btn{display:flex;align-items:center;gap:5px;background:#1e3a5f;color:#f5f0e8;text-decoration:none;border:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
-.hoda-back-btn:hover{background:#2a5080}
-.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-</style>
 <div class="hoda-back">
   <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
-  <span class="hoda-back-label">معرفی پادکست</span>
-</div>
-
-<style>
-#back-btn{display:none;position:fixed;top:0;right:0;z-index:300;padding:8px 16px;background:rgba(255,253,246,.9);border:none;border-bottom:1px solid rgba(217,206,184,.5);border-left:1px solid rgba(217,206,184,.5);font-family:'Estedad',sans-serif;font-size:13px;color:#1e3a5f;cursor:pointer;font-weight:600;border-radius:0 0 0 10px}
-@media(max-width:700px){#back-btn{display:block}}
-</style>
-<button id="back-btn" onclick="history.back()">← بازگشت</button>
-<div class="topbar">
-  <a href="../index.html">⌂ Français avec Hoda</a>
-  <span style="font-size:13px;opacity:.7">🎙️ پادکست‌های فرانسوی</span>
+  <span style="font-size:12px;color:#8a8275;flex:1;text-align:center">🎙️ معرفی پادکست</span>
 </div>
 <div class="hero">
-  <div class="hero-tag">🎙️ PODCASTS FRANÇAIS</div>
-  <h1>پادکست‌های آموزشی</h1>
-  <div class="sub">پادکست‌های فرانسوی انتخابی با معرفی کامل و پخش مستقیم</div>
+  <h1>🎙️ معرفی پادکست‌های فرانسوی</h1>
+  <div class="hero-sub">8 اپیزود انتخابی از 4 پادکست برتر · با خلاصه فارسی و واژگان</div>
 </div>
-
 <div class="wrap">
+<div class="filter-bar">
+  <button class="f-btn on" onclick="flt('all',this)">همه (8)</button>
+  <button class="f-btn" onclick="flt('emotions',this)">💜 Émotions</button>
+  <button class="f-btn" onclick="flt('elisa',this)">☀️ French Mornings</button>
+  <button class="f-btn" onclick="flt('easy',this)">🎙️ Easy French</button>
+  <button class="f-btn" onclick="flt('psy',this)">🧠 Psychologie</button>
+</div>
+<div id="ep-list">
 
-<!-- لینک به لیست کامل -->
-<a href="PODCAST_player.html" style="display:flex;align-items:center;gap:12px;background:var(--white);border-radius:14px;padding:14px 18px;margin:18px 0;text-decoration:none;color:var(--ink);box-shadow:0 3px 12px rgba(31,58,95,.07);border-right:4px solid #1e3a5f">
-  <div style="font-size:28px">🎙️</div>
-  <div>
-    <div style="font-size:14px;font-weight:700;color:#1e3a5f">مشاهده همه اپیزودها با پخش مستقیم</div>
-    <div style="font-size:12px;color:#8a8275;margin-top:2px">لیست کامل با جستجو و پلیر داخلی</div>
-  </div>
-  <span style="margin-right:auto;color:#1e3a5f;font-size:18px">←</span>
-</a>
-
-<!-- معرفی‌شده توسط هدی -->
-<div class="sec-title">⭐ معرفی‌شده توسط هدی — با شرح کامل و هایلایت</div>
-
-<div class="feat-card">
-  <div class="feat-badge">📝 دارای متن و هایلایت کامل</div>
-  <div class="feat-body">
-    <div class="feat-title">Amour idéal ou réel : déconstruire les mythes #288</div>
-    <div class="feat-fa">عشق آرمانی یا واقعی — فرو ریختن اسطوره‌ها</div>
-    <div class="feat-meta">
-      <span>🎙️ Psychologie et bien-être</span>
-      <span>👩‍⚕️ Diane Sabbag</span>
-      <span>🎯 B2</span>
-      <span>📅 ۲۰۲۶</span>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#8a2040">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/67/92/25/679225bc-7c06-4dc1-4608-cf942f88f163/mza_14104292350194698251.jpeg/300x300bb.jpg" class="ep-show-img" alt="Émotions" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Émotions</div>
+      <div class="ep-show-fa">احساسات</div>
     </div>
-    <audio controls preload="none" style="width:100%;height:40px;accent-color:#7a3b88;margin-bottom:10px">
-      <source src="https://d3ctxlq1ktw2nl.cloudfront.net/staging/2026-5-8/6dd6e4b3-8bcc-0f0c-2245-e37752fbe72e.mp3" type="audio/mpeg">
-    </audio>
-    <a class="feat-link" href="../PODCAST_ep288_amour.html">
-      📖 مشاهده معرفی کامل با هایلایت و واژگان ←
-    </a>
+    <span class="ep-level">B2–C1</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">TDAH : qu'est-ce que change le diagnostic ?</div>
+    <div class="ep-title-fa">ADHD — تشخیص بیماری چه چیزی را تغییر می‌دهد؟</div>
+    <div class="ep-meta">⏱ 44 min &nbsp;·&nbsp; 📅 31 mai 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Vivre avec un esprit qui papillonne constamment transforme chaque journée en un parcours du combattant invisible. Derrière ce que l'entourage qualifie de paresse se cache un trouble neurodéveloppemental épuisant : le TDAH. Qu'est-ce que ça fait de vivre avec un TDAH ? Et qu'est-ce que ça change, d'avoir un diagnostic ?</div>
+    <div class="ep-desc-fa">زندگی با ذهنی که دائماً پرواز می‌کند، هر روز را به یک نبرد نامرئی تبدیل می‌کند. پشت چیزی که اطرافیان «تنبلی» می‌نامند، یک اختلال عصبی خسته‌کننده پنهان است: ADHD. زندگی با ADHD چه حسی دارد؟ و داشتن یک تشخیص رسمی چه چیزی را تغییر می‌دهد؟</div>
+    <div class="ep-words"><span class="ep-word">le diagnostic (تشخیص)</span><span class="ep-word">neurodéveloppemental (عصبی-رشدی)</span><span class="ep-word">les fonctions exécutives (عملکردهای اجرایی)</span><span class="ep-word">un trouble (اختلال)</span><span class="ep-word">l'hyperactivité (بیش‌فعالی)</span><span class="ep-word">épuisant (خسته‌کننده)</span><span class="ep-word">le déficit d'attention (کمبود توجه)</span><span class="ep-word">invisible (نامرئی)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/tdah-quest-ce-que-change-le-diagnostic/id1447653027?i=1000770474776&l=fr-FR" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
   </div>
 </div>
-
-<!-- آخرین اپیزودها از RSS -->
-<div class="sec-title">🎙️ آخرین اپیزودهای Psychologie et bien-être</div>
-<div id="rss-list"><div class="loading">⏳ در حال بارگذاری اپیزودها...</div></div>
-
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#8a2040">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/67/92/25/679225bc-7c06-4dc1-4608-cf942f88f163/mza_14104292350194698251.jpeg/300x300bb.jpg" class="ep-show-img" alt="Émotions" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Émotions</div>
+      <div class="ep-show-fa">احساسات</div>
+    </div>
+    <span class="ep-level">B2–C1</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">À qui les people pleaser font-ils vraiment plaisir ?</div>
+    <div class="ep-title-fa">خوشایند کردن دیگران — واقعاً برای چه کسی؟</div>
+    <div class="ep-meta">⏱ 46 min &nbsp;·&nbsp; 📅 26 avril 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Dire « oui » par peur de décevoir, s'adapter en permanence aux désirs des autres jusqu'à s'oublier soi-même… D'où vient cette peur viscérale de déplaire ? Pourquoi est-il si difficile de poser ses limites ? Est-ce de la générosité ou une stratégie de survie émotionnelle ?</div>
+    <div class="ep-desc-fa">گفتن «بله» از ترس ناامید کردن، دائماً خود را با خواسته‌های دیگران تطبیق دادن تا آنجا که خود را فراموش کنی... این ترس عمیق از ناراضی کردن از کجا می‌آید؟ چرا گذاشتن حد و مرز اینقدر سخت است؟ این سخاوت است یا یک استراتژی بقای احساسی؟</div>
+    <div class="ep-words"><span class="ep-word">décevoir (ناامید کردن)</span><span class="ep-word">s'adapter (سازگار شدن)</span><span class="ep-word">viscéral (غریزی، عمیق)</span><span class="ep-word">poser ses limites (حد و مرز گذاشتن)</span><span class="ep-word">la générosité (سخاوت)</span><span class="ep-word">la survie émotionnelle (بقای احساسی)</span><span class="ep-word">le rejet (رد شدن)</span><span class="ep-word">culpabiliser (احساس گناه کردن)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/%C3%A0-qui-les-people-pleaser-font-ils-vraiment-plaisir/id1447653027?i=1000763715703&l=fr-FR" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
 </div>
-
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#1e3a5f">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/4a/fe/f9/4afef96b-22e9-1691-beed-dc7bbb7f8b14/mza_13877052066769142561.jpg/300x300bb.jpg" class="ep-show-img" alt="French Mornings with Elisa" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">French Mornings with Elisa</div>
+      <div class="ep-show-fa">صبح‌های فرانسوی با الیزا</div>
+    </div>
+    <span class="ep-level">A2–B1</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">Ep 66 — Les secrets avec Andréa</div>
+    <div class="ep-title-fa">اپیزود ۶۶ — رازها با آندره‌آ</div>
+    <div class="ep-meta">⏱ 14 min &nbsp;·&nbsp; 📅 8 juin 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Dans cet épisode, Elisa discute avec Andréa des secrets : pourquoi on en garde, comment ils nous affectent, et ce que ça fait quand on les révèle enfin. Une conversation authentique et naturelle pour améliorer votre français au niveau intermédiaire.</div>
+    <div class="ep-desc-fa">در این اپیزود، الیزا با آندره‌آ درباره رازها صحبت می‌کند: چرا آن‌ها را نگه می‌داریم، چگونه روی ما تأثیر می‌گذارند، و وقتی بالاخره آشکار می‌شوند چه احساسی داریم. یک مکالمه اصیل و طبیعی برای بهبود فرانسه سطح متوسط.</div>
+    <div class="ep-words"><span class="ep-word">un secret (راز)</span><span class="ep-word">révéler (آشکار کردن)</span><span class="ep-word">affecter (تأثیر گذاشتن)</span><span class="ep-word">garder (نگه داشتن)</span><span class="ep-word">authentique (اصیل، واقعی)</span><span class="ep-word">la confiance (اعتماد)</span><span class="ep-word">dévoiler (فاش کردن)</span><span class="ep-word">peser (سنگینی کردن)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/ep-66-les-secrets-avec-andr%C3%A9a-podcast-fran%C3%A7ais-interm%C3%A9diaire/id1721113418?i=1000771640106&l=fr-FR" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
+</div>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#1e3a5f">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/4a/fe/f9/4afef96b-22e9-1691-beed-dc7bbb7f8b14/mza_13877052066769142561.jpg/300x300bb.jpg" class="ep-show-img" alt="French Mornings with Elisa" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">French Mornings with Elisa</div>
+      <div class="ep-show-fa">صبح‌های فرانسوی با الیزا</div>
+    </div>
+    <span class="ep-level">A2–B1</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">Ep 65 — French Morning routines</div>
+    <div class="ep-title-fa">اپیزود ۶۵ — روتین صبحگاهی فرانسوی‌ها</div>
+    <div class="ep-meta">⏱ 12 min &nbsp;·&nbsp; 📅 25 mai 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Elisa parle de ses habitudes matinales et celles des Français en général. Café, croissant, journaux... Découvrez comment les Français commencent leur journée et apprenez le vocabulaire du quotidien en français naturel.</div>
+    <div class="ep-desc-fa">الیزا درباره عادت‌های صبحگاهی خودش و فرانسوی‌ها به طور کلی صحبت می‌کند. قهوه، کروسان، روزنامه... ببینید فرانسوی‌ها روزشان را چگونه شروع می‌کنند و واژگان زندگی روزمره را به فرانسه طبیعی یاد بگیرید.</div>
+    <div class="ep-words"><span class="ep-word">la routine (روتین)</span><span class="ep-word">matinal (صبحگاهی)</span><span class="ep-word">les habitudes (عادت‌ها)</span><span class="ep-word">le quotidien (روزمره)</span><span class="ep-word">commencer (شروع کردن)</span><span class="ep-word">le café (قهوه)</span><span class="ep-word">se lever (بلند شدن)</span><span class="ep-word">naturel (طبیعی)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/french-mornings-with-elisa/id1721113418?l=fr-FR&i=1000770525747" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
+</div>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#2e6b4a">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/51/02/87/51028790-e04b-f78f-a1e2-3e9af8af4e06/mza_9148308972213503607.jpg/300x300bb.jpg" class="ep-show-img" alt="Easy French" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Easy French</div>
+      <div class="ep-show-fa">فرانسه آسان</div>
+    </div>
+    <span class="ep-level">B1–B2</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">Is Paris really that romantic?</div>
+    <div class="ep-title-fa">آیا پاریس واقعاً اینقدر رمانتیک است؟</div>
+    <div class="ep-meta">⏱ 18 min &nbsp;·&nbsp; 📅 juin 2026</div>
+    <div class="ep-desc-fr" dir="ltr">On demande aux Parisiens et aux touristes ce qu'ils pensent vraiment de Paris la romantique. Est-ce un mythe ou une réalité ? Des témoignages authentiques, filmés dans les rues de Paris, avec sous-titres en français et en anglais.</div>
+    <div class="ep-desc-fa">از پاریسی‌ها و توریست‌ها می‌پرسیم که واقعاً چه فکری درباره پاریس رمانتیک می‌کنند. افسانه است یا واقعیت؟ شهادت‌های اصیل، فیلم‌برداری‌شده در خیابان‌های پاریس، با زیرنویس فرانسه و انگلیسی.</div>
+    <div class="ep-words"><span class="ep-word">romantique (رمانتیک)</span><span class="ep-word">un mythe (افسانه، اسطوره)</span><span class="ep-word">un témoignage (شهادت، گواهی)</span><span class="ep-word">authentique (اصیل)</span><span class="ep-word">filmé (فیلم‌برداری‌شده)</span><span class="ep-word">les rues (خیابان‌ها)</span><span class="ep-word">un Parisien (یک پاریسی)</span><span class="ep-word">la réalité (واقعیت)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/easy-french-learn-french-through-authentic-conversations/id1624981488?l=fr-FR&i=1000773141482" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
+</div>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#2e6b4a">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/51/02/87/51028790-e04b-f78f-a1e2-3e9af8af4e06/mza_9148308972213503607.jpg/300x300bb.jpg" class="ep-show-img" alt="Easy French" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Easy French</div>
+      <div class="ep-show-fa">فرانسه آسان</div>
+    </div>
+    <span class="ep-level">B1–B2</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">French people talk about their biggest fears</div>
+    <div class="ep-title-fa">فرانسوی‌ها درباره بزرگ‌ترین ترس‌هایشان صحبت می‌کنند</div>
+    <div class="ep-meta">⏱ 16 min &nbsp;·&nbsp; 📅 mai 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Dans les rues de France, on demande aux gens de parler de leurs peurs les plus profondes. La mort, l'échec, la solitude, les araignées... Chaque réponse révèle quelque chose de profondément humain. Podcast idéal pour un français naturel et varié.</div>
+    <div class="ep-desc-fa">در خیابان‌های فرانسه، از مردم می‌خواهیم درباره عمیق‌ترین ترس‌هایشان صحبت کنند. مرگ، شکست، تنهایی، عنکبوت‌ها... هر پاسخ چیزی عمیقاً انسانی را آشکار می‌کند.</div>
+    <div class="ep-words"><span class="ep-word">la peur (ترس)</span><span class="ep-word">profond (عمیق)</span><span class="ep-word">la mort (مرگ)</span><span class="ep-word">l'échec (شکست)</span><span class="ep-word">la solitude (تنهایی)</span><span class="ep-word">révéler (آشکار کردن)</span><span class="ep-word">varié (متنوع)</span><span class="ep-word">humain (انسانی)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/easy-french-learn-french-through-authentic-conversations/id1624981488?l=fr-FR&i=1000772072275" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
+</div>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#2e6b4a">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/51/02/87/51028790-e04b-f78f-a1e2-3e9af8af4e06/mza_9148308972213503607.jpg/300x300bb.jpg" class="ep-show-img" alt="Easy French" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Easy French</div>
+      <div class="ep-show-fa">فرانسه آسان</div>
+    </div>
+    <span class="ep-level">A2–B2</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">Do French people really eat that much cheese?</div>
+    <div class="ep-title-fa">آیا فرانسوی‌ها واقعاً اینقدر پنیر می‌خورند؟</div>
+    <div class="ep-meta">⏱ 15 min &nbsp;·&nbsp; 📅 avril 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Le fromage, c'est sacré en France ! Mais est-ce que les Français mangent vraiment autant de fromage qu'on le dit ? On interroge des Français de tous les âges dans la rue pour démêler le mythe de la réalité. Avec beaucoup de vocabulaire sur la nourriture et la culture française.</div>
+    <div class="ep-desc-fa">پنیر در فرانسه مقدس است! اما آیا فرانسوی‌ها واقعاً اینقدر پنیر می‌خورند که گفته می‌شود؟ از فرانسوی‌های همه سنین در خیابان می‌پرسیم تا افسانه را از واقعیت جدا کنیم.</div>
+    <div class="ep-words"><span class="ep-word">le fromage (پنیر)</span><span class="ep-word">sacré (مقدس)</span><span class="ep-word">démêler (جدا کردن، روشن کردن)</span><span class="ep-word">interroger (پرسیدن از)</span><span class="ep-word">la nourriture (غذا)</span><span class="ep-word">la culture (فرهنگ)</span><span class="ep-word">autant (اینقدر، به همان اندازه)</span><span class="ep-word">le mythe (افسانه)</span></div>
+    <a class="ep-link" href="https://podcasts.apple.com/us/podcast/easy-french-learn-french-through-authentic-conversations/id1624981488?l=fr-FR&i=1000768734087" target="_blank"><span class="ep-badge ext">🎧 Apple Podcasts</span> ←</a>
+  </div>
+</div>
+<div class="ep-card">
+  <div class="ep-show-bar" style="background:#6b3fa0">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/24/28/56/242856b4-1748-fdf3-d2b8-bba16e5b6f50/mza_15186124428440064592.jpg/300x300bb.jpg" class="ep-show-img" alt="Psychologie et bien-être" onerror="this.style.display='none'">
+    <div>
+      <div class="ep-show-name">Psychologie et bien-être</div>
+      <div class="ep-show-fa">روان‌شناسی و رفاه</div>
+    </div>
+    <span class="ep-level">B2</span>
+  </div>
+  <div class="ep-body">
+    <div class="ep-title" dir="ltr">Ep.288 — L'amour idéalisé : entre rêve et réalité</div>
+    <div class="ep-title-fa">اپیزود ۲۸۸ — عشق آرمانی: بین رویا و واقعیت</div>
+    <div class="ep-meta">⏱ 45 min &nbsp;·&nbsp; 📅 2026</div>
+    <div class="ep-desc-fr" dir="ltr">Avec la thérapeute Diane Sabbag, on questionne notre vision de l'amour. Comment les croyances, les attentes et les mythes autour de l'amour peuvent fausser notre vision du couple ? Comment construire une relation plus authentique et apaisée ?</div>
+    <div class="ep-desc-fa">با درمانگر دیان صاباغ، دیدگاهمان درباره عشق را زیر سؤال می‌بریم. چگونه باورها، انتظارات و افسانه‌های پیرامون عشق می‌توانند دیدگاه ما از رابطه را تحریف کنند؟ چگونه رابطه‌ای اصیل‌تر و آرام‌تر بسازیم؟</div>
+    <div class="ep-words"><span class="ep-word">idéalisé (آرمانی‌شده)</span><span class="ep-word">la croyance (باور)</span><span class="ep-word">l'attente (انتظار)</span><span class="ep-word">fausser (تحریف کردن)</span><span class="ep-word">authentique (اصیل)</span><span class="ep-word">apaisé (آرام)</span><span class="ep-word">déconstruire (فرو ریختن)</span><span class="ep-word">l'illusion (توهم)</span></div>
+    <a class="ep-link" href="PODCAST_ep288_amour.html" ><span class="ep-badge local">📖 درس کامل</span> ←</a>
+  </div>
+</div>
+</div>
+</div>
 <script>
-// Load RSS via a CORS proxy
-const RSS_URL = 'https://anchor.fm/s/1fee072c/podcast/rss';
-const PROXY = 'https://api.allorigins.win/get?url=';
-
-async function loadRSS(){
-  const list = document.getElementById('rss-list');
-  try {
-    const res = await fetch(PROXY + encodeURIComponent(RSS_URL));
-    const data = await res.json();
-    const xml = new DOMParser().parseFromString(data.contents, 'text/xml');
-    const items = Array.from(xml.querySelectorAll('item')).slice(0,8);
-    
-    if(!items.length){ list.innerHTML='<div class="err">اپیزود یافت نشد</div>'; return; }
-    
-    list.innerHTML = items.map(item => {
-      const title = item.querySelector('title')?.textContent || '';
-      const date = item.querySelector('pubDate')?.textContent || '';
-      const desc = item.querySelector('description')?.textContent?.replace(/<[^>]+>/g,'').substring(0,180) || '';
-      const enc = item.querySelector('enclosure');
-      const mp3 = enc?.getAttribute('url') || '';
-      const d = new Date(date);
-      const dateStr = d.toLocaleDateString('fa-IR', {year:'numeric',month:'long',day:'numeric'});
-      
-      return \`<div class="rss-card">
-        <div class="rss-title">\${title}</div>
-        <div class="rss-date">📅 \${dateStr}</div>
-        <div class="rss-desc">\${desc}...</div>
-        \${mp3 ? \`<audio class="rss-audio" controls preload="none"><source src="\${mp3}" type="audio/mpeg"></audio>\` : ''}
-      </div>\`;
-    }).join('');
-  } catch(e){
-    list.innerHTML = \`<div class="err">خطا در بارگذاری — <a href="https://podcasts.apple.com/us/podcast/id1513532213" target="_blank" style="color:#7a3b88">Apple Podcasts ↗</a></div>\`;
-  }
+function flt(cat,btn){
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.ep-card').forEach((c,i)=>{
+    if(cat==='all'){c.style.display='block';return;}
+    const show=c.querySelector('.ep-show-name')?.textContent||'';
+    const match={
+      emotions: show.includes('motion'),
+      elisa: show.includes('Elisa'),
+      easy: show.includes('Easy'),
+      psy: show.includes('Psychologie')
+    };
+    c.style.display=match[cat]?'block':'none';
+  });
 }
-loadRSS();
 </script>
 </body>
 </html>
