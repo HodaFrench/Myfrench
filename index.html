@@ -271,7 +271,8 @@ document.addEventListener('keydown',e=>{
 });
 </script>
 
-<!-- 📌 Floating Notes Widget -->
+
+<!-- 📌 Widget -->
 <style>
 #note-btn{
   position:fixed;bottom:1.5rem;left:1.5rem;z-index:500;
@@ -285,7 +286,7 @@ document.addEventListener('keydown',e=>{
 
 #note-panel{
   position:fixed;bottom:5rem;left:1.5rem;z-index:500;
-  width:320px;
+  width:300px;
   background:#fffdf6;
   border:1px solid rgba(217,206,184,.7);
   border-radius:18px;
@@ -293,195 +294,192 @@ document.addEventListener('keydown',e=>{
   transform:translateY(20px);opacity:0;pointer-events:none;
   transition:all .3s;
   overflow:hidden;
+  display:flex;flex-direction:column;
 }
 #note-panel.open{transform:translateY(0);opacity:1;pointer-events:all}
 
+/* هدر */
 .np-header{
   background:#1e3a5f;color:#f5f0e8;
-  padding:14px 16px;
+  padding:12px 16px;
   display:flex;align-items:center;justify-content:space-between;
+  flex-shrink:0;
 }
 .np-header h3{font-family:'Estedad',sans-serif;font-size:14px;font-weight:600}
-.np-tabs{display:flex;gap:6px;padding:12px 14px 0;border-bottom:1px solid #f0ebe0}
-.np-tab{padding:6px 12px;border:none;background:transparent;cursor:pointer;
-  font-family:'Estedad',sans-serif;font-size:12.5px;color:#8a8275;
-  border-bottom:2px solid transparent;transition:all .2s;margin-bottom:-1px}
-.np-tab.active{color:#1e3a5f;border-bottom-color:#1e3a5f;font-weight:600}
-.np-body{padding:14px;max-height:320px;overflow-y:auto}
+.np-close{background:none;border:none;color:#f5f0e8;font-size:20px;cursor:pointer;line-height:1}
 
-/* Notes tab */
-.np-note-input{
-  width:100%;height:90px;
+/* آمار — بالا */
+.np-stats{
+  padding:12px 14px;
+  background:#f5f0e8;
+  border-bottom:1px solid #e8e0ce;
+  flex-shrink:0;
+}
+.np-stats-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1px;margin-bottom:8px}
+.np-stats-row{display:flex;gap:8px}
+.np-stat-box{flex:1;background:#fffdf6;border-radius:10px;padding:8px 6px;text-align:center;border:1px solid #e8e0ce}
+.np-stat-val{font-size:18px;font-weight:700;color:#1e3a5f;line-height:1}
+.np-stat-label{font-size:10px;color:#8a8275;margin-top:3px;line-height:1.3}
+
+/* درس‌های خوانده‌شده */
+.np-lessons-wrap{padding:10px 14px;border-bottom:1px solid #e8e0ce;flex-shrink:0}
+.np-lessons-title{font-size:11px;font-weight:700;color:#1e3a5f;margin-bottom:6px}
+.np-lesson-item{font-size:11.5px;color:#2c2a26;padding:4px 8px;background:#f5f0e8;border-radius:6px;margin-bottom:4px;border-right:2px solid #b07a4a}
+.np-lessons-empty{font-size:12px;color:#b0a090;text-align:center;padding:6px 0}
+
+/* یادداشت — پایین */
+.np-notes-wrap{padding:12px 14px;flex-shrink:0}
+.np-notes-title{font-size:11px;font-weight:700;color:#1e3a5f;letter-spacing:.5px;margin-bottom:8px}
+.np-input{
+  width:100%;height:80px;
   border:1.5px solid #e2ddd5;border-radius:10px;
   padding:8px 10px;
   font-family:'Estedad',sans-serif;font-size:13px;
   color:#1e3a5f;resize:none;background:#f9f8fa;
   direction:rtl;
 }
-.np-note-input:focus{outline:none;border-color:#1e3a5f;background:#fff}
+.np-input:focus{outline:none;border-color:#1e3a5f;background:#fff}
 .np-save-btn{
-  width:100%;margin-top:8px;padding:8px;
+  width:100%;margin-top:6px;padding:7px;
   background:#1e3a5f;color:#f5f0e8;border:none;
   border-radius:9px;font-family:'Estedad',sans-serif;
   font-size:13px;font-weight:600;cursor:pointer;
 }
 .np-save-btn:hover{background:#2a4f7f}
-.np-notes-list{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.np-note-item{
-  background:#f5f0e8;border-radius:10px;padding:10px 12px;
-  font-size:12.5px;color:#2c2a26;line-height:1.7;
-  border-right:3px solid #b07a4a;position:relative;
-}
-.np-note-meta{font-size:10.5px;color:#8a8275;margin-top:4px}
-.np-note-del{position:absolute;top:8px;left:8px;background:none;border:none;
-  color:#c0392b;font-size:14px;cursor:pointer;opacity:.5}
-.np-note-del:hover{opacity:1}
 
-/* Stats tab */
-.np-stat{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0ebe0}
-.np-stat:last-child{border-bottom:none}
-.np-stat-icon{font-size:22px;width:36px;text-align:center;flex-shrink:0}
-.np-stat-val{font-size:20px;font-weight:700;color:#1e3a5f;line-height:1}
-.np-stat-label{font-size:11.5px;color:#8a8275;margin-top:2px}
-.np-lessons-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.np-lesson-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#1e3a5f}
-.np-empty{text-align:center;color:#b0a090;font-size:13px;padding:20px 0}
+/* لیست یادداشت‌ها */
+.np-list-wrap{max-height:180px;overflow-y:auto;padding:0 14px 12px}
+.np-note-item{
+  background:#f5f0e8;border-radius:10px;padding:8px 10px;
+  font-size:12px;color:#2c2a26;line-height:1.7;
+  border-right:3px solid #b07a4a;position:relative;
+  margin-bottom:6px;
+}
+.np-note-meta{font-size:10px;color:#8a8275;margin-top:3px}
+.np-note-del{position:absolute;top:6px;left:6px;background:none;border:none;
+  color:#c0392b;font-size:12px;cursor:pointer;opacity:.4}
+.np-note-del:hover{opacity:1}
+.np-notes-empty{font-size:12px;color:#b0a090;text-align:center;padding:10px 0}
 </style>
 
-<button id="note-btn" onclick="toggleNotePanel()" title="یادداشت‌ها">📌</button>
+<button id="note-btn" onclick="toggleNP()" title="یادداشت‌ها و آمار">📌</button>
 
 <div id="note-panel">
   <div class="np-header">
-    <h3>📌 یادداشت‌های من</h3>
-    <button onclick="toggleNotePanel()" style="background:none;border:none;color:#f5f0e8;font-size:18px;cursor:pointer">×</button>
+    <h3>📌 یادداشت و آمار من</h3>
+    <button class="np-close" onclick="toggleNP()">×</button>
   </div>
-  <div class="np-tabs">
-    <button class="np-tab active" onclick="npTab('notes',this)">📝 یادداشت</button>
-    <button class="np-tab" onclick="npTab('stats',this)">📊 آمار من</button>
-  </div>
-  <div id="np-notes" class="np-body">
-    <textarea class="np-note-input" id="np-input" placeholder="سوال یا نکته‌ای داری؟ اینجا بنویس..."></textarea>
-    <button class="np-save-btn" onclick="saveNote()">ذخیره یادداشت ✓</button>
-    <div class="np-notes-list" id="np-list"></div>
-  </div>
-  <div id="np-stats" class="np-body" style="display:none">
-    <div class="np-stat">
-      <div class="np-stat-icon">⏱</div>
-      <div><div class="np-stat-val" id="stat-time">0</div><div class="np-stat-label">دقیقه در سایت</div></div>
+
+  <!-- آمار بالا -->
+  <div class="np-stats">
+    <div class="np-stats-title">⏱ چقدر فرانسه خوندم</div>
+    <div class="np-stats-row">
+      <div class="np-stat-box">
+        <div class="np-stat-val" id="s-time">۰</div>
+        <div class="np-stat-label">دقیقه مطالعه</div>
+      </div>
+      <div class="np-stat-box">
+        <div class="np-stat-val" id="s-lessons">۰</div>
+        <div class="np-stat-label">درس خوانده</div>
+      </div>
+      <div class="np-stat-box">
+        <div class="np-stat-val" id="s-days">۰</div>
+        <div class="np-stat-label">روز با ما</div>
+      </div>
     </div>
-    <div class="np-stat">
-      <div class="np-stat-icon">📖</div>
-      <div><div class="np-stat-val" id="stat-lessons">0</div><div class="np-stat-label">درس خوانده‌شده</div></div>
-    </div>
-    <div class="np-stat">
-      <div class="np-stat-icon">📅</div>
-      <div><div class="np-stat-val" id="stat-days">0</div><div class="np-stat-label">روز با ما</div></div>
-    </div>
-    <div style="font-size:12px;font-weight:600;color:#1e3a5f;margin-top:14px;margin-bottom:6px">آخرین درس‌های خوانده‌شده:</div>
-    <div class="np-lessons-list" id="stat-lesson-list"></div>
   </div>
+
+  <!-- درس‌های اخیر -->
+  <div class="np-lessons-wrap">
+    <div class="np-lessons-title">📖 آخرین درس‌های خوانده‌شده</div>
+    <div id="s-lesson-list"></div>
+  </div>
+
+  <!-- یادداشت -->
+  <div class="np-notes-wrap">
+    <div class="np-notes-title">✏️ سوال یا نکته مهم</div>
+    <textarea class="np-input" id="np-input" placeholder="سوالت رو یا نکته مهم رو اینجا بنویس..."></textarea>
+    <button class="np-save-btn" onclick="npSave()">ذخیره ✓</button>
+  </div>
+
+  <!-- لیست یادداشت‌ها -->
+  <div class="np-list-wrap" id="np-list"></div>
 </div>
 
 <script>
 (function(){
-  const SB_URL='https://ifjsnasoxnalhttzhlpd.supabase.co';
-  const SB_KEY='sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
-  let notes=[], session=null, startTime=Date.now();
-
-  // Get session
-  async function getSession(){
-    try{
-      const r=await fetch(SB_URL+'/auth/v1/user',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+localStorage.getItem('sb-token')||''}});
-      if(r.ok) session=await r.json();
-    }catch(e){}
-  }
-
-  // Track time spent
-  function getTimeSpent(){
-    const stored=parseInt(localStorage.getItem('hoda_time')||'0');
-    return stored+Math.floor((Date.now()-startTime)/60000);
-  }
-  setInterval(()=>{
-    localStorage.setItem('hoda_time',getTimeSpent().toString());
-  },60000);
-
-  // Track lessons visited
-  const page=window.location.pathname.split('/').pop();
-  if(page && page!='index.html' && page!='auth.html' && page.endsWith('.html')){
-    const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-    const entry={file:page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleDateString('fa-IR')};
-    const idx=visited.findIndex(v=>v.file===page);
-    if(idx>=0)visited[idx]=entry; else visited.unshift(entry);
-    localStorage.setItem('hoda_visited',JSON.stringify(visited.slice(0,20)));
-  }
-
-  // Track join date
-  if(!localStorage.getItem('hoda_joined')){
+  let startTime=Date.now();
+  if(!localStorage.getItem('hoda_joined'))
     localStorage.setItem('hoda_joined',new Date().toISOString());
+
+  // Track time
+  function getMin(){
+    return parseInt(localStorage.getItem('hoda_time')||'0')+
+           Math.floor((Date.now()-startTime)/60000);
+  }
+  setInterval(()=>localStorage.setItem('hoda_time',getMin()),60000);
+
+  // Track page
+  const page=location.pathname.split('/').pop();
+  if(page&&page!=='index.html'&&page!=='auth.html'&&page.endsWith('.html')){
+    const v=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    const e={file:page,title:document.title.split('|')[0].trim(),
+              time:new Date().toLocaleDateString('fa-IR')};
+    const i=v.findIndex(x=>x.file===page);
+    if(i>=0)v[i]=e;else v.unshift(e);
+    localStorage.setItem('hoda_visited',JSON.stringify(v.slice(0,30)));
   }
 
-  window.toggleNotePanel=function(){
-    const p=document.getElementById('note-panel');
-    p.classList.toggle('open');
-    if(p.classList.contains('open')){loadNotes();loadStats();}
+  function toFa(n){
+    return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
   }
 
-  window.npTab=function(tab,btn){
-    document.getElementById('np-notes').style.display=tab==='notes'?'block':'none';
-    document.getElementById('np-stats').style.display=tab==='stats'?'block':'none';
-    document.querySelectorAll('.np-tab').forEach(t=>t.classList.remove('active'));
-    btn.classList.add('active');
-    if(tab==='stats')loadStats();
-  }
-
-  window.saveNote=function(){
-    const txt=document.getElementById('np-input').value.trim();
-    if(!txt)return;
-    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
-    notes.unshift({
-      text:txt,
-      page:document.title.split('|')[0].trim()||window.location.pathname,
-      time:new Date().toLocaleDateString('fa-IR',{year:'numeric',month:'long',day:'numeric'})
-    });
-    localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,50)));
-    document.getElementById('np-input').value='';
-    loadNotes();
+  function loadStats(){
+    document.getElementById('s-time').textContent=toFa(getMin());
+    const v=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+    document.getElementById('s-lessons').textContent=toFa(v.length);
+    const days=Math.max(1,Math.floor((Date.now()-new Date(localStorage.getItem('hoda_joined')))/86400000));
+    document.getElementById('s-days').textContent=toFa(days);
+    const ll=document.getElementById('s-lesson-list');
+    if(!v.length){ll.innerHTML='<div class="np-lessons-empty">هنوز درسی نخواندی!</div>';return;}
+    ll.innerHTML=v.slice(0,4).map(x=>
+      `<div class="np-lesson-item">📖 ${x.title}<span style="color:#b07a4a;font-size:10px"> · ${x.time}</span></div>`
+    ).join('');
   }
 
   function loadNotes(){
     const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
     const list=document.getElementById('np-list');
-    if(!notes.length){list.innerHTML='<div class="np-empty">هنوز یادداشتی نداری 📝</div>';return;}
+    if(!notes.length){list.innerHTML='<div class="np-notes-empty">یادداشتی نداری هنوز 📝</div>';return;}
     list.innerHTML=notes.map((n,i)=>`
       <div class="np-note-item">
-        <button class="np-note-del" onclick="delNote(${i})">🗑</button>
+        <button class="np-note-del" onclick="npDel(${i})">🗑</button>
         ${n.text}
         <div class="np-note-meta">📄 ${n.page} · ${n.time}</div>
       </div>`).join('');
   }
 
-  window.delNote=function(i){
+  window.toggleNP=function(){
+    const p=document.getElementById('note-panel');
+    p.classList.toggle('open');
+    if(p.classList.contains('open')){loadStats();loadNotes();}
+  }
+  window.npSave=function(){
+    const txt=document.getElementById('np-input').value.trim();
+    if(!txt)return;
+    const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
+    notes.unshift({text:txt,
+      page:document.title.split('|')[0].trim(),
+      time:new Date().toLocaleDateString('fa-IR',{month:'long',day:'numeric'})});
+    localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,50)));
+    document.getElementById('np-input').value='';
+    loadNotes();
+  }
+  window.npDel=function(i){
     const notes=JSON.parse(localStorage.getItem('hoda_notes')||'[]');
     notes.splice(i,1);
     localStorage.setItem('hoda_notes',JSON.stringify(notes));
     loadNotes();
-  }
-
-  function loadStats(){
-    // Time
-    document.getElementById('stat-time').textContent=getTimeSpent();
-    // Lessons
-    const visited=JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-    document.getElementById('stat-lessons').textContent=visited.length;
-    // Days
-    const joined=new Date(localStorage.getItem('hoda_joined')||new Date());
-    const days=Math.max(1,Math.floor((Date.now()-joined)/86400000));
-    document.getElementById('stat-days').textContent=days;
-    // Lesson list
-    const ll=document.getElementById('stat-lesson-list');
-    if(!visited.length){ll.innerHTML='<div class="np-empty">هنوز درسی نخواندی!</div>';return;}
-    ll.innerHTML=visited.slice(0,5).map(v=>`
-      <div class="np-lesson-item">📖 ${v.title} <span style="color:#b07a4a;font-size:11px">· ${v.time}</span></div>`).join('');
   }
 })();
 </script>
