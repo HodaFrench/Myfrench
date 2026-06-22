@@ -276,5 +276,33 @@
     }
   </script>
   <script src="protect.js"></script>
+
+<style>
+.gram-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;padding:10px 16px;
+  background:rgba(255,253,246,.97);backdrop-filter:blur(12px);
+  border-top:1.5px solid rgba(217,206,184,.55);
+  position:fixed;bottom:70px;left:0;right:0;z-index:150;
+  flex-wrap:wrap;
+}
+.gnav-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:7px 14px;border-radius:20px;
+  font-family:'Estedad','Vazirmatn',sans-serif;font-size:12.5px;font-weight:700;
+  text-decoration:none;transition:all .2s;white-space:nowrap;
+  max-width:45%;overflow:hidden;text-overflow:ellipsis;
+}
+.gnav-btn.prev{background:rgba(30,58,95,.08);color:#1e3a5f;}
+.gnav-btn.prev:hover{background:#1e3a5f;color:#f5f0e8;}
+.gnav-btn.next{background:rgba(30,58,95,.08);color:#1e3a5f;}
+.gnav-btn.next:hover{background:#1e3a5f;color:#f5f0e8;}
+body{padding-bottom:130px!important}
+</style>
+<div class="gram-nav">
+  <a class="gnav-btn prev" href="LECON_adjectifs_adverbes.html">&#8594; صفت یا قید؟</a>
+  <span style="font-size:11px;color:#b0a898;font-family:'Estedad',sans-serif">گرامر</span>
+  <a class="gnav-btn next" href="LECON_sentir.html">SENTIR یا SE SENTIR؟ &#8592;</a>
+</div>
 </body>
 </html>
