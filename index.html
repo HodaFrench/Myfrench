@@ -427,7 +427,9 @@ function openCat(id){
       const catColors = {grammar:'#1e3a5f',vocab:'#2e8b6b',miniarticle:'#8a5a2a',culture:'#6b3fa0',tcf:'#8a2040',image:'#22618f',innerfrench:'#2e8b6b',article:'#1e3a5f',podcast:'#b07a4a'};
       const coverColor = catColors[id] || '#1e3a5f';
       const shortTitle = (l.titleFr || l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'')).trim().substring(0,28);
-      const imgHtml = `<div class="item-cover" style="background:${coverColor}"><span class="item-cover-txt">${shortTitle}</span></div>`;
+      const imgHtml = l.image
+        ? `<div class="item-cover" style="background:#eee;padding:0;overflow:hidden"><img src="${l.image}" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>`
+        : `<div class="item-cover" style="background:${coverColor}"><span class="item-cover-txt">${shortTitle}</span></div>`;
       const lvlBadge = l.level ? `<span class="item-lvl">${l.level}</span>` : '';
       a.innerHTML=`${imgHtml}<div class="item-info"><div class="ititle">${l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim()}</div>${lvlBadge}</div>`;
       body.appendChild(a);
