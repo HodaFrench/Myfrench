@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C'est / Il est | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f;--cest:#8a2040;--ilest:#22618f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#8a2040,#22618f);color:#fff;padding:38px 28px 32px;text-align:center;box-shadow:0 14px 40px rgba(31,58,95,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:30px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85}
+.tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin:20px 0 0;overflow-x:auto}
+.vtab{padding:10px 24px;border:none;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:15px;font-weight:700;color:var(--gray);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.vtab[data-v="cest"].active{color:var(--cest);border-bottom-color:var(--cest)}
+.vtab[data-v="ilest"].active{color:var(--ilest);border-bottom-color:var(--ilest)}
+.vsec{display:none;padding:20px 0}.vsec.active{display:block}
+.sec{background:var(--white);border-radius:16px;padding:22px;margin-bottom:16px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.sec.cest{border-right:4px solid var(--cest)}
+.sec.ilest{border-right:4px solid var(--ilest)}
+.sec-title{font-family:'Roboto',serif;font-size:16px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.sec-title.cest{color:var(--cest)}
+.sec-title.ilest{color:var(--ilest)}
+.rule{background:var(--cream);border-radius:10px;padding:12px 16px;margin-bottom:12px;font-size:14px;line-height:1.8}
+.rule strong{color:var(--navy)}
+.exs{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.ex{background:var(--cream);border-radius:10px;padding:12px 16px}
+.ex.cest{border-right:3px solid var(--cest)}
+.ex.ilest{border-right:3px solid var(--ilest)}
+.ex-fr{font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;margin-bottom:4px}
+.ex-fa{font-size:13px;color:var(--gray)}
+.hl-c{color:var(--cest);font-weight:700;background:rgba(138,32,64,.1);border-radius:3px;padding:0 3px}
+.hl-i{color:var(--ilest);font-weight:700;background:rgba(34,97,143,.1);border-radius:3px;padding:0 3px}
+.attn{background:rgba(176,80,111,.07);border:1px solid rgba(176,80,111,.25);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#5a1030;line-height:1.8}
+.compare-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.compare-table th{padding:10px 14px;text-align:center;font-weight:700}
+.compare-table th:first-child{text-align:right}
+.compare-table th.cest{background:rgba(138,32,64,.1);color:var(--cest)}
+.compare-table th.ilest{background:rgba(34,97,143,.1);color:var(--ilest)}
+.compare-table td{padding:9px 14px;border-bottom:1px solid var(--line);text-align:center;font-family:'Roboto',serif;font-style:italic}
+.compare-table td:first-child{text-align:right;font-family:'Estedad',sans-serif;font-style:normal;font-weight:500;color:var(--navy)}
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;background:var(--cream);transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--navy)}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;border-radius:8px;display:none;line-height:1.7}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📐 گرامر · A2–B1</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · A2–B1</div>
+  <h1>C'est / Il est</h1>
+  <div class="sub">یکی از رایج‌ترین اشتباهات زبان‌آموزان</div>
+</div>
+<div class="wrap">
+
+<div class="tabs">
+  <button class="vtab active" data-v="cest" onclick="showV('cest',this)">🔴 C'est — این است</button>
+  <button class="vtab" data-v="ilest" onclick="showV('ilest',this)">🔵 Il/Elle est — او است</button>
+</div>
+
+<!-- C'EST -->
+<div class="vsec active" id="v-cest">
+
+  <div class="sec cest">
+    <div class="sec-title cest">① C'est + article + nom (اسم با حرف تعریف)</div>
+    <div class="rule"><strong>C'est</strong> همیشه با حرف تعریف (un/une/le/la/les) یا صفت ملکی می‌آید</div>
+    <div class="exs">
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> un médecin.</div><div class="ex-fa">این یک پزشک است.</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> le directeur.</div><div class="ex-fa">این مدیر است.</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> mon ami.</div><div class="ex-fa">این دوستم است.</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> une belle ville.</div><div class="ex-fa">این یک شهر زیباست.</div></div>
+    </div>
+  </div>
+
+  <div class="sec cest">
+    <div class="sec-title cest">② C'est + صفت (برای توضیح ایده/موقعیت)</div>
+    <div class="rule"><strong>C'est</strong> وقتی به یک <b>ایده، موقعیت یا چیز کلی</b> اشاره می‌کند</div>
+    <div class="exs">
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> difficile.</div><div class="ex-fa">این سخت است. (کلاً)</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> intéressant.</div><div class="ex-fa">این جالب است.</div></div>
+      <div class="ex cest"><div class="ex-fr">Travailler le dimanche ? <span class="hl-c">C'est</span> fatigant !</div><div class="ex-fa">یکشنبه کار کردن؟ این خسته‌کننده‌ست!</div></div>
+    </div>
+  </div>
+
+  <div class="sec cest">
+    <div class="sec-title cest">③ C'est + اسم خاص / ضمیر تأکیدی</div>
+    <div class="exs">
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> Marie.</div><div class="ex-fa">این ماری است.</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> lui.</div><div class="ex-fa">این اوست.</div></div>
+      <div class="ex cest"><div class="ex-fr"><span class="hl-c">C'est</span> moi qui l'ai fait.</div><div class="ex-fa">این منم که این کار را کردم.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- IL EST -->
+<div class="vsec" id="v-ilest">
+
+  <div class="sec ilest">
+    <div class="sec-title ilest">① Il/Elle est + صفت (بدون حرف تعریف)</div>
+    <div class="rule"><strong>Il/Elle est</strong> وقتی صفت مستقیم به <b>شخص یا چیز مشخص</b> اشاره دارد — بدون article</div>
+    <div class="exs">
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Il est</span> médecin.</div><div class="ex-fa">او پزشک است. (شغل — بدون article)</div></div>
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Elle est</span> intelligente.</div><div class="ex-fa">او باهوش است.</div></div>
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Il est</span> grand et blond.</div><div class="ex-fa">او قد بلند و بلوند است.</div></div>
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Elle est</span> française.</div><div class="ex-fa">او فرانسوی است.</div></div>
+    </div>
+  </div>
+
+  <div class="sec ilest">
+    <div class="sec-title ilest">② Il/Elle est + شغل (بدون article)</div>
+    <div class="rule">شغل بعد از <strong>il/elle est</strong> بدون article می‌آید — اما بعد از <strong>c'est</strong> با article!</div>
+    <div class="exs">
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Il est</span> professeur. / <span class="hl-c">C'est</span> un professeur.</div><div class="ex-fa">هر دو درست — ولی معنی کمی فرق دارد</div></div>
+      <div class="ex ilest"><div class="ex-fr"><span class="hl-i">Elle est</span> infirmière. / <span class="hl-c">C'est</span> une infirmière.</div><div class="ex-fa">او پرستار است.</div></div>
+    </div>
+    <div class="attn">
+      <strong>⚠️ قانون طلایی شغل:</strong><br>
+      ✅ <span style="font-family:'Roboto',serif;font-style:italic">Il est médecin.</span> (بدون article)<br>
+      ✅ <span style="font-family:'Roboto',serif;font-style:italic">C'est un médecin.</span> (با article)<br>
+      ❌ <span style="font-family:'Roboto',serif;font-style:italic">Il est un médecin.</span> (اشتباه!)
+    </div>
+  </div>
+
+  <!-- Compare table -->
+  <table class="compare-table">
+    <tr><th>موقعیت</th><th class="cest">C'est</th><th class="ilest">Il/Elle est</th></tr>
+    <tr><td>شغل</td><td>C'est un médecin</td><td>Il est médecin</td></tr>
+    <tr><td>صفت کلی</td><td>C'est difficile</td><td>—</td></tr>
+    <tr><td>صفت شخص</td><td>—</td><td>Elle est grande</td></tr>
+    <tr><td>ملیت</td><td>C'est un Français</td><td>Il est français</td></tr>
+    <tr><td>اسم خاص</td><td>C'est Marie</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- QUIZ -->
+<div style="padding-top:20px">
+  <div class="q-card" data-c="0">
+    <div class="q-text">کدام درست است؟ «او دانشجوست.»</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Il est étudiant.</div>
+      <div class="opt" onclick="a(this,0)">C'est étudiant.</div>
+      <div class="opt" onclick="a(this,0)">Il est un étudiant.</div>
+    </div>
+    <div class="q-feedback ok">✅ «Il est étudiant» — شغل بعد از il est بدون article.</div>
+    <div class="q-feedback ko">❌ شغل + il est → بدون article: «Il est étudiant».</div>
+  </div>
+
+  <div class="q-card" data-c="1">
+    <div class="q-text">«این سخت است.» (به طور کلی)</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Il est difficile.</div>
+      <div class="opt" onclick="a(this,1)">C'est difficile.</div>
+      <div class="opt" onclick="a(this,0)">C'est un difficile.</div>
+    </div>
+    <div class="q-feedback ok">✅ «C'est difficile» — اشاره به ایده/موقعیت کلی.</div>
+    <div class="q-feedback ko">❌ ایده کلی → «C'est difficile».</div>
+  </div>
+
+  <div class="q-card" data-c="2">
+    <div class="q-text">«این یک معلم است.» (معرفی کردن)</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Il est un professeur.</div>
+      <div class="opt" onclick="a(this,0)">Il est professeur.</div>
+      <div class="opt" onclick="a(this,2)">C'est un professeur.</div>
+    </div>
+    <div class="q-feedback ok">✅ «C'est un professeur» — معرفی با article.</div>
+    <div class="q-feedback ko">❌ معرفی با article → «C'est un professeur».</div>
+  </div>
+
+  <div class="q-card" data-c="0">
+    <div class="q-text">«او فرانسوی است.» (صفت ملیت)</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Elle est française.</div>
+      <div class="opt" onclick="a(this,0)">C'est française.</div>
+      <div class="opt" onclick="a(this,0)">C'est une française.</div>
+    </div>
+    <div class="q-feedback ok">✅ «Elle est française» — صفت ملیت مستقیم بعد از elle est.</div>
+    <div class="q-feedback ko">❌ صفت ملیت → «Elle est française».</div>
+  </div>
+
+  <div class="score-bar">امتیاز: <span id="sc">0</span> از ۴</div>
+</div>
+</div>
+
+<script>
+function showV(v,btn){
+  document.querySelectorAll('.vsec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('v-'+v).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+let sc=0;
+function a(el,chosen){
+  const b=el.closest('.q-card');if(b.dataset.done)return;b.dataset.done='1';
+  const c=parseInt(b.dataset.c);
+  b.querySelectorAll('.opt').forEach((o,i)=>{o.classList.add('disabled');if(i===c)o.classList.add('correct');else if(o===el&&chosen!==c)o.classList.add('wrong');});
+  b.querySelector('.q-feedback.'+(chosen===c?'ok':'ko')).classList.add('show');
+  if(chosen===c){sc++;document.getElementById('sc').textContent=sc;}
+}
+</script>
+</body>
+</html>
