@@ -4,141 +4,246 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Français avec Hoda — ورود</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Estedad',sans-serif;
   min-height:100vh;direction:rtl;
   background:#f5f0e8;
-  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);
-  position:relative;overflow:hidden;
+  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.055) 35px,rgba(65,97,138,0.055) 36px);
+  overflow:hidden;
 }
 
-/* جاده — پر از صفحه */
+/* ── جاده کامل پشت‌زمینه ── */
 .bg{
   position:fixed;inset:0;z-index:0;
-  opacity:.35;
 }
-.bg svg{width:100%;height:100%;display:block}
+.bg svg{
+  width:100%;height:100%;display:block;
+  opacity:.38;
+}
 
-/* فرم — گوشه پایین چپ، کوچک و شفاف */
-.auth-box{
+/* ── عنوان وسط بالا ── */
+.site-header{
   position:fixed;
-  bottom:2rem;
-  left:2rem;
+  top:0;left:0;right:0;
+  z-index:5;
+  text-align:center;
+  padding:2.2rem 1rem 0;
+  pointer-events:none;
+}
+.site-header h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,5vw,52px);
+  font-weight:600;
+  color:#1e3a5f;
+  letter-spacing:.3px;
+  line-height:1;
+}
+.site-header p{
+  font-size:11px;
+  color:#b07a4a;
+  letter-spacing:3px;
+  margin-top:8px;
+  text-transform:uppercase;
+}
+
+/* ── فرم ── */
+.form-wrap{
+  position:fixed;
+  bottom:0;left:0;right:0;
   z-index:10;
-  width:300px;
+  display:flex;
+  justify-content:center;
+  padding:0 1rem 2.5rem;
 }
 .glass{
-  background:rgba(255,253,246,.78);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(217,206,184,.5);
-  border-radius:18px;
-  padding:1.6rem 1.5rem;
-  box-shadow:0 12px 40px rgba(31,58,95,.12);
+  width:100%;
+  max-width:420px;
+  background:rgba(255,253,246,.88);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(217,206,184,.55);
+  border-radius:20px 20px 16px 16px;
+  padding:1.8rem 2rem;
+  box-shadow:
+    0 -8px 40px rgba(31,58,95,.06),
+    0 20px 60px rgba(31,58,95,.1),
+    inset 0 1px 0 rgba(255,255,255,.7);
 }
-.logo{text-align:center;margin-bottom:1.2rem}
-.logo .flag{font-size:20px;margin-bottom:4px}
-.logo h1{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#1f3a5f}
-.logo p{font-size:10px;color:#a8874f;margin-top:3px;letter-spacing:1.5px}
 
-.tabs{display:flex;background:rgba(240,235,224,.7);border-radius:9px;padding:3px;margin-bottom:1rem;gap:3px}
-.tab{flex:1;padding:.45rem;border:none;border-radius:7px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:12px;font-weight:500;color:#a8874f;transition:all .2s}
-.tab.active{background:rgba(255,253,246,.9);color:#1f3a5f;box-shadow:0 1px 6px rgba(31,58,95,.1)}
+.glass-label{
+  text-align:center;
+  margin-bottom:1.2rem;
+}
+.glass-label .flag{font-size:22px;margin-bottom:4px}
+.glass-label h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:600;
+  color:#1e3a5f;
+}
+.glass-label p{font-size:10.5px;color:#b07a4a;letter-spacing:1.5px;margin-top:2px}
 
-.form{display:flex;flex-direction:column;gap:.6rem}
-.field label{font-size:11px;font-weight:500;color:#1f3a5f;display:block;margin-bottom:3px}
-.field input{width:100%;padding:.6rem .85rem;border:1.5px solid rgba(217,206,184,.7);border-radius:10px;background:rgba(255,255,255,.75);font-family:'Estedad',sans-serif;font-size:13px;color:#1f3a5f;direction:ltr;text-align:left}
-.field input:focus{outline:none;border-color:#1f3a5f;background:rgba(255,255,255,.95)}
-.field input::placeholder{color:#c9c0b0;font-size:12px}
-.btn{margin-top:.3rem;padding:.65rem;background:#1f3a5f;color:#f7f3ea;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;width:100%}
+.tabs{
+  display:flex;
+  background:rgba(240,235,224,.75);
+  border-radius:10px;padding:3px;
+  margin-bottom:1.2rem;gap:3px;
+}
+.tab{
+  flex:1;padding:.48rem;border:none;border-radius:8px;
+  background:transparent;cursor:pointer;
+  font-family:'Estedad',sans-serif;
+  font-size:13px;font-weight:500;color:#a8874f;
+  transition:all .2s;
+}
+.tab.active{
+  background:rgba(255,253,246,.95);color:#1e3a5f;
+  box-shadow:0 1px 6px rgba(31,58,95,.1);
+  font-weight:600;
+}
+
+.form{display:flex;flex-direction:column;gap:.7rem}
+.field label{
+  display:block;font-size:11.5px;font-weight:500;
+  color:#1e3a5f;margin-bottom:4px;
+}
+.field input{
+  width:100%;
+  padding:.65rem 1rem;
+  border:1.5px solid rgba(217,206,184,.7);
+  border-radius:10px;
+  background:rgba(255,255,255,.75);
+  font-family:'Estedad',sans-serif;
+  font-size:14px;color:#1e3a5f;
+  transition:border-color .2s,background .2s;
+  direction:ltr;text-align:left;
+}
+.field input:focus{
+  outline:none;
+  border-color:#1e3a5f;
+  background:rgba(255,255,255,.95);
+}
+.field input::placeholder{color:#c4b9a8;font-size:13px}
+
+.btn{
+  margin-top:.3rem;
+  padding:.72rem 1rem;
+  background:#1e3a5f;color:#f5f0e8;
+  border:none;border-radius:10px;
+  font-family:'Estedad',sans-serif;
+  font-size:14px;font-weight:600;
+  cursor:pointer;transition:background .2s;
+  width:100%;letter-spacing:.3px;
+}
 .btn:hover{background:#2a4f7f}
 .btn:disabled{background:#a8b8c8;cursor:not-allowed}
-.msg{text-align:center;font-size:11.5px;padding:.5rem;border-radius:8px;display:none;line-height:1.5;margin-top:.2rem}
+
+.msg{
+  font-size:12px;padding:.55rem;border-radius:8px;
+  display:none;line-height:1.5;text-align:center;margin-top:.2rem;
+}
 .msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
 .msg.success{background:#f0fdf4;color:#2e7d52;border:1px solid #b7e4c7}
 .msg.show{display:block}
-.confirm-box{display:none;text-align:center;padding:.9rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:12px;margin-top:.3rem}
-.confirm-box.show{display:block}
-.confirm-box .icon{font-size:24px;margin-bottom:.3rem}
-.confirm-box h3{font-size:13px;color:#1f3a5f;font-weight:700;margin-bottom:.3rem}
-.confirm-box p{font-size:11px;color:#6a5a3a;line-height:1.7}
-.confirm-box .em{font-weight:700;color:#a8874f}
-.hint{font-size:10px;color:#b0a090;text-align:center;margin-top:.3rem}
 
-/* عنوان روی جاده */
-.site-title{
-  position:fixed;
-  top:2.5rem;left:50%;transform:translateX(-50%);
-  z-index:5;text-align:center;
-  pointer-events:none;
+.confirm-box{
+  display:none;text-align:center;
+  padding:.9rem;background:#fff8e8;
+  border:1px solid #e8d5a0;border-radius:12px;
+  margin-top:.3rem;
 }
-.site-title h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:52px;font-weight:600;
-  color:#1f3a5f;
-  text-shadow:0 2px 20px rgba(245,240,232,.8);
-  white-space:nowrap;
+.confirm-box.show{display:block}
+.confirm-box .icon{font-size:26px;margin-bottom:.3rem}
+.confirm-box h3{font-size:13px;color:#1e3a5f;font-weight:700;margin-bottom:.3rem}
+.confirm-box p{font-size:11px;color:#6a5a3a;line-height:1.8}
+.confirm-box .em{font-weight:700;color:#b07a4a}
+
+.hint{font-size:10.5px;color:#b0a090;text-align:center;margin-top:.3rem}
+
+@media(min-width:700px){
+  .form-wrap{
+    bottom:auto;
+    top:50%;left:auto;right:3rem;
+    transform:translateY(-50%);
+    padding:0;
+    justify-content:flex-end;
+  }
+  .glass{
+    max-width:360px;
+    border-radius:18px;
+  }
 }
-.site-title p{font-size:13px;color:#a8874f;letter-spacing:2px;margin-top:4px}
 </style>
 </head>
 <body>
 
-<!-- جاده پس‌زمینه -->
+<!-- جاده پشت‌زمینه -->
 <div class="bg">
   <svg viewBox="0 0 360 1480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <g opacity=".8"><ellipse cx="38" cy="360" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 360)"/><ellipse cx="22" cy="352" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 22 352)"/><ellipse cx="325" cy="560" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 325 560)"/><ellipse cx="309" cy="552" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 309 552)"/><ellipse cx="40" cy="820" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 40 820)"/><ellipse cx="24" cy="812" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 24 812)"/><ellipse cx="326" cy="1010" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 326 1010)"/><ellipse cx="310" cy="1002" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 310 1002)"/><ellipse cx="44" cy="1180" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 44 1180)"/><ellipse cx="28" cy="1172" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 28 1172)"/><ellipse cx="330" cy="1300" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 330 1300)"/><ellipse cx="314" cy="1292" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 314 1292)"/></g>
+    <g opacity=".9"><ellipse cx="38" cy="360" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 360)"/><ellipse cx="22" cy="352" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 22 352)"/><ellipse cx="325" cy="560" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 325 560)"/><ellipse cx="309" cy="552" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 309 552)"/><ellipse cx="40" cy="820" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 40 820)"/><ellipse cx="24" cy="812" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 24 812)"/><ellipse cx="326" cy="1010" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 326 1010)"/><ellipse cx="310" cy="1002" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 310 1002)"/><ellipse cx="44" cy="1180" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 44 1180)"/><ellipse cx="28" cy="1172" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 28 1172)"/><ellipse cx="330" cy="1300" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 330 1300)"/><ellipse cx="314" cy="1292" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 314 1292)"/></g>
     <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#e2ddd5" stroke-width="16" stroke-linecap="round" fill="none"/>
-    <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#fff" stroke-width="2" stroke-dasharray="10 9" stroke-linecap="round" fill="none" opacity=".8"/>
-    <rect x="214" y="187" width="66" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="247" y="205" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">📐 گرامر</text><rect x="105" y="347" width="72" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="141" y="365" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">📚 واژگان</text><rect x="196" y="507" width="111" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="251" y="525" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">✍️ مینی‌آرتیکل</text><rect x="41" y="667" width="104" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="93" y="685" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">🎧 InnerFrench</text><rect x="184" y="827" width="72" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="220" y="845" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">📰 آرتیکل</text><rect x="54" y="987" width="111" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="110" y="1005" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">🗼 فرهنگ فرانسه</text><rect x="215" y="1147" width="98" height="26" rx="7" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2"/><text x="264" y="1165" font-family="Estedad,Arial,sans-serif" font-size="11" font-weight="600" fill="#1f3a5f" text-anchor="middle">🎯 آمادگی TCF</text>
+    <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#fff" stroke-width="2.2" stroke-dasharray="10 9" stroke-linecap="round" fill="none" opacity=".8"/>
+    <rect x="216.3" y="186.0" width="74.4" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="253.5" y="205.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">📐 گرامر</text><rect x="93.0" y="346.0" width="81.6" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="133.8" y="365.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">📚 واژگان</text><rect x="197.8" y="506.0" width="124.8" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="260.2" y="525.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">✍️ مینی‌آرتیکل</text><rect x="25.7" y="666.0" width="117.6" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="84.5" y="685.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">🎧 InnerFrench</text><rect x="186.1" y="826.0" width="81.6" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="226.9" y="845.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">📰 آرتیکل</text><rect x="38.5" y="986.0" width="124.8" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="100.9" y="1005.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">🗼 فرهنگ فرانسه</text><rect x="217.1" y="1146.0" width="110.4" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="272.3" y="1165.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">🎯 آمادگی TCF</text><rect x="84.4" y="1306.0" width="88.8" height="28" rx="8" fill="#fffdf6" stroke="#d9ceb8" stroke-width="1.2" opacity=".92"/><text x="128.8" y="1325.0" font-family="Estedad,Arial,sans-serif" font-size="11.5" font-weight="600" fill="#1f3a5f" text-anchor="middle">🎙️ پادکست</text>
   </svg>
 </div>
 
 <!-- عنوان -->
-<div class="site-title">
+<div class="site-header">
   <h1>Français avec Hoda</h1>
   <p>مسیر یادگیری · از صفر تا روان</p>
 </div>
 
-<!-- فرم ورود — گوشه پایین چپ -->
-<div class="auth-box">
+<!-- فرم -->
+<div class="form-wrap">
 <div class="glass">
-  <div class="logo">
+  <div class="glass-label">
     <div class="flag">🇫🇷</div>
-    <h1>ورود / ثبت‌نام</h1>
-    <p>رایگان · بدون محدودیت</p>
+    <h2>ورود / ثبت‌نام رایگان</h2>
+    <p>بدون محدودیت · همین الان شروع کن</p>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="showTab('login')">ورود</button>
     <button class="tab" onclick="showTab('signup')">ثبت‌نام</button>
   </div>
+
   <div id="loginForm" class="form">
-    <div class="field"><label>ایمیل</label>
-      <input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email"></div>
-    <div class="field"><label>رمز عبور</label>
-      <input type="password" id="loginPass" placeholder="رمز عبور" autocomplete="current-password"></div>
+    <div class="field">
+      <label>ایمیل</label>
+      <input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email">
+    </div>
+    <div class="field">
+      <label>رمز عبور</label>
+      <input type="password" id="loginPass" placeholder="••••••" autocomplete="current-password">
+    </div>
     <div class="msg" id="loginMsg"></div>
-    <button class="btn" id="loginBtn" onclick="doLogin()">ورود ←</button>
+    <button class="btn" id="loginBtn" onclick="doLogin()">ورود به سایت ←</button>
     <p class="hint">حساب ندارید؟ روی «ثبت‌نام» کلیک کنید</p>
   </div>
+
   <div id="signupForm" class="form" style="display:none">
-    <div class="field"><label>ایمیل</label>
-      <input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email"></div>
-    <div class="field"><label>رمز عبور</label>
-      <input type="password" id="signupPass" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password"></div>
-    <div class="field"><label>تکرار رمز عبور</label>
-      <input type="password" id="signupPass2" placeholder="دوباره وارد کنید" autocomplete="new-password"></div>
+    <div class="field">
+      <label>ایمیل</label>
+      <input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email">
+    </div>
+    <div class="field">
+      <label>رمز عبور</label>
+      <input type="password" id="signupPass" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password">
+    </div>
+    <div class="field">
+      <label>تکرار رمز عبور</label>
+      <input type="password" id="signupPass2" placeholder="••••••" autocomplete="new-password">
+    </div>
     <div class="msg" id="signupMsg"></div>
     <div class="confirm-box" id="confirmBox">
       <div class="icon">📧</div>
       <h3>ایمیل تأیید فرستاده شد!</h3>
       <p>به <span class="em" id="confirmedEmail"></span> ایمیل فرستادیم.<br>
-      روی لینک کلیک کن. پوشه <b>Spam</b> رو هم چک کن.</p>
+      روی لینک کلیک کن تا حسابت فعال بشه.<br>
+      📂 پوشه <b>Spam</b> رو هم چک کن.</p>
     </div>
-    <button class="btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان</button>
+    <button class="btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان ←</button>
     <p class="hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
   </div>
 </div>
@@ -154,7 +259,7 @@ function showTab(t){
   document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',(t==='login'&&i===0)||(t==='signup'&&i===1)));
 }
 function showMsg(id,txt,type){const el=document.getElementById(id);el.textContent=txt;el.className='msg '+type+' show';}
-function setLoading(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='loginBtn'?'ورود ←':'ساخت حساب رایگان');}
+function setLoading(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='loginBtn'?'ورود به سایت ←':'ساخت حساب رایگان ←');}
 async function doSignup(){
   const email=document.getElementById('signupEmail').value.trim();
   const pass=document.getElementById('signupPass').value;
@@ -178,7 +283,7 @@ async function doLogin(){
   const {error}=await sb.auth.signInWithPassword({email,password:pass});
   setLoading('loginBtn',false);
   if(error){
-    if(error.message.includes('Email not confirmed'))return showMsg('loginMsg','ایمیلت رو تأیید نکردی! 📧','error');
+    if(error.message.includes('Email not confirmed'))return showMsg('loginMsg','ایمیلت رو تأیید نکردی! 📧 صندوق ورودیت رو چک کن','error');
     return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است','error');
   }
   window.location.href='index.html';
