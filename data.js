@@ -84,6 +84,43 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "IMAGE_neon_open.html",
+    title: "📸 توصیف تصویر — Panneau OPEN néon",
+    titleFr: "Un panneau OPEN en néon rose",
+    category: "image", level: "B1",
+    image: "https://cdn4.telesco.pe/file/W4gapvOkfXlY0_ftx9Tw1FFGVYRzqn2D50SWWCx8L17OBSIJG8yusiLnQp6clqVtEhQcDHIzQ_qcfjzSivLXYegMaQ6f63PYUqGQDRm56ZavjSjhvv7CO9CDR9FoT7xuERY8IH8yoWNER1DuycA3gn63EJaboeRp765uHodBr8NHDVpYLBd04qq_xhy4BqRgw32mw5XOPP-5NP1HGCptUfHBTuEnFkg-3b2C4XUGjmDZVzPW92pEAsk8wafPg_SW_ZszcmyLmsD6oPTw9PPOS0S5hphM7yD6wYLrZdg5iQhWDcxL3d8Cbjq6os9CGCw4MTXLddCjZFwfn0h9YzYdLQ.jpg",
+    tags: ["image","décrire","description","B1"],
+    summary: "توصیف تصویر با هایلایت واژگان و ساختارها"
+  },
+  {
+    file: "IMAGE_femme_crop_top.html",
+    title: "📸 توصیف تصویر — Une jeune femme",
+    titleFr: "Une jeune femme dans une pièce",
+    category: "image", level: "A2–B1",
+    image: "https://cdn4.telesco.pe/file/d8o9Xbf_5tSecKa6b_4ed9CYmH2Dtunuf6qulUHoJFpDnpy17LSRUuH8PpjAk5aOJuaVKRyGw9StTpm4avoPG354TERqqCC-KWMx1MFSssSZmsJsm-udm1HIl_L_UeYBRruDtvvTP9Q9hDvu14-aixdqCGeMzJgwnrNymGiQDxKWxRGOPmLZZXsrTi5FzYZ0Qp-8Std-mB1iTio0bFg9uhq4pdowSD3Wfbxin62o7XtZhtJ7ACoLT-IegZs3eQI3VJc0UmK197AcHWvN2C3362FHUWPmeAbI3YWSCFwC-WWGdXhULgneWcsmuV9fftZu0AvWBJhT8c35Jv3a2q5M8A.jpg",
+    tags: ["image","décrire","description","A2–B1"],
+    summary: "توصیف تصویر با هایلایت واژگان و ساختارها"
+  },
+  {
+    file: "IMAGE_ordinateur_lampe.html",
+    title: "📸 توصیف تصویر — Ordinateur et lampe dorée",
+    titleFr: "Un ordinateur et une lampe ancienne",
+    category: "image", level: "A2–B1",
+    image: "https://cdn4.telesco.pe/file/XdRcdtpymRQcd0BxCY_B3ZTldy6R6eMV6pWFgluQcGDt00F4BCpTm1fqOHtQ--GVEECOQo6d1Sq19zTvfFrhjlCZc0D3GVKFKh1OBO4WDzKPfuxRsMVPmSbLsCbtyz0Hl3IiL3nYwm2b_5VhMGxYg1Ky6vLiel8FgvoetRcROMTyk8d5MJs8Dy_wxPlXRis2ERbOhrVq9LPAl_X7k7fd070USmi5XaoRQaQz-dk45bIZI49iXG8vPx8G_K3YClXf2Kc9_2OYosylcZiSsmDYhK-L8pD3AfI6xZbujB3L7dhfGPnfok-ZOO8d6hY7c9_WZUClPU5QRph0Ee7JEvyFjA.jpg",
+    tags: ["image","décrire","description","A2–B1"],
+    summary: "توصیف تصویر با هایلایت واژگان و ساختارها"
+  },
+  {
+    file: "IMAGE_flacon_cosmetique.html",
+    title: "📸 توصیف تصویر — Un flacon cosmétique",
+    titleFr: "Un flacon en verre ambré",
+    category: "image", level: "B1–B2",
+    image: "https://cdn4.telesco.pe/file/BfLmZIBUbFIZBc9ZE_3XygYnY3kXusvBX7TEGwsDPbkVQZ7T2NvW5XqcOdVNITZAT2l4zq8ng3GNvolzNBoqx9_4J92jxRiZ-oGrKiYNJxECQxWOczmo_VCVjz9eyhYu_5DVJpkfDfdikSsnrPBgG2kI74BS7_OYCpHSTsOFgOIMa_w64lXB8qSJyFOPe8Bf3odtTUvM9L-xoGJd0iANLzgWyJZ2D6NrnLbz1GhVwJ-sRgN3X8OaicV4FkOIeaTRTtxqgHvTQxu6-GWxyUaEOmVOhAUKD5iqZZ9BkXvIR83Ajz8w1wZJLxJVyKGCj4T1TVeN09mI5Bmf7V3ZQ.jpg",
+    tags: ["image","décrire","description","B1–B2"],
+    summary: "توصیف تصویر با هایلایت واژگان و ساختارها"
+  },
+
+  {
     file: "IMAGE_disque_dur.html",
     title: "📸 توصیف تصویر — Disque dur sur le sable",
     titleFr: "Décrire une image: disque dur",
