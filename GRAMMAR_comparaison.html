@@ -661,128 +661,82 @@ function ans(el, chosen){
 }
 </script>
 
-<!-- 📚 Lesson Navigation -->
+
+
+
+<!-- ✅ Mark as Done -->
 <style>
-#lesson-nav{
+#done-bar{
   position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(255,253,246,.96);
-  backdrop-filter:blur(12px);
+  background:rgba(255,253,246,.96);backdrop-filter:blur(12px);
   border-top:1px solid rgba(217,206,184,.6);
   padding:10px 16px;
-  display:flex;align-items:center;gap:8px;
+  display:flex;align-items:center;gap:10px;
 }
-.ln-btn{
-  display:flex;align-items:center;gap:5px;
-  padding:8px 14px;border-radius:10px;
-  border:1.5px solid rgba(217,206,184,.8);
-  background:rgba(255,253,246,.9);
-  color:#1e3a5f;font-family:'Estedad',sans-serif;
-  font-size:12.5px;font-weight:600;
-  cursor:pointer;text-decoration:none;
-  transition:all .2s;flex-shrink:0;
-}
-.ln-btn:hover{background:#1e3a5f;color:#f5f0e8;border-color:#1e3a5f}
-.ln-btn.prev::before{content:'←  '}
-.ln-btn.next::after{content:'  →'}
-.ln-done{
-  flex:1;padding:8px 14px;border-radius:10px;
+#done-btn{
+  flex:1;padding:10px;
   background:#1e3a5f;color:#f5f0e8;
-  border:none;font-family:'Estedad',sans-serif;
-  font-size:13px;font-weight:700;cursor:pointer;
-  transition:all .2s;text-align:center;
+  border:none;border-radius:10px;
+  font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .25s;
 }
-.ln-done.done{background:#2e8b6b}
-.ln-done:hover{opacity:.9}
-.ln-titles{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0;overflow:hidden}
-.ln-prev-title,.ln-next-title{font-size:10px;color:#8a8275;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-body{padding-bottom:70px}
-
-/* mobile back button */
-#back-btn{
-  display:none;
-  position:fixed;top:0;right:0;z-index:300;
-  padding:8px 16px;
-  background:rgba(255,253,246,.9);
-  border:none;border-bottom:1px solid rgba(217,206,184,.5);
-  border-left:1px solid rgba(217,206,184,.5);
-  font-family:'Estedad',sans-serif;font-size:13px;
-  color:#1e3a5f;cursor:pointer;font-weight:600;
-  border-radius:0 0 0 10px;
-}
-@media(max-width:700px){#back-btn{display:block}}
+#done-btn.done{background:#2e8b6b}
+#done-btn:hover{opacity:.9}
+body{padding-bottom:70px!important}
 </style>
-
-<button id="back-btn" onclick="history.back()">← بازگشت</button>
-
-<div id="lesson-nav">
-  <a class="ln-btn prev" id="ln-prev" href="index.html" style="display:none"></a>
-  <button class="ln-done" id="ln-done" onclick="markDone()">✓ کامل خوانده شد</button>
-  <a class="ln-btn next" id="ln-next" href="index.html" style="display:none"></a>
+<div id="done-bar">
+  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
 </div>
-
 <script>
 (function(){
-  const page = location.pathname.split('/').pop();
+  const page = location.pathname.split('/').pop().split('?')[0];
+  const title = document.title.split('|')[0].trim().replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim();
   
-  // Load lesson list from parent
-  const GRAMMAR_ORDER = [
-    'GRAMMAR_pouvoir_vouloir_devoir.html',
-    'GRAMMAR_passe_recent.html',
-    'GRAMMAR_cest_ilest.html',
-    'GRAMMAR_pronom_y.html',
-    'GRAMMAR_comparaison.html',
-    'Comparaison/comparaison.html',
-    'Comparaison/superlatifs.html',
-  ];
+  // Track visit
+  const history = JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  const entry = {
+    page, title,
+    time: new Date().toLocaleString('fa-IR'),
+    ts: Date.now()
+  };
+  // Remove duplicate
+  const filtered = history.filter(h => h.page !== page);
+  filtered.unshift(entry);
+  localStorage.setItem('hoda_history', JSON.stringify(filtered.slice(0,200)));
   
-  // Find current index
-  const idx = GRAMMAR_ORDER.indexOf(page);
+  // Also update visited
+  const visited = JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+  const vi = visited.findIndex(v => v.file === page);
+  const ve = {file:page, title, time:new Date().toLocaleDateString('fa-IR')};
+  if(vi>=0) visited[vi]=ve; else visited.unshift(ve);
+  localStorage.setItem('hoda_visited', JSON.stringify(visited.slice(0,100)));
   
-  if(idx > 0){
-    const prev = GRAMMAR_ORDER[idx-1];
-    const prevBtn = document.getElementById('ln-prev');
-    prevBtn.href = '../'+prev;
-    prevBtn.style.display='flex';
-    prevBtn.innerHTML = '← <span style="font-size:10px;max-width:80px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">' + prev.replace('GRAMMAR_','').replace('.html','').replace(/_/g,' ') + '</span>';
-  }
-  if(idx >= 0 && idx < GRAMMAR_ORDER.length-1){
-    const next = GRAMMAR_ORDER[idx+1];
-    const nextBtn = document.getElementById('ln-next');
-    nextBtn.href = '../'+next;
-    nextBtn.style.display='flex';
-    nextBtn.innerHTML = '<span style="font-size:10px;max-width:80px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">' + next.replace('GRAMMAR_','').replace('.html','').replace(/_/g,' ') + '</span> →';
-  }
-  
-  // Mark as done
-  const doneBtn = document.getElementById('ln-done');
-  const doneLessons = JSON.parse(localStorage.getItem('hoda_done')||'{}');
-  if(doneLessons[page]){
-    doneBtn.textContent='✓ خوانده شد';
-    doneBtn.classList.add('done');
+  // Check if already done
+  const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn = document.getElementById('done-btn');
+  if(done[page]){
+    btn.textContent = '✓ خوانده شده';
+    btn.classList.add('done');
   }
   
   window.markDone = function(){
     const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
     done[page] = new Date().toISOString();
     localStorage.setItem('hoda_done', JSON.stringify(done));
-    doneBtn.textContent='✓ خوانده شد';
-    doneBtn.classList.add('done');
     
-    // Also update status
+    // Add to history as "completed"
+    const h = JSON.parse(localStorage.getItem('hoda_history')||'[]');
+    h.unshift({page, title, time: new Date().toLocaleString('fa-IR'), ts: Date.now(), completed: true});
+    localStorage.setItem('hoda_history', JSON.stringify(h.slice(0,200)));
+    
+    // Update status
     const status = JSON.parse(localStorage.getItem('hoda_status')||'{}');
     status[page] = 'done';
     localStorage.setItem('hoda_status', JSON.stringify(status));
+    
+    btn.textContent = '✓ خوانده شده';
+    btn.classList.add('done');
   };
-  
-  // Track visit history
-  const visited = JSON.parse(localStorage.getItem('hoda_history')||'[]');
-  visited.unshift({
-    page,
-    title: document.title.split('|')[0].trim(),
-    time: new Date().toLocaleString('fa-IR'),
-    timestamp: Date.now()
-  });
-  localStorage.setItem('hoda_history', JSON.stringify(visited.slice(0,200)));
 })();
 </script>
 
