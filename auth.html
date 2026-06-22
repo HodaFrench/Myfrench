@@ -93,10 +93,17 @@ svg.road{width:100%;display:block}
 
 
 /* auth overrides */
-body{padding-top:0!important;overflow:hidden;height:100vh}
-.auth-bar{display:none}
+body{overflow:auto!important;height:auto!important;min-height:100vh}
+.auth-bar{display:none!important}
 
-/* blur overlay روی جاده */
+/* جاده — بالای صفحه، قابل اسکرول */
+.page{
+  position:relative;
+  z-index:1;
+  min-height:200vh;
+}
+
+/* blur overlay */
 .road-blur{
   position:fixed;inset:0;z-index:50;
   background:rgba(245,240,232,.38);
@@ -104,46 +111,67 @@ body{padding-top:0!important;overflow:hidden;height:100vh}
   pointer-events:none;
 }
 
-/* فرم — چپ، وسط عمودی */
+/* فرم — دسکتاپ: چپ fixed */
 .auth-panel{
   position:fixed;
   top:50%;left:2.5rem;
   transform:translateY(-50%);
   z-index:100;
-  width:320px;
+  width:360px;
 }
 .auth-card{
   background:rgba(255,253,246,.95);
   border:1px solid rgba(217,206,184,.6);
   border-radius:18px;
-  padding:1.8rem 1.6rem;
+  padding:2rem 1.8rem;
   box-shadow:0 20px 60px rgba(31,58,95,.14),0 0 0 1px rgba(255,255,255,.5);
 }
-.alogo{text-align:center;margin-bottom:1.2rem}
-.alogo .flag{font-size:20px;margin-bottom:4px}
-.alogo h2{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#1e3a5f}
-.alogo p{font-size:10px;color:#b07a4a;letter-spacing:1.5px;margin-top:3px}
-.atabs{display:flex;background:rgba(240,235,224,.9);border-radius:9px;padding:3px;margin-bottom:1.1rem;gap:3px}
-.atab{flex:1;padding:.44rem;border:none;border-radius:7px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;color:#a8874f;transition:all .2s}
-.atab.active{background:#fffdf6;color:#1e3a5f;box-shadow:0 1px 5px rgba(31,58,95,.1);font-weight:600}
-.aform{display:flex;flex-direction:column;gap:.6rem}
-.afield label{display:block;font-size:11px;font-weight:500;color:#1e3a5f;margin-bottom:3px}
-.afield input{width:100%;padding:.6rem .85rem;border:1.5px solid rgba(217,206,184,.7);border-radius:9px;background:rgba(255,255,255,.85);font-family:'Estedad',sans-serif;font-size:13.5px;color:#1e3a5f;direction:ltr;text-align:left;transition:all .2s}
+.alogo{text-align:center;margin-bottom:1.3rem}
+.alogo .flag{font-size:22px;margin-bottom:5px}
+.alogo h2{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#1e3a5f}
+.alogo p{font-size:11px;color:#b07a4a;letter-spacing:1.5px;margin-top:3px}
+.atabs{display:flex;background:rgba(240,235,224,.9);border-radius:10px;padding:3px;margin-bottom:1.2rem;gap:3px}
+.atab{flex:1;padding:.5rem;border:none;border-radius:8px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:13px;font-weight:500;color:#a8874f;transition:all .2s}
+.atab.active{background:#fffdf6;color:#1e3a5f;box-shadow:0 1px 6px rgba(31,58,95,.1);font-weight:600}
+.aform{display:flex;flex-direction:column;gap:.65rem}
+.afield label{display:block;font-size:12px;font-weight:500;color:#1e3a5f;margin-bottom:3px}
+.afield input{width:100%;padding:.65rem .9rem;border:1.5px solid rgba(217,206,184,.7);border-radius:10px;background:rgba(255,255,255,.85);font-family:'Estedad',sans-serif;font-size:14px;color:#1e3a5f;direction:ltr;text-align:left;transition:all .2s}
 .afield input:focus{outline:none;border-color:#1e3a5f;background:#fff}
-.afield input::placeholder{color:#c4b9a8;font-size:12.5px}
-.abtn{margin-top:.25rem;padding:.65rem;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:9px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
+.afield input::placeholder{color:#c4b9a8}
+.abtn{margin-top:.3rem;padding:.72rem;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
 .abtn:hover{background:#2a4f7f}
 .abtn:disabled{background:#a8b8c8;cursor:not-allowed}
-.amsg{font-size:11.5px;padding:.45rem;border-radius:7px;display:none;line-height:1.5;text-align:center;margin-top:.2rem}
+.amsg{font-size:12px;padding:.5rem;border-radius:8px;display:none;line-height:1.5;text-align:center;margin-top:.2rem}
 .amsg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
 .amsg.show{display:block}
-.aconfirm{display:none;text-align:center;padding:.8rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:11px;margin-top:.3rem}
+.aconfirm{display:none;text-align:center;padding:.9rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:12px;margin-top:.3rem}
 .aconfirm.show{display:block}
-.aconfirm .icon{font-size:22px;margin-bottom:.3rem}
-.aconfirm h3{font-size:12.5px;color:#1e3a5f;font-weight:700;margin-bottom:.25rem}
-.aconfirm p{font-size:10.5px;color:#6a5a3a;line-height:1.8}
+.aconfirm .icon{font-size:24px;margin-bottom:.3rem}
+.aconfirm h3{font-size:13px;color:#1e3a5f;font-weight:700;margin-bottom:.25rem}
+.aconfirm p{font-size:11px;color:#6a5a3a;line-height:1.8}
 .aconfirm .em{font-weight:700;color:#b07a4a}
-.ahint{font-size:10px;color:#b0a090;text-align:center;margin-top:.3rem}
+.ahint{font-size:10.5px;color:#b0a090;text-align:center;margin-top:.3rem}
+
+/* موبایل: جاده بالا، فرم پایین — اسکرول */
+@media(max-width:700px){
+  .road-blur{display:none}
+  .auth-panel{
+    position:relative;
+    top:auto;left:auto;
+    transform:none;
+    width:100%;
+    padding:1rem 1rem 3rem;
+    z-index:100;
+  }
+  .auth-card{
+    border-radius:20px 20px 16px 16px;
+    padding:1.6rem 1.4rem;
+  }
+  .page{
+    min-height:150vh;
+    opacity:.5;
+  }
+}
 </style>
 </head>
 <body>
