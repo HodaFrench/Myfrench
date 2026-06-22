@@ -84,6 +84,14 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "VIDEO_intro.html",
+    title: "🎬 ویدیوهای آموزشی فرانسه",
+    titleFr: "Vidéos de français",
+    category: "video", level: "A1–C1",
+    tags: ["video","vidéo","apprentissage"],
+    summary: "ویدیوهای آموزشی منتخب برای یادگیری فرانسه"
+  },
+  {
     file: "IMAGE_neon_open.html",
     title: "📸 توصیف تصویر — Panneau OPEN néon",
     titleFr: "Un panneau OPEN en néon rose",
