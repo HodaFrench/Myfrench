@@ -84,6 +84,31 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "GRAM_futur_proche.html",
+    title: "📐 Le Futur Proche — آینده نزدیک",
+    titleFr: "Le Futur Proche",
+    category: "grammar", level: "A2–B1",
+    tags: ["futur","futur proche","aller","conjugaison"],
+    summary: "ساختار، کاربرد و مثال‌های فراوان futur proche"
+  },
+  {
+    file: "GRAM_futur_simple.html",
+    title: "📐 Le Futur Simple — آینده ساده",
+    titleFr: "Le Futur Simple",
+    category: "grammar", level: "A2–B2",
+    tags: ["futur","futur simple","conjugaison","irréguliers"],
+    summary: "صرف کامل، افعال بی‌قاعده، کاربردها و quand+futur"
+  },
+  {
+    file: "GRAM_futur_anterieur.html",
+    title: "📐 Le Futur Antérieur — آینده قبلی",
+    titleFr: "Le Futur Antérieur",
+    category: "grammar", level: "B2–C1",
+    tags: ["futur","futur antérieur","temps composé","antériorité"],
+    summary: "ساختار، کاربرد antériorité و مقایسه سه زمان آینده"
+  },
+
+  {
     file: "PODCAST_player.html",
     title: "🎙️ پادکست فرانسوی — پخش مستقیم",
     titleFr: "Podcasts français — Psychologie et bien-être",
