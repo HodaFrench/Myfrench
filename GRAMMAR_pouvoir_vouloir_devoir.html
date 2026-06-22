@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pouvoir · Vouloir · Devoir | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f;
+  --pv:#2e8b6b;--vo:#b07a4a;--dv:#8a2040}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2e8b6b,#8a2040);color:#fff;padding:38px 28px 32px;text-align:center;box-shadow:0 14px 40px rgba(31,58,95,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.8);margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:28px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85;line-height:1.8}
+
+/* 3 verb tabs */
+.v-tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin:24px 0 0;overflow-x:auto}
+.vtab{padding:10px 24px;border:none;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:15px;font-weight:700;color:var(--gray);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.vtab[data-v="pouvoir"].active{color:var(--pv);border-bottom-color:var(--pv)}
+.vtab[data-v="vouloir"].active{color:var(--vo);border-bottom-color:var(--vo)}
+.vtab[data-v="devoir"].active{color:var(--dv);border-bottom-color:var(--dv)}
+.vsec{display:none;padding:20px 0}
+.vsec.active{display:block}
+
+.conj-box{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:16px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.conj-title{font-size:13px;font-weight:700;color:var(--gray);letter-spacing:1.5px;margin-bottom:12px}
+.conj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.conj-item{background:var(--cream);border-radius:8px;padding:8px 14px;font-family:'Roboto',serif;font-size:15px}
+.conj-pro{color:var(--gray);font-size:12px}
+
+.meaning-box{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:16px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.mb-title{font-family:'Roboto',serif;font-size:16px;font-weight:700;margin-bottom:12px}
+.meaning{background:var(--cream);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.m-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;margin-bottom:4px}
+.m-fa{font-size:13px;color:var(--gray)}
+.m-why{font-size:12px;font-weight:600;padding:3px 10px;border-radius:6px;display:inline-block;margin-top:5px}
+
+.hl-pv{color:var(--pv);font-weight:700;background:rgba(46,139,107,.1);border-radius:3px;padding:0 3px}
+.hl-vo{color:var(--vo);font-weight:700;background:rgba(176,122,74,.1);border-radius:3px;padding:0 3px}
+.hl-dv{color:var(--dv);font-weight:700;background:rgba(138,32,64,.1);border-radius:3px;padding:0 3px}
+
+.attn{background:rgba(176,80,111,.07);border:1px solid rgba(176,80,111,.25);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#5a1030;line-height:1.8}
+
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic;color:var(--navy)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;background:var(--cream);transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--navy)}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;border-radius:8px;display:none;line-height:1.7}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="../index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📐 گرامر · A1–B1</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · افعال وجهی</div>
+  <h1>Pouvoir · Vouloir · Devoir</h1>
+  <div class="sub">افعال ناقص — توانستن · خواستن · باید · با مثال، ترجمه و تمرین</div>
+</div>
+<div class="wrap">
+
+<div class="v-tabs">
+  <button class="vtab active" data-v="pouvoir" onclick="showV('pouvoir',this)">✅ Pouvoir — توانستن</button>
+  <button class="vtab" data-v="vouloir" onclick="showV('vouloir',this)">💛 Vouloir — خواستن</button>
+  <button class="vtab" data-v="devoir" onclick="showV('devoir',this)">🔴 Devoir — باید</button>
+</div>
+
+<!-- ══ POUVOIR ══ -->
+<div class="vsec active" id="v-pouvoir">
+
+  <div class="conj-box" style="border-right:4px solid var(--pv)">
+    <div class="conj-title">CONJUGAISON — صرف فعل (Présent)</div>
+    <div class="conj-grid">
+      <div class="conj-item"><div class="conj-pro">je</div><b>peux</b></div>
+      <div class="conj-item"><div class="conj-pro">tu</div><b>peux</b></div>
+      <div class="conj-item"><div class="conj-pro">il/elle/on</div><b>peut</b></div>
+      <div class="conj-item"><div class="conj-pro">nous</div><b>pouvons</b></div>
+      <div class="conj-item"><div class="conj-pro">vous</div><b>pouvez</b></div>
+      <div class="conj-item"><div class="conj-pro">ils/elles</div><b>peuvent</b></div>
+    </div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--pv)">① توانایی فیزیکی یا ذهنی</div>
+    <div class="meaning">
+      <div class="m-fr">Je <span class="hl-pv">peux</span> courir 10 kilomètres.</div>
+      <div class="m-fa">می‌توانم ۱۰ کیلومتر بدوم.</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">توانایی فیزیکی</div>
+    </div>
+    <div class="meaning">
+      <div class="m-fr">Il <span class="hl-pv">peut</span> parler trois langues.</div>
+      <div class="m-fa">او می‌تواند سه زبان صحبت کند.</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">توانایی ذهنی</div>
+    </div>
+    <div class="meaning">
+      <div class="m-fr">Tu <span class="hl-pv">peux</span> m'aider, s'il te plaît ?</div>
+      <div class="m-fa">می‌توانی کمکم کنی، لطفاً؟</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">درخواست مؤدبانه</div>
+    </div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--pv)">② اجازه داشتن / امکان</div>
+    <div class="meaning">
+      <div class="m-fr">On <span class="hl-pv">peut</span> entrer ici ?</div>
+      <div class="m-fa">آیا می‌توانیم اینجا وارد شویم؟</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">اجازه / امکان</div>
+    </div>
+    <div class="meaning">
+      <div class="m-fr">Vous <span class="hl-pv">pouvez</span> partir maintenant.</div>
+      <div class="m-fa">حالا می‌توانید بروید.</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">اجازه دادن</div>
+    </div>
+    <div class="meaning">
+      <div class="m-fr">Il <span class="hl-pv">peut</span> pleuvoir demain.</div>
+      <div class="m-fa">فردا ممکن است باران ببارد.</div>
+      <div class="m-why" style="background:rgba(46,139,107,.1);color:var(--pv)">احتمال</div>
+    </div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--pv)">③ جملات بیشتر</div>
+    <div class="meaning"><div class="m-fr">Nous ne <span class="hl-pv">pouvons</span> pas venir ce soir.</div><div class="m-fa">امشب نمی‌توانیم بیاییم.</div></div>
+    <div class="meaning"><div class="m-fr">Est-ce que tu <span class="hl-pv">peux</span> répéter, s'il te plaît ?</div><div class="m-fa">آیا می‌توانی تکرار کنی، لطفاً؟</div></div>
+    <div class="meaning"><div class="m-fr">Elle <span class="hl-pv">peut</span> rester chez nous.</div><div class="m-fa">او می‌تواند پیش ما بماند.</div></div>
+    <div class="meaning"><div class="m-fr">On n'<span class="hl-pv">y peut</span> rien.</div><div class="m-fa">کاری از دستمان برنمی‌آید. (اصطلاح)</div></div>
+  </div>
+
+  <div class="q-card" data-c="1">
+    <div class="q-text">جای خالی: <span class="fr">Elle ___ parler anglais très bien.</span></div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">veut</div>
+      <div class="opt" onclick="a(this,1)">peut</div>
+      <div class="opt" onclick="a(this,0)">doit</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>peut</b> — توانایی صحبت کردن به انگلیسی.</div>
+    <div class="q-feedback ko">❌ توانایی → <b>peut</b> (pouvoir).</div>
+  </div>
+  <div class="q-card" data-c="2">
+    <div class="q-text">ترجمه: «آیا می‌توانید کمکم کنید؟» (مؤدبانه)</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Vous voulez m'aider ?</div>
+      <div class="opt" onclick="a(this,0)">Vous devez m'aider ?</div>
+      <div class="opt" onclick="a(this,2)">Est-ce que vous pouvez m'aider ?</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>pouvoir</b> برای درخواست مؤدبانه.</div>
+    <div class="q-feedback ko">❌ درخواست مؤدبانه → <b>pouvoir</b>: «Est-ce que vous pouvez m'aider ?»</div>
+  </div>
+  <div class="score-bar">امتیاز Pouvoir: <span id="scP">0</span></div>
+</div>
+
+<!-- ══ VOULOIR ══ -->
+<div class="vsec" id="v-vouloir">
+  <div class="conj-box" style="border-right:4px solid var(--vo)">
+    <div class="conj-title">CONJUGAISON — صرف فعل (Présent)</div>
+    <div class="conj-grid">
+      <div class="conj-item"><div class="conj-pro">je</div><b>veux</b></div>
+      <div class="conj-item"><div class="conj-pro">tu</div><b>veux</b></div>
+      <div class="conj-item"><div class="conj-pro">il/elle/on</div><b>veut</b></div>
+      <div class="conj-item"><div class="conj-pro">nous</div><b>voulons</b></div>
+      <div class="conj-item"><div class="conj-pro">vous</div><b>voulez</b></div>
+      <div class="conj-item"><div class="conj-pro">ils/elles</div><b>veulent</b></div>
+    </div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--vo)">① خواستن / تمایل داشتن</div>
+    <div class="meaning"><div class="m-fr">Je <span class="hl-vo">veux</span> un café, s'il vous plaît.</div><div class="m-fa">یک قهوه می‌خواهم، لطفاً.</div><div class="m-why" style="background:rgba(176,122,74,.1);color:var(--vo)">خواستن مستقیم</div></div>
+    <div class="meaning"><div class="m-fr">Elle <span class="hl-vo">veut</span> devenir médecin.</div><div class="m-fa">او می‌خواهد پزشک شود.</div><div class="m-why" style="background:rgba(176,122,74,.1);color:var(--vo)">آرزو / هدف</div></div>
+    <div class="meaning"><div class="m-fr">Ils <span class="hl-vo">veulent</span> partir en vacances.</div><div class="m-fa">آن‌ها می‌خواهند به تعطیلات بروند.</div><div class="m-why" style="background:rgba(176,122,74,.1);color:var(--vo)">تمایل</div></div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--vo)">② vouloir bien — خوشحال می‌شوم / قبول می‌کنم</div>
+    <div class="meaning"><div class="m-fr">Je <span class="hl-vo">veux bien</span> venir avec toi.</div><div class="m-fa">خوشحال می‌شوم با تو بیایم. (قبول می‌کنم)</div></div>
+    <div class="meaning"><div class="m-fr">— Tu viens au cinéma ? — Oui, je <span class="hl-vo">veux bien</span>.</div><div class="m-fa">— به سینما می‌آیی؟ — بله، با کمال میل.</div></div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--vo)">③ جملات بیشتر</div>
+    <div class="meaning"><div class="m-fr">Tu <span class="hl-vo">veux</span> quoi comme dessert ?</div><div class="m-fa">چه دسری می‌خواهی؟</div></div>
+    <div class="meaning"><div class="m-fr">Nous <span class="hl-vo">voulons</span> comprendre la situation.</div><div class="m-fa">می‌خواهیم وضعیت را بفهمیم.</div></div>
+    <div class="meaning"><div class="m-fr">Qu'est-ce que vous <span class="hl-vo">voulez</span> faire ce soir ?</div><div class="m-fa">امشب می‌خواهید چه کار کنید؟</div></div>
+    <div class="meaning"><div class="m-fr">Je ne <span class="hl-vo">veux</span> plus attendre.</div><div class="m-fa">دیگر نمی‌خواهم صبر کنم.</div></div>
+  </div>
+
+  <div class="attn">
+    <strong>نکته:</strong> «vouloir» در درخواست مستقیم می‌تواند تُند به نظر برسد:<br>
+    😐 <span style="font-family:'Roboto',serif;font-style:italic">Je veux un café.</span> (مستقیم)<br>
+    😊 <span style="font-family:'Roboto',serif;font-style:italic">Je voudrais un café.</span> (conditionnel — مؤدبانه‌تر)
+  </div>
+
+  <div class="q-card" data-c="0">
+    <div class="q-text">جای خالی: <span class="fr">— Tu ___ venir avec nous ? — Oui, je ___ bien !</span></div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">veux / veux</div>
+      <div class="opt" onclick="a(this,0)">peux / peux</div>
+      <div class="opt" onclick="a(this,0)">dois / dois</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>veux / veux bien</b> — سوال از تمایل + قبول کردن با «vouloir bien».</div>
+    <div class="q-feedback ko">❌ سوال از تمایل → <b>veux</b>. قبول مؤدبانه → <b>veux bien</b>.</div>
+  </div>
+  <div class="q-card" data-c="2">
+    <div class="q-text">ترجمه: «ما می‌خواهیم یاد بگیریم»</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Nous pouvons apprendre.</div>
+      <div class="opt" onclick="a(this,0)">Nous devons apprendre.</div>
+      <div class="opt" onclick="a(this,2)">Nous voulons apprendre.</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>vouloir</b> = خواستن.</div>
+    <div class="q-feedback ko">❌ «خواستن» → <b>vouloir</b>: «Nous voulons apprendre».</div>
+  </div>
+  <div class="score-bar">امتیاز Vouloir: <span id="scV">0</span></div>
+</div>
+
+<!-- ══ DEVOIR ══ -->
+<div class="vsec" id="v-devoir">
+  <div class="conj-box" style="border-right:4px solid var(--dv)">
+    <div class="conj-title">CONJUGAISON — صرف فعل (Présent)</div>
+    <div class="conj-grid">
+      <div class="conj-item"><div class="conj-pro">je</div><b>dois</b></div>
+      <div class="conj-item"><div class="conj-pro">tu</div><b>dois</b></div>
+      <div class="conj-item"><div class="conj-pro">il/elle/on</div><b>doit</b></div>
+      <div class="conj-item"><div class="conj-pro">nous</div><b>devons</b></div>
+      <div class="conj-item"><div class="conj-pro">vous</div><b>devez</b></div>
+      <div class="conj-item"><div class="conj-pro">ils/elles</div><b>doivent</b></div>
+    </div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--dv)">① اجبار / ضرورت</div>
+    <div class="meaning"><div class="m-fr">Je <span class="hl-dv">dois</span> travailler ce soir.</div><div class="m-fa">باید امشب کار کنم.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">اجبار</div></div>
+    <div class="meaning"><div class="m-fr">Tu <span class="hl-dv">dois</span> respecter les règles.</div><div class="m-fa">باید قوانین را رعایت کنی.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">ضرورت</div></div>
+    <div class="meaning"><div class="m-fr">Nous <span class="hl-dv">devons</span> partir à 8 heures.</div><div class="m-fa">باید ساعت ۸ برویم.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">اجبار</div></div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--dv)">② احتمال / گمان / انتظار</div>
+    <div class="meaning"><div class="m-fr">Il <span class="hl-dv">doit</span> être fatigué.</div><div class="m-fa">احتمالاً خسته است.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">گمان / احتمال</div></div>
+    <div class="meaning"><div class="m-fr">Elle <span class="hl-dv">doit</span> arriver vers midi.</div><div class="m-fa">احتمالاً حدود ظهر می‌رسد.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">انتظار</div></div>
+    <div class="meaning"><div class="m-fr">Ça <span class="hl-dv">doit</span> coûter cher.</div><div class="m-fa">احتمالاً گران است.</div><div class="m-why" style="background:rgba(138,32,64,.1);color:var(--dv)">گمان</div></div>
+  </div>
+
+  <div class="meaning-box">
+    <div class="mb-title" style="color:var(--dv)">③ جملات بیشتر</div>
+    <div class="meaning"><div class="m-fr">Vous <span class="hl-dv">devez</span> rendre le travail demain.</div><div class="m-fa">باید فردا کار را تحویل بدهید.</div></div>
+    <div class="meaning"><div class="m-fr">On ne <span class="hl-dv">doit</span> pas fumer ici.</div><div class="m-fa">اینجا نباید کشید.</div></div>
+    <div class="meaning"><div class="m-fr">Je <span class="hl-dv">dois</span> de l'argent à mon ami.</div><div class="m-fa">به دوستم بدهکارم. (devoir = بدهکار بودن)</div></div>
+    <div class="meaning"><div class="m-fr">Ils <span class="hl-dv">doivent</span> avoir faim.</div><div class="m-fa">احتمالاً گرسنه هستند.</div></div>
+  </div>
+
+  <div class="q-card" data-c="2">
+    <div class="q-text">کدام جمله «احتمال» را بیان می‌کند؟</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Tu dois partir maintenant.</div>
+      <div class="opt" onclick="a(this,0)">Nous devons travailler.</div>
+      <div class="opt" onclick="a(this,2)">Il doit être en réunion.</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>Il doit être en réunion</b> — احتمالاً در جلسه است. (گمان)</div>
+    <div class="q-feedback ko">❌ گزینه سوم: «Il doit être en réunion» = احتمالاً در جلسه است.</div>
+  </div>
+  <div class="q-card" data-c="1">
+    <div class="q-text">ترجمه: «باید قوانین را رعایت کنید.» (به «vous»)</div>
+    <div class="opts">
+      <div class="opt" onclick="a(this,0)">Vous pouvez respecter les règles.</div>
+      <div class="opt" onclick="a(this,1)">Vous devez respecter les règles.</div>
+      <div class="opt" onclick="a(this,0)">Vous voulez respecter les règles.</div>
+    </div>
+    <div class="q-feedback ok">✅ <b>devoir</b> = باید (اجبار/ضرورت).</div>
+    <div class="q-feedback ko">❌ «باید» = <b>devoir</b>: «Vous devez respecter les règles».</div>
+  </div>
+  <div class="score-bar">امتیاز Devoir: <span id="scD">0</span></div>
+</div>
+
+</div><!-- wrap -->
+
+<script>
+const scores={P:0,V:0,D:0};
+function showV(v,btn){
+  document.querySelectorAll('.vsec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.vtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('v-'+v).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+function a(el,chosen){
+  const b=el.closest('.q-card');
+  if(b.dataset.done)return;
+  b.dataset.done='1';
+  const c=parseInt(b.dataset.c);
+  b.querySelectorAll('.opt').forEach((o,i)=>{
+    o.classList.add('disabled');
+    if(i===c)o.classList.add('correct');
+    else if(o===el&&chosen!==c)o.classList.add('wrong');
+  });
+  b.querySelector('.q-feedback.'+(chosen===c?'ok':'ko')).classList.add('show');
+  // find which verb section
+  const sec=b.closest('.vsec').id;
+  const key=sec==='v-pouvoir'?'P':sec==='v-vouloir'?'V':'D';
+  if(chosen===c){
+    scores[key]++;
+    document.getElementById('sc'+key).textContent=scores[key];
+  }
+}
+</script>
+</body>
+</html>
