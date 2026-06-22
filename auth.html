@@ -92,73 +92,74 @@ svg.road{width:100%;display:block}
         body{padding-top:38px}
 
 
-/* override: remove auth bar padding since we're on auth page */
-body{padding-top:0!important}
+/* auth overrides */
+body{padding-top:0!important;overflow:hidden;height:100vh}
+.auth-bar{display:none}
 
-/* full page layout */
-body{
-  overflow-x:hidden;
-  min-height:100vh;
+/* blur overlay روی جاده */
+.road-blur{
+  position:fixed;inset:0;z-index:50;
+  background:rgba(245,240,232,.38);
+  backdrop-filter:blur(3px);
+  pointer-events:none;
 }
 
-/* login overlay — fixed, centered */
-.auth-overlay{
+/* فرم — چپ، وسط عمودی */
+.auth-panel{
   position:fixed;
-  top:0;left:0;right:0;bottom:0;
+  top:50%;left:2.5rem;
+  transform:translateY(-50%);
   z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  padding-right:2rem;
-  background:transparent;
-  
-  padding:1rem;
+  width:320px;
 }
 .auth-card{
   background:rgba(255,253,246,.95);
-  border:1px solid rgba(217,206,184,.7);
-  border-radius:20px;
-  padding:2rem 1.8rem;
-  width:100%;
-  max-width:360px;
-  box-shadow:0 20px 60px rgba(31,58,95,.15),0 0 0 1px rgba(255,255,255,.5);
+  border:1px solid rgba(217,206,184,.6);
+  border-radius:18px;
+  padding:1.8rem 1.6rem;
+  box-shadow:0 20px 60px rgba(31,58,95,.14),0 0 0 1px rgba(255,255,255,.5);
 }
-.auth-logo{text-align:center;margin-bottom:1.4rem}
-.auth-logo .flag{font-size:22px;margin-bottom:5px}
-.auth-logo h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#1e3a5f}
-.auth-logo p{font-size:10.5px;color:#b07a4a;letter-spacing:1.5px;margin-top:3px}
-.auth-tabs{display:flex;background:rgba(240,235,224,.9);border-radius:10px;padding:3px;margin-bottom:1.2rem;gap:3px}
-.auth-tab{flex:1;padding:.48rem;border:none;border-radius:8px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:13px;font-weight:500;color:#a8874f;transition:all .2s}
-.auth-tab.active{background:rgba(255,253,246,.95);color:#1e3a5f;box-shadow:0 1px 6px rgba(31,58,95,.1);font-weight:600}
-.auth-form{display:flex;flex-direction:column;gap:.65rem}
-.auth-field label{display:block;font-size:11.5px;font-weight:500;color:#1e3a5f;margin-bottom:3px}
-.auth-field input{width:100%;padding:.65rem .9rem;border:1.5px solid rgba(217,206,184,.7);border-radius:10px;background:rgba(255,255,255,.85);font-family:'Estedad',sans-serif;font-size:14px;color:#1e3a5f;direction:ltr;text-align:left;transition:all .2s}
-.auth-field input:focus{outline:none;border-color:#1e3a5f;background:#fff}
-.auth-field input::placeholder{color:#c4b9a8}
-.auth-btn{margin-top:.3rem;padding:.7rem;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
-.auth-btn:hover{background:#2a4f7f}
-.auth-btn:disabled{background:#a8b8c8;cursor:not-allowed}
-.auth-msg{font-size:12px;padding:.5rem;border-radius:8px;display:none;line-height:1.5;text-align:center;margin-top:.2rem}
-.auth-msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
-.auth-msg.show{display:block}
-.auth-confirm{display:none;text-align:center;padding:.9rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:12px;margin-top:.3rem}
-.auth-confirm.show{display:block}
-.auth-confirm .icon{font-size:26px;margin-bottom:.3rem}
-.auth-confirm h3{font-size:13px;color:#1e3a5f;font-weight:700;margin-bottom:.3rem}
-.auth-confirm p{font-size:11px;color:#6a5a3a;line-height:1.8}
-.auth-confirm .em{font-weight:700;color:#b07a4a}
-.auth-hint{font-size:10.5px;color:#b0a090;text-align:center;margin-top:.3rem}
+.alogo{text-align:center;margin-bottom:1.2rem}
+.alogo .flag{font-size:20px;margin-bottom:4px}
+.alogo h2{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:#1e3a5f}
+.alogo p{font-size:10px;color:#b07a4a;letter-spacing:1.5px;margin-top:3px}
+.atabs{display:flex;background:rgba(240,235,224,.9);border-radius:9px;padding:3px;margin-bottom:1.1rem;gap:3px}
+.atab{flex:1;padding:.44rem;border:none;border-radius:7px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:12.5px;font-weight:500;color:#a8874f;transition:all .2s}
+.atab.active{background:#fffdf6;color:#1e3a5f;box-shadow:0 1px 5px rgba(31,58,95,.1);font-weight:600}
+.aform{display:flex;flex-direction:column;gap:.6rem}
+.afield label{display:block;font-size:11px;font-weight:500;color:#1e3a5f;margin-bottom:3px}
+.afield input{width:100%;padding:.6rem .85rem;border:1.5px solid rgba(217,206,184,.7);border-radius:9px;background:rgba(255,255,255,.85);font-family:'Estedad',sans-serif;font-size:13.5px;color:#1e3a5f;direction:ltr;text-align:left;transition:all .2s}
+.afield input:focus{outline:none;border-color:#1e3a5f;background:#fff}
+.afield input::placeholder{color:#c4b9a8;font-size:12.5px}
+.abtn{margin-top:.25rem;padding:.65rem;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:9px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;width:100%;transition:background .2s}
+.abtn:hover{background:#2a4f7f}
+.abtn:disabled{background:#a8b8c8;cursor:not-allowed}
+.amsg{font-size:11.5px;padding:.45rem;border-radius:7px;display:none;line-height:1.5;text-align:center;margin-top:.2rem}
+.amsg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
+.amsg.show{display:block}
+.aconfirm{display:none;text-align:center;padding:.8rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:11px;margin-top:.3rem}
+.aconfirm.show{display:block}
+.aconfirm .icon{font-size:22px;margin-bottom:.3rem}
+.aconfirm h3{font-size:12.5px;color:#1e3a5f;font-weight:700;margin-bottom:.25rem}
+.aconfirm p{font-size:10.5px;color:#6a5a3a;line-height:1.8}
+.aconfirm .em{font-weight:700;color:#b07a4a}
+.ahint{font-size:10px;color:#b0a090;text-align:center;margin-top:.3rem}
 </style>
 </head>
 <body>
 
-<!-- دقیقاً همان صفحه اصلی در پس‌زمینه -->
+<!-- دقیقاً همان جاده index -->
 <div class="page">
-  <div class="top">
-    <h1>Français avec Hoda</h1>
-    <p>مسیر یادگیری · A1 تا TCF Canada</p>
-  </div>
-  <div class="road-wrap">
+
+
+<div class="page">
+<div class="top">
+  <a href="library.html" class="back">← کتابخانه</a>
+  <h1>Français avec Hoda</h1>
+  <p>مسیر یادگیری · A1 تا TCF Canada</p>
+</div>
+
+<div class="road-wrap">
 <svg class="road" viewBox="0 0 360 1480" role="img" aria-label="نقشه یادگیری فرانسه">
   <g opacity=".35">
   <ellipse cx="38" cy="360" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 360)"/>
@@ -181,45 +182,75 @@ body{
   <ellipse cx="5" cy="4" rx="6" ry="3" fill="#f97316" opacity=".5" transform="rotate(-20 5 4)"/>
   <line x1="0" y1="-7" x2="0" y2="7" stroke="#7c2d12" stroke-width="1.5"/>
 </g></g>
-  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#e2ddd5" stroke-width="22" stroke-linecap="round" fill="none"/>
-  <path d="M180.0 30 L181.0 38 L181.9 46 L182.9 54 L183.8 62 L184.7 70 L185.7 78 L186.6 86 L187.4 94 L188.3 102 L189.2 110 L190.0 118 L190.7 126 L191.5 134 L192.2 142 L192.9 150 L193.6 158 L194.2 166 L194.7 174 L195.3 182 L195.8 190 L196.2 198 L196.6 206 L196.9 214 L197.2 222 L197.5 230 L197.7 238 L197.8 246 L197.9 254 L198.0 262 L198.0 270 L197.9 278 L197.8 286 L197.7 294 L197.5 302 L197.2 310 L196.9 318 L196.6 326 L196.2 334 L195.7 342 L195.2 350 L194.7 358 L194.1 366 L193.5 374 L192.8 382 L192.2 390 L191.4 398 L190.7 406 L189.9 414 L189.1 422 L188.2 430 L187.4 438 L186.5 446 L185.6 454 L184.7 462 L183.7 470 L182.8 478 L181.8 486 L180.9 494 L179.9 502 L178.9 510 L178.0 518 L177.0 526 L176.1 534 L175.2 542 L174.3 550 L173.4 558 L172.5 566 L171.6 574 L170.8 582 L170.0 590 L169.2 598 L168.4 606 L167.7 614 L167.0 622 L166.4 630 L165.8 638 L165.2 646 L164.7 654 L164.2 662 L163.8 670 L163.4 678 L163.0 686 L162.7 694 L162.5 702 L162.3 710 L162.1 718 L162.0 726 L162.0 734 L162.0 742 L162.1 750 L162.2 758 L162.3 766 L162.5 774 L162.8 782 L163.1 790 L163.5 798 L163.9 806 L164.3 814 L164.8 822 L165.4 830 L165.9 838 L166.6 846 L167.2 854 L167.9 862 L168.6 870 L169.4 878 L170.2 886 L171.0 894 L171.9 902 L172.7 910 L173.6 918 L174.5 926 L175.4 934 L176.4 942 L177.3 950 L178.3 958 L179.2 966 L180.2 974 L181.1 982 L182.1 990 L183.0 998 L184.0 1006 L184.9 1014 L185.8 1022 L186.7 1030 L187.6 1038 L188.5 1046 L189.3 1054 L190.1 1062 L190.9 1070 L191.6 1078 L192.4 1086 L193.0 1094 L193.7 1102 L194.3 1110 L194.8 1118 L195.4 1126 L195.8 1134 L196.3 1142 L196.7 1150 L197.0 1158 L197.3 1166 L197.5 1174 L197.7 1182 L197.9 1190 L198.0 1198 L198.0 1206 L198.0 1214 L197.9 1222 L197.8 1230 L197.6 1238 L197.4 1246 L197.2 1254 L196.9 1262 L196.5 1270 L196.1 1278 L195.6 1286 L195.1 1294 L194.6 1302 L194.0 1310 L193.4 1318 L192.7 1326 L192.0 1334 L191.3 1342 L190.5 1350 L189.7 1358 L188.9 1366 L188.1 1374 L187.2 1382 L186.3 1390 L185.4 1398 L184.5 1406 L183.5 1414 L182.6 1422 L181.6 1430 L180.7 1438 L179.7 1446" stroke="#fff" stroke-width="2" stroke-dasharray="8 8" stroke-linecap="round" fill="none" opacity=".85"/>
+  <path d="M180.0 30 L182.9 38 L185.9 46 L188.8 54 L191.6 62 L194.5 70 L197.3 78 L200.1 86 L202.8 94 L205.4 102 L208.0 110 L210.4 118 L212.8 126 L215.2 134 L217.4 142 L219.5 150 L221.4 158 L223.3 166 L225.1 174 L226.7 182 L228.2 190 L229.5 198 L230.7 206 L231.8 214 L232.7 222 L233.5 230 L234.1 238 L234.5 246 L234.8 254 L235.0 262 L235.0 270 L234.8 278 L234.5 286 L234.0 294 L233.4 302 L232.6 310 L231.7 318 L230.6 326 L229.4 334 L228.0 342 L226.5 350 L224.9 358 L223.1 366 L221.3 374 L219.3 382 L217.2 390 L214.9 398 L212.6 406 L210.2 414 L207.7 422 L205.1 430 L202.5 438 L199.8 446 L197.0 454 L194.2 462 L191.4 470 L188.5 478 L185.6 486 L182.7 494 L179.7 502 L176.8 510 L173.9 518 L171.0 526 L168.1 534 L165.2 542 L162.4 550 L159.7 558 L157.0 566 L154.4 574 L151.8 582 L149.3 590 L146.9 598 L144.6 606 L142.4 614 L140.4 622 L138.4 630 L136.5 638 L134.8 646 L133.2 654 L131.7 662 L130.4 670 L129.2 678 L128.1 686 L127.2 694 L126.5 702 L125.9 710 L125.4 718 L125.1 726 L125.0 734 L125.0 742 L125.2 750 L125.5 758 L126.0 766 L126.7 774 L127.5 782 L128.4 790 L129.5 798 L130.7 806 L132.1 814 L133.6 822 L135.3 830 L137.0 838 L138.9 846 L140.9 854 L143.1 862 L145.3 870 L147.6 878 L150.0 886 L152.5 894 L155.1 902 L157.7 910 L160.5 918 L163.2 926 L166.0 934 L168.9 942 L171.8 950 L174.7 958 L177.6 966 L180.6 974 L183.5 982 L186.4 990 L189.3 998 L192.2 1006 L195.0 1014 L197.8 1022 L200.6 1030 L203.3 1038 L205.9 1046 L208.4 1054 L210.9 1062 L213.3 1070 L215.6 1078 L217.8 1086 L219.8 1094 L221.8 1102 L223.7 1110 L225.4 1118 L227.0 1126 L228.4 1134 L229.7 1142 L230.9 1150 L232.0 1158 L232.8 1166 L233.6 1174 L234.2 1182 L234.6 1190 L234.9 1198 L235.0 1206 L235.0 1214 L234.8 1222 L234.4 1230 L233.9 1238 L233.3 1246 L232.4 1254 L231.5 1262 L230.4 1270 L229.1 1278 L227.7 1286 L226.2 1294 L224.6 1302 L222.8 1310 L220.9 1318 L218.9 1326 L216.7 1334 L214.5 1342 L212.2 1350 L209.7 1358 L207.2 1366 L204.7 1374 L202.0 1382 L199.3 1390 L196.5 1398 L193.7 1406 L190.8 1414 L187.9 1422 L185.0 1430 L182.1 1438 L179.2 1446" stroke="#e2ddd5" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M180.0 30 L182.9 38 L185.9 46 L188.8 54 L191.6 62 L194.5 70 L197.3 78 L200.1 86 L202.8 94 L205.4 102 L208.0 110 L210.4 118 L212.8 126 L215.2 134 L217.4 142 L219.5 150 L221.4 158 L223.3 166 L225.1 174 L226.7 182 L228.2 190 L229.5 198 L230.7 206 L231.8 214 L232.7 222 L233.5 230 L234.1 238 L234.5 246 L234.8 254 L235.0 262 L235.0 270 L234.8 278 L234.5 286 L234.0 294 L233.4 302 L232.6 310 L231.7 318 L230.6 326 L229.4 334 L228.0 342 L226.5 350 L224.9 358 L223.1 366 L221.3 374 L219.3 382 L217.2 390 L214.9 398 L212.6 406 L210.2 414 L207.7 422 L205.1 430 L202.5 438 L199.8 446 L197.0 454 L194.2 462 L191.4 470 L188.5 478 L185.6 486 L182.7 494 L179.7 502 L176.8 510 L173.9 518 L171.0 526 L168.1 534 L165.2 542 L162.4 550 L159.7 558 L157.0 566 L154.4 574 L151.8 582 L149.3 590 L146.9 598 L144.6 606 L142.4 614 L140.4 622 L138.4 630 L136.5 638 L134.8 646 L133.2 654 L131.7 662 L130.4 670 L129.2 678 L128.1 686 L127.2 694 L126.5 702 L125.9 710 L125.4 718 L125.1 726 L125.0 734 L125.0 742 L125.2 750 L125.5 758 L126.0 766 L126.7 774 L127.5 782 L128.4 790 L129.5 798 L130.7 806 L132.1 814 L133.6 822 L135.3 830 L137.0 838 L138.9 846 L140.9 854 L143.1 862 L145.3 870 L147.6 878 L150.0 886 L152.5 894 L155.1 902 L157.7 910 L160.5 918 L163.2 926 L166.0 934 L168.9 942 L171.8 950 L174.7 958 L177.6 966 L180.6 974 L183.5 982 L186.4 990 L189.3 998 L192.2 1006 L195.0 1014 L197.8 1022 L200.6 1030 L203.3 1038 L205.9 1046 L208.4 1054 L210.9 1062 L213.3 1070 L215.6 1078 L217.8 1086 L219.8 1094 L221.8 1102 L223.7 1110 L225.4 1118 L227.0 1126 L228.4 1134 L229.7 1142 L230.9 1150 L232.0 1158 L232.8 1166 L233.6 1174 L234.2 1182 L234.6 1190 L234.9 1198 L235.0 1206 L235.0 1214 L234.8 1222 L234.4 1230 L233.9 1238 L233.3 1246 L232.4 1254 L231.5 1262 L230.4 1270 L229.1 1278 L227.7 1286 L226.2 1294 L224.6 1302 L222.8 1310 L220.9 1318 L218.9 1326 L216.7 1334 L214.5 1342 L212.2 1350 L209.7 1358 L207.2 1366 L204.7 1374 L202.0 1382 L199.3 1390 L196.5 1398 L193.7 1406 L190.8 1414 L187.9 1422 L185.0 1430 L182.1 1438 L179.2 1446" stroke="#fff" stroke-width="2" stroke-dasharray="8 8" stroke-linecap="round" fill="none" opacity=".85"/>
 </svg>
 <div class="stations">
 <div class="milestone ms-main" style="top:3.716%;"><span>شروع</span><span class="ms-label">A1</span></div>
-<div class="node-card" style="top:10.135%;left:59.72%;width:36.11%;border-color:#1f3a5f"><div class="nc-title" style="color:#1f3a5f">گرامر</div></div>
+
+<div class="node-card" style="top:10.135%;left:69.72%;width:36.11%;border-color:#1f3a5f"><div class="nc-title" style="color:#1f3a5f">گرامر</div></div>
+<div class="node-card" style="top:16.554%;left:14.17%;width:36.11%;border-color:#22618f"><div class="nc-title" style="color:#22618f">واژگان</div></div>
+<div class="node-card" style="top:22.973%;left:69.72%;width:36.11%;border-color:#7a5ba8"><div class="nc-title" style="color:#7a5ba8">گردونه موضوع</div></div>
+<div class="node-card" style="top:29.392%;left:14.17%;width:36.11%;border-color:#c77d3a"><div class="nc-title" style="color:#c77d3a">جملات کاربردی</div></div>
+
+<div class="node-card" style="top:42.23%;left:69.72%;width:36.11%;border-color:#b0506f"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div></div>
+<div class="node-card" style="top:48.649%;left:14.17%;width:36.11%;border-color:#5a3b88"><div class="nc-title" style="color:#5a3b88">InnerFrench</div></div>
+
+<div class="node-card" style="top:61.486%;left:69.72%;width:36.11%;border-color:#2e8b6b"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div></div>
+<div class="node-card" style="top:67.905%;left:14.17%;width:36.11%;border-color:#c4502d"><div class="nc-title" style="color:#c4502d">پادکست</div></div>
+
+<div class="node-card" style="top:80.743%;left:69.72%;width:36.11%;border-color:#8a2040"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div></div>
+<div class="node-card" style="top:87.162%;left:14.17%;width:36.11%;border-color:#1a4f7a"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div></div>
+
+</div>
+</div>
 </div>
 
-<!-- فرم ورود روی صفحه -->
-<div class="auth-overlay">
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="mhead">
+      <div><div class="mtitle" id="mtitle"></div><div class="mcount" id="mcount"></div></div>
+      <button class="mclose">✕</button>
+    </div>
+    <div class="mbody" id="mbody"></div>
+  </div>
+</div>
+</div>
+
+<!-- لایه محو کننده -->
+<div class="road-blur"></div>
+
+<!-- فرم ورود — چپ -->
+<div class="auth-panel">
 <div class="auth-card">
-  <div class="auth-logo">
+  <div class="alogo">
     <div class="flag">🇫🇷</div>
     <h2>Français avec Hoda</h2>
-    <p>وارد شو · یادگیری رو شروع کن</p>
+    <p>به کامیونیتی خوش اومدی 🎉</p>
   </div>
-  <div class="auth-tabs">
-    <button class="auth-tab active" onclick="showTab('login')">ورود</button>
-    <button class="auth-tab" onclick="showTab('signup')">ثبت‌نام رایگان</button>
+  <div class="atabs">
+    <button class="atab active" onclick="st('login')">ورود</button>
+    <button class="atab" onclick="st('signup')">ثبت‌نام رایگان</button>
   </div>
-  <div id="loginForm" class="auth-form">
-    <div class="auth-field"><label>ایمیل</label><input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email"></div>
-    <div class="auth-field"><label>رمز عبور</label><input type="password" id="loginPass" placeholder="••••••" autocomplete="current-password"></div>
-    <div class="auth-msg" id="loginMsg"></div>
-    <button class="auth-btn" id="loginBtn" onclick="doLogin()">ورود به سایت ←</button>
-    <p class="auth-hint">حساب ندارید؟ روی «ثبت‌نام رایگان» کلیک کنید</p>
+  <div id="lf" class="aform">
+    <div class="afield"><label>ایمیل</label><input type="email" id="le" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="afield"><label>رمز عبور</label><input type="password" id="lp" placeholder="••••••" autocomplete="current-password"></div>
+    <div class="amsg" id="lm"></div>
+    <button class="abtn" id="lb" onclick="doLogin()">ادامه ←</button>
+    <p class="ahint">حساب ندارید؟ روی «ثبت‌نام رایگان» کلیک کنید</p>
   </div>
-  <div id="signupForm" class="auth-form" style="display:none">
-    <div class="auth-field"><label>ایمیل</label><input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email"></div>
-    <div class="auth-field"><label>رمز عبور</label><input type="password" id="signupPass" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password"></div>
-    <div class="auth-field"><label>تکرار رمز عبور</label><input type="password" id="signupPass2" placeholder="••••••" autocomplete="new-password"></div>
-    <div class="auth-msg" id="signupMsg"></div>
-    <div class="auth-confirm" id="confirmBox">
-      <div class="icon">📧</div>
-      <h3>ایمیل تأیید فرستاده شد!</h3>
-      <p>به <span class="em" id="confirmedEmail"></span> ایمیل فرستادیم.<br>روی لینک کلیک کن.<br>📂 پوشه <b>Spam</b> رو هم چک کن.</p>
+  <div id="sf" class="aform" style="display:none">
+    <div class="afield"><label>ایمیل</label><input type="email" id="se" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="afield"><label>رمز عبور</label><input type="password" id="sp" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password"></div>
+    <div class="afield"><label>تکرار رمز عبور</label><input type="password" id="sp2" placeholder="••••••" autocomplete="new-password"></div>
+    <div class="amsg" id="sm"></div>
+    <div class="aconfirm" id="cb">
+      <div class="icon">📧</div><h3>ایمیل تأیید فرستاده شد!</h3>
+      <p>به <span class="em" id="ce"></span> ایمیل فرستادیم.<br>روی لینک کلیک کن.<br>📂 پوشه <b>Spam</b> رو هم چک کن.</p>
     </div>
-    <button class="auth-btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان ←</button>
-    <p class="auth-hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
+    <button class="abtn" id="sb" onclick="doSignup()">شروع یادگیری ←</button>
+    <p class="ahint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
   </div>
 </div>
 </div>
@@ -229,14 +260,13 @@ body{
 <script>
 const sb=supabase.createClient('https://ifjsnasoxnalhttzhlpd.supabase.co','sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK');
 sb.auth.getSession().then(({data:{session}})=>{if(session)window.location.href='index.html';});
-// Build road (same as index.html)
-if(typeof buildRoad==='function')buildRoad();
-function showTab(t){document.getElementById('loginForm').style.display=t==='login'?'flex':'none';document.getElementById('signupForm').style.display=t==='signup'?'flex':'none';document.querySelectorAll('.auth-tab').forEach((el,i)=>el.classList.toggle('active',(t==='login'&&i===0)||(t==='signup'&&i===1)));}
-function showMsg(id,txt){const el=document.getElementById(id);el.textContent=txt;el.className='auth-msg error show';}
-function setLoading(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='loginBtn'?'ورود به سایت ←':'ساخت حساب رایگان ←');}
-async function doSignup(){const email=document.getElementById('signupEmail').value.trim();const pass=document.getElementById('signupPass').value;const pass2=document.getElementById('signupPass2').value;if(!email||!pass)return showMsg('signupMsg','همه فیلدها را پر کنید');if(pass.length<6)return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد');if(pass!==pass2)return showMsg('signupMsg','رمزهای عبور یکسان نیستند');setLoading('signupBtn',true);const {error}=await sb.auth.signUp({email,password:pass});setLoading('signupBtn',false);if(error)return showMsg('signupMsg',error.message);document.getElementById('confirmedEmail').textContent=email;document.getElementById('confirmBox').classList.add('show');document.getElementById('signupBtn').style.display='none';}
-async function doLogin(){const email=document.getElementById('loginEmail').value.trim();const pass=document.getElementById('loginPass').value;if(!email||!pass)return showMsg('loginMsg','همه فیلدها را پر کنید');setLoading('loginBtn',true);const {error}=await sb.auth.signInWithPassword({email,password:pass});setLoading('loginBtn',false);if(error){if(error.message.includes('Email not confirmed'))return showMsg('loginMsg','ایمیلت رو تأیید نکردی! 📧');return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است');}window.location.href='index.html';}
-document.addEventListener('keydown',e=>{if(e.key==='Enter'){if(document.getElementById('loginForm').style.display!=='none')doLogin();else doSignup();}});
+if(typeof buildRoad==='function')setTimeout(buildRoad,50);
+function st(t){document.getElementById('lf').style.display=t==='login'?'flex':'none';document.getElementById('sf').style.display=t==='signup'?'flex':'none';document.querySelectorAll('.atab').forEach((el,i)=>el.classList.toggle('active',(t==='login'&&i===0)||(t==='signup'&&i===1)));}
+function sm(id,txt){const el=document.getElementById(id);el.textContent=txt;el.className='amsg error show';}
+function sl(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='lb'?'ادامه ←':'شروع یادگیری ←');}
+async function doSignup(){const e=document.getElementById('se').value.trim();const p=document.getElementById('sp').value;const p2=document.getElementById('sp2').value;if(!e||!p)return sm('sm','همه فیلدها را پر کنید');if(p.length<6)return sm('sm','رمز عبور باید حداقل ۶ کاراکتر باشد');if(p!==p2)return sm('sm','رمزهای عبور یکسان نیستند');sl('sb',true);const {error}=await sb.auth.signUp({email:e,password:p});sl('sb',false);if(error)return sm('sm',error.message);document.getElementById('ce').textContent=e;document.getElementById('cb').classList.add('show');document.getElementById('sb').style.display='none';}
+async function doLogin(){const e=document.getElementById('le').value.trim();const p=document.getElementById('lp').value;if(!e||!p)return sm('lm','همه فیلدها را پر کنید');sl('lb',true);const {error}=await sb.auth.signInWithPassword({email:e,password:p});sl('lb',false);if(error){if(error.message.includes('Email not confirmed'))return sm('lm','ایمیلت رو تأیید نکردی! 📧');return sm('lm','ایمیل یا رمز عبور اشتباه است');}window.location.href='index.html';}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'){if(document.getElementById('lf').style.display!=='none')doLogin();else doSignup();}});
 </script>
 </body>
 </html>
