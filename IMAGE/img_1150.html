@@ -79,5 +79,82 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 <script>
 function t(el){const open=el.classList.contains('open');document.querySelectorAll('.hw.open,.hs.open,.hg.open').forEach(e=>{e.classList.remove('open');if(e._t){clearTimeout(e._t);e._t=null;}});if(!open){el.classList.add('open');el._t=setTimeout(()=>{el.classList.remove('open');el._t=null;},3500);}}
 </script>
+
+<!-- ✅ Mark as Done -->
+<style>
+#done-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(255,253,246,.96);backdrop-filter:blur(12px);
+  border-top:1px solid rgba(217,206,184,.6);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:10px;
+}
+#done-btn{
+  flex:1;padding:10px;
+  background:#1e3a5f;color:#f5f0e8;
+  border:none;border-radius:10px;
+  font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .25s;
+}
+#done-btn.done{background:#2e8b6b}
+#done-btn:hover{opacity:.9}
+body{padding-bottom:70px!important}
+</style>
+<div id="done-bar">
+  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
+</div>
+<script>
+(function(){
+  const page = location.pathname.split('/').pop().split('?')[0];
+  const title = document.title.split('|')[0].trim().replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim();
+  
+  // Track visit
+  const history = JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  const entry = {
+    page, title,
+    time: new Date().toLocaleString('fa-IR'),
+    ts: Date.now()
+  };
+  // Remove duplicate
+  const filtered = history.filter(h => h.page !== page);
+  filtered.unshift(entry);
+  localStorage.setItem('hoda_history', JSON.stringify(filtered.slice(0,200)));
+  
+  // Also update visited
+  const visited = JSON.parse(localStorage.getItem('hoda_visited')||'[]');
+  const vi = visited.findIndex(v => v.file === page);
+  const ve = {file:page, title, time:new Date().toLocaleDateString('fa-IR')};
+  if(vi>=0) visited[vi]=ve; else visited.unshift(ve);
+  localStorage.setItem('hoda_visited', JSON.stringify(visited.slice(0,100)));
+  
+  // Check if already done
+  const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn = document.getElementById('done-btn');
+  if(done[page]){
+    btn.textContent = '✓ خوانده شده';
+    btn.classList.add('done');
+  }
+  
+  window.markDone = function(){
+    const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    done[page] = new Date().toISOString();
+    localStorage.setItem('hoda_done', JSON.stringify(done));
+    
+    // Add to history as "completed"
+    const h = JSON.parse(localStorage.getItem('hoda_history')||'[]');
+    h.unshift({page, title, time: new Date().toLocaleString('fa-IR'), ts: Date.now(), completed: true});
+    localStorage.setItem('hoda_history', JSON.stringify(h.slice(0,200)));
+    
+    // Update status
+    const status = JSON.parse(localStorage.getItem('hoda_status')||'{}');
+    status[page] = 'done';
+    localStorage.setItem('hoda_status', JSON.stringify(status));
+    
+    btn.textContent = '✓ خوانده شده';
+    btn.classList.add('done');
+  };
+})();
+</script>
+
 </body>
 </html>
