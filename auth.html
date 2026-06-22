@@ -3,62 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ورود — Français avec Hoda</title>
+<title>Français avec Hoda — ورود</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   font-family:'Estedad',sans-serif;
-  background:#f7f3ea;
   min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;direction:rtl;
+  direction:rtl;
+  overflow:hidden;
+  position:relative;
 }
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);}
+
+/* BACKGROUND — جاده و کارت‌ها */
+.bg{
+  position:fixed;inset:0;z-index:0;
+  background:#f5f0e8;
+  background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);
+}
+.bg-road{
+  position:fixed;left:50%;top:0;transform:translateX(-50%);
+  width:80px;height:100vh;
+  background:linear-gradient(to bottom,#e2ddd5,#d4c9b0);
+  opacity:.5;
+  border-left:2px dashed rgba(255,255,255,.6);
+  border-right:2px dashed rgba(255,255,255,.6);
+}
+.bg-cards{
+  position:fixed;inset:0;z-index:1;
+  display:flex;flex-direction:column;
+  align-items:center;gap:16px;
+  padding:20px;
+  pointer-events:none;
+  opacity:.25;
+  filter:blur(1.5px);
+}
+.bg-card{
+  background:#fffdf6;border:1.5px solid #d9ceb8;
+  border-radius:14px;padding:12px 20px;
+  font-size:15px;font-weight:600;color:#1f3a5f;
+  white-space:nowrap;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;inset:0;z-index:2;
+  background:linear-gradient(135deg,rgba(245,240,232,.55) 0%,rgba(31,58,95,.18) 100%);
+  backdrop-filter:blur(3px);
+}
+
+/* CARD */
 .card{
-  position:relative;z-index:1;
-  background:#fffdf6;border:1px solid #d9ceb8;border-radius:24px;
-  padding:2.5rem 2rem;width:100%;max-width:400px;
-  box-shadow:0 20px 60px rgba(31,58,95,.1);
+  position:fixed;inset:0;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;
 }
-.logo{text-align:center;margin-bottom:2rem}
-.logo h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#1f3a5f;white-space:nowrap}
-.logo p{font-size:12px;color:#a8874f;margin-top:6px;letter-spacing:2px}
-.tabs{display:flex;background:#f0ebe0;border-radius:12px;padding:4px;margin-bottom:2rem;gap:4px}
-.tab{flex:1;padding:.6rem;border:none;border-radius:9px;background:transparent;cursor:pointer;
-  font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;color:#a8874f;transition:all .2s}
-.tab.active{background:#fff;color:#1f3a5f;box-shadow:0 2px 8px rgba(31,58,95,.1)}
-.form{display:flex;flex-direction:column;gap:1rem}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:13px;font-weight:500;color:#1f3a5f}
+.glass{
+  background:rgba(255,253,246,.82);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(217,206,184,.6);
+  border-radius:24px;
+  padding:2.2rem 2rem;
+  width:100%;max-width:400px;
+  box-shadow:0 20px 60px rgba(31,58,95,.15),0 0 0 1px rgba(255,255,255,.4);
+}
+
+/* LOGO */
+.logo{text-align:center;margin-bottom:1.8rem}
+.logo h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:600;
+  color:#1f3a5f;letter-spacing:.5px;
+  white-space:nowrap;
+}
+.logo p{font-size:11px;color:#a8874f;margin-top:6px;letter-spacing:2px}
+.logo .flag{font-size:22px;margin-bottom:6px}
+
+/* TABS */
+.tabs{display:flex;background:rgba(240,235,224,.8);border-radius:12px;
+  padding:4px;margin-bottom:1.6rem;gap:4px}
+.tab{flex:1;padding:.55rem;border:none;border-radius:9px;
+  background:transparent;cursor:pointer;
+  font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;
+  color:#a8874f;transition:all .2s}
+.tab.active{background:rgba(255,253,246,.95);color:#1f3a5f;
+  box-shadow:0 2px 8px rgba(31,58,95,.1)}
+
+/* FORM */
+.form{display:flex;flex-direction:column;gap:.85rem}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12.5px;font-weight:500;color:#1f3a5f}
 .field input{
-  padding:.8rem 1rem;border:1.5px solid #d9ceb8;border-radius:12px;
-  background:#fff;font-family:'Estedad',sans-serif;font-size:15px;color:#1f3a5f;
-  transition:border-color .2s;direction:ltr;text-align:left;
+  padding:.75rem 1rem;
+  border:1.5px solid rgba(217,206,184,.7);
+  border-radius:12px;
+  background:rgba(255,253,246,.7);
+  backdrop-filter:blur(4px);
+  font-family:'Estedad',sans-serif;
+  font-size:15px;color:#1f3a5f;
+  transition:border-color .2s,background .2s;
+  direction:ltr;text-align:left;
 }
-.field input:focus{outline:none;border-color:#1f3a5f}
+.field input:focus{
+  outline:none;
+  border-color:#1f3a5f;
+  background:rgba(255,253,246,.95);
+}
 .field input::placeholder{color:#c9c0b0}
+
 .btn{
-  margin-top:.5rem;padding:.9rem;background:#1f3a5f;color:#f7f3ea;
-  border:none;border-radius:12px;font-family:'Estedad',sans-serif;
-  font-size:16px;font-weight:600;cursor:pointer;transition:all .2s;
+  margin-top:.4rem;padding:.85rem;
+  background:#1f3a5f;color:#f7f3ea;
+  border:none;border-radius:12px;
+  font-family:'Estedad',sans-serif;
+  font-size:15px;font-weight:600;
+  cursor:pointer;transition:all .2s;
 }
-.btn:hover{background:#2a4f7f}
-.btn:disabled{background:#a8b8c8;cursor:not-allowed}
-.msg{text-align:center;font-size:13px;padding:.7rem;border-radius:10px;display:none}
-.msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
-.msg.success{background:#f0fdf4;color:#2e7d52;border:1px solid #b7e4c7}
+.btn:hover{background:#2a4f7f;transform:translateY(-1px)}
+.btn:disabled{background:#a8b8c8;cursor:not-allowed;transform:none}
+
+/* MESSAGES */
+.msg{text-align:center;font-size:13px;padding:.7rem;
+  border-radius:10px;display:none;line-height:1.6}
+.msg.error{background:rgba(253,240,240,.9);color:#c0392b;border:1px solid #f5c6c6}
+.msg.success{background:rgba(240,253,244,.9);color:#2e7d52;border:1px solid #b7e4c7}
 .msg.show{display:block}
-.hint{font-size:11px;color:#b0a090;text-align:center;margin-top:.5rem}
+
+/* CONFIRM BOX */
+.confirm-box{
+  display:none;text-align:center;
+  padding:1rem;
+  background:rgba(255,248,230,.9);
+  border:1px solid #e8d5a0;
+  border-radius:14px;
+  margin-top:.5rem;
+}
+.confirm-box.show{display:block}
+.confirm-box .icon{font-size:36px;margin-bottom:.5rem}
+.confirm-box h3{font-size:16px;color:#1f3a5f;margin-bottom:.4rem}
+.confirm-box p{font-size:13px;color:#6a5a3a;line-height:1.7}
+.confirm-box .email-shown{
+  font-weight:700;color:#a8874f;
+  background:rgba(168,135,79,.1);
+  padding:2px 8px;border-radius:6px;
+}
+
+.hint{font-size:11px;color:#b0a090;text-align:center;margin-top:.4rem}
+
+/* PREVIEW BADGES */
+.preview{
+  display:flex;flex-wrap:wrap;gap:6px;
+  justify-content:center;margin-bottom:1.2rem;
+}
+.badge{
+  background:rgba(31,58,95,.08);
+  border:1px solid rgba(31,58,95,.12);
+  border-radius:20px;padding:4px 12px;
+  font-size:11px;color:#1f3a5f;font-weight:500;
+}
 </style>
 </head>
 <body>
+
+<!-- BACKGROUND -->
+<div class="bg"></div>
+<div class="bg-road"></div>
+<div class="bg-cards">
+  <div class="bg-card">📐 گرامر — ۳۳ درس</div>
+  <div class="bg-card">📚 واژگان — ۱۵ مجموعه</div>
+  <div class="bg-card">✍️ مینی‌آرتیکل — ۴۰ متن</div>
+  <div class="bg-card">🎧 InnerFrench — ۷ اپیزود</div>
+  <div class="bg-card">🗼 فرهنگ فرانسه</div>
+  <div class="bg-card">🎯 آمادگی TCF Canada</div>
+  <div class="bg-card">📰 آرتیکل دوزبانه</div>
+  <div class="bg-card">🎙️ پادکست</div>
+</div>
+<div class="overlay"></div>
+
+<!-- GLASS CARD -->
 <div class="card">
+<div class="glass">
   <div class="logo">
+    <div class="flag">🇫🇷</div>
     <h1>Français avec Hoda</h1>
-    <p>یادگیری فرانسه به روش درست</p>
+    <p>مسیر یادگیری · از صفر تا روان</p>
   </div>
+
+  <div class="preview">
+    <span class="badge">۱۰۰+ محتوا</span>
+    <span class="badge">A1 تا TCF</span>
+    <span class="badge">دوزبانه</span>
+    <span class="badge">رایگان</span>
+  </div>
+
   <div class="tabs">
     <button class="tab active" onclick="showTab('login')">ورود</button>
     <button class="tab" onclick="showTab('signup')">ثبت‌نام</button>
@@ -75,7 +212,7 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
       <input type="password" id="loginPass" placeholder="رمز عبور" autocomplete="current-password">
     </div>
     <div class="msg" id="loginMsg"></div>
-    <button class="btn" id="loginBtn" onclick="doLogin()">ورود</button>
+    <button class="btn" id="loginBtn" onclick="doLogin()">ورود به سایت ←</button>
     <p class="hint">حساب ندارید؟ روی «ثبت‌نام» کلیک کنید</p>
   </div>
 
@@ -94,9 +231,17 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
       <input type="password" id="signupPass2" placeholder="رمز عبور را دوباره وارد کنید" autocomplete="new-password">
     </div>
     <div class="msg" id="signupMsg"></div>
-    <button class="btn" id="signupBtn" onclick="doSignup()">ثبت‌نام</button>
+    <div class="confirm-box" id="confirmBox">
+      <div class="icon">📧</div>
+      <h3>ایمیل تأیید فرستاده شد!</h3>
+      <p>یه ایمیل به <span class="email-shown" id="confirmedEmail"></span> فرستادیم.<br><br>
+      روی لینک توی ایمیل کلیک کن تا حسابت فعال بشه و بتونی وارد بشی.<br><br>
+      📂 اگه ایمیل نیومد، پوشه <b>Spam</b> رو چک کن.</p>
+    </div>
+    <button class="btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان</button>
     <p class="hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
   </div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -120,12 +265,13 @@ function showTab(tab){
 
 function showMsg(id,text,type){
   const el=document.getElementById(id);
-  el.textContent=text;el.className='msg '+type+' show';
+  el.textContent=text;
+  el.className='msg '+type+' show';
 }
 function setLoading(id,on){
   const b=document.getElementById(id);
   b.disabled=on;
-  b.textContent=on?'...':(id==='loginBtn'?'ورود':'ثبت‌نام');
+  b.textContent=on?'...':(id==='loginBtn'?'ورود به سایت ←':'ساخت حساب رایگان');
 }
 
 async function doSignup(){
@@ -136,18 +282,12 @@ async function doSignup(){
   if(pass.length<6) return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');
   if(pass!==pass2) return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');
   setLoading('signupBtn',true);
-  const {data, error}=await sb.auth.signUp({email,password:pass});
+  const {error}=await sb.auth.signUp({email,password:pass});
   setLoading('signupBtn',false);
   if(error) return showMsg('signupMsg',error.message,'error');
-  // Auto login after signup (no email confirmation needed)
-  if(data.session){
-    window.location.href='index.html';
-  } else {
-    // Try signing in immediately
-    const {error:err2}=await sb.auth.signInWithPassword({email,password:pass});
-    if(err2) return showMsg('signupMsg','ثبت‌نام شد! لطفاً وارد شوید.','success');
-    window.location.href='index.html';
-  }
+  document.getElementById('confirmedEmail').textContent=email;
+  document.getElementById('confirmBox').classList.add('show');
+  document.getElementById('signupBtn').style.display='none';
 }
 
 async function doLogin(){
@@ -157,7 +297,11 @@ async function doLogin(){
   setLoading('loginBtn',true);
   const {error}=await sb.auth.signInWithPassword({email,password:pass});
   setLoading('loginBtn',false);
-  if(error) return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است','error');
+  if(error){
+    if(error.message.includes('Email not confirmed'))
+      return showMsg('loginMsg','ایمیلت رو تأیید نکردی! صندوق ورودیت رو چک کن 📧','error');
+    return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است','error');
+  }
   window.location.href='index.html';
 }
 
