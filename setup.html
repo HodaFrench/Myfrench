@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setup | Français avec Hoda</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;background:#1e3a5f;color:#f5f0e8;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.box{background:rgba(255,255,255,.08);border-radius:16px;padding:30px;max-width:500px;width:100%;text-align:center}
+h2{margin-bottom:16px;font-size:20px}
+.step{background:rgba(255,255,255,.06);border-radius:10px;padding:12px 16px;margin:10px 0;text-align:right;font-size:13px;display:flex;align-items:center;gap:10px}
+.icon{font-size:18px;flex-shrink:0}
+.status{font-size:11px;color:#c4a572;margin-right:auto}
+button{margin-top:20px;padding:12px 32px;background:#b07a4a;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
+#result{margin-top:16px;font-size:13px;line-height:1.9;color:#c4e8d0}
+#err{margin-top:16px;font-size:12px;color:#f5a0c0;display:none}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>🔧 راه‌اندازی انجمن سوال</h2>
+  <p style="font-size:12px;color:#c4b8a8;margin-bottom:20px">این صفحه یه بار اجرا می‌شه تا جدول Supabase ساخته بشه</p>
+  
+  <div class="step"><span class="icon">📋</span><span>ساخت جدول forum_questions</span><span class="status" id="s1">آماده</span></div>
+  <div class="step"><span class="icon">🔒</span><span>تنظیم دسترسی‌ها (RLS)</span><span class="status" id="s2">آماده</span></div>
+  <div class="step"><span class="icon">✅</span><span>تست اتصال</span><span class="status" id="s3">آماده</span></div>
+  
+  <button id="btn" onclick="runSetup()">▶ شروع راه‌اندازی</button>
+  <div id="result"></div>
+  <div id="err"></div>
+</div>
+
+<script>
+const SB = 'https://ifjsnasoxnalhttzhlpd.supabase.co';
+const KEY = 'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
+
+function setStatus(id, text, color='#c4a572'){
+  const el = document.getElementById(id);
+  el.textContent = text;
+  el.style.color = color;
+}
+
+async function runSetup(){
+  const btn = document.getElementById('btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ در حال راه‌اندازی...';
+  
+  // Step 1: Try to insert - if table exists great, if not we need SQL
+  setStatus('s1', '⏳ بررسی...', '#f5c47a');
+  
+  try {
+    // Try a select first
+    const r1 = await fetch(SB+'/rest/v1/forum_questions?limit=1', {
+      headers: {'apikey': KEY, 'Authorization': 'Bearer '+KEY}
+    });
+    
+    if(r1.ok){
+      setStatus('s1', '✅ موجود است', '#7ee8c0');
+      setStatus('s2', '✅ فعال', '#7ee8c0');
+      setStatus('s3', '⏳ تست...', '#f5c47a');
+      
+      // Test insert
+      const r3 = await fetch(SB+'/rest/v1/forum_questions', {
+        method: 'POST',
+        headers: {'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+        body: JSON.stringify({question:'تست راه‌اندازی', status:'rejected'})
+      });
+      
+      if(r3.ok || r3.status===201){
+        setStatus('s3', '✅ کار می‌کند!', '#7ee8c0');
+        document.getElementById('result').innerHTML = 
+          '🎉 <b>همه چیز آماده است!</b><br>انجمن سوال کار می‌کند.<br><br><a href="FORUM.html" style="color:#c4e8d0">← برو به انجمن</a>';
+        btn.textContent = '✓ آماده';
+      } else {
+        const errBody = await r3.text();
+        setStatus('s3', '❌ خطا', '#f5a0c0');
+        showManual(errBody);
+      }
+    } else {
+      // Table doesn't exist - show manual SQL
+      const errBody = await r1.text();
+      setStatus('s1', '❌ وجود ندارد', '#f5a0c0');
+      showManual(errBody);
+    }
+  } catch(e){
+    showManual(e.message);
+  }
+}
+
+function showManual(err){
+  document.getElementById('btn').textContent = 'نیاز به راه‌اندازی دستی';
+  document.getElementById('err').style.display = 'block';
+  document.getElementById('err').innerHTML = `
+    <div style="text-align:right;background:rgba(0,0,0,.3);border-radius:10px;padding:16px;margin-top:10px">
+      <b style="color:#f5c47a">📋 این SQL رو در Supabase اجرا کن:</b><br><br>
+      <code style="font-size:11px;direction:ltr;display:block;text-align:left;color:#c4e8d0;line-height:1.8;white-space:pre">
+CREATE TABLE IF NOT EXISTS forum_questions (
+  id BIGSERIAL PRIMARY KEY,
+  question TEXT NOT NULL,
+  answer TEXT,
+  status TEXT DEFAULT 'pending',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  answered_at TIMESTAMPTZ
+);
+ALTER TABLE forum_questions ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "public_insert" ON forum_questions 
+  FOR INSERT WITH CHECK (true);
+CREATE POLICY "read_approved" ON forum_questions 
+  FOR SELECT USING (status = 'approved');
+CREATE POLICY "admin_all" ON forum_questions 
+  FOR ALL USING (true) WITH CHECK (true);
+      </code>
+      <br>
+      <a href="https://supabase.com/dashboard/project/ifjsnasoxnalhttzhlpd/sql" 
+         target="_blank" 
+         style="color:#c4a572;font-size:12px">
+        → باز کردن SQL Editor در Supabase ↗
+      </a>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>
