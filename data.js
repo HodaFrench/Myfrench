@@ -84,6 +84,71 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "TCF/PAGE_examens_tcf.html",
+    title: "📋 راهنمای امتحانات TCF / TEF / DELF",
+    titleFr: "Guide des examens TCF",
+    category: "tcf", level: "B1–C1",
+    tags: ["tcf","tef","delf","exam","Canada"],
+    summary: "معرفی کامل امتحانات TCF Canada، TEF و DELF"
+  },
+  {
+    file: "TCF/Tache1/index.html",
+    title: "🎤 Expression Orale — Tâche 1",
+    titleFr: "Tâche 1: Monologue",
+    category: "tcf", level: "B1–C1",
+    tags: ["tcf","expression orale","tâche 1","monologue"],
+    summary: "تاچه ۱: مونولوگ آزاد — توضیح و تمرین"
+  },
+  {
+    file: "TCF/Tache2/jogging.html",
+    title: "🎤 Expression Orale — Tâche 2 (Jogging)",
+    titleFr: "Tâche 2: Jogging en groupe",
+    category: "tcf", level: "B1–C1",
+    tags: ["tcf","expression orale","tâche 2","dialogue","jogging"],
+    summary: "تاچه ۲: گفتگو — موضوع: جاگینگ گروهی"
+  },
+  {
+    file: "TCF/Tache3/TCF_EO_T3_autorite_enfant.html",
+    title: "🎤 Tâche 3 — Autorité et enfant",
+    titleFr: "Tâche 3: Autorité et enfant",
+    category: "tcf", level: "B2–C1",
+    tags: ["tcf","expression orale","tâche 3","débat","autorité"],
+    summary: "تاچه ۳: بحث و استدلال — اقتدار والدین"
+  },
+  {
+    file: "TCF/Tache3/TCF_EO_T3_expatriation.html",
+    title: "🎤 Tâche 3 — Expatriation",
+    titleFr: "Tâche 3: S'habituer à l'étranger",
+    category: "tcf", level: "B2–C1",
+    tags: ["tcf","expression orale","tâche 3","débat","expatriation"],
+    summary: "تاچه ۳: بحث — زندگی در خارج از کشور"
+  },
+  {
+    file: "TCF/Tache3/TCF_EO_T3_relations_distance.html",
+    title: "🎤 Tâche 3 — Relations à distance",
+    titleFr: "Tâche 3: Relations à distance",
+    category: "tcf", level: "B2–C1",
+    tags: ["tcf","expression orale","tâche 3","débat","relations"],
+    summary: "تاچه ۳: بحث — روابط دوری"
+  },
+  {
+    file: "TCF/Tache3/TCF_EO_T3_travail_canada.html",
+    title: "🎤 Tâche 3 — Travailler au Canada",
+    titleFr: "Tâche 3: Travail au Canada",
+    category: "tcf", level: "B2–C1",
+    tags: ["tcf","expression orale","tâche 3","débat","Canada","travail"],
+    summary: "تاچه ۳: بحث — کار در کانادا"
+  },
+  {
+    file: "TCF/Tache3/TCF_EO_T3_travail_etranger.html",
+    title: "🎤 Tâche 3 — Travail à l'étranger",
+    titleFr: "Tâche 3: Travail à l'étranger",
+    category: "tcf", level: "B2–C1",
+    tags: ["tcf","expression orale","tâche 3","débat","travail"],
+    summary: "تاچه ۳: بحث — کار در خارج از کشور"
+  },
+
+  {
     file: "IMAGE/img_1166.html",
     title: "📸 تکنسین داخل لوله",
     titleFr: "Un technicien dans un tuyau",
@@ -468,16 +533,7 @@ const LESSONS = [
     category: "culture", level: "B1",
     tags: ["فرهنگ","کانادا","Acadie","Guyane","fête"],
     summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
-  },
-  {
-    file: "TCF/Tache2/jogging.html",
-    title: "🏃 Tâche 2 — Le jogging en groupe",
-    titleFr: "Expression Orale — Jogging en groupe",
-    category: "tcf", level: "B1",
-    tags: ["TCF","expression orale","tâche 2","jogging","sport"],
-    summary: "تمرین تسک ۲ با موضوع دویدن گروهی — ۱۲ سوال با تصویر"
-  },
-  {
+  },  {
     file: "VOCAB_mots_difficiles.html",
     title: "📚 ۱۰۰ کلمهٔ دشوار فرانسه",
     titleFr: "100 Mots Difficiles en Français",
@@ -569,23 +625,6 @@ const LESSONS = [
     tags: ["واژگان","روتین","se lever","quotidien"],
     summary: "۵۰+ واژهٔ روتین روزانه: صبح (انعکاسی‌ها) + روز + شب + فعل‌های کلیدی (avoir l'habitude de...) + مکالمهٔ نمونه + متن توصیفی کامل.",
   },
-  {
-    file: "TCF/Tache1/index.html",
-    title: "🎙️ Tâche 1 — Expression Orale",
-    titleFr: "Expression Orale Tâche 1",
-    category: "tcf", level: "B1–B2",
-    tags: ["TCF","expression orale","tâche 1"],
-    summary: "تسک ۱ — به زودی"
-  },
-  {
-    file: "TCF/PAGE_examens_tcf.html",
-    title: "راهنمای کامل امتحانات TCF / TEF / DELF",
-    titleFr: "Guide des examens de français",
-    category: "tcf", level: "tous niveaux",
-    tags: ["TCF","TEF","DELF","DALF","امتحان","مهاجرت کانادا"],
-    summary: "مقایسهٔ TCF vs TEF vs DELF · ساختار TCF Canada (۴ مهارت) · سطوح A1-C2 · نمره‌دهی · استراتژی روز امتحان · منابع رایگان",
-  },
-
   {
     file: "LECON_conditionnel.html",
     title: "درسنامه: Conditionnel Présent",
@@ -1144,73 +1183,7 @@ const LESSONS = [
     premium: false,
     tags: ["après que", "subjonctif", "indicatif", "تمرین"],
     summary: "چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی.",
-  },
-  {
-    file: "TCF/Tache3/TCF_EO_T3_expatriation.html",
-    title: "زندگی در کشوری دیگر",
-    titleFr: "S'habituer à vivre à l'étranger",
-    category: "tcf",
-    section: "expression-orale",
-    task: "tache-3",
-    sujet: "immigration",
-    level: "B2",
-    premium: false,
-    tags: ["اکسپتریشن", "مهاجرت", "نمونه‌ی کامل"],
-    summary: "یک پاسخ کامل و تحلیل‌شده برای تکلیف ۳ — با ساختارها و متصل‌کننده‌های رنگی، نکات واژگانی و ترجمه‌ی فارسی هر پاراگراف.",
-  },
-  {
-    file: "TCF/Tache3/TCF_EO_T3_autorite_enfant.html",
-    title: "اقتدار در تربیت کودک",
-    titleFr: "L'autorité dans l'éducation",
-    category: "tcf",
-    section: "expression-orale",
-    task: "tache-3",
-    sujet: "education",
-    level: "B2",
-    premium: false,
-    tags: ["تربیت", "کودک", "نمونه‌ی کامل"],
-    summary: "آیا برای تربیت درست کودک به اقتدار نیاز است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف.",
-  },
-  {
-    file: "TCF/Tache3/TCF_EO_T3_relations_distance.html",
-    title: "روابط از راه دور",
-    titleFr: "Les relations à distance",
-    category: "tcf",
-    section: "expression-orale",
-    task: "tache-3",
-    sujet: "technologie",
-    level: "B2",
-    premium: false,
-    tags: ["اینترنت", "روابط", "نمونه‌ی کامل"],
-    summary: "آیا روابط از راه دور به‌لطف اینترنت می‌توانند به اندازه‌ی روابط حضوری مستحکم باشند؟ پاسخی کامل با متصل‌کننده‌ها، واژگان سوژه و ترجمه‌ی فارسی.",
-  },
-  {
-    file: "TCF/Tache3/TCF_EO_T3_travail_etranger.html",
-    title: "کار کردن در کشوری دیگر",
-    titleFr: "Travailler dans un autre pays",
-    category: "tcf",
-    section: "expression-orale",
-    task: "tache-3",
-    sujet: "etudes-travail",
-    level: "B2",
-    premium: false,
-    tags: ["کار", "خارج", "نمونه‌ی کامل"],
-    summary: "آیا کار کردن در کشوری دیگر آسان است؟ یک پاسخ کامل با متصل‌کننده‌های هایلایت‌شده، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف.",
-  },
-  {
-    file: "TCF/Tache3/TCF_EO_T3_travail_canada.html",
-    title: "پیدا کردن کار در کانادا",
-    titleFr: "Trouver un travail au Canada",
-    category: "tcf",
-    section: "expression-orale",
-    task: "tache-3",
-    sujet: "etudes-travail",
-    level: "B2",
-    premium: false,
-    tags: ["کانادا", "کار", "مهاجرت"],
-    summary: "آیا پیدا کردن کار در کانادا آسان است؟ پاسخی کامل و کاربردی برای متقاضیان مهاجرت — با متصل‌کننده‌ها، واژگان سوژه و ترجمه‌ی فارسی هر پاراگراف.",
-  },
-];
+  },];
 
 // ═══════════════════════════════════════════════════════════
 //  بانک نکته‌ها — «می‌دونستی که...؟»
