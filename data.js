@@ -83,6 +83,12 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {file:"GRAM_passe_recent.html",title:"📐 Le Passé Récent — venir de",titleFr:"Le Passé Récent",category:"grammar",level:"A2–B1",tags:["passé récent","venir de","A2"],summary:"گذشته نزدیک — تازه"},
+  {file:"GRAM_passe_compose.html",title:"📐 Le Passé Composé",titleFr:"Le Passé Composé",category:"grammar",level:"A2–B1",tags:["passé composé","auxiliaire","participe passé"],summary:"گذشته مرکب کامل"},
+  {file:"GRAM_pc_imparfait.html",title:"📐 Passé Composé et Imparfait",titleFr:"PC et Imparfait",category:"grammar",level:"B1–B2",tags:["passé composé","imparfait","B1"],summary:"تفاوت گذشته مرکب و استمراری"},
+  {file:"GRAM_subjonctif.html",title:"📐 Subjonctif vs Indicatif",titleFr:"Subjonctif vs Indicatif",category:"grammar",level:"B1–C1",tags:["subjonctif","indicatif","B2","C1"],summary:"وجه التزامی کامل با تمام محرک‌ها"},
+  {file:"GRAM_en_y_cod_coi.html",title:"📐 EN · Y · COD · COI",titleFr:"Pronoms compléments",category:"grammar",level:"B1–B2",tags:["pronoms","COD","COI","EN","Y"],summary:"ضمایر مفعولی کامل با ترتیب و جایگاه"},
+
   {
     file: "MINI_000.html",
     title: "✍️ Le silence qui parle",
