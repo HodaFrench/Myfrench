@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "PODCAST_player.html",
+    title: "🎙️ پادکست فرانسوی — پخش مستقیم",
+    titleFr: "Podcasts français — Psychologie et bien-être",
+    category: "podcast", level: "B1–B2",
+    tags: ["podcast","psychologie","écoute","B1","B2"],
+    summary: "پخش مستقیم پادکست‌های فرانسوی — روان‌شناسی و رفاه"
+  },
+
+  {
     file: "PODCAST_ep288_amour.html",
     title: "🎙️ L'amour idéalisé — entre rêve et réalité",
     titleFr: "Ep.288 — L'amour idéalisé",
