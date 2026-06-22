@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Subjonctif vs Indicatif | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}.card.gold{border-right:5px solid var(--gold)}.card.green{border-right:5px solid var(--green)}.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.card.navy .card-label{color:var(--navy)}.card.gold .card-label{color:var(--gold)}.card.green .card-label{color:var(--green)}.card.rose .card-label{color:var(--rose)}
+.conj-table,.irr-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+.conj-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:right;font-weight:600}
+.conj-table td{padding:8px 12px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:7px 12px;font-weight:700}
+.irr-table td{padding:7px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.pron{color:var(--gold);font-weight:700}.vb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}.tr{font-size:12px;color:var(--gray)}
+.ex-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.warn{background:#fff8e8;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+.timeline-box{background:var(--cream);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+</style>
+</head>
+<body>
+<div class="hoda-back"><a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a><span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Subjonctif vs Indicatif</span></div>
+<div class="hero"><div class="hero-tag">📐 GRAMMAIRE · B1–C1</div><h1>Subjonctif vs Indicatif</h1><div style="font-size:13px;opacity:.85">وجه التزامی در مقابل اخباری</div></div>
+<div class="wrap">
+<div class="card navy">
+  <div class="card-label">🔷 PRINCIPE FONDAMENTAL</div>
+  <div class="compare">
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--navy)">🔵 INDICATIF</div>
+      <div style="font-size:13.5px;line-height:1.8">بیان <b>واقعیت عینی</b> — آنچه هست<br>Je sais qu'il <span class="hl">est</span> là. ✓<br><span style="font-size:12px;color:var(--gray)">می‌دانم آنجاست. (واقعیت)</span></div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--rose)">🔴 SUBJONCTIF</div>
+      <div style="font-size:13.5px;line-height:1.8">بیان <b>ذهنیت</b> — آنچه می‌خواهیم/احساس می‌کنیم<br>Je veux qu'il <span class="hl-r">soit</span> là. ✓<br><span style="font-size:12px;color:var(--gray)">می‌خواهم آنجا باشد. (خواسته)</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">⚙ CONJUGAISON SUBJONCTIF PRÉSENT</div>
+  <div style="background:var(--cream);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13px;direction:ltr;font-family:'Roboto',serif">
+    Radical = <span class="hl">3e personne pluriel présent</span> + <span class="hl-g">-e / -es / -e / -ions / -iez / -ent</span>
+  </div>
+  <table class="conj-table">
+    <tr><th>ضمیر</th><th>PARLER</th><th>FINIR</th><th>PRENDRE</th></tr>
+    <tr><td class="pron">que je</td><td class="vb">parle</td><td class="vb">finisse</td><td class="vb">prenne</td></tr>
+    <tr><td class="pron">que tu</td><td class="vb">parles</td><td class="vb">finisses</td><td class="vb">prennes</td></tr>
+    <tr><td class="pron">qu'il</td><td class="vb">parle</td><td class="vb">finisse</td><td class="vb">prenne</td></tr>
+    <tr><td class="pron">que nous</td><td class="vb">parlions</td><td class="vb">finissions</td><td class="vb">prenions</td></tr>
+    <tr><td class="pron">que vous</td><td class="vb">parliez</td><td class="vb">finissiez</td><td class="vb">preniez</td></tr>
+    <tr><td class="pron">qu'ils</td><td class="vb">parlent</td><td class="vb">finissent</td><td class="vb">prennent</td></tr>
+  </table>
+  <div class="ex-label">افعال کاملاً بی‌قاعده (FÊTASAV)</div>
+  <table class="irr-table">
+    <tr><th>Verbe</th><th>que je...</th><th>que nous...</th></tr>
+    <tr><td class="inf">être</td><td>sois</td><td>soyons</td></tr>
+    <tr><td class="inf">avoir</td><td>aie</td><td>ayons</td></tr>
+    <tr><td class="inf">faire</td><td>fasse</td><td>fassions</td></tr>
+    <tr><td class="inf">aller</td><td>aille</td><td>allions</td></tr>
+    <tr><td class="inf">pouvoir</td><td>puisse</td><td>puissions</td></tr>
+    <tr><td class="inf">savoir</td><td>sache</td><td>sachions</td></tr>
+    <tr><td class="inf">vouloir</td><td>veuille</td><td>voulions</td></tr>
+    <tr><td class="inf">falloir</td><td>faille</td><td>—</td></tr>
+    <tr><td class="inf">valoir</td><td>vaille</td><td>valions</td></tr>
+  </table>
+</div>
+
+<div class="card green">
+  <div class="card-label">📌 DÉCLENCHEURS SUBJONCTIF — محرک‌ها</div>
+  
+  <div class="ex-label">① VOLONTÉ / DÉSIR — خواستن و آرزو</div>
+  <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:8px;line-height:2">
+    vouloir que · souhaiter que · désirer que · avoir envie que<br>
+    préférer que · exiger que · demander que · ordonner que<br>
+    interdire que · accepter que · refuser que
+  </div>
+  <div class="ex-fr">Je veux que tu <span class="hl-r">viennes</span> avec moi.</div><div class="ex-fa">می‌خواهم با من بیایی.</div>
+  <div class="ex-fr">Elle préfère qu'il <span class="hl-r">parte</span> tôt.</div><div class="ex-fa">ترجیح می‌دهد زود برود.</div>
+
+  <div class="ex-label">② SENTIMENT / ÉMOTION — احساسات</div>
+  <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:8px;line-height:2">
+    être content(e) que · être heureux que · être triste que<br>
+    être désolé que · avoir peur que · être surpris que<br>
+    être fier que · être jaloux que · regretter que<br>
+    être choqué que · être déçu que · s'étonner que
+  </div>
+  <div class="ex-fr">Je suis content que tu <span class="hl-r">sois</span> là.</div><div class="ex-fa">خوشحالم که اینجا هستی.</div>
+  <div class="ex-fr">J'ai peur qu'il ne <span class="hl-r">vienne</span> pas.</div><div class="ex-fa">می‌ترسم نیاید.</div>
+
+  <div class="ex-label">③ OBLIGATION / NÉCESSITÉ</div>
+  <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:8px;line-height:2">
+    il faut que · il est nécessaire que · il est essentiel que<br>
+    il est important que · il est indispensable que<br>
+    il suffit que · il vaut mieux que · il est urgent que
+  </div>
+  <div class="ex-fr">Il faut que tu <span class="hl-r">fasses</span> tes devoirs.</div><div class="ex-fa">باید تکالیفت را انجام دهی.</div>
+  <div class="ex-fr">Il est important que vous <span class="hl-r">soyez</span> à l'heure.</div><div class="ex-fa">مهم است که سر وقت باشید.</div>
+
+  <div class="ex-label">④ DOUTE / INCERTITUDE — شک</div>
+  <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:8px;line-height:2">
+    douter que · ne pas croire que · ne pas penser que<br>
+    il est peu probable que · il est douteux que<br>
+    il est impossible que · il est rare que
+  </div>
+  <div class="ex-fr">Je doute qu'il <span class="hl-r">sache</span> la vérité.</div><div class="ex-fa">شک دارم حقیقت را بداند.</div>
+  <div class="ex-fr">Il est peu probable qu'elle <span class="hl-r">arrive</span> à temps.</div><div class="ex-fa">بعید است به موقع برسد.</div>
+
+  <div class="ex-label">⑤ CONJONCTIONS SUBORDONNANTES — حروف ربط</div>
+  <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;background:var(--cream);border-radius:8px;padding:10px 14px;margin-bottom:8px;line-height:2">
+    <b>BUT:</b> pour que · afin que<br>
+    <b>CONCESSION:</b> bien que · quoique · encore que<br>
+    <b>CONDITION:</b> à condition que · pourvu que · à moins que<br>
+    <b>TEMPS:</b> avant que · jusqu'à ce que<br>
+    <b>CRAINTE:</b> de peur que · de crainte que
+  </div>
+  <div class="ex-fr">Je parle lentement pour que tu <span class="hl-r">comprennes</span>.</div><div class="ex-fa">آهسته صحبت می‌کنم تا بفهمی.</div>
+  <div class="ex-fr">Bien qu'il <span class="hl-r">soit</span> fatigué, il continue.</div><div class="ex-fa">اگرچه خسته است، ادامه می‌دهد.</div>
+  <div class="ex-fr">Appelle-moi avant qu'il <span class="hl-r">parte</span>.</div><div class="ex-fa">قبل از اینکه برود زنگ بزن.</div>
+  <div class="ex-fr">Reste ici jusqu'à ce qu'il <span class="hl-r">arrive</span>.</div><div class="ex-fa">اینجا بمان تا برسد.</div>
+
+  <div class="ex-label">⑥ SUPERLATIF / SEUL / PREMIER</div>
+  <div class="ex-fr">C'est le meilleur film que j'<span class="hl-r">aie</span> vu.</div><div class="ex-fa">بهترین فیلمی است که دیده‌ام.</div>
+  <div class="ex-fr">C'est la seule personne qui me <span class="hl-r">comprenne</span>.</div><div class="ex-fa">تنها کسی است که مرا می‌فهمد.</div>
+</div>
+
+<div class="card rose">
+  <div class="card-label">⚠️ CAS PIÈGES — تله‌های مهم</div>
+  
+  <div class="ex-label">① ESPÉRER → همیشه INDICATIF!</div>
+  <div class="ex-fr">J'espère qu'il <span class="hl">viendra</span>. ✓ (futur indicatif)</div>
+  <div class="ex-fr" style="opacity:.6;border-color:var(--rose)">J'espère qu'il vienne. ✗ (اشتباه!)</div>
+  <div class="ex-fa">امیدوارم بیاید. — بعد از espérer همیشه indicatif!</div>
+
+  <div class="ex-label">② PENSER / CROIRE → Affirmative = Indicatif / Négative = Subjonctif</div>
+  <div class="ex-fr">Je pense qu'il <span class="hl">est</span> intelligent. ✓</div><div class="ex-fa">فکر می‌کنم باهوش است. (مثبت → indicatif)</div>
+  <div class="ex-fr">Je ne pense pas qu'il <span class="hl-r">soit</span> intelligent. ✓</div><div class="ex-fa">فکر نمی‌کنم باهوش باشد. (منفی → subjonctif)</div>
+
+  <div class="ex-label">③ IL EST PROBABLE / IL EST POSSIBLE</div>
+  <div class="ex-fr">Il est <b>probable</b> qu'il <span class="hl">viendra</span>. ✓ (indicatif — احتمال بالا)</div>
+  <div class="ex-fr">Il est <b>possible</b> qu'il <span class="hl-r">vienne</span>. ✓ (subjonctif — احتمال پایین)</div>
+
+  <div class="ex-label">④ MÊME SUJET → INFINITIF (نه subjonctif)</div>
+  <div class="ex-fr">Je veux <span class="hl">partir</span>. ✓ (sujet identique → infinitif)</div>
+  <div class="ex-fr" style="opacity:.6;border-color:var(--rose)">Je veux que je parte. ✗ (اشتباه!)</div>
+  <div class="ex-fr">Je veux que <b>tu</b> <span class="hl-r">partes</span>. ✓ (sujet différent → subjonctif)</div>
+
+  <div class="ex-label">⑤ APRÈS QUE → INDICATIF</div>
+  <div class="ex-fr">Il est arrivé <b>après que</b> je <span class="hl">suis parti</span>. ✓ (indicatif)</div>
+  <div class="ex-fr">Il est parti <b>avant que</b> je <span class="hl-r">sois</span> arrivé. ✓ (subjonctif)</div>
+</div></div>
+<div class="gram-nav"><a class="gnav-btn" href="GRAM_pc_imparfait.html">&#8594; PC et Imparfait</a><span style="font-size:11px;color:#b0a898">گرامر</span><a class="gnav-btn" href="GRAM_en_y_cod_coi.html">EN, Y, COD, COI &#8592;</a></div>
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ خوانده شد</button></div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body></html>
