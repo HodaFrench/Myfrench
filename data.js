@@ -83,6 +83,63 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {
+    file: "innerfrench.html?ep=1",
+    title: "🎧 InnerFrench #1 — یادگیری طبیعی زبان فرانسه",
+    titleFr: "#1 Apprendre le français naturellement",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "یادگیری طبیعی زبان فرانسه"
+  },
+  {
+    file: "innerfrench.html?ep=2",
+    title: "🎧 InnerFrench #2 — زندگی با ربات‌ها",
+    titleFr: "#2 Vivre avec les robots",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "زندگی با ربات‌ها"
+  },
+  {
+    file: "innerfrench.html?ep=3",
+    title: "🎧 InnerFrench #3 — خوشبخت‌ترین کشورها",
+    titleFr: "#3 Les pays les plus heureux",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "خوشبخت‌ترین کشورها"
+  },
+  {
+    file: "innerfrench.html?ep=4",
+    title: "🎧 InnerFrench #4 — نظریه‌ی جنسیت",
+    titleFr: "#4 La théorie du genre",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "نظریه‌ی جنسیت"
+  },
+  {
+    file: "innerfrench.html?ep=5",
+    title: "🎧 InnerFrench #5 — رئیس‌جمهور جدید فرانسه: امانوئل ماکرون",
+    titleFr: "#5 Le nouveau président français : Emmanuel Macron",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "رئیس‌جمهور جدید فرانسه: امانوئل ماکرون"
+  },
+  {
+    file: "innerfrench.html?ep=6",
+    title: "🎧 InnerFrench #6 — یادگیری زبان: مزایای پنهان",
+    titleFr: "#6 Apprendre une langue : les avantages cachés",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "یادگیری زبان: مزایای پنهان"
+  },
+  {
+    file: "innerfrench.html?ep=7",
+    title: "🎧 InnerFrench #7 — نظریه‌های توطئه",
+    titleFr: "#7 Les théories du complot",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","écoute","B1","B2"],
+    summary: "نظریه‌های توطئه"
+  },
+
 
   {
     file: "VIDEO_intro.html",
