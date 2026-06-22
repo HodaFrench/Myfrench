@@ -7,218 +7,161 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Estedad:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Estedad',sans-serif;
-  min-height:100vh;direction:rtl;
+body{font-family:'Estedad',sans-serif;min-height:100vh;direction:rtl;
   background:#f5f0e8;
   background-image:repeating-linear-gradient(transparent,transparent 35px,rgba(65,97,138,0.06) 35px,rgba(65,97,138,0.06) 36px);
-  display:flex;
+  display:flex;align-items:stretch;
 }
-.page{display:flex;width:100%;min-height:100vh}
 
-/* سمت چپ — جاده S شکل */
-.preview-side{
-  flex:1;position:relative;overflow:hidden;
-  display:flex;flex-direction:column;
-  align-items:center;
-  padding:40px 0 0;
+/* پس‌زمینه — جاده با opacity کم */
+.bg-wrap{
+  position:fixed;inset:0;z-index:0;
+  overflow:hidden;
+  opacity:.45;
 }
-.preview-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:46px;font-weight:600;color:#1f3a5f;
-  text-align:center;margin-bottom:4px;line-height:1.2;
-  z-index:2;position:relative;
-}
-.preview-sub{
-  font-size:13px;color:#a8874f;letter-spacing:2px;
-  margin-bottom:20px;text-align:center;
-  z-index:2;position:relative;
-}
-.road-svg{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  z-index:1;
-}
-.card-labels{
-  position:absolute;top:0;left:0;width:100%;height:100%;
-  z-index:3;pointer-events:none;
-}
-.clabel{
+.bg-road{width:100%;height:100%;display:block}
+.bg-card{
   position:absolute;
-  background:#fffdf6;border:1.5px solid #d9ceb8;
-  border-radius:12px;padding:8px 14px;
-  font-size:13px;font-weight:600;color:#1f3a5f;
-  box-shadow:0 4px 14px rgba(31,58,95,.1);
+  transform:translateY(-50%);
+  background:rgba(255,253,246,.9);
+  border:1.5px solid #d9ceb8;
+  border-radius:10px;
+  padding:6px 12px;
+  font-size:12px;font-weight:600;color:#1f3a5f;
   white-space:nowrap;
+  box-shadow:0 3px 10px rgba(31,58,95,.08);
 }
 
-/* سمت راست — فرم */
-.auth-side{
-  width:360px;min-height:100vh;
-  background:#fffdf6;
-  border-left:1px solid #e8e0ce;
-  box-shadow:-8px 0 40px rgba(31,58,95,.1);
-  display:flex;flex-direction:column;
-  justify-content:center;
-  padding:2.5rem 2rem;
+/* فرم — وسط صفحه روی پس‌زمینه */
+.page{
+  position:relative;z-index:1;
+  width:100%;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:2rem 1rem;
+}
+.glass{
+  background:rgba(255,253,246,.93);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(217,206,184,.8);
+  border-radius:24px;
+  padding:2.2rem 2rem;
+  width:100%;max-width:380px;
+  box-shadow:0 20px 60px rgba(31,58,95,.12),0 0 0 1px rgba(255,255,255,.5);
 }
 .logo{text-align:center;margin-bottom:1.6rem}
-.logo .flag{font-size:28px;margin-bottom:6px}
+.logo .flag{font-size:26px;margin-bottom:6px}
 .logo h1{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1f3a5f;white-space:nowrap}
 .logo p{font-size:11px;color:#a8874f;margin-top:5px;letter-spacing:2px}
 
-.tabs{display:flex;background:#f0ebe0;border-radius:12px;padding:4px;margin-bottom:1.4rem;gap:4px}
+.tabs{display:flex;background:rgba(240,235,224,.8);border-radius:12px;padding:4px;margin-bottom:1.4rem;gap:4px}
 .tab{flex:1;padding:.55rem;border:none;border-radius:9px;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:14px;font-weight:500;color:#a8874f;transition:all .2s}
-.tab.active{background:#fff;color:#1f3a5f;box-shadow:0 2px 8px rgba(31,58,95,.1)}
+.tab.active{background:rgba(255,253,246,.95);color:#1f3a5f;box-shadow:0 2px 8px rgba(31,58,95,.1)}
 
 .form{display:flex;flex-direction:column;gap:.8rem}
 .field{display:flex;flex-direction:column;gap:5px}
 .field label{font-size:12.5px;font-weight:500;color:#1f3a5f}
-.field input{padding:.72rem 1rem;border:1.5px solid #d9ceb8;border-radius:12px;background:#fff;font-family:'Estedad',sans-serif;font-size:15px;color:#1f3a5f;transition:border-color .2s;direction:ltr;text-align:left}
-.field input:focus{outline:none;border-color:#1f3a5f}
+.field input{padding:.72rem 1rem;border:1.5px solid rgba(217,206,184,.8);border-radius:12px;background:rgba(255,255,255,.8);font-family:'Estedad',sans-serif;font-size:15px;color:#1f3a5f;transition:border-color .2s;direction:ltr;text-align:left}
+.field input:focus{outline:none;border-color:#1f3a5f;background:#fff}
 .field input::placeholder{color:#c9c0b0}
 .btn{margin-top:.4rem;padding:.82rem;background:#1f3a5f;color:#f7f3ea;border:none;border-radius:12px;font-family:'Estedad',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s}
 .btn:hover{background:#2a4f7f}
 .btn:disabled{background:#a8b8c8;cursor:not-allowed}
-
 .msg{text-align:center;font-size:13px;padding:.65rem;border-radius:10px;display:none;line-height:1.6}
 .msg.error{background:#fdf0f0;color:#c0392b;border:1px solid #f5c6c6}
 .msg.success{background:#f0fdf4;color:#2e7d52;border:1px solid #b7e4c7}
 .msg.show{display:block}
-
 .confirm-box{display:none;text-align:center;padding:1.1rem;background:#fff8e8;border:1px solid #e8d5a0;border-radius:14px;margin-top:.4rem}
 .confirm-box.show{display:block}
-.confirm-box .icon{font-size:32px;margin-bottom:.4rem}
-.confirm-box h3{font-size:15px;color:#1f3a5f;margin-bottom:.4rem;font-weight:700}
+.confirm-box .icon{font-size:30px;margin-bottom:.4rem}
+.confirm-box h3{font-size:14px;color:#1f3a5f;margin-bottom:.4rem;font-weight:700}
 .confirm-box p{font-size:12px;color:#6a5a3a;line-height:1.8}
 .confirm-box .em{font-weight:700;color:#a8874f}
-
 .hint{font-size:11px;color:#b0a090;text-align:center;margin-top:.4rem}
-
-@media(max-width:700px){
-  .page{flex-direction:column-reverse}
-  .preview-side{min-height:45vh}
-  .auth-side{width:100%;border-left:none;border-top:1px solid #e8e0ce;min-height:auto}
-  .preview-title{font-size:30px}
-}
 </style>
 </head>
 <body>
+
+<!-- پس‌زمینه جاده -->
+<div class="bg-wrap">
+  <svg class="bg-road" viewBox="0 0 320 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g><ellipse cx="38" cy="180" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 38 180)"/><ellipse cx="24" cy="173" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 24 173)"/><ellipse cx="282" cy="300" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 282 300)"/><ellipse cx="268" cy="293" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 268 293)"/><ellipse cx="35" cy="450" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 35 450)"/><ellipse cx="21" cy="443" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 21 443)"/><ellipse cx="279" cy="580" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 279 580)"/><ellipse cx="265" cy="573" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 265 573)"/><ellipse cx="38" cy="700" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 38 700)"/><ellipse cx="24" cy="693" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 24 693)"/><ellipse cx="280" cy="820" rx="22" ry="13" fill="#8fad78" opacity=".6" transform="rotate(-16 280 820)"/><ellipse cx="266" cy="813" rx="14" ry="9" fill="#7a9e65" opacity=".5" transform="rotate(8 266 813)"/></g>
+    <path d="M160.0 20 L162.1 26 L164.1 32 L166.2 38 L168.3 44 L170.3 50 L172.3 56 L174.3 62 L176.2 68 L178.2 74 L180.0 80 L181.9 86 L183.7 92 L185.4 98 L187.1 104 L188.7 110 L190.3 116 L191.8 122 L193.2 128 L194.6 134 L195.9 140 L197.1 146 L198.2 152 L199.3 158 L200.3 164 L201.1 170 L201.9 176 L202.6 182 L203.3 188 L203.8 194 L204.2 200 L204.6 206 L204.8 212 L204.9 218 L205.0 224 L205.0 230 L204.8 236 L204.6 242 L204.2 248 L203.8 254 L203.3 260 L202.7 266 L202.0 272 L201.2 278 L200.3 284 L199.4 290 L198.3 296 L197.2 302 L196.0 308 L194.7 314 L193.3 320 L191.9 326 L190.4 332 L188.8 338 L187.2 344 L185.5 350 L183.8 356 L182.0 362 L180.2 368 L178.3 374 L176.4 380 L174.4 386 L172.4 392 L170.4 398 L168.4 404 L166.4 410 L164.3 416 L162.2 422 L160.1 428 L158.1 434 L156.0 440 L153.9 446 L151.9 452 L149.8 458 L147.8 464 L145.8 470 L143.9 476 L142.0 482 L140.1 488 L138.2 494 L136.5 500 L134.7 506 L133.0 512 L131.4 518 L129.8 524 L128.3 530 L126.9 536 L125.5 542 L124.2 548 L123.0 554 L121.8 560 L120.8 566 L119.8 572 L118.9 578 L118.1 584 L117.4 590 L116.8 596 L116.2 602 L115.8 608 L115.5 614 L115.2 620 L115.1 626 L115.0 632 L115.0 638 L115.2 644 L115.4 650 L115.7 656 L116.1 662 L116.7 668 L117.3 674 L118.0 680 L118.7 686 L119.6 692 L120.6 698 L121.6 704 L122.7 710 L123.9 716 L125.2 722 L126.6 728 L128.0 734 L129.5 740 L131.1 746 L132.7 752 L134.4 758 L136.1 764 L137.9 770 L139.7 776 L141.6 782 L143.5 788 L145.4 794 L147.4 800 L149.4 806 L151.5 812 L153.5 818 L155.6 824 L157.6 830 L159.7 836 L161.8 842 L163.9 848 L165.9 854 L168.0 860 L170.0 866 L172.0 872 L174.0 878" stroke="#e2ddd5" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <path d="M160.0 20 L162.1 26 L164.1 32 L166.2 38 L168.3 44 L170.3 50 L172.3 56 L174.3 62 L176.2 68 L178.2 74 L180.0 80 L181.9 86 L183.7 92 L185.4 98 L187.1 104 L188.7 110 L190.3 116 L191.8 122 L193.2 128 L194.6 134 L195.9 140 L197.1 146 L198.2 152 L199.3 158 L200.3 164 L201.1 170 L201.9 176 L202.6 182 L203.3 188 L203.8 194 L204.2 200 L204.6 206 L204.8 212 L204.9 218 L205.0 224 L205.0 230 L204.8 236 L204.6 242 L204.2 248 L203.8 254 L203.3 260 L202.7 266 L202.0 272 L201.2 278 L200.3 284 L199.4 290 L198.3 296 L197.2 302 L196.0 308 L194.7 314 L193.3 320 L191.9 326 L190.4 332 L188.8 338 L187.2 344 L185.5 350 L183.8 356 L182.0 362 L180.2 368 L178.3 374 L176.4 380 L174.4 386 L172.4 392 L170.4 398 L168.4 404 L166.4 410 L164.3 416 L162.2 422 L160.1 428 L158.1 434 L156.0 440 L153.9 446 L151.9 452 L149.8 458 L147.8 464 L145.8 470 L143.9 476 L142.0 482 L140.1 488 L138.2 494 L136.5 500 L134.7 506 L133.0 512 L131.4 518 L129.8 524 L128.3 530 L126.9 536 L125.5 542 L124.2 548 L123.0 554 L121.8 560 L120.8 566 L119.8 572 L118.9 578 L118.1 584 L117.4 590 L116.8 596 L116.2 602 L115.8 608 L115.5 614 L115.2 620 L115.1 626 L115.0 632 L115.0 638 L115.2 644 L115.4 650 L115.7 656 L116.1 662 L116.7 668 L117.3 674 L118.0 680 L118.7 686 L119.6 692 L120.6 698 L121.6 704 L122.7 710 L123.9 716 L125.2 722 L126.6 728 L128.0 734 L129.5 740 L131.1 746 L132.7 752 L134.4 758 L136.1 764 L137.9 770 L139.7 776 L141.6 782 L143.5 788 L145.4 794 L147.4 800 L149.4 806 L151.5 812 L153.5 818 L155.6 824 L157.6 830 L159.7 836 L161.8 842 L163.9 848 L165.9 854 L168.0 860 L170.0 866 L172.0 872 L174.0 878" stroke="#fff" stroke-width="2" stroke-dasharray="10 9" stroke-linecap="round" fill="none" opacity=".8"/>
+  </svg>
+  <div class="bg-card" style="top:13.3%;left:66.3%">📐 گرامر</div>
+<div class="bg-card" style="top:24.4%;right:42.5%">📚 واژگان</div>
+<div class="bg-card" style="top:36.7%;left:66.2%">✍️ مینی‌آرتیکل</div>
+<div class="bg-card" style="top:48.9%;right:57.8%">🎧 InnerFrench</div>
+<div class="bg-card" style="top:61.1%;left:45.2%">📰 آرتیکل</div>
+<div class="bg-card" style="top:73.3%;right:70.3%">🗼 فرهنگ فرانسه</div>
+<div class="bg-card" style="top:85.6%;left:49.6%">🎯 آمادگی TCF</div>
+
+</div>
+
+<!-- فرم -->
 <div class="page">
-
-  <!-- جاده S شکل -->
-  <div class="preview-side">
-    <div class="preview-title">Français avec Hoda</div>
-    <div class="preview-sub">مسیر یادگیری · از صفر تا روان</div>
-
-    <svg class="road-svg" viewBox="0 0 700 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <g opacity=".5"><ellipse cx="80" cy="120" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 80 120)"/><ellipse cx="65" cy="112" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 65 112)"/><ellipse cx="600" cy="200" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 600 200)"/><ellipse cx="585" cy="192" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 585 192)"/><ellipse cx="90" cy="350" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 90 350)"/><ellipse cx="75" cy="342" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 75 342)"/><ellipse cx="580" cy="440" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 580 440)"/><ellipse cx="565" cy="432" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 565 432)"/><ellipse cx="75" cy="560" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 75 560)"/><ellipse cx="60" cy="552" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 60 552)"/><ellipse cx="610" cy="640" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 610 640)"/><ellipse cx="595" cy="632" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 595 632)"/><ellipse cx="85" cy="740" rx="28" ry="16" fill="#8fad78" opacity=".7" transform="rotate(-16 85 740)"/><ellipse cx="70" cy="732" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 70 732)"/><ellipse cx="590" cy="800" rx="28" ry="16" fill="#7a9e65" opacity=".7" transform="rotate(-16 590 800)"/><ellipse cx="575" cy="792" rx="18" ry="11" fill="#a8cc90" opacity=".6" transform="rotate(8 575 792)"/></g>
-      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#e2ddd5" stroke-width="42" stroke-linecap="round" fill="none"/>
-      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#ece7da" stroke-width="34" stroke-linecap="round" fill="none" opacity=".5"/>
-      <path d="M400.4 0.0 L411.1 5.0 L421.9 10.0 L432.9 15.0 L444.1 20.0 L455.3 25.0 L466.7 30.0 L478.1 35.0 L489.5 40.0 L501.0 45.0 L512.5 50.0 L524.0 55.0 L535.4 60.0 L546.8 65.0 L558.1 70.0 L569.3 75.0 L580.4 80.0 L591.3 85.0 L602.1 90.0 L612.6 95.0 L623.0 100.0 L633.2 105.0 L643.1 110.0 L652.8 115.0 L662.2 120.0 L671.2 125.0 L680.0 130.0 L688.5 135.0 L696.6 140.0 L704.3 145.0 L711.7 150.0 L718.7 155.0 L725.3 160.0 L731.4 165.0 L737.2 170.0 L742.5 175.0 L747.3 180.0 L751.8 185.0 L755.7 190.0 L759.2 195.0 L762.2 200.0 L764.7 205.0 L766.7 210.0 L768.3 215.0 L769.3 220.0 L769.9 225.0 L770.0 230.0 L769.5 235.0 L768.6 240.0 L767.2 245.0 L765.3 250.0 L762.9 255.0 L760.0 260.0 L756.6 265.0 L752.8 270.0 L748.5 275.0 L743.7 280.0 L738.5 285.0 L732.9 290.0 L726.8 295.0 L720.3 300.0 L713.4 305.0 L706.2 310.0 L698.5 315.0 L690.5 320.0 L682.1 325.0 L673.4 330.0 L664.4 335.0 L655.1 340.0 L645.5 345.0 L635.7 350.0 L625.6 355.0 L615.2 360.0 L604.7 365.0 L594.0 370.0 L583.1 375.0 L572.0 380.0 L560.9 385.0 L549.6 390.0 L538.2 395.0 L526.8 400.0 L515.3 405.0 L503.9 410.0 L492.4 415.0 L480.9 420.0 L469.5 425.0 L458.1 430.0 L446.9 435.0 L435.7 440.0 L424.6 445.0 L413.8 450.0 L403.0 455.0 L392.5 460.0 L382.2 465.0 L372.1 470.0 L362.2 475.0 L352.6 480.0 L343.3 485.0 L334.3 490.0 L325.6 495.0 L317.3 500.0 L309.3 505.0 L301.6 510.0 L294.4 515.0 L287.5 520.0 L281.0 525.0 L275.0 530.0 L269.3 535.0 L264.1 540.0 L259.4 545.0 L255.1 550.0 L251.3 555.0 L247.9 560.0 L245.1 565.0 L242.7 570.0 L240.8 575.0 L239.4 580.0 L238.5 585.0 L238.0 590.0 L238.1 595.0 L238.7 600.0 L239.7 605.0 L241.3 610.0 L243.3 615.0 L245.9 620.0 L248.9 625.0 L252.4 630.0 L256.4 635.0 L260.8 640.0 L265.7 645.0 L271.0 650.0 L276.7 655.0 L282.9 660.0 L289.5 665.0 L296.5 670.0 L303.9 675.0 L311.6 680.0 L319.7 685.0 L328.2 690.0 L337.0 695.0 L346.1 700.0 L355.5 705.0 L365.1 710.0 L375.1 715.0 L385.2 720.0 L395.6 725.0 L406.2 730.0 L417.0 735.0 L427.9 740.0 L439.0 745.0 L450.2 750.0 L461.5 755.0 L472.9 760.0 L484.3 765.0 L495.8 770.0 L507.3 775.0 L518.8 780.0 L530.2 785.0 L541.6 790.0 L553.0 795.0 L564.2 800.0" stroke="#fff" stroke-width="2.5" stroke-dasharray="12 10" stroke-linecap="round" fill="none" opacity=".75"/>
-    </svg>
-
-    <!-- کارت‌های محتوا روی جاده -->
-    <div class="card-labels">
-      <div class="clabel" style="top:10%;left:5%">📐 گرامر — ۳۳ درس</div>
-      <div class="clabel" style="top:22%;right:4%">📚 واژگان — ۱۵ مجموعه</div>
-      <div class="clabel" style="top:36%;left:4%">✍️ مینی‌آرتیکل — ۴۰ متن</div>
-      <div class="clabel" style="top:50%;right:3%">🎧 InnerFrench</div>
-      <div class="clabel" style="top:62%;left:5%">📰 آرتیکل دوزبانه</div>
-      <div class="clabel" style="top:74%;right:4%">🗼 فرهنگ فرانسه</div>
-      <div class="clabel" style="top:86%;left:4%">🎯 آمادگی TCF</div>
-    </div>
+<div class="glass">
+  <div class="logo">
+    <div class="flag">🇫🇷</div>
+    <h1>Français avec Hoda</h1>
+    <p>وارد شو و شروع کن</p>
   </div>
-
-  <!-- فرم ورود -->
-  <div class="auth-side">
-    <div class="logo">
-      <div class="flag">🇫🇷</div>
-      <h1>Français avec Hoda</h1>
-      <p>وارد شو و شروع کن</p>
-    </div>
-
-    <div class="tabs">
-      <button class="tab active" onclick="showTab('login')">ورود</button>
-      <button class="tab" onclick="showTab('signup')">ثبت‌نام رایگان</button>
-    </div>
-
-    <div id="loginForm" class="form">
-      <div class="field">
-        <label>ایمیل</label>
-        <input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email">
-      </div>
-      <div class="field">
-        <label>رمز عبور</label>
-        <input type="password" id="loginPass" placeholder="رمز عبور" autocomplete="current-password">
-      </div>
-      <div class="msg" id="loginMsg"></div>
-      <button class="btn" id="loginBtn" onclick="doLogin()">ورود به سایت ←</button>
-      <p class="hint">حساب ندارید؟ روی «ثبت‌نام رایگان» کلیک کنید</p>
-    </div>
-
-    <div id="signupForm" class="form" style="display:none">
-      <div class="field">
-        <label>ایمیل</label>
-        <input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email">
-      </div>
-      <div class="field">
-        <label>رمز عبور</label>
-        <input type="password" id="signupPass" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password">
-      </div>
-      <div class="field">
-        <label>تکرار رمز عبور</label>
-        <input type="password" id="signupPass2" placeholder="رمز عبور را دوباره وارد کنید" autocomplete="new-password">
-      </div>
-      <div class="msg" id="signupMsg"></div>
-      <div class="confirm-box" id="confirmBox">
-        <div class="icon">📧</div>
-        <h3>ایمیل تأیید فرستاده شد!</h3>
-        <p>یه ایمیل به <span class="em" id="confirmedEmail"></span> فرستادیم.<br><br>
-        روی لینک توی ایمیل کلیک کن تا حسابت فعال بشه.<br><br>
-        📂 اگه ایمیل نیومد پوشه <b>Spam</b> رو چک کن.</p>
-      </div>
-      <button class="btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان</button>
-      <p class="hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
-    </div>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('login')">ورود</button>
+    <button class="tab" onclick="showTab('signup')">ثبت‌نام رایگان</button>
   </div>
+  <div id="loginForm" class="form">
+    <div class="field"><label>ایمیل</label>
+      <input type="email" id="loginEmail" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="field"><label>رمز عبور</label>
+      <input type="password" id="loginPass" placeholder="رمز عبور" autocomplete="current-password"></div>
+    <div class="msg" id="loginMsg"></div>
+    <button class="btn" id="loginBtn" onclick="doLogin()">ورود به سایت ←</button>
+    <p class="hint">حساب ندارید؟ روی «ثبت‌نام رایگان» کلیک کنید</p>
+  </div>
+  <div id="signupForm" class="form" style="display:none">
+    <div class="field"><label>ایمیل</label>
+      <input type="email" id="signupEmail" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="field"><label>رمز عبور</label>
+      <input type="password" id="signupPass" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password"></div>
+    <div class="field"><label>تکرار رمز عبور</label>
+      <input type="password" id="signupPass2" placeholder="رمز عبور را دوباره وارد کنید" autocomplete="new-password"></div>
+    <div class="msg" id="signupMsg"></div>
+    <div class="confirm-box" id="confirmBox">
+      <div class="icon">📧</div>
+      <h3>ایمیل تأیید فرستاده شد!</h3>
+      <p>به <span class="em" id="confirmedEmail"></span> ایمیل فرستادیم.<br>
+      روی لینک کلیک کن تا حسابت فعال بشه.<br>
+      📂 پوشه <b>Spam</b> رو هم چک کن.</p>
+    </div>
+    <button class="btn" id="signupBtn" onclick="doSignup()">ساخت حساب رایگان</button>
+    <p class="hint">قبلاً ثبت‌نام کردید؟ روی «ورود» کلیک کنید</p>
+  </div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const sb = supabase.createClient(
-  'https://ifjsnasoxnalhttzhlpd.supabase.co',
-  'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
-);
-sb.auth.getSession().then(({data:{session}})=>{
-  if(session) window.location.href='index.html';
-});
-function showTab(tab){
-  document.getElementById('loginForm').style.display=tab==='login'?'flex':'none';
-  document.getElementById('signupForm').style.display=tab==='signup'?'flex':'none';
-  document.querySelectorAll('.tab').forEach((t,i)=>{
-    t.classList.toggle('active',(tab==='login'&&i===0)||(tab==='signup'&&i===1));
-  });
+const sb=supabase.createClient('https://ifjsnasoxnalhttzhlpd.supabase.co','sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK');
+sb.auth.getSession().then(({data:{session}})=>{if(session)window.location.href='index.html';});
+function showTab(t){
+  document.getElementById('loginForm').style.display=t==='login'?'flex':'none';
+  document.getElementById('signupForm').style.display=t==='signup'?'flex':'none';
+  document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',(t==='login'&&i===0)||(t==='signup'&&i===1)));
 }
-function showMsg(id,text,type){
-  const el=document.getElementById(id);
-  el.textContent=text;el.className='msg '+type+' show';
-}
-function setLoading(id,on){
-  const b=document.getElementById(id);
-  b.disabled=on;
-  b.textContent=on?'...':(id==='loginBtn'?'ورود به سایت ←':'ساخت حساب رایگان');
-}
+function showMsg(id,txt,type){const el=document.getElementById(id);el.textContent=txt;el.className='msg '+type+' show';}
+function setLoading(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='loginBtn'?'ورود به سایت ←':'ساخت حساب رایگان');}
 async function doSignup(){
   const email=document.getElementById('signupEmail').value.trim();
   const pass=document.getElementById('signupPass').value;
   const pass2=document.getElementById('signupPass2').value;
-  if(!email||!pass) return showMsg('signupMsg','همه فیلدها را پر کنید','error');
-  if(pass.length<6) return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');
-  if(pass!==pass2) return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');
+  if(!email||!pass)return showMsg('signupMsg','همه فیلدها را پر کنید','error');
+  if(pass.length<6)return showMsg('signupMsg','رمز عبور باید حداقل ۶ کاراکتر باشد','error');
+  if(pass!==pass2)return showMsg('signupMsg','رمزهای عبور یکسان نیستند','error');
   setLoading('signupBtn',true);
   const {error}=await sb.auth.signUp({email,password:pass});
   setLoading('signupBtn',false);
-  if(error) return showMsg('signupMsg',error.message,'error');
+  if(error)return showMsg('signupMsg',error.message,'error');
   document.getElementById('confirmedEmail').textContent=email;
   document.getElementById('confirmBox').classList.add('show');
   document.getElementById('signupBtn').style.display='none';
@@ -226,23 +169,17 @@ async function doSignup(){
 async function doLogin(){
   const email=document.getElementById('loginEmail').value.trim();
   const pass=document.getElementById('loginPass').value;
-  if(!email||!pass) return showMsg('loginMsg','همه فیلدها را پر کنید','error');
+  if(!email||!pass)return showMsg('loginMsg','همه فیلدها را پر کنید','error');
   setLoading('loginBtn',true);
   const {error}=await sb.auth.signInWithPassword({email,password:pass});
   setLoading('loginBtn',false);
   if(error){
-    if(error.message.includes('Email not confirmed'))
-      return showMsg('loginMsg','ایمیلت رو تأیید نکردی! صندوق ورودیت رو چک کن 📧','error');
+    if(error.message.includes('Email not confirmed'))return showMsg('loginMsg','ایمیلت رو تأیید نکردی! صندوق ورودیت رو چک کن 📧','error');
     return showMsg('loginMsg','ایمیل یا رمز عبور اشتباه است','error');
   }
   window.location.href='index.html';
 }
-document.addEventListener('keydown',e=>{
-  if(e.key==='Enter'){
-    if(document.getElementById('loginForm').style.display!=='none') doLogin();
-    else doSignup();
-  }
-});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'){if(document.getElementById('loginForm').style.display!=='none')doLogin();else doSignup();}});
 </script>
 </body>
 </html>
