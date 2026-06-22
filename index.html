@@ -352,8 +352,8 @@ body{padding-top:38px!important}
 
 <div class="node-card" style="top:80.743%;left:59.72%;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div></div>
 <div class="node-card" style="top:87.162%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div>
-    <div class="node-card" style="top:91.5%;right:4.17%;left:auto;width:36.11%;border-color:#22618f" onclick="openCat('image')"><div class="nc-title" style="color:#22618f">📸 توصیف تصویر</div></div>
-    <div class="node-card" style="top:96%;left:4.17%;width:36.11%;border-color:#6b3fa0" onclick="openCat('video')"><div class="nc-title" style="color:#6b3fa0">🎬 معرفی ویدیو</div></div></div>
+    <div class="node-card" style="top:91%;right:4.17%;left:auto;width:36.11%;border-color:#22618f" onclick="openCat('image')"><div class="nc-title" style="color:#22618f">📸 توصیف تصویر</div></div>
+    <div class="node-card" style="top:95%;left:4.17%;width:36.11%;border-color:#6b3fa0" onclick="openCat('video')"><div class="nc-title" style="color:#6b3fa0">🎬 معرفی ویدیو</div></div></div></div>
 
 </div>
 </div>
@@ -745,6 +745,7 @@ document.addEventListener('keydown',e=>{
 </script>
 
 
+<script>
 // Track quiz mistakes
 window.trackMistake = function(lessonTitle, question, correctAnswer, userAnswer){
   const mistakes = JSON.parse(localStorage.getItem('hoda_mistakes')||'[]');
