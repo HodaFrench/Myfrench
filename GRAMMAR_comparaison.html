@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Comparaison — مقایسه در فرانسه | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1e3a5f;--navy-soft:#41618a;
+  --gold:#b07a4a;--gold-soft:#c4a572;
+  --paper:#f4f3f5;--cream:#f9f8fa;
+  --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
+  --green:#2e8b6b;--rose:#b0506f;--purple:#6b3fa0;
+  --a2:#2e8b6b;--b1:#22618f;--b2:#b07a4a;--c1:#8a2040;
+}
+body{font-family:'Estedad',sans-serif;background:var(--paper);
+  background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);
+  color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+
+/* TOP */
+.topbar{background:var(--navy);color:var(--cream);padding:11px 24px;
+  display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:var(--gold-soft);text-decoration:none;font-size:13px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-soft));
+  color:var(--cream);padding:40px 28px 34px;text-align:center;
+  box-shadow:0 14px 40px rgba(31,58,95,.25)}
+.hero-tag{display:inline-block;background:rgba(196,165,114,.2);
+  border:1px solid rgba(196,165,114,.4);border-radius:20px;
+  padding:4px 16px;font-size:11px;letter-spacing:2px;color:var(--gold-soft);margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:32px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85;line-height:1.8}
+
+/* LEVEL TABS */
+.level-tabs{display:flex;gap:0;margin:24px 0 0;border-bottom:2px solid var(--line);overflow-x:auto}
+.ltab{padding:10px 20px;border:none;background:transparent;cursor:pointer;
+  font-family:'Estedad',sans-serif;font-size:14px;font-weight:600;
+  color:var(--gray);border-bottom:3px solid transparent;margin-bottom:-2px;
+  transition:all .2s;white-space:nowrap}
+.ltab.active{color:var(--navy);border-bottom-color:var(--navy)}
+.ltab[data-lv="A2"].active{color:var(--a2);border-bottom-color:var(--a2)}
+.ltab[data-lv="B1"].active{color:var(--b1);border-bottom-color:var(--b1)}
+.ltab[data-lv="B2"].active{color:var(--b2);border-bottom-color:var(--b2)}
+.ltab[data-lv="C1"].active{color:var(--c1);border-bottom-color:var(--c1)}
+
+.level-section{display:none;padding:24px 0}
+.level-section.active{display:block}
+
+/* LEVEL BADGE */
+.lv-badge{display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;
+  letter-spacing:1px;margin-bottom:18px}
+.lv-A2{background:rgba(46,139,107,.12);color:var(--a2)}
+.lv-B1{background:rgba(34,97,143,.12);color:var(--b1)}
+.lv-B2{background:rgba(176,122,74,.12);color:var(--b2)}
+.lv-C1{background:rgba(138,32,64,.12);color:var(--c1)}
+
+/* RULE BOX */
+.rule-box{background:var(--white);border-radius:16px;padding:20px 22px;
+  margin-bottom:20px;border-right:5px solid var(--navy);
+  box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.rule-box.a2{border-right-color:var(--a2)}
+.rule-box.b1{border-right-color:var(--b1)}
+.rule-box.b2{border-right-color:var(--b2)}
+.rule-box.c1{border-right-color:var(--c1)}
+.rule-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;
+  color:var(--navy);direction:ltr;margin-bottom:14px;
+  padding-bottom:10px;border-bottom:1px solid var(--line)}
+.rule-formula{background:var(--cream);border-radius:10px;
+  padding:12px 16px;margin-bottom:14px;
+  font-family:'Roboto',serif;font-size:15px;
+  direction:ltr;text-align:left;color:var(--navy);
+  border:1px dashed var(--line)}
+.formula-fa{font-family:'Estedad',sans-serif;font-size:13px;
+  color:var(--gray);margin-top:6px;direction:rtl;text-align:right}
+
+/* EXAMPLES */
+.examples{display:flex;flex-direction:column;gap:10px}
+.ex{background:var(--cream);border-radius:12px;
+  padding:14px 18px;border-right:3px solid var(--line)}
+.ex.a2{border-right-color:var(--a2)}
+.ex.b1{border-right-color:var(--b1)}
+.ex.b2{border-right-color:var(--b2)}
+.ex.c1{border-right-color:var(--c1)}
+.ex-fr{font-family:'Roboto',serif;font-size:16px;
+  direction:ltr;text-align:left;color:var(--ink);margin-bottom:5px}
+.ex-fa{font-size:13px;color:var(--gray);line-height:1.7}
+.hl{font-weight:700;padding:0 2px;border-radius:3px}
+.hl-a2{color:var(--a2);background:rgba(46,139,107,.1)}
+.hl-b1{color:var(--b1);background:rgba(34,97,143,.1)}
+.hl-b2{color:var(--b2);background:rgba(176,122,74,.1)}
+.hl-c1{color:var(--c1);background:rgba(138,32,64,.1)}
+
+/* COMPARISON TABLE */
+.comp-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.comp-table th{background:var(--navy);color:var(--cream);
+  padding:10px 14px;text-align:center;font-weight:600}
+.comp-table th:first-child{text-align:right}
+.comp-table td{padding:10px 14px;border-bottom:1px solid var(--line);
+  text-align:center}
+.comp-table td:first-child{text-align:right;font-weight:500;color:var(--navy)}
+.comp-table tr:hover td{background:var(--cream)}
+.comp-table .fr{font-family:'Roboto',serif;font-style:italic}
+
+/* QUIZ */
+.quiz-section{margin-top:28px}
+.quiz-title{font-family:'Roboto',serif;font-size:18px;font-weight:700;
+  color:var(--navy);margin-bottom:16px;direction:ltr}
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;
+  margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);
+  margin-bottom:12px;line-height:1.6}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;
+  cursor:pointer;font-size:14px;background:var(--cream);
+  transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--b1);background:#eef3f8}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;
+  border-radius:8px;display:none;line-height:1.6}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+
+/* SCORE */
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;
+  text-align:center;font-size:14px;color:var(--gray);
+  margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+
+/* ATTENTION BOX */
+.attn{background:rgba(176,80,111,.07);border:1px solid rgba(176,80,111,.25);
+  border-radius:12px;padding:14px 18px;margin:14px 0;
+  font-size:13.5px;color:#6a2030;line-height:1.8}
+.attn strong{color:var(--rose)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📐 گرامر</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · گرامر</div>
+  <h1>La Comparaison</h1>
+  <div class="sub">مقایسه در زبان فرانسه · از A2 تا C1<br>با مثال، ترجمه و تمرین</div>
+</div>
+
+<div class="wrap">
+
+<!-- LEVEL TABS -->
+<div class="level-tabs">
+  <button class="ltab active" data-lv="A2" onclick="showLevel('A2',this)">🌱 A2 — پایه</button>
+  <button class="ltab" data-lv="B1" onclick="showLevel('B1',this)">📈 B1 — متوسط</button>
+  <button class="ltab" data-lv="B2" onclick="showLevel('B2',this)">🎯 B2 — پیشرفته</button>
+  <button class="ltab" data-lv="C1" onclick="showLevel('C1',this)">🏆 C1 — تسلط</button>
+</div>
+
+<!-- ══════════════ A2 ══════════════ -->
+<div class="level-section active" id="lv-A2">
+  <div class="lv-badge lv-A2">🌱 A2 — پایه</div>
+
+  <!-- مقایسه صفت -->
+  <div class="rule-box a2">
+    <div class="rule-title">① Comparaison des adjectifs — مقایسه با صفت</div>
+    <div class="rule-formula">
+      <b>plus</b> + adjectif + <b>que</b> &nbsp;→&nbsp; بیشتر از<br>
+      <b>moins</b> + adjectif + <b>que</b> &nbsp;→&nbsp; کمتر از<br>
+      <b>aussi</b> + adjectif + <b>que</b> &nbsp;→&nbsp; به همان اندازه
+      <div class="formula-fa">plus = بیشتر · moins = کمتر · aussi = به همان اندازه · que = از/تا</div>
+    </div>
+    <div class="examples">
+      <div class="ex a2">
+        <div class="ex-fr">Paris est <span class="hl hl-a2">plus grande que</span> Lyon.</div>
+        <div class="ex-fa">پاریس از لیون بزرگ‌تر است.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Le train est <span class="hl hl-a2">moins cher que</span> l'avion.</div>
+        <div class="ex-fa">قطار از هواپیما ارزان‌تر است.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Marie est <span class="hl hl-a2">aussi intelligente que</span> son frère.</div>
+        <div class="ex-fa">ماری به اندازه برادرش باهوش است.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Mon appartement est <span class="hl hl-a2">plus petit que</span> le tien.</div>
+        <div class="ex-fa">آپارتمان من از آپارتمان تو کوچک‌تر است.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Ce film est <span class="hl hl-a2">moins intéressant qu'</span>un roman.</div>
+        <div class="ex-fa">این فیلم از یک رمان جالب‌تر نیست.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مقایسه اسم -->
+  <div class="rule-box a2">
+    <div class="rule-title">② Comparaison des noms — مقایسه با اسم</div>
+    <div class="rule-formula">
+      <b>plus de</b> + nom + <b>que</b> &nbsp;→&nbsp; بیشتر از<br>
+      <b>moins de</b> + nom + <b>que</b> &nbsp;→&nbsp; کمتر از<br>
+      <b>autant de</b> + nom + <b>que</b> &nbsp;→&nbsp; به همان تعداد
+      <div class="formula-fa">با اسم از «de» استفاده می‌شود نه «aussi»!</div>
+    </div>
+    <div class="examples">
+      <div class="ex a2">
+        <div class="ex-fr">Il a <span class="hl hl-a2">plus d'argent que</span> moi.</div>
+        <div class="ex-fa">او از من پول بیشتری دارد.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Tu fais <span class="hl hl-a2">moins de sport que</span> ta sœur.</div>
+        <div class="ex-fa">تو کمتر از خواهرت ورزش می‌کنی.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">J'ai <span class="hl hl-a2">autant de travail que</span> toi.</div>
+        <div class="ex-fa">به همان اندازه تو کار دارم.</div>
+      </div>
+      <div class="ex a2">
+        <div class="ex-fr">Elle boit <span class="hl hl-a2">plus de café que</span> d'eau.</div>
+        <div class="ex-fa">او بیشتر قهوه می‌نوشد تا آب.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- جدول خلاصه A2 -->
+  <table class="comp-table">
+    <tr><th>معنی</th><th>با صفت / قید</th><th>با اسم</th></tr>
+    <tr><td>بیشتر از</td><td class="fr">plus ... que</td><td class="fr">plus de ... que</td></tr>
+    <tr><td>کمتر از</td><td class="fr">moins ... que</td><td class="fr">moins de ... que</td></tr>
+    <tr><td>به همان اندازه</td><td class="fr">aussi ... que</td><td class="fr">autant de ... que</td></tr>
+  </table>
+
+  <!-- Quiz A2 -->
+  <div class="quiz-section">
+    <div class="quiz-title">✏️ Exercices A2</div>
+    <div class="q-card" data-correct="1">
+      <div class="q-text">کدام جمله درست است؟<br><span class="fr">Le café est ___ bon ___ le thé.</span> (به همان اندازه)</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">plus bon que</div>
+        <div class="opt" onclick="ans(this,1)">aussi bon que</div>
+        <div class="opt" onclick="ans(this,0)">autant bon que</div>
+      </div>
+      <div class="q-feedback ok">✅ «aussi bon que» — با صفت از «aussi...que» استفاده می‌شه.</div>
+      <div class="q-feedback ko">❌ با صفت از «aussi...que» استفاده می‌شه، نه «autant».</div>
+    </div>
+    <div class="q-card" data-correct="2">
+      <div class="q-text">ترجمه کدام درست است؟<br><span class="fr">Il a moins de patience que son collègue.</span></div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">او از همکارش صبور‌تر است.</div>
+        <div class="opt" onclick="ans(this,0)">او به اندازه همکارش صبر دارد.</div>
+        <div class="opt" onclick="ans(this,2)">او کمتر از همکارش صبر دارد.</div>
+      </div>
+      <div class="q-feedback ok">✅ «moins de» = کمتر از — درسته!</div>
+      <div class="q-feedback ko">❌ «moins de» = کمتر از.</div>
+    </div>
+    <div class="q-card" data-correct="0">
+      <div class="q-text">کدام گزینه درست است؟<br><span class="fr">Paris est ___ peuplée ___ Tokyo.</span> (کمتر)</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">moins ... que</div>
+        <div class="opt" onclick="ans(this,0)">moins de ... que</div>
+        <div class="opt" onclick="ans(this,0)">aussi ... de</div>
+      </div>
+      <div class="q-feedback ok">✅ با صفت «peuplée» از «moins...que» استفاده می‌شه.</div>
+      <div class="q-feedback ko">❌ با صفت از «moins...que» استفاده می‌شه.</div>
+    </div>
+    <div class="score-bar">امتیاز A2: <span id="scoreA2">0</span> از ۳</div>
+  </div>
+</div>
+
+<!-- ══════════════ B1 ══════════════ -->
+<div class="level-section" id="lv-B1">
+  <div class="lv-badge lv-B1">📈 B1 — متوسط</div>
+
+  <!-- مقایسه فعل -->
+  <div class="rule-box b1">
+    <div class="rule-title">① Comparaison des verbes — مقایسه با فعل</div>
+    <div class="rule-formula">
+      <b>verbe</b> + <b>plus que / moins que / autant que</b>
+      <div class="formula-fa">با فعل «de» نمی‌آید — مستقیم «plus que» می‌آید</div>
+    </div>
+    <div class="examples">
+      <div class="ex b1">
+        <div class="ex-fr">Elle travaille <span class="hl hl-b1">plus que</span> lui.</div>
+        <div class="ex-fa">او بیشتر از او کار می‌کند.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Je dors <span class="hl hl-b1">moins que</span> toi.</div>
+        <div class="ex-fa">من کمتر از تو می‌خوابم.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Il mange <span class="hl hl-b1">autant que</span> son père.</div>
+        <div class="ex-fa">او به اندازه پدرش غذا می‌خورد.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Tu ris <span class="hl hl-b1">plus que</span> n'importe qui.</div>
+        <div class="ex-fa">تو بیشتر از هر کسی می‌خندی.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- superlatif -->
+  <div class="rule-box b1">
+    <div class="rule-title">② Le superlatif — عالی‌ترین درجه</div>
+    <div class="rule-formula">
+      <b>le/la/les + plus/moins</b> + adjectif<br>
+      <b>le/la/les + plus/moins</b> + adjectif + <b>de</b> + groupe
+      <div class="formula-fa">«de» بعد از superlatif = «در بین» / «از میان»</div>
+    </div>
+    <div class="examples">
+      <div class="ex b1">
+        <div class="ex-fr">C'est <span class="hl hl-b1">le plus beau</span> tableau du musée.</div>
+        <div class="ex-fa">این زیباترین تابلوی موزه است.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Elle est <span class="hl hl-b1">la moins timide</span> de la classe.</div>
+        <div class="ex-fa">او کم‌رو‌ترین نفر کلاس است.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">C'est <span class="hl hl-b1">le film le plus vu</span> de l'année.</div>
+        <div class="ex-fa">این پربیننده‌ترین فیلم سال است.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Tu es <span class="hl hl-b1">la plus drôle</span> de mes amies.</div>
+        <div class="ex-fa">تو بامزه‌ترین دوستانم هستی.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">C'est <span class="hl hl-b1">le moins cher</span> des hôtels.</div>
+        <div class="ex-fa">این ارزان‌ترین هتل‌هاست.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- irréguliers B1 -->
+  <div class="rule-box b1">
+    <div class="rule-title">③ Formes irrégulières — اشکال نامنظم</div>
+    <table class="comp-table">
+      <tr><th>صفت</th><th>comparatif</th><th>superlatif</th><th>معنی</th></tr>
+      <tr><td class="fr">bon(ne)</td><td class="fr">meilleur(e) que</td><td class="fr">le/la meilleur(e)</td><td>خوب → بهتر → بهترین</td></tr>
+      <tr><td class="fr">mauvais(e)</td><td class="fr">pire que</td><td class="fr">le/la pire</td><td>بد → بدتر → بدترین</td></tr>
+      <tr><td class="fr">bien (adv)</td><td class="fr">mieux que</td><td class="fr">le mieux</td><td>خوب → بهتر → بهترین (قید)</td></tr>
+      <tr><td class="fr">peu (adv)</td><td class="fr">moins que</td><td class="fr">le moins</td><td>کم → کمتر → کمترین</td></tr>
+    </table>
+    <div class="attn">
+      <strong>⚠️ اشتباه رایج:</strong><br>
+      ❌ <span style="font-family:'Roboto',serif;font-style:italic">plus bon</span> ← اشتباه!<br>
+      ✅ <span style="font-family:'Roboto',serif;font-style:italic">meilleur</span> ← درست<br><br>
+      ❌ <span style="font-family:'Roboto',serif;font-style:italic">plus bien</span> ← اشتباه!<br>
+      ✅ <span style="font-family:'Roboto',serif;font-style:italic">mieux</span> ← درست
+    </div>
+    <div class="examples">
+      <div class="ex b1">
+        <div class="ex-fr">Ce restaurant est <span class="hl hl-b1">meilleur que</span> l'autre.</div>
+        <div class="ex-fa">این رستوران از آن یکی بهتر است.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">Elle chante <span class="hl hl-b1">mieux que</span> moi.</div>
+        <div class="ex-fa">او بهتر از من آواز می‌خواند.</div>
+      </div>
+      <div class="ex b1">
+        <div class="ex-fr">C'est <span class="hl hl-b1">le pire</span> film que j'ai jamais vu.</div>
+        <div class="ex-fa">این بدترین فیلمی است که تا به حال دیده‌ام.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz B1 -->
+  <div class="quiz-section">
+    <div class="quiz-title">✏️ Exercices B1</div>
+    <div class="q-card" data-correct="1">
+      <div class="q-text">کدام درست است؟<br><span class="fr">Ce gâteau est ___ que celui de ta mère.</span> (بهتر)</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">plus bon</div>
+        <div class="opt" onclick="ans(this,1)">meilleur</div>
+        <div class="opt" onclick="ans(this,0)">mieux</div>
+      </div>
+      <div class="q-feedback ok">✅ «meilleur» = فرم نامنظم «bon» در comparatif.</div>
+      <div class="q-feedback ko">❌ «bon» فرم نامنظم داره: «meilleur» نه «plus bon»!</div>
+    </div>
+    <div class="q-card" data-correct="2">
+      <div class="q-text">ترجمه کدام درست است؟<br><span class="fr">C'est le meilleur médecin de la ville.</span></div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">او یک پزشک خوب در شهر است.</div>
+        <div class="opt" onclick="ans(this,0)">او از پزشک شهر بهتر است.</div>
+        <div class="opt" onclick="ans(this,2)">او بهترین پزشک شهر است.</div>
+      </div>
+      <div class="q-feedback ok">✅ «le meilleur ... de» = بهترین ... در میان.</div>
+      <div class="q-feedback ko">❌ «le meilleur de» = superlatif = بهترین در میان.</div>
+    </div>
+    <div class="q-card" data-correct="0">
+      <div class="q-text">کدام جمله superlatif دارد؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">C'est la plus belle ville du monde.</div>
+        <div class="opt" onclick="ans(this,0)">Paris est plus grande que Lyon.</div>
+        <div class="opt" onclick="ans(this,0)">Il travaille autant que toi.</div>
+      </div>
+      <div class="q-feedback ok">✅ «la plus belle ... du monde» = superlatif — بهترین درجه.</div>
+      <div class="q-feedback ko">❌ گزینه اول superlatif داره: «la plus belle du monde».</div>
+    </div>
+    <div class="score-bar">امتیاز B1: <span id="scoreB1">0</span> از ۳</div>
+  </div>
+</div>
+
+<!-- ══════════════ B2 ══════════════ -->
+<div class="level-section" id="lv-B2">
+  <div class="lv-badge lv-B2">🎯 B2 — پیشرفته</div>
+
+  <!-- comparaison progressive -->
+  <div class="rule-box b2">
+    <div class="rule-title">① La comparaison progressive — مقایسه پیشرونده</div>
+    <div class="rule-formula">
+      <b>de plus en plus</b> + adj/adv &nbsp;→&nbsp; هر چه بیشتر<br>
+      <b>de moins en moins</b> + adj/adv &nbsp;→&nbsp; هر چه کمتر
+      <div class="formula-fa">برای بیان تغییر تدریجی در طول زمان</div>
+    </div>
+    <div class="examples">
+      <div class="ex b2">
+        <div class="ex-fr">Il fait <span class="hl hl-b2">de plus en plus chaud</span>.</div>
+        <div class="ex-fa">هوا هر چه بیشتر گرم می‌شود.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr">Elle parle <span class="hl hl-b2">de moins en moins</span> à ses parents.</div>
+        <div class="ex-fa">او هر چه کمتر با والدینش صحبت می‌کند.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr">Les prix deviennent <span class="hl hl-b2">de plus en plus élevés</span>.</div>
+        <div class="ex-fa">قیمت‌ها هر چه بیشتر بالا می‌روند.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr">Les jeunes lisent <span class="hl hl-b2">de moins en moins</span>.</div>
+        <div class="ex-fa">جوانان هر چه کمتر می‌خوانند.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- comparaison proportionnelle -->
+  <div class="rule-box b2">
+    <div class="rule-title">② La comparaison proportionnelle — مقایسه متناسب</div>
+    <div class="rule-formula">
+      <b>plus... plus...</b> &nbsp;→&nbsp; هر چه بیشتر... بیشتر<br>
+      <b>moins... moins...</b> &nbsp;→&nbsp; هر چه کمتر... کمتر<br>
+      <b>plus... moins...</b> &nbsp;→&nbsp; هر چه بیشتر... کمتر
+      <div class="formula-fa">دو جمله موازی — بدون «que» در این ساختار</div>
+    </div>
+    <div class="examples">
+      <div class="ex b2">
+        <div class="ex-fr"><span class="hl hl-b2">Plus on lit, plus</span> on apprend.</div>
+        <div class="ex-fa">هر چه بیشتر بخوانی، بیشتر یاد می‌گیری.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr"><span class="hl hl-b2">Moins on dort, moins</span> on est efficace.</div>
+        <div class="ex-fa">هر چه کمتر بخوابی، کمتر کارایی داری.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr"><span class="hl hl-b2">Plus il parle, moins</span> je l'écoute.</div>
+        <div class="ex-fa">هر چه بیشتر حرف می‌زند، کمتر گوش می‌دهم.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr"><span class="hl hl-b2">Plus on est de fous, plus</span> on rit.</div>
+        <div class="ex-fa">هر چه آدم بیشتر، خنده بیشتر. (ضرب المثل)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ne explétif -->
+  <div class="rule-box b2">
+    <div class="rule-title">③ Le «ne» explétif — «نه» تزئینی</div>
+    <div class="rule-formula">
+      <b>plus/moins/mieux/autre que ne</b> + subjonctif<br>
+      <div class="formula-fa">در نوشتار رسمی — «ne» معنی منفی ندارد!</div>
+    </div>
+    <div class="examples">
+      <div class="ex b2">
+        <div class="ex-fr">Il est plus intelligent qu'on <span class="hl hl-b2">ne le croit</span>.</div>
+        <div class="ex-fa">او باهوش‌تر از آن چیزی است که فکر می‌کنند.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr">La situation est pire qu'on <span class="hl hl-b2">ne le pensait</span>.</div>
+        <div class="ex-fa">وضعیت بدتر از آن چیزی است که فکر می‌کردند.</div>
+      </div>
+      <div class="ex b2">
+        <div class="ex-fr">Il travaille mieux qu'il <span class="hl hl-b2">ne le montrait</span>.</div>
+        <div class="ex-fa">او بهتر از آنچه نشان می‌داد کار می‌کند.</div>
+      </div>
+    </div>
+    <div class="attn">
+      <strong>نکته:</strong> در زبان محاوره‌ای این «ne» معمولاً حذف می‌شود. فقط در نوشتار ادبی و رسمی ظاهر می‌شود.
+    </div>
+  </div>
+
+  <!-- Quiz B2 -->
+  <div class="quiz-section">
+    <div class="quiz-title">✏️ Exercices B2</div>
+    <div class="q-card" data-correct="1">
+      <div class="q-text">کدام ترجمه درست است؟<br><span class="fr">Plus tu pratiques, mieux tu parles.</span></div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">تو خوب تمرین می‌کنی و خوب حرف می‌زنی.</div>
+        <div class="opt" onclick="ans(this,1)">هر چه بیشتر تمرین کنی، بهتر صحبت می‌کنی.</div>
+        <div class="opt" onclick="ans(this,0)">تو باید بیشتر تمرین کنی تا بهتر حرف بزنی.</div>
+      </div>
+      <div class="q-feedback ok">✅ «Plus...mieux» = هر چه بیشتر...بهتر — مقایسه متناسب.</div>
+      <div class="q-feedback ko">❌ این ساختار «Plus...mieux» = مقایسه متناسب = هر چه بیشتر...بهتر.</div>
+    </div>
+    <div class="q-card" data-correct="2">
+      <div class="q-text">جای خالی را پر کنید:<br><span class="fr">Les étés deviennent ___ chauds à cause du réchauffement climatique.</span></div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">plus en plus</div>
+        <div class="opt" onclick="ans(this,0)">plus et plus</div>
+        <div class="opt" onclick="ans(this,2)">de plus en plus</div>
+      </div>
+      <div class="q-feedback ok">✅ «de plus en plus» = هر چه بیشتر — تغییر تدریجی.</div>
+      <div class="q-feedback ko">❌ «de plus en plus» — فرمول کامل با «de» است.</div>
+    </div>
+    <div class="score-bar">امتیاز B2: <span id="scoreB2">0</span> از ۲</div>
+  </div>
+</div>
+
+<!-- ══════════════ C1 ══════════════ -->
+<div class="level-section" id="lv-C1">
+  <div class="lv-badge lv-C1">🏆 C1 — تسلط</div>
+
+  <!-- comparaison avec que -->
+  <div class="rule-box c1">
+    <div class="rule-title">① Comparaison avec subjonctif — مقایسه با التزامی</div>
+    <div class="rule-formula">
+      <b>le/la plus + adj + que + subjonctif</b><br>
+      <div class="formula-fa">بعد از superlatif، فعل بعدی می‌تواند subjonctif باشد</div>
+    </div>
+    <div class="examples">
+      <div class="ex c1">
+        <div class="ex-fr">C'est le meilleur roman que j'<span class="hl hl-c1">aie jamais lu</span>.</div>
+        <div class="ex-fa">این بهترین رمانی است که تا به حال خوانده‌ام.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">C'est la chose la plus difficile que nous <span class="hl hl-c1">ayons faite</span>.</div>
+        <div class="ex-fa">این سخت‌ترین کاری است که انجام داده‌ایم.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">C'est la plus belle ville qu'elle <span class="hl hl-c1">ait visitée</span>.</div>
+        <div class="ex-fa">این زیباترین شهری است که او بازدید کرده است.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- d'autant plus -->
+  <div class="rule-box c1">
+    <div class="rule-title">② D'autant plus / moins — به همان میزان بیشتر/کمتر</div>
+    <div class="rule-formula">
+      <b>d'autant plus</b> + adj + <b>que</b><br>
+      <b>d'autant moins</b> + adj + <b>que</b>
+      <div class="formula-fa">برای تأکید بر دلیل مقایسه — سطح C1</div>
+    </div>
+    <div class="examples">
+      <div class="ex c1">
+        <div class="ex-fr">Je suis <span class="hl hl-c1">d'autant plus surpris qu'</span>il ne m'avait rien dit.</div>
+        <div class="ex-fa">به همان میزان بیشتر تعجب کردم چون چیزی به من نگفته بود.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">C'est <span class="hl hl-c1">d'autant plus difficile que</span> le temps manque.</div>
+        <div class="ex-fa">این به همان میزان سخت‌تر است چرا که وقت کم است.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">Il est <span class="hl hl-c1">d'autant moins fiable qu'</span>il change d'avis souvent.</div>
+        <div class="ex-fa">او به همان میزان کمتر قابل اعتماد است چرا که مدام نظرش عوض می‌شود.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- tel que / comme -->
+  <div class="rule-box c1">
+    <div class="rule-title">③ Tel que / Comme — همچون / مانند</div>
+    <div class="rule-formula">
+      <b>tel(le)(s) que</b> → برای مثال زدن و مقایسه با اسم<br>
+      <b>comme</b> → مانند، همچون
+      <div class="formula-fa">«tel que» در نوشتار رسمی‌تر است</div>
+    </div>
+    <div class="examples">
+      <div class="ex c1">
+        <div class="ex-fr">Des langues <span class="hl hl-c1">telles que</span> le français et l'espagnol sont latines.</div>
+        <div class="ex-fa">زبان‌هایی مانند فرانسه و اسپانیایی لاتین هستند.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">Il parle <span class="hl hl-c1">comme</span> un professeur.</div>
+        <div class="ex-fa">او مانند یک استاد صحبت می‌کند.</div>
+      </div>
+      <div class="ex c1">
+        <div class="ex-fr">Des villes <span class="hl hl-c1">telles que</span> Paris, Rome et Berlin attirent des millions de touristes.</div>
+        <div class="ex-fa">شهرهایی مانند پاریس، رم و برلین میلیون‌ها گردشگر را جذب می‌کنند.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quiz C1 -->
+  <div class="quiz-section">
+    <div class="quiz-title">✏️ Exercices C1</div>
+    <div class="q-card" data-correct="1">
+      <div class="q-text">کدام جمله از نظر دستوری درست است؟</div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">C'est le meilleur film que j'ai vu.</div>
+        <div class="opt" onclick="ans(this,1)">C'est le meilleur film que j'aie jamais vu.</div>
+        <div class="opt" onclick="ans(this,0)">C'est le meilleur film que j'aurais vu.</div>
+      </div>
+      <div class="q-feedback ok">✅ بعد از superlatif در C1، subjonctif passé استفاده می‌شود: «aie vu».</div>
+      <div class="q-feedback ko">❌ در C1 بعد از superlatif، subjonctif می‌آید: «que j'aie jamais vu».</div>
+    </div>
+    <div class="q-card" data-correct="0">
+      <div class="q-text">ترجمه کدام درست است؟<br><span class="fr">Je suis d'autant plus heureux qu'il fait beau.</span></div>
+      <div class="opts">
+        <div class="opt" onclick="ans(this,0)">به همان میزان بیشتر خوشحالم چون هوا آفتابی است.</div>
+        <div class="opt" onclick="ans(this,0)">من خوشحال‌ترم وقتی هوا آفتابی است.</div>
+        <div class="opt" onclick="ans(this,0)">هوای آفتابی مرا خوشحال می‌کند.</div>
+      </div>
+      <div class="q-feedback ok">✅ «d'autant plus...que» = به همان میزان بیشتر...چون — تأکید بر دلیل.</div>
+      <div class="q-feedback ko">❌ «d'autant plus...que» = به همان میزان بیشتر...چون.</div>
+    </div>
+    <div class="score-bar">امتیاز C1: <span id="scoreC1">0</span> از ۲</div>
+  </div>
+</div>
+
+</div><!-- wrap -->
+
+<script>
+// LEVEL TABS
+function showLevel(lv, btn){
+  document.querySelectorAll('.level-section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.ltab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('lv-'+lv).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// QUIZ
+const scores = {A2:0,B1:0,B2:0,C1:0};
+function ans(el, chosen){
+  const block = el.closest('.q-card');
+  if(block.dataset.done) return;
+  block.dataset.done='1';
+  const correct = parseInt(block.dataset.correct);
+  block.querySelectorAll('.opt').forEach((o,i)=>{
+    o.classList.add('disabled');
+    if(i===correct) o.classList.add('correct');
+    else if(o===el && chosen!==correct) o.classList.add('wrong');
+  });
+  const isRight = chosen===correct;
+  block.querySelector('.q-feedback.'+(isRight?'ok':'ko')).classList.add('show');
+  if(isRight){
+    // find which level
+    const section = block.closest('.level-section');
+    const lv = section.id.replace('lv-','');
+    scores[lv]++;
+    document.getElementById('score'+lv).textContent = scores[lv];
+  }
+}
+</script>
+</body>
+</html>
