@@ -345,7 +345,7 @@ body{padding-top:38px!important}
     <div class="node-card" style="top:24%;right:4.17%;left:auto;width:36.11%;border-color:#7a5ba8" onclick="openCat('roulette')"><div class="nc-title" style="color:#7a5ba8">گردونه موضوع</div></div>
     <div class="node-card" style="top:32%;left:4.17%;width:36.11%;border-color:#c77d3a" onclick="openCat('phrases')"><div class="nc-title" style="color:#c77d3a">جملات کاربردی</div></div>
     <div class="node-card" style="top:41%;right:4.17%;left:auto;width:36.11%;border-color:#b0506f" onclick="openCat('miniarticle')"><div class="nc-title" style="color:#b0506f">مینی‌آرتیکل</div></div>
-    <div class="node-card" style="top:50%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="window.location.href='innerfrench.html'"><div class="nc-title" style="color:#5a3b88">InnerFrench</div></div>
+    <div class="node-card" style="top:50%;left:4.17%;width:36.11%;border-color:#5a3b88" onclick="openCat('innerfrench')"><div class="nc-title" style="color:#5a3b88">InnerFrench</div></div>
     <div class="node-card" style="top:58%;right:4.17%;left:auto;width:36.11%;border-color:#2e8b6b" onclick="openCat('article')"><div class="nc-title" style="color:#2e8b6b">آرتیکل</div></div>
     <div class="node-card" style="top:66%;left:4.17%;width:36.11%;border-color:#c4502d" onclick="openCat('podcast')"><div class="nc-title" style="color:#c4502d">معرفی پادکست</div></div>
     <div class="node-card" style="top:74%;right:4.17%;left:auto;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div></div>
@@ -416,6 +416,7 @@ function openCat(id){
     });
     document.getElementById('overlay').classList.add('open');
   } else if(id==='innerfrench'){
+    document.getElementById('mtitle').textContent='InnerFrench';
     document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
     INNERFRENCH.forEach(e=>{
       const a=document.createElement('a');a.className='item';a.href='innerfrench.html?ep='+e.num;
@@ -423,6 +424,7 @@ function openCat(id){
       a.innerHTML=coverHtml+`<div class="item-info"><div class="ititle">${e.titreFa}</div><span class="item-lvl">B1–B2 · اپیزود ${e.num}</span></div>`;
       body.appendChild(a);
     });
+    document.getElementById('overlay').classList.add('open');
   } else {
     const items=LESSONS.filter(l=>l.category===id);
     document.getElementById('mcount').textContent=items.length+' محتوا';
