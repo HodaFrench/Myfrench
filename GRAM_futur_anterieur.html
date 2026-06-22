@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Futur Antérieur | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 100px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:24px;font-weight:700;margin-bottom:4px}
+.hero .sub{font-size:13px;opacity:.85}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+
+/* cards */
+.card{background:var(--white);border-radius:16px;padding:22px 24px;margin:18px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}
+.card.gold{border-right:5px solid var(--gold)}
+.card.green{border-right:5px solid var(--green)}
+.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:14px}
+.card.navy .card-label{color:var(--navy)}
+.card.gold .card-label{color:var(--gold)}
+.card.green .card-label{color:var(--green)}
+.card.rose .card-label{color:var(--rose)}
+
+/* conjugation table */
+.conj-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.conj-table th{background:var(--navy);color:#fff;padding:9px 14px;text-align:right;font-weight:600}
+.conj-table td{padding:9px 14px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.conj-table .pron{color:var(--gold);font-weight:600}
+.conj-table .verb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}
+.conj-table .trans{font-size:12.5px;color:var(--gray)}
+
+/* examples */
+.ex-block{margin:8px 0}
+.ex-fr{font-family:'Roboto',serif;font-size:15.5px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:13px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+
+/* highlight spans */
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+
+/* comparison box */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+
+/* irregular table */
+.irr-table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:8px 12px;font-weight:700}
+.irr-table td{padding:8px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.irr-table .inf{color:var(--gold);font-weight:700}
+.irr-table .rad{color:var(--navy);font-weight:700}
+</style>
+</head>
+<body>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a>
+  <span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Le Futur Antérieur</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · B2–C1</div>
+  <h1>Le Futur Antérieur</h1>
+  <div class="sub">آینده قبلی — عمل کامل‌شده در آینده</div>
+</div>
+<div class="wrap">
+
+<div class="card navy">
+  <div class="card-label">🔷 DÉFINITION — تعریف</div>
+  <p style="font-size:14px;margin-bottom:12px">
+    <b>Futur antérieur</b> برای بیان عملی که <b>قبل</b> از یک عمل دیگر در آینده <b>کامل شده</b> استفاده می‌شود.
+    مثل «گذشته‌ای در آینده» — به فارسی معمولاً «تا آن موقع ... کرده باشم».
+  </p>
+  <div class="ex-fr"><span class="hl">Quand tu arriveras</span>, j'<span class="hl-g">aurai déjà mangé</span>.</div>
+  <div class="ex-fa">وقتی برسی، من قبلاً خورده باشم. (کاملاً پیش از رسیدن تو)</div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">⚙ FORMATION — ساختار</div>
+  <div style="background:var(--cream);border-radius:10px;padding:14px 16px;margin-bottom:14px;text-align:center">
+    <div style="font-family:'Roboto',serif;font-size:16px;direction:ltr">
+      <span class="hl">AVOIR / ÊTRE (futur simple)</span> + <span class="hl-g">PARTICIPE PASSÉ</span>
+    </div>
+  </div>
+
+  <div class="compare">
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--navy)">AVOIR — verbes transitifs</div>
+      <table style="width:100%;font-size:13px">
+        <tr style="border-bottom:1px solid var(--line)"><td class="pron" style="font-weight:700;color:var(--gold);padding:4px">J'</td><td style="font-family:'Roboto',serif;color:var(--navy)">aurai fini</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Tu</td><td style="font-family:'Roboto',serif;color:var(--navy)">auras fini</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Il/Elle</td><td style="font-family:'Roboto',serif;color:var(--navy)">aura fini</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Nous</td><td style="font-family:'Roboto',serif;color:var(--navy)">aurons fini</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Vous</td><td style="font-family:'Roboto',serif;color:var(--navy)">aurez fini</td></tr>
+        <tr><td style="font-weight:700;color:var(--gold);padding:4px">Ils</td><td style="font-family:'Roboto',serif;color:var(--navy)">auront fini</td></tr>
+      </table>
+    </div>
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--green)">ÊTRE — verbes de mouvement + pronominaux</div>
+      <table style="width:100%;font-size:13px">
+        <tr style="border-bottom:1px solid var(--line)"><td class="pron" style="font-weight:700;color:var(--gold);padding:4px">Je</td><td style="font-family:'Roboto',serif;color:var(--navy)">serai parti(e)</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Tu</td><td style="font-family:'Roboto',serif;color:var(--navy)">seras parti(e)</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Il/Elle</td><td style="font-family:'Roboto',serif;color:var(--navy)">sera parti(e)</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Nous</td><td style="font-family:'Roboto',serif;color:var(--navy)">serons parti(e)s</td></tr>
+        <tr style="border-bottom:1px solid var(--line)"><td style="font-weight:700;color:var(--gold);padding:4px">Vous</td><td style="font-family:'Roboto',serif;color:var(--navy)">serez parti(e)(s)</td></tr>
+        <tr><td style="font-weight:700;color:var(--gold);padding:4px">Ils/Elles</td><td style="font-family:'Roboto',serif;color:var(--navy)">seront parti(e)s</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card green">
+  <div class="card-label">📌 USAGES — کاربردها</div>
+
+  <div class="ex-label">① پیش از یک عمل دیگر در آینده (Antériorité)</div>
+  <div style="background:#fff8e8;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:13px">
+    🔑 <b>قانون:</b> دو عمل در آینده → عمل اول = futur antérieur / عمل دوم = futur simple
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Quand il <span class="hl-g">aura mangé</span>, il <span class="hl">sortira</span>.</div>
+    <div class="ex-fa">وقتی خورده باشد، بیرون می‌رود.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Dès que vous <span class="hl-g">aurez fini</span> ce travail, nous <span class="hl">pourrons</span> partir.</div>
+    <div class="ex-fa">به محض اینکه این کار را تمام کرده باشید، می‌توانیم برویم.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Lorsque tu <span class="hl-g">seras arrivé</span> à Paris, envoie-moi un message.</div>
+    <div class="ex-fa">وقتی به پاریس رسیدی، برام پیام بفرست.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Je te téléphonerai quand j'<span class="hl-g">aurai terminé</span> ma réunion.</div>
+    <div class="ex-fa">وقتی جلسه‌ام تموم شد، بهت زنگ می‌زنم.</div>
+  </div>
+
+  <div class="ex-label">② عمل کامل‌شده در نقطه‌ای از آینده (Fait accompli futur)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Dans dix minutes, j'<span class="hl-g">aurai fini</span> cet exercice.</div>
+    <div class="ex-fa">ده دقیقه دیگه این تمرین رو تموم کرده باشم.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Avant la fin du mois, elle <span class="hl-g">aura lu</span> trois livres.</div>
+    <div class="ex-fa">تا آخر ماه سه کتاب خوانده خواهد بود.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">D'ici cinq ans, nous <span class="hl-g">aurons économisé</span> assez d'argent pour une maison.</div>
+    <div class="ex-fa">تا پنج سال دیگه پول کافی برای خانه پس‌انداز کرده خواهیم بود.</div>
+  </div>
+
+  <div class="ex-label">③ حدس درباره گذشته (Hypothèse sur le passé) — سطح C1</div>
+  <div class="ex-block">
+    <div class="ex-fr">Il n'est pas là. Il <span class="hl-g">aura oublié</span> notre rendez-vous.</div>
+    <div class="ex-fa">اینجا نیست. احتمالاً قرارمون رو فراموش کرده.</div>
+  </div>
+  <div class="ex-block">
+    <div class="ex-fr">Où est mon téléphone ? Je l'<span class="hl-g">aurai laissé</span> au café.</div>
+    <div class="ex-fa">گوشیم کجاست؟ احتمالاً کافه جا گذاشتم.</div>
+  </div>
+
+  <div class="ex-label">④ بیلان و نتیجه‌گیری (Bilan futur)</div>
+  <div class="ex-block">
+    <div class="ex-fr">Toute sa vie, il <span class="hl-g">aura travaillé</span> pour les autres.</div>
+    <div class="ex-fa">تمام عمرش برای دیگران کار کرده خواهد بود.</div>
+  </div>
+</div>
+
+<div class="card navy">
+  <div class="card-label">🗺 TIMELINE — نمودار زمانی</div>
+  <div style="background:var(--cream);border-radius:10px;padding:16px;overflow-x:auto">
+    <div style="font-family:'Roboto',serif;font-size:13px;direction:ltr;white-space:nowrap">
+      <span style="color:var(--gray)">MAINTENANT</span>
+      <span style="margin:0 8px">─────────────────────────</span>
+      <span style="color:var(--green);font-weight:700">① FUTUR ANTÉRIEUR</span>
+      <span style="margin:0 8px">───────</span>
+      <span style="color:var(--navy);font-weight:700">② FUTUR SIMPLE</span>
+    </div>
+    <div style="font-size:12px;margin-top:8px">
+      <span style="direction:ltr;font-family:'Roboto',serif">Quand tu <span class="hl-g">seras arrivé</span> (①), nous <span class="hl">partirons</span> (②).</span>
+    </div>
+    <div style="font-size:12px;color:var(--gray);margin-top:4px">وقتی تو رسیده باشی (①)، ما می‌رویم (②).</div>
+  </div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">🔄 COMPARAISON DES TROIS FUTURS — مقایسه سه زمان آینده</div>
+  <table class="conj-table">
+    <tr><th>Temps</th><th>Exemple (fr)</th><th>ترجمه</th><th>کاربرد</th></tr>
+    <tr>
+      <td style="font-weight:700;color:var(--navy)">Futur proche</td>
+      <td style="font-family:'Roboto',serif;direction:ltr">Je vais partir.</td>
+      <td>دارم می‌روم.</td>
+      <td style="font-size:12px">قصد / نزدیک / گفتاری</td>
+    </tr>
+    <tr>
+      <td style="font-weight:700;color:var(--rose)">Futur simple</td>
+      <td style="font-family:'Roboto',serif;direction:ltr">Je partirai demain.</td>
+      <td>فردا می‌روم.</td>
+      <td style="font-size:12px">پیش‌بینی / وعده / رسمی</td>
+    </tr>
+    <tr>
+      <td style="font-weight:700;color:var(--green)">Futur antérieur</td>
+      <td style="font-family:'Roboto',serif;direction:ltr">Je serai parti quand tu arriveras.</td>
+      <td>وقتی برسی رفته باشم.</td>
+      <td style="font-size:12px">قبل از عمل دیگر در آینده</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<!-- done bar + recorder -->
+<style>
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+body{padding-bottom:70px!important}
+</style>
+<div id="done-bar">
+  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
+</div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  const title=document.title.split('|')[0].trim();
+  h.unshift({page,title,time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    const s=JSON.parse(localStorage.getItem('hoda_status')||'{}');
+    s[page]='done';localStorage.setItem('hoda_status',JSON.stringify(s));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
