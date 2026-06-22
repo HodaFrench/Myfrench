@@ -84,12 +84,20 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
-    file: "GRAMMAR_comparaison.html",
-    title: "📐 La Comparaison — مقایسه در فرانسه",
-    titleFr: "La Comparaison — A2 à C1",
+    file: "Comparaison/superlatifs.html",
+    title: "📐 Les Comparatifs et Superlatifs",
+    titleFr: "Comparatifs et Superlatifs",
     category: "grammar", level: "A2–C1",
-    tags: ["grammaire","comparaison","plus","moins","superlatif","A2","B1","B2","C1"],
-    summary: "مقایسه در فرانسه از A2 تا C1 با مثال، ترجمه و تمرین"
+    tags: ["grammaire","comparatif","superlatif","meilleur","pire","mieux"],
+    summary: "درجات مقایسه و عالی در فرانسه با مثال و تمرین"
+  },
+  {
+    file: "Comparaison/comparaison.html",
+    title: "📐 La Comparaison — A2 تا C1",
+    titleFr: "La Comparaison complète",
+    category: "grammar", level: "A2–C1",
+    tags: ["grammaire","comparaison","plus","moins","aussi","superlatif"],
+    summary: "مقایسه کامل در فرانسه از A2 تا C1"
   },
   {
     file: "CULTURE_acadie_cayenne.html",
