@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Passé Récent — venir de | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f;--main:#22618f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#22618f,#1a4f7a);color:#fff;padding:38px 28px 32px;text-align:center;box-shadow:0 14px 40px rgba(34,97,143,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.8);margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:30px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85;line-height:1.8}
+.sec{background:var(--white);border-radius:16px;padding:22px;margin:20px 0;box-shadow:0 4px 16px rgba(31,58,95,.07);border-right:4px solid var(--main)}
+.sec-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--main);direction:ltr;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.formula{background:#f0f4f8;border-radius:10px;padding:14px 18px;margin-bottom:14px;font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;border-right:4px solid var(--main)}
+.formula-fa{font-family:'Estedad',sans-serif;font-size:13px;color:var(--gray);margin-top:6px;direction:rtl;text-align:right}
+.conj{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.conj-item{background:var(--cream);border-radius:8px;padding:9px 14px;font-family:'Roboto',serif;font-size:15px}
+.conj-pro{font-size:11px;color:var(--gray);margin-bottom:2px}
+.exs{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.ex{background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--main)}
+.ex-fr{font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;margin-bottom:4px}
+.ex-fa{font-size:13px;color:var(--gray)}
+.hl{color:var(--main);font-weight:700;background:rgba(34,97,143,.1);border-radius:3px;padding:0 3px}
+.attn{background:rgba(176,80,111,.07);border:1px solid rgba(176,80,111,.25);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#5a1030;line-height:1.8}
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic;color:var(--main)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;background:var(--cream);transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--main)}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;border-radius:8px;display:none;line-height:1.7}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📐 گرامر · A2</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · A2</div>
+  <h1>Le Passé Récent</h1>
+  <div class="sub">venir de + infinitif — همین الان اتفاق افتاد</div>
+</div>
+<div class="wrap">
+
+<div class="sec">
+  <div class="sec-title">① Qu'est-ce que c'est ? — چیست؟</div>
+  <div class="formula">
+    <b>venir de</b> + infinitif
+    <div class="formula-fa">برای بیان عملی که <b>همین الان</b> یا <b>لحظاتی پیش</b> انجام شده — معادل «تازه ... کرده»</div>
+  </div>
+  <div class="conj">
+    <div class="conj-item"><div class="conj-pro">je</div><b>viens de</b></div>
+    <div class="conj-item"><div class="conj-pro">tu</div><b>viens de</b></div>
+    <div class="conj-item"><div class="conj-pro">il/elle/on</div><b>vient de</b></div>
+    <div class="conj-item"><div class="conj-pro">nous</div><b>venons de</b></div>
+    <div class="conj-item"><div class="conj-pro">vous</div><b>venez de</b></div>
+    <div class="conj-item"><div class="conj-pro">ils/elles</div><b>viennent de</b></div>
+  </div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr">Je <span class="hl">viens d'</span>arriver.</div>
+      <div class="ex-fa">تازه رسیدم. (همین الان رسیدم)</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Elle <span class="hl">vient de</span> téléphoner.</div>
+      <div class="ex-fa">تازه زنگ زد.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Ils <span class="hl">viennent de</span> partir.</div>
+      <div class="ex-fa">تازه رفتند.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Nous <span class="hl">venons de</span> finir le travail.</div>
+      <div class="ex-fa">تازه کار را تمام کردیم.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Tu <span class="hl">viens de</span> manger ?</div>
+      <div class="ex-fa">تازه خوردی؟</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">② Passé récent dans le passé — در گذشته</div>
+  <div class="formula">
+    <b>venais/venait/venaient de</b> + infinitif (imparfait de venir)
+    <div class="formula-fa">برای بیان «همین که ... کرده بود» در گذشته — passé récent du passé</div>
+  </div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr">Je <span class="hl">venais de</span> m'endormir quand le téléphone a sonné.</div>
+      <div class="ex-fa">همین که خوابم برده بود که تلفن زنگ زد.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Elle <span class="hl">venait de</span> partir quand tu es arrivé.</div>
+      <div class="ex-fa">همین که رفته بود که تو رسیدی.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Ils <span class="hl">venaient de</span> terminer le repas quand les invités sont arrivés.</div>
+      <div class="ex-fa">همین که غذا را تمام کرده بودند که مهمان‌ها رسیدند.</div>
+    </div>
+  </div>
+  <div class="attn">
+    <strong>⚠️ نکته مهم:</strong><br>
+    passé récent در حال = <span style="font-family:'Roboto',serif;font-style:italic">viens/vient de + inf</span><br>
+    passé récent در گذشته = <span style="font-family:'Roboto',serif;font-style:italic">venais/venait de + inf</span>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-title">③ مقایسه با passé composé</div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr"><span class="hl">Je viens de</span> manger. <span style="color:var(--gray);font-size:12px">← passé récent (همین الان)</span></div>
+      <div class="ex-fa">تازه خوردم. (همین الان، چند دقیقه پیش)</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr"><span class="hl">J'ai mangé</span> ce matin. <span style="color:var(--gray);font-size:12px">← passé composé (امروز صبح)</span></div>
+      <div class="ex-fa">امروز صبح خوردم. (زمان مشخص گذشته)</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr"><span class="hl">Elle vient de</span> rentrer. ≠ <span class="hl">Elle est rentrée</span> hier.</div>
+      <div class="ex-fa">تازه برگشت ≠ دیروز برگشت</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="q-card" data-c="1">
+  <div class="q-text">جای خالی: <span class="fr">Il ___ finir son travail.</span> (تازه تمام کرد)</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">a fini de</div>
+    <div class="opt" onclick="a(this,1)">vient de</div>
+    <div class="opt" onclick="a(this,0)">venait de</div>
+  </div>
+  <div class="q-feedback ok">✅ «vient de» — passé récent در حال.</div>
+  <div class="q-feedback ko">❌ passé récent در حال → «vient de».</div>
+</div>
+
+<div class="q-card" data-c="2">
+  <div class="q-text">ترجمه: «همین که خوابیده بودم که زنگ در زده شد.»</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Je viens de m'endormir quand on a sonné.</div>
+    <div class="opt" onclick="a(this,0)">J'ai dormi quand on a sonné.</div>
+    <div class="opt" onclick="a(this,2)">Je venais de m'endormir quand on a sonné.</div>
+  </div>
+  <div class="q-feedback ok">✅ «venais de» — passé récent در گذشته.</div>
+  <div class="q-feedback ko">❌ در گذشته → «venais de m'endormir».</div>
+</div>
+
+<div class="q-card" data-c="0">
+  <div class="q-text">کدام جمله passé récent دارد؟</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Nous venons de recevoir une lettre.</div>
+    <div class="opt" onclick="a(this,0)">Nous avons reçu une lettre hier.</div>
+    <div class="opt" onclick="a(this,0)">Nous recevons des lettres chaque jour.</div>
+  </div>
+  <div class="q-feedback ok">✅ «venons de recevoir» = passé récent — تازه نامه‌ای دریافت کردیم.</div>
+  <div class="q-feedback ko">❌ گزینه اول: «venons de» = passé récent.</div>
+</div>
+
+<div class="q-card" data-c="1">
+  <div class="q-text">جای خالی: <span class="fr">Elles ___ arriver à Paris.</span> (همین الان رسیدند)</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">sont arrivées à</div>
+    <div class="opt" onclick="a(this,1)">viennent d'</div>
+    <div class="opt" onclick="a(this,0)">venaient d'</div>
+  </div>
+  <div class="q-feedback ok">✅ «viennent d'arriver» — passé récent، جمع مؤنث.</div>
+  <div class="q-feedback ko">❌ همین الان + جمع → «viennent d'».</div>
+</div>
+
+<div class="score-bar">امتیاز: <span id="sc">0</span> از ۴</div>
+</div>
+
+<script>
+let sc=0;
+function a(el,chosen){
+  const b=el.closest('.q-card');if(b.dataset.done)return;b.dataset.done='1';
+  const c=parseInt(b.dataset.c);
+  b.querySelectorAll('.opt').forEach((o,i)=>{o.classList.add('disabled');if(i===c)o.classList.add('correct');else if(o===el&&chosen!==c)o.classList.add('wrong');});
+  b.querySelector('.q-feedback.'+(chosen===c?'ok':'ko')).classList.add('show');
+  if(chosen===c){sc++;document.getElementById('sc').textContent=sc;}
+}
+</script>
+</body>
+</html>
