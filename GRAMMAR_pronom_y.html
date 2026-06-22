@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Pronom Y — Complément de lieu | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f;--y-color:#6b3fa0}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#6b3fa0,#4a2570);color:#fff;padding:38px 28px 32px;text-align:center;box-shadow:0 14px 40px rgba(107,63,160,.3)}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.8);margin-bottom:12px}
+.hero h1{font-family:'Roboto',serif;font-size:30px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:14px;opacity:.85;line-height:1.8}
+.sec{background:var(--white);border-radius:16px;padding:22px;margin:20px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.sec-title{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--y-color);direction:ltr;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+.formula{background:#f5f0fc;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;border-right:4px solid var(--y-color)}
+.formula-fa{font-family:'Estedad',sans-serif;font-size:12.5px;color:var(--gray);margin-top:6px;direction:rtl;text-align:right}
+.exs{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.ex{background:var(--cream);border-radius:10px;padding:12px 16px;border-right:3px solid var(--y-color)}
+.ex-fr{font-family:'Roboto',serif;font-size:16px;direction:ltr;text-align:left;margin-bottom:4px}
+.ex-fa{font-size:13px;color:var(--gray)}
+.ex-why{font-size:12px;color:var(--y-color);margin-top:5px;font-weight:600;padding:4px 10px;background:rgba(107,63,160,.08);border-radius:6px;display:inline-block}
+.hl{color:var(--y-color);font-weight:700;background:rgba(107,63,160,.1);border-radius:3px;padding:0 3px}
+.hl-r{color:#c0392b;font-weight:700;text-decoration:line-through;opacity:.7}
+.attn{background:rgba(176,80,111,.07);border:1px solid rgba(176,80,111,.25);border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#5a1030;line-height:1.8}
+.q-card{background:var(--white);border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.q-text{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.q-text .fr{font-family:'Roboto',serif;font-style:italic;color:var(--y-color)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:9px 16px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:14px;background:var(--cream);transition:all .2s;font-family:'Roboto',serif}
+.opt:hover{border-color:var(--y-color)}
+.opt.correct{background:#e8f5ee;border-color:var(--green);color:#1d6b50;font-weight:600}
+.opt.wrong{background:#fdf0f0;border-color:var(--rose);color:#8a2040}
+.opt.disabled{pointer-events:none}
+.q-feedback{margin-top:10px;font-size:13px;padding:8px 14px;border-radius:8px;display:none;line-height:1.7}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:#e8f5ee;color:#1d6b50;border:1px solid #b7dfc7}
+.q-feedback.ko{background:#fdf0f0;color:#8a2040;border:1px solid #f5c6c6}
+.score-bar{background:var(--white);border-radius:12px;padding:14px 20px;text-align:center;font-size:14px;color:var(--gray);margin-top:8px;border:1px solid var(--line)}
+.score-bar span{font-size:28px;font-weight:700;color:var(--navy)}
+.sec-label{font-size:12px;font-weight:700;color:var(--gray);letter-spacing:1.5px;margin:24px 0 10px;padding-right:4px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="../index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">📐 گرامر</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · ضمیر</div>
+  <h1>Le Pronom Y — Complément de lieu</h1>
+  <div class="sub">ضمیر Y برای جایگزینی مکان · با تحلیل کامل</div>
+</div>
+<div class="wrap">
+
+<div class="sec-label">① تعریف و کاربرد اصلی</div>
+<div class="sec">
+  <div class="sec-title">Qu'est-ce que le pronom Y ? — Y چیست؟</div>
+  <div class="formula">
+    <b>Y</b> remplace un <b>complément de lieu</b> introduit par :<br>
+    <span style="color:#6b3fa0">à, en, dans, sur, sous, chez, devant, derrière...</span>
+    <div class="formula-fa">Y جایگزین «مکمل مکان» می‌شه — یعنی عبارتی که با حرف اضافه مکان شروع می‌شه</div>
+  </div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr">— Tu vas <span style="text-decoration:underline;color:#6b3fa0">à Paris</span> ? — Oui, j'<span class="hl">y</span> vais demain.</div>
+      <div class="ex-fa">آیا به پاریس می‌روی؟ — بله، فردا می‌روم.</div>
+      <div class="ex-why">💡 Y = à Paris — حرف اضافه «à» + مکان</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">— Il est <span style="text-decoration:underline;color:#6b3fa0">dans sa chambre</span> ? — Oui, il <span class="hl">y</span> est.</div>
+      <div class="ex-fa">آیا در اتاقش است؟ — بله، آنجاست.</div>
+      <div class="ex-why">💡 Y = dans sa chambre — حرف اضافه «dans» + مکان</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">— Tu habites <span style="text-decoration:underline;color:#6b3fa0">en France</span> ? — Oui, j'<span class="hl">y</span> habite depuis 5 ans.</div>
+      <div class="ex-fa">آیا در فرانسه زندگی می‌کنی؟ — بله، ۵ سال است اینجا زندگی می‌کنم.</div>
+      <div class="ex-why">💡 Y = en France — حرف اضافه «en» + کشور مؤنث</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">— Vous allez <span style="text-decoration:underline;color:#6b3fa0">chez le médecin</span> ? — Non, nous n'<span class="hl">y</span> allons pas.</div>
+      <div class="ex-fa">آیا پیش دکتر می‌روید؟ — نه، نمی‌رویم.</div>
+      <div class="ex-why">💡 Y = chez le médecin — حرف اضافه «chez» + شخص</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">— Les clés sont <span style="text-decoration:underline;color:#6b3fa0">sur la table</span> ? — Oui, elles <span class="hl">y</span> sont.</div>
+      <div class="ex-fa">آیا کلیدها روی میز هستند؟ — بله، آنجا هستند.</div>
+      <div class="ex-why">💡 Y = sur la table — حرف اضافه «sur» + مکان</div>
+    </div>
+  </div>
+</div>
+
+<div class="sec-label">② جای Y در جمله</div>
+<div class="sec">
+  <div class="sec-title">Position de Y — جایگاه Y</div>
+  <div class="formula">
+    <b>Sujet + Y + verbe</b> (temps simples)<br>
+    <b>Sujet + Y + auxiliaire + participe</b> (temps composés)<br>
+    <b>Sujet + verbe modal + Y + infinitif</b>
+    <div class="formula-fa">Y همیشه <b>قبل از فعل اصلی</b> می‌آید</div>
+  </div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr">J'<span class="hl">y</span> vais. <span style="color:var(--gray);font-size:13px">(présent)</span></div>
+      <div class="ex-fa">آنجا می‌روم.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">J'<span class="hl">y</span> suis allé(e). <span style="color:var(--gray);font-size:13px">(passé composé)</span></div>
+      <div class="ex-fa">آنجا رفتم.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Je veux <span class="hl">y</span> aller. <span style="color:var(--gray);font-size:13px">(infinitif)</span></div>
+      <div class="ex-fa">می‌خواهم آنجا بروم.</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">N'<span class="hl">y</span> va pas ! <span style="color:var(--gray);font-size:13px">(impératif négatif)</span></div>
+      <div class="ex-fa">آنجا نرو!</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Vas-<span class="hl">y</span> ! <span style="color:var(--gray);font-size:13px">(impératif affirmatif — با S اضافه)</span></div>
+      <div class="ex-fa">برو! (آنجا برو)</div>
+    </div>
+  </div>
+  <div class="attn">
+    <strong>⚠️ impératif affirmatif:</strong> با فعل «aller»، شکل امری مثبت به Y نیاز به S اضافه دارد:<br>
+    ❌ <span style="font-family:'Roboto',serif;font-style:italic">Va-y</span> — ✅ <span style="font-family:'Roboto',serif;font-style:italic">Vas-y</span>
+  </div>
+</div>
+
+<div class="sec-label">③ Y برای جایگزینی «à + چیز/مفهوم» (نه مکان)</div>
+<div class="sec">
+  <div class="sec-title">Y + complément de chose (à + chose)</div>
+  <div class="formula">
+    Y همچنین جایگزین <b>à + اسم (بی‌جان)</b> می‌شود
+    <div class="formula-fa">وقتی فعل با «à» کامل می‌شه و مفعول غیرانسان است</div>
+  </div>
+  <div class="exs">
+    <div class="ex">
+      <div class="ex-fr">Tu penses <span style="text-decoration:underline;color:#6b3fa0">à ce problème</span> ? — Oui, j'<span class="hl">y</span> pense.</div>
+      <div class="ex-fa">به این مشکل فکر می‌کنی؟ — بله، فکر می‌کنم.</div>
+      <div class="ex-why">💡 penser à + chose → Y</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Il répond <span style="text-decoration:underline;color:#6b3fa0">à la question</span> ? — Oui, il <span class="hl">y</span> répond.</div>
+      <div class="ex-fa">به سوال جواب می‌دهد؟ — بله، جواب می‌دهد.</div>
+      <div class="ex-why">💡 répondre à + chose → Y</div>
+    </div>
+    <div class="ex">
+      <div class="ex-fr">Elle s'intéresse <span style="text-decoration:underline;color:#6b3fa0">à la musique</span> ? — Oui, elle s'<span class="hl">y</span> intéresse.</div>
+      <div class="ex-fa">به موسیقی علاقه دارد؟ — بله، علاقه دارد.</div>
+      <div class="ex-why">💡 s'intéresser à + chose → Y</div>
+    </div>
+  </div>
+  <div class="attn">
+    <strong>⚠️ مهم:</strong> وقتی «à» با <b>شخص</b> (انسان) می‌آید، از Y استفاده نمی‌شود:<br>
+    ❌ <span style="font-family:'Roboto',serif;font-style:italic">Je pense à Marie → J'y pense</span> — اشتباه!<br>
+    ✅ <span style="font-family:'Roboto',serif;font-style:italic">Je pense à elle</span> — درست (ضمیر تأکیدی)
+  </div>
+</div>
+
+<div class="sec-label">④ تمرین با تحلیل</div>
+<div class="q-card" data-c="1">
+  <div class="q-text">— Tu vas souvent <span class="fr">à la bibliothèque</span> ?<br>— Oui, j'___ vais deux fois par semaine.</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">lui</div>
+    <div class="opt" onclick="a(this,1)">y</div>
+    <div class="opt" onclick="a(this,0)">en</div>
+  </div>
+  <div class="q-feedback ok">✅ <b>Y</b> — چون «à la bibliothèque» مکان است. Y جایگزین «à + مکان» می‌شود.</div>
+  <div class="q-feedback ko">❌ «à la bibliothèque» مکان است → باید از <b>Y</b> استفاده کنیم.</div>
+</div>
+
+<div class="q-card" data-c="2">
+  <div class="q-text">— Elle habite <span class="fr">en Espagne</span> depuis longtemps ?<br>— Non, elle n'___ habite que depuis un an.</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">en</div>
+    <div class="opt" onclick="a(this,0)">lui</div>
+    <div class="opt" onclick="a(this,2)">y</div>
+  </div>
+  <div class="q-feedback ok">✅ <b>Y</b> — «en Espagne» مکان است. Y = en Espagne.</div>
+  <div class="q-feedback ko">❌ «en Espagne» مکان است → <b>Y</b>.</div>
+</div>
+
+<div class="q-card" data-c="0">
+  <div class="q-text">— Tu penses <span class="fr">à ton avenir</span> ?<br>— Oui, j'___ pense souvent.</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">y</div>
+    <div class="opt" onclick="a(this,0)">lui</div>
+    <div class="opt" onclick="a(this,0)">en</div>
+  </div>
+  <div class="q-feedback ok">✅ <b>Y</b> — «penser à + chose (avenir)» → Y. (اگر شخص بود، «lui» می‌شد)</div>
+  <div class="q-feedback ko">❌ «penser à + chose» → <b>Y</b>. «lui» فقط برای اشخاص است.</div>
+</div>
+
+<div class="q-card" data-c="1">
+  <div class="q-text">کدام جمله <b>اشتباه</b> است؟</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Il y va souvent.</div>
+    <div class="opt" onclick="a(this,1)">Je pense à ma mère → J'y pense.</div>
+    <div class="opt" onclick="a(this,0)">Nous y habitons depuis 2020.</div>
+  </div>
+  <div class="q-feedback ok">✅ گزینه دوم اشتباه است! «ma mère» شخص است → باید «Je pense à elle» بشود، نه «J'y pense».</div>
+  <div class="q-feedback ko">❌ گزینه دوم اشتباه است: «mère» شخص است → «Je pense à elle»، نه Y.</div>
+</div>
+
+<div class="q-card" data-c="2">
+  <div class="q-text">— Vous répondez <span class="fr">à cette question</span> ?<br>— Oui, nous ___ répondons.</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">lui</div>
+    <div class="opt" onclick="a(this,0)">la</div>
+    <div class="opt" onclick="a(this,2)">y</div>
+  </div>
+  <div class="q-feedback ok">✅ <b>Y</b> — «répondre à + question (chose)» → Y.<br>⚠️ «la» اشتباه است چون «répondre» با «à» می‌آید، نه مفعول مستقیم.</div>
+  <div class="q-feedback ko">❌ «répondre à + chose» → <b>Y</b>. «la» اشتباه است — این فعل مفعول مستقیم نمی‌گیرد.</div>
+</div>
+
+<div class="q-card" data-c="0">
+  <div class="q-text">جمله امری: <span class="fr">Aller à la piscine !</span> → به شکل امری مثبت با Y</div>
+  <div class="opts">
+    <div class="opt" onclick="a(this,0)">Vas-y !</div>
+    <div class="opt" onclick="a(this,0)">Va-y !</div>
+    <div class="opt" onclick="a(this,0)">Y va !</div>
+  </div>
+  <div class="q-feedback ok">✅ <b>Vas-y !</b> — در امری مثبت «aller»، S اضافه می‌شود: va → vas (قبل از y).</div>
+  <div class="q-feedback ko">❌ <b>Vas-y</b> — با S! قانون: فعل «aller» در امری مثبت قبل از Y، یک S می‌گیرد.</div>
+</div>
+
+<div class="score-bar">امتیاز: <span id="sc">0</span> از ۶</div>
+</div>
+
+<script>
+let sc=0;
+function a(el,chosen){
+  const b=el.closest('.q-card');
+  if(b.dataset.done)return;
+  b.dataset.done='1';
+  const c=parseInt(b.dataset.c);
+  b.querySelectorAll('.opt').forEach((o,i)=>{
+    o.classList.add('disabled');
+    if(i===c)o.classList.add('correct');
+    else if(o===el&&chosen!==c)o.classList.add('wrong');
+  });
+  b.querySelector('.q-feedback.'+(chosen===c?'ok':'ko')).classList.add('show');
+  if(chosen===c){sc++;document.getElementById('sc').textContent=sc;}
+}
+</script>
+</body>
+</html>
