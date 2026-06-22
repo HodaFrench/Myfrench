@@ -2,134 +2,299 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>گردونه‌ی موضوع — Français avec Hoda</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>گردونه موضوع | Français avec Hoda</title>
 <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  :root{
-    --navy:#1e3a5f; --accent:#7a5ba8; --accent-deep:#5a3b88; --gold:#c4a572;
-    --paper:#f4f3f5; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275; --line:#e2e1e3; --white:#fcfbfd;
-  }
-  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
-    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(122,91,168,0.05) 31px, rgba(122,91,168,0.05) 32px);
-    color:var(--ink); line-height:1.9; padding:20px 16px 70px; min-height:100vh;}
-  .wrap{max-width:620px; margin:0 auto;}
-  .topbar{display:flex; gap:10px; margin-bottom:18px; flex-wrap:wrap;}
-  .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
-    background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s; cursor:pointer;}
-  .topbar a:hover{background:var(--accent); color:#fff;}
-  .rl-header{text-align:center; margin-bottom:24px;}
-  .rl-header .rl-emoji{font-size:38px; margin-bottom:6px;}
-  .rl-header h1{font-size:25px; font-weight:700; color:var(--navy); margin-bottom:6px;}
-  .rl-header p{font-size:13.5px; color:var(--gray); line-height:1.9; max-width:440px; margin:0 auto;}
-  /* چرخ */
-  .wheel-wrap{position:relative; width:330px; height:330px; margin:10px auto 24px;}
-  .wheel-pointer{position:absolute; top:-6px; left:50%; transform:translateX(-50%); z-index:5;
-    width:0; height:0; border-left:16px solid transparent; border-right:16px solid transparent;
-    border-top:26px solid var(--accent-deep); filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));}
-  .wheel{width:330px; height:330px; border-radius:50%; position:relative;
-    transition:transform 4.5s cubic-bezier(.17,.67,.2,1);
-    box-shadow:0 14px 40px rgba(122,91,168,.3), inset 0 0 0 8px rgba(255,255,255,.6); }
-  .wheel-center{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:4;
-    width:64px; height:64px; border-radius:50%; background:var(--white); border:4px solid var(--accent);
-    display:flex; align-items:center; justify-content:center; font-size:26px; box-shadow:0 4px 14px rgba(0,0,0,.18);}
-  /* دکمه */
-  .spin-btn{display:block; margin:0 auto 22px; font-family:'Estedad',sans-serif; font-size:17px; font-weight:700;
-    background:linear-gradient(135deg, var(--accent), var(--accent-deep)); color:#fff; border:none;
-    border-radius:30px; padding:14px 40px; cursor:pointer; box-shadow:0 8px 22px rgba(122,91,168,.32); transition:transform .15s, opacity .2s;}
-  .spin-btn:hover{transform:translateY(-2px);}
-  .spin-btn:active{transform:translateY(0);}
-  .spin-btn:disabled{opacity:.5; cursor:default; transform:none;}
-  /* نتیجه */
-  .result{background:var(--white); border:1px solid var(--line); border-top:4px solid var(--accent);
-    border-radius:18px; padding:26px; text-align:center; box-shadow:0 10px 30px rgba(31,58,95,.07);
-    opacity:0; transform:translateY(12px); transition:all .4s ease; min-height:130px; display:flex; flex-direction:column; justify-content:center;}
-  .result.show{opacity:1; transform:translateY(0);}
-  .result-label{font-size:12px; color:var(--gray); margin-bottom:10px; letter-spacing:1px;}
-  .result-fr{font-family:'Roboto',serif; font-size:30px; font-weight:700; color:var(--navy); direction:ltr; margin-bottom:6px;}
-  .result-fa{font-size:17px; color:var(--accent); font-weight:600;}
-  .result-hint{font-size:12.5px; color:var(--gray); margin-top:14px; line-height:1.8; border-top:1px dashed var(--line); padding-top:12px;}
-  .result-empty{font-size:14px; color:var(--gray);}
-  .rl-footer{text-align:center; margin-top:26px; color:var(--gray); font-size:12.5px;}
-  .rl-footer b{color:var(--accent);}
-  .rl-count{display:inline-block; background:rgba(122,91,168,.1); color:var(--accent-deep);
-    font-size:11.5px; font-weight:600; padding:4px 12px; border-radius:12px; margin-top:8px;}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);padding:0 0 60px;min-height:100vh}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
+.hero{background:linear-gradient(135deg,#7a5ba8,#4a2d7a);color:#fff;padding:24px 24px 20px;text-align:center}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.hero .sub{font-size:12.5px;opacity:.85}
+
+/* WHEEL */
+.wheel-section{display:flex;flex-direction:column;align-items:center;padding:24px 0 16px}
+.wheel-wrap{position:relative;width:280px;height:280px;margin:0 auto}
+.wheel-pointer{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:28px;z-index:10;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+canvas{border-radius:50%;box-shadow:0 8px 40px rgba(122,59,136,.35),0 0 0 6px rgba(122,59,136,.15);display:block}
+
+.spin-btn{
+  margin-top:20px;
+  padding:13px 40px;
+  background:linear-gradient(135deg,#7a5ba8,#4a2d7a);
+  color:#fff;border:none;border-radius:14px;
+  font-family:'Estedad',sans-serif;font-size:16px;font-weight:700;
+  cursor:pointer;transition:all .25s;
+  box-shadow:0 4px 20px rgba(122,59,136,.4);
+}
+.spin-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,59,136,.5)}
+.spin-btn:active{transform:translateY(0)}
+.spin-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* result */
+.result-card{
+  background:var(--white);border-radius:16px;padding:20px 22px;
+  margin:18px 0 0;box-shadow:0 4px 20px rgba(31,58,95,.1);
+  border-right:4px solid #7a5ba8;
+  display:none;animation:slideIn .4s ease;
+}
+.result-card.show{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.result-label{font-size:11px;font-weight:700;color:#7a5ba8;letter-spacing:1.5px;margin-bottom:8px}
+.result-topic{font-family:'Roboto',serif;font-size:24px;font-weight:700;color:var(--navy);direction:ltr;text-align:left;margin-bottom:4px}
+.result-fa{font-size:14px;color:var(--gray)}
+
+/* mode tabs */
+.mode-tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin:24px 0 0}
+.mode-tab{flex:1;padding:10px;border:none;background:transparent;cursor:pointer;font-family:'Estedad',sans-serif;font-size:14px;font-weight:600;color:var(--gray);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.mode-tab.active{color:#7a5ba8;border-bottom-color:#7a5ba8}
+
+/* list */
+.topics-list{padding:16px 0}
+.topic-item{
+  display:flex;align-items:center;gap:12px;
+  padding:10px 14px;background:var(--white);
+  border-radius:10px;margin-bottom:6px;
+  cursor:pointer;transition:all .2s;
+  border:1px solid var(--line);
+}
+.topic-item:hover{background:rgba(122,59,136,.06);border-color:rgba(122,59,136,.3)}
+.topic-num{font-size:11px;font-weight:700;color:#7a5ba8;width:28px;flex-shrink:0;text-align:center}
+.topic-fr{font-family:'Roboto',serif;font-size:15px;color:var(--navy);flex:1;direction:ltr;text-align:left}
+.topic-fa{font-size:12px;color:var(--gray);margin-top:1px}
+.spin-this{font-size:12px;color:#7a5ba8;opacity:.5}
+.topic-item:hover .spin-this{opacity:1}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <a href="index.html">⌂ Français avec Hoda</a>
-    </div>
-    <div class="rl-header">
-      <div class="rl-emoji">🎡</div>
-      <h1>گردونه‌ی موضوع</h1>
-      <p>چرخ را بچرخان! یک موضوع تصادفی برایت می‌آید و تو باید <b>یک دقیقه</b> درباره‌اش به فرانسه حرف بزنی. بهترین راه برای غلبه بر ترسِ حرف زدن.</p>
-      <div class="rl-count" id="rlCount"></div>
-    </div>
-    <div class="wheel-wrap">
-      <div class="wheel-pointer"></div>
-      <div class="wheel" id="wheel"></div>
-      <div class="wheel-center">🎯</div>
-    </div>
-    <button class="spin-btn" id="spinBtn" onclick="spin()">بچرخان! 🎲</button>
-    <div class="result" id="result">
-      <div class="result-empty">چرخ را بچرخان تا موضوعت معلوم شود…</div>
-    </div>
-    <div class="rl-footer">
-      ✦ نکته: سعی کن بدون مکث، با جمله‌های ساده شروع کنی. مهم حرف‌زدن است، نه بی‌نقص بودن.<br>
-      <b>Français avec Hoda</b>
-    </div>
+<div class="topbar">
+  <a href="index.html">⌂ Français avec Hoda</a>
+  <span style="font-size:13px;opacity:.7">🎡 گردونه موضوع</span>
+</div>
+<div class="hero">
+  <h1>🎡 گردونه موضوع</h1>
+  <div class="sub">بچرخون — موضوع بگیر — صحبت کن!</div>
+</div>
+
+<div class="wrap">
+
+<!-- WHEEL -->
+<div class="wheel-section">
+  <div class="wheel-wrap">
+    <div class="wheel-pointer">▼</div>
+    <canvas id="wheel" width="280" height="280"></canvas>
   </div>
-  <script>
-    const TOPICS = [{"fr": "Le bonheur", "fa": "خوشبختی"}, {"fr": "La liberté", "fa": "آزادی"}, {"fr": "L'amitié", "fa": "دوستی"}, {"fr": "Le mensonge", "fa": "دروغ"}, {"fr": "La réussite", "fa": "موفقیت"}, {"fr": "L'échec", "fa": "شکست"}, {"fr": "Le temps", "fa": "زمان"}, {"fr": "La solitude", "fa": "تنهایی"}, {"fr": "L'argent", "fa": "پول"}, {"fr": "La peur", "fa": "ترس"}, {"fr": "Le courage", "fa": "شجاعت"}, {"fr": "La justice", "fa": "عدالت"}, {"fr": "La technologie", "fa": "فناوری"}, {"fr": "Les réseaux sociaux", "fa": "شبکه‌های اجتماعی"}, {"fr": "L'intelligence artificielle", "fa": "هوش مصنوعی"}, {"fr": "Le changement climatique", "fa": "تغییرات اقلیمی"}, {"fr": "La famille", "fa": "خانواده"}, {"fr": "L'éducation", "fa": "آموزش و پرورش"}, {"fr": "Le voyage", "fa": "سفر"}, {"fr": "La cuisine", "fa": "آشپزی"}, {"fr": "L'art", "fa": "هنر"}, {"fr": "La musique", "fa": "موسیقی"}, {"fr": "Le sport", "fa": "ورزش"}, {"fr": "La santé", "fa": "سلامتی"}, {"fr": "Le rêve", "fa": "رؤیا"}, {"fr": "La mémoire", "fa": "حافظه"}, {"fr": "L'amour", "fa": "عشق"}, {"fr": "La jalousie", "fa": "حسادت"}, {"fr": "Le pardon", "fa": "بخشش"}, {"fr": "La patience", "fa": "صبر"}, {"fr": "La curiosité", "fa": "کنجکاوی"}, {"fr": "L'imagination", "fa": "تخیل"}, {"fr": "La créativité", "fa": "خلاقیت"}, {"fr": "Le travail", "fa": "کار"}, {"fr": "Le repos", "fa": "استراحت"}, {"fr": "La nature", "fa": "طبیعت"}, {"fr": "Les animaux", "fa": "حیوانات"}, {"fr": "La ville", "fa": "شهر"}, {"fr": "La campagne", "fa": "روستا / حومه"}, {"fr": "La mode", "fa": "مد"}, {"fr": "La beauté", "fa": "زیبایی"}, {"fr": "Le vieillissement", "fa": "پیر شدن"}, {"fr": "L'enfance", "fa": "کودکی"}, {"fr": "Les souvenirs", "fa": "خاطرات"}, {"fr": "Le futur", "fa": "آینده"}, {"fr": "Le passé", "fa": "گذشته"}, {"fr": "Le changement", "fa": "تغییر"}, {"fr": "L'habitude", "fa": "عادت"}, {"fr": "Le risque", "fa": "ریسک / خطر"}, {"fr": "La chance", "fa": "شانس"}, {"fr": "Le destin", "fa": "سرنوشت"}, {"fr": "La religion", "fa": "دین"}, {"fr": "La philosophie", "fa": "فلسفه"}, {"fr": "La science", "fa": "علم"}, {"fr": "L'espace", "fa": "فضا"}, {"fr": "Le langage", "fa": "زبان"}, {"fr": "La culture", "fa": "فرهنگ"}, {"fr": "La tradition", "fa": "سنت"}, {"fr": "La modernité", "fa": "مدرنیته"}, {"fr": "L'immigration", "fa": "مهاجرت"}, {"fr": "L'identité", "fa": "هویت"}, {"fr": "La différence", "fa": "تفاوت"}, {"fr": "La tolérance", "fa": "مدارا"}, {"fr": "Le respect", "fa": "احترام"}, {"fr": "La confiance", "fa": "اعتماد"}, {"fr": "La trahison", "fa": "خیانت"}, {"fr": "L'honnêteté", "fa": "صداقت"}, {"fr": "La générosité", "fa": "سخاوت"}, {"fr": "L'égoïsme", "fa": "خودخواهی"}, {"fr": "Le bonheur au travail", "fa": "رضایت شغلی"}, {"fr": "Le télétravail", "fa": "دورکاری"}, {"fr": "L'équilibre vie-travail", "fa": "تعادل کار و زندگی"}, {"fr": "La consommation", "fa": "مصرف‌گرایی"}, {"fr": "Le minimalisme", "fa": "مینیمالیسم"}, {"fr": "Le gaspillage", "fa": "اسراف"}, {"fr": "Le recyclage", "fa": "بازیافت"}, {"fr": "La pollution", "fa": "آلودگی"}, {"fr": "L'énergie", "fa": "انرژی"}, {"fr": "Le bénévolat", "fa": "کار داوطلبانه"}, {"fr": "La politique", "fa": "سیاست"}, {"fr": "La démocratie", "fa": "دموکراسی"}, {"fr": "Les droits de l'homme", "fa": "حقوق بشر"}, {"fr": "L'égalité", "fa": "برابری"}, {"fr": "La pauvreté", "fa": "فقر"}, {"fr": "La richesse", "fa": "ثروت"}, {"fr": "Le bonheur matériel", "fa": "خوشبختی مادی"}, {"fr": "La spiritualité", "fa": "معنویت"}, {"fr": "La méditation", "fa": "مدیتیشن"}, {"fr": "Le stress", "fa": "استرس"}, {"fr": "Le sommeil", "fa": "خواب"}, {"fr": "L'alimentation", "fa": "تغذیه"}, {"fr": "Le bonheur des autres", "fa": "خوشبختی دیگران"}, {"fr": "La célébrité", "fa": "شهرت"}, {"fr": "L'influence", "fa": "تأثیرگذاری"}, {"fr": "Le pouvoir", "fa": "قدرت"}, {"fr": "La compétition", "fa": "رقابت"}, {"fr": "La collaboration", "fa": "همکاری"}, {"fr": "L'apprentissage", "fa": "یادگیری"}, {"fr": "La motivation", "fa": "انگیزه"}, {"fr": "Le perfectionnisme", "fa": "کمال‌گرایی"}, {"fr": "Le bonheur simple", "fa": "خوشبختی ساده"}];
-    document.getElementById("rlCount").textContent = TOPICS.length + " موضوع برای گفت‌وگو";
+  <button class="spin-btn" id="spin-btn" onclick="spin()">🎡 بچرخون!</button>
+</div>
 
-    // ساخت بخش‌های رنگی چرخ (۱۲ بخش رنگی فقط برای ظاهر)
-    const SEG = 12;
-    const colors = ["#7a5ba8","#2e7bb5","#5a8f4a","#c4502d","#b0506f","#b07a4a"];
-    let grad = [];
-    for (let i=0; i<SEG; i++){
-      const c = colors[i % colors.length];
-      const a = (360/SEG)*i, b=(360/SEG)*(i+1);
-      grad.push(`${c} ${a}deg ${b}deg`);
+<!-- RESULT -->
+<div class="result-card" id="result-card">
+  <div class="result-label">🎯 موضوع انتخاب شده</div>
+  <div class="result-topic" id="result-topic"></div>
+  <div class="result-fa" id="result-fa"></div>
+</div>
+
+<!-- MODE TABS -->
+<div class="mode-tabs">
+  <button class="mode-tab active" onclick="switchMode('words',this)">📝 موضوعات (کلمه)</button>
+  <button class="mode-tab" onclick="switchMode('sentences',this)">💬 موضوعات (جمله)</button>
+</div>
+
+<div class="topics-list" id="topics-list"></div>
+
+</div>
+
+<script>
+const WORDS = ["la famille", "le travail", "les vacances", "la nourriture", "la santé", "l'environnement", "la technologie", "les voyages", "l'amitié", "l'école", "le sport", "la musique", "le cinéma", "la mode", "la politique", "l'argent", "le bonheur", "la solitude", "la peur", "le rêve", "les animaux", "la nature", "la ville", "la campagne", "la mer", "l'amour", "la jalousie", "le succès", "l'échec", "la confiance", "la liberté", "la justice", "l'égalité", "la paix", "la guerre", "les réseaux sociaux", "l'intelligence artificielle", "le télétravail", "la retraite", "l'immigration", "le mariage", "les enfants", "le divorce", "la vieillesse", "la mort", "le bénévolat", "la générosité", "l'égoïsme", "la patience", "le courage", "la curiosité", "la créativité", "l'ambition", "la paresse", "la routine", "les livres", "la lecture", "l'écriture", "les langues", "la culture", "la cuisine", "le restaurant", "le marché", "la recette", "le régime", "la médecine", "le stress", "l'anxiété", "la méditation", "le sommeil", "les transports", "la voiture", "le vélo", "le train", "l'avion", "le logement", "la colocation", "le loyer", "le quartier", "la banlieue", "le temps libre", "les loisirs", "les jeux vidéo", "la télévision", "le théâtre", "l'art", "la peinture", "la photographie", "la sculpture", "l'architecture", "la solidarité", "la communauté", "le voisinage", "l'entraide", "le partage", "le changement climatique", "le recyclage", "les énergies renouvelables", "la pollution", "la biodiversité", "l'entrepreneuriat", "la start-up", "l'innovation", "la formation", "le diplôme"];
+const SENTENCES = [["Décrivez votre journée idéale.", "روز ایده‌آلتان را توصیف کنید."], ["Quel est votre plus grand rêve ?", "بزرگ‌ترین رویای شما چیست؟"], ["Parlez d'une personne importante dans votre vie.", "درباره یک نفر مهم در زندگی‌تان صحبت کنید."], ["Quels sont les avantages et inconvénients des réseaux sociaux ?", "مزایا و معایب شبکه‌های اجتماعی چیست؟"], ["Si vous pouviez vivre dans un autre pays, lequel choisiriez-vous ?", "اگر می‌توانستید در کشور دیگری زندگی کنید، کدام را انتخاب می‌کردید؟"], ["Décrivez votre repas préféré.", "غذای مورد علاقه‌تان را توصیف کنید."], ["Qu'est-ce qui vous rend heureux(se) ?", "چه چیزی شما را خوشحال می‌کند؟"], ["Comment passez-vous votre temps libre ?", "اوقات فراغت خود را چگونه می‌گذرانید؟"], ["Parlez d'un voyage mémorable.", "درباره یک سفر به‌یادماندنی صحبت کنید."], ["Quelles qualités cherchez-vous chez un(e) ami(e) ?", "در یک دوست چه ویژگی‌هایی می‌جویید؟"], ["Pensez-vous que l'argent fait le bonheur ?", "آیا فکر می‌کنید پول خوشبختی می‌آورد؟"], ["Décrivez votre ville natale.", "شهر زادگاهتان را توصیف کنید."], ["Quel métier auriez-vous voulu exercer ?", "چه شغلی می‌خواستید داشته باشید؟"], ["Parlez d'un souvenir d'enfance.", "درباره یک خاطره از کودکی صحبت کنید."], ["Comment imaginez-vous votre vie dans 10 ans ?", "زندگی خود را در ۱۰ سال آینده چگونه تصور می‌کنید؟"], ["Quelle est l'importance de la famille pour vous ?", "اهمیت خانواده برای شما چیست؟"], ["Parlez d'un livre ou film qui vous a marqué(e).", "درباره کتاب یا فیلمی که تأثیر گذاشته صحبت کنید."], ["Que pensez-vous du mariage ?", "نظرتان درباره ازدواج چیست؟"], ["Comment gérez-vous le stress ?", "با استرس چگونه کنار می‌آیید؟"], ["Décrivez votre maison idéale.", "خانه ایده‌آلتان را توصیف کنید."], ["Quel sport pratiquez-vous ou aimeriez-vous pratiquer ?", "چه ورزشی انجام می‌دهید یا دوست دارید انجام دهید؟"], ["Parlez de vos habitudes alimentaires.", "درباره عادات غذایی‌تان صحبت کنید."], ["Que faites-vous le matin avant de commencer votre journée ?", "صبح قبل از شروع روزتان چه می‌کنید؟"], ["Quels sont selon vous les problèmes les plus importants du monde ?", "به نظر شما مهم‌ترین مشکلات جهان چیست؟"], ["Préférez-vous la ville ou la campagne ? Pourquoi ?", "شهر را ترجیح می‌دهید یا روستا؟ چرا؟"], ["Parlez d'une réussite dont vous êtes fier(ère).", "درباره موفقیتی که به آن افتخار می‌کنید صحبت کنید."], ["Comment apprenez-vous le mieux ?", "بهترین روش یادگیری شما چیست؟"], ["Que pensez-vous du travail à distance ?", "نظرتان درباره کار از راه دور چیست؟"], ["Décrivez une personne que vous admirez.", "شخصی که تحسینش می‌کنید را توصیف کنید."], ["Qu'est-ce qui vous motive chaque jour ?", "هر روز چه چیزی شما را با انگیزه می‌کند؟"], ["Parlez de vos loisirs favoris.", "درباره سرگرمی‌های مورد علاقه‌تان صحبت کنید."], ["Êtes-vous plutôt optimiste ou pessimiste ?", "بیشتر خوش‌بین هستید یا بدبین؟"], ["Comment choisissez-vous vos vêtements ?", "لباس‌هایتان را چگونه انتخاب می‌کنید؟"], ["Parlez d'une habitude que vous voulez changer.", "درباره یک عادتی که می‌خواهید تغییر دهید صحبت کنید."], ["Que pensez-vous de l'intelligence artificielle ?", "نظرتان درباره هوش مصنوعی چیست؟"], ["Décrivez votre restaurant préféré.", "رستوران مورد علاقه‌تان را توصیف کنید."], ["Comment aidez-vous les autres dans votre vie quotidienne ?", "در زندگی روزمره چگونه به دیگران کمک می‌کنید؟"], ["Parlez d'une décision difficile que vous avez prise.", "درباره یک تصمیم سخت که گرفته‌اید صحبت کنید."], ["Qu'est-ce qui vous fait peur ?", "از چه چیزی می‌ترسید؟"], ["Comment avez-vous commencé à apprendre le français ?", "چگونه شروع به یادگیری فرانسه کردید؟"], ["Décrivez une fête ou célébration de votre culture.", "یک جشن یا مراسم فرهنگ خودتان را توصیف کنید."], ["Que feriez-vous si vous gagniez à la loterie ?", "اگر لاتاری برنده می‌شدید چه می‌کردید؟"], ["Parlez de l'importance des langues étrangères.", "درباره اهمیت زبان‌های خارجی صحبت کنید."], ["Comment définissez-vous le succès ?", "موفقیت را چگونه تعریف می‌کنید؟"], ["Que pensez-vous du végétarisme ?", "نظرتان درباره گیاه‌خواری چیست؟"], ["Décrivez votre journée de travail typique.", "روز کاری معمول خود را توصیف کنید."], ["Avez-vous des superstitions ? Lesquelles ?", "آیا خرافاتی دارید؟ کدام‌ها؟"], ["Comment choisissez-vous vos amis ?", "دوستانتان را چگونه انتخاب می‌کنید؟"], ["Que pensez-vous de l'écologie ?", "نظرتان درباره محیط زیست چیست؟"], ["Parlez d'une tradition de votre famille.", "درباره یک سنت خانوادگی‌تان صحبت کنید."], ["Si vous étiez invisible pendant un jour, que feriez-vous ?", "اگر یک روز نامرئی بودید چه می‌کردید؟"], ["Décrivez votre animal de compagnie idéal.", "حیوان خانگی ایده‌آلتان را توصیف کنید."], ["Que pensez-vous des réseaux sociaux pour les enfants ?", "نظرتان درباره شبکه‌های اجتماعی برای کودکان چیست؟"], ["Parlez d'un endroit qui vous calme.", "درباره جایی که آرامتان می‌کند صحبت کنید."], ["Comment imaginez-vous la ville du futur ?", "شهر آینده را چگونه تصور می‌کنید؟"], ["Quelle langue aimeriez-vous apprendre après le français ?", "بعد از فرانسه کدام زبان را دوست دارید یاد بگیرید؟"], ["Parlez de votre rapport à l'argent.", "رابطه‌تان با پول را توصیف کنید."], ["Que pensez-vous du mariage pour tous ?", "نظرتان درباره ازدواج برای همه چیست؟"], ["Décrivez un moment où vous avez été très courageux(se).", "لحظه‌ای که خیلی شجاع بودید را توصیف کنید."], ["Comment exprimez-vous votre créativité ?", "خلاقیتتان را چگونه ابراز می‌کنید؟"], ["Parlez de votre relation avec la technologie.", "رابطه‌تان با تکنولوژی را توصیف کنید."], ["Que feriez-vous si vous n'aviez pas besoin de travailler ?", "اگر نیازی به کار کردن نداشتید چه می‌کردید؟"], ["Décrivez votre soirée idéale.", "شب ایده‌آلتان را توصیف کنید."], ["Que pensez-vous de l'immigration ?", "نظرتان درباره مهاجرت چیست؟"], ["Parlez d'une erreur dont vous avez appris quelque chose.", "درباره اشتباهی که چیزی از آن یاد گرفتید صحبت کنید."], ["Comment célébrez-vous votre anniversaire ?", "تولدتان را چگونه جشن می‌گیرید؟"], ["Que pensez-vous de la retraite ?", "نظرتان درباره بازنشستگی چیست؟"], ["Décrivez un marché ou bazar de votre pays.", "یک بازار یا بازارچه کشورتان را توصیف کنید."], ["Quel type de musique écoutez-vous ?", "چه نوع موسیقی گوش می‌دهید؟"], ["Parlez d'une injustice que vous avez vécue.", "درباره یک بی‌عدالتی که تجربه کرده‌اید صحبت کنید."], ["Comment prenez-vous soin de votre santé ?", "چگونه از سلامتتان مراقبت می‌کنید؟"], ["Que pensez-vous des jeux vidéo ?", "نظرتان درباره بازی‌های ویدیویی چیست؟"], ["Décrivez votre relation avec vos parents.", "رابطه‌تان با والدینتان را توصیف کنید."], ["Parlez d'un objectif que vous voulez atteindre.", "درباره هدفی که می‌خواهید به آن برسید صحبت کنید."], ["Que pensez-vous du système éducatif de votre pays ?", "نظرتان درباره سیستم آموزشی کشورتان چیست؟"], ["Comment gérez-vous les conflits avec les autres ?", "تعارض با دیگران را چگونه مدیریت می‌کنید؟"], ["Décrivez une saison que vous aimez.", "یک فصل که دوست دارید را توصیف کنید."], ["Parlez de votre rapport au temps.", "رابطه‌تان با زمان را توصیف کنید."], ["Que feriez-vous pour améliorer votre quartier ?", "برای بهبود محله‌تان چه می‌کردید؟"], ["Comment définissez-vous l'amitié ?", "دوستی را چگونه تعریف می‌کنید؟"], ["Parlez de votre passion.", "درباره علاقه شدیدتان صحبت کنید."], ["Que pensez-vous de la chirurgie esthétique ?", "نظرتان درباره جراحی زیبایی چیست؟"], ["Décrivez une personne généreuse que vous connaissez.", "شخص سخاوتمندی که می‌شناسید را توصیف کنید."], ["Comment réagissez-vous face à l'échec ?", "در مقابل شکست چه واکنشی نشان می‌دهید؟"], ["Parlez de l'importance du sport dans la vie.", "درباره اهمیت ورزش در زندگی صحبت کنید."], ["Que pensez-vous du bénévolat ?", "نظرتان درباره داوطلبی چیست؟"], ["Décrivez votre café ou thé préféré.", "قهوه یا چای مورد علاقه‌تان را توصیف کنید."], ["Parlez d'une peur que vous avez surmontée.", "درباره ترسی که بر آن غلبه کردید صحبت کنید."], ["Comment gardez-vous contact avec vos amis ?", "با دوستانتان چگونه در تماس می‌مانید؟"], ["Que pensez-vous de la mondialisation ?", "نظرتان درباره جهانی‌سازی چیست؟"], ["Décrivez une scène de nature que vous aimez.", "یک صحنه طبیعی که دوست دارید را توصیف کنید."], ["Parlez d'une chose que vous feriez différemment.", "درباره چیزی صحبت کنید که به شکل دیگری انجام می‌دادید."], ["Quel conseil donneriez-vous à votre jeune moi ?", "چه توصیه‌ای به خود جوان‌تان می‌دادید؟"], ["Comment exprimez-vous votre amour ou affection ?", "عشق یا محبتتان را چگونه ابراز می‌کنید؟"], ["Parlez de l'importance du sommeil.", "درباره اهمیت خواب صحبت کنید."], ["Que pensez-vous de la peine de mort ?", "نظرتان درباره مجازات اعدام چیست؟"], ["Décrivez un musée ou lieu culturel que vous avez visité.", "یک موزه یا مکان فرهنگی که بازدید کرده‌اید را توصیف کنید."]];
+
+// Wheel colors - site theme
+const COLORS = [
+  '#1e3a5f','#7a5ba8','#b07a4a','#2e8b6b','#8a2040',
+  '#22618f','#6b3fa0','#c4502d','#1a5a44','#4a2d7a',
+];
+
+let currentMode = 'words';
+let isSpinning = false;
+let currentAngle = 0;
+let currentItems = WORDS;
+
+function getItems(){
+  return currentMode === 'words' ? WORDS : SENTENCES.map(s=>s[0]);
+}
+
+function drawWheel(angle){
+  const canvas = document.getElementById('wheel');
+  const ctx = canvas.getContext('2d');
+  const cx = canvas.width/2, cy = canvas.height/2, r = cx - 4;
+  const items = getItems();
+  const n = Math.min(items.length, 12); // show max 12 segments
+  const arc = (2*Math.PI)/n;
+  
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  
+  // Draw segments
+  for(let i=0;i<n;i++){
+    const start = angle + i*arc;
+    const end = start + arc;
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,r,start,end);
+    ctx.closePath();
+    ctx.fillStyle = COLORS[i%COLORS.length];
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,.15)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Text
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.rotate(start + arc/2);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = 'rgba(255,255,255,.95)';
+    ctx.font = "bold 11px 'Roboto',sans-serif";
+    const label = items[i % items.length].substring(0,18);
+    ctx.fillText(label, r-12, 4);
+    ctx.restore();
+  }
+  
+  // Center circle
+  ctx.beginPath();
+  ctx.arc(cx,cy,28,0,2*Math.PI);
+  ctx.fillStyle = '#f4f3f5';
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(122,59,136,.3)';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  
+  ctx.fillStyle = '#7a5ba8';
+  ctx.font = "bold 16px 'Roboto',sans-serif";
+  ctx.textAlign = 'center';
+  ctx.fillText('🎡',cx,cy+6);
+}
+
+function spin(){
+  if(isSpinning) return;
+  isSpinning = true;
+  const btn = document.getElementById('spin-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ در حال چرخش...';
+  document.getElementById('result-card').classList.remove('show');
+  
+  const totalSpins = 5 + Math.random()*5;
+  const totalAngle = totalSpins * 2 * Math.PI;
+  const duration = 3000 + Math.random()*1500;
+  const start = performance.now();
+  const startAngle = currentAngle;
+  
+  function animate(now){
+    const elapsed = now - start;
+    const progress = Math.min(elapsed/duration, 1);
+    // Ease out
+    const ease = 1 - Math.pow(1-progress, 4);
+    currentAngle = startAngle + totalAngle * ease;
+    drawWheel(currentAngle);
+    
+    if(progress < 1){
+      requestAnimationFrame(animate);
+    } else {
+      isSpinning = false;
+      btn.disabled = false;
+      btn.textContent = '🎡 دوباره بچرخون!';
+      
+      // Vibrate
+      if(navigator.vibrate) navigator.vibrate([100,50,100,50,200]);
+      
+      // Find winner
+      const items = getItems();
+      const n = Math.min(items.length,12);
+      const arc = (2*Math.PI)/n;
+      const normalizedAngle = (((-currentAngle) % (2*Math.PI)) + 2*Math.PI) % (2*Math.PI);
+      const winIndex = Math.floor(normalizedAngle/arc) % n;
+      const fullIndex = winIndex % items.length;
+      
+      const card = document.getElementById('result-card');
+      const topic = document.getElementById('result-topic');
+      const fa = document.getElementById('result-fa');
+      
+      if(currentMode === 'words'){
+        topic.textContent = WORDS[fullIndex];
+        fa.textContent = '';
+        fa.style.display = 'none';
+      } else {
+        topic.textContent = SENTENCES[fullIndex][0];
+        fa.textContent = SENTENCES[fullIndex][1];
+        fa.style.display = 'block';
+      }
+      
+      card.classList.remove('show');
+      void card.offsetWidth; // reflow
+      card.classList.add('show');
     }
-    document.getElementById("wheel").style.background = `conic-gradient(${grad.join(",")})`;
+  }
+  requestAnimationFrame(animate);
+}
 
-    let currentRotation = 0;
-    let spinning = false;
+function switchMode(mode, el){
+  currentMode = mode;
+  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  drawWheel(currentAngle);
+  renderList();
+  document.getElementById('result-card').classList.remove('show');
+}
 
-    function spin(){
-      if (spinning) return;
-      spinning = true;
-      const btn = document.getElementById("spinBtn");
-      btn.disabled = true;
-      const result = document.getElementById("result");
-      result.classList.remove("show");
+function renderList(){
+  const list = document.getElementById('topics-list');
+  if(currentMode === 'words'){
+    list.innerHTML = WORDS.map((w,i) => `
+      <div class="topic-item" onclick="selectTopic(${i})">
+        <span class="topic-num">${i+1}</span>
+        <div style="flex:1">
+          <div class="topic-fr">${w}</div>
+        </div>
+        <span class="spin-this">🎯</span>
+      </div>
+    `).join('');
+  } else {
+    list.innerHTML = SENTENCES.map((s,i) => `
+      <div class="topic-item" onclick="selectTopic(${i})">
+        <span class="topic-num">${i+1}</span>
+        <div style="flex:1">
+          <div class="topic-fr">${s[0]}</div>
+          <div class="topic-fa">${s[1]}</div>
+        </div>
+        <span class="spin-this">🎯</span>
+      </div>
+    `).join('');
+  }
+}
 
-      // انتخاب تصادفی موضوع
-      const pick = Math.floor(Math.random() * TOPICS.length);
-      // چرخش: چند دور کامل + یک زاویه‌ی تصادفی
-      const extra = 360 * (5 + Math.floor(Math.random()*4)) + Math.floor(Math.random()*360);
-      currentRotation += extra;
-      document.getElementById("wheel").style.transform = `rotate(${currentRotation}deg)`;
+function selectTopic(i){
+  const card = document.getElementById('result-card');
+  if(currentMode === 'words'){
+    document.getElementById('result-topic').textContent = WORDS[i];
+    document.getElementById('result-fa').style.display = 'none';
+  } else {
+    document.getElementById('result-topic').textContent = SENTENCES[i][0];
+    document.getElementById('result-fa').textContent = SENTENCES[i][1];
+    document.getElementById('result-fa').style.display = 'block';
+  }
+  card.classList.remove('show');
+  void card.offsetWidth;
+  card.classList.add('show');
+  card.scrollIntoView({behavior:'smooth',block:'center'});
+  if(navigator.vibrate) navigator.vibrate(80);
+}
 
-      setTimeout(() => {
-        const t = TOPICS[pick];
-        result.innerHTML = `
-          <div class="result-label">موضوع تو ✦ TON SUJET</div>
-          <div class="result-fr" dir="ltr">${t.fr}</div>
-          <div class="result-fa">${t.fa}</div>
-          <div class="result-hint">⏱️ یک دقیقه درباره‌اش حرف بزن — نظرت چیه؟ چه احساسی داری؟ یک مثال بزن.</div>`;
-        result.classList.add("show");
-        btn.disabled = false;
-        btn.textContent = "دوباره بچرخان! 🎲";
-        spinning = false;
-      }, 4600);
-    }
-  </script>
-  <script src="protect.js"></script>
+// Init
+drawWheel(0);
+renderList();
+</script>
 </body>
 </html>
