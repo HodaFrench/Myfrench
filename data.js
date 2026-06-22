@@ -84,6 +84,39 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "VOCAB_prison_justice.html",
+    title: "📚 La prison & la justice pénale",
+    titleFr: "La prison & la justice pénale",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","C1"],
+    summary: "زندان و عدالت کیفری"
+  },
+  {
+    file: "VOCAB_vaccination_sante.html",
+    title: "📚 La vaccination & la santé publique",
+    titleFr: "La vaccination & la santé publique",
+    category: "vocab", level: "B1–C1",
+    tags: ["vocabulaire","TCF","B2","C1"],
+    summary: "واکسیناسیون و بهداشت عمومی"
+  },
+  {
+    file: "VOCAB_glottophobie.html",
+    title: "📚 La glottophobie & les discriminations",
+    titleFr: "La glottophobie & les discriminations",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","C1"],
+    summary: "گلوتوفوبی و تبعیض"
+  },
+  {
+    file: "VOCAB_drogues_loi.html",
+    title: "📚 Drogues, loi & société",
+    titleFr: "Drogues, loi & société",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","C1"],
+    summary: "مواد مخدر، قانون و جامعه"
+  },
+
+  {
     file: "GRAM_futur_proche.html",
     title: "📐 Le Futur Proche — آینده نزدیک",
     titleFr: "Le Futur Proche",
