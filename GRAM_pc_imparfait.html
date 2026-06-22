@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passé Composé et Imparfait | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}.card.gold{border-right:5px solid var(--gold)}.card.green{border-right:5px solid var(--green)}.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:12px}
+.card.navy .card-label{color:var(--navy)}.card.gold .card-label{color:var(--gold)}.card.green .card-label{color:var(--green)}.card.rose .card-label{color:var(--rose)}
+.conj-table,.irr-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
+.conj-table th{background:var(--navy);color:#fff;padding:8px 12px;text-align:right;font-weight:600}
+.conj-table td{padding:8px 12px;border-bottom:1px solid var(--line)}
+.conj-table tr:nth-child(even) td{background:var(--cream)}
+.irr-table th{background:#f0ede6;color:var(--navy);padding:7px 12px;font-weight:700}
+.irr-table td{padding:7px 12px;border-bottom:1px solid var(--line);font-family:'Roboto',serif;direction:ltr}
+.pron{color:var(--gold);font-weight:700}.vb{font-family:'Roboto',serif;font-weight:700;color:var(--navy);direction:ltr;text-align:left}.tr{font-size:12px;color:var(--gray)}
+.ex-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px}
+.ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;margin-bottom:10px}
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 4px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 4px;font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.warn{background:#fff8e8;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0}
+.timeline-box{background:var(--cream);border-radius:10px;padding:14px 16px;overflow-x:auto;margin:10px 0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;align-items:center;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+</style>
+</head>
+<body>
+<div class="hoda-back"><a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a><span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Passé Composé et Imparfait</span></div>
+<div class="hero"><div class="hero-tag">📐 GRAMMAIRE · B1–B2</div><h1>Passé Composé et Imparfait</h1><div style="font-size:13px;opacity:.85">تفاوت و کاربرد همراه</div></div>
+<div class="wrap">
+<div class="card navy">
+  <div class="card-label">🔷 L'ESSENTIEL</div>
+  <div class="compare">
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--rose)">🔴 PASSÉ COMPOSÉ</div>
+      <div style="font-size:13px">عمل <b>کامل‌شده</b> — یه‌بار — با شروع/پایان مشخص</div>
+      <div style="font-family:'Roboto',serif;font-size:13px;direction:ltr;margin-top:8px">Il <span class="hl-r">est entré</span>.</div>
+      <div style="font-size:12px;color:var(--gray)">وارد شد. (یه‌بار — کامل)</div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--navy)">🔵 IMPARFAIT</div>
+      <div style="font-size:13px">عمل <b>در جریان</b> — حالت — عادت گذشته</div>
+      <div style="font-family:'Roboto',serif;font-size:13px;direction:ltr;margin-top:8px">Il <span class="hl">travaillait</span>.</div>
+      <div style="font-size:12px;color:var(--gray)">داشت کار می‌کرد. (در جریان)</div>
+    </div>
+  </div>
+</div>
+
+<div class="card gold">
+  <div class="card-label">⚙ CONJUGAISON IMPARFAIT</div>
+  <div style="background:var(--cream);border-radius:10px;padding:12px 14px;margin-bottom:14px;text-align:center">
+    <span style="font-family:'Roboto',serif;font-size:14px;direction:ltr">radical (nous présent) + <span class="hl">-ais / -ais / -ait / -ions / -iez / -aient</span></span>
+  </div>
+  <table class="conj-table">
+    <tr><th>ضمیر</th><th>PARLER</th><th>FINIR</th><th>AVOIR</th><th>ÊTRE*</th></tr>
+    <tr><td class="pron">Je/J'</td><td class="vb">parlais</td><td class="vb">finissais</td><td class="vb">avais</td><td class="vb">étais</td></tr>
+    <tr><td class="pron">Tu</td><td class="vb">parlais</td><td class="vb">finissais</td><td class="vb">avais</td><td class="vb">étais</td></tr>
+    <tr><td class="pron">Il/Elle</td><td class="vb">parlait</td><td class="vb">finissait</td><td class="vb">avait</td><td class="vb">était</td></tr>
+    <tr><td class="pron">Nous</td><td class="vb">parlions</td><td class="vb">finissions</td><td class="vb">avions</td><td class="vb">étions</td></tr>
+    <tr><td class="pron">Vous</td><td class="vb">parliez</td><td class="vb">finissiez</td><td class="vb">aviez</td><td class="vb">étiez</td></tr>
+    <tr><td class="pron">Ils</td><td class="vb">parlaient</td><td class="vb">finissaient</td><td class="vb">avaient</td><td class="vb">étaient</td></tr>
+  </table>
+  <div style="font-size:12px;color:var(--gray)">* ÊTRE تنها استثناست — radical: ét-</div>
+</div>
+
+<div class="card green">
+  <div class="card-label">📌 USAGES — کاربردها</div>
+  
+  <div class="ex-label">🔴 PASSÉ COMPOSÉ — کی استفاده کنیم؟</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">① عمل یک‌بار اتفاق افتاده</div>
+  <div class="ex-fr">Hier, il <span class="hl-r">a neigé</span>.</div><div class="ex-fa">دیروز برف آمد.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">② اتفاقات متوالی</div>
+  <div class="ex-fr">Je <span class="hl-r">me suis levé</span>, j'<span class="hl-r">ai pris</span> ma douche et j'<span class="hl-r">ai quitté</span> la maison.</div>
+  <div class="ex-fa">بلند شدم، دوش گرفتم و از خانه رفتم.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">③ عمل با مدت مشخص</div>
+  <div class="ex-fr">J'<span class="hl-r">ai vécu</span> à Paris <b>pendant trois ans</b>.</div>
+  <div class="ex-fa">سه سال در پاریس زندگی کردم.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">④ عمل قطع‌کننده (interrupt)</div>
+  <div class="ex-fr">Je lisais quand le téléphone <span class="hl-r">a sonné</span>.</div>
+  <div class="ex-fa">داشتم می‌خواندم که تلفن زنگ زد.</div>
+
+  <div class="ex-label" style="margin-top:20px">🔵 IMPARFAIT — کی استفاده کنیم؟</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">① عمل در جریان (action en cours)</div>
+  <div class="ex-fr">À 9h, elle <span class="hl">dormait</span> encore.</div><div class="ex-fa">ساعت ۹ هنوز داشت می‌خوابید.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">② حالت، وضعیت، احساس</div>
+  <div class="ex-fr">Il <span class="hl">faisait</span> beau. La mer <span class="hl">était</span> calme. Je me <span class="hl">sentais</span> bien.</div>
+  <div class="ex-fa">هوا خوب بود. دریا آرام بود. حالم خوب بود.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">③ عادت گذشته (habitude)</div>
+  <div class="ex-fr">Quand j'<span class="hl">étais</span> enfant, je <span class="hl">jouais</span> au foot tous les jours.</div>
+  <div class="ex-fa">وقتی بچه بودم، هر روز فوتبال بازی می‌کردم.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">④ توصیف صحنه (décor)</div>
+  <div class="ex-fr">La ville <span class="hl">dormait</span>. Les rues <span class="hl">étaient</span> vides. Il <span class="hl">pleuvait</span> doucement.</div>
+  <div class="ex-fa">شهر خواب بود. خیابان‌ها خلوت بودند. آرام باران می‌آمد.</div>
+  
+  <div style="font-size:13px;font-weight:700;margin:8px 0 4px">⑤ دو عمل موازی</div>
+  <div class="ex-fr">Pendant que je <span class="hl">cuisinais</span>, il <span class="hl">regardait</span> la télé.</div>
+  <div class="ex-fa">در حالی که آشپزی می‌کردم، او تلویزیون می‌دید.</div>
+</div>
+
+<div class="card rose">
+  <div class="card-label">⚡ DANS UNE MÊME PHRASE — در یک جمله</div>
+  <div class="warn">🎬 <b>تصویر سینمایی:</b> imparfait = پس‌زمینه (décor) / passé composé = رویداد (action)</div>
+  <div class="ex-fr">Je <span class="hl">lisais</span> tranquillement quand mon ami <span class="hl-r">est entré</span>.</div>
+  <div class="ex-fa">آرام داشتم می‌خواندم که دوستم وارد شد.</div>
+  <div class="ex-fr">Il <span class="hl">pleuvait</span> et les rues <span class="hl">étaient</span> vides quand l'accident <span class="hl-r">s'est produit</span>.</div>
+  <div class="ex-fa">باران می‌بارید و خیابان‌ها خلوت بودند که تصادف رخ داد.</div>
+  <div class="ex-fr">Hier, je <span class="hl">me promenais</span> dans le parc quand je <span class="hl-r">l'ai rencontrée</span>.</div>
+  <div class="ex-fa">دیروز داشتم توی پارک قدم می‌زدم که اون رو دیدم.</div>
+  
+  <div class="ex-label" style="margin-top:16px">نکته: MARQUEURS DE TEMPS مهم</div>
+  <div class="compare">
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--rose)">همراه PC</div>
+      <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;line-height:2">hier / avant-hier<br>soudain / tout à coup<br>un jour / une fois<br>pendant + durée<br>à ce moment-là<br>il y a + durée</div>
+    </div>
+    <div class="compare-box">
+      <div class="compare-title" style="color:var(--navy)">همراه Imparfait</div>
+      <div style="font-size:13px;font-family:'Roboto',serif;direction:ltr;line-height:2">tous les jours / souvent<br>chaque semaine<br>pendant que / tandis que<br>autrefois / jadis<br>quand j'étais...<br>à l'époque</div>
+    </div>
+  </div>
+</div>
+
+<div class="card navy">
+  <div class="card-label">⚠️ CAS DIFFICILES — موارد پیچیده</div>
+  <div class="ex-label">① Avoir / Être — وقتی هر دو ممکن‌اند</div>
+  <div class="ex-fr">Il <span class="hl-r">a été</span> malade pendant une semaine. <span style="color:var(--gold)">(PC: مدت مشخص → مثل être fatigué pendant 3 jours)</span></div>
+  <div class="ex-fr">Il <span class="hl">était</span> malade ce soir-là. <span style="color:var(--gold)">(IMP: وضعیت در آن لحظه)</span></div>
+  
+  <div class="ex-label">② Vouloir / Pouvoir / Savoir</div>
+  <div class="ex-fr">J'<span class="hl-r">ai voulu</span> lui parler. → خواستم باهاش حرف بزنم. (سعی کردم — PC)</div>
+  <div class="ex-fr">Je <span class="hl">voulais</span> lui parler. → می‌خواستم باهاش حرف بزنم. (حالت — IMP)</div>
+  <div class="ex-fr">J'<span class="hl-r">ai pu</span> finir à temps. → تونستم به موقع تموم کنم. (نتیجه — PC)</div>
+  <div class="ex-fr">Je <span class="hl">pouvais</span> travailler vite. → می‌تونستم سریع کار کنم. (توانایی کلی — IMP)</div>
+  
+  <div class="ex-label">③ Connaître / Savoir</div>
+  <div class="ex-fr">Je <span class="hl-r">l'ai connu</span> à Paris. → او را در پاریس شناختم. (اولین ملاقات — PC)</div>
+  <div class="ex-fr">Je le <span class="hl">connaissais</span> depuis longtemps. → مدت‌هاست می‌شناختمش. (وضعیت — IMP)</div>
+</div></div>
+<div class="gram-nav"><a class="gnav-btn" href="GRAM_passe_compose.html">&#8594; Le Passé Composé</a><span style="font-size:11px;color:#b0a898">گرامر</span><a class="gnav-btn" href="GRAM_subjonctif.html">Subjonctif vs Indicatif &#8592;</a></div>
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ خوانده شد</button></div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body></html>
