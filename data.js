@@ -84,6 +84,14 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "GRAMMAR_comparaison.html",
+    title: "📐 La Comparaison — مقایسه در فرانسه",
+    titleFr: "La Comparaison — A2 à C1",
+    category: "grammar", level: "A2–C1",
+    tags: ["grammaire","comparaison","plus","moins","superlatif","A2","B1","B2","C1"],
+    summary: "مقایسه در فرانسه از A2 تا C1 با مثال، ترجمه و تمرین"
+  },
+  {
     file: "CULTURE_acadie_cayenne.html",
     title: "🎉 جشن آکادی و کارناوال کاین",
     titleFr: "Le Grand Tintamarre & Le Festival de Cayenne",
