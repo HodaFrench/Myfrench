@@ -84,6 +84,31 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "GRAMMAR_passe_recent.html",
+    title: "📐 Le Passé Récent — venir de",
+    titleFr: "Le Passé Récent",
+    category: "grammar", level: "A2",
+    tags: ["grammaire","passé récent","venir de","A2"],
+    summary: "ساختار venir de + infinitif برای بیان عمل تازه انجام‌شده"
+  },
+  {
+    file: "GRAMMAR_cest_ilest.html",
+    title: "📐 C'est / Il est",
+    titleFr: "C'est vs Il est",
+    category: "grammar", level: "A2–B1",
+    tags: ["grammaire","cest","il est","A2","B1"],
+    summary: "تفاوت C'est و Il est — یکی از رایج‌ترین اشتباهات"
+  },
+  {
+    file: "VOCAB_decrire_look.html",
+    title: "👤 Décrire le look de quelqu'un",
+    titleFr: "Décrire le look",
+    category: "vocab", level: "A2–B1",
+    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&q=70",
+    tags: ["vocabulaire","look","description","apparence","A2","B1"],
+    summary: "توصیف ظاهر و قیافه کسی — قد، مو، چشم، لباس"
+  },
+  {
     file: "GRAMMAR_pronom_y.html",
     title: "📐 Le Pronom Y — Complément de lieu",
     titleFr: "Le Pronom Y",
