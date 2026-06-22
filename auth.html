@@ -121,7 +121,7 @@ body{margin:0;overflow:hidden!important;height:100vh!important}
   top:50%;left:2.5rem;
   transform:translateY(-50%);
   z-index:100;
-  width:360px;
+  width:380px;
 }
 .auth-card{
   background:rgba(255,253,246,.95);
@@ -156,7 +156,12 @@ body{margin:0;overflow:hidden!important;height:100vh!important}
 .aconfirm .em{font-weight:700;color:#b07a4a}
 .ahint{font-size:10.5px;color:#b0a090;text-align:center;margin-top:.3rem}
 
-
+/* موبایل: جاده اسکرول، فرم پایین ثابت */
+@media(max-width:700px){
+  .road-blur{
+    background:rgba(245,240,232,.25);
+    backdrop-filter:blur(1.5px);
+  }
   .auth-panel{
     position:fixed;
     bottom:0;left:0;right:0;
@@ -173,7 +178,9 @@ body{margin:0;overflow:hidden!important;height:100vh!important}
   }
 }
 
-
+/* موبایل: جاده بالا، فرم پایین — اسکرول */
+@media(max-width:700px){
+  .road-blur{display:none}
   .auth-panel{
     position:relative;
     top:auto;left:auto;
@@ -201,12 +208,12 @@ body{margin:0;overflow:hidden!important;height:100vh!important}
   .alogo{margin-bottom:.6rem!important}
   .alogo .flag{font-size:18px!important}
   .alogo h2{font-size:18px!important}
-  .alogo p{font-size:10px!important;margin-top:2px!important}
+  .alogo p{font-size:10px!important}
   .atabs{margin-bottom:.7rem!important}
   .aform{gap:.5rem!important}
   .afield input{padding:.55rem .8rem!important;font-size:13px!important}
-  .abtn{padding:.6rem!important;font-size:13px!important;margin-top:.2rem!important}
-  .ahint{margin-top:.25rem!important}
+  .abtn{padding:.6rem!important;font-size:13px!important}
+  .ahint{margin-top:.2rem!important}
 }
 </style>
 </head>
