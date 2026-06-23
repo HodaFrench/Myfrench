@@ -7,28 +7,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--purple:#6b3fa0}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--purple:#6b3fa0;--green:#2e8b6b}
 body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,.04) 31px,rgba(30,58,95,.04) 32px);color:var(--ink);padding-bottom:40px}
 .hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
 .hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
 .hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:26px 20px 22px;text-align:center}
 .hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
-.hero-sub{font-size:13px;opacity:.85}
 .wrap{max-width:780px;margin:0 auto;padding:0 1rem}
-.info-box{background:rgba(107,63,160,.08);border-radius:12px;padding:14px 16px;margin:16px 0;font-size:13px;border-right:3px solid var(--purple)}
+.info-box{background:rgba(107,63,160,.08);border-radius:12px;padding:12px 16px;margin:16px 0 12px;font-size:12.5px;line-height:1.9;border-right:3px solid var(--purple)}
 /* episode cards */
-.ep-card{display:flex;align-items:center;gap:12px;background:var(--white);border-radius:12px;padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);transition:all .2s}
-.ep-card:hover{box-shadow:0 4px 16px rgba(107,63,160,.12);border-color:rgba(107,63,160,.25)}
-.ep-num{font-family:'Roboto',serif;font-size:15px;font-weight:800;color:var(--purple);width:34px;flex-shrink:0;text-align:center}
+.ep-card{display:flex;align-items:center;gap:12px;background:var(--white);border-radius:12px;padding:13px 14px;margin-bottom:7px;box-shadow:0 2px 8px rgba(31,58,95,.06);border:1px solid var(--line);transition:all .18s}
+.ep-card.has-lesson{border-right:4px solid var(--navy)}
+.ep-card:hover{box-shadow:0 4px 14px rgba(107,63,160,.12);border-color:rgba(107,63,160,.25)}
+.ep-num{font-family:'Roboto',serif;font-size:14px;font-weight:800;color:var(--purple);width:32px;text-align:center;flex-shrink:0}
 .ep-info{flex:1;min-width:0}
-.ep-title{font-family:'Roboto',serif;font-size:14.5px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ep-title{font-family:'Roboto',serif;font-size:14px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ep-title-fa{font-size:12px;color:var(--gray);margin-top:2px}
-.ep-meta{font-size:11px;color:#b0a8c0;margin-top:2px}
-.ep-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:10px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.ep-status{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:8px;margin-top:4px}
+.ep-status.done{background:rgba(30,58,95,.1);color:var(--navy)}
+.ep-status.pending{background:rgba(176,80,111,.08);color:#8a2040}
+.ep-btn{display:inline-flex;align-items:center;gap:4px;padding:7px 12px;border-radius:10px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
 .ep-btn.lesson{background:var(--navy);color:#fff}
 .ep-btn.ext{background:rgba(107,63,160,.1);color:var(--purple)}
-.ep-btn:hover{opacity:.85}
-.ep-card.has-lesson{border-right:3px solid var(--navy)}
 </style>
 </head>
 <body>
@@ -38,166 +38,167 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 </div>
 <div class="hero">
   <h1>🎧 InnerFrench Podcast</h1>
-  <div class="hero-sub">اپیزودهای ۱ تا ۱۷ · Hugo Cotton · B1–B2</div>
+  <div style="font-size:13px;opacity:.85">اپیزودهای ۱ تا ۱۷ · Hugo Cotton · B1–B2</div>
 </div>
 <div class="wrap">
   <div class="info-box">
-    📌 اپیزودها از آسان به دشوار هستند — پیشنهاد می‌شه از اول شروع کنی.<br>
-    📖 اپیزودهایی که درس کامل دارند با دکمه آبی مشخص‌اند — بقیه لینک مستقیم به InnerFrench دارند.
+    📌 اپیزودها از آسان به دشوار هستند — از اول شروع کن<br>
+    📖 اپیزود ۸ درس کامل با متن + هایلایت + ترجمه دارد<br>
+    ⏳ متن اپیزودهای ۱–۷ به زودی اضافه می‌شود — متن‌ها رو برام بفرست!
   </div>
   
-<div class="ep-card" data-num="01">
+<div class="ep-card ">
   <div class="ep-num">#01</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Pourquoi apprendre le français ?</div>
     <div class="ep-title-fa">چرا فرانسه یاد بگیریم؟</div>
-    <div class="ep-meta">⏱ 28 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/01/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183908" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="02">
+<div class="ep-card ">
   <div class="ep-num">#02</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Les Français et la nourriture</div>
     <div class="ep-title-fa">فرانسوی‌ها و غذا</div>
-    <div class="ep-meta">⏱ 29 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/02/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183907" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="03">
+<div class="ep-card ">
   <div class="ep-num">#03</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">L'art de râler</div>
     <div class="ep-title-fa">هنر غر زدن فرانسوی‌ها</div>
-    <div class="ep-meta">⏱ 28 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/03/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183906" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="04">
+<div class="ep-card ">
   <div class="ep-num">#04</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Le cinéma français</div>
     <div class="ep-title-fa">سینمای فرانسه</div>
-    <div class="ep-meta">⏱ 32 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/04/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183905" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="05">
+<div class="ep-card ">
   <div class="ep-num">#05</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Vivre à Paris vs en province</div>
     <div class="ep-title-fa">زندگی در پاریس در مقابل شهرستان</div>
-    <div class="ep-meta">⏱ 33 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/05/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183904" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="06">
+<div class="ep-card ">
   <div class="ep-num">#06</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Apprendre une langue : les avantages cachés</div>
     <div class="ep-title-fa">یادگیری زبان: مزایای پنهان</div>
-    <div class="ep-meta">⏱ 29 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/06/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183903" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="07">
+<div class="ep-card ">
   <div class="ep-num">#07</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">La politesse en France</div>
     <div class="ep-title-fa">ادب و نزاکت در فرانسه</div>
-    <div class="ep-meta">⏱ 33 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/07/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://podcasts.apple.com/podcast/innerfrench/id1231472946?i=1000385183902" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="08">
+<div class="ep-card has-lesson">
   <div class="ep-num">#08</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Les stéréotypes</div>
     <div class="ep-title-fa">کلیشه‌ها</div>
-    <div class="ep-meta">⏱ 29 min</div>
+    <span class="ep-status done">✓ درس</span>
   </div>
-  <a class="ep-btn lesson" href="IF_ep08.html">📖 درس کامل با هایلایت</a>
+  <a class="ep-btn lesson" href="IF_ep08.html">📖 درس کامل</a>
 </div>
-<div class="ep-card" data-num="09">
+<div class="ep-card ">
   <div class="ep-num">#09</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">La France vue de l'étranger</div>
     <div class="ep-title-fa">فرانسه از نگاه خارجی‌ها</div>
-    <div class="ep-meta">⏱ 31 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/09/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/09/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="10">
+<div class="ep-card ">
   <div class="ep-num">#10</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">L'argent, tabou en France ?</div>
     <div class="ep-title-fa">پول، تابو در فرانسه؟</div>
-    <div class="ep-meta">⏱ 32 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/10/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/10/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="11">
+<div class="ep-card ">
   <div class="ep-num">#11</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Faut-il se lever tôt ?</div>
     <div class="ep-title-fa">آیا باید زود بیدار شد؟</div>
-    <div class="ep-meta">⏱ 32 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/11/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/11/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="12">
+<div class="ep-card ">
   <div class="ep-num">#12</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Le 14 juillet en France</div>
     <div class="ep-title-fa">۱۴ ژوئیه در فرانسه</div>
-    <div class="ep-meta">⏱ 30 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/12/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/12/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="13">
+<div class="ep-card ">
   <div class="ep-num">#13</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Les malheurs des gagnants du loto</div>
     <div class="ep-title-fa">بدبختی‌های برندگان لاتاری</div>
-    <div class="ep-meta">⏱ 30 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/13/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/13/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="14">
+<div class="ep-card ">
   <div class="ep-num">#14</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Comment créer le héros parfait</div>
     <div class="ep-title-fa">چطور قهرمان کامل بسازیم؟</div>
-    <div class="ep-meta">⏱ 30 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/14/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/14/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="15">
+<div class="ep-card ">
   <div class="ep-num">#15</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">L'école en France</div>
     <div class="ep-title-fa">مدرسه در فرانسه</div>
-    <div class="ep-meta">⏱ 29 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/15/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/15/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="16">
+<div class="ep-card ">
   <div class="ep-num">#16</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Prendre l'habitude de faire du français</div>
     <div class="ep-title-fa">عادت کردن به فرانسه</div>
-    <div class="ep-meta">⏱ 32 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/16/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/16/" target="_blank">🎧 گوش بده ↗</a>
 </div>
-<div class="ep-card" data-num="17">
+<div class="ep-card ">
   <div class="ep-num">#17</div>
   <div class="ep-info">
     <div class="ep-title" dir="ltr">Xavier Dolan, réalisateur prodige ?</div>
     <div class="ep-title-fa">گزاویه دولان، کارگردان نابغه؟</div>
-    <div class="ep-meta">⏱ 31 min</div>
+    <span class="ep-status pending">⏳ متن بزودی</span>
   </div>
-  <a class="ep-btn ext" href="https://innerfrench.com/17/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+  <a class="ep-btn ext" href="https://innerfrench.com/17/" target="_blank">🎧 گوش بده ↗</a>
 </div>
 </div>
 </body>
