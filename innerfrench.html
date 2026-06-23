@@ -1,401 +1,204 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<script>
-(function(){
-  const session = localStorage.getItem('sb-ifjsnasoxnalhttzhlpd-auth-token');
-  if(!session){ window.location.href='auth.html'; }
-})();
-</script>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>InnerFrench — Français avec Hoda</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InnerFrench | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;}
-  :root{
-    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
-    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
-    --line:#e2e1e3; --white:#fcfbfd; --terracotta:#c4502d;
-  }
-  body{font-family:'Estedad',Arial,sans-serif; background-color:var(--paper);
-    background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
-    color:var(--ink); line-height:1.9; padding:22px 16px 90px;}
-  .wrap{max-width:820px; margin:0 auto;}
-  .topbar{display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;}
-  .topbar a{color:#1a4f7a; text-decoration:none; font-size:13.5px;
-    border:1px solid var(--line); background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
-  .topbar a:hover{background:#2e7bb5; color:#fff;}
-  .if-episode{background:var(--white); border:1px solid var(--line); border-top:4px solid #2e7bb5;
-    border-radius:18px; padding:26px 24px; box-shadow:0 8px 24px rgba(31,58,95,.06);}
-  .if-ep-head{padding-bottom:16px; margin-bottom:18px; border-bottom:2px solid var(--line);}
-  .if-ep-titre{font-family:'Roboto',serif; font-size:27px; font-weight:700; color:var(--navy); line-height:1.3; direction:ltr; text-align:left;}
-  .if-ep-titre-fa{font-size:16px; color:var(--ink); margin-top:5px;}
-  .if-ep-theme{font-size:12.5px; color:#2e7bb5; margin-top:10px; background:rgba(46,123,181,0.08); display:inline-block; padding:4px 14px; border-radius:12px;}
-  .if-play-btn{display:block; width:100%; text-align:center; font-family:'Estedad',sans-serif;
-    background:linear-gradient(135deg,#1e3a5f,#2a4f7f); color:#fff; font-size:15px; font-weight:700;
-    padding:14px; border:none; border-radius:12px; cursor:pointer; margin-bottom:10px; transition:transform .2s,opacity .2s;}
-  .if-play-btn:hover{transform:translateY(-1px); opacity:.95;}
-  .if-source{display:block; text-align:center; text-decoration:none; background:var(--cream); color:#2e7bb5;
-    border:1px solid var(--line); font-size:13px; font-weight:600; padding:9px; border-radius:10px; margin-bottom:18px; transition:all .2s;}
-  .if-source:hover{background:rgba(46,123,181,0.08); border-color:#2e7bb5;}
-  .if-intro{background:var(--paper-warm); border-right:4px solid var(--gold-soft); border-radius:10px;
-    padding:14px 18px; margin-bottom:18px; font-size:14px; line-height:2.05;}
-  .if-hint{font-size:12.5px; color:var(--gray); background:var(--cream); padding:8px 14px; border-radius:8px; margin-bottom:20px;}
-  .if-text{display:flex; flex-direction:column; gap:18px;}
-  .if-block{border-right:2px solid var(--line); padding-right:14px;}
-  .if-para{direction:ltr; text-align:left; font-family:'Roboto',serif; font-size:18px; line-height:1.85; color:var(--ink);}
-  .if-para-fa{font-size:13px; line-height:1.9; color:var(--gray); opacity:.78; margin-top:6px;}
-  .if-credit{margin-top:24px; padding-top:16px; border-top:1px dashed var(--line); font-size:12px; color:var(--gray); text-align:center;}
-  /* واژه‌های کلیکی */
-  .cw{position:relative; cursor:pointer; color:#b0506f; border-bottom:1.5px dotted #b0506f; transition:background .2s; padding:0 1px;}
-  .cw:hover{background:rgba(176,80,111,0.1);}
-  .cw.open{background:#b0506f; color:#fff;}
-  .cw-struct{background:rgba(46,123,181,0.12); color:#1f6196; border-bottom:1.5px dashed #2e7bb5;}
-  .cw-struct:hover{background:rgba(46,123,181,0.22);}
-  .cw-struct.open{background:#2e7bb5; color:#fff;}
-  .cw-struct::before{content:"⚙ "; font-size:10px; opacity:.6;}
-  .cw-pop{position:absolute; bottom:130%; left:50%; transform:translateX(-50%);
-    background:var(--navy); color:var(--cream); font-family:'Estedad',sans-serif; font-size:13px; font-weight:500;
-    direction:rtl; white-space:nowrap; padding:5px 12px; border-radius:8px; z-index:10;
-    box-shadow:0 6px 18px rgba(0,0,0,0.2); opacity:0; visibility:hidden; transition:opacity .3s ease,visibility .3s; pointer-events:none;}
-  .cw.open .cw-pop{opacity:1; visibility:visible;}
-  /* پخش‌کننده */
-  .mini-player{position:fixed; bottom:0; left:0; right:0; z-index:999;
-    background:linear-gradient(135deg,#1e3a5f,#2a4f7f); color:#fff; display:none; align-items:center; gap:12px;
-    padding:10px 16px; box-shadow:0 -6px 24px rgba(31,58,95,0.25); transform:translateY(100%); transition:transform .35s ease;}
-  .mini-player.show{display:flex; transform:translateY(0);}
-  .mp-close{background:rgba(255,255,255,0.15); color:#fff; border:none; width:28px; height:28px; border-radius:50%; cursor:pointer; flex-shrink:0; font-size:13px;}
-  .mp-close:hover{background:rgba(255,255,255,0.3);}
-  .mp-icon{font-size:16px; width:38px; height:38px; background:rgba(255,255,255,0.15); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .mp-info{flex-shrink:0; max-width:180px;}
-  .mp-title{font-size:13.5px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .mp-sub{font-size:11px; opacity:.8;}
-  #mpAudio{height:36px; border-radius:8px; flex:1; min-width:0;}
-  @media(max-width:600px){.mini-player{flex-wrap:wrap;} .mp-info{max-width:none; flex:1;} #mpAudio{width:100%; flex-basis:100%;}}
-  .loading{text-align:center; padding:60px 20px; color:var(--gray);}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--purple:#6b3fa0}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,.04) 31px,rgba(30,58,95,.04) 32px);color:var(--ink);padding-bottom:40px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:26px 20px 22px;text-align:center}
+.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.hero-sub{font-size:13px;opacity:.85}
+.wrap{max-width:780px;margin:0 auto;padding:0 1rem}
+.info-box{background:rgba(107,63,160,.08);border-radius:12px;padding:14px 16px;margin:16px 0;font-size:13px;border-right:3px solid var(--purple)}
+/* episode cards */
+.ep-card{display:flex;align-items:center;gap:12px;background:var(--white);border-radius:12px;padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);transition:all .2s}
+.ep-card:hover{box-shadow:0 4px 16px rgba(107,63,160,.12);border-color:rgba(107,63,160,.25)}
+.ep-num{font-family:'Roboto',serif;font-size:15px;font-weight:800;color:var(--purple);width:34px;flex-shrink:0;text-align:center}
+.ep-info{flex:1;min-width:0}
+.ep-title{font-family:'Roboto',serif;font-size:14.5px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ep-title-fa{font-size:12px;color:var(--gray);margin-top:2px}
+.ep-meta{font-size:11px;color:#b0a8c0;margin-top:2px}
+.ep-btn{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:10px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.ep-btn.lesson{background:var(--navy);color:#fff}
+.ep-btn.ext{background:rgba(107,63,160,.1);color:var(--purple)}
+.ep-btn:hover{opacity:.85}
+.ep-card.has-lesson{border-right:3px solid var(--navy)}
 </style>
 </head>
 <body>
-<style>
-.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
-.hoda-back-btn{display:flex;align-items:center;gap:5px;background:#1e3a5f;color:#f5f0e8;text-decoration:none;border:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
-.hoda-back-btn:hover{background:#2a5080}
-.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-</style>
 <div class="hoda-back">
   <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
-  <span class="hoda-back-label">InnerFrench</span>
+  <span style="font-size:12px;color:#8a8275;flex:1;text-align:center">🎧 InnerFrench</span>
 </div>
-
-<style>
-#if-back{position:fixed;top:0;right:0;z-index:300;padding:8px 16px;background:rgba(255,253,246,.9);border:none;border-bottom:1px solid rgba(217,206,184,.5);border-left:1px solid rgba(217,206,184,.5);font-family:'Estedad',sans-serif;font-size:13px;color:#1e3a5f;cursor:pointer;font-weight:600;border-radius:0 0 0 10px;display:none}
-@media(max-width:700px){#if-back{display:block}}
-</style>
-<button id="if-back" onclick="history.back()">← بازگشت</button>
-  <div class="wrap">
-    <div class="topbar">
-      <a href="index.html">⌂ Français avec Hoda</a>
-      <a href="index.html#innerfrench" onclick="goToList(event)">→ فهرست پادکست‌ها</a>
-    </div>
-    <div id="content"><div class="loading">در حال بارگذاری…</div></div>
-  </div>
-
-  <div id="miniPlayer" class="mini-player">
-    <button class="mp-close" onclick="closeMiniPlayer()" title="بستن">✕</button>
-    <div class="mp-icon">▶</div>
-    <div class="mp-info"><div class="mp-title" id="mpTitle">—</div><div class="mp-sub">InnerFrench</div></div>
-    <audio id="mpAudio" controls preload="none"></audio>
-  </div>
-
-  <script src="data.js"></script>
-  <script>
-    function safeUrl(u){ return String(u||"").replace(/"/g,"&quot;"); }
-
-    function parseClickWords(text){
-      text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens){
-        const m = mot.replace(/"/g,'&quot;'); const s = sens.replace(/"/g,'&quot;');
-        return '<span class="cw cw-struct" dir="ltr" onclick="toggleCw(this)" data-sens="'+s+'">'+m+'</span>';
-      });
-      text = text.replace(/⟦([^|⟧]+)\|([^⟧]+)⟧/g, function(_, mot, sens){
-        const m = mot.replace(/"/g,'&quot;'); const s = sens.replace(/"/g,'&quot;');
-        return '<span class="cw" dir="ltr" onclick="toggleCw(this)" data-sens="'+s+'">'+m+'</span>';
-      });
-      return text;
-    }
-
-    function toggleCw(el){
-      if(el.classList.contains("open")){
-        el.classList.remove("open");
-        if(el._cwTimer){ clearTimeout(el._cwTimer); el._cwTimer=null; }
-        return;
-      }
-      let pop = el.querySelector(".cw-pop");
-      if(!pop){
-        pop = document.createElement("span");
-        pop.className = "cw-pop";
-        pop.textContent = el.getAttribute("data-sens");
-        el.appendChild(pop);
-      }
-      el.classList.add("open");
-      if(el._cwTimer) clearTimeout(el._cwTimer);
-      el._cwTimer = setTimeout(()=>{ el.classList.remove("open"); el._cwTimer=null; }, 3000);
-    }
-
-    function playInPlayer(audioUrl, title){
-      const player = document.getElementById("miniPlayer");
-      const audio = document.getElementById("mpAudio");
-      document.getElementById("mpTitle").textContent = title;
-      if(audio.getAttribute("data-src") !== audioUrl){
-        audio.src = audioUrl; audio.setAttribute("data-src", audioUrl);
-      }
-      player.classList.add("show");
-      audio.play().catch(()=>{});
-    }
-    function closeMiniPlayer(){
-      const audio = document.getElementById("mpAudio");
-      audio.pause();
-      document.getElementById("miniPlayer").classList.remove("show");
-    }
-    function goToList(e){ /* لینک خودش به index می‌رود */ }
-
-    function render(){
-      const params = new URLSearchParams(location.search);
-      const num = parseInt(params.get("ep") || "1", 10);
-      const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
-      const ep = list.find(e => e.num === num) || list[0];
-      if(!ep){ document.getElementById("content").innerHTML = '<div class="loading">قسمت پیدا نشد.</div>'; return; }
-      document.title = "InnerFrench #" + ep.num + " — " + ep.titreFa;
-      const html = `
-        <div class="if-episode">
-          <div class="if-ep-head">
-            <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
-            <div class="if-ep-titre-fa">${ep.titreFa}</div>
-            ${ep.theme ? `<div class="if-ep-theme">${ep.theme}</div>` : ""}
-          </div>
-          ${ep.audio ? `<button class="if-play-btn" onclick="playInPlayer('${safeUrl(ep.audio)}', 'InnerFrench #${ep.num} — ${ep.titreFa}')">▶ پخش پادکست در همین صفحه</button>` : ""}
-          <a class="if-source" href="${ep.source}" target="_blank" rel="noopener">🔗 منبع اصلی در InnerFrench.com</a>
-          ${ep.intro ? `<div class="if-intro">${ep.intro}</div>` : ""}
-          <div class="if-hint">💡 روی واژه‌های رنگی بزن تا معنی‌شان را ببینی (صورتی=واژه، آبی ⚙=ساختار)</div>
-          <div class="if-text">
-            ${(ep.paras||[]).map(p => {
-              const fr = (typeof p === "object") ? p.fr : p;
-              const fa = (typeof p === "object") ? p.fa : "";
-              return `<div class="if-block"><p class="if-para" dir="ltr">${parseClickWords(fr)}</p>${fa ? `<p class="if-para-fa">${fa}</p>` : ""}</div>`;
-            }).join("")}
-          </div>
-          <div class="if-credit">منبع: InnerFrench — Hugo Cotton · با احترام به سازنده‌ی اثر</div>
-        </div>`;
-      document.getElementById("content").innerHTML = html;
-      window.scrollTo(0, 0);
-    }
-
-    document.addEventListener("DOMContentLoaded", render);
-  </script>
-  <script src="protect.js"></script>
-
-
-<!-- 🎙️ Voice Recorder -->
-<style>
-#rec-widget{
-  background:var(--white,#fcfbfd);
-  border:1px solid rgba(217,206,184,.6);
-  border-radius:14px;padding:14px 16px;
-  margin:16px 0;box-shadow:0 3px 12px rgba(31,58,95,.06);
-}
-.rec-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1.5px;margin-bottom:10px}
-.rec-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-#rec-btn{
-  display:flex;align-items:center;gap:6px;
-  padding:8px 16px;border:none;border-radius:10px;
-  background:#1e3a5f;color:#f5f0e8;
-  font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;
-  cursor:pointer;transition:all .2s;
-}
-#rec-btn.recording{background:#c0392b;animation:pulse 1s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
-#rec-timer{font-size:12px;color:#8a8275;font-variant-numeric:tabular-nums}
-.rec-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.rec-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px}
-.rec-item audio{flex:1;height:30px;accent-color:#1e3a5f}
-.rec-item-date{font-size:10px;color:#8a8275;flex-shrink:0}
-.rec-del{background:none;border:none;color:#c0392b;cursor:pointer;font-size:14px;opacity:.5;flex-shrink:0}
-.rec-del:hover{opacity:1}
-.rec-empty{font-size:12px;color:#b0a090;text-align:center;padding:8px 0}
-</style>
-
-<div id="rec-widget">
-  <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
-  <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
-    <span id="rec-timer">۰:۰۰</span>
-    <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
-  </div>
-  <div class="rec-list" id="rec-list"></div>
+<div class="hero">
+  <h1>🎧 InnerFrench Podcast</h1>
+  <div class="hero-sub">اپیزودهای ۱ تا ۱۷ · Hugo Cotton · B1–B2</div>
 </div>
-
-<script>
-(function(){
-  const PAGE = location.pathname.split('/').pop().split('?')[0];
-  const REC_KEY = 'hoda_recs_' + PAGE;
-  let mediaRecorder = null, chunks = [], timerInterval = null, seconds = 0;
+<div class="wrap">
+  <div class="info-box">
+    📌 اپیزودها از آسان به دشوار هستند — پیشنهاد می‌شه از اول شروع کنی.<br>
+    📖 اپیزودهایی که درس کامل دارند با دکمه آبی مشخص‌اند — بقیه لینک مستقیم به InnerFrench دارند.
+  </div>
   
-  function toFa(n){ return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]); }
-  function fmtTime(s){ return toFa(Math.floor(s/60))+':'+toFa(s%60<10?'0'+s%60:s%60); }
-  
-  window.toggleRec = async function(){
-    const btn = document.getElementById('rec-btn');
-    if(!mediaRecorder || mediaRecorder.state==='inactive'){
-      try{
-        const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-        mediaRecorder = new MediaRecorder(stream);
-        chunks = [];
-        mediaRecorder.ondataavailable = e => chunks.push(e.data);
-        mediaRecorder.onstop = () => {
-          const blob = new Blob(chunks, {type:'audio/webm'});
-          saveRec(blob);
-          stream.getTracks().forEach(t=>t.stop());
-        };
-        mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
-        btn.classList.add('recording');
-        seconds = 0;
-        timerInterval = setInterval(()=>{
-          seconds++;
-          document.getElementById('rec-timer').textContent = fmtTime(seconds);
-          if(seconds >= 300){ toggleRec(); } // max 5 min
-        },1000);
-      }catch(e){
-        alert('دسترسی به میکروفون لازمه. لطفاً اجازه بده.');
-      }
-    } else {
-      mediaRecorder.stop();
-      btn.textContent = '🎙️ ضبط جدید';
-      btn.classList.remove('recording');
-      clearInterval(timerInterval);
-      document.getElementById('rec-timer').textContent = toFa('0')+':'+toFa('00');
-    }
-  };
-  
-  function saveRec(blob){
-    const reader = new FileReader();
-    reader.onload = function(e){
-      const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
-      recs.unshift({
-        data: e.target.result,
-        date: new Date().toLocaleString('fa-IR'),
-        ts: Date.now()
-      });
-      localStorage.setItem(REC_KEY, JSON.stringify(recs.slice(0,20))); // max 20
-      renderRecs();
-    };
-    reader.readAsDataURL(blob);
-  }
-  
-  function delRec(ts){
-    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]').filter(r=>r.ts!==ts);
-    localStorage.setItem(REC_KEY, JSON.stringify(recs));
-    renderRecs();
-  }
-  window.delRec = delRec;
-  
-  function renderRecs(){
-    const list = document.getElementById('rec-list');
-    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
-    if(!recs.length){
-      list.innerHTML='<div class="rec-empty">هنوز ضبطی نداری — اولین ضبطت رو بکن! 🎙️</div>';
-      return;
-    }
-    list.innerHTML = recs.map(r=>`
-      <div class="rec-item">
-        <audio controls src="${r.data}" style="flex:1;height:30px;accent-color:#1e3a5f"></audio>
-        <span class="rec-item-date">${r.date}</span>
-        <button class="rec-del" onclick="delRec(${r.ts})" title="حذف">🗑</button>
-      </div>
-    `).join('');
-  }
-  
-  renderRecs();
-})();
-</script>
-
-<!-- ✅ Mark as Done -->
-<style>
-#done-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(255,253,246,.96);backdrop-filter:blur(12px);
-  border-top:1px solid rgba(217,206,184,.6);
-  padding:10px 16px;
-  display:flex;align-items:center;gap:10px;
-}
-#done-btn{
-  flex:1;padding:10px;
-  background:#1e3a5f;color:#f5f0e8;
-  border:none;border-radius:10px;
-  font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;
-  cursor:pointer;transition:all .25s;
-}
-#done-btn.done{background:#2e8b6b}
-#done-btn:hover{opacity:.9}
-body{padding-bottom:70px!important}
-</style>
-<div id="done-bar">
-  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
+<div class="ep-card" data-num="01">
+  <div class="ep-num">#01</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Pourquoi apprendre le français ?</div>
+    <div class="ep-title-fa">چرا فرانسه یاد بگیریم؟</div>
+    <div class="ep-meta">⏱ 28 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/01/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
 </div>
-<script>
-(function(){
-  const page = location.pathname.split('/').pop().split('?')[0];
-  const title = document.title.split('|')[0].trim().replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim();
-  
-  // Track visit
-  const history = JSON.parse(localStorage.getItem('hoda_history')||'[]');
-  const entry = {
-    page, title,
-    time: new Date().toLocaleString('fa-IR'),
-    ts: Date.now()
-  };
-  // Remove duplicate
-  const filtered = history.filter(h => h.page !== page);
-  filtered.unshift(entry);
-  localStorage.setItem('hoda_history', JSON.stringify(filtered.slice(0,200)));
-  
-  // Also update visited
-  const visited = JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-  const vi = visited.findIndex(v => v.file === page);
-  const ve = {file:page, title, time:new Date().toLocaleDateString('fa-IR')};
-  if(vi>=0) visited[vi]=ve; else visited.unshift(ve);
-  localStorage.setItem('hoda_visited', JSON.stringify(visited.slice(0,100)));
-  
-  // Check if already done
-  const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
-  const btn = document.getElementById('done-btn');
-  if(done[page]){
-    btn.textContent = '✓ خوانده شده';
-    btn.classList.add('done');
-  }
-  
-  window.markDone = function(){
-    const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
-    done[page] = new Date().toISOString();
-    localStorage.setItem('hoda_done', JSON.stringify(done));
-    
-    // Add to history as "completed"
-    const h = JSON.parse(localStorage.getItem('hoda_history')||'[]');
-    h.unshift({page, title, time: new Date().toLocaleString('fa-IR'), ts: Date.now(), completed: true});
-    localStorage.setItem('hoda_history', JSON.stringify(h.slice(0,200)));
-    
-    // Update status
-    const status = JSON.parse(localStorage.getItem('hoda_status')||'{}');
-    status[page] = 'done';
-    localStorage.setItem('hoda_status', JSON.stringify(status));
-    
-    btn.textContent = '✓ خوانده شده';
-    btn.classList.add('done');
-  };
-})();
-</script>
-
+<div class="ep-card" data-num="02">
+  <div class="ep-num">#02</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Les Français et la nourriture</div>
+    <div class="ep-title-fa">فرانسوی‌ها و غذا</div>
+    <div class="ep-meta">⏱ 29 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/02/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="03">
+  <div class="ep-num">#03</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">L'art de râler</div>
+    <div class="ep-title-fa">هنر غر زدن فرانسوی‌ها</div>
+    <div class="ep-meta">⏱ 28 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/03/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="04">
+  <div class="ep-num">#04</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Le cinéma français</div>
+    <div class="ep-title-fa">سینمای فرانسه</div>
+    <div class="ep-meta">⏱ 32 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/04/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="05">
+  <div class="ep-num">#05</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Vivre à Paris vs en province</div>
+    <div class="ep-title-fa">زندگی در پاریس در مقابل شهرستان</div>
+    <div class="ep-meta">⏱ 33 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/05/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="06">
+  <div class="ep-num">#06</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Apprendre une langue : les avantages cachés</div>
+    <div class="ep-title-fa">یادگیری زبان: مزایای پنهان</div>
+    <div class="ep-meta">⏱ 29 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/06/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="07">
+  <div class="ep-num">#07</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">La politesse en France</div>
+    <div class="ep-title-fa">ادب و نزاکت در فرانسه</div>
+    <div class="ep-meta">⏱ 33 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/07/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="08">
+  <div class="ep-num">#08</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Les stéréotypes</div>
+    <div class="ep-title-fa">کلیشه‌ها</div>
+    <div class="ep-meta">⏱ 29 min</div>
+  </div>
+  <a class="ep-btn lesson" href="IF_ep08.html">📖 درس کامل با هایلایت</a>
+</div>
+<div class="ep-card" data-num="09">
+  <div class="ep-num">#09</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">La France vue de l'étranger</div>
+    <div class="ep-title-fa">فرانسه از نگاه خارجی‌ها</div>
+    <div class="ep-meta">⏱ 31 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/09/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="10">
+  <div class="ep-num">#10</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">L'argent, tabou en France ?</div>
+    <div class="ep-title-fa">پول، تابو در فرانسه؟</div>
+    <div class="ep-meta">⏱ 32 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/10/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="11">
+  <div class="ep-num">#11</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Faut-il se lever tôt ?</div>
+    <div class="ep-title-fa">آیا باید زود بیدار شد؟</div>
+    <div class="ep-meta">⏱ 32 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/11/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="12">
+  <div class="ep-num">#12</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Le 14 juillet en France</div>
+    <div class="ep-title-fa">۱۴ ژوئیه در فرانسه</div>
+    <div class="ep-meta">⏱ 30 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/12/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="13">
+  <div class="ep-num">#13</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Les malheurs des gagnants du loto</div>
+    <div class="ep-title-fa">بدبختی‌های برندگان لاتاری</div>
+    <div class="ep-meta">⏱ 30 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/13/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="14">
+  <div class="ep-num">#14</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Comment créer le héros parfait</div>
+    <div class="ep-title-fa">چطور قهرمان کامل بسازیم؟</div>
+    <div class="ep-meta">⏱ 30 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/14/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="15">
+  <div class="ep-num">#15</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">L'école en France</div>
+    <div class="ep-title-fa">مدرسه در فرانسه</div>
+    <div class="ep-meta">⏱ 29 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/15/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="16">
+  <div class="ep-num">#16</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Prendre l'habitude de faire du français</div>
+    <div class="ep-title-fa">عادت کردن به فرانسه</div>
+    <div class="ep-meta">⏱ 32 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/16/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+<div class="ep-card" data-num="17">
+  <div class="ep-num">#17</div>
+  <div class="ep-info">
+    <div class="ep-title" dir="ltr">Xavier Dolan, réalisateur prodige ?</div>
+    <div class="ep-title-fa">گزاویه دولان، کارگردان نابغه؟</div>
+    <div class="ep-meta">⏱ 31 min</div>
+  </div>
+  <a class="ep-btn ext" href="https://innerfrench.com/17/" target="_blank">🎧 گوش بده در InnerFrench ↗</a>
+</div>
+</div>
 </body>
 </html>
