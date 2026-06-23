@@ -83,6 +83,79 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+  {
+    file: "IF_ep09.html",
+    title: "🎧 InnerFrench #09 — La France vue de l'étranger",
+    titleFr: "#09 La France vue de l'étranger",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "فرانسه از نگاه خارجی‌ها"
+  },
+  {
+    file: "IF_ep10.html",
+    title: "🎧 InnerFrench #10 — L'argent, tabou en France ?",
+    titleFr: "#10 L'argent, tabou en France ?",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "پول، تابو در فرانسه؟"
+  },
+  {
+    file: "IF_ep11.html",
+    title: "🎧 InnerFrench #11 — Faut-il se lever tôt ?",
+    titleFr: "#11 Faut-il se lever tôt ?",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "آیا باید زود بیدار شد؟"
+  },
+  {
+    file: "IF_ep12.html",
+    title: "🎧 InnerFrench #12 — Le 14 juillet en France",
+    titleFr: "#12 Le 14 juillet en France",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "۱۴ ژوئیه در فرانسه"
+  },
+  {
+    file: "IF_ep13.html",
+    title: "🎧 InnerFrench #13 — Les malheurs des gagnants du loto",
+    titleFr: "#13 Les malheurs des gagnants du loto",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "بدبختی‌های برندگان لاتاری"
+  },
+  {
+    file: "IF_ep14.html",
+    title: "🎧 InnerFrench #14 — Comment créer le héros parfait",
+    titleFr: "#14 Comment créer le héros parfait",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "چطور قهرمان کامل بسازیم؟"
+  },
+  {
+    file: "IF_ep15.html",
+    title: "🎧 InnerFrench #15 — L'école en France",
+    titleFr: "#15 L'école en France",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "مدرسه در فرانسه"
+  },
+  {
+    file: "IF_ep16.html",
+    title: "🎧 InnerFrench #16 — Prendre l'habitude de faire du français",
+    titleFr: "#16 Prendre l'habitude de faire du français",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "عادت کردن به فرانسه"
+  },
+  {
+    file: "IF_ep17.html",
+    title: "🎧 InnerFrench #17 — Xavier Dolan, réalisateur prodige ?",
+    titleFr: "#17 Xavier Dolan, réalisateur prodige ?",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","écoute"],
+    summary: "گزاویه دولان، کارگردان نابغه؟"
+  },
+
   {file:"GRAM_passe_recent.html",title:"📐 Le Passé Récent — venir de",titleFr:"Le Passé Récent",category:"grammar",level:"A2–B1",tags:["passé récent","venir de","A2"],summary:"گذشته نزدیک — تازه"},
   {file:"GRAM_passe_compose.html",title:"📐 Le Passé Composé",titleFr:"Le Passé Composé",category:"grammar",level:"A2–B1",tags:["passé composé","auxiliaire","participe passé"],summary:"گذشته مرکب کامل"},
   {file:"GRAM_pc_imparfait.html",title:"📐 Passé Composé et Imparfait",titleFr:"PC et Imparfait",category:"grammar",level:"B1–B2",tags:["passé composé","imparfait","B1"],summary:"تفاوت گذشته مرکب و استمراری"},
