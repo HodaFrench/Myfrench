@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Constructions impersonnelles | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,.04) 31px,rgba(30,58,95,.04) 32px);color:var(--ink);line-height:1.9;padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 20px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
+.hero h1{font-family:'Roboto',serif;font-size:20px;font-weight:700;margin-bottom:4px}
+.wrap{max-width:820px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
+.card.navy{border-right:5px solid var(--navy)}
+.card.gold{border-right:5px solid var(--gold)}
+.card.green{border-right:5px solid var(--green)}
+.card.rose{border-right:5px solid var(--rose)}
+.card-label{font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:14px}
+.card.navy .card-label{color:var(--navy)}
+.card.gold .card-label{color:var(--gold)}
+.card.green .card-label{color:var(--green)}
+.card.rose .card-label{color:var(--rose)}
+
+/* expression rows */
+.expr-section{margin:14px 0}
+.expr-section-title{font-size:12px;font-weight:800;color:var(--navy);background:rgba(30,58,95,.07);padding:6px 12px;border-radius:8px;margin-bottom:10px;letter-spacing:.5px}
+.expr-row{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;background:var(--cream);border-radius:10px;margin-bottom:6px;border-right:3px solid var(--navy)}
+.expr-row.subj{border-right-color:#b0506f}
+.expr-row.ind{border-right-color:#2e8b6b}
+.expr-row.both{border-right-color:var(--gold)}
+.expr-fr{font-family:'Roboto',serif;font-size:14px;font-weight:700;color:var(--navy);direction:ltr;flex:1}
+.expr-fa{font-size:12px;color:var(--gray);margin-top:2px}
+.expr-badge{font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:8px;white-space:nowrap;flex-shrink:0;align-self:flex-start;margin-top:2px}
+.badge-subj{background:rgba(176,80,111,.12);color:#8a2040}
+.badge-ind{background:rgba(46,139,107,.12);color:#1e6b50}
+.badge-both{background:rgba(176,160,80,.15);color:#7a6010}
+
+/* examples */
+.ex-label{font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:1px;margin:14px 0 6px}
+.ex-block{margin-bottom:10px}
+.ex-fr{font-family:'Roboto',serif;font-size:14.5px;direction:ltr;text-align:left;color:var(--navy);padding:8px 14px;background:var(--cream);border-radius:8px;border-right:3px solid var(--navy);margin-bottom:3px;line-height:1.7}
+.ex-fr.subj{border-right-color:var(--rose)}
+.ex-fr.ind{border-right-color:var(--green)}
+.ex-fa{font-size:12.5px;color:var(--gray);padding:0 4px;margin-bottom:2px}
+.ex-analysis{font-size:11.5px;color:#6a5080;padding:2px 4px 0;font-style:italic}
+.hl{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:3px;padding:1px 5px;font-weight:700}
+.hl-r{background:rgba(176,80,111,.12);color:#8a2040;border-radius:3px;padding:1px 5px;font-weight:700}
+.hl-g{background:rgba(46,139,107,.12);color:#1d6b50;border-radius:3px;padding:1px 5px;font-weight:700}
+.warn{background:#fff8e8;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0;line-height:1.8}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+@media(max-width:600px){.compare{grid-template-columns:1fr}}
+.compare-box{background:var(--cream);border-radius:10px;padding:12px 14px}
+.compare-title{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+
+/* quiz */
+.quiz-section{margin-top:20px}
+.quiz-q{background:var(--white);border-radius:12px;padding:16px 18px;margin-bottom:12px;border:1px solid var(--line);box-shadow:0 2px 8px rgba(31,58,95,.05)}
+.quiz-q-text{font-family:'Roboto',serif;font-size:14.5px;direction:ltr;color:var(--navy);margin-bottom:12px;line-height:1.7}
+.quiz-options{display:flex;flex-direction:column;gap:7px}
+.quiz-opt{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:9px;border:1.5px solid var(--line);cursor:pointer;font-family:'Roboto',serif;font-size:13.5px;direction:ltr;transition:all .18s;background:var(--cream)}
+.quiz-opt:hover{border-color:var(--navy);background:rgba(30,58,95,.05)}
+.quiz-opt.correct{background:rgba(46,139,107,.1);border-color:#2e8b6b;color:#1a5a44}
+.quiz-opt.wrong{background:rgba(176,80,111,.1);border-color:#b0506f;color:#8a2040}
+.quiz-feedback{font-size:12px;margin-top:8px;padding:8px 12px;border-radius:8px;display:none}
+.quiz-feedback.show{display:block}
+.quiz-feedback.ok{background:rgba(46,139,107,.1);color:#1a5a44;border-right:3px solid #2e8b6b}
+.quiz-feedback.err{background:rgba(176,80,111,.1);color:#8a2040;border-right:3px solid #b0506f}
+.quiz-num{font-size:11px;font-weight:700;color:var(--gold);margin-bottom:8px}
+.quiz-score{text-align:center;padding:16px;background:var(--navy);color:#fff;border-radius:12px;margin-top:16px;display:none;font-size:15px;font-weight:700}
+
+/* nav + done */
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+</style>
+</head>
+<body>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a>
+  <span style="font-size:12px;color:#8a8275;flex:1;text-align:center">📐 Constructions impersonnelles</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📐 GRAMMAIRE · B1–C1</div>
+  <h1>Constructions impersonnelles<br>+ Subjonctif ou Indicatif ?</h1>
+  <div style="font-size:13px;opacity:.85">ساختارهای غیرشخصی + وجه التزامی یا اخباری</div>
+</div>
+
+<div class="wrap">
+
+<!-- ══ BLOC 1: تعریف ══ -->
+<div class="card navy">
+  <div class="card-label">🔷 DÉFINITION — تعریف</div>
+  <p style="font-size:14px;margin-bottom:12px">
+    <b>Construction impersonnelle</b> ساختاری است که فاعلش <span style="font-family:'Roboto',serif;direction:ltr;font-weight:700">il</span> است ولی به هیچ شخص یا چیز مشخصی اشاره نمی‌کند.
+    این <b>il</b> = «it» در انگلیسی یا «این» در فارسی است.
+  </p>
+  <div style="background:var(--cream);border-radius:10px;padding:12px 16px;font-family:'Roboto',serif;direction:ltr;font-size:14px;line-height:2.2">
+    <span class="hl">Il</span> faut que tu travailles. → باید کار کنی.<br>
+    <span class="hl">Il</span> est évident qu'il a raison. → واضح است که حق دارد.<br>
+    <span class="hl">Il</span> est possible qu'elle vienne. → ممکن است بیاید.
+  </div>
+  <div class="warn" style="margin-top:12px">
+    🔑 <b>قانون اساسی:</b><br>
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block;margin-top:4px">
+      ✅ <b>Subjonctif</b> = incertitude / doute / jugement subjectif → <span style="color:#8a2040">واقعیت نامشخص یا ذهنی</span><br>
+      ✅ <b>Indicatif</b> = certitude / réalité objective → <span style="color:#1a5a44">واقعیت قطعی یا عینی</span>
+    </span>
+  </div>
+</div>
+
+<!-- ══ BLOC 2: SUBJONCTIF ══ -->
+<div class="card rose">
+  <div class="card-label">🔴 CONSTRUCTIONS → SUBJONCTIF</div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">① OBLIGATION / NÉCESSITÉ — ضرورت و الزام</div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il faut que</div><div class="expr-fa">باید / لازم است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est nécessaire que</div><div class="expr-fa">ضروری است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est indispensable que</div><div class="expr-fa">اجتناب‌ناپذیر است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est essentiel que</div><div class="expr-fa">اساسی/ضروری است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est obligatoire que</div><div class="expr-fa">اجباری است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est impératif que</div><div class="expr-fa">حتمی/الزامی است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il vaut mieux que</div><div class="expr-fa">بهتر است که / ارجح است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il suffit que</div><div class="expr-fa">کافی است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+  </div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">② POSSIBILITÉ / DOUTE — امکان و شک</div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est possible que</div><div class="expr-fa">ممکن است که (احتمال پایین)</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est impossible que</div><div class="expr-fa">غیرممکن است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est peu probable que</div><div class="expr-fa">بعید است که / احتمال کم</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il n'est pas certain que</div><div class="expr-fa">مشخص نیست که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il n'est pas sûr que</div><div class="expr-fa">مطمئن نیست که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il se peut que</div><div class="expr-fa">ممکن است که (محاوره)</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+  </div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">③ JUGEMENT / ÉMOTION — داوری ذهنی و احساس</div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est important que</div><div class="expr-fa">مهم است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est bon que</div><div class="expr-fa">خوب است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est mauvais que</div><div class="expr-fa">بد است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est dommage que</div><div class="expr-fa">افسوس است که / حیف است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est regrettable que</div><div class="expr-fa">متأسفانه / تأسف‌بار است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est inadmissible que</div><div class="expr-fa">غیرقابل‌قبول است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est anormal que</div><div class="expr-fa">غیرعادی است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est surprenant que</div><div class="expr-fa">شگفت‌آور است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est honteux que</div><div class="expr-fa">شرم‌آور است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est inacceptable que</div><div class="expr-fa">غیرقابل‌پذیرش است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est rare que</div><div class="expr-fa">نادر است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est urgent que</div><div class="expr-fa">فوری است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est préférable que</div><div class="expr-fa">ترجیحاً / بهتر است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est juste que</div><div class="expr-fa">منصفانه / عادلانه است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est injuste que</div><div class="expr-fa">ناعادلانه است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il est normal que</div><div class="expr-fa">طبیعی است که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+    <div class="expr-row subj"><div><div class="expr-fr">Il arrive que</div><div class="expr-fa">گاهی اتفاق می‌افتد که</div></div><span class="expr-badge badge-subj">SUBJ</span></div>
+  </div>
+</div>
+
+<!-- ══ BLOC 3: INDICATIF ══ -->
+<div class="card green">
+  <div class="card-label">🟢 CONSTRUCTIONS → INDICATIF</div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">① CERTITUDE / ÉVIDENCE — قطعیت و یقین</div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est certain que</div><div class="expr-fa">مشخص / یقینی است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est sûr que</div><div class="expr-fa">مطمئن است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est évident que</div><div class="expr-fa">واضح / بدیهی است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est clair que</div><div class="expr-fa">روشن است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est indéniable que</div><div class="expr-fa">انکارناپذیر است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est incontestable que</div><div class="expr-fa">بی‌تردید است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est vrai que</div><div class="expr-fa">درست است که / صحیح است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est exact que</div><div class="expr-fa">دقیقاً درست است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est avéré que</div><div class="expr-fa">ثابت‌شده است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est reconnu que</div><div class="expr-fa">شناخته‌شده / پذیرفته‌شده است که</div></div><span class="expr-badge badge-ind">IND</span></div>
+  </div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">② PROBABILITÉ ÉLEVÉE — احتمال بالا</div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est probable que</div><div class="expr-fa">محتمل است که (احتمال بالا &gt;50%)</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il est vraisemblable que</div><div class="expr-fa">محتمل است / به نظر می‌رسد که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il paraît que</div><div class="expr-fa">به نظر می‌رسد که / ظاهراً</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il me semble que</div><div class="expr-fa">به نظرم می‌رسد که</div></div><span class="expr-badge badge-ind">IND</span></div>
+  </div>
+
+  <div class="expr-section">
+    <div class="expr-section-title">③ CONSTATATION — مشاهده و بیان واقع</div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il résulte que</div><div class="expr-fa">نتیجه می‌شود که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il s'avère que</div><div class="expr-fa">معلوم می‌شود که / ثابت می‌شود که</div></div><span class="expr-badge badge-ind">IND</span></div>
+    <div class="expr-row ind"><div><div class="expr-fr">Il se trouve que</div><div class="expr-fa">اتفاقاً / معلوم می‌شود که</div></div><span class="expr-badge badge-ind">IND</span></div>
+  </div>
+</div>
+
+<!-- ══ BLOC 4: NUANCES ══ -->
+<div class="card gold">
+  <div class="card-label">⚡ NUANCES — تفاوت‌های ظریف کلیدی</div>
+
+  <div class="ex-label">① Il est probable (IND) vs Il est possible (SUBJ)</div>
+  <div class="warn">
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block">
+      <span class="hl-g">Il est probable</span> qu'il <span class="hl-g">viendra</span>. ✓ &nbsp;→ بیش از ۵۰٪ احتمال (indicatif)<br>
+      <span class="hl-r">Il est possible</span> qu'il <span class="hl-r">vienne</span>. ✓ &nbsp;→ کمتر از ۵۰٪ احتمال (subjonctif)
+    </span>
+    <div style="font-size:12px;color:var(--gray);margin-top:6px">محتمل است می‌آید. / ممکن است بیاید.</div>
+  </div>
+
+  <div class="ex-label">② Il est certain (IND) vs Il n'est pas certain (SUBJ)</div>
+  <div class="warn">
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block">
+      <span class="hl-g">Il est certain</span> qu'elle <span class="hl-g">a</span> raison. ✓ &nbsp;→ قطعی (indicatif)<br>
+      <span class="hl-r">Il n'est pas certain</span> qu'elle <span class="hl-r">ait</span> raison. ✓ &nbsp;→ نامشخص (subjonctif)
+    </span>
+    <div style="font-size:12px;color:var(--gray);margin-top:6px">مطمئنم که حق دارد. / مطمئن نیستم که حق داشته باشد.</div>
+  </div>
+
+  <div class="ex-label">③ Il semble que (SUBJ) vs Il me semble que (IND)</div>
+  <div class="warn">
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block">
+      <span class="hl-r">Il semble</span> qu'il y <span class="hl-r">ait</span> un problème. ✓ &nbsp;→ subjonctif (عام، بی‌طرف)<br>
+      <span class="hl-g">Il me semble</span> qu'il y <span class="hl-g">a</span> un problème. ✓ &nbsp;→ indicatif (نظر شخصی‌تر)
+    </span>
+    <div style="font-size:12px;color:var(--gray);margin-top:6px">به نظر می‌رسد مشکلی وجود دارد.</div>
+  </div>
+
+  <div class="ex-label">④ نفی یا سؤال — subjonctif قوی‌تر می‌شود</div>
+  <div class="warn">
+    <span style="font-family:'Roboto',serif;direction:ltr;display:block">
+      Il est évident qu'il <span class="hl-g">sait</span>. (IND) → واضح است که می‌داند.<br>
+      Il n'est pas évident qu'il <span class="hl-r">sache</span>. (SUBJ) → واضح نیست که بداند.
+    </span>
+  </div>
+</div>
+
+<!-- ══ BLOC 5: مثال‌های سطح بالا ══ -->
+<div class="card navy">
+  <div class="card-label">📌 EXEMPLES NIVEAU B2–C1 — مثال‌های سطح بالا</div>
+
+  <div class="ex-label">🔴 SUBJONCTIF — مثال‌های B2–C1</div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il est inadmissible</span> que les inégalités salariales entre hommes et femmes <span class="hl-r">persistent</span> encore au XXIe siècle.</div>
+    <div class="ex-fa">غیرقابل‌قبول است که نابرابری‌های حقوقی بین زن و مرد در قرن بیست‌ویکم هنوز ادامه داشته باشد.</div>
+    <div class="ex-analysis">📌 inadmissible → داوری قوی منفی → subjonctif · persister = persiste conjugué au subjonctif</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il est impératif</span> que les gouvernements <span class="hl-r">prennent</span> des mesures concrètes face au réchauffement climatique avant qu'il ne <span class="hl-r">soit</span> trop tard.</div>
+    <div class="ex-fa">الزامی است که دولت‌ها قبل از اینکه خیلی دیر شود، اقدامات عملی در برابر گرمایش جهانی انجام دهند.</div>
+    <div class="ex-analysis">📌 impératif → الزام → subjonctif · دو subjonctif در یک جمله: prennent + soit</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il est peu probable</span> que l'intelligence artificielle <span class="hl-r">remplace</span> totalement la créativité humaine dans un avenir proche.</div>
+    <div class="ex-fa">بعید است که هوش مصنوعی در آینده نزدیک به‌طور کامل جای خلاقیت انسانی را بگیرد.</div>
+    <div class="ex-analysis">📌 peu probable → احتمال کم → subjonctif · remplacer conjugué: remplace</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il est regrettable</span> que tant de jeunes diplômés <span class="hl-r">quittent</span> leur pays d'origine faute de perspectives professionnelles.</div>
+    <div class="ex-fa">تأسف‌بار است که اینقدر از جوانان تحصیل‌کرده به دلیل نبود چشم‌انداز شغلی، کشور خود را ترک کنند.</div>
+    <div class="ex-analysis">📌 regrettable → احساس منفی → subjonctif · faute de = به دلیل نبود</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il suffit</span> qu'un seul membre de l'équipe <span class="hl-r">soit</span> absent pour que tout le projet <span class="hl-r">soit</span> compromis.</div>
+    <div class="ex-fa">کافی است یک نفر از اعضای تیم غایب باشد تا کل پروژه به خطر بیفتد.</div>
+    <div class="ex-analysis">📌 il suffit que → subjonctif · pour que → هم subjonctif می‌گیرد · compromis = در معرض خطر</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr subj"><span class="hl-r">Il est honteux</span> que certaines entreprises <span class="hl-r">exploitent</span> leurs employés en toute impunité, sans que les autorités n'<span class="hl-r">interviennent</span>.</div>
+    <div class="ex-fa">شرم‌آور است که برخی شرکت‌ها بدون دخالت مقامات، با کمال بی‌شرمی کارمندانشان را استثمار کنند.</div>
+    <div class="ex-analysis">📌 honteux → قضاوت اخلاقی → subjonctif · sans que هم subjonctif می‌گیرد</div>
+  </div>
+
+  <div class="ex-label" style="margin-top:20px">🟢 INDICATIF — مثال‌های B2–C1</div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il est indéniable</span> que la mondialisation a <span class="hl-g">profondément transformé</span> les équilibres économiques mondiaux au cours des dernières décennies.</div>
+    <div class="ex-fa">انکارناپذیر است که جهانی‌سازی در طول دهه‌های اخیر توازن‌های اقتصادی جهانی را به‌شدت تغییر داده است.</div>
+    <div class="ex-analysis">📌 indéniable → قطعی → indicatif passé composé · au cours des dernières décennies = در طول دهه‌های اخیر</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il est avéré</span> que l'exposition prolongée aux écrans <span class="hl-g">nuit</span> au développement cognitif des enfants en bas âge.</div>
+    <div class="ex-fa">ثابت شده است که قرار گرفتن طولانی در معرض صفحه‌نمایش به رشد شناختی کودکان خردسال آسیب می‌رساند.</div>
+    <div class="ex-analysis">📌 avéré → علمی‌ثابت‌شده → indicatif présent · nuire à = آسیب رساندن به</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il me semble</span> que la société contemporaine <span class="hl-g">accorde</span> davantage d'importance à la performance qu'au bien-être des individus.</div>
+    <div class="ex-fa">به نظرم می‌رسد که جامعه معاصر اهمیت بیشتری به عملکرد می‌دهد تا به رفاه افراد.</div>
+    <div class="ex-analysis">📌 il me semble que → نظر شخصی → indicatif · davantage = بیشتر</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il est probable</span> que les énergies renouvelables <span class="hl-g">remplaceront</span> progressivement les combustibles fossiles d'ici la fin du siècle.</div>
+    <div class="ex-fa">محتمل است که انرژی‌های تجدیدپذیر تا پایان این قرن به‌تدریج جای سوخت‌های فسیلی را بگیرند.</div>
+    <div class="ex-analysis">📌 probable → احتمال بالا → indicatif futur simple · d'ici = تا / progressivement = به‌تدریج</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il s'avère</span> que les politiques d'austérité <span class="hl-g">ont aggravé</span> les inégalités sociales plutôt que de les réduire.</div>
+    <div class="ex-fa">معلوم می‌شود که سیاست‌های ریاضت اقتصادی نابرابری‌های اجتماعی را تشدید کرده‌اند نه اینکه آن‌ها را کاهش دهند.</div>
+    <div class="ex-analysis">📌 il s'avère que → مشاهده واقعی → indicatif passé composé · aggraver = تشدید کردن</div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-fr ind"><span class="hl-g">Il est reconnu</span> que l'accès à l'éducation <span class="hl-g">constitue</span> l'un des leviers les plus puissants pour lutter contre la pauvreté.</div>
+    <div class="ex-fa">پذیرفته‌شده است که دسترسی به تحصیل یکی از قوی‌ترین اهرم‌ها برای مبارزه با فقر است.</div>
+    <div class="ex-analysis">📌 reconnu = اجماع جهانی → indicatif · un levier = اهرم / levier puissant = اهرم قدرتمند</div>
+  </div>
+</div>
+
+<!-- ══ BLOC 6: TABLEAU RÉCAPITULATIF ══ -->
+<div class="card gold">
+  <div class="card-label">📊 TABLEAU RÉCAPITULATIF — جدول جامع</div>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:13px">
+    <tr style="background:var(--navy);color:#fff">
+      <th style="padding:10px;text-align:right;font-weight:700">Expression</th>
+      <th style="padding:10px;text-align:right;font-weight:700">وجه</th>
+      <th style="padding:10px;text-align:right;font-weight:700">دلیل</th>
+    </tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il faut que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">الزام</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est nécessaire que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">ضرورت</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est possible que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">احتمال کم</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est peu probable que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">بعید</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est dommage que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">احساس / داوری</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est important que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">داوری ذهنی</td></tr>
+    <tr style="border-bottom:1px solid var(--line)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est urgent que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">فوریت</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il vaut mieux que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">ترجیح</td></tr>
+    <tr style="border-bottom:2px solid var(--navy)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il se peut que</td><td style="padding:9px 10px"><span class="expr-badge badge-subj">SUBJ</span></td><td style="padding:9px 10px;font-size:12px">احتمال محاوره</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:rgba(46,139,107,.05)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est certain que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">قطعیت</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est évident que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">بداهت</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:rgba(46,139,107,.05)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est probable que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">احتمال بالا</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il me semble que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">نظر شخصی</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:rgba(46,139,107,.05)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est vrai que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">حقیقت</td></tr>
+    <tr style="border-bottom:1px solid var(--line);background:var(--cream)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il s'avère que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">مشاهده واقعی</td></tr>
+    <tr style="background:rgba(46,139,107,.05)"><td style="padding:9px 10px;font-family:'Roboto',serif;direction:ltr">Il est indéniable que</td><td style="padding:9px 10px"><span class="expr-badge badge-ind">IND</span></td><td style="padding:9px 10px;font-size:12px">انکارناپذیر</td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- ══ BLOC 7: EXERCICE INTERACTIF ══ -->
+<div class="card navy">
+  <div class="card-label">✏️ EXERCICE — تمرین تعاملی (B1–C1)</div>
+  <p style="font-size:13px;margin-bottom:14px">وجه مناسب را انتخاب کنید:</p>
+
+  <div class="quiz-section" id="quiz">
+
+    <div class="quiz-q" id="q1">
+      <div class="quiz-num">سؤال ۱ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>indéniable</b> que la pollution plastique ___ (menacer) la biodiversité marine.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q1','wrong','❌ خطا — indéniable = قطعیت → indicatif لازم است')">menace</div>
+        <div class="quiz-opt" onclick="answer(this,'q1','correct','✅ درست! indéniable → certitude → indicatif présent: menace')">menace ✓</div>
+        <div class="quiz-opt" onclick="answer(this,'q1','wrong','❌ خطا — subjonctif برای عبارات یقینی نمی‌آید')">menace (subjonctif)</div>
+      </div>
+      <div class="quiz-feedback" id="fb1"></div>
+    </div>
+
+    <div class="quiz-q" id="q2">
+      <div class="quiz-num">سؤال ۲ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>impératif</b> que les États membres ___ (s'engager) à réduire leurs émissions de CO₂.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q2','correct','✅ درست! impératif → obligation → subjonctif: s'engagent')">s'engagent</div>
+        <div class="quiz-opt" onclick="answer(this,'q2','wrong','❌ خطا — impératif exige le subjonctif, pas l'indicatif')">s'engageront</div>
+        <div class="quiz-opt" onclick="answer(this,'q2','wrong','❌ خطا — conditionnel incorrect ici')">s'engageraient</div>
+      </div>
+      <div class="quiz-feedback" id="fb2"></div>
+    </div>
+
+    <div class="quiz-q" id="q3">
+      <div class="quiz-num">سؤال ۳ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>probable</b> que les négociations ___ (aboutir) à un accord d'ici la fin de l'année.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q3','wrong','❌ خطا — probable → احتمال بالا → indicatif نه subjonctif')">aboutissent</div>
+        <div class="quiz-opt" onclick="answer(this,'q3','correct','✅ درست! probable → probabilité élevée → indicatif futur: aboutiront')">aboutiront</div>
+        <div class="quiz-opt" onclick="answer(this,'q3','wrong','❌ خطا — conditionnel incorrect ici')">aboutiraient</div>
+      </div>
+      <div class="quiz-feedback" id="fb3"></div>
+    </div>
+
+    <div class="quiz-q" id="q4">
+      <div class="quiz-num">سؤال ۴ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>peu probable</b> que cette réforme ___ (obtenir) le soutien de l'opposition.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q4','correct','✅ درست! peu probable → احتمال کم → subjonctif: obtienne')">obtienne</div>
+        <div class="quiz-opt" onclick="answer(this,'q4','wrong','❌ خطا — peu probable → احتمال کم → subjonctif لازم است')">obtiendra</div>
+        <div class="quiz-opt" onclick="answer(this,'q4','wrong','❌ خطا — conditionnel برای peu probable نمی‌آید')">obtiendrait</div>
+      </div>
+      <div class="quiz-feedback" id="fb4"></div>
+    </div>
+
+    <div class="quiz-q" id="q5">
+      <div class="quiz-num">سؤال ۵ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>regrettable</b> que tant d'œuvres d'art ___ (disparaître) lors de conflits armés.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q5','correct','✅ درست! regrettable → sentiment négatif → subjonctif: disparaissent')">disparaissent</div>
+        <div class="quiz-opt" onclick="answer(this,'q5','wrong','❌ خطا — regrettable احساسی است → subjonctif می‌گیرد')">disparaissent (indicatif)</div>
+        <div class="quiz-opt" onclick="answer(this,'q5','wrong','❌ خطا — futur incorrect ici')">disparaîtront</div>
+      </div>
+      <div class="quiz-feedback" id="fb5"></div>
+    </div>
+
+    <div class="quiz-q" id="q6">
+      <div class="quiz-num">سؤال ۶ از ۱۲</div>
+      <div class="quiz-q-text">Il <b>s'avère</b> que les résultats de cette étude ___ (contredire) les hypothèses initiales.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q6','wrong','❌ خطا — il s'avère que → mشاهده واقعی → indicatif لازم است')">contredisent (subjonctif)</div>
+        <div class="quiz-opt" onclick="answer(this,'q6','correct','✅ درست! il s'avère que → constatation réelle → indicatif: contredisent')">contredisent</div>
+        <div class="quiz-opt" onclick="answer(this,'q6','wrong','❌ خطا — conditionnel اینجا صحیح نیست')">contrediraient</div>
+      </div>
+      <div class="quiz-feedback" id="fb6"></div>
+    </div>
+
+    <div class="quiz-q" id="q7">
+      <div class="quiz-num">سؤال ۷ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>inadmissible</b> que des citoyens ___ (être) privés de leur droit à un procès équitable.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q7','correct','✅ درست! inadmissible → jugement moral fort → subjonctif: soient')">soient</div>
+        <div class="quiz-opt" onclick="answer(this,'q7','wrong','❌ خطا — inadmissible est un jugement subjectif → subjonctif')">sont</div>
+        <div class="quiz-opt" onclick="answer(this,'q7','wrong','❌ خطا — futur incorrect avec inadmissible')">seront</div>
+      </div>
+      <div class="quiz-feedback" id="fb7"></div>
+    </div>
+
+    <div class="quiz-q" id="q8">
+      <div class="quiz-num">سؤال ۸ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>reconnu</b> que le stress chronique ___ (avoir) des effets néfastes sur le système immunitaire.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q8','wrong','❌ خطا — reconnu → اجماع علمی → indicatif لازم است')">ait</div>
+        <div class="quiz-opt" onclick="answer(this,'q8','correct','✅ درست! reconnu → fait établi, consensus → indicatif: a')">a</div>
+        <div class="quiz-opt" onclick="answer(this,'q8','wrong','❌ خطا — futur incorrect ici')">aura</div>
+      </div>
+      <div class="quiz-feedback" id="fb8"></div>
+    </div>
+
+    <div class="quiz-q" id="q9">
+      <div class="quiz-num">سؤال ۹ از ۱۲</div>
+      <div class="quiz-q-text">Il <b>se peut</b> que la réunion ___ (être) annulée en raison des grèves de transport.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q9','correct','✅ درست! il se peut que → احتمال در محاوره → subjonctif: soit')">soit</div>
+        <div class="quiz-opt" onclick="answer(this,'q9','wrong','❌ خطا — il se peut que → toujours subjonctif')">sera</div>
+        <div class="quiz-opt" onclick="answer(this,'q9','wrong','❌ خطا — est incorrect ici')">est</div>
+      </div>
+      <div class="quiz-feedback" id="fb9"></div>
+    </div>
+
+    <div class="quiz-q" id="q10">
+      <div class="quiz-num">سؤال ۱۰ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>honteux</b> que certains laboratoires ___ (dissimuler) des données défavorables lors d'essais cliniques.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q10','correct','✅ درست! honteux → jugement moral → subjonctif: dissimulent')">dissimulent</div>
+        <div class="quiz-opt" onclick="answer(this,'q10','wrong','❌ خطا — honteux est un jugement subjectif → subjonctif')">dissimulent (indicatif)</div>
+        <div class="quiz-opt" onclick="answer(this,'q10','wrong','❌ خطا — futur incorrect')">dissimuleront</div>
+      </div>
+      <div class="quiz-feedback" id="fb10"></div>
+    </div>
+
+    <div class="quiz-q" id="q11">
+      <div class="quiz-num">سؤال ۱۱ از ۱۲</div>
+      <div class="quiz-q-text">Il est <b>clair</b> que cette politique économique ___ (aggraver) les inégalités entre les classes sociales.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q11','wrong','❌ خطا — clair → certitude → indicatif, pas subjonctif')">aggrave (subjonctif)</div>
+        <div class="quiz-opt" onclick="answer(this,'q11','correct','✅ درست! clair → certitude objective → indicatif: aggrave')">aggrave</div>
+        <div class="quiz-opt" onclick="answer(this,'q11','wrong','❌ خطا — conditionnel incorrect ici')">aggraverait</div>
+      </div>
+      <div class="quiz-feedback" id="fb11"></div>
+    </div>
+
+    <div class="quiz-q" id="q12">
+      <div class="quiz-num">سؤال ۱۲ از ۱۲</div>
+      <div class="quiz-q-text">Il <b>n'est pas certain</b> que cette technologie ___ (révolutionner) le secteur de la santé comme prévu.</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="answer(this,'q12','correct','✅ درست! il n'est pas certain → incertitude → subjonctif: révolutionne')">révolutionne</div>
+        <div class="quiz-opt" onclick="answer(this,'q12','wrong','❌ خطا — la négation de certitude → subjonctif obligatoire')">révolutionnera</div>
+        <div class="quiz-opt" onclick="answer(this,'q12','wrong','❌ خطا — conditionnel incorrect ici')">révolutionnerait</div>
+      </div>
+      <div class="quiz-feedback" id="fb12"></div>
+    </div>
+
+    <div class="quiz-score" id="quiz-score"></div>
+  </div>
+</div>
+
+</div><!-- end wrap -->
+
+<div class="gram-nav">
+  <a class="gnav-btn" href="GRAM_subjonctif.html">&#8594; Subjonctif vs Indicatif</a>
+  <span style="font-size:11px;color:#b0a898">گرامر</span>
+  <a class="gnav-btn" href="GRAM_en_y_cod_coi.html">EN · Y · COD · COI &#8592;</a>
+</div>
+<div id="done-bar">
+  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
+</div>
+
+<script>
+let score = 0, answered = 0;
+const total = 12;
+
+function answer(el, qid, result, msg) {
+  const q = document.getElementById(qid);
+  if (q.dataset.done) return;
+  q.dataset.done = '1';
+  
+  const opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(o => o.style.pointerEvents = 'none');
+  el.classList.add(result === 'correct' ? 'correct' : 'wrong');
+  
+  const fb = document.getElementById('fb' + qid.replace('q',''));
+  fb.textContent = msg;
+  fb.className = 'quiz-feedback show ' + (result === 'correct' ? 'ok' : 'err');
+  
+  if (result === 'correct') score++;
+  answered++;
+  
+  if (answered === total) {
+    const s = document.getElementById('quiz-score');
+    const pct = Math.round(score/total*100);
+    s.style.display = 'block';
+    s.innerHTML = `نتیجه: ${score} از ${total} (${pct}٪)<br>
+      ${pct >= 80 ? '🎉 عالی! تسلط خوبی داری.' : pct >= 60 ? '👍 خوب! یه‌بار دیگه مرور کن.' : '📚 نیاز به تمرین بیشتر دارد.'}`;
+  }
+}
+
+(function(){
+  const page = location.pathname.split('/').pop();
+  const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn = document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h = JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone = function(){
+    const d = JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page] = new Date().toISOString();
+    localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
