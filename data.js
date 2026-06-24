@@ -84,6 +84,15 @@ const SECTIONS = {
 //
 const LESSONS = [
   {
+    file: "GRAM_constructions_impersonnelles.html",
+    title: "📐 Constructions impersonnelles — Subjonctif ou Indicatif ?",
+    titleFr: "Constructions impersonnelles",
+    category: "grammar", level: "B1–C1",
+    tags: ["subjonctif","indicatif","impersonnel","il faut","B2","C1"],
+    summary: "ساختارهای غیرشخصی با وجه التزامی یا اخباری + ۱۲ تمرین تعاملی"
+  },
+
+  {
     file: "IF_ep09.html",
     title: "🎧 InnerFrench #09 — La France vue de l'étranger",
     titleFr: "#09 La France vue de l'étranger",
