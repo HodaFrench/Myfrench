@@ -42,33 +42,18 @@
 
 
 <style id="hk-wm">
-body::after{
-  content:'Hoda Khedmati © frenchavechoda';
-  position:fixed;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%) rotate(-35deg);
-  font-size:28px;
-  font-weight:900;
-  color:rgba(30,58,95,0.06);
-  pointer-events:none;
-  z-index:99999;
-  white-space:nowrap;
-  letter-spacing:2px;
-  font-family:'Roboto','Arial',sans-serif;
-  user-select:none;
+body{
+  position:relative;
 }
-body::before{
-  content:'Hoda Khedmati';
+body::after{
+  content:'';
   position:fixed;
-  top:20%;left:50%;
-  transform:translateX(-50%) rotate(-35deg);
-  font-size:22px;font-weight:900;
-  color:rgba(30,58,95,0.05);
+  inset:0;
   pointer-events:none;
   z-index:99999;
-  white-space:nowrap;
-  font-family:'Roboto','Arial',sans-serif;
-  user-select:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220'%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' transform='rotate(-30 160 110)' font-family='Georgia%2C serif' font-size='13' font-weight='600' fill='rgba(30%2C58%2C95%2C0.055)' letter-spacing='2' opacity='1'%3EHoda Khedmati%3C/text%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:320px 220px;
 }
 </style>
 </head>
