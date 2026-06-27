@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expression Écrite Tâche 1 — Présenter son pays | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,139,107,0.04) 31px,rgba(46,139,107,0.04) 32px);color:var(--ink);line-height:1.95;padding:0 0 80px}
+.wrap{max-width:840px;margin:0 auto;padding:0 1rem}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--green-d);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#2e8b6b,#23704f);color:#fff;padding:30px 26px 26px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.9}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line)}
+.card-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 13px;border-radius:20px;margin-bottom:14px}
+.consigne{background:linear-gradient(135deg,rgba(176,80,111,.07),rgba(176,80,111,.03));border-right:4px solid var(--rose)}
+.consigne .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.consigne-fr{font-family:'Roboto',serif;font-size:15px;line-height:2;color:var(--ink);direction:ltr;text-align:left;font-style:italic}
+.consigne-count{display:inline-block;margin-top:10px;background:rgba(176,80,111,.1);color:var(--rose);font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px}
+.modele{border-right:4px solid var(--green)}
+.modele .card-label{background:rgba(46,139,107,.12);color:var(--green-d)}
+.modele-text{font-family:'Roboto',serif;font-size:15px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;background:rgba(46,139,107,.04);border-radius:12px;padding:16px 18px}
+.hl-v{background:rgba(30,58,95,.1);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(30,58,95,.35)}
+.hl-g{background:rgba(122,91,168,.13);color:#5a3b88;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(122,91,168,.4)}
+.hl-c{background:rgba(176,122,74,.13);color:#8a5a2a;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(176,122,74,.4)}
+.trad{border-right:4px solid var(--navy)}
+.trad .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.trad-text{font-size:14px;line-height:2.05;color:#3a3833}
+.analyse{border-right:4px solid var(--gold)}
+.analyse .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.ana-block{margin-bottom:16px}
+.ana-block:last-child{margin-bottom:0}
+.ana-h{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.ana-p{font-size:13.5px;line-height:1.95;color:#3a3833}
+.ana-p .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;font-style:italic}
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.step{display:flex;gap:12px;align-items:flex-start;background:rgba(46,139,107,.04);border-radius:12px;padding:12px 14px}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;font-family:'Roboto',serif}
+.step-c{flex:1}
+.step-t{font-size:13.5px;font-weight:700;color:var(--navy)}
+.step-d{font-size:12.5px;color:var(--gray);margin-top:2px}
+.step-ex{font-family:'Roboto',serif;font-size:12.5px;color:var(--green-d);font-style:italic;margin-top:4px;direction:ltr;text-align:left}
+.gram{border-right:4px solid var(--purple)}
+.gram .card-label{background:rgba(122,91,168,.13);color:#5a3b88}
+.gram-item{background:rgba(122,91,168,.05);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.gram-item:last-child{margin-bottom:0}
+.gram-title{font-size:14px;font-weight:800;color:#5a3b88;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.gram-rule{font-size:13px;line-height:1.9;color:#3a3833}
+.gram-ex{background:#fff;border-radius:8px;padding:9px 12px;margin-top:8px;font-family:'Roboto',serif;font-size:13px;direction:ltr;text-align:left;border-right:3px solid var(--purple);line-height:1.9}
+.gram-ex .em{color:#5a3b88;font-weight:700}
+.mindmap{border-right:4px solid var(--rose);background:linear-gradient(135deg,rgba(176,80,111,.04),transparent)}
+.mindmap .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.mm-center{text-align:center;margin:8px 0 18px}
+.mm-core{display:inline-block;background:linear-gradient(135deg,#b0506f,#8a3a55);color:#fff;font-size:16px;font-weight:800;padding:12px 26px;border-radius:30px;box-shadow:0 4px 14px rgba(176,80,111,.3)}
+.mm-branches{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mm-branch{background:var(--white);border-radius:14px;padding:14px;border:1.5px solid var(--line)}
+.mm-branch-h{font-size:13.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1.5px dashed}
+.mm-list{display:flex;flex-direction:column;gap:5px}
+.mm-li{font-size:12.5px;color:#3a3833;display:flex;gap:6px;align-items:baseline}
+.mm-li .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;direction:ltr}
+.vocab{border-right:4px solid var(--navy)}
+.vocab .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.voc-cat{margin-bottom:16px}
+.voc-cat:last-child{margin-bottom:0}
+.voc-cat-h{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.voc-grid{display:flex;flex-direction:column;gap:6px}
+.voc-row{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:9px;padding:9px 12px}
+.voc-fr{font-family:'Roboto',serif;font-size:13.5px;font-weight:600;color:var(--green-d);direction:ltr;flex-shrink:0;min-width:42%}
+.voc-fa{font-size:12.5px;color:#3a3833;flex:1}
+.tips{border-right:4px solid var(--gold);background:linear-gradient(135deg,rgba(176,122,74,.05),transparent)}
+.tips .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.tip-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;font-size:13.5px;line-height:1.85}
+.tip-row:last-child{margin-bottom:0}
+.tip-ic{font-size:17px;flex-shrink:0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:11px;background:var(--green-d);color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#1a4f37}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+@media(max-width:560px){.mm-branches{grid-template-columns:1fr}.voc-fr{min-width:38%}}</style>
+</head>
+<body>
+<span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:52%;left:42%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:78%;left:62%">Hoda Khedmati</span>
+
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; موضوعات</a>
+  <span class="hoda-back-label">✍️ Écrite Tâche 1 · Présenter son pays</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">✍️ TCF CANADA · EXPRESSION ÉCRITE · TÂCHE 1 · B2</div>
+  <h1>Présenter son pays</h1>
+  <div class="sub">معرفی کشور و سنت‌هایش به یک دوست</div>
+</div>
+
+<div class="wrap">
+
+<div class="card consigne">
+  <span class="card-label">📋 LA CONSIGNE — صورت سؤال</span>
+  <div class="consigne-fr">Un de vos proches souhaite partir en voyage pour découvrir un nouveau pays. Vous lui envoyez un message pour lui présenter votre pays et ses traditions (lieux à visiter, sites touristiques, monuments, etc.).</div>
+  <div class="consigne-count">📏 ۶۰ کلمه حداقل / ۱۲۰ کلمه حداکثر</div>
+  <div class="trad-text" style="margin-top:12px">🇮🇷 <strong>ترجمه:</strong> یکی از نزدیکانتان می‌خواهد برای کشف یک کشور جدید سفر کند. شما برایش پیامی می‌فرستید تا کشورتان و سنت‌هایش را معرفی کنید (مکان‌های دیدنی، جاذبه‌های گردشگری، بناهای تاریخی و...).</div>
+</div>
+
+<div class="card modele">
+  <span class="card-label">⭐ LE TEXTE MODÈLE — متن نمونه</span>
+  <div class="modele-text">Salut Nicolas,<br>
+Je suis <span class="hl-c" title="être ravi QUE + subjonctif = خوشحال بودن که">ravi que</span> tu <span class="hl-g" title="subjonctif: envisages = در نظر داری (بعد از ravi que)">envisages</span> de voyager et je te <span class="hl-c" title="recommander vivement = اکیداً توصیه کردن">recommande vivement</span> mon pays ! Tu y <span class="hl-g" title="futur simple: découvriras = کشف خواهی کرد">découvriras</span> des paysages magnifiques, des <span class="hl-c" title="DES plages splendides AUX montagnes = از... تا... (دامنه)">plages splendides aux montagnes</span> impressionnantes. <span class="hl-c" title="Ne manque pas = از دست نده (امر منفی)">Ne manque pas</span> les <span class="hl-v" title="un monument historique = بنای تاریخی">monuments historiques</span>, comme les anciennes <span class="hl-v" title="une médina = بافت قدیمی شهر (شمال آفریقا)">médinas</span> et les <span class="hl-v" title="un palais = کاخ">palais</span> traditionnels, <span class="hl-c" title="ainsi que = همچنین، و نیز">ainsi que</span> les musées qui <span class="hl-v" title="raconter = روایت کردن، بازگو کردن">racontent</span> notre histoire. Les <span class="hl-v" title="un marché local = بازار محلی">marchés locaux</span> offrent une vraie <span class="hl-v" title="une immersion = غوطه‌وری، فرورفتن کامل">immersion</span> dans nos traditions <span class="hl-v" title="culinaire = آشپزی، خوراکی">culinaires</span> et <span class="hl-v" title="artisanal = صنایع دستی">artisanales</span>. Tu pourras aussi <span class="hl-c" title="assister à = شرکت کردن، حضور یافتن در">assister à</span> des festivals et événements culturels, qui montrent la <span class="hl-v" title="la richesse = غنا، ثروت">richesse</span> de nos <span class="hl-v" title="une coutume = رسم، سنت">coutumes</span>. <span class="hl-c" title="Bref = خلاصه (جمع‌بندی)">Bref</span>, chaque coin du pays a quelque chose d'<span class="hl-v" title="unique = منحصربه‌فرد">unique</span> à offrir et je suis sûr que ton voyage sera <span class="hl-v" title="inoubliable = فراموش‌نشدنی">inoubliable</span> !<br>
+À bientôt,<br>
+Nabil</div>
+  <p style="font-size:12px;color:var(--gray);margin-top:10px;text-align:center">💡 ماوس را روی کلمات رنگی نگه دارید · 🔵 واژگان · 🟣 گرامر · 🟠 عبارت کلیدی</p>
+</div>
+
+<div class="card trad">
+  <span class="card-label">🇮🇷 LA TRADUCTION — ترجمه روان</span>
+  <div class="trad-text">سلام نیکلا،<br><br>
+خیلی خوشحالم که در نظر داری سفر کنی و اکیداً کشورم رو بهت توصیه می‌کنم! اونجا مناظر زیبایی کشف می‌کنی، از سواحل دل‌انگیز تا کوه‌های باشکوه. بناهای تاریخی رو از دست نده، مثل بافت‌های قدیمی شهر و کاخ‌های سنتی، و همچنین موزه‌هایی که تاریخ ما رو روایت می‌کنن. بازارهای محلی یه غوطه‌وری واقعی در سنت‌های آشپزی و صنایع دستی ما ارائه می‌دن. می‌تونی توی جشنواره‌ها و رویدادهای فرهنگی هم شرکت کنی، که غنای رسوم ما رو نشون می‌دن. خلاصه، هر گوشه‌ای از کشور چیزی منحصربه‌فرد برای ارائه داره و مطمئنم سفرت فراموش‌نشدنی خواهد بود!<br><br>
+به امید دیدار،<br>
+نبیل</div>
+</div>
+
+<div class="card analyse">
+  <span class="card-label">🎯 L'ANALYSE — تحلیل مدرس</span>
+  <div class="ana-block">
+    <div class="ana-h">📌 این چه نوع متنی است؟</div>
+    <div class="ana-p">این یک <strong>پیام توصیه و معرفی (recommandation)</strong> است. هدف، <strong>متقاعد کردن</strong> مخاطب برای سفر به کشور توست. ویژگی این تاچه: باید <strong>توصیف کنی و پیشنهاد بدهی</strong> — مکان‌ها، بناها، سنت‌ها. از فعل امری (impératif) و زمان مستقبل زیاد استفاده می‌شود، چون درباره چیزی است که مخاطب <strong>خواهد دید</strong>.</div>
+  </div>
+  <div class="ana-block">
+    <div class="ana-h">🏗️ ساختار ایده‌آل (که این متن رعایت کرده)</div>
+    <div class="steps"><div class="step">
+        <div class="step-num">1</div>
+        <div class="step-c">
+          <div class="step-t">سلام + واکنش مثبت به خبر</div>
+          <div class="step-d">با ابراز خوشحالی از تصمیم دوستت شروع کن.</div>
+          <div class="step-ex">→ Salut Nicolas, Je suis ravi que tu envisages de voyager...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">2</div>
+        <div class="step-c">
+          <div class="step-t">توصیه کلی + مناظر طبیعی</div>
+          <div class="step-d">کشورت را توصیه کن و با مناظر طبیعی شروع کن.</div>
+          <div class="step-ex">→ je te recommande vivement mon pays ! Tu y découvriras des paysages...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">3</div>
+        <div class="step-c">
+          <div class="step-t">بناها و جاذبه‌های تاریخی</div>
+          <div class="step-d">مکان‌های دیدنی مشخص را نام ببر. از امر استفاده کن: «Ne manque pas...».</div>
+          <div class="step-ex">→ Ne manque pas les monuments historiques, comme les médinas...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">4</div>
+        <div class="step-c">
+          <div class="step-t">سنت‌ها و فرهنگ</div>
+          <div class="step-d">بازارها، غذاها، جشنواره‌ها — تجربه فرهنگی را توصیف کن.</div>
+          <div class="step-ex">→ Les marchés locaux offrent une immersion dans nos traditions...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">5</div>
+        <div class="step-c">
+          <div class="step-t">جمع‌بندی متقاعدکننده</div>
+          <div class="step-d">با «Bref» جمع‌بندی کن و اطمینان بده سفر عالی خواهد بود.</div>
+          <div class="step-ex">→ Bref, chaque coin a quelque chose d'unique... ton voyage sera inoubliable !</div>
+        </div>
+      </div></div>
+  </div>
+  <div class="ana-block">
+    <div class="ana-h">✅ چرا این متن نمره خوبی می‌گیرد؟</div>
+    <div class="ana-p">
+    • <strong>تنوع جاذبه‌ها:</strong> طبیعت <span class="fr">(plages, montagnes)</span>، تاریخ <span class="fr">(monuments, palais)</span>، فرهنگ <span class="fr">(marchés, festivals)</span><br>
+    • <strong>زمان مستقبل:</strong> <span class="fr">tu découvriras, tu pourras, sera</span> — چون درباره آینده سفر است<br>
+    • <strong>وجه التزامی:</strong> <span class="fr">ravi que tu envisages</span> — سطح B2<br>
+    • <strong>فعل امری برای توصیه:</strong> <span class="fr">Ne manque pas...</span><br>
+    • <strong>رابط‌های غنی:</strong> <span class="fr">ainsi que, Bref, comme</span> + جمع‌بندی قوی</div>
+  </div>
+</div>
+
+<div class="card gram">
+  <span class="card-label">📚 LA GRAMMAIRE — نکات گرامری برای یادگیری</span>
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۱. وجه التزامی بعد از «être ravi que»</div>
+    <div class="gram-rule">بعد از عبارت‌های احساسی مثل <strong>être ravi que</strong> (خوشحال بودن که)، <strong>être content que</strong>، <strong>être triste que</strong>، فعل به <strong>subjonctif</strong> می‌آید.</div>
+    <div class="gram-ex">Je suis <span class="em">ravi que</span> tu <span class="em">envisages</span> de voyager. <br><span style="color:#8a8275;font-size:12px">↳ envisages شکل التزامی — بعد از احساس</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۲. زمان مستقبل ساده برای پیش‌بینی</div>
+    <div class="gram-rule">برای چیزی که مخاطب در آینده <strong>تجربه خواهد کرد</strong>، از futur simple استفاده می‌کنیم. افعال بی‌قاعده: <strong>découvrir → découvriras</strong>، <strong>pouvoir → pourras</strong>، <strong>être → sera</strong>.</div>
+    <div class="gram-ex">Tu <span class="em">découvriras</span>... Tu <span class="em">pourras</span>... ton voyage <span class="em">sera</span> inoubliable. <br><span style="color:#8a8275;font-size:12px">↳ همه آینده چون درباره سفر آینده است</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۳. فعل امری منفی: «Ne manque pas»</div>
+    <div class="gram-rule">برای توصیه (نه دستور خشک)، از <strong>impératif</strong> استفاده می‌کنیم. شکل منفی: <strong>ne + فعل + pas</strong>. «Ne manque pas» یعنی «از دست نده».</div>
+    <div class="gram-ex"><span class="em">Ne manque pas</span> les monuments historiques. <br><span style="color:#8a8275;font-size:12px">↳ توصیه دوستانه، نه دستور</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۴. ساختار «DES... AUX...» برای دامنه</div>
+    <div class="gram-rule">برای بیان «از... تا...» در توصیف تنوع، از <strong>des... aux...</strong> استفاده می‌کنیم (aux = à + les). راهی زیبا برای نشان دادن گستره.</div>
+    <div class="gram-ex"><span class="em">des</span> plages splendides <span class="em">aux</span> montagnes impressionnantes. <br><span style="color:#8a8275;font-size:12px">↳ «از سواحل تا کوه‌ها» — کل طیف</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۵. «ainsi que» = و همچنین</div>
+    <div class="gram-rule">برای اضافه کردن مورد دیگر بدون تکرار «et»، از <strong>ainsi que</strong> (و نیز، همچنین) استفاده می‌کنیم. رسمی‌تر و شیک‌تر از «et».</div>
+    <div class="gram-ex">...les palais traditionnels, <span class="em">ainsi que</span> les musées. <br><span style="color:#8a8275;font-size:12px">↳ «و همچنین موزه‌ها»</span></div>
+  </div>
+</div>
+
+<div class="card mindmap">
+  <span class="card-label">🧠 LA CARTE MENTALE — نقشه ذهنی موضوع</span>
+  <div class="mm-center"><div class="mm-core">🌍 MON PAYS</div></div>
+  <div class="mm-branches"><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#1e3a5f;border-color:rgba(30,58,95,.3)">🏛️ Les sites — جاذبه‌ها</div>
+      <div class="mm-list"><div class="mm-li">🏛️ <span class="fr">un monument</span> — بنای تاریخی</div>
+<div class="mm-li">🏰 <span class="fr">un palais</span> — کاخ</div>
+<div class="mm-li">🕌 <span class="fr">une médina</span> — بافت قدیمی</div>
+<div class="mm-li">🖼️ <span class="fr">un musée</span> — موزه</div>
+<div class="mm-li">⛪ <span class="fr">un site touristique</span> — جاذبه گردشگری</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#2e8b6b;border-color:rgba(46,139,107,.3)">🌄 La nature — طبیعت</div>
+      <div class="mm-list"><div class="mm-li">🏖️ <span class="fr">une plage</span> — ساحل</div>
+<div class="mm-li">⛰️ <span class="fr">une montagne</span> — کوه</div>
+<div class="mm-li">🏞️ <span class="fr">un paysage</span> — منظره</div>
+<div class="mm-li">🏜️ <span class="fr">le désert</span> — صحرا</div>
+<div class="mm-li">🌊 <span class="fr">la mer</span> — دریا</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#7a5ba8;border-color:rgba(122,91,168,.3)">🎭 La culture — فرهنگ</div>
+      <div class="mm-list"><div class="mm-li">🛍️ <span class="fr">un marché local</span> — بازار محلی</div>
+<div class="mm-li">🍲 <span class="fr">la cuisine</span> — آشپزی</div>
+<div class="mm-li">🎨 <span class="fr">l'artisanat</span> — صنایع دستی</div>
+<div class="mm-li">🎪 <span class="fr">un festival</span> — جشنواره</div>
+<div class="mm-li">🎉 <span class="fr">une coutume</span> — رسم، سنت</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#b07a4a;border-color:rgba(176,122,74,.3)">🗣️ Les verbes — افعال</div>
+      <div class="mm-list"><div class="mm-li">▶️ <span class="fr">découvrir</span> — کشف کردن</div>
+<div class="mm-li">▶️ <span class="fr">visiter</span> — بازدید کردن</div>
+<div class="mm-li">▶️ <span class="fr">recommander</span> — توصیه کردن</div>
+<div class="mm-li">▶️ <span class="fr">assister à</span> — شرکت کردن</div>
+<div class="mm-li">▶️ <span class="fr">ne pas manquer</span> — از دست ندادن</div>
+</div>
+    </div></div>
+</div>
+
+<div class="card vocab">
+  <span class="card-label">🔑 LE VOCABULAIRE — واژگان و افعال مرتبط</span>
+  <div class="voc-cat">
+    <div class="voc-cat-h">▶️ افعال سفر و توصیه — Les verbes</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">découvrir</span><span class="voc-fa">🔍 کشف کردن</span></div>
+<div class="voc-row"><span class="voc-fr">visiter</span><span class="voc-fa">🚶 بازدید کردن</span></div>
+<div class="voc-row"><span class="voc-fr">recommander vivement</span><span class="voc-fa">👍 اکیداً توصیه کردن</span></div>
+<div class="voc-row"><span class="voc-fr">envisager de</span><span class="voc-fa">🤔 در نظر داشتن</span></div>
+<div class="voc-row"><span class="voc-fr">assister à</span><span class="voc-fa">🎟️ شرکت کردن در</span></div>
+<div class="voc-row"><span class="voc-fr">ne pas manquer</span><span class="voc-fa">⚠️ از دست ندادن</span></div>
+<div class="voc-row"><span class="voc-fr">raconter</span><span class="voc-fa">📖 روایت کردن</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">🏛️ جاذبه‌ها — Les sites</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">un monument historique</span><span class="voc-fa">🏛️ بنای تاریخی</span></div>
+<div class="voc-row"><span class="voc-fr">un site touristique</span><span class="voc-fa">📸 جاذبه گردشگری</span></div>
+<div class="voc-row"><span class="voc-fr">un palais</span><span class="voc-fa">🏰 کاخ</span></div>
+<div class="voc-row"><span class="voc-fr">une médina</span><span class="voc-fa">🕌 بافت قدیمی شهر</span></div>
+<div class="voc-row"><span class="voc-fr">un marché local</span><span class="voc-fa">🛍️ بازار محلی</span></div>
+<div class="voc-row"><span class="voc-fr">un festival</span><span class="voc-fa">🎪 جشنواره</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">🎭 فرهنگ و سنت — La culture</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">une tradition</span><span class="voc-fa">🎉 سنت</span></div>
+<div class="voc-row"><span class="voc-fr">une coutume</span><span class="voc-fa">🪔 رسم</span></div>
+<div class="voc-row"><span class="voc-fr">la richesse</span><span class="voc-fa">💎 غنا، ثروت</span></div>
+<div class="voc-row"><span class="voc-fr">une immersion</span><span class="voc-fa">🌊 غوطه‌وری</span></div>
+<div class="voc-row"><span class="voc-fr">culinaire</span><span class="voc-fa">🍲 آشپزی، خوراکی</span></div>
+<div class="voc-row"><span class="voc-fr">artisanal</span><span class="voc-fa">🎨 صنایع دستی</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">📐 صفت‌ها — Les adjectifs</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">magnifique</span><span class="voc-fa">😍 باشکوه</span></div>
+<div class="voc-row"><span class="voc-fr">splendide</span><span class="voc-fa">✨ دل‌انگیز</span></div>
+<div class="voc-row"><span class="voc-fr">impressionnant</span><span class="voc-fa">😮 چشمگیر</span></div>
+<div class="voc-row"><span class="voc-fr">unique</span><span class="voc-fa">⭐ منحصربه‌فرد</span></div>
+<div class="voc-row"><span class="voc-fr">inoubliable</span><span class="voc-fa">💫 فراموش‌نشدنی</span></div>
+</div>
+  </div>
+</div>
+
+<div class="card tips">
+  <span class="card-label">💡 LES CONSEILS — نکات طلایی آزمون</span>
+  <div class="tip-row"><span class="tip-ic">🗺️</span><div><strong>مکان‌های مشخص نام ببر:</strong> به جای «c'est beau»، جاذبه‌های واقعی را بگو: monuments، médinas، marchés. جزئیات امتیاز می‌آورد.</div></div>
+<div class="tip-row"><span class="tip-ic">🔮</span><div><strong>زمان مستقبل استفاده کن:</strong> چون مخاطب «خواهد دید»: «tu découvriras», «tu pourras», «sera».</div></div>
+<div class="tip-row"><span class="tip-ic">📂</span><div><strong>دسته‌بندی کن:</strong> طبیعت، تاریخ، فرهنگ را جدا بیاور تا متن منظم باشد — همان‌طور که این نمونه کرده.</div></div>
+<div class="tip-row"><span class="tip-ic">🎓</span><div><strong>subjonctif بعد از احساس:</strong> «ravi que tu envisages» — نشانه سطح B2/C1.</div></div>
+<div class="tip-row"><span class="tip-ic">💬</span><div><strong>توصیه با امر دوستانه:</strong> «Ne manque pas...» بهتر از «tu dois voir» است — گرم‌تر و طبیعی‌تر.</div></div>
+<div class="tip-row"><span class="tip-ic">🎯</span><div><strong>جمع‌بندی قوی:</strong> با «Bref» خلاصه کن و با اطمینان تمام کن: «ton voyage sera inoubliable !»</div></div>
+
+</div>
+
+</div>
+
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ این درس را خواندم</button></div>
+<script>
+(function(){
+  const key='EcriteT1_S4';
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[key]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page:key,title:'TCF Écrite T1 — Présenter son pays',time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[key]=new Date().toISOString();localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
