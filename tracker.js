@@ -179,12 +179,16 @@ function hodaInitWidget() {
       <div class="hoda-tabs">
         <button class="hoda-tab on" id="hoda-tab-note" onclick="hodaSwitch('note')">📝 نکته</button>
         <button class="hoda-tab" id="hoda-tab-q" onclick="hodaSwitch('q')">❓ سؤال</button>
+        <button class="hoda-tab" id="hoda-tab-replies" onclick="hodaSwitch('replies')">📬 پاسخ‌ها</button>
       </div>
-      <textarea id="hoda-text" placeholder="اینجا بنویس..."></textarea>
-      <div class="hoda-actions">
-        <button class="hoda-btn-save" onclick="hodaSubmit()">💾 ذخیره</button>
-        <button class="hoda-btn-cancel" onclick="hodaCloseSheet()">انصراف</button>
+      <div id="hoda-input-area">
+        <textarea id="hoda-text" placeholder="اینجا بنویس..."></textarea>
+        <div class="hoda-actions">
+          <button class="hoda-btn-save" onclick="hodaSubmit()">💾 ذخیره</button>
+          <button class="hoda-btn-cancel" onclick="hodaCloseSheet()">انصراف</button>
+        </div>
       </div>
+      <div id="hoda-replies-area" style="display:none"></div>
     </div>`;
   modal.onclick = hodaCloseSheet;
   document.body.appendChild(modal);
@@ -204,13 +208,27 @@ function hodaCloseSheet() {
   document.getElementById('hoda-modal').classList.remove('open');
   document.getElementById('hoda-text').value = '';
 }
-function hodaSwitch(mode) {
+async function hodaSwitch(mode) {
   HODA_MODE = mode;
   document.getElementById('hoda-tab-note').classList.toggle('on', mode === 'note');
   document.getElementById('hoda-tab-q').classList.toggle('on', mode === 'q');
-  document.getElementById('hoda-text').placeholder = mode === 'note'
-    ? 'نکته‌ای که می‌خوای یادت بمونه...'
-    : 'سؤالت درباره این درس...';
+  document.getElementById('hoda-tab-replies').classList.toggle('on', mode === 'replies');
+  
+  const inputArea = document.getElementById('hoda-input-area');
+  const repliesArea = document.getElementById('hoda-replies-area');
+  
+  if (mode === 'replies') {
+    inputArea.style.display = 'none';
+    repliesArea.style.display = 'block';
+    repliesArea.innerHTML = '<p style="text-align:center;color:#8a8275;padding:20px;font-size:13px">در حال بارگذاری...</p>';
+    repliesArea.innerHTML = await hodaShowMyActivity();
+  } else {
+    inputArea.style.display = 'block';
+    repliesArea.style.display = 'none';
+    document.getElementById('hoda-text').placeholder = mode === 'note'
+      ? 'نکته‌ای که می‌خوای یادت بمونه...'
+      : 'سؤالت درباره این درس...';
+  }
 }
 function hodaToast(msg) {
   const t = document.getElementById('hoda-toast');
@@ -299,4 +317,54 @@ async function hodaAutoInitFull(opts) {
   if (opts.widget !== false) hodaInitWidget();
   // اتصال دکمه done (با کمی تأخیر تا DOM آماده شود)
   setTimeout(hodaConnectDoneButton, 300);
+}
+
+// ───── دریافت سؤالات من + پاسخ‌ها (برای شاگرد) ─────
+async function hodaLoadMyQuestions() {
+  if (!hodaSb || !HODA_USER) return [];
+  try {
+    const { data } = await hodaSb.from('questions')
+      .select('question, answer, page, created_at, answered_at')
+      .eq('user_id', HODA_USER.id)
+      .order('created_at', { ascending: false });
+    return data || [];
+  } catch (e) { return []; }
+}
+
+// نمایش سؤالات و پاسخ‌ها در یک تب جدید ویجت
+async function hodaShowMyActivity() {
+  const questions = await hodaLoadMyQuestions();
+  const notes = await hodaLoadMyNotes();
+  
+  let html = '<div style="max-height:50vh;overflow-y:auto">';
+  
+  // سؤالات با پاسخ
+  const answered = questions.filter(q => q.answer);
+  if (answered.length) {
+    html += '<div style="font-size:13px;font-weight:700;color:#23704f;margin:8px 0">✅ پاسخ مدرس به سؤالاتت:</div>';
+    answered.forEach(q => {
+      html += `<div style="background:rgba(46,139,107,.06);border-radius:10px;padding:11px;margin-bottom:8px;border-right:3px solid #2e8b6b">
+        <div style="font-size:12.5px;color:#666;margin-bottom:5px">❓ ${q.question}</div>
+        <div style="font-size:13px;color:#23704f"><b>پاسخ:</b> ${q.answer}</div>
+      </div>`;
+    });
+  }
+  
+  // سؤالات بی‌پاسخ
+  const pending = questions.filter(q => !q.answer);
+  if (pending.length) {
+    html += '<div style="font-size:13px;font-weight:700;color:#b0506f;margin:12px 0 8px">⏳ در انتظار پاسخ:</div>';
+    pending.forEach(q => {
+      html += `<div style="background:rgba(176,80,111,.05);border-radius:10px;padding:11px;margin-bottom:8px">
+        <div style="font-size:12.5px;color:#666">❓ ${q.question}</div>
+      </div>`;
+    });
+  }
+  
+  if (!questions.length && !notes.length) {
+    html += '<p style="text-align:center;color:#8a8275;padding:20px;font-size:13px">هنوز نکته یا سؤالی ثبت نکرده‌ای</p>';
+  }
+  
+  html += '</div>';
+  return html;
 }
