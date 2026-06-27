@@ -241,3 +241,62 @@ async function hodaAutoInit(opts) {
   hodaTrackStudyTime();
   if (opts.widget !== false) hodaInitWidget();
 }
+
+// ═══════════════════════════════════════════════════════════
+// اتصال دکمه «خوانده شد» موجود به Supabase + بازیابی وضعیت
+// این تابع دکمه done-btn موجود صفحه را پیدا کرده و هوشمند می‌کند
+// ═══════════════════════════════════════════════════════════
+async function hodaConnectDoneButton() {
+  const btn = document.getElementById('done-btn');
+  if (!btn || !HODA_USER) return;
+
+  // کلید صفحه — از فایل یا key سفارشی
+  const pageKey = location.pathname.split('/').pop();
+  const title = document.title.split('|')[0].trim();
+
+  // ۱. بررسی: آیا قبلاً خوانده شده؟ (از Supabase)
+  const wasDone = await hodaIsDone(pageKey);
+  if (wasDone) {
+    btn.textContent = '✓ خوانده شده';
+    btn.classList.add('done');
+  }
+
+  // ۲. بازنویسی رفتار دکمه — ذخیره در Supabase
+  btn.onclick = async function() {
+    const ok = await hodaMarkDone(pageKey, title);
+    if (ok) {
+      btn.textContent = '✓ خوانده شده';
+      btn.classList.add('done');
+      if (typeof hodaToast === 'function') hodaToast('✅ ثبت شد');
+    }
+  };
+  // حذف هندلر inline قدیمی (markDone)
+  btn.removeAttribute('onclick');
+  btn.addEventListener('click', btn.onclick);
+}
+
+// ───── نمایش نکته‌های قبلی این صفحه ─────
+async function hodaLoadMyNotes() {
+  if (!hodaSb || !HODA_USER) return [];
+  const page = location.pathname.split('/').pop();
+  try {
+    const { data } = await hodaSb.from('notes')
+      .select('note, created_at')
+      .eq('user_id', HODA_USER.id)
+      .eq('page', page)
+      .order('created_at', { ascending: false });
+    return data || [];
+  } catch (e) { return []; }
+}
+
+// به‌روزرسانی hodaAutoInit برای اتصال دکمه done
+async function hodaAutoInitFull(opts) {
+  opts = opts || {};
+  const user = await hodaGuard();
+  if (!user) return;
+  await hodaLogVisit();
+  hodaTrackStudyTime();
+  if (opts.widget !== false) hodaInitWidget();
+  // اتصال دکمه done (با کمی تأخیر تا DOM آماده شود)
+  setTimeout(hodaConnectDoneButton, 300);
+}
