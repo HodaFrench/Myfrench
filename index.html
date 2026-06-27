@@ -322,7 +322,7 @@ body{padding-top:38px!important}
 </div>
 
 <div class="road-wrap">
-<svg class="road" viewBox="0 0 360 1680" role="img" aria-label="نقشه یادگیری فرانسه">
+<svg class="road" viewBox="0 0 360 1820" role="img" aria-label="نقشه یادگیری فرانسه">
   <g opacity=".35">
   <ellipse cx="38" cy="360" rx="26" ry="15" fill="#8fad78" transform="rotate(-16 38 360)"/>
   <ellipse cx="22" cy="352" rx="17" ry="10" fill="#7a9e65" transform="rotate(8 22 352)"/>
@@ -359,7 +359,11 @@ body{padding-top:38px!important}
     <div class="node-card" style="top:74%;right:4.17%;left:auto;width:36.11%;border-color:#8a2040" onclick="openCat('culture')"><div class="nc-title" style="color:#8a2040">فرهنگ فرانسه</div></div>
     <div class="node-card" style="top:82%;left:4.17%;width:36.11%;border-color:#1a4f7a" onclick="openCat('tcf')"><div class="nc-title" style="color:#1a4f7a">آمادگی TCF</div></div>
     <div class="node-card" style="top:88%;right:4.17%;left:auto;width:36.11%;border-color:#22618f" onclick="openCat('image')"><div class="nc-title" style="color:#22618f">📸 توصیف تصویر</div></div>
-    <div class="node-card" style="top:94%;left:4.17%;width:36.11%;border-color:#6b3fa0" onclick="openCat('video')"><div class="nc-title" style="color:#6b3fa0">🎬 معرفی ویدیو</div></div>
+    <div class="node-card" style="top:94%;left:4.17%;width:36.11%;border-color:#6b3fa0" onclick="openCat('video')"><div class="nc-title" style="color:#6b3fa0">🎬 معرفی ویدیو</div>
+          <div class="node-card" style="top:101%;left:4.17%;width:36.11%;border-color:#3f8a9c" onclick="window.location.href='PRONONCIATION.html'">
+            <div class="nc-icon">🔊</div>
+            <div class="nc-title" style="color:#3f8a9c">تلفظ</div>
+          </div></div>
     </div></div></div></div></div></div></div></div></div></div></div></div></div>
     </div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
 
@@ -402,7 +406,9 @@ const CAT_DEFAULT_IMAGES = {"vocab": "https://images.unsplash.com/photo-14573698
     "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&q=70", "culture": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=70", "miniarticle": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=400&q=70", "article": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=70", "podcast": "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&q=70", "innerfrench": "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&q=70", "conversation": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=70", "phrases": "https://images.unsplash.com/photo-1546521343-4eb2c01aa44b?w=400&q=70"};
 function openCat(id){
     if(id==='podcast'){ window.location.href='PODCAST_index.html'; return; }
+    if(id==='prononciation'){ window.location.href='PRONONCIATION.html'; return; }
     if(id==='podcast'){ window.location.href='PODCAST_index.html'; return; }
+    if(id==='prononciation'){ window.location.href='PRONONCIATION.html'; return; }
     if(id==='tcf'){ window.location.href='TCF/index.html'; return; }
   const ci=catInfo(id);
   if(CAT_LINKS[id]){window.location.href=CAT_LINKS[id];return;}
