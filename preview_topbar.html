@@ -898,5 +898,10 @@ window.trackMistake = function(lessonTitle, question, correctAnswer, userAnswer)
 })();
 </script>
 
+
+<script>
+function toggleSbMenu(e){if(e)e.stopPropagation();var m=document.getElementById('sb-menu');var o=document.getElementById('sb-menu-overlay');if(m)m.classList.toggle('open');if(o)o.classList.toggle('open');}
+function closeSbMenu(){var m=document.getElementById('sb-menu');var o=document.getElementById('sb-menu-overlay');if(m)m.classList.remove('open');if(o)o.classList.remove('open');}
+</script>
 </body>
 </html>
