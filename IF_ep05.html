@@ -48,6 +48,8 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 .ap-speed-btn.active{background:#fff;color:#1e3a5f}
 .ap-fallback{display:inline-block;margin-top:10px;color:rgba(255,255,255,.9);font-size:11.5px;text-decoration:underline}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="tracker.js"></script>
 </head>
 <body>
 <span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
@@ -168,5 +170,6 @@ function setSpeed(rate, btn){
   if(btn){ btn.classList.add('active'); }
 }
 </script>
+<script>hodaAutoInitFull();</script>
 </body>
 </html>
