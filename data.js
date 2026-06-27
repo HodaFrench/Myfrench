@@ -1,5 +1,19 @@
 const LESSONS = [
   {
+    file: "PRONONCIATION.html",
+    title: "🔊 تلفظ فرانسوی — ۵ روز ویدیویی",
+    titleFr: "Prononciation",
+    category: "prononciation", level: "A1–B2",
+    tags: ["prononciation","tلفظ","phonétique","vidéo"],
+    summary: "۵ ویدیو تمرین تلفظ + راهنمای کامل"
+  },
+  {file:"PRON_jour1.html",title:"🔊 تلفظ روز ۱ — Les sifflantes",titleFr:"Sifflantes S/Z/CH/J",category:"prononciation",level:"A1–B2",tags:["prononciation","S","CH","J"],summary:"صداهای سوت‌مانند"},
+  {file:"PRON_jour2.html",title:"🔊 تلفظ روز ۲ — Le R français",titleFr:"Le R français",category:"prononciation",level:"A1–B2",tags:["prononciation","R","uvulaire"],summary:"حرف R گلویی"},
+  {file:"PRON_jour3.html",title:"🔊 تلفظ روز ۳ — Les nasales",titleFr:"Voyelles nasales",category:"prononciation",level:"A1–B2",tags:["prononciation","nasales","AN","ON","IN"],summary:"مصوت‌های خیشومی"},
+  {file:"PRON_jour4.html",title:"🔊 تلفظ روز ۴ — Liaison",titleFr:"S muet et liaison",category:"prononciation",level:"A1–B2",tags:["prononciation","liaison","S muet"],summary:"S صامت و liaison"},
+  {file:"PRON_jour5.html",title:"🔊 تلفظ روز ۵ — ON vs AN",titleFr:"ON vs AN · R final",category:"prononciation",level:"A1–B2",tags:["prononciation","ON","AN","R final"],summary:"ON در مقابل AN"},
+
+  {
     file: "IF_ep08.html",
     title: "🎧 InnerFrench #08 — Les stéréotypes",
     titleFr: "#08 Les stéréotypes",
