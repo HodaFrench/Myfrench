@@ -1,5 +1,23 @@
 const LESSONS = [
   {
+    file: "IF_ep08.html",
+    title: "🎧 InnerFrench #08 — Les stéréotypes",
+    titleFr: "#08 Les stéréotypes",
+    category: "innerfrench", level: "B1–B2",
+    tags: ["innerfrench","podcast","B1","stéréotypes"],
+    summary: "کلیشه‌ها — با متن کامل و هایلایت"
+  },
+
+  {
+    file: "GRAM_passe_compose.html",
+    title: "📐 Le Passé Composé",
+    titleFr: "Le Passé Composé",
+    category: "grammar", level: "A2–B1",
+    tags: ["passé composé","auxiliaire","participe passé","A2","B1"],
+    summary: "گذشته مرکب — ساختار کامل با avoir و être"
+  },
+
+  {
     file: "GRAM_constructions_impersonnelles.html",
     title: "📐 Constructions impersonnelles — Subjonctif ou Indicatif ?",
     titleFr: "Constructions impersonnelles",
