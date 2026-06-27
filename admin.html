@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پنل مدیریت | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;padding:0 0 40px}
+.topbar{background:var(--navy);color:#fff;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:17px;font-weight:700}
+.topbar .logout{background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:18px;padding:6px 14px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;cursor:pointer}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1rem}
+
+/* gate (اگر ادمین نبود) */
+#gate{display:none;text-align:center;padding:60px 20px}
+#gate .lock{font-size:50px;margin-bottom:16px}
+#gate h2{font-size:20px;color:var(--rose);margin-bottom:10px}
+#gate p{font-size:14px;color:var(--gray)}
+#gate a{display:inline-block;margin-top:18px;background:var(--navy);color:#fff;text-decoration:none;padding:10px 24px;border-radius:22px;font-weight:700;font-size:14px}
+
+#loading{text-align:center;padding:60px;color:var(--gray);font-size:15px}
+
+/* stats cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.stat{background:var(--white);border-radius:14px;padding:18px;text-align:center;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line)}
+.stat-num{font-family:'Roboto',serif;font-size:30px;font-weight:800;color:var(--navy)}
+.stat-label{font-size:12px;color:var(--gray);margin-top:4px}
+
+/* tabs */
+.tabs{display:flex;gap:8px;margin:20px 0 14px;flex-wrap:wrap}
+.tab{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:8px 18px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;cursor:pointer;color:var(--gray)}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* student list */
+.student{background:var(--white);border-radius:14px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);overflow:hidden}
+.student-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;background:linear-gradient(135deg,rgba(30,58,95,.03),transparent)}
+.student-avatar{width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+.student-info{flex:1;min-width:0}
+.student-email{font-size:14px;font-weight:700;color:var(--navy);direction:ltr;text-align:right;word-break:break-all}
+.student-meta{font-size:12px;color:var(--gray);margin-top:2px}
+.student-arrow{font-size:14px;color:var(--gray);transition:transform .3s}
+.student-arrow.open{transform:rotate(180deg)}
+.student-body{max-height:0;overflow:hidden;transition:max-height .4s ease;background:#fafafa}
+.student-body.open{max-height:2000px}
+.student-body-inner{padding:16px 18px}
+
+.detail-section{margin-bottom:16px}
+.detail-h{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.detail-list{display:flex;flex-direction:column;gap:5px}
+.detail-row{font-size:12.5px;background:var(--white);border-radius:8px;padding:8px 12px;border:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
+.detail-row .time{color:var(--gray);font-size:11px;flex-shrink:0}
+.detail-empty{font-size:12px;color:var(--gray);font-style:italic;padding:6px}
+.note-row{background:rgba(176,122,74,.06);border-color:rgba(176,122,74,.2)}
+.q-row{background:rgba(122,91,168,.06);border-color:rgba(122,91,168,.2)}
+
+.refresh{background:var(--green);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:16px}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+</style>
+</head>
+<body>
+<span class="hk-wm" style="top:30%;left:12%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:70%;left:55%">Hoda Khedmati</span>
+
+<div class="topbar">
+  <h1>🎯 پنل مدیریت — Français avec Hoda</h1>
+  <button class="logout" onclick="hodaLogout()">خروج</button>
+</div>
+
+<div id="loading">در حال بارگذاری...</div>
+
+<div id="gate">
+  <div class="lock">🔒</div>
+  <h2>دسترسی محدود</h2>
+  <p>این صفحه فقط برای مدیر سایت است.</p>
+  <a href="index.html">← بازگشت به سایت</a>
+</div>
+
+<div id="panel" class="wrap" style="display:none">
+  <div class="stats" id="stats"></div>
+  <button class="refresh" onclick="loadAll()">🔄 به‌روزرسانی داده‌ها</button>
+  <div id="students"></div>
+</div>
+
+<script src="tracker.js"></script>
+<script>
+let allStudents = {};
+
+async function init() {
+  const user = await hodaGuard();
+  if (!user) return; // به auth منتقل شد
+  
+  document.getElementById('loading').style.display = 'none';
+  
+  if (!hodaIsAdmin()) {
+    document.getElementById('gate').style.display = 'block';
+    return;
+  }
+  
+  document.getElementById('panel').style.display = 'block';
+  await loadAll();
+}
+
+async function loadAll() {
+  if (!hodaSb) return;
+  
+  // دریافت همه داده‌ها
+  const [progressRes, visitsRes, studyRes, notesRes, questionsRes] = await Promise.all([
+    hodaSb.from('progress').select('*').order('done_at', {ascending:false}),
+    hodaSb.from('visits').select('*').order('visited_at', {ascending:false}),
+    hodaSb.from('study_time').select('*').order('date', {ascending:false}),
+    hodaSb.from('notes').select('*').order('created_at', {ascending:false}),
+    hodaSb.from('questions').select('*').order('created_at', {ascending:false}),
+  ]);
+  
+  const progress = progressRes.data || [];
+  const visits = visitsRes.data || [];
+  const study = studyRes.data || [];
+  const notes = notesRes.data || [];
+  const questions = questionsRes.data || [];
+  
+  // گروه‌بندی بر اساس ایمیل
+  allStudents = {};
+  function ensure(email) {
+    if (!allStudents[email]) allStudents[email] = {email, progress:[], visits:[], study:[], notes:[], questions:[]};
+    return allStudents[email];
+  }
+  progress.forEach(p => ensure(p.email).progress.push(p));
+  visits.forEach(v => ensure(v.email).visits.push(v));
+  study.forEach(s => ensure(s.email).study.push(s));
+  notes.forEach(n => ensure(n.email).notes.push(n));
+  questions.forEach(q => ensure(q.email).questions.push(q));
+  
+  // آمار کلی
+  const totalStudents = Object.keys(allStudents).length;
+  const totalDone = progress.length;
+  const totalQuestions = questions.length;
+  const totalNotes = notes.length;
+  let totalMinutes = 0;
+  study.forEach(s => totalMinutes += (s.total_seconds||0)/60);
+  
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="stat-num">${totalStudents}</div><div class="stat-label">👥 شاگردان</div></div>
+    <div class="stat"><div class="stat-num">${totalDone}</div><div class="stat-label">✅ درس خوانده‌شده</div></div>
+    <div class="stat"><div class="stat-num">${Math.round(totalMinutes)}</div><div class="stat-label">⏱ دقیقه مطالعه</div></div>
+    <div class="stat"><div class="stat-num">${totalQuestions}</div><div class="stat-label">❓ سؤالات</div></div>
+    <div class="stat"><div class="stat-num">${totalNotes}</div><div class="stat-label">📝 نکات ذخیره‌شده</div></div>
+  `;
+  
+  renderStudents();
+}
+
+function fmt(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('fa-IR') + ' ' + d.toLocaleTimeString('fa-IR', {hour:'2-digit',minute:'2-digit'});
+}
+function fmtDate(dateStr) {
+  if (!dateStr) return '';
+  return new Date(dateStr).toLocaleDateString('fa-IR');
+}
+
+function renderStudents() {
+  const emails = Object.keys(allStudents).sort();
+  if (emails.length === 0) {
+    document.getElementById('students').innerHTML = '<p style="text-align:center;color:#8a8275;padding:30px">هنوز شاگردی فعالیتی نداشته است.</p>';
+    return;
+  }
+  
+  let html = '';
+  emails.forEach((email, idx) => {
+    const s = allStudents[email];
+    const initial = email[0].toUpperCase();
+    
+    // محاسبه کل زمان مطالعه
+    let totalSec = 0;
+    s.study.forEach(st => totalSec += (st.total_seconds||0));
+    const totalMin = Math.round(totalSec/60);
+    
+    // آخرین فعالیت
+    const lastVisit = s.visits[0] ? fmt(s.visits[0].visited_at) : '—';
+    
+    // لیست تیک‌ها
+    let doneList = s.progress.length 
+      ? s.progress.map(p => `<div class="detail-row"><span>✅ ${p.title||p.page_key}</span><span class="time">${fmt(p.done_at)}</span></div>`).join('')
+      : '<div class="detail-empty">هنوز درسی تیک نخورده</div>';
+    
+    // زمان مطالعه روزانه
+    let studyList = s.study.length
+      ? s.study.map(st => `<div class="detail-row"><span>📅 ${fmtDate(st.date)}</span><span class="time">${Math.round((st.total_seconds||0)/60)} دقیقه</span></div>`).join('')
+      : '<div class="detail-empty">هنوز زمان مطالعه ثبت نشده</div>';
+    
+    // تاریخچه بازدید (۱۵ مورد اخیر)
+    let visitList = s.visits.length
+      ? s.visits.slice(0,15).map(v => `<div class="detail-row"><span>${v.title||v.page}</span><span class="time">${fmt(v.visited_at)}</span></div>`).join('')
+      : '<div class="detail-empty">بازدیدی ثبت نشده</div>';
+    
+    // نکات
+    let noteList = s.notes.length
+      ? s.notes.map(n => `<div class="detail-row note-row"><span>📝 ${n.note}</span><span class="time">${fmt(n.created_at)}</span></div>`).join('')
+      : '<div class="detail-empty">نکته‌ای ذخیره نشده</div>';
+    
+    // سؤالات
+    let qList = s.questions.length
+      ? s.questions.map(q => `<div class="detail-row q-row"><span>❓ ${q.question}</span><span class="time">${fmt(q.created_at)}</span></div>`).join('')
+      : '<div class="detail-empty">سؤالی ثبت نشده</div>';
+    
+    html += `
+    <div class="student">
+      <div class="student-head" onclick="toggleStudent(${idx})">
+        <div class="student-avatar">${initial}</div>
+        <div class="student-info">
+          <div class="student-email">${email}</div>
+          <div class="student-meta">✅ ${s.progress.length} درس · ⏱ ${totalMin} دقیقه · آخرین: ${lastVisit}</div>
+        </div>
+        <span class="student-arrow" id="arrow-${idx}">▾</span>
+      </div>
+      <div class="student-body" id="body-${idx}">
+        <div class="student-body-inner">
+          <div class="detail-section">
+            <div class="detail-h">✅ درس‌های خوانده‌شده (${s.progress.length})</div>
+            <div class="detail-list">${doneList}</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-h">⏱ زمان مطالعه روزانه</div>
+            <div class="detail-list">${studyList}</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-h">📝 نکات ذخیره‌شده (${s.notes.length})</div>
+            <div class="detail-list">${noteList}</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-h">❓ سؤالات (${s.questions.length})</div>
+            <div class="detail-list">${qList}</div>
+          </div>
+          <div class="detail-section">
+            <div class="detail-h">🕐 تاریخچه بازدید (۱۵ مورد اخیر)</div>
+            <div class="detail-list">${visitList}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+  
+  document.getElementById('students').innerHTML = html;
+}
+
+function toggleStudent(idx) {
+  const body = document.getElementById('body-'+idx);
+  const arrow = document.getElementById('arrow-'+idx);
+  body.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+init();
+</script>
+</body>
+</html>
