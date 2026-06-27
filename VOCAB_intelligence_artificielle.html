@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligence artificielle — Vocabulaire · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Intelligence <b>artificielle</b></h1>
+    <div class="b2">Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><div style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1rem;color:#C0392B;margin:6px 0 2px;">APERÇU GRATUIT · 10 premiers mots</div>
+    <p class="lead">Le vocabulaire du thème, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+) pour chaque mot.</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="intelligence artificielle"><rect x="40" y="150" width="280" height="6" rx="3" fill="#46537d" opacity="0.20"/><line x1="120" y1="64" x2="120" y2="48" stroke="#1B2A6B" stroke-width="3" stroke-linecap="round"/><circle cx="120" cy="44" r="5" fill="#C0392B"/><rect x="78" y="64" width="84" height="74" rx="16" fill="#EDEDF8" stroke="#1B2A6B" stroke-width="3"/><rect x="70" y="92" width="8" height="18" rx="3" fill="#1B2A6B"/><rect x="162" y="92" width="8" height="18" rx="3" fill="#1B2A6B"/><circle cx="104" cy="98" r="9" fill="#2E6BD6"/><circle cx="136" cy="98" r="9" fill="#2E6BD6"/><circle cx="104" cy="98" r="3" fill="#fff"/><circle cx="136" cy="98" r="3" fill="#fff"/><rect x="100" y="118" width="40" height="6" rx="3" fill="#1B2A6B"/><g stroke="#2E8B6B" stroke-width="1.6"><line x1="210" y1="80" x2="250" y2="68"/><line x1="210" y1="80" x2="250" y2="100"/><line x1="210" y1="120" x2="250" y2="100"/><line x1="210" y1="120" x2="250" y2="132"/><line x1="250" y1="68" x2="290" y2="84"/><line x1="250" y1="100" x2="290" y2="84"/><line x1="250" y1="100" x2="290" y2="116"/><line x1="250" y1="132" x2="290" y2="116"/></g><g fill="#5B5BD6"><circle cx="210" cy="80" r="6"/><circle cx="210" cy="120" r="6"/><circle cx="250" cy="68" r="6"/><circle cx="250" cy="100" r="6"/><circle cx="250" cy="132" r="6"/><circle cx="290" cy="84" r="6"/><circle cx="290" cy="116" r="6"/></g></svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+{id:1,name:"Qu'est-ce que l'IA ?",fa:"هوش مصنوعی چیست؟",icon:"🤖",color:"#5B5BD6"},
+{id:2,name:"Les technologies",fa:"فناوری‌ها",icon:"📱",color:"#2E8B6B"},
+{id:3,name:"Les menaces &amp; la cybersécurité",fa:"تهدیدها و امنیت سایبری",icon:"🛡️",color:"#C0392B"},
+{id:4,name:"Les données &amp; la vie privée",fa:"داده‌ها و حریم خصوصی",icon:"🔒",color:"#2E6BD6"},
+{id:5,name:"Ce que fait l'IA",fa:"هوش مصنوعی چه می‌کند",icon:"⚙️",color:"#C77A2E"},
+{id:6,name:"Les enjeux &amp; les craintes",fa:"چالش‌ها و نگرانی‌ها",icon:"⚠️",color:"#7C5BD6"},
+{id:7,name:"Quantité &amp; expressions",fa:"کمیت و اصطلاح‌ها",icon:"🔢",color:"#2E8B8B"}
+];
+const D=[
+{c:1,term:"l'intelligence artificielle (l'IA)",fa:"هوش مصنوعی",def:"Une technologie capable d'imiter certaines fonctions de l'intelligence humaine à partir de données.",syn:["l'IA","les systèmes intelligents"],ex:[["L'<b>intelligence artificielle</b> est partout dans notre quotidien.","هوش مصنوعی همه‌جای زندگی روزمره‌ی ماست."],["Beaucoup d'applications utilisent l'<b>IA</b> sans qu'on le sache.","بسیاری از اپلیکیشن‌ها بی‌آنکه بدانیم از هوش مصنوعی استفاده می‌کنند."],["Loin de relever de la science-fiction, l'<b>intelligence artificielle</b> façonne déjà nos décisions.","هوش مصنوعی که به‌هیچ‌وجه به علمی‌تخیلی تعلق ندارد، هم‌اکنون تصمیم‌های ما را شکل می‌دهد."],["Quoi qu'on en pense, l'<b>IA</b> n'est ni bonne ni mauvaise en soi : tout dépend de son usage.","هرچه درباره‌اش بیندیشیم، هوش مصنوعی فی‌نفسه نه خوب است و نه بد؛ همه‌چیز به نحوه‌ی استفاده بستگی دارد."]]},
+{c:1,term:"les données massives / le big data",fa:"کلان‌داده",def:"Des volumes de données si gigantesques qu'ils nécessitent des outils spécifiques pour les traiter.",syn:["le big data","les méga-données"],ex:[["L'IA a besoin de <b>données massives</b> pour apprendre.","هوش مصنوعی برای یادگیری به کلان‌داده نیاز دارد."],["Le <b>big data</b> permet de repérer des tendances invisibles à l'œil nu.","کلان‌داده امکان شناسایی روندهایی را که با چشم دیده نمی‌شوند فراهم می‌کند."],["Aussi puissantes soient-elles, les <b>données massives</b> ne valent que par la qualité de leur traitement.","کلان‌داده، هر اندازه هم نیرومند باشد، تنها به‌اندازه‌ی کیفیت پردازشش ارزش دارد."],["C'est en croisant des <b>données massives</b> que les algorithmes décèlent des corrélations inattendues.","با تلاقیِ کلان‌داده‌هاست که الگوریتم‌ها همبستگی‌های غیرمنتظره را کشف می‌کنند."]]},
+{c:1,term:"un algorithme",fa:"الگوریتم",def:"Une suite d'instructions précises qu'un ordinateur exécute pour résoudre un problème.",syn:["une formule","une procédure de calcul"],ex:[["Un <b>algorithme</b> choisit les vidéos qu'on nous recommande.","یک الگوریتم ویدیوهایی را که به ما پیشنهاد می‌شود انتخاب می‌کند."],["Les réseaux sociaux reposent sur des <b>algorithmes</b>.","شبکه‌های اجتماعی بر الگوریتم‌ها استوارند."],["Contrairement à ce qu'on croit, un <b>algorithme</b> n'est jamais neutre : il reflète les choix de ses concepteurs.","برخلاف آنچه تصور می‌شود، یک الگوریتم هرگز بی‌طرف نیست؛ بازتابِ انتخاب‌های طراحانش است."],["Tant que le fonctionnement des <b>algorithmes</b> restera opaque, la méfiance persistera.","تا زمانی که کارکرد الگوریتم‌ها مبهم بماند، بی‌اعتمادی پابرجا خواهد ماند."]]},
+{c:1,term:"l'apprentissage profond (le deep learning)",fa:"یادگیری عمیق",def:"Une méthode où la machine apprend seule à partir d'immenses quantités d'exemples.",syn:["le deep learning","l'auto-apprentissage"],ex:[["Grâce à l'<b>apprentissage profond</b>, la machine reconnaît des images.","به‌لطف یادگیری عمیق، ماشین تصاویر را تشخیص می‌دهد."],["L'<b>apprentissage profond</b> imite le fonctionnement du cerveau.","یادگیری عمیق کارکرد مغز را تقلید می‌کند."],["Pour peu qu'on lui fournisse assez d'exemples, l'<b>apprentissage profond</b> progresse de façon spectaculaire.","به‌شرط آنکه نمونه‌ی کافی به آن داده شود، یادگیری عمیق به‌طرز چشمگیری پیشرفت می‌کند."],["C'est l'<b>apprentissage profond</b> qui a permis à l'IA de faire un bond ces dernières années.","این یادگیری عمیق است که به هوش مصنوعی اجازه داده در سال‌های اخیر جهشی بزند."]]},
+{c:1,term:"un réseau de neurones (artificiels)",fa:"شبکه‌ی عصبی (مصنوعی)",def:"Un système informatique inspiré du cerveau, fait de nombreuses unités interconnectées.",syn:["un modèle neuronal","l'architecture neuronale"],ex:[["Un <b>réseau de neurones</b> traite l'information par couches.","یک شبکه‌ی عصبی اطلاعات را لایه‌به‌لایه پردازش می‌کند."],["Les <b>réseaux de neurones</b> s'inspirent du cerveau humain.","شبکه‌های عصبی از مغز انسان الهام می‌گیرند."],["Aussi sophistiqué soit-il, un <b>réseau de neurones</b> ne « comprend » pas comme un être humain.","یک شبکه‌ی عصبی، هر اندازه هم پیچیده باشد، مانند انسان «نمی‌فهمد»."],["C'est en empilant les couches d'un <b>réseau de neurones</b> que l'on gagne en précision.","با روی‌هم‌چیدنِ لایه‌های یک شبکه‌ی عصبی است که دقت بیشتر می‌شود."]]},
+{c:2,term:"le numérique",fa:"حوزه‌ی دیجیتال / فناوری دیجیتال",def:"Tout ce qui touche aux technologies de l'information et aux données électroniques.",syn:["la technologie numérique","le digital"],ex:[["Le <b>numérique</b> a transformé notre façon de travailler.","دیجیتال شیوه‌ی کارِ ما را دگرگون کرده است."],["Tout passe désormais par le <b>numérique</b>.","اکنون همه‌چیز از مسیر دیجیتال می‌گذرد."],["Aussi pratique soit-il, le <b>numérique</b> creuse parfois les inégalités entre les générations.","دیجیتال، هر اندازه هم کاربردی باشد، گاه شکاف میان نسل‌ها را عمیق‌تر می‌کند."],["C'est en maîtrisant le <b>numérique</b> que l'on évite de subir la technologie.","با تسلط بر دیجیتال است که آدم از انفعال در برابر فناوری می‌پرهیزد."]]},
+{c:2,term:"les objets connectés",fa:"اشیای متصل (به اینترنت)",def:"Des appareils du quotidien reliés à Internet qui échangent des données.",syn:["l'Internet des objets","les appareils intelligents"],ex:[["Ma montre fait partie des <b>objets connectés</b>.","ساعتم از اشیای متصل است."],["Les <b>objets connectés</b> collectent beaucoup de données.","اشیای متصل داده‌های زیادی جمع می‌کنند."],["Pratiques au quotidien, les <b>objets connectés</b> n'en posent pas moins de sérieuses questions de vie privée.","اشیای متصل که در زندگی روزمره کاربردی‌اند، با این حال پرسش‌های جدی درباره‌ی حریم خصوصی پیش می‌کشند."],["C'est à travers les <b>objets connectés</b> que nos habitudes sont en permanence enregistrées.","از طریق اشیای متصل است که عادت‌های ما پیوسته ثبت می‌شوند."]]},
+{c:2,term:"un moteur de recherche",fa:"موتور جست‌وجو",def:"Un outil qui trouve des informations sur Internet à partir de mots-clés.",syn:["un outil de recherche","un index du web"],ex:[["J'utilise un <b>moteur de recherche</b> tous les jours.","هر روز از یک موتور جست‌وجو استفاده می‌کنم."],["Un <b>moteur de recherche</b> classe les résultats par pertinence.","یک موتور جست‌وجو نتایج را بر اساس مرتبط‌بودن مرتب می‌کند."],["Pour peu qu'on s'y fie aveuglément, un <b>moteur de recherche</b> peut enfermer dans une bulle d'informations.","به‌شرط آنکه آدم کورکورانه به آن اعتماد کند، یک موتور جست‌وجو می‌تواند او را در حبابی از اطلاعات محبوس کند."],["C'est l'IA qui, en coulisses, décide de ce qu'un <b>moteur de recherche</b> nous montre en premier.","این هوش مصنوعی است که در پشت‌صحنه تصمیم می‌گیرد یک موتور جست‌وجو چه چیزی را نخست به ما نشان دهد."]]},
+{c:2,term:"la robotique / un humanoïde",fa:"رباتیک / ربات انسان‌نما",def:"La science des robots ; un humanoïde est un robot à l'apparence humaine.",syn:["l'automate","la machine intelligente"],ex:[["La <b>robotique</b> progresse à grande vitesse.","رباتیک با سرعت زیادی پیشرفت می‌کند."],["Certains robots ressemblent de plus en plus à des <b>humanoïdes</b>.","برخی ربات‌ها روزبه‌روز بیشتر به ربات‌های انسان‌نما شبیه می‌شوند."],["Aussi impressionnant soit-il, un <b>humanoïde</b> demeure une machine dépourvue de conscience.","یک ربات انسان‌نما، هر اندازه هم چشمگیر باشد، ماشینی فاقد آگاهی است."],["C'est dans l'industrie que la <b>robotique</b> a d'abord remplacé la main-d'œuvre humaine.","نخست در صنعت بود که رباتیک جای نیروی کار انسانی را گرفت."]]},
+{c:2,term:"la reconnaissance faciale",fa:"تشخیص چهره",def:"Une technologie qui identifie une personne à partir de son visage.",syn:["l'identification biométrique","le repérage du visage"],ex:[["Je déverrouille mon téléphone par <b>reconnaissance faciale</b>.","گوشی‌ام را با تشخیص چهره باز می‌کنم."],["La <b>reconnaissance faciale</b> est utilisée dans les aéroports.","تشخیص چهره در فرودگاه‌ها استفاده می‌شود."],["Commode pour l'utilisateur, la <b>reconnaissance faciale</b> ouvre pourtant la voie à une surveillance de masse.","تشخیص چهره که برای کاربر راحت است، با این حال راه را برای نظارت گسترده باز می‌کند."],["Tant que la <b>reconnaissance faciale</b> ne sera pas strictement encadrée, les libertés resteront menacées.","تا زمانی که تشخیص چهره به‌طور دقیق تنظیم‌گری نشود، آزادی‌ها در معرض تهدید خواهند ماند."]]}
+];
+const PHRASES=[
+["<b>À mon sens</b>, l'IA est un outil : tout dépend de l'usage qu'on en fait.","به نظر من، هوش مصنوعی یک ابزار است: همه‌چیز به نحوه‌ی استفاده بستگی دارد."],
+["<b>Force est de constater que</b> l'IA transforme déjà notre quotidien.","ناگزیر باید پذیرفت که هوش مصنوعی هم‌اکنون زندگی روزمره‌ی ما را دگرگون می‌کند."],
+["<b>D'un côté</b>, l'IA fait gagner du temps ; <b>d'un autre côté</b>, elle inquiète pour l'emploi et la vie privée.","از یک سو هوش مصنوعی در وقت صرفه‌جویی می‌کند؛ از سوی دیگر، نگرانیِ شغل و حریم خصوصی را برمی‌انگیزد."],
+["<b>Il convient de rappeler que</b> derrière chaque algorithme, il y a des choix humains.","شایان ذکر است که پشتِ هر الگوریتم، انتخاب‌هایی انسانی نهفته است."],
+["<b>En définitive</b>, mieux vaut encadrer l'IA que la redouter.","در نهایت، تنظیم‌کردنِ هوش مصنوعی بهتر از ترسیدن از آن است."],
+["<b>Pour conclure</b>, je dirais qu'il faut rester vigilant sans diaboliser le progrès.","برای جمع‌بندی، می‌گویم که باید هوشیار ماند بی‌آنکه پیشرفت را اهریمنی جلوه داد."]
+];
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+/* pb omis dans l'aperçu */;
+
+
+    var promo=document.createElement('section');
+    promo.className='cat'; promo.id='cpromo';
+    promo.innerHTML='<div class=\"secmark\">Aperçu</div>'
+      +'<div style=\"background:#FBF8F0;border:2px dashed #2E8B6B;border-radius:14px;padding:26px 22px;margin:26px 0 10px;text-align:center;box-shadow:0 12px 30px -16px rgba(27,42,107,.4);\">'
+      +'<div style=\"font-family:Fraunces,serif;font-weight:800;font-size:1.5rem;color:#1B2A6B;margin-bottom:6px;\">Ceci n\'est qu\'un aperçu \u2728</div>'
+      +'<div style=\"font-family:Vazirmatn,sans-serif;font-size:1rem;color:#46537d;direction:rtl;margin-bottom:8px;\">\u0627\u06cc\u0646 \u0641\u0642\u0637 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0627\u0633\u062a \u2014 \u0628\u0631\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0648\u0627\u0698\u06af\u0627\u0646 \u0648 \u0647\u0645\u0647\u200c\u06cc \u062a\u0645\u200c\u0647\u0627\u060c \u067e\u06a9\u06cc\u062c \u06a9\u0627\u0645\u0644 \u0631\u0627 \u062a\u0647\u06cc\u0647 \u06a9\u0646\u06cc\u062f.</div>'
+      +'<div style=\"font-family:Spectral,serif;font-size:.95rem;color:#1B2A6B;\">La version complète contient les 35 mots du thème, classés en 7 rubriques, avec 4 exemples traduits (du B2 au B2+) chacun \u2014 ainsi que la \u00ab\u00a0bo\u00eete \u00e0 phrases\u00a0\u00bb pour le d\u00e9bat.</div>'
+      +'<div style=\"font-family:Caveat,cursive;font-weight:700;font-size:1.4rem;color:#1B2A6B;margin-top:14px;\">Hoda KHEDMATI \u00b7 @TCFHODA</div></div>'
+      +'<div class=\"sig-foot\"><span class=\"name\">Hoda KHEDMATI</span><span class=\"handle\">@TCFHODA</span></div>';
+    document.getElementById('root').appendChild(promo);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+</body>
+</html>
