@@ -716,6 +716,18 @@ document.addEventListener('keydown',e=>{
     localStorage.setItem('hoda_notes',JSON.stringify(notes.slice(0,100)));
     document.getElementById('np-input').value='';
     loadNotes();
+    // ذخیره در Supabase (تا به مدرس برسد)
+    try{
+      _sb.auth.getSession().then(({data:{session}})=>{
+        if(!session)return;
+        const u=session.user;
+        const tbl=(type==='question')?'questions':'notes';
+        const payload=(type==='question')
+          ?{user_id:u.id,email:u.email,page:'صفحه اصلی',question:txt}
+          :{user_id:u.id,email:u.email,page:'صفحه اصلی',note:txt};
+        _sb.from(tbl).insert(payload).then(()=>{});
+      });
+    }catch(e){}
   }
 
   window.npEdit=function(i){
