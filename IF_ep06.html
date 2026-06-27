@@ -32,6 +32,21 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 #done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
 #done-btn.done{background:#2e8b6b}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+
+.audio-player{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);border-radius:16px;padding:18px 20px;margin:16px 0;box-shadow:0 4px 20px rgba(30,58,95,.25)}
+.ap-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ap-icon{width:46px;height:46px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ap-info{flex:1;min-width:0;color:#fff}
+.ap-title{font-size:13px;font-weight:700;margin-bottom:2px}
+.ap-sub{font-size:11px;opacity:.8}
+.ap-audio{width:100%;height:40px;border-radius:8px;outline:none}
+.ap-audio::-webkit-media-controls-panel{background:rgba(255,255,255,.95)}
+.ap-controls{display:flex;align-items:center;gap:10px;margin-top:10px}
+.ap-speed{display:flex;gap:6px;flex-wrap:wrap}
+.ap-speed-btn{background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:7px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Estedad',sans-serif;transition:background .15s}
+.ap-speed-btn:hover{background:rgba(255,255,255,.25)}
+.ap-speed-btn.active{background:#fff;color:#1e3a5f}
+.ap-fallback{display:inline-block;margin-top:10px;color:rgba(255,255,255,.9);font-size:11.5px;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -45,6 +60,18 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
   <div style="font-size:13px;opacity:.85">زبان‌های در معرض خطر</div>
 </div>
 <div class="wrap">
+
+<div class="audio-player">
+  <div class="ap-top">
+    <div class="ap-icon">🎧</div>
+    <div class="ap-info">
+      <div class="ap-title">گوش دادن به اپیزود 6</div>
+      <div class="ap-sub">پخش از طریق Podbean</div>
+    </div>
+  </div>
+  <iframe title="InnerFrench Episode 6" allowtransparency="true" height="100" width="100%" style="border:none;border-radius:10px;min-height:100px" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?from=embed&i=byhbb-29197d-pb&square=1&share=0&download=0&rtl=0&fonts=Arial&skin=1&font-color=&logo_link=&btn-skin=1e3a5f&size=100" loading="lazy"></iframe>
+  <a class="ap-fallback" href="https://innerfrench.com/06-apprendre-langue-avantages-caches/" target="_blank" rel="noopener">یا گوش دادن در سایت InnerFrench ↗</a>
+</div>
 <div class="theme-box"><div class="theme-label">🎯 موضوع اپیزود</div><div style="font-size:13.5px">چرا زبان‌ها از بین می‌روند؟</div></div>
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:rgba(30,58,95,.3)"></div><span>واژگان — ماوس را نگه دارید برای معنی</span></div>
@@ -121,6 +148,15 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
     btn.textContent='✓ خوانده شده';btn.classList.add('done');
   };
 })();
+</script>
+
+<script>
+function setSpeed(rate, btn){
+  const audio = document.getElementById('ifAudio');
+  if(audio){ audio.playbackRate = rate; }
+  document.querySelectorAll('.ap-speed-btn').forEach(b=>b.classList.remove('active'));
+  if(btn){ btn.classList.add('active'); }
+}
 </script>
 </body>
 </html>
