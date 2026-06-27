@@ -588,6 +588,15 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","IA","intelligence artificielle","technologie"],
     summary: "واژگان تخصصی موضوع «هوش مصنوعی» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
   },
+
+  {
+    file: "VOCAB_uniforme_ecole.html",
+    title: "📚 L'uniforme & le code vestimentaire",
+    titleFr: "L'uniforme & le code vestimentaire à l'école",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","uniforme","école","débat"],
+    summary: "واژگان مناظره‌ی «اونیفورم و کد پوششی در مدرسه» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
   {
     file: "VOCAB_glottophobie.html",
     title: "📚 La glottophobie & les discriminations",
