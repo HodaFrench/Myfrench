@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expression Écrite — Tâche 1 : Le sport | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,139,107,0.04) 31px,rgba(46,139,107,0.04) 32px);color:var(--ink);line-height:1.95;padding:0 0 80px}
+.wrap{max-width:840px;margin:0 auto;padding:0 1rem}
+
+/* back bar */
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--green-d);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#2e8b6b,#23704f);color:#fff;padding:30px 26px 26px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.9}
+
+/* section card */
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line)}
+.card-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 13px;border-radius:20px;margin-bottom:14px}
+
+/* consigne */
+.consigne{background:linear-gradient(135deg,rgba(176,80,111,.07),rgba(176,80,111,.03));border-right:4px solid var(--rose)}
+.consigne .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.consigne-fr{font-family:'Roboto',serif;font-size:15px;line-height:2;color:var(--ink);direction:ltr;text-align:left;font-style:italic}
+.consigne-count{display:inline-block;margin-top:10px;background:rgba(176,80,111,.1);color:var(--rose);font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px}
+
+/* texte modèle */
+.modele{border-right:4px solid var(--green)}
+.modele .card-label{background:rgba(46,139,107,.12);color:var(--green-d)}
+.modele-text{font-family:'Roboto',serif;font-size:15px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;background:rgba(46,139,107,.04);border-radius:12px;padding:16px 18px}
+.hl-v{background:rgba(30,58,95,.1);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(30,58,95,.35)}
+.hl-g{background:rgba(122,91,168,.13);color:#5a3b88;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(122,91,168,.4)}
+.hl-c{background:rgba(176,122,74,.13);color:#8a5a2a;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(176,122,74,.4)}
+
+/* traduction */
+.trad{border-right:4px solid var(--navy)}
+.trad .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.trad-text{font-size:14px;line-height:2.05;color:#3a3833}
+
+/* analyse */
+.analyse{border-right:4px solid var(--gold)}
+.analyse .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.ana-block{margin-bottom:16px}
+.ana-block:last-child{margin-bottom:0}
+.ana-h{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.ana-p{font-size:13.5px;line-height:1.95;color:#3a3833}
+.ana-p .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;font-style:italic}
+
+/* structure étapes */
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.step{display:flex;gap:12px;align-items:flex-start;background:rgba(46,139,107,.04);border-radius:12px;padding:12px 14px}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;font-family:'Roboto',serif}
+.step-c{flex:1}
+.step-t{font-size:13.5px;font-weight:700;color:var(--navy)}
+.step-d{font-size:12.5px;color:var(--gray);margin-top:2px}
+.step-ex{font-family:'Roboto',serif;font-size:12.5px;color:var(--green-d);font-style:italic;margin-top:4px;direction:ltr;text-align:left}
+
+/* grammaire box */
+.gram{border-right:4px solid var(--purple)}
+.gram .card-label{background:rgba(122,91,168,.13);color:#5a3b88}
+.gram-item{background:rgba(122,91,168,.05);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.gram-item:last-child{margin-bottom:0}
+.gram-title{font-size:14px;font-weight:800;color:#5a3b88;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.gram-rule{font-size:13px;line-height:1.9;color:#3a3833}
+.gram-ex{background:#fff;border-radius:8px;padding:9px 12px;margin-top:8px;font-family:'Roboto',serif;font-size:13px;direction:ltr;text-align:left;border-right:3px solid var(--purple);line-height:1.9}
+.gram-ex .em{color:#5a3b88;font-weight:700}
+
+/* mind map */
+.mindmap{border-right:4px solid var(--rose);background:linear-gradient(135deg,rgba(176,80,111,.04),transparent)}
+.mindmap .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.mm-center{text-align:center;margin:8px 0 18px}
+.mm-core{display:inline-block;background:linear-gradient(135deg,#b0506f,#8a3a55);color:#fff;font-size:16px;font-weight:800;padding:12px 26px;border-radius:30px;box-shadow:0 4px 14px rgba(176,80,111,.3)}
+.mm-branches{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mm-branch{background:var(--white);border-radius:14px;padding:14px;border:1.5px solid var(--line)}
+.mm-branch-h{font-size:13.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1.5px dashed}
+.mm-list{display:flex;flex-direction:column;gap:5px}
+.mm-li{font-size:12.5px;color:#3a3833;display:flex;gap:6px;align-items:baseline}
+.mm-li .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;direction:ltr}
+
+/* vocab */
+.vocab{border-right:4px solid var(--navy)}
+.vocab .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.voc-cat{margin-bottom:16px}
+.voc-cat:last-child{margin-bottom:0}
+.voc-cat-h{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.voc-grid{display:flex;flex-direction:column;gap:6px}
+.voc-row{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:9px;padding:9px 12px}
+.voc-fr{font-family:'Roboto',serif;font-size:13.5px;font-weight:600;color:var(--green-d);direction:ltr;flex-shrink:0;min-width:42%}
+.voc-fa{font-size:12.5px;color:#3a3833;flex:1}
+
+/* tips */
+.tips{border-right:4px solid var(--gold);background:linear-gradient(135deg,rgba(176,122,74,.05),transparent)}
+.tips .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.tip-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;font-size:13.5px;line-height:1.85}
+.tip-row:last-child{margin-bottom:0}
+.tip-ic{font-size:17px;flex-shrink:0}
+
+/* done */
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:11px;background:var(--green-d);color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#1a4f37}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+@media(max-width:560px){.mm-branches{grid-template-columns:1fr}.voc-fr{min-width:38%}}
+</style>
+</head>
+<body>
+<span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:52%;left:42%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:78%;left:62%">Hoda Khedmati</span>
+
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; Tâche 1</a>
+  <span class="hoda-back-label">✍️ Expression Écrite — Tâche 1</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">✍️ TCF CANADA · EXPRESSION ÉCRITE · TÂCHE 1 · B2</div>
+  <h1>Le sport dans ma vie</h1>
+  <div class="sub">جایگاه ورزش در زندگی — تحلیل کامل یک نمونه طلایی</div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══ CONSIGNE ═══ -->
+<div class="card consigne">
+  <span class="card-label">📋 LA CONSIGNE — صورت سؤال</span>
+  <div class="consigne-fr">Dans le cadre d'un reportage sur les activités sportives amateurs, France Télévisions souhaite recueillir des témoignages. Et vous, quelle place occupe le sport dans votre vie ? Envoyez votre témoignage sur francetelevision.fr.</div>
+  <div class="consigne-count">📏 ۶۰ کلمه حداقل / ۱۲۰ کلمه حداکثر</div>
+  <div class="trad-text" style="margin-top:12px">🇮🇷 <strong>ترجمه صورت سؤال:</strong> در چارچوب یک گزارش درباره فعالیت‌های ورزشی آماتور، France Télévisions می‌خواهد نظرات (شهادت‌ها) را جمع‌آوری کند. و شما، ورزش چه جایگاهی در زندگی‌تان دارد؟ نظر خود را به سایت francetelevision.fr بفرستید.</div>
+</div>
+
+<!-- ═══ TEXTE MODÈLE ═══ -->
+<div class="card modele">
+  <span class="card-label">⭐ LE TEXTE MODÈLE — متن نمونه</span>
+  <div class="modele-text">Bonjour,<br>
+Le sport occupe <span class="hl-c" title="فعل کلیدی: occuper une place = جایگاه داشتن">une place importante</span> dans ma vie. Je <span class="hl-v" title="pratiquer un sport = ورزش کردن — فعل رسمی و دقیق">pratique</span> principalement le football avec mes amis <span class="hl-c" title="عبارت تکرار: plusieurs fois par semaine = چند بار در هفته">plusieurs fois par semaine</span>. Cette activité <span class="hl-g" title="ساختار: permettre DE + مصدر = اجازه دادن / امکان دادن">me permet de</span> rester en bonne santé, de me détendre et de passer de bons moments avec d'autres personnes.<br>
+<span class="hl-c" title="رابط زمانی: depuis quelques années = از چند سال پیش">Depuis quelques années</span>, je fais <span class="hl-v" title="également = aussi (رسمی‌تر) = همچنین">également</span> de la course à pied le week-end. <span class="hl-c" title="رابط علّی مثبت: grâce à = به لطفِ / به واسطهٔ">Grâce au sport</span>, j'ai appris à être plus <span class="hl-v" title="discipliné = منظم، منضبط">discipliné</span> et à <span class="hl-v" title="gérer son stress = مدیریت استرس">mieux gérer mon stress</span>. Pour moi, le sport amateur est une excellente façon de <span class="hl-g" title="se sentir bien = احساس خوب داشتن — فعل انعکاسی">se sentir bien</span>, de développer <span class="hl-v" title="l'esprit d'équipe = روحیه تیمی">l'esprit d'équipe</span> et de garder une <span class="hl-v" title="une vie équilibrée = زندگی متعادل">vie équilibrée</span>.<br>
+Cordialement.<br>
+Nabil</div>
+  <p style="font-size:12px;color:var(--gray);margin-top:10px;text-align:center">💡 ماوس را روی کلمات رنگی نگه دارید تا توضیح ببینید · 🔵 واژگان · 🟣 گرامر · 🟠 عبارت کلیدی</p>
+</div>
+
+<!-- ═══ TRADUCTION ═══ -->
+<div class="card trad">
+  <span class="card-label">🇮🇷 LA TRADUCTION — ترجمه روان</span>
+  <div class="trad-text">
+سلام،<br><br>
+ورزش جایگاه مهمی در زندگی من دارد. من عمدتاً با دوستانم چند بار در هفته فوتبال بازی می‌کنم. این فعالیت به من امکان می‌دهد که سالم بمانم، آرامش پیدا کنم و لحظات خوبی را با دیگران بگذرانم.<br><br>
+از چند سال پیش، آخر هفته‌ها دو (دویدن) هم انجام می‌دهم. به لطف ورزش، یاد گرفته‌ام که منظم‌تر باشم و استرسم را بهتر مدیریت کنم. به نظر من، ورزش آماتور راهی عالی برای احساس خوب داشتن، تقویت روحیه تیمی و حفظ یک زندگی متعادل است.<br><br>
+با احترام،<br>
+نبیل
+  </div>
+</div>
+
+<!-- ═══ ANALYSE ═══ -->
+<div class="card analyse">
+  <span class="card-label">🎯 L'ANALYSE — تحلیل مدرس</span>
+
+  <div class="ana-block">
+    <div class="ana-h">📌 این چه نوع متنی است؟</div>
+    <div class="ana-p">این یک <strong>témoignage</strong> (شهادت / نظر شخصی) است که برای یک رسانه (France Télévisions) نوشته می‌شود. در Tâche 1 آزمون TCF Canada، معمولاً باید یک <strong>پیام، نظر یا تجربه شخصی</strong> بنویسید. موقعیت ارتباطی <strong>نیمه‌رسمی</strong> است: مخاطب یک سازمان است، نه دوست صمیمی.</div>
+  </div>
+
+  <div class="ana-block">
+    <div class="ana-h">🏗️ ساختار ایده‌آل (که این متن رعایت کرده)</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-c">
+          <div class="step-t">فرمول باز کردن (Formule d'appel)</div>
+          <div class="step-d">با یک سلام مناسب شروع کنید. چون مخاطب ناشناس است، «Bonjour» انتخاب درستی است.</div>
+          <div class="step-ex">→ Bonjour,</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-c">
+          <div class="step-t">پاسخ مستقیم + ورزش اصلی</div>
+          <div class="step-d">بلافاصله به سؤال جواب بده: ورزش چه جایگاهی دارد + کدام ورزش را انجام می‌دهی.</div>
+          <div class="step-ex">→ Le sport occupe une place importante... Je pratique le football...</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-c">
+          <div class="step-t">فواید و دلایل (Les bénéfices)</div>
+          <div class="step-d">توضیح بده چرا ورزش برایت مهم است. این بخش امتیاز اصلی را می‌گیرد.</div>
+          <div class="step-ex">→ rester en bonne santé, me détendre, gérer mon stress...</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-c">
+          <div class="step-t">جمع‌بندی با نظر شخصی</div>
+          <div class="step-d">با «Pour moi...» نظر نهایی‌ات را بیان کن. نشان‌دهنده توانایی استدلال است.</div>
+          <div class="step-ex">→ Pour moi, le sport amateur est une excellente façon de...</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-c">
+          <div class="step-t">فرمول پایانی (Formule de politesse)</div>
+          <div class="step-d">با یک عبارت مودبانه ببند. «Cordialement» برای موقعیت نیمه‌رسمی عالی است.</div>
+          <div class="step-ex">→ Cordialement. Nabil</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ana-block">
+    <div class="ana-h">✅ چرا این متن نمره خوبی می‌گیرد؟</div>
+    <div class="ana-p">
+    • <strong>طول مناسب:</strong> حدود ۹۵ کلمه — در محدوده ۶۰ تا ۱۲۰<br>
+    • <strong>رابط‌های منطقی:</strong> <span class="fr">Depuis, Grâce à, Pour moi</span> — متن را منسجم می‌کنند<br>
+    • <strong>تنوع زمان افعال:</strong> حال (je pratique)، گذشته نقلی (j'ai appris)<br>
+    • <strong>واژگان دقیق:</strong> <span class="fr">pratiquer, gérer, se détendre</span> به جای کلمات ساده<br>
+    • <strong>لحن یکدست:</strong> از اول تا آخر نیمه‌رسمی باقی مانده
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GRAMMAIRE ═══ -->
+<div class="card gram">
+  <span class="card-label">📚 LA GRAMMAIRE — نکات گرامری برای یادگیری</span>
+
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۱. ساختار «permettre DE + مصدر»</div>
+    <div class="gram-rule">یکی از مهم‌ترین ساختارها برای بیان فایده. فعل <strong>permettre</strong> (امکان دادن) همیشه با حرف اضافه <strong>de</strong> و سپس مصدر می‌آید. وقتی چند فعل پشت سر هم می‌آیند، <strong>de</strong> قبل از هر کدام تکرار می‌شود.</div>
+    <div class="gram-ex">Cette activité me permet <span class="em">de</span> rester en forme, <span class="em">de</span> me détendre et <span class="em">de</span> passer de bons moments.<br><span style="color:#8a8275;font-size:12px">↳ توجه: de قبل از هر سه فعل تکرار شده</span></div>
+  </div>
+
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۲. تفاوت «faire DE» و «jouer À» در ورزش</div>
+    <div class="gram-rule">برای ورزش‌ها دو ساختار داریم: ورزش‌های توپی معمولاً با <strong>jouer à</strong> و بقیه با <strong>faire de</strong>. ولی <strong>pratiquer</strong> (که رسمی‌تر است) با هر دو کار می‌کند و در آزمون امتیاز بیشتری دارد.</div>
+    <div class="gram-ex"><span class="em">jouer au</span> football · <span class="em">faire de la</span> course à pied<br><span class="em">pratiquer</span> le football / la natation <span style="color:#8a8275;font-size:12px">(رسمی‌تر ✓)</span></div>
+  </div>
+
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۳. «Depuis» برای عملی که ادامه دارد</div>
+    <div class="gram-rule">برای بیان کاری که در گذشته شروع شده و <strong>هنوز ادامه دارد</strong>، از <strong>depuis</strong> + زمان حال استفاده می‌کنیم (نه گذشته!). این یک خطای رایج زبان‌آموزان فارسی‌زبان است.</div>
+    <div class="gram-ex"><span class="em">Depuis</span> quelques années, je <span class="em">fais</span> de la course.<br><span style="color:#8a8275;font-size:12px">↳ فعل حال است چون هنوز ادامه دارد، نه «j'ai fait»</span></div>
+  </div>
+
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۴. «Grâce à» در مقابل «À cause de»</div>
+    <div class="gram-rule">هر دو به معنی «به خاطرِ» هستند، ولی <strong>grâce à</strong> برای نتیجه <strong>مثبت</strong> و <strong>à cause de</strong> برای نتیجه <strong>منفی</strong> به کار می‌رود. اشتباه گرفتن این دو، خطای معنایی محسوب می‌شود.</div>
+    <div class="gram-ex"><span class="em">Grâce au</span> sport, j'ai appris... <span style="color:#2e8b6b;font-size:12px">(مثبت ✓)</span><br><span class="em">À cause du</span> stress, je dors mal. <span style="color:#b0506f;font-size:12px">(منفی)</span></div>
+  </div>
+
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۵. «une façon DE + مصدر»</div>
+    <div class="gram-rule">برای بیان «راهی برای انجام کاری»، از <strong>une façon de</strong> یا <strong>une manière de</strong> + مصدر استفاده می‌کنیم. ساختاری شیک برای جمع‌بندی.</div>
+    <div class="gram-ex">une excellente façon <span class="em">de</span> se sentir bien, <span class="em">de</span> développer l'esprit d'équipe...</div>
+  </div>
+</div>
+
+<!-- ═══ MIND MAP ═══ -->
+<div class="card mindmap">
+  <span class="card-label">🧠 LA CARTE MENTALE — نقشه ذهنی موضوع</span>
+  <div class="mm-center">
+    <div class="mm-core">🏃 LE SPORT</div>
+  </div>
+  <div class="mm-branches">
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#1e3a5f;border-color:rgba(30,58,95,.3)">⚽ Les sports — ورزش‌ها</div>
+      <div class="mm-list">
+        <div class="mm-li">🥅 <span class="fr">le football</span> — فوتبال</div>
+        <div class="mm-li">🏃 <span class="fr">la course à pied</span> — دو</div>
+        <div class="mm-li">🏊 <span class="fr">la natation</span> — شنا</div>
+        <div class="mm-li">🚴 <span class="fr">le vélo / cyclisme</span> — دوچرخه</div>
+        <div class="mm-li">🧘 <span class="fr">le yoga</span> — یوگا</div>
+        <div class="mm-li">🏀 <span class="fr">le basket</span> — بسکتبال</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#2e8b6b;border-color:rgba(46,139,107,.3)">💪 Les bienfaits — فواید</div>
+      <div class="mm-list">
+        <div class="mm-li">❤️ <span class="fr">rester en bonne santé</span> — سلامتی</div>
+        <div class="mm-li">😌 <span class="fr">se détendre</span> — آرامش</div>
+        <div class="mm-li">😰 <span class="fr">gérer le stress</span> — مدیریت استرس</div>
+        <div class="mm-li">⚖️ <span class="fr">vie équilibrée</span> — تعادل</div>
+        <div class="mm-li">🤝 <span class="fr">esprit d'équipe</span> — کار تیمی</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#7a5ba8;border-color:rgba(122,91,168,.3)">⏱️ La fréquence — تناوب</div>
+      <div class="mm-list">
+        <div class="mm-li">📅 <span class="fr">plusieurs fois par semaine</span> — چند بار در هفته</div>
+        <div class="mm-li">🌅 <span class="fr">tous les jours</span> — هر روز</div>
+        <div class="mm-li">🗓️ <span class="fr">le week-end</span> — آخر هفته</div>
+        <div class="mm-li">🔁 <span class="fr">régulièrement</span> — به‌طور منظم</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#b07a4a;border-color:rgba(176,122,74,.3)">🗣️ Les verbes — افعال کلیدی</div>
+      <div class="mm-list">
+        <div class="mm-li">▶️ <span class="fr">pratiquer</span> — انجام دادن</div>
+        <div class="mm-li">▶️ <span class="fr">faire du sport</span> — ورزش کردن</div>
+        <div class="mm-li">▶️ <span class="fr">s'entraîner</span> — تمرین کردن</div>
+        <div class="mm-li">▶️ <span class="fr">apprendre à</span> — یاد گرفتن</div>
+        <div class="mm-li">▶️ <span class="fr">développer</span> — تقویت کردن</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VOCABULAIRE ═══ -->
+<div class="card vocab">
+  <span class="card-label">🔑 LE VOCABULAIRE — واژگان و افعال مرتبط</span>
+
+  <div class="voc-cat">
+    <div class="voc-cat-h">▶️ افعال کلیدی ورزش — Les verbes du sport</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">pratiquer un sport</span><span class="voc-fa">🏃 ورزشی را انجام دادن (رسمی)</span></div>
+      <div class="voc-row"><span class="voc-fr">faire du sport</span><span class="voc-fa">💪 ورزش کردن</span></div>
+      <div class="voc-row"><span class="voc-fr">s'entraîner</span><span class="voc-fa">🔁 تمرین کردن</span></div>
+      <div class="voc-row"><span class="voc-fr">jouer à (au foot)</span><span class="voc-fa">⚽ بازی کردن (ورزش توپی)</span></div>
+      <div class="voc-row"><span class="voc-fr">gérer son stress</span><span class="voc-fa">😌 مدیریت کردن استرس</span></div>
+      <div class="voc-row"><span class="voc-fr">se détendre</span><span class="voc-fa">🧘 آرام شدن، استراحت کردن</span></div>
+      <div class="voc-row"><span class="voc-fr">rester en forme</span><span class="voc-fa">❤️ سرحال ماندن</span></div>
+      <div class="voc-row"><span class="voc-fr">développer (une qualité)</span><span class="voc-fa">📈 پرورش دادن، تقویت کردن</span></div>
+    </div>
+  </div>
+
+  <div class="voc-cat">
+    <div class="voc-cat-h">🏅 اسم‌های مرتبط — Les noms</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">une activité sportive</span><span class="voc-fa">🤸 فعالیت ورزشی</span></div>
+      <div class="voc-row"><span class="voc-fr">le sport amateur</span><span class="voc-fa">🎽 ورزش آماتور (غیرحرفه‌ای)</span></div>
+      <div class="voc-row"><span class="voc-fr">l'esprit d'équipe</span><span class="voc-fa">🤝 روحیه تیمی</span></div>
+      <div class="voc-row"><span class="voc-fr">la bonne santé</span><span class="voc-fa">❤️ سلامتی</span></div>
+      <div class="voc-row"><span class="voc-fr">une vie équilibrée</span><span class="voc-fa">⚖️ زندگی متعادل</span></div>
+      <div class="voc-row"><span class="voc-fr">le bien-être</span><span class="voc-fa">😊 رفاه، آسایش</span></div>
+      <div class="voc-row"><span class="voc-fr">l'endurance</span><span class="voc-fa">🔋 استقامت</span></div>
+    </div>
+  </div>
+
+  <div class="voc-cat">
+    <div class="voc-cat-h">📐 صفت‌ها — Les adjectifs</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">discipliné(e)</span><span class="voc-fa">🎯 منظم، منضبط</span></div>
+      <div class="voc-row"><span class="voc-fr">motivé(e)</span><span class="voc-fa">🔥 باانگیزه</span></div>
+      <div class="voc-row"><span class="voc-fr">dynamique</span><span class="voc-fa">⚡ پویا، پرانرژی</span></div>
+      <div class="voc-row"><span class="voc-fr">en bonne santé</span><span class="voc-fa">💚 سالم</span></div>
+    </div>
+  </div>
+
+  <div class="voc-cat">
+    <div class="voc-cat-h">🔗 رابط‌های مفید — Les connecteurs</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">grâce à</span><span class="voc-fa">✅ به لطفِ (نتیجه مثبت)</span></div>
+      <div class="voc-row"><span class="voc-fr">depuis</span><span class="voc-fa">⏳ از... (تا کنون)</span></div>
+      <div class="voc-row"><span class="voc-fr">également</span><span class="voc-fa">➕ همچنین (رسمی)</span></div>
+      <div class="voc-row"><span class="voc-fr">principalement</span><span class="voc-fa">🎯 عمدتاً</span></div>
+      <div class="voc-row"><span class="voc-fr">pour moi</span><span class="voc-fa">💭 به نظر من</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TIPS ═══ -->
+<div class="card tips">
+  <span class="card-label">💡 LES CONSEILS — نکات طلایی آزمون</span>
+  <div class="tip-row"><span class="tip-ic">📏</span><div><strong>تعداد کلمات را بشمار:</strong> همیشه بین حداقل و حداکثر بمان. کمتر از حداقل = جریمه. این متن ۹۵ کلمه دارد — ایده‌آل.</div></div>
+  <div class="tip-row"><span class="tip-ic">🔗</span><div><strong>حداقل ۳ رابط منطقی</strong> استفاده کن: <span style="font-family:Roboto;color:#23704f">depuis, grâce à, pour moi</span>. ارزیاب به انسجام متن نمره می‌دهد.</div></div>
+  <div class="tip-row"><span class="tip-ic">🎭</span><div><strong>لحن را یکدست نگه دار:</strong> اگر با «Bonjour» شروع کردی، با «Cordialement» تمام کن — نه «Bisous»!</div></div>
+  <div class="tip-row"><span class="tip-ic">⏰</span><div><strong>تنوع زمان افعال نشان بده:</strong> حال + گذشته نقلی (passé composé). این متن از هر دو استفاده کرده.</div></div>
+  <div class="tip-row"><span class="tip-ic">✍️</span><div><strong>یک امضای ساده</strong> آخر متن بگذار (مثل «Nabil»). نشان می‌دهد متن یک پیام واقعی است.</div></div>
+  <div class="tip-row"><span class="tip-ic">🚫</span><div><strong>از کلمات تکراری دوری کن:</strong> به جای «bien bien»، از مترادف‌ها استفاده کن: <span style="font-family:Roboto;color:#23704f">pratiquer, gérer, développer</span>.</div></div>
+</div>
+
+</div>
+
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ این درس را خواندم</button></div>
+<script>
+(function(){
+  const page=location.pathname.split('/').pop()||'ecrite_t1';
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done['EcriteTache1']){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page:'EcriteTache1',title:'TCF Écrite Tâche 1 — Le sport',time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d['EcriteTache1']=new Date().toISOString();localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
