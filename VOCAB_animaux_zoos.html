@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les animaux &amp; les zoos — Vocabulaire · TCF Canada · @TCFHODA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav" id="nav"></nav>
+  <div class="progress-wrap">
+    <div class="pcount" id="pcount">0 / 0 termes révisés</div>
+    <div class="pbar"><div class="pfill" id="pfill"></div></div>
+    <button class="btn" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+  </div>
+
+  <div class="cover">
+    <div class="kick">TCF Canada — Vocabulaire spécial sujet</div>
+    <h1>Les animaux <b>&amp; les zoos</b></h1>
+    <div class="b2">Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><div style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1rem;color:#C0392B;margin:6px 0 2px;">APERÇU GRATUIT · 10 premiers mots</div>
+    <p class="lead">Le vocabulaire du thème, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+) pour chaque mot.</p>
+    <svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="animaux zoos"><rect x="44" y="152" width="272" height="6" rx="3" fill="#46537d" opacity="0.22"/><g stroke="#46537d" stroke-width="3" opacity="0.16" stroke-linecap="round"><line x1="250" y1="58" x2="250" y2="150"/><line x1="272" y1="58" x2="272" y2="150"/><line x1="294" y1="58" x2="294" y2="150"/><line x1="240" y1="60" x2="304" y2="60"/></g><path d="M70 96 C70 74 92 68 112 70 C112 92 94 100 70 96 Z" fill="#2E8B6B"/><path d="M72 94 C86 84 100 78 111 71" stroke="#1F6B52" stroke-width="2" fill="none"/><ellipse cx="180" cy="128" rx="29" ry="25" fill="#8A5A44"/><ellipse cx="154" cy="98" rx="9" ry="12" fill="#8A5A44"/><ellipse cx="173" cy="86" rx="9" ry="12.5" fill="#8A5A44"/><ellipse cx="192" cy="86" rx="9" ry="12.5" fill="#8A5A44"/><ellipse cx="210" cy="98" rx="9" ry="12" fill="#8A5A44"/></svg>
+    <div class="sign">Hoda KHEDMATI</div>
+    <span class="handle">@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div>
+  </div>
+
+  <div id="root"></div>
+
+  <footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer>
+</div>
+
+<script>
+const CAT=[
+{id:1,name:"Le zoo &amp; ses acteurs",fa:"باغ‌وحش و دست‌اندرکارانش",icon:"🦁",color:"#C77A2E"},
+{id:2,name:"Les animaux &amp; les espèces",fa:"حیوانات و گونه‌ها",icon:"🐘",color:"#5B5BD6"},
+{id:3,name:"Le corps &amp; les actions",fa:"بدن و کنش‌ها",icon:"🐾",color:"#2E8B8B"},
+{id:4,name:"La captivité &amp; les conditions",fa:"اسارت و شرایط",icon:"🔒",color:"#C0392B"},
+{id:5,name:"Le lieu &amp; l'habitat",fa:"مکان و زیستگاه",icon:"🌿",color:"#2E8B6B"},
+{id:6,name:"La protection &amp; la conservation",fa:"محافظت و حفاظت",icon:"🛡️",color:"#2E6BD6"},
+{id:7,name:"Le débat &amp; les opinions",fa:"بحث و دیدگاه‌ها",icon:"⚖️",color:"#7C5BD6"}
+];
+const D=[
+{c:1,term:"un zoo / un parc animalier",fa:"باغ‌وحش / پارک حیوانات",def:"Un parc où l'on rassemble des espèces animales, surtout sauvages, pour les montrer au public.",syn:["un parc zoologique","une ménagerie"],ex:[["Nous avons emmené les enfants au <b>zoo</b> dimanche.","یکشنبه بچه‌ها را به باغ‌وحش بردیم."],["Ce <b>parc animalier</b> abrite des centaines d'espèces.","این پارک حیوانات صدها گونه را در خود جای داده است."],["Quoiqu'ils attirent les familles, les <b>zoos</b> font aujourd'hui l'objet de vives critiques.","باغ‌وحش‌ها هرچند خانواده‌ها را جذب می‌کنند، امروز آماج انتقادهای تندند."],["C'est la vocation même du <b>zoo</b> qui est aujourd'hui remise en question.","امروز خودِ رسالت باغ‌وحش است که به‌پرسش کشیده می‌شود."]]},
+{c:1,term:"un soigneur / un vétérinaire",fa:"مراقب حیوان / دامپزشک",def:"Le soigneur s'occupe des animaux au quotidien ; le vétérinaire veille à leur santé.",syn:["le gardien d'animaux","le personnel animalier"],ex:[["Le <b>soigneur</b> nourrit les animaux chaque matin.","مراقب حیوانات هر صبح به آن‌ها غذا می‌دهد."],["Le <b>vétérinaire</b> examine les animaux malades.","دامپزشک حیوانات بیمار را معاینه می‌کند."],["Aussi dévoué soit-il, un <b>soigneur</b> ne remplacera jamais le milieu naturel de l'animal.","مراقبِ حیوان، هر اندازه هم فداکار باشد، هرگز جای زیستگاه طبیعیِ حیوان را نمی‌گیرد."],["C'est au <b>vétérinaire</b> qu'il revient de juger si un animal souffre en captivité.","این بر عهده‌ی دامپزشک است که داوری کند آیا یک حیوان در اسارت رنج می‌برد یا نه."]]},
+{c:1,term:"un dresseur / dresser / le dressage",fa:"مربی / تربیت‌کردن / دستوری‌سازی",def:"Apprendre à un animal à obéir ou à exécuter des numéros.",syn:["l'apprentissage","l'éducation animale"],ex:[["Le <b>dresseur</b> apprend des tours au lion.","مربی به شیر حقه‌هایی می‌آموزد."],["Le <b>dressage</b> des animaux sauvages est contesté.","تربیت حیوانات وحشی محل اختلاف است."],["Il serait naïf de croire que le <b>dressage</b> se fait toujours sans contrainte.","ساده‌لوحانه است اگر بپنداریم تربیت حیوان همیشه بدون اجبار انجام می‌شود."],["C'est souvent au nom du spectacle que l'on <b>dresse</b> des animaux qui n'y sont nullement destinés.","اغلب به‌نام نمایش است که حیواناتی را تربیت می‌کنند که به‌هیچ‌وجه برای آن ساخته نشده‌اند."]]},
+{c:1,term:"les visiteurs / un guide",fa:"بازدیدکنندگان / راهنما",def:"Les personnes qui visitent le zoo ; le guide les accompagne et les informe.",syn:["le public","les spectateurs"],ex:[["Les <b>visiteurs</b> observent les animaux derrière une vitre.","بازدیدکنندگان حیوانات را از پشت شیشه تماشا می‌کنند."],["Le <b>guide</b> explique le mode de vie de chaque espèce.","راهنما شیوه‌ی زندگی هر گونه را توضیح می‌دهد."],["Pour peu qu'ils soient bien informés, les <b>visiteurs</b> repartent plus sensibles à la cause animale.","به‌شرط آنکه خوب آگاه شوند، بازدیدکنندگان حساس‌تر نسبت به سرنوشت حیوانات بازمی‌گردند."],["C'est en éduquant le <b>visiteur</b>, et non en le distrayant, que le zoo justifierait son existence.","با آموزش بازدیدکننده، نه سرگرم‌کردن او، است که باغ‌وحش می‌تواند وجودش را توجیه کند."]]},
+{c:1,term:"la mise en scène / l'exotisme",fa:"صحنه‌آرایی / غرابتِ بیگانه",def:"La présentation spectaculaire des animaux et l'attrait du lointain et de l'inhabituel.",syn:["le spectacle","le dépaysement"],ex:[["La <b>mise en scène</b> rend la visite plus attrayante.","صحنه‌آرایی بازدید را جذاب‌تر می‌کند."],["L'<b>exotisme</b> des animaux fascine le public.","غرابتِ حیوانات تماشاگران را مجذوب می‌کند."],["Aussi spectaculaire soit-elle, la <b>mise en scène</b> ne doit pas faire oublier le sort réel des bêtes.","صحنه‌آرایی، هر اندازه هم چشمگیر باشد، نباید سرنوشت واقعی جانوران را به فراموشی بسپارد."],["C'est souvent l'<b>exotisme</b> qui attire les foules, bien plus que le souci de la nature.","اغلب همان غرابتِ بیگانه است که جمعیت را جذب می‌کند، بسی بیش از دغدغه‌ی طبیعت."]]},
+{c:2,term:"les mammifères (un éléphant, un ours)",fa:"پستانداران (فیل، خرس)",def:"Les animaux qui allaitent leurs petits, comme l'éléphant ou l'ours.",syn:["les bêtes à poils","les animaux allaitants"],ex:[["L'éléphant et la girafe sont de grands <b>mammifères</b>.","فیل و زرافه از پستانداران بزرگ‌اند."],["Les <b>mammifères</b> ont besoin de beaucoup d'espace.","پستانداران به فضای زیادی نیاز دارند."],["Quoiqu'ils paraissent s'adapter, les grands <b>mammifères</b> supportent mal la captivité.","پستانداران بزرگ هرچند به‌ظاهر سازگار می‌شوند، اسارت را به‌سختی تحمل می‌کنند."],["C'est précisément aux <b>mammifères</b> les plus imposants qu'un enclos convient le moins.","دقیقاً برای هیبت‌دارترین پستانداران است که یک محوطه‌ی محصور کمتر از همه مناسب است."]]},
+{c:2,term:"les reptiles / les félins / les primates",fa:"خزندگان / گربه‌سانان / نخستی‌ها",def:"Reptiles (serpent, tortue), félins (tigre, lion) et primates (singe, gorille).",syn:["les classes d'animaux","les familles animales"],ex:[["Le tigre et le lion sont des <b>félins</b>.","ببر و شیر از گربه‌سانان‌اند."],["Les <b>primates</b> sont très proches de l'homme.","نخستی‌ها بسیار به انسان نزدیک‌اند."],["Aussi fascinants soient-ils, les <b>félins</b> en cage perdent l'essentiel de leurs instincts.","گربه‌سانان، هر اندازه هم شگفت‌انگیز باشند، در قفس بخش عمده‌ی غریزه‌شان را از دست می‌دهند."],["C'est chez les <b>primates</b> que l'on observe le plus nettement la détresse de l'enfermement.","در نخستی‌هاست که آشکارتر از همه می‌توان درماندگیِ ناشی از حبس را مشاهده کرد."]]},
+{c:2,term:"une espèce en voie de disparition",fa:"گونه‌ی در معرض انقراض",def:"Une espèce dont le nombre diminue au point de risquer de disparaître.",syn:["une espèce en danger","une espèce menacée d'extinction"],ex:[["Le panda est une <b>espèce en voie de disparition</b>.","پاندا گونه‌ای در معرض انقراض است."],["On protège les <b>espèces en voie de disparition</b>.","از گونه‌های در معرض انقراض حفاظت می‌شود."],["Certains soutiennent que le zoo aide à sauver les <b>espèces en voie de disparition</b>.","برخی معتقدند باغ‌وحش به نجات گونه‌های در معرض انقراض کمک می‌کند."],["Encore faudrait-il que la sauvegarde des <b>espèces en voie de disparition</b> prime sur le profit.","البته باید حفظ گونه‌های در معرض انقراض بر سود مقدم باشد."]]},
+{c:2,term:"une espèce menacée / vulnérable",fa:"گونه‌ی تهدیدشده / آسیب‌پذیر",def:"Une espèce fragile, dont la survie est compromise par l'homme ou le climat.",syn:["une espèce fragile","une espèce en danger"],ex:[["Cette tortue est une <b>espèce menacée</b>.","این لاک‌پشت گونه‌ای تهدیدشده است."],["Les <b>espèces vulnérables</b> doivent être surveillées.","گونه‌های آسیب‌پذیر باید پایش شوند."],["Pour peu qu'on agisse à temps, bien des <b>espèces menacées</b> pourraient être sauvées.","به‌شرط آنکه به‌موقع اقدام شود، بسیاری از گونه‌های تهدیدشده را می‌توان نجات داد."],["C'est la destruction des habitats qui menace tant d'<b>espèces vulnérables</b>.","این ویرانیِ زیستگاه‌هاست که این‌همه گونه‌ی آسیب‌پذیر را تهدید می‌کند."]]},
+{c:2,term:"un animal sauvage / domestique",fa:"حیوان وحشی / اهلی",def:"Sauvage : qui vit dans la nature ; domestique : habitué à vivre auprès de l'homme.",syn:["la faune sauvage","un animal apprivoisé"],ex:[["Un lion est un <b>animal sauvage</b>, pas un animal de compagnie.","شیر یک حیوان وحشی است، نه حیوان خانگی."],["Le chien est un <b>animal domestique</b>.","سگ یک حیوان اهلی است."],["Quand bien même il naîtrait en captivité, un <b>animal sauvage</b> garde ses instincts.","حتی اگر یک حیوان وحشی در اسارت هم به دنیا بیاید، غریزه‌اش را حفظ می‌کند."],["Il serait illusoire de croire qu'un <b>animal sauvage</b> s'épanouit pleinement derrière des barreaux.","خام‌خیالی است اگر بپنداریم یک حیوان وحشی پشت میله‌ها به‌تمامی شکوفا می‌شود."]]}
+];
+const PHRASES=[
+["<b>À mon sens</b>, un animal sauvage n'a pas sa place derrière des barreaux.","به نظر من، حیوان وحشی جایش پشت میله‌ها نیست."],
+["<b>Force est de constater que</b> de nombreux zoos ont déjà évolué vers la conservation.","ناگزیر باید پذیرفت که بسیاری از باغ‌وحش‌ها پیشاپیش به‌سوی حفاظت تغییر کرده‌اند."],
+["<b>D'un côté</b>, le zoo protège certaines espèces ; <b>d'un autre côté</b>, il les prive de liberté.","از یک سو باغ‌وحش از برخی گونه‌ها محافظت می‌کند؛ از سوی دیگر، آزادی را از آن‌ها می‌گیرد."],
+["<b>Il convient de rappeler que</b> protéger une espèce ne justifie pas forcément de l'enfermer.","شایان ذکر است که حفاظت از یک گونه لزوماً حبس آن را توجیه نمی‌کند."],
+["<b>En définitive</b>, le sanctuaire paraît plus respectueux que le zoo traditionnel.","در نهایت، پناهگاه محترمانه‌تر از باغ‌وحش سنتی به‌نظر می‌رسد."],
+["<b>Pour conclure</b>, je dirais que la place de l'animal est avant tout dans la nature.","برای جمع‌بندی، می‌گویم که جای حیوان پیش از هر چیز در طبیعت است."]
+];
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section');
+  sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}
+    </article>`;
+  }).join('');
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+
+// boîte à phrases
+const pb=document.createElement('section');
+pb.className='cat'; pb.id='phrases';
+pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+  <h3>🗣️ Boîte à phrases — débat « télétravail »</h3>
+  <div class="fa-h" dir="rtl" lang="fa">جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی دورکاری (تکلیف ۳)</div>
+  ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+  </div>
+  <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+/* pb omis dans l'aperçu */;
+
+
+    var promo=document.createElement('section');
+    promo.className='cat'; promo.id='cpromo';
+    promo.innerHTML='<div class=\"secmark\">Aperçu</div>'
+      +'<div style=\"background:#FBF8F0;border:2px dashed #2E8B6B;border-radius:14px;padding:26px 22px;margin:26px 0 10px;text-align:center;box-shadow:0 12px 30px -16px rgba(27,42,107,.4);\">'
+      +'<div style=\"font-family:Fraunces,serif;font-weight:800;font-size:1.5rem;color:#1B2A6B;margin-bottom:6px;\">Ceci n\'est qu\'un aperçu \u2728</div>'
+      +'<div style=\"font-family:Vazirmatn,sans-serif;font-size:1rem;color:#46537d;direction:rtl;margin-bottom:8px;\">\u0627\u06cc\u0646 \u0641\u0642\u0637 \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0627\u0633\u062a \u2014 \u0628\u0631\u0627\u06cc \u062f\u0633\u062a\u0631\u0633\u06cc \u0628\u0647 \u0647\u0645\u0647\u200c\u06cc \u0648\u0627\u0698\u06af\u0627\u0646 \u0648 \u0647\u0645\u0647\u200c\u06cc \u062a\u0645\u200c\u0647\u0627\u060c \u067e\u06a9\u06cc\u062c \u06a9\u0627\u0645\u0644 \u0631\u0627 \u062a\u0647\u06cc\u0647 \u06a9\u0646\u06cc\u062f.</div>'
+      +'<div style=\"font-family:Spectral,serif;font-size:.95rem;color:#1B2A6B;\">La version complète contient les 35 mots du thème, classés en 7 rubriques, avec 4 exemples traduits (du B2 au B2+) chacun \u2014 ainsi que la \u00ab\u00a0bo\u00eete \u00e0 phrases\u00a0\u00bb pour le d\u00e9bat.</div>'
+      +'<div style=\"font-family:Caveat,cursive;font-weight:700;font-size:1.4rem;color:#1B2A6B;margin-top:14px;\">Hoda KHEDMATI \u00b7 @TCFHODA</div></div>'
+      +'<div class=\"sig-foot\"><span class=\"name\">Hoda KHEDMATI</span><span class=\"handle\">@TCFHODA</span></div>';
+    document.getElementById('root').appendChild(promo);
+
+// progress
+const total=D.length;
+document.getElementById('pcount').textContent=`0 / ${total} termes révisés`;
+function refresh(){
+  const done=document.querySelectorAll('.card.done').length;
+  document.getElementById('pcount').textContent=`${done} / ${total} termes révisés`;
+  document.getElementById('pfill').style.width=(done/total*100)+'%';
+}
+window.toggleDone=function(btn){
+  const card=btn.closest('.card');
+  card.classList.toggle('done'); btn.classList.toggle('on');
+  refresh();
+};
+
+// ----- mode impression « une section à la fois » (?only=cover|1..7|ph) -----
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nav=document.querySelector('.nav'); if(nav)nav.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else {
+    if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{
+      const match=(ONLY==='ph')?(s.id==='phrases'):(s.id==='c'+ONLY);
+      s.style.display=match?'':'none';
+      if(match)s.style.breakBefore='auto';
+    });
+  }
+}
+</script>
+</body>
+</html>
