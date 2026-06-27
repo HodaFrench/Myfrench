@@ -36,6 +36,8 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 </style>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="tracker.js"></script>
 </head>
 <body>
 <style id="hk-wm">
@@ -86,5 +88,6 @@ function t(el){
   if(!w){el.classList.add("open");el._t=setTimeout(()=>{el.classList.remove("open");el._t=null;},3500);}
 }
 </script>
+<script>hodaAutoInitFull();</script>
 </body>
 </html>
