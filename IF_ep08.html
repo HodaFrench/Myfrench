@@ -1,406 +1,110 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>InnerFrench #8 — Les stéréotypes | Français avec Hoda</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InnerFrench #08 — Les stéréotypes sur les Français | Français avec Hoda</title>
 <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--if:#2e7bb5}
-body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 100px}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,.04) 31px,rgba(30,58,95,.04) 32px);color:var(--ink);padding-bottom:140px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:24px 20px 20px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:3px 14px;font-size:11px;letter-spacing:2px;margin-bottom:8px}
+.hero h1{font-family:'Roboto',serif;font-size:20px;font-weight:700;margin-bottom:3px}
 .wrap{max-width:820px;margin:0 auto;padding:0 1rem}
-.topbar{background:var(--navy);color:#f4f3f5;padding:11px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.topbar a{color:#c4a572;text-decoration:none;font-size:13px}
-.hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:28px 28px 24px;text-align:center;box-shadow:0 14px 40px rgba(46,123,181,.3)}
-.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:2px;margin-bottom:10px}
-.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
-.hero .sub{font-size:13px;opacity:.85}
-
-/* player */
-.player-wrap{background:var(--white);border-radius:16px;padding:16px 20px;margin:18px 0;box-shadow:0 4px 16px rgba(31,58,95,.07)}
-.player-title{font-size:12px;font-weight:700;color:var(--if);margin-bottom:8px;letter-spacing:.5px}
-audio{width:100%;height:40px;accent-color:var(--if)}
-
-/* legend */
-.legend{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;font-size:12px;align-items:center}
-.lg{display:flex;align-items:center;gap:5px}
-.lg-dot{width:18px;height:8px;border-radius:3px}
-
-/* text blocks */
-.if-block{background:var(--white);border-radius:14px;padding:16px 18px;margin-bottom:14px;box-shadow:0 3px 12px rgba(31,58,95,.06);border-right:4px solid var(--if)}
-.ts-badge{display:inline-block;background:rgba(46,123,181,.1);color:var(--if);font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:8px;margin-bottom:8px;font-family:'Roboto',serif}
-.if-para{font-family:'Roboto',serif;font-size:16px;line-height:2.3;direction:ltr;text-align:left;margin-bottom:8px}
-.if-para-fa{font-size:13px;color:var(--gray);line-height:1.9;border-top:1px solid var(--line);padding-top:8px;margin-top:4px}
-
-/* highlights */
-.hw{background:rgba(30,58,95,.12);color:#1e3a5f;border-radius:4px;padding:1px 5px;cursor:pointer;font-weight:700;border-bottom:2px solid rgba(30,58,95,.4);transition:all .2s;position:relative;display:inline}
-.hw:hover,.hw.open{background:rgba(30,58,95,.22)}
-.hs{background:rgba(176,122,74,.12);color:#8a5a2a;border-radius:4px;padding:1px 5px;cursor:pointer;font-weight:600;border-bottom:2px dashed rgba(176,122,74,.5);transition:all .2s;position:relative;display:inline}
-.hs:hover,.hs.open{background:rgba(176,122,74,.22)}
-.hg{background:rgba(46,139,107,.1);color:#1d6b50;border-radius:4px;padding:1px 5px;cursor:pointer;font-weight:500;border-bottom:2px dotted rgba(46,139,107,.6);transition:all .2s;position:relative;display:inline}
-.hg:hover,.hg.open{background:rgba(46,139,107,.2)}
-.pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--navy);color:#f7f3ea;font-family:'Estedad',sans-serif;font-size:12px;font-weight:500;direction:rtl;white-space:nowrap;padding:5px 12px;border-radius:8px;z-index:20;box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .2s;pointer-events:none;max-width:280px;white-space:normal;text-align:right;line-height:1.7}
-.hw.open .pop,.hs.open .pop,.hg.open .pop{opacity:1;visibility:visible}
-</style>
-
-
-</head>
-<body>
-<style id="hk-wm">
+.theme-box{background:var(--white);border-radius:12px;padding:12px 16px;margin:14px 0 10px;border-right:4px solid var(--gold)}
+.theme-label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:4px}
+.legend{display:flex;gap:8px;flex-wrap:wrap;padding:8px 0 12px;font-size:11.5px}
+.legend-item{display:flex;align-items:center;gap:5px}
+.legend-dot{width:10px;height:10px;border-radius:3px}
+.para-block{background:var(--white);border-radius:12px;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 8px rgba(31,58,95,.05)}
+.para-fr{font-family:'Roboto',serif;font-size:14.5px;line-height:2;color:var(--ink);direction:ltr;text-align:left;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.para-fa{font-size:13px;line-height:1.9;color:var(--gray)}
+.hl-v{background:rgba(30,58,95,.1);color:#1e3a5f;border-radius:3px;padding:1px 5px;font-weight:700;cursor:help;text-decoration:underline dotted rgba(30,58,95,.4)}
+.hl-g{background:rgba(122,91,168,.1);color:#5a3b88;border-radius:3px;padding:1px 5px;font-weight:700;cursor:help;text-decoration:underline dotted rgba(122,91,168,.4)}
+.hl-e{background:rgba(176,122,74,.1);color:#8a5a2a;border-radius:3px;padding:1px 5px;font-weight:700;cursor:help;text-decoration:underline dotted rgba(176,122,74,.4)}
+.gram-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-top:1.5px solid rgba(217,206,184,.55);position:fixed;bottom:56px;left:0;right:0;z-index:150}
+.gnav-btn{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:20px;font-family:'Estedad',sans-serif;font-size:12px;font-weight:700;text-decoration:none;background:rgba(30,58,95,.08);color:#1e3a5f;white-space:nowrap;max-width:44%;overflow:hidden;text-overflow:ellipsis}
+.gnav-btn:hover{background:#1e3a5f;color:#f5f0e8}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
 </style>
+</head>
+<body>
 <span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
 <span class="hk-wm" style="top:52%;left:42%">Hoda Khedmati</span>
 <span class="hk-wm" style="top:78%;left:62%">Hoda Khedmati</span>
-<style>
-.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
-.hoda-back-btn{display:flex;align-items:center;gap:5px;background:#1e3a5f;color:#f5f0e8;text-decoration:none;border:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
-.hoda-back-btn:hover{background:#2a5080}
-.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-</style>
-<div class="hoda-back">
-  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; لیست اپیزودها</a>
-  <span class="hoda-back-label">InnerFrench</span>
-</div>
-
-<div class="topbar">
-  <a href="../index.html">⌂ Français avec Hoda</a>
-  <span style="font-size:13px;opacity:.7">🎧 InnerFrench · B1–B2</span>
-</div>
+<div class="hoda-back"><a class="hoda-back-btn" href="innerfrench.html">&#8592; InnerFrench</a><span style="font-size:12px;color:#8a8275;flex:1;text-align:center">🎧 اپیزود 8 از ۱۲</span></div>
 <div class="hero">
-  <div class="hero-tag">🎧 INNERFRENCH · ÉPISODE 8</div>
-  <h1>Les stéréotypes sur les Français</h1>
-  <div class="sub">کلیشه‌های مربوط به فرانسوی‌ها — B1–B2</div>
+  <div class="hero-tag">🎧 INNERFRENCH · ÉPISODE 08 · B1–B2</div>
+  <h1 dir="ltr">Les stéréotypes sur les Français</h1>
+  <div style="font-size:13px;opacity:.85">کلیشه‌های فرانسوی‌ها</div>
 </div>
 <div class="wrap">
-
-<div class="player-wrap">
-  <div class="player-title">▶ پخش اپیزود</div>
-  <audio controls preload="none">
-    <source src="https://mcdn.podbean.com/mf/web/9wt5br/01_LCP001_-_Apprendre_le_francais.mp3" type="audio/mpeg">
-  </audio>
-  <div style="font-size:11px;color:#8a8275;margin-top:6px">منبع: <a href="https://innerfrench.com/08-stereotypes-francais-verite/" target="_blank" style="color:var(--if)">innerfrench.com</a> · Hugo Cotton</div>
-</div>
-
+<div class="theme-box"><div class="theme-label">🎯 موضوع اپیزود</div><div style="font-size:13.5px">کلیشه‌های غذا، ظاهر، شخصیت فرانسوی‌ها</div></div>
 <div class="legend">
-  <div class="lg"><span class="lg-dot" style="background:rgba(30,58,95,.35)"></span><b style="color:#1e3a5f">واژه/اسم</b></div>
-  <div class="lg"><span class="lg-dot" style="background:rgba(176,122,74,.4)"></span><b style="color:#8a5a2a">ساختار گرامری</b></div>
-  <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.3)"></span><b style="color:#1d6b50">توصیف/صفت</b></div>
-  <span style="font-size:11px;color:#8a8275;margin-right:auto">👆 کلیک برای معنی</span>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(30,58,95,.3)"></div><span>واژگان — نگه دارید ماوس را برای معنی</span></div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(122,91,168,.3)"></div><span>گرامر</span></div>
+  <div class="legend-item"><div class="legend-dot" style="background:rgba(176,122,74,.3)"></div><span>اصطلاح</span></div>
 </div>
-
-
-    <div class="if-block" id="p0">
-      <div class="ts-badge">00:00:00</div>
-      <p class="if-para" dir="ltr"><span class="hw" onclick="t(this)">Salut à tous<span class="pop">salut = سلام (محاوره‌ای) · à tous = به همه</span></span>, <span class="hw" onclick="t(this)">bienvenue<span class="pop">bienvenue = خوش آمدید</span></span>, c'est le <span class="hs" onclick="t(this)">huitième<span class="pop">huitième = هشتم (عدد ترتیبی) · huit = هشت</span></span> épisode du podcast.</p>
-      <p class="if-para-fa">سلام به همه، خوش آمدید. این هشتمین اپیزود پادکست است.</p>
-    </div>
-    <div class="if-block" id="p1">
-      <div class="ts-badge">00:00:12</div>
-      <p class="if-para" dir="ltr"><span class="hs" onclick="t(this)">J'espère que vous allez bien<span class="pop">j'espère que = امیدوارم که · aller bien = حالت خوب بودن</span></span> et que vous êtes <span class="hw" onclick="t(this)">en forme<span class="pop">en forme = سرحال، با نشاط — مخالف: pas en forme</span></span>. <span class="hs" onclick="t(this)">Comme d'habitude<span class="pop">comme d'habitude = مثل همیشه — عبارت کاربردی</span></span>, on va passer <span class="hw" onclick="t(this)">une trentaine de minutes<span class="pop">une trentaine = حدود سی تا — پسوند -aine = تقریباً: une dizaine, une vingtaine...</span></span> ensemble.</p>
-      <p class="if-para-fa">امیدوارم حالتان خوب باشد و سرحال باشید. مثل همیشه، حدود سی دقیقه با هم هستیم.</p>
-    </div>
-    <div class="if-block" id="p2">
-      <div class="ts-badge">00:00:30</div>
-      <p class="if-para" dir="ltr">Mais <span class="hs" onclick="t(this)">avant de<span class="pop">avant de + infinitif = قبل از اینکه ... — ساختار مهم</span></span> vous parler du <span class="hw" onclick="t(this)">sujet du jour<span class="pop">sujet du jour = موضوع امروز · sujet (nm) = موضوع، مسئله</span></span>, j'ai envie de vous parler d'un e-mail que j'ai reçu <span class="hw" onclick="t(this)">il y a quelques jours<span class="pop">il y a + temps = ... پیش — il y a deux jours = دو روز پیش</span></span>. John, c'est <span class="hw" onclick="t(this)">un auditeur<span class="pop">auditeur/auditrice = شنونده (پادکست/رادیو)</span></span> du podcast.</p>
-      <p class="if-para-fa">اما قبل از صحبت درباره موضوع امروز، می‌خواهم درباره ایمیلی صحبت کنم که چند روز پیش دریافت کردم. جان یک شنونده پادکست است.</p>
-    </div>
-    <div class="if-block" id="p3">
-      <div class="ts-badge">00:00:45</div>
-      <p class="if-para" dir="ltr">« Bonjour Hugo, Je vous <span class="hw" onclick="t(this)">remercie<span class="pop">remercier = تشکر کردن · je vous remercie = از شما متشکرم (رسمی)</span></span> pour votre podcast. <span class="hs" onclick="t(this)">Je n'ai que le temps<span class="pop">ne...que = فقط — restriction: je n'ai que = فقط دارم</span></span> d'apprendre le français le matin <span class="hw" onclick="t(this)">en route au travail<span class="pop">en route au travail = در راه کار — en route = در راه</span></span>. <span class="hs" onclick="t(this)">J'ai du mal à<span class="pop">avoir du mal à + inf = مشکل داشتن در ... — J'ai du mal à lire = سخته برام که بخونم</span></span> lire dans les <span class="hw" onclick="t(this)">transports publics<span class="pop">les transports publics = حمل‌ونقل عمومی</span></span>. Je trouve que votre podcast est <span class="hw" onclick="t(this)">parfait<span class="pop">parfait = کامل، عالی</span></span> pour moi ! »</p>
-      <p class="if-para-fa">«سلام هوگو، از پادکستتان متشکرم. فقط صبح در راه کار و بعدازظهر وقتی برمی‌گردم وقت دارم فرانسه یاد بگیرم. خواندن در حمل‌ونقل عمومی برایم سخت است. پادکست شما عالی است!»</p>
-    </div>
-    <div class="if-block" id="p4">
-      <div class="ts-badge">00:01:51</div>
-      <p class="if-para" dir="ltr">Vous voyez que John a <span class="hs" onclick="t(this)">une très bonne motivation<span class="pop">motivation (nf) = انگیزه — کلمه مهم در یادگیری زبان</span></span> pour apprendre le français, parce qu'il veut aider son fils. Et ça, je pense que c'est très important <span class="hs" onclick="t(this)">quand vous voulez réussir à<span class="pop">réussir à + inf = موفق شدن در ... — réussir à apprendre = موفق شدن به یادگیری</span></span> apprendre une langue. C'est très important de savoir <span class="hw" onclick="t(this)">quelle est votre motivation<span class="pop">question indirecte: quelle est... = چه هست... — نه «quelle est-ce que»</span></span>.</p>
-      <p class="if-para-fa">می‌بینید که جان انگیزه خوبی برای یادگیری فرانسه دارد چون می‌خواهد به پسرش کمک کند. این بسیار مهم است — بدانید انگیزه‌تان چیست.</p>
-    </div>
-    <div class="if-block" id="p5">
-      <div class="ts-badge">00:02:17</div>
-      <p class="if-para" dir="ltr">John <span class="hs" onclick="t(this)">arrive à<span class="pop">arriver à + inf = موفق شدن در ... — مترادف: réussir à</span></span> écouter un podcast le matin et <span class="hw" onclick="t(this)">le soir quand il rentre<span class="pop">rentrer = برگشتن (به خانه) · quand il rentre = وقتی برمی‌گردد</span></span>. <span class="hs" onclick="t(this)">Grâce à ça<span class="pop">grâce à = به لطف ... (مثبت) · مخالف: à cause de = به خاطر... (منفی)</span></span>, John peut <span class="hw" onclick="t(this)">optimiser son temps<span class="pop">optimiser = بهینه‌سازی کردن · son temps = وقتش</span></span>. Ton français est vraiment très bon, donc tu n'auras pas de problèmes pour aider ton fils à <span class="hw" onclick="t(this)">faire ses devoirs<span class="pop">faire ses devoirs = انجام تکالیف — devoirs (nm pl) = تکالیف مدرسه</span></span>.</p>
-      <p class="if-para-fa">جان موفق می‌شود صبح و شب پادکست گوش دهد. به لطف این، وقتش را بهینه می‌کند. فرانسه‌ات خیلی خوب است و مشکلی در کمک به تکالیف پسرت نخواهی داشت.</p>
-    </div>
-    <div class="if-block" id="p6">
-      <div class="ts-badge">00:03:27</div>
-      <p class="if-para" dir="ltr">Aujourd'hui j'ai décidé de vous parler des <span class="hw" onclick="t(this)">stéréotypes<span class="pop">stéréotype (nm) = کلیشه، قالب ذهنی — همان تلفظ در انگلیسی</span></span>. Un stéréotype, c'est <span class="hs" onclick="t(this)">une opinion toute faite<span class="pop">une opinion toute faite = یک نظر از پیش ساخته‌شده · tout fait = آماده، از پیش ساخته</span></span>, <span class="hs" onclick="t(this)">c'est-à-dire<span class="pop">c'est-à-dire = یعنی، به عبارت دیگر — اختصار: c.-à-d.</span></span> une opinion à laquelle on n'a pas vraiment <span class="hw" onclick="t(this)">réfléchi<span class="pop">réfléchir = فکر کردن، تأمل کردن · j'ai réfléchi = فکر کردم (passé composé)</span></span>. En général, cette opinion <span class="hw" onclick="t(this)">concerne<span class="pop">concerner = مربوط بودن به · ça me concerne = به من مربوط است</span></span> un groupe humain.</p>
-      <p class="if-para-fa">امروز تصمیم گرفتم درباره کلیشه‌ها صحبت کنم. یک کلیشه یک نظر از پیش ساخته‌شده است، یعنی نظری که واقعاً درباره‌اش فکر نکرده‌اید. معمولاً این نظر درباره یک گروه انسانی است.</p>
-    </div>
-    <div class="if-block" id="p7">
-      <div class="ts-badge">00:05:16</div>
-      <p class="if-para" dir="ltr">Il faut se demander <span class="hs" onclick="t(this)">d'où viennent<span class="pop">d'où = از کجا · viennent = می‌آیند (venir) — question indirecte</span></span> ces stéréotypes. Généralement, ils ont <span class="hw" onclick="t(this)">une origine socioculturelle<span class="pop">socioculturel = اجتماعی-فرهنگی · origine (nf) = منشأ، ریشه</span></span>. Les stéréotypes sont <span class="hw" onclick="t(this)">partagés<span class="pop">partagé = به اشتراک گذاشته شده · partager = به اشتراک گذاشتن</span></span> à travers l'éducation, les médias. <span class="hs" onclick="t(this)">Grâce aux stéréotypes<span class="pop">grâce à + article défini = grâce au/à la/aux — حرف اضافه ادغام شده</span></span>, nous n'avons pas besoin de tout analyser parce que nous avons des opinions qui sont <span class="hw" onclick="t(this)">préconçues<span class="pop">préconçu = از پیش تصور شده · pré- (پیشوند) = از پیش</span></span>.</p>
-      <p class="if-para-fa">باید پرسید این کلیشه‌ها از کجا می‌آیند. معمولاً ریشه اجتماعی-فرهنگی دارند و از طریق آموزش و رسانه‌ها منتقل می‌شوند. به لطف کلیشه‌ها نیاز نیست همه چیز را تحلیل کنیم.</p>
-    </div>
-    <div class="if-block" id="p8">
-      <div class="ts-badge">00:07:10</div>
-      <p class="if-para" dir="ltr">Le premier stéréotype dit que les Français ont <span class="hw" onclick="t(this)">inventé<span class="pop">inventer = اختراع کردن · inventé = اختراع کرده (passé composé passif)</span></span> les frites. En anglais on dit même « french fries ». Mais <span class="hs" onclick="t(this)">en réalité<span class="pop">en réalité = در واقعیت — مخالف: en apparence = در ظاهر</span></span>, ce sont <span class="hs" onclick="t(this)">plutôt nos voisins<span class="pop">plutôt = بیشتر، بهتر بگوییم · nos voisins = همسایه‌های ما (les Belges)</span></span>, les Belges, qui les ont inventées. <span class="hs" onclick="t(this)">Alors qu'en France<span class="pop">alors que = در حالی که — concession/opposition</span></span>, on a commencé à manger des frites <span class="hw" onclick="t(this)">un peu plus tard<span class="pop">un peu plus tard = کمی بعدتر — comparatif avec un peu</span></span>, <span class="hw" onclick="t(this)">le siècle suivant<span class="pop">le siècle suivant = قرن بعد · siècle (nm) = قرن · suivant = بعدی</span></span>.</p>
-      <p class="if-para-fa">اول اینکه می‌گویند فرانسوی‌ها سیب‌زمینی سرخ‌کرده را اختراع کردند. در واقع همسایه‌هایمان، بلژیکی‌ها، آن را اختراع کردند. در حالی که در فرانسه یک قرن بعد شروع به خوردن آن کردند.</p>
-    </div>
-    <div class="if-block" id="p9">
-      <div class="ts-badge">00:08:02</div>
-      <p class="if-para" dir="ltr">Le deuxième stéréotype concerne <span class="hw" onclick="t(this)">un petit animal<span class="pop">animal (nm) = حیوان · pl: animaux</span></span> qui est vert et qui peut <span class="hw" onclick="t(this)">sauter très haut<span class="pop">sauter = پریدن · haut = بالا، بلند · sauter haut = بلند پریدن</span></span>. Cet animal, c'est <span class="hw" onclick="t(this)">la grenouille<span class="pop">grenouille (nf) = قورباغه — les mangeurs de grenouilles = قورباغه‌خورها (کنایه از فرانسوی‌ها)</span></span>. <span class="hs" onclick="t(this)">D'ailleurs<span class="pop">d'ailleurs = ضمناً، از قضا — برای اضافه کردن اطلاعات</span></span>, il y a beaucoup de pays qui appellent les Français <span class="hs" onclick="t(this)">« les mangeurs de grenouilles »<span class="pop">mangeur = خورنده · les mangeurs de grenouilles = قورباغه‌خورها</span></span>. <span class="hs" onclick="t(this)">Pourtant<span class="pop">pourtant = اما، با این حال — opposition plus forte que mais</span></span>, on ne mange pas <span class="hw" onclick="t(this)">tellement<span class="pop">tellement = آنقدر، خیلی زیاد · ne...pas tellement = خیلی زیاد نه</span></span> de grenouilles en France.</p>
-      <p class="if-para-fa">کلیشه دوم درباره یک حیوان کوچک سبز است که می‌تواند خیلی بلند بپرد — قورباغه. خیلی کشورها فرانسوی‌ها را «قورباغه‌خور» می‌نامند. با این حال، در فرانسه خیلی زیاد قورباغه نمی‌خورند.</p>
-    </div>
-    <div class="if-block" id="p10">
-      <div class="ts-badge">00:08:58</div>
-      <p class="if-para" dir="ltr">Il s'agit des <span class="hw" onclick="t(this)">escargots<span class="pop">escargot (nm) = حلزون — خوراک سنتی فرانسوی</span></span>. Les escargots, ce sont des <span class="hw" onclick="t(this)">mollusques<span class="pop">mollusque (nm) = نرم‌تن — دسته حیوانات</span></span> avec une <span class="hw" onclick="t(this)">coquille<span class="pop">coquille (nf) = صدف، پوسته</span></span>. Ils sont petits et très <span class="hw" onclick="t(this)">lents<span class="pop">lent = کُند · lentement = به آرامی — مخالف: rapide = سریع</span></span>. Ils ont <span class="hs" onclick="t(this)">la particularité d'être<span class="pop">avoir la particularité de + inf = ویژگی خاص داشتن که...</span></span> <span class="hw" onclick="t(this)">hermaphrodites<span class="pop">hermaphrodite = دوجنسی — à la fois mâle et femelle = هم نر هم ماده</span></span>. En France nous mangeons des escargots avec une sauce faite avec <span class="hw" onclick="t(this)">du beurre et du persil<span class="pop">beurre (nm) = کره · persil (nm) = جعفری — سس کلاسیک حلزون</span></span>.</p>
-      <p class="if-para-fa">درباره حلزون‌هاست. حلزون‌ها نرم‌تنانی هستند با پوسته. کوچک و خیلی کُند هستند. ویژگی خاصشان اینست که دوجنسی هستند. در فرانسه با سسی از کره و جعفری می‌خورند.</p>
-    </div>
-    <div class="if-block" id="p11">
-      <div class="ts-badge">00:10:05</div>
-      <p class="if-para" dir="ltr">Le troisième stéréotype concerne l'alcool et en particulier <span class="hw" onclick="t(this)">le vin<span class="pop">vin (nm) = شراب — la France est connue pour ses vins = فرانسه برای شراب‌هایش معروف است</span></span>. Les Français ont <span class="hs" onclick="t(this)">la réputation de<span class="pop">avoir la réputation de + inf = شهرت داشتن به... — ساختار مهم</span></span> boire du vin à tous les repas. <span class="hs" onclick="t(this)">En réalité<span class="pop">en réalité = در واقع، در حقیقت</span></span>, on ne boit pas de vin aussi souvent. Il y a un <span class="hw" onclick="t(this)">classement<span class="pop">classement (nm) = رتبه‌بندی، جدول</span></span> fait par l'<span class="hw" onclick="t(this)">Organisation mondiale de la santé<span class="pop">Organisation mondiale de la santé = سازمان بهداشت جهانی (WHO)</span></span>. En moyenne, un Français boit <span class="hw" onclick="t(this)">11,6 litres d'alcool par an<span class="pop">en moyenne = به طور متوسط · par an = در سال</span></span>.</p>
-      <p class="if-para-fa">کلیشه سوم درباره الکل و به خصوص شراب است. فرانسوی‌ها شهرت دارند که در هر وعده شراب می‌نوشند. در واقع نه. بر اساس رتبه‌بندی سازمان بهداشت جهانی، به طور متوسط یک فرانسوی ۱۱٫۶ لیتر الکل در سال می‌نوشد.</p>
-    </div>
-    <div class="if-block" id="p12">
-      <div class="ts-badge">00:13:05</div>
-      <p class="if-para" dir="ltr">On va passer à la deuxième catégorie: <span class="hw" onclick="t(this)">l'apparence<span class="pop">l'apparence (nf) = ظاهر، قیافه</span></span>. Les Français ont la réputation d'être très <span class="hw" onclick="t(this)">maigres<span class="pop">maigre = لاغر، نحیف — مترادف: mince · مخالف: gros/obèse</span></span>, très minces. Mais ce stéréotype est <span class="hw" onclick="t(this)">un peu dépassé<span class="pop">dépassé = قدیمی شده، از مد افتاده · dépasser = عبور کردن</span></span>. Il existe <span class="hs" onclick="t(this)">ce que les étrangers appellent<span class="pop">ce que = آنچه که — pronom relatif · appeler = نامیدن</span></span> « le paradoxe français ». Le paradoxe français, c'est que nous mangeons tout ce que nous voulons et <span class="hs" onclick="t(this)">malgré ça<span class="pop">malgré = علی‌رغم، با وجود · malgré ça = با این حال</span></span> les Français sont <span class="hw" onclick="t(this)">plutôt minces<span class="pop">plutôt = نسبتاً، بیشتر · plutôt mince = نسبتاً لاغر</span></span>.</p>
-      <p class="if-para-fa">به دسته دوم می‌رویم: ظاهر. فرانسوی‌ها شهرت دارند خیلی لاغر باشند. این کلیشه کمی قدیمی شده. «پارادوکس فرانسوی» وجود دارد: هر چه بخواهند می‌خورند و با این حال نسبتاً لاغر هستند.</p>
-    </div>
-    <div class="if-block" id="p13">
-      <div class="ts-badge">00:16:20</div>
-      <p class="if-para" dir="ltr">Un autre stéréotype concerne les vêtements des Français, en particulier <span class="hw" onclick="t(this)">le béret<span class="pop">béret (nm) = کلاه بره — کلاه گرد و مسطح فرانسوی سنتی</span></span>. Vous savez le béret, c'est un accessoire qui <span class="hs" onclick="t(this)">se porte sur la tête<span class="pop">se porter = پوشیده می‌شود — verbe pronominal passif: ça se porte = این پوشیده می‌شود</span></span>, qui est rond et <span class="hw" onclick="t(this)">plat<span class="pop">plat = مسطح، صاف · مخالف: bombé = گنبدی شکل</span></span>. Les étrangers pensent que tous les Français portent un béret. Ça <span class="hs" onclick="t(this)">n'est plus vraiment vrai<span class="pop">ne...plus = دیگر نه — n'est plus vrai = دیگر درست نیست</span></span>. Maintenant, les jeunes portent souvent des <span class="hw" onclick="t(this)">casquettes<span class="pop">casquette (nf) = کلاه لبه‌دار (بیسبال)</span></span>.</p>
-      <p class="if-para-fa">کلیشه دیگری درباره لباس فرانسوی‌هاست، به خصوص بره. بره یک لوازم است که روی سر می‌پوشند، گرد و مسطح است. اما دیگر واقعاً درست نیست. الان جوانان کلاه لبه‌دار می‌پوشند.</p>
-    </div>
-    <div class="if-block" id="p14">
-      <div class="ts-badge">00:18:34</div>
-      <p class="if-para" dir="ltr">Les étrangers disent souvent que les Français sont <span class="hw" onclick="t(this)">chauvins<span class="pop">chauvin = کسی که فکر می‌کند کشورش بهترین است · chauvinisme (nm) = ملی‌گرایی افراطی</span></span>. Être « chauvin », ça veut dire que vous pensez que <span class="hs" onclick="t(this)">votre pays est meilleur que les autres<span class="pop">meilleur que = بهتر از — comparatif de supériorité de «bon»</span></span>. C'est vrai qu'en France, il y a une forme de chauvinisme. En général, quand les Français vont en vacances à l'étranger, ils aiment bien <span class="hs" onclick="t(this)">comparer avec la France<span class="pop">comparer avec = مقایسه کردن با</span></span>. Nous sommes très <span class="hw" onclick="t(this)">fiers<span class="pop">fier/fière = مفتخر، افتخار کننده · être fier de = افتخار کردن به</span></span> de notre pays.</p>
-      <p class="if-para-fa">خارجی‌ها اغلب می‌گویند فرانسوی‌ها «شووینیست» هستند — فکر می‌کنند کشورشان از بقیه بهتر است. درست است که در فرانسه نوعی شووینیسم وجود دارد. فرانسوی‌ها خیلی به کشورشان افتخار می‌کنند.</p>
-    </div>
-    <div class="if-block" id="p15">
-      <div class="ts-badge">00:20:33</div>
-      <p class="if-para" dir="ltr">On dit aussi que les Français sont <span class="hw" onclick="t(this)">râleurs<span class="pop">râleur = غرغرو · râler (v) = غر زدن، شکایت کردن</span></span>. « Râler » ça veut dire <span class="hw" onclick="t(this)">se plaindre<span class="pop">se plaindre = شکایت کردن، غر زدن — verbe pronominal</span></span>. C'est vrai que les Français <span class="hs" onclick="t(this)">aiment bien<span class="pop">aimer bien = دوست داشتن (کمتر قوی از «aimer») · il aime bien = کمی دوست دارد</span></span> se plaindre de leur travail. Et vous savez aussi que <span class="hs" onclick="t(this)">le sport national en France<span class="pop">le sport national = ورزش ملی — کنایی: کاری که همه انجام می‌دهند</span></span>, c'est <span class="hw" onclick="t(this)">la grève<span class="pop">grève (nf) = اعتصاب — faire la grève = اعتصاب کردن</span></span>.</p>
-      <p class="if-para-fa">می‌گویند فرانسوی‌ها «غرغرو» هستند. «râler» یعنی شکایت کردن. درست است که فرانسوی‌ها دوست دارند از کارشان شکایت کنند. می‌دانید که «ورزش ملی» در فرانسه اعتصاب است.</p>
-    </div>
-    <div class="if-block" id="p16">
-      <div class="ts-badge">00:23:05</div>
-      <p class="if-para" dir="ltr">Il y a un autre stéréotype qui dit que les Français sont <span class="hw" onclick="t(this)">paresseux<span class="pop">paresseux = تنبل · la paresse (nf) = تنبلی — مخالف: travailleur = پرکار</span></span>. Quelqu'un qui est paresseux, c'est quelqu'un qui <span class="hs" onclick="t(this)">n'aime pas faire d'efforts<span class="pop">faire des efforts = تلاش کردن · ne pas faire d'efforts = تلاش نکردن</span></span>. Vous savez qu'en France <span class="hs" onclick="t(this)">la durée légale du travail<span class="pop">durée légale = مدت قانونی · du travail = کار — 35 heures par semaine</span></span> c'est 35 heures par semaine. Mais <span class="hs" onclick="t(this)">en France nous sommes très productifs<span class="pop">productif = مولد، با بهره‌وری بالا · la productivité (nf) = بهره‌وری</span></span>. <span class="hw" onclick="t(this)">Certes<span class="pop">certes = البته، درست است که — برای پذیرفتن یک نکته قبل از «mais»</span></span>, nous ne travaillons pas beaucoup, mais nous sommes très <span class="hw" onclick="t(this)">efficaces<span class="pop">efficace = مؤثر، کارآمد · l'efficacité (nf) = کارایی</span></span>.</p>
-      <p class="if-para-fa">کلیشه دیگری می‌گوید فرانسوی‌ها تنبل هستند. در فرانسه ساعت کار قانونی ۳۵ ساعت در هفته است. اما فرانسوی‌ها خیلی مولد هستند. البته زیاد کار نمی‌کنند، اما خیلی کارآمد هستند.</p>
-    </div>
-    <div class="if-block" id="p17">
-      <div class="ts-badge">00:24:55</div>
-      <p class="if-para" dir="ltr">Les étrangers parlent souvent de <span class="hs" onclick="t(this)">l'art de vivre à la française<span class="pop">l'art de vivre = هنر زندگی کردن · à la française = به شیوه فرانسوی</span></span>. Par exemple, les Français aiment passer du temps à <span class="hw" onclick="t(this)">discuter<span class="pop">discuter = بحث کردن، گپ زدن · discussion (nf) = گفتگو</span></span>, à boire des cafés, à passer du temps <span class="hw" onclick="t(this)">en terrasse<span class="pop">en terrasse = روی تراس کافه — سنت مهم فرانسوی</span></span> avec leurs amis. Et ça, c'est quelque chose que les étrangers nous <span class="hw" onclick="t(this)">envient<span class="pop">envier = حسادت کردن به · ils nous envient = به ما حسادت می‌کنند</span></span>.</p>
-      <p class="if-para-fa">خارجی‌ها اغلب از «هنر زندگی به شیوه فرانسوی» صحبت می‌کنند. مثلاً فرانسوی‌ها دوست دارند وقت بگذرانند، گپ بزنند، قهوه بنوشند و روی تراس کافه با دوستانشان باشند. این چیزی است که خارجی‌ها به ما حسادت می‌کنند.</p>
-    </div>
-    <div class="if-block" id="p18">
-      <div class="ts-badge">00:26:42</div>
-      <p class="if-para" dir="ltr">La France est aussi connue pour être <span class="hs" onclick="t(this)">le pays des Droits de l'homme<span class="pop">les Droits de l'homme = حقوق بشر — Déclaration des droits de l'homme et du citoyen: 1789</span></span>. Pendant la <span class="hw" onclick="t(this)">Révolution française<span class="pop">Révolution française = انقلاب فرانسه (1789) — تاریخ بسیار مهم</span></span>, nous avons écrit la <span class="hs" onclick="t(this)">Déclaration des droits de l'homme et du citoyen<span class="pop">Déclaration des droits de l'homme = اعلامیه حقوق بشر و شهروند — 1789</span></span>, et ça plus tard a <span class="hw" onclick="t(this)">influencé<span class="pop">influencer = تأثیر گذاشتن · influencé = تأثیر گذاشته</span></span> la Déclaration universelle des droits de l'homme.</p>
-      <p class="if-para-fa">فرانسه همچنین به عنوان کشور حقوق بشر شناخته می‌شود. در انقلاب فرانسه، اعلامیه حقوق بشر و شهروند را نوشتیم که بعداً اعلامیه جهانی حقوق بشر را تحت تأثیر قرار داد.</p>
-    </div>
-    <div class="if-block" id="p19">
-      <div class="ts-badge">00:28:06</div>
-      <p class="if-para" dir="ltr"><span class="hs" onclick="t(this)">Voilà, c'est la fin<span class="pop">voilà = اینک، این بود · c'est la fin = این پایان است</span></span> de ce podcast. J'espère que vous avez appris des choses <span class="hw" onclick="t(this)">intéressantes<span class="pop">intéressant = جالب · مخالف: ennuyeux = کسل‌کننده</span></span> sur les stéréotypes. <span class="hs" onclick="t(this)">N'hésitez pas à<span class="pop">n'hésitez pas à + inf = تردید نکنید در... — دعوت به عمل</span></span> m'envoyer un e-mail. Essayez de <span class="hs" onclick="t(this)">faire un peu de français tous les jours<span class="pop">tous les jours = هر روز — عبارت کلیدی یادگیری زبان</span></span> et de <span class="hw" onclick="t(this)">rester motivés<span class="pop">rester + adj = ماندن + صفت · rester motivé = با انگیزه ماندن</span></span>. Merci et à bientôt !</p>
-      <p class="if-para-fa">خوب، این پایان پادکست است. امیدوارم درباره کلیشه‌ها چیزهای جالبی یاد گرفته باشید. تردید نکنید ایمیل بزنید. سعی کنید هر روز کمی فرانسه یاد بگیرید و با انگیزه بمانید. ممنون و تا زود!</p>
-    </div>
+<div class="para-block"><div class="para-fr">Salut à tous, bienvenue, c’est le huitième épisode du Cottongue podcast.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) J’espère que vous allez bien et que vous êtes en forme. Comme d’habitude, on va passer une trentaine de minutes ensemble et je vais vous parler d’un sujet pour que vous puissiez écouter quelque chose d’intéressant en français.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Mais avant de vous parler du sujet du jour, j’ai envie de vous parler d’un e-mail que j’ai reçu il y a quelques jours. Cet e-mail, c’est John qui me l’a envoyé. John, c’est un auditeur du Cottongue podcast. Donc je vais vous lire son e-mail.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">« Bonjour Hugo, Je vous remercie pour votre podcast. J’apprends le français parce que je veux aider mon plus jeune fils qui apprend le français à l’école. Je n’ai que le temps d’apprendre le français le matin en route au travail, et l’après-midi lorsque je rentre chez moi. Je ne peux qu’apprendre en écoutant des podcasts, parce que j’ai du mal à lire dans les transports publics. Jusqu’à maintenant, j’ai eu du mal à trouver des podcasts avec un niveau approprié pour moi, que je puisse comprendre. Je trouve que votre podcast est parfait pour moi, alors je vous remercie de le faire !</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Vous voyez que John a une très bonne motivation pour apprendre le français, parce qu’il veut aider son fils. Et ça, je pense que c’est très important quand vous voulez réussir à apprendre une langue. C’est très important de savoir quelle est votre motivation ; pourquoi vous apprenez cette langue.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Et vous voyez, John, il arrive à écouter un podcast le matin quand il va au travail et le soir quand il rentre. Grâce à ça, c’est super parce que John peut optimiser son temps et faire un peu de français tous les jours quand il va au travail. John, bravo et continue comme ça ! Ton français est vraiment très bon, donc je pense que tu n’auras pas de problèmes pour aider ton fils à faire ses devoirs. Si vous aussi vous avez envie de m’écrire, de m’envoyer un e-mail, vous pouvez le faire à l’adresse hugo@innerfrench.com.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Alors, aujourd’hui de quoi allons-nous parler ? Eh bien, aujourd’hui j’ai décidé de vous parler des stéréotypes. Mais <span class="hl-v" title="کلیشه">un stéréotype</span>, qu’est-ce que c’est ? Vous avez sûrement déjà entendu ce mot, c’est le même en anglais. Un stéréotype, c’est une opinion toute faite, c’est-à-dire une opinion à laquelle on n’a pas vraiment pensé, on n’a pas vraiment réfléchi. Vous n’avez pas vraiment réfléchi à cette idée, à cette opinion, mais vous pensez qu’elle est vraie. Et, en général, cette opinion, elle concerne un groupe humain, un groupe de personnes. Par exemple, il y a des stéréotypes sur les personnes qui ont les cheveux blonds. Mais il y a aussi des stéréotypes sur les professions par exemple, des stéréotypes sur les policiers ou alors sur les professeurs. Et, évidemment, vous savez qu’il y a aussi beaucoup de stéréotypes sur les nationalités. Justement, aujourd’hui j’ai décidé de vous parler des stéréotypes sur les Français. Je pense que vous en connaissez quelques-uns et peut-être que je vais vous en apprendre de nouveaux. Et, ensemble, on va essayer de voir s’il y a une part de vérité dans ces stéréotypes ou s’ils sont complètement faux.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Mais d’abord, il faut se demander d’où viennent ces stéréotypes, d’où viennent ces clichés, quelles sont leurs origines. Généralement, ils ont une origine socioculturelle. Ça veut dire que les stéréotypes sont partagés à travers l’éducation, à travers les médias, ou à travers l’influence de certains groupes. Mais quelle est l’utilité de ces stéréotypes à votre avis ? En fait, vous savez que dans le monde moderne il y a une quantité énorme d’informations. Donc c’est très difficile pour l’être humain de comprendre et d’analyser toutes ces informations. Grâce aux stéréotypes, nous n’avons pas besoin de tout analyser parce que nous avons des idées, des opinions qui sont toutes faites, qui sont préconçues, et grâce à ces opinions nous n’avons pas besoin de trop réfléchir. On peut penser : « les Français sont comme ça, les Italiens sont comme ci ». Et sans même rencontrer de Français ou d’Italiens, on a une opinion sur eux.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Alors, la première catégorie de stéréotypes qui concernent les Français, c’est la catégorie de la nourriture. Vous savez que la nourriture, c’est très important pour les Français, les choses que l’on mange.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Le premier stéréotype dit que les Français ont inventé les frites. Vous savez, en anglais on dit même « french fries ». Mais, en réalité, ce sont plutôt nos voisins, les Belges, qui les ont inventées. Apparemment, les Belges ont inventé les frites dès la fin du XVIIe siècle. Alors qu’en France, on a commencé à voir et à manger des frites un peu plus tard, le siècle suivant, c’est-à-dire au XVIIIe siècle, en 1789, pendant la Révolution. Donc on peut dire que c’était la Révolution française, mais aussi la « révolution de la frite ».</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ensuite, le deuxième stéréotype, il concerne un petit animal qui est vert et qui peut sauter très haut. Cet animal, c’est la grenouille et vous savez qu’en France, on mange parfois de la grenouille. C’est un plat traditionnel. D’ailleurs, il y a beaucoup de pays étrangers qui appellent les Français « les mangeurs de grenouilles ». Par exemple, les Anglais nous appellent comme ça et également les Allemands . Pourtant, vous savez, on ne mange pas tellement de grenouilles en France. C’est un plat traditionnel, mais nous n’en mangeons pas souvent. Moi, par exemple, je n’ai jamais mangé de grenouilles.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Et vous savez qu’il y a un autre plat classique en France et ce plat, nous sommes les seuls à le manger. Il s’agit des escargots. Vous savez, les escargots, ce sont des mollusques avec une coquille. Ils sont petits et très lents. Et ils ont la particularité d’être hermaphrodites, ça veut dire qu’ils sont à la fois mâles et femelles. Vous savez peut-être qu’en France nous mangeons des escargots avec une sauce un peu spéciale qui est faite avec du beurre et du persil. Et c’est vrai que les escargots sont un plat que l’on mange, je pense, un peu plus souvent que les grenouilles. Mais <span class="hl-v" title="علی‌رغم">malgré</span> ça, les étrangers préfèrent nous appeler « les mangeurs de grenouilles » et pas forcément « les mangeurs d’escargots ».</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Le troisième stéréotype, il concerne l’alcool et en particulier le vin. Les Français ont la réputation de boire du vin à tous les repas. En réalité, on ne boit pas de vin aussi souvent. On peut boire un verre au déjeuner et un ou deux verres au dîner, mais en général c’est tout. Par contre, c’est vrai que les Français boivent de l’alcool très régulièrement. D’ailleurs, il y a un classement qui est fait par l’Organisation mondiale de la santé et ce classement dit que les Français sont les 8es plus gros buveurs d’alcool dans le monde. En moyenne, un Français boit 11,6 litres d’alcool par an, c’est vraiment pas mal ! Pour comparer, au Royaume-Uni, on boit en général 12 litres d’alcool par an. Donc les Britanniques boivent plus d’alcool que les Français. Par contre, les Américains en boivent moins. Ils boivent en moyenne 9 litres d’alcool par an et par habitant. Les Américains sont 24es du classement. Donc on peut conclure qu’en France, nous buvons plus d’alcool que les Américains.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Il y a autre chose qui est assez mauvais pour la santé et qu’on fait beaucoup en France. Est-ce que vous savez ce que c’est ? Vous avez une petite idée de quoi je parle ?</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Évidemment, je parle de la cigarette. Dans les films, quand on représente un Français, il est presque toujours en train de fumer une cigarette. Les Français ont la réputation d’être des gros fumeurs. En réalité, on ne fume pas tant que ça en France. Dans le classement de l’Organisation mondiale de la santé, la France est 61e. En moyenne, un Français fume 1 022 cigarettes par an. Si on compare avec les Américains, eh bien, les Américains fument un peu plus que les Français parce qu’ils sont cinquante-septièmes du classement. Donc la France est 61e et les États-Unis sont 57es. Donc vous voyez, ce cliché, ce stéréotype, est plutôt faux : en France, on ne fume pas tant que ça.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Maintenant, on va passer à la deuxième catégorie et cette catégorie, c’est l’apparence. Et on parlera aussi un peu du style, du style vestimentaire.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Les Français ont la réputation d’être très maigres, très minces. Mais ce stéréotype est un peu dépassé, parce qu’en France, maintenant, il y a aussi un problème d’obésité, puisqu’il y a 6,5 millions d’obèses en France. Ça représente environ 14,5 % de la population adulte. Mais c’est vrai qu’en France, on ne fait pas vraiment attention aux calories. D’ailleurs, il existe une chose que les étrangers appellent « <span class="hl-e" title="پارادوکس فرانسوی">le paradoxe français</span> ». Le paradoxe français, c’est que nous mangeons tout ce que nous voulons (des croissants au beurre, du foie gras, des choses qui sont assez grasses) et <span class="hl-v" title="علی‌رغم">malgré</span> ça les Français sont plutôt minces, ils ne sont pas très gros.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Il y a un autre stéréotype qui concerne la taille des Français. Les étrangers pensent que les Français sont petits. Souvent, ils pensent à Napoléon, et c’est vrai que l’empereur Napoléon n’était pas très grand. Mais depuis Napoléon, les Français ont beaucoup grandi. Donc la moyenne, maintenant, c’est 1,76 m pour les hommes. C’est-à-dire que les Français sont en moyenne un peu plus grands que les Allemands, par exemple. Parce que la taille moyenne pour les Allemands, c’est 1,75 m. Par contre, les Américains sont plus grands que les Français, la moyenne est d’1,80 m. Les Suédois, eux aussi, sont plus grands que nous parce qu’ils ont une moyenne d’1,77 m.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Il y a un troisième stéréotype qui concerne l’apparence des Français, et en particulier leur odeur, leur odeur corporelle. On dit que les Français sentent mauvais, qu’ils sont sales. On dit par exemple que les Français ont inventé le parfum pour ne pas prendre de douches. Et il existe aussi une expression quand vous mettez du déodorant et que vous ne prenez pas de douche, on appelle ça une « douche française », une douche « à la française ». Moi, en général, j’essaye de prendre une douche tous les jours et je pense que les autres Français font la même chose, mais c’est impossible de vérifier. Donc je ne sais pas si les Français sont plus sales que les habitants d’autres pays.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ensuite, il y a un autre stéréotype qui concerne les vêtements et les accessoires des Français, en particulier le béret. Vous savez le béret, c’est un accessoire qui se porte sur la tête, qui est rond et plat. Les étrangers pensent que tous les Français portent un béret. Ça, ça n’est plus vraiment vrai, même si à une certaine époque les paysans de certaines régions portaient des bérets, maintenant on n’en voit plus beaucoup. Maintenant, en France, les jeunes portent souvent des casquettes, des casquettes de baseball. Donc si vous allez dans une ville française, vous verrez plutôt des casquettes et pas vraiment des bérets.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Pour finir sur l’apparence, il y a un dernier stéréotype sur l’élégance. On dit parfois que les Français ont une élégance naturelle. Vous savez que Paris est la capitale de la mode, en tout cas une des capitales de la mode, et qu’il y a de nombreuses marques de luxe et de haute couture qui sont françaises, comme par exemple Dior, Yves Saint Laurent, Chanel, etc. C’est vrai que le style est très important en France, on fait très attention à la manière dont on s’habille. C’est un moyen d’exprimer son identité et sa personnalité. Mais en France, en général, on valorise le naturel. La règle, c’est de ne pas en faire trop. Il faut essayer de rester naturel parce que si vous en faites trop, ça peut être une faute de goût, ça veut dire quelque chose de mauvais goût.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ok, maintenant nous allons passer aux stéréotypes qui concernent le caractère des Français.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Les étrangers disent souvent que les Français sont <span class="hl-v" title="شوونیست">chauvin</span>s. Être « chauvin », ça veut dire que vous pensez que votre pays est meilleur que les autres. Par exemple, vous pensez que la cuisine américaine est la meilleure du monde, ou alors, que le football espagnol est le meilleur du monde. Quand vous comparez avec les autres pays, vous trouvez toujours que le vôtre est le meilleur. Ça, c’est donc être « chauvin », c’est du chauvinisme. C’est vrai qu’en France, il y a une forme de chauvinisme. En général, quand les Français vont en vacances à l’étranger, ils aiment bien comparer avec la France. Ils comparent les restaurants, ils comparent la façon dont les gens sont habillés, etc., etc. C’est vrai qu’en France nous sommes très fiers de notre pays et de notre culture, et parfois nous pouvons être un peu chauvins, malheureusement.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ensuite, il y a un deuxième stéréotype qui dit que les Français sont xénophobes, autrement dit que les Français ont peur des étrangers, qu’ils sont un peu racistes. La preuve, c’est que le parti d’extrême droite en France, le Front national, est de plus en plus populaire. Mais aux dernières élections présidentielles, nous n’avons pas élu la candidate du Front national, Marine Le Pen, nous avons choisi un candidat plus démocratique et qui n’est pas du tout xénophobe, heureusement, nous avons choisi, vous le savez, Emmanuel Macron.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ensuite, on dit aussi que les Français sont râleurs. « Râleur », ça vient du verbe « <span class="hl-v" title="غر زدن">râler</span> » et « râler » ça veut dire « se plaindre ». Par exemple, vous attendez le métro et le métro est en retard alors vous râlez, vous dites : « Ah, c’est énervant ! Ce métro est toujours en retard, il y a toujours des problèmes », etc., etc. Donc ça, ça veut dire se plaindre. C’est vrai que les Français sont un peu râleurs. Ils aiment bien, par exemple, se plaindre de leur ville ou alors se plaindre de leurs pays, se plaindre de leur travail. Et vous savez aussi que le sport national en France, c’est la grève. La « grève », ça veut dire quand vous n’allez pas au travail pour protester, pour manifester.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Un autre défaut qui est souvent cité chez les Français, c’est leur arrogance. Les étrangers pensent que les Français se sentent supérieurs aux autres. Par exemple, quand ils vont en vacances en France, ils ont un peu l’impression que certains Français les méprisent, que les Français ont un complexe de supériorité. Personnellement je ne sais pas si c’est vrai. À mon avis, c’est un peu comme dans tous les pays, il y a des personnes qui sont <span class="hl-v" title="متکبر">arrogant</span>es et heureusement il y en a beaucoup d’autres qui ne le sont pas.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ce qui donne l’impression aux étrangers que les Français sont <span class="hl-v" title="متکبر">arrogant</span>s, c’est aussi qu’ils sont parfois malpolis. Par exemple, ils ne disent pas « bonjour », « au revoir », « merci », « pardon ». À mon avis, c’est <span class="hl-v" title="کلیشه">un stéréotype</span> qui concerne surtout les Parisiens et les habitants des grandes villes. Vous savez que quand on habite dans une grande ville, en général on est toujours très occupé, on a beaucoup de choses à faire et on n’a pas toujours le temps d’être sympa avec les touristes. C’est la même chose si vous allez à New York ou à Londres, par exemple. Les gens là-bas sont très occupés et donc ils ne sont pas toujours très polis.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Il y a un autre stéréotype qui dit que les Français sont <span class="hl-v" title="تنبل">paresseux</span>. Quelqu’un qui est paresseux, c’est quelqu’un qui n’aime pas être actif, qui n’aime pas faire d’efforts, c’est quelqu’un qui aime ne rien faire. Vous savez qu’en France la durée légale du travail c’est 35 heures par semaine. Et ça, c’est une durée légale qui est plus basse que dans beaucoup de pays. Alors, à cause de ça, les étrangers pensent que les Français ne travaillent pas beaucoup et qu’ils sont paresseux. Mais, heureusement, en France nous sommes très productifs. La France est l’un des pays les plus productifs au monde. Ça veut dire que les travailleurs sont très efficaces. Certes, nous ne travaillons pas beaucoup, mais quand nous travaillons nous sommes très efficaces, donc ça compense un peu.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Et il y a un autre stéréotype, qui est plutôt drôle, qui dit que les Français ne sont pas courageux. Vous savez que pendant la Seconde Guerre mondiale, les Français ont décidé de signer l’armistice. Ça veut dire ils ont renoncé au combat, ils ont décidé de ne pas se battre contre les nazis. À cause de ça, on dit souvent que les Français ne sont pas courageux. Heureusement, nous avons nos amis américains qui sont toujours là pour nous aider quand nous avons des problèmes.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Ça, c’était pour les stéréotypes qui concernent les défauts des Français. Mais nous avons aussi quelques qualités. Les étrangers parlent souvent de l’art de vivre à la française. « L’art de vivre », ça veut dire le style de vie français. Par exemple, vous savez que la cuisine française est très réputée, que les Français aiment passer du temps à discuter, à boire des cafés, à passer du temps en terrasse avec leurs amis. Et ça, c’est quelque chose que les étrangers nous envient.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Paris est la capitale de la mode, mais on dit aussi parfois que c’est la capitale de l’amour. Il y a beaucoup de films romantiques qui se passent à Paris et on pense aussi que les Français sont romantiques. Malheureusement, nos Présidents ne montrent pas l’exemple. Peut-être que vous avez entendu que nos anciens Présidents ne sont pas toujours très fidèles et très romantiques avec leurs compagnes. Mais en français quand un homme trompe sa femme, ça veut dire quand un homme va voir une autre femme que la sienne, on ne dit pas que c’est une « affaire » (comme en anglais), mais on dit plutôt que c’est une « aventure ». Donc vous voyez, c’est une vision un peu plus romantique de l’infidélité.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) La France est aussi connue pour être le pays des Droits de l’homme. Pendant la Révolution française, nous avons écrit la Déclaration des droits de l’homme et du citoyen, et ça, c’est un texte qui plus tard a influencé la Déclaration universelle des droits de l’homme adoptée par les Nations unies.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Et pour finir, on dit parfois que les Français sont très <span class="hl-v" title="متسامح">tolérant</span>s. Vous savez qu’en France il y a une grande diversité culturelle. La France a longtemps été une terre d’immigration. La cohabitation n’est pas toujours facile, évidemment, le racisme existe en France. Mais, heureusement, les Français sont de plus en plus ouverts d’esprit et de plus en plus tolérants. En France, surtout depuis les attentats (les attaques terroristes), il y a un sentiment de fraternité et de solidarité. On pense qu’il faut s’aider mutuellement, il faut s’aider les uns les autres. Les Français essayent d’être solidaires entre eux, peu importe leurs origines ou leurs religions.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Voilà, c’est la fin de ce podcast. J’espère que vous avez appris des choses intéressantes sur les stéréotypes. Si vous avez envie de me parler des stéréotypes dans votre pays, n’hésitez pas à m’envoyer un e-mail, ou si vous avez des questions, vous pouvez aussi me contacter.</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
+<div class="para-block"><div class="para-fr">%20;) Merci à tous de m’avoir écouté. La semaine prochaine, nous parlerons de la décroissance. D’ici là, essayez de faire un peu de français tous les jours et de rester motivés. Merci et à bientôt !</div><div class="para-fa" style="color:#c0bab5;font-size:12px">ترجمه به زودی...</div></div>
 
 </div>
-<script>
-function t(el){
-  const open=el.classList.contains('open');
-  document.querySelectorAll('.hw.open,.hs.open,.hg.open').forEach(e=>{e.classList.remove('open');if(e._t){clearTimeout(e._t);e._t=null;}});
-  if(!open){el.classList.add('open');el._t=setTimeout(()=>{el.classList.remove('open');el._t=null;},4000);}
-}
-</script>
-
-
-<!-- 🎙️ Voice Recorder -->
-<style>
-#rec-widget{
-  background:var(--white,#fcfbfd);
-  border:1px solid rgba(217,206,184,.6);
-  border-radius:14px;padding:14px 16px;
-  margin:16px 0;box-shadow:0 3px 12px rgba(31,58,95,.06);
-}
-.rec-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1.5px;margin-bottom:10px}
-.rec-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-#rec-btn{
-  display:flex;align-items:center;gap:6px;
-  padding:8px 16px;border:none;border-radius:10px;
-  background:#1e3a5f;color:#f5f0e8;
-  font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;
-  cursor:pointer;transition:all .2s;
-}
-#rec-btn.recording{background:#c0392b;animation:pulse 1s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
-#rec-timer{font-size:12px;color:#8a8275;font-variant-numeric:tabular-nums}
-.rec-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.rec-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px}
-.rec-item audio{flex:1;height:30px;accent-color:#1e3a5f}
-.rec-item-date{font-size:10px;color:#8a8275;flex-shrink:0}
-.rec-del{background:none;border:none;color:#c0392b;cursor:pointer;font-size:14px;opacity:.5;flex-shrink:0}
-.rec-del:hover{opacity:1}
-.rec-empty{font-size:12px;color:#b0a090;text-align:center;padding:8px 0}
-</style>
-
-<div id="rec-widget">
-  <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
-  <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
-    <span id="rec-timer">۰:۰۰</span>
-    <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
-  </div>
-  <div class="rec-list" id="rec-list"></div>
-</div>
-
+<div class="gram-nav"><a class="gnav-btn" href="IF_ep07.html">&#8594; اپیزود 7</a><span style="font-size:11px;color:#b0a898">InnerFrench</span><a class="gnav-btn" href="IF_ep09.html">اپیزود 9 &#8592;</a></div>
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ خوانده شد</button></div>
 <script>
 (function(){
-  const PAGE = location.pathname.split('/').pop().split('?')[0];
-  const REC_KEY = 'hoda_recs_' + PAGE;
-  let mediaRecorder = null, chunks = [], timerInterval = null, seconds = 0;
-  
-  function toFa(n){ return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]); }
-  function fmtTime(s){ return toFa(Math.floor(s/60))+':'+toFa(s%60<10?'0'+s%60:s%60); }
-  
-  window.toggleRec = async function(){
-    const btn = document.getElementById('rec-btn');
-    if(!mediaRecorder || mediaRecorder.state==='inactive'){
-      try{
-        const stream = await navigator.mediaDevices.getUserMedia({audio:true});
-        mediaRecorder = new MediaRecorder(stream);
-        chunks = [];
-        mediaRecorder.ondataavailable = e => chunks.push(e.data);
-        mediaRecorder.onstop = () => {
-          const blob = new Blob(chunks, {type:'audio/webm'});
-          saveRec(blob);
-          stream.getTracks().forEach(t=>t.stop());
-        };
-        mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
-        btn.classList.add('recording');
-        seconds = 0;
-        timerInterval = setInterval(()=>{
-          seconds++;
-          document.getElementById('rec-timer').textContent = fmtTime(seconds);
-          if(seconds >= 300){ toggleRec(); } // max 5 min
-        },1000);
-      }catch(e){
-        alert('دسترسی به میکروفون لازمه. لطفاً اجازه بده.');
-      }
-    } else {
-      mediaRecorder.stop();
-      btn.textContent = '🎙️ ضبط جدید';
-      btn.classList.remove('recording');
-      clearInterval(timerInterval);
-      document.getElementById('rec-timer').textContent = toFa('0')+':'+toFa('00');
-    }
-  };
-  
-  function saveRec(blob){
-    const reader = new FileReader();
-    reader.onload = function(e){
-      const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
-      recs.unshift({
-        data: e.target.result,
-        date: new Date().toLocaleString('fa-IR'),
-        ts: Date.now()
-      });
-      localStorage.setItem(REC_KEY, JSON.stringify(recs.slice(0,20))); // max 20
-      renderRecs();
-    };
-    reader.readAsDataURL(blob);
-  }
-  
-  function delRec(ts){
-    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]').filter(r=>r.ts!==ts);
-    localStorage.setItem(REC_KEY, JSON.stringify(recs));
-    renderRecs();
-  }
-  window.delRec = delRec;
-  
-  function renderRecs(){
-    const list = document.getElementById('rec-list');
-    const recs = JSON.parse(localStorage.getItem(REC_KEY)||'[]');
-    if(!recs.length){
-      list.innerHTML='<div class="rec-empty">هنوز ضبطی نداری — اولین ضبطت رو بکن! 🎙️</div>';
-      return;
-    }
-    list.innerHTML = recs.map(r=>`
-      <div class="rec-item">
-        <audio controls src="${r.data}" style="flex:1;height:30px;accent-color:#1e3a5f"></audio>
-        <span class="rec-item-date">${r.date}</span>
-        <button class="rec-del" onclick="delRec(${r.ts})" title="حذف">🗑</button>
-      </div>
-    `).join('');
-  }
-  
-  renderRecs();
-})();
-</script>
-
-<!-- ✅ Mark as Done -->
-<style>
-#done-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:rgba(255,253,246,.96);backdrop-filter:blur(12px);
-  border-top:1px solid rgba(217,206,184,.6);
-  padding:10px 16px;
-  display:flex;align-items:center;gap:10px;
-}
-#done-btn{
-  flex:1;padding:10px;
-  background:#1e3a5f;color:#f5f0e8;
-  border:none;border-radius:10px;
-  font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;
-  cursor:pointer;transition:all .25s;
-}
-#done-btn.done{background:#2e8b6b}
-#done-btn:hover{opacity:.9}
-body{padding-bottom:70px!important}
-</style>
-<div id="done-bar">
-  <button id="done-btn" onclick="markDone()">✓ خوانده شد</button>
-</div>
-<script>
-(function(){
-  const page = location.pathname.split('/').pop().split('?')[0];
-  const title = document.title.split('|')[0].trim().replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim();
-  
-  // Track visit
-  const history = JSON.parse(localStorage.getItem('hoda_history')||'[]');
-  const entry = {
-    page, title,
-    time: new Date().toLocaleString('fa-IR'),
-    ts: Date.now()
-  };
-  // Remove duplicate
-  const filtered = history.filter(h => h.page !== page);
-  filtered.unshift(entry);
-  localStorage.setItem('hoda_history', JSON.stringify(filtered.slice(0,200)));
-  
-  // Also update visited
-  const visited = JSON.parse(localStorage.getItem('hoda_visited')||'[]');
-  const vi = visited.findIndex(v => v.file === page);
-  const ve = {file:page, title, time:new Date().toLocaleDateString('fa-IR')};
-  if(vi>=0) visited[vi]=ve; else visited.unshift(ve);
-  localStorage.setItem('hoda_visited', JSON.stringify(visited.slice(0,100)));
-  
-  // Check if already done
-  const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
-  const btn = document.getElementById('done-btn');
-  if(done[page]){
-    btn.textContent = '✓ خوانده شده';
-    btn.classList.add('done');
-  }
-  
-  window.markDone = function(){
-    const done = JSON.parse(localStorage.getItem('hoda_done')||'{}');
-    done[page] = new Date().toISOString();
-    localStorage.setItem('hoda_done', JSON.stringify(done));
-    
-    // Add to history as "completed"
-    const h = JSON.parse(localStorage.getItem('hoda_history')||'[]');
-    h.unshift({page, title, time: new Date().toLocaleString('fa-IR'), ts: Date.now(), completed: true});
-    localStorage.setItem('hoda_history', JSON.stringify(h.slice(0,200)));
-    
-    // Update status
-    const status = JSON.parse(localStorage.getItem('hoda_status')||'{}');
-    status[page] = 'done';
-    localStorage.setItem('hoda_status', JSON.stringify(status));
-    
-    btn.textContent = '✓ خوانده شده';
-    btn.classList.add('done');
+  const page=location.pathname.split('/').pop();
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[page]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page,title:document.title.split('|')[0].trim(),time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[page]=new Date().toISOString();localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
   };
 })();
 </script>
-
 </body>
 </html>
