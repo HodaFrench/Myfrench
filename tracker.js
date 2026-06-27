@@ -365,6 +365,9 @@ async function hodaShowMyActivity() {
     html += '<p style="text-align:center;color:#8a8275;padding:20px;font-size:13px">هنوز نکته یا سؤالی ثبت نکرده‌ای</p>';
   }
   
+  // لینک به صفحه کامل سوال‌ها
+  const prefix = hodaPrefix();
+  html += `<a href="${prefix}mes_questions.html" style="display:block;text-align:center;margin-top:12px;padding:10px;background:#7a5ba8;color:#fff;text-decoration:none;border-radius:10px;font-size:13px;font-weight:700">📋 دیدن همه سوال‌ها و پاسخ‌ها</a>`;
   html += '</div>';
   return html;
 }
