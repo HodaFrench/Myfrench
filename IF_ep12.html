@@ -32,6 +32,21 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 #done-btn{flex:1;padding:10px;background:#1e3a5f;color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
 #done-btn.done{background:#2e8b6b}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+
+.audio-player{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);border-radius:16px;padding:18px 20px;margin:16px 0;box-shadow:0 4px 20px rgba(30,58,95,.25)}
+.ap-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ap-icon{width:46px;height:46px;background:rgba(255,255,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ap-info{flex:1;min-width:0;color:#fff}
+.ap-title{font-size:13px;font-weight:700;margin-bottom:2px}
+.ap-sub{font-size:11px;opacity:.8}
+.ap-audio{width:100%;height:40px;border-radius:8px;outline:none}
+.ap-audio::-webkit-media-controls-panel{background:rgba(255,255,255,.95)}
+.ap-controls{display:flex;align-items:center;gap:10px;margin-top:10px}
+.ap-speed{display:flex;gap:6px;flex-wrap:wrap}
+.ap-speed-btn{background:rgba(255,255,255,.15);color:#fff;border:none;border-radius:7px;padding:5px 11px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Estedad',sans-serif;transition:background .15s}
+.ap-speed-btn:hover{background:rgba(255,255,255,.25)}
+.ap-speed-btn.active{background:#fff;color:#1e3a5f}
+.ap-fallback{display:inline-block;margin-top:10px;color:rgba(255,255,255,.9);font-size:11.5px;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -45,6 +60,28 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
   <div style="font-size:13px;opacity:.85">ورزش و سلامت</div>
 </div>
 <div class="wrap">
+
+<div class="audio-player">
+  <div class="ap-top">
+    <div class="ap-icon">🎧</div>
+    <div class="ap-info">
+      <div class="ap-title">گوش دادن به اپیزود 12</div>
+      <div class="ap-sub">می‌توانید سرعت پخش را تنظیم کنید</div>
+    </div>
+  </div>
+  <audio class="ap-audio" id="ifAudio" controls preload="none">
+    <source src="https://mcdn.podbean.com/mf/web/tkufid/12_LCP012_-_Bastille_Day.mp3" type="audio/mpeg">
+    مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+  </audio>
+  <div class="ap-controls">
+    <div class="ap-speed">
+      <button class="ap-speed-btn" onclick="setSpeed(0.75,this)">۰.۷۵×</button>
+      <button class="ap-speed-btn active" onclick="setSpeed(1,this)">۱×</button>
+      <button class="ap-speed-btn" onclick="setSpeed(1.25,this)">۱.۲۵×</button>
+      <button class="ap-speed-btn" onclick="setSpeed(1.5,this)">۱.۵×</button>
+    </div>
+  </div>
+</div>
 <div class="theme-box"><div class="theme-label">🎯 موضوع اپیزود</div><div style="font-size:13.5px">فواید ورزش برای سلامت جسم و روح</div></div>
 <div class="legend">
   <div class="legend-item"><div class="legend-dot" style="background:rgba(30,58,95,.3)"></div><span>واژگان — ماوس را نگه دارید برای معنی</span></div>
@@ -105,6 +142,15 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
     btn.textContent='✓ خوانده شده';btn.classList.add('done');
   };
 })();
+</script>
+
+<script>
+function setSpeed(rate, btn){
+  const audio = document.getElementById('ifAudio');
+  if(audio){ audio.playbackRate = rate; }
+  document.querySelectorAll('.ap-speed-btn').forEach(b=>b.classList.remove('active'));
+  if(btn){ btn.classList.add('active'); }
+}
 </script>
 </body>
 </html>
