@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tâche 2 — Anniversaire au restaurant | TCF Canada</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--navy-soft:#41618a;--gold:#b07a4a;--gold-soft:#c4a572;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.06) 31px,rgba(65,97,138,0.06) 32px);color:var(--ink);line-height:1.9;padding:0 0 80px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-soft));color:var(--cream);padding:32px 24px 28px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:rgba(255,255,255,.05);border-radius:50%}
+.hero-badge{display:inline-block;background:rgba(196,165,114,.2);border:1px solid rgba(196,165,114,.4);border-radius:20px;padding:5px 16px;font-size:11px;letter-spacing:1.5px;color:var(--gold-soft);margin-bottom:14px}
+.hero h1{font-family:'Roboto',serif;font-size:25px;font-weight:700;margin-bottom:8px;line-height:1.3;position:relative}
+.hero .sub{font-size:13px;opacity:.88;line-height:1.8;position:relative}
+.wrap{max-width:840px;margin:0 auto;padding:0 1rem}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line)}
+.card-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 13px;border-radius:20px;margin-bottom:14px}
+
+/* consigne */
+.consigne{background:linear-gradient(135deg,rgba(176,80,111,.07),rgba(176,80,111,.03));border-right:4px solid var(--rose)}
+.consigne .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.consigne-fr{font-family:'Roboto',serif;font-size:15px;line-height:2;color:var(--ink);direction:ltr;text-align:left;font-style:italic}
+.consigne-meta{display:inline-block;margin-top:10px;background:rgba(176,80,111,.1);color:var(--rose);font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px}
+
+/* explication tâche */
+.about{border-right:4px solid var(--gold);background:linear-gradient(135deg,rgba(176,122,74,.05),transparent)}
+.about .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.about-p{font-size:13.5px;line-height:1.95;color:#3a3833}
+.about-p strong{color:var(--navy)}
+
+/* questions */
+.q-card{background:var(--white);border-radius:16px;margin:12px 0;box-shadow:0 3px 12px rgba(31,58,95,.06);border:1px solid var(--line);overflow:hidden}
+.q-head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(135deg,rgba(30,58,95,.04),transparent);border-bottom:1px solid var(--line)}
+.q-num{width:34px;height:34px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Roboto',serif;font-weight:800;font-size:15px;flex-shrink:0}
+.q-keyword{font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px}
+.q-body{padding:16px 18px}
+.q-fr{font-family:'Roboto',serif;font-size:15.5px;font-weight:600;color:var(--navy);direction:ltr;text-align:left;line-height:1.7;margin-bottom:6px}
+.q-fa{font-size:13px;color:var(--gray);margin-bottom:12px}
+.q-better{background:rgba(46,139,107,.06);border-radius:10px;padding:12px 14px;border-right:3px solid var(--green)}
+.q-better-label{font-size:10.5px;font-weight:800;color:var(--green-d);letter-spacing:1px;margin-bottom:5px}
+.q-better-fr{font-family:'Roboto',serif;font-size:14px;color:var(--ink);direction:ltr;text-align:left;line-height:1.8}
+.q-better-fr .vk{background:rgba(30,58,95,.09);color:var(--navy);border-radius:3px;padding:1px 4px;font-weight:600}
+.q-better-fr .cn{background:rgba(176,122,74,.13);color:#8a5a2a;border-radius:3px;padding:1px 4px;font-weight:600}
+.q-better-fa{font-size:12.5px;color:#3a3833;margin-top:6px}
+.q-tip{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:12px;color:#7a5ba8;background:rgba(122,91,168,.06);border-radius:8px;padding:9px 11px;line-height:1.7}
+
+/* grammaire */
+.gram{border-right:4px solid var(--purple)}
+.gram .card-label{background:rgba(122,91,168,.13);color:#5a3b88}
+.gram-item{background:rgba(122,91,168,.05);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.gram-item:last-child{margin-bottom:0}
+.gram-title{font-size:14px;font-weight:800;color:#5a3b88;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.gram-rule{font-size:13px;line-height:1.9;color:#3a3833}
+.gram-ex{background:#fff;border-radius:8px;padding:9px 12px;margin-top:8px;font-family:'Roboto',serif;font-size:13px;direction:ltr;text-align:left;border-right:3px solid var(--purple);line-height:1.9}
+.gram-ex .em{color:#5a3b88;font-weight:700}
+
+/* mind map */
+.mindmap{border-right:4px solid var(--rose);background:linear-gradient(135deg,rgba(176,80,111,.04),transparent)}
+.mindmap .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.mm-center{text-align:center;margin:8px 0 18px}
+.mm-core{display:inline-block;background:linear-gradient(135deg,#b0506f,#8a3a55);color:#fff;font-size:16px;font-weight:800;padding:12px 26px;border-radius:30px;box-shadow:0 4px 14px rgba(176,80,111,.3)}
+.mm-branches{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mm-branch{background:var(--white);border-radius:14px;padding:14px;border:1.5px solid var(--line)}
+.mm-branch-h{font-size:13.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1.5px dashed}
+.mm-list{display:flex;flex-direction:column;gap:5px}
+.mm-li{font-size:12.5px;color:#3a3833;display:flex;gap:6px;align-items:baseline}
+.mm-li .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;direction:ltr}
+
+/* vocab */
+.vocab{border-right:4px solid var(--navy)}
+.vocab .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.voc-cat{margin-bottom:16px}
+.voc-cat:last-child{margin-bottom:0}
+.voc-cat-h{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.voc-grid{display:flex;flex-direction:column;gap:6px}
+.voc-row{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:9px;padding:9px 12px}
+.voc-fr{font-family:'Roboto',serif;font-size:13.5px;font-weight:600;color:var(--green-d);direction:ltr;flex-shrink:0;min-width:44%}
+.voc-fa{font-size:12.5px;color:#3a3833;flex:1}
+
+/* tips */
+.tips{border-right:4px solid var(--gold);background:linear-gradient(135deg,rgba(176,122,74,.05),transparent)}
+.tips .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.tip-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;font-size:13.5px;line-height:1.85}
+.tip-row:last-child{margin-bottom:0}
+.tip-ic{font-size:17px;flex-shrink:0}
+
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:11px;background:var(--navy);color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#2e8b6b}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+@media(max-width:560px){.mm-branches{grid-template-columns:1fr}.voc-fr{min-width:40%}}
+</style>
+</head>
+<body>
+<span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:52%;left:42%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:78%;left:62%">Hoda Khedmati</span>
+
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="../index.html">&#8592; TCF</a>
+  <span class="hoda-back-label">🎤 Expression Orale — Tâche 2</span>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">🎤 TCF CANADA · EXPRESSION ORALE · TÂCHE 2 · B1–B2</div>
+  <h1>🍽️ Anniversaire au restaurant</h1>
+  <div class="sub">جشن تولد در رستوران — تمرین سؤال پرسیدن برای کسب اطلاعات</div>
+</div>
+
+<div class="wrap">
+
+<!-- CONSIGNE -->
+<div class="card consigne">
+  <span class="card-label">📋 LA SITUATION — موقعیت</span>
+  <div class="consigne-fr">Je suis employé(e) dans un restaurant. Vous envisagez d'y organiser une fête d'anniversaire familiale. Vous me posez des questions pour obtenir des renseignements (capacité d'accueil, menus proposés, tarifs, modalités de réservation, etc.).</div>
+  <div class="consigne-meta">⏱ ۳ دقیقه · ۵ تا ۱۰ سؤال</div>
+  <div style="font-size:13px;line-height:1.95;color:#3a3833;margin-top:12px">🇮🇷 <strong>ترجمه:</strong> من کارمند یک رستوران هستم. شما قصد دارید یک جشن تولد خانوادگی آنجا برگزار کنید. شما از من سؤال می‌پرسید تا اطلاعات کسب کنید (ظرفیت پذیرش، منوهای پیشنهادی، قیمت‌ها، شرایط رزرو و...).</div>
+</div>
+
+<!-- ABOUT TÂCHE -->
+<div class="card about">
+  <span class="card-label">🎯 CETTE TÂCHE — این تاچه چیست؟</span>
+  <div class="about-p">
+  در <strong>Tâche 2</strong> بیان شفاهی، شما باید <strong>سؤال بپرسید</strong> تا اطلاعات کسب کنید. آزمون‌گر نقش یک شخص (اینجا کارمند رستوران) را بازی می‌کند و شما باید با <strong>۵ تا ۱۰ سؤال مرتبط</strong> اطلاعات لازم را بگیرید.<br><br>
+  🔑 <strong>هدف اصلی:</strong> نشان دادن توانایی <strong>ساختن انواع سؤال</strong> — با est-ce que، با inversion، با کلمات پرسشی (combien، quel، comment...).<br>
+  ⚠️ <strong>نکته مهم:</strong> سؤال‌ها باید <strong>متنوع</strong> باشند. اگر همه را با «Est-ce que» بپرسی، امتیاز کمتری می‌گیری. سعی کن از هر سه نوع سؤال استفاده کنی.
+  </div>
+</div>
+
+<!-- LES 3 TYPES DE QUESTIONS -->
+<div class="card gram">
+  <span class="card-label">📚 LES 3 TYPES DE QUESTIONS — سه نوع سؤال</span>
+  <div class="gram-item">
+    <div class="gram-title">🟢 ۱. سؤال با «Est-ce que» (ساده‌ترین)</div>
+    <div class="gram-rule">راحت‌ترین راه. کافیست <strong>Est-ce que</strong> را اول جمله خبری بگذاری. برای شروع خوب است ولی نباید همه سؤال‌ها این‌طور باشند.</div>
+    <div class="gram-ex"><span class="em">Est-ce que</span> vous acceptez les groupes ?<br><span style="color:#8a8275;font-size:12px">↳ آیا گروه‌ها را می‌پذیرید؟</span></div>
+  </div>
+  <div class="gram-item">
+    <div class="gram-title">🔵 ۲. سؤال با وارونگی (Inversion) — رسمی‌تر</div>
+    <div class="gram-rule">فعل و فاعل را <strong>جابجا</strong> می‌کنی و با خط تیره وصل می‌کنی. این روش <strong>رسمی‌تر</strong> است و در آزمون امتیاز بیشتری دارد.</div>
+    <div class="gram-ex"><span class="em">Acceptez-vous</span> les groupes ? · <span class="em">Faut-il</span> réserver ? · <span class="em">Proposez-vous</span> des menus ?<br><span style="color:#8a8275;font-size:12px">↳ فعل-فاعل با خط تیره</span></div>
+  </div>
+  <div class="gram-item">
+    <div class="gram-title">🟠 ۳. سؤال با کلمه پرسشی — برای اطلاعات خاص</div>
+    <div class="gram-rule">با کلمات پرسشی: <strong>combien</strong> (چقدر)، <strong>quel/quelle</strong> (چه/کدام)، <strong>comment</strong> (چطور)، <strong>où</strong> (کجا)، <strong>quand</strong> (کِی). این‌ها اطلاعات دقیق می‌گیرند.</div>
+    <div class="gram-ex"><span class="em">Combien</span> de personnes... ? <span class="em">Quels</span> sont vos prix ? <span class="em">Comment</span> se passe la réservation ?</div>
+  </div>
+</div>
+
+<!-- LES QUESTIONS -->
+<div style="margin:22px 0 10px;text-align:center">
+  <span style="display:inline-block;background:var(--navy);color:#fff;font-size:13px;font-weight:700;padding:8px 22px;border-radius:20px">💬 ۱۲ سؤال نمونه با نسخه بهتر</span>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">1</div><span class="q-keyword">🎉 LES GROUPES</span></div>
+  <div class="q-body">
+    <div class="q-fr">Est-ce que vous acceptez les groupes pour les anniversaires ?</div>
+    <div class="q-fa">آیا برای جشن تولد گروه‌ها را می‌پذیرید؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr">Bonjour ! Je voudrais <span class="vk">organiser un anniversaire</span> en famille. Est-ce que vous <span class="vk">accueillez les groupes</span> ?</div>
+      <div class="q-better-fa">سلام! می‌خواهم یک جشن تولد خانوادگی برگزار کنم. آیا گروه‌ها را می‌پذیرید؟</div>
+    </div>
+    <div class="q-tip">💡 با یک سلام و معرفی موقعیت شروع کن تا گفتگو طبیعی‌تر شود.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">2</div><span class="q-keyword">👥 LA CAPACITÉ</span></div>
+  <div class="q-body">
+    <div class="q-fr">Combien de personnes pouvez-vous accueillir ?</div>
+    <div class="q-fa">چند نفر را می‌توانید پذیرش کنید؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="cn">Nous serons une vingtaine.</span> <span class="vk">Combien de personnes</span> pouvez-vous accueillir au maximum ?</div>
+      <div class="q-better-fa">ما حدود بیست نفر خواهیم بود. حداکثر چند نفر را می‌توانید پذیرش کنید؟</div>
+    </div>
+    <div class="q-tip">💡 «une vingtaine» = حدود بیست — راهی شیک برای گفتن تعداد تقریبی.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">3</div><span class="q-keyword">📅 LA RÉSERVATION</span></div>
+  <div class="q-body">
+    <div class="q-fr">Faut-il réserver à l'avance ?</div>
+    <div class="q-fa">آیا باید از قبل رزرو کرد؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Faut-il</span> réserver à l'avance, et si oui, <span class="vk">combien de temps</span> avant ?</div>
+      <div class="q-better-fa">آیا باید از قبل رزرو کرد، و اگر بله، چقدر قبل‌تر؟</div>
+    </div>
+    <div class="q-tip">💡 «Faut-il...?» = آیا لازم است؟ — سؤال با inversion، رسمی و درست.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">4</div><span class="q-keyword">🍽️ LES MENUS</span></div>
+  <div class="q-body">
+    <div class="q-fr">Proposez-vous des menus spéciaux ?</div>
+    <div class="q-fa">آیا منوهای ویژه پیشنهاد می‌دهید؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Proposez-vous</span> des <span class="vk">menus spéciaux</span> pour les anniversaires ou les groupes ?</div>
+      <div class="q-better-fa">آیا منوهای ویژه برای تولد یا گروه‌ها پیشنهاد می‌دهید؟</div>
+    </div>
+    <div class="q-tip">💡 «Proposez-vous» با inversion ساخته شده — متنوع‌تر از Est-ce que.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">5</div><span class="q-keyword">📋 LE CHOIX</span></div>
+  <div class="q-body">
+    <div class="q-fr">Peut-on choisir le menu à l'avance ?</div>
+    <div class="q-fa">آیا می‌توان منو را از قبل انتخاب کرد؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Peut-on</span> choisir le menu à l'avance, ou faut-il décider sur place ?</div>
+      <div class="q-better-fa">آیا می‌توان منو را از قبل انتخاب کرد، یا باید در محل تصمیم گرفت؟</div>
+    </div>
+    <div class="q-tip">💡 «Peut-on...?» = آیا می‌توان؟ — شکل رسمی «Est-ce qu'on peut».</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">6</div><span class="q-keyword">💰 LES PRIX</span></div>
+  <div class="q-body">
+    <div class="q-fr">Quels sont vos prix pour un groupe ?</div>
+    <div class="q-fa">قیمت‌های شما برای یک گروه چقدر است؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Quels sont</span> vos <span class="vk">tarifs</span> pour un groupe, et y a-t-il un <span class="vk">prix par personne</span> ?</div>
+      <div class="q-better-fa">تعرفه‌های شما برای یک گروه چقدر است، و آیا قیمت به ازای هر نفر دارید؟</div>
+    </div>
+    <div class="q-tip">💡 «tarif» مترادف رسمی‌تر «prix» است — واژگان متنوع امتیاز می‌آورد.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">7</div><span class="q-keyword">🚪 LA SALLE PRIVÉE</span></div>
+  <div class="q-body">
+    <div class="q-fr">Y a-t-il une salle privée disponible ?</div>
+    <div class="q-fa">آیا سالن خصوصی در دسترس است؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Y a-t-il</span> une <span class="vk">salle privée</span> où nous pourrions être tranquilles ?</div>
+      <div class="q-better-fa">آیا سالن خصوصی هست که بتوانیم راحت باشیم؟</div>
+    </div>
+    <div class="q-tip">💡 «Y a-t-il...?» = آیا وجود دارد؟ — شکل رسمی «Est-ce qu'il y a».</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">8</div><span class="q-keyword">🎂 LE GÂTEAU</span></div>
+  <div class="q-body">
+    <div class="q-fr">Est-ce que vous proposez un gâteau d'anniversaire ?</div>
+    <div class="q-fa">آیا کیک تولد ارائه می‌دهید؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr">Pour l'occasion, <span class="vk">proposez-vous</span> un <span class="vk">gâteau d'anniversaire</span> ?</div>
+      <div class="q-better-fa">برای این مناسبت، آیا کیک تولد ارائه می‌دهید؟</div>
+    </div>
+    <div class="q-tip">💡 «Pour l'occasion» = برای این مناسبت — عبارتی طبیعی برای شروع سؤال.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">9</div><span class="q-keyword">🎈 LA DÉCORATION</span></div>
+  <div class="q-body">
+    <div class="q-fr">Peut-on apporter sa propre décoration ?</div>
+    <div class="q-fa">آیا می‌توان تزئینات خودمان را بیاوریم؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Est-il possible d'</span>apporter notre <span class="vk">propre décoration</span> ?</div>
+      <div class="q-better-fa">آیا امکان دارد تزئینات خودمان را بیاوریم؟</div>
+    </div>
+    <div class="q-tip">💡 «Est-il possible de...?» = آیا امکان دارد؟ — ساختاری مودبانه و شیک.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">10</div><span class="q-keyword">⏰ LA DURÉE</span></div>
+  <div class="q-body">
+    <div class="q-fr">Combien de temps peut durer la fête ?</div>
+    <div class="q-fa">جشن چقدر می‌تواند طول بکشد؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Combien de temps</span> pouvons-nous rester ? Y a-t-il une <span class="vk">heure de fin</span> ?</div>
+      <div class="q-better-fa">چقدر می‌توانیم بمانیم؟ آیا ساعت پایانی دارید؟</div>
+    </div>
+    <div class="q-tip">💡 «Combien de temps» برای مدت زمان — کلمه پرسشی مهم.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">11</div><span class="q-keyword">🎵 LA MUSIQUE</span></div>
+  <div class="q-body">
+    <div class="q-fr">Est-ce que la musique est autorisée ?</div>
+    <div class="q-fa">آیا موسیقی مجاز است؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr">La <span class="vk">musique</span> est-elle <span class="vk">autorisée</span> ? Peut-on mettre notre propre playlist ?</div>
+      <div class="q-better-fa">آیا موسیقی مجاز است؟ می‌توانیم پلی‌لیست خودمان را پخش کنیم؟</div>
+    </div>
+    <div class="q-tip">💡 «est-elle autorisée ?» — وارونگی با ضمیر elle برای اسم مؤنث.</div>
+  </div>
+</div>
+
+<div class="q-card">
+  <div class="q-head"><div class="q-num">12</div><span class="q-keyword">📝 LA PROCÉDURE</span></div>
+  <div class="q-body">
+    <div class="q-fr">Comment se passe la réservation ?</div>
+    <div class="q-fa">رزرو چطور انجام می‌شود؟</div>
+    <div class="q-better">
+      <div class="q-better-label">✨ نسخه روان‌تر</div>
+      <div class="q-better-fr"><span class="vk">Comment</span> se passe la <span class="vk">réservation</span> ? Faut-il verser un <span class="vk">acompte</span> ?</div>
+      <div class="q-better-fa">رزرو چطور انجام می‌شود؟ آیا باید بیعانه پرداخت کرد؟</div>
+    </div>
+    <div class="q-tip">💡 «Comment se passe...?» = چطور انجام می‌شود؟ — سؤال عالی برای پایان گفتگو.</div>
+  </div>
+</div>
+
+<!-- GRAMMAIRE APPROFONDIE -->
+<div class="card gram">
+  <span class="card-label">📚 GRAMMAIRE — نکات گرامری کلیدی</span>
+  <div class="gram-item">
+    <div class="gram-title">🔑 «Faut-il» — سؤال با فعل غیرشخصی</div>
+    <div class="gram-rule">فعل <strong>falloir</strong> (لازم بودن) فقط سوم‌شخص دارد: <strong>il faut</strong>. در سؤال با inversion می‌شود <strong>faut-il</strong>. یعنی «آیا لازم است؟».</div>
+    <div class="gram-ex"><span class="em">Faut-il</span> réserver ? = آیا باید رزرو کرد؟<br><span class="em">Faut-il</span> verser un acompte ? = آیا باید بیعانه داد؟</div>
+  </div>
+  <div class="gram-item">
+    <div class="gram-title">🔑 «Peut-on» و «Y a-t-il» — وارونگی‌های پرکاربرد</div>
+    <div class="gram-rule">دو ساختار طلایی برای سؤال: <strong>Peut-on...?</strong> (آیا می‌توان؟) و <strong>Y a-t-il...?</strong> (آیا وجود دارد؟). توجه: در «a-t-il» یک <strong>t</strong> برای تلفظ اضافه می‌شود.</div>
+    <div class="gram-ex"><span class="em">Peut-on</span> choisir ? · <span class="em">Y a-t-il</span> une salle ?<br><span style="color:#8a8275;font-size:12px">↳ t اضافه بین a و il برای راحتی تلفظ</span></div>
+  </div>
+  <div class="gram-item">
+    <div class="gram-title">🔑 «Quel» با اسم مطابقت می‌کند</div>
+    <div class="gram-rule">کلمه پرسشی <strong>quel</strong> (چه/کدام) با اسم بعدش از نظر جنس و تعداد مطابقت می‌کند: <strong>quel</strong> (مذکر)، <strong>quelle</strong> (مؤنث)، <strong>quels/quelles</strong> (جمع).</div>
+    <div class="gram-ex"><span class="em">Quels</span> sont vos prix ? (prix جمع مذکر)<br><span class="em">Quelle</span> est la capacité ? (capacité مؤنث)</div>
+  </div>
+  <div class="gram-item">
+    <div class="gram-title">🔑 وارونگی با اسم: «La musique est-elle...?»</div>
+    <div class="gram-rule">وقتی فاعل یک <strong>اسم</strong> است (نه ضمیر)، اسم را اول می‌گذاری، بعد فعل را با <strong>ضمیر مناسب</strong> وارونه می‌کنی: اسم + فعل-ضمیر.</div>
+    <div class="gram-ex">La musique <span class="em">est-elle</span> autorisée ?<br><span style="color:#8a8275;font-size:12px">↳ musique مؤنث → elle</span></div>
+  </div>
+</div>
+
+<!-- MIND MAP -->
+<div class="card mindmap">
+  <span class="card-label">🧠 LA CARTE MENTALE — نقشه ذهنی موضوع</span>
+  <div class="mm-center"><div class="mm-core">🍽️ LE RESTAURANT</div></div>
+  <div class="mm-branches">
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#1e3a5f;border-color:rgba(30,58,95,.3)">📅 La réservation — رزرو</div>
+      <div class="mm-list">
+        <div class="mm-li">📝 <span class="fr">réserver</span> — رزرو کردن</div>
+        <div class="mm-li">💵 <span class="fr">un acompte</span> — بیعانه</div>
+        <div class="mm-li">📞 <span class="fr">par téléphone</span> — تلفنی</div>
+        <div class="mm-li">⏳ <span class="fr">à l'avance</span> — از قبل</div>
+        <div class="mm-li">✅ <span class="fr">confirmer</span> — تأیید کردن</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#2e8b6b;border-color:rgba(46,139,107,.3)">🍴 Le repas — غذا</div>
+      <div class="mm-list">
+        <div class="mm-li">📋 <span class="fr">le menu</span> — منو</div>
+        <div class="mm-li">🍰 <span class="fr">un gâteau</span> — کیک</div>
+        <div class="mm-li">🥗 <span class="fr">une entrée</span> — پیش‌غذا</div>
+        <div class="mm-li">🍲 <span class="fr">un plat</span> — غذای اصلی</div>
+        <div class="mm-li">🍷 <span class="fr">une boisson</span> — نوشیدنی</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#7a5ba8;border-color:rgba(122,91,168,.3)">🎉 La fête — جشن</div>
+      <div class="mm-list">
+        <div class="mm-li">🚪 <span class="fr">une salle privée</span> — سالن خصوصی</div>
+        <div class="mm-li">🎵 <span class="fr">la musique</span> — موسیقی</div>
+        <div class="mm-li">🎈 <span class="fr">la décoration</span> — تزئینات</div>
+        <div class="mm-li">👥 <span class="fr">la capacité</span> — ظرفیت</div>
+        <div class="mm-li">⏰ <span class="fr">la durée</span> — مدت</div>
+      </div>
+    </div>
+    <div class="mm-branch">
+      <div class="mm-branch-h" style="color:#b07a4a;border-color:rgba(176,122,74,.3)">💰 Le prix — قیمت</div>
+      <div class="mm-list">
+        <div class="mm-li">💵 <span class="fr">le tarif</span> — تعرفه</div>
+        <div class="mm-li">👤 <span class="fr">par personne</span> — هر نفر</div>
+        <div class="mm-li">🎁 <span class="fr">une réduction</span> — تخفیف</div>
+        <div class="mm-li">💳 <span class="fr">le paiement</span> — پرداخت</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VOCABULAIRE -->
+<div class="card vocab">
+  <span class="card-label">🔑 LE VOCABULAIRE — واژگان رستوران</span>
+  <div class="voc-cat">
+    <div class="voc-cat-h">▶️ افعال کلیدی — Les verbes</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">réserver</span><span class="voc-fa">📝 رزرو کردن</span></div>
+      <div class="voc-row"><span class="voc-fr">accueillir</span><span class="voc-fa">🤝 پذیرفتن، استقبال کردن</span></div>
+      <div class="voc-row"><span class="voc-fr">proposer</span><span class="voc-fa">💡 پیشنهاد دادن</span></div>
+      <div class="voc-row"><span class="voc-fr">commander</span><span class="voc-fa">🍽️ سفارش دادن</span></div>
+      <div class="voc-row"><span class="voc-fr">verser un acompte</span><span class="voc-fa">💵 بیعانه پرداختن</span></div>
+      <div class="voc-row"><span class="voc-fr">annuler</span><span class="voc-fa">❌ لغو کردن</span></div>
+    </div>
+  </div>
+  <div class="voc-cat">
+    <div class="voc-cat-h">🍴 اسم‌های رستوران — Les noms</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">la capacité d'accueil</span><span class="voc-fa">👥 ظرفیت پذیرش</span></div>
+      <div class="voc-row"><span class="voc-fr">un menu</span><span class="voc-fa">📋 منو</span></div>
+      <div class="voc-row"><span class="voc-fr">le tarif / le prix</span><span class="voc-fa">💰 تعرفه / قیمت</span></div>
+      <div class="voc-row"><span class="voc-fr">une salle privée</span><span class="voc-fa">🚪 سالن خصوصی</span></div>
+      <div class="voc-row"><span class="voc-fr">un acompte</span><span class="voc-fa">💵 بیعانه، پیش‌پرداخت</span></div>
+      <div class="voc-row"><span class="voc-fr">les modalités</span><span class="voc-fa">📑 شرایط، روش‌ها</span></div>
+      <div class="voc-row"><span class="voc-fr">une réduction</span><span class="voc-fa">🎁 تخفیف</span></div>
+    </div>
+  </div>
+  <div class="voc-cat">
+    <div class="voc-cat-h">❓ کلمات پرسشی — Les mots interrogatifs</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">Combien (de) ?</span><span class="voc-fa">🔢 چقدر / چند تا؟</span></div>
+      <div class="voc-row"><span class="voc-fr">Quel / Quelle ?</span><span class="voc-fa">❓ چه / کدام؟</span></div>
+      <div class="voc-row"><span class="voc-fr">Comment ?</span><span class="voc-fa">🔧 چطور؟</span></div>
+      <div class="voc-row"><span class="voc-fr">Faut-il... ?</span><span class="voc-fa">⚠️ آیا لازم است؟</span></div>
+      <div class="voc-row"><span class="voc-fr">Y a-t-il... ?</span><span class="voc-fa">📦 آیا وجود دارد؟</span></div>
+      <div class="voc-row"><span class="voc-fr">Peut-on... ?</span><span class="voc-fa">✅ آیا می‌توان؟</span></div>
+    </div>
+  </div>
+  <div class="voc-cat">
+    <div class="voc-cat-h">🗣️ عبارات مودبانه — Les formules polies</div>
+    <div class="voc-grid">
+      <div class="voc-row"><span class="voc-fr">Je voudrais...</span><span class="voc-fa">🙏 می‌خواستم...</span></div>
+      <div class="voc-row"><span class="voc-fr">Est-il possible de... ?</span><span class="voc-fa">🤔 آیا امکان دارد؟</span></div>
+      <div class="voc-row"><span class="voc-fr">J'aimerais savoir...</span><span class="voc-fa">💭 می‌خواستم بدانم...</span></div>
+      <div class="voc-row"><span class="voc-fr">Pourriez-vous me dire... ?</span><span class="voc-fa">🙇 می‌توانید بگویید؟</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- TIPS -->
+<div class="card tips">
+  <span class="card-label">💡 LES CONSEILS — نکات طلایی آزمون</span>
+  <div class="tip-row"><span class="tip-ic">🔄</span><div><strong>سؤال‌ها را متنوع کن:</strong> از هر سه نوع استفاده کن — est-ce que، inversion، و کلمه پرسشی. تکرار یک نوع امتیاز را کم می‌کند.</div></div>
+  <div class="tip-row"><span class="tip-ic">👋</span><div><strong>با سلام و معرفی شروع کن:</strong> «Bonjour ! Je voudrais organiser...» — گفتگو را طبیعی می‌کند.</div></div>
+  <div class="tip-row"><span class="tip-ic">📝</span><div><strong>همه اطلاعات صورت سؤال را بپوش:</strong> ظرفیت، منو، قیمت، رزرو — هر کدام حداقل یک سؤال.</div></div>
+  <div class="tip-row"><span class="tip-ic">➕</span><div><strong>سؤال‌ها را گسترش بده:</strong> به جای سؤال خشک، جزئیات اضافه کن: «...et si oui, combien de temps avant ?»</div></div>
+  <div class="tip-row"><span class="tip-ic">🎯</span><div><strong>۵ تا ۱۰ سؤال کافی است:</strong> کیفیت مهم‌تر از کمیت. سؤال‌های مرتبط و درست بپرس، نه زیاد و تکراری.</div></div>
+  <div class="tip-row"><span class="tip-ic">🗣️</span><div><strong>مودب باش:</strong> «Je voudrais», «Est-il possible de», «Pourriez-vous» لحن حرفه‌ای می‌دهند.</div></div>
+</div>
+
+</div>
+
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ این تمرین را خواندم</button></div>
+<script>
+(function(){
+  const key='OraleT2_restaurant';
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[key]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page:key,title:'TCF Orale T2 — Restaurant',time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[key]=new Date().toISOString();localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
