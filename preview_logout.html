@@ -124,8 +124,8 @@ svg.road{width:100%;display:block}
 
         /* Auth bar */
         .auth-bar{
-          position:fixed;top:0;left:0;right:0;z-index:1000;
-          background:#fffdf6;min-height:44px;border-bottom:1px solid #e8e0ce;
+          position:fixed;top:0;left:0;right:0;z-index:100;
+          background:#fffdf6;border-bottom:1px solid #e8e0ce;
           padding:8px 20px;display:flex;align-items:center;justify-content:space-between;
           font-size:12px;color:#a8874f;
           box-shadow:0 2px 8px rgba(31,58,95,.06);
@@ -233,7 +233,8 @@ body{padding-top:38px!important}
 </style>
 
 <div id="stats-bar">
-  <a href="HISTORY.html" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(31,58,95,.08);border-radius:20px;color:#1e3a5f;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">📋 تاریخچه</a>
+  
+  <button onclick="_logout()" style="background:#b0506f;color:#fff;border:none;border-radius:20px;padding:5px 14px;font-family:'Estedad',sans-serif;font-weight:700;font-size:11.5px;cursor:pointer;white-space:nowrap;flex-shrink:0">🚪 خروج</button><a href="HISTORY.html" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(31,58,95,.08);border-radius:20px;color:#1e3a5f;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">📋 تاریخچه</a>
   <a href="FORUM.html" style="display:flex;align-items:center;gap:5px;padding:4px 12px;background:rgba(46,139,107,.1);border-radius:20px;color:#2e8b6b;font-weight:600;font-size:11.5px;text-decoration:none;white-space:nowrap;flex-shrink:0">❓ سوال بپرس</a>
   
   <div class="sb-item">⏱ <span class="sb-val" id="sb-time">۰</span><span class="sb-label">دقیقه مطالعه</span></div>
@@ -306,10 +307,7 @@ body{padding-top:38px!important}
 })();
 </script>
 
-<div class="auth-bar">
-  <span id="_username" style="font-weight:700;color:#1e3a5f">👤</span>
-  <button onclick="_logout()" style="background:#b0506f;color:#fff;border-color:#b0506f;font-weight:700">🚪 خروج از حساب</button>
-</div>
+<!-- auth-bar moved to stats-bar -->
 
 <div class="page">
 <div class="top">
