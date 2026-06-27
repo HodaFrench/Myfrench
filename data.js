@@ -598,6 +598,15 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","uniforme","école","débat"],
     summary: "واژگان مناظره‌ی «اونیفورم و کد پوششی در مدرسه» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
   },
+
+  {
+    file: "VOCAB_notes_evaluation.html",
+    title: "📚 Les notes & l'évaluation",
+    titleFr: "Les notes & l'évaluation à l'école",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","notes","évaluation","école","débat"],
+    summary: "واژگان مناظره‌ی «نمرات و ارزشیابی در مدرسه» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
   {
     file: "VOCAB_glottophobie.html",
     title: "📚 La glottophobie & les discriminations",
