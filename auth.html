@@ -309,14 +309,14 @@ input, textarea { -webkit-user-select:text; -moz-user-select:text; user-select:t
     <button class="atab" onclick="st('signup')">ثبت‌نام رایگان</button>
   </div>
   <div id="lf" class="aform">
-    <div class="afield"><label>ایمیل</label><input type="email" id="le" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="afield"><label>ایمیل</label><input type="email" id="le" placeholder="name@gmail.com" autocomplete="email"></div>
     <div class="afield"><label>رمز عبور</label><input type="password" id="lp" placeholder="••••••" autocomplete="current-password"></div>
     <div class="amsg" id="lm"></div>
     <button class="abtn" id="lb" onclick="doLogin()">ادامه ←</button>
     <p class="ahint">حساب ندارید؟ روی «ثبت‌نام رایگان» کلیک کنید</p>
   </div>
   <div id="sf" class="aform" style="display:none">
-    <div class="afield"><label>ایمیل</label><input type="email" id="se" placeholder="email@example.com" autocomplete="email"></div>
+    <div class="afield"><label>ایمیل</label><input type="email" id="se" placeholder="name@gmail.com" autocomplete="email"></div>
     <div class="afield"><label>رمز عبور</label><input type="password" id="sp" placeholder="حداقل ۶ کاراکتر" autocomplete="new-password"></div>
     <div class="afield"><label>تکرار رمز عبور</label><input type="password" id="sp2" placeholder="••••••" autocomplete="new-password"></div>
     <div class="amsg" id="sm"></div>
@@ -339,8 +339,18 @@ if(typeof buildRoad==='function')setTimeout(buildRoad,50);
 function st(t){document.getElementById('lf').style.display=t==='login'?'flex':'none';document.getElementById('sf').style.display=t==='signup'?'flex':'none';document.querySelectorAll('.atab').forEach((el,i)=>el.classList.toggle('active',(t==='login'&&i===0)||(t==='signup'&&i===1)));}
 function sm(id,txt){const el=document.getElementById(id);el.textContent=txt;el.className='amsg error show';}
 function sl(id,on){const b=document.getElementById(id);b.disabled=on;b.textContent=on?'...':(id==='lb'?'ادامه ←':'شروع یادگیری ←');}
-async function doSignup(){const e=document.getElementById('se').value.trim();const p=document.getElementById('sp').value;const p2=document.getElementById('sp2').value;if(!e||!p)return sm('sm','همه فیلدها را پر کنید');if(p.length<6)return sm('sm','رمز عبور باید حداقل ۶ کاراکتر باشد');if(p!==p2)return sm('sm','رمزهای عبور یکسان نیستند');sl('sb',true);const {error}=await sb.auth.signUp({email:e,password:p});sl('sb',false);if(error)return sm('sm',error.message);document.getElementById('ce').textContent=e;document.getElementById('cb').classList.add('show');document.getElementById('sb').style.display='none';}
-async function doLogin(){const e=document.getElementById('le').value.trim();const p=document.getElementById('lp').value;if(!e||!p)return sm('lm','همه فیلدها را پر کنید');sl('lb',true);const {error}=await sb.auth.signInWithPassword({email:e,password:p});sl('lb',false);if(error){if(error.message.includes('Email not confirmed'))return sm('lm','ایمیلت رو تأیید نکردی! 📧');return sm('lm','ایمیل یا رمز عبور اشتباه است');}window.location.href='index.html';}
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(e);}
+function faErr(msg){msg=(msg||'').toLowerCase();
+if(msg.includes('invalid')&&msg.includes('email'))return'ایمیل معتبر نیست. یه ایمیل واقعی مثل name@gmail.com وارد کن 📧';
+if(msg.includes('already')||msg.includes('registered')||msg.includes('exists'))return'این ایمیل قبلاً ثبت‌نام شده! از قسمت «ورود» وارد شو ←';
+if(msg.includes('password')&&msg.includes('6'))return'رمز عبور باید حداقل ۶ کاراکتر باشد';
+if(msg.includes('weak')||msg.includes('password'))return'رمز عبور خیلی ساده‌ست، یه رمز قوی‌تر بذار';
+if(msg.includes('rate')||msg.includes('many'))return'یه کم صبر کن و دوباره امتحان کن ⏳';
+if(msg.includes('network')||msg.includes('fetch')||msg.includes('failed'))return'اینترنتت رو چک کن و دوباره امتحان کن 📶';
+if(msg.includes('email not confirmed')||msg.includes('not confirmed'))return'اول ایمیلت رو تأیید کن! 📧';
+return msg?('خطا: '+msg):'یه مشکلی پیش اومد، دوباره امتحان کن';}
+async function doSignup(){const e=document.getElementById('se').value.trim().toLowerCase();const p=document.getElementById('sp').value;const p2=document.getElementById('sp2').value;if(!e||!p)return sm('sm','همه فیلدها را پر کنید');if(!validEmail(e))return sm('sm','ایمیلت رو درست وارد کن، مثل: name@gmail.com 📧');if(p.length<6)return sm('sm','رمز عبور باید حداقل ۶ کاراکتر باشد');if(p!==p2)return sm('sm','رمزهای عبور یکسان نیستند');sl('sb',true);try{const {data,error}=await sb.auth.signUp({email:e,password:p});sl('sb',false);if(error)return sm('sm',faErr(error.message));if(data&&data.user&&data.user.identities&&data.user.identities.length===0)return sm('sm','این ایمیل قبلاً ثبت‌نام شده! از «ورود» وارد شو ←');document.getElementById('ce').textContent=e;document.getElementById('cb').classList.add('show');document.getElementById('sb').style.display='none';}catch(ex){sl('sb',false);sm('sm',faErr(ex.message||''));}}
+async function doLogin(){const e=document.getElementById('le').value.trim().toLowerCase();const p=document.getElementById('lp').value;if(!e||!p)return sm('lm','همه فیلدها را پر کنید');if(!validEmail(e))return sm('lm','ایمیلت رو درست وارد کن، مثل: name@gmail.com 📧');sl('lb',true);try{const {error}=await sb.auth.signInWithPassword({email:e,password:p});sl('lb',false);if(error){const m=(error.message||'').toLowerCase();if(m.includes('not confirmed'))return sm('lm','ایمیلت رو تأیید نکردی! لینک رو از ایمیلت (پوشه Spam رو هم چک کن) باز کن 📧');if(m.includes('invalid')&&m.includes('credential'))return sm('lm','ایمیل یا رمز عبور اشتباه است');if(m.includes('invalid')&&m.includes('email'))return sm('lm','ایمیلت معتبر نیست 📧');return sm('lm','ایمیل یا رمز عبور اشتباه است');}window.location.href='index.html';}catch(ex){sl('lb',false);sm('lm','یه مشکلی پیش اومد، اینترنتت رو چک کن 📶');}}
 document.addEventListener('keydown',e=>{if(e.key==='Enter'){if(document.getElementById('lf').style.display!=='none')doLogin();else doSignup();}});
 </script>
 
