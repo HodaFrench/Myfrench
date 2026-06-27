@@ -163,7 +163,7 @@ const _sb = supabase.createClient(
   'sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK'
 );
 _sb.auth.getSession().then(({data:{session}})=>{
-  if(!session){window.location.href='auth.html';return;}
+  // auth disabledreturn;}
   const u=session.user.email?.split('@')[0]||'';
   const el=document.getElementById('_username');
   if(el) el.textContent='👤 '+u;
