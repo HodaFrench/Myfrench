@@ -471,6 +471,10 @@
 
 </head>
 <body>
+<style>
+.back-to-home{position:fixed;top:0;right:0;z-index:300;padding:8px 16px;background:#1e3a5f;color:#f5f0e8;text-decoration:none;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;border-radius:0 0 0 10px}
+</style>
+<a class="back-to-home" href="index.html">&#8592; جاده یادگیری</a>
 <style id="hk-wm">
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
 </style>
@@ -681,6 +685,18 @@
 
         buildLatest();
         buildCatGrid();
+
+// Auto-open category from URL param
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if(cat){
+    setTimeout(function(){
+      if(typeof openCat === 'function') openCat(cat);
+    }, 100);
+  }
+})();
+
     </script>
 </body>
 </html>
