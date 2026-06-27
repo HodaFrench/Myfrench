@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سوال‌های شما | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,0.04) 31px,rgba(122,91,168,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--purple);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;padding:30px 26px 26px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.9}
+.wrap{max-width:780px;margin:0 auto;padding:0 1rem}
+
+/* فرم سوال جدید */
+.ask-card{background:var(--white);border-radius:16px;padding:18px 20px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line);border-right:4px solid var(--purple)}
+.ask-card h3{font-size:15px;color:var(--navy);margin-bottom:4px}
+.ask-card .sub{font-size:12px;color:var(--gray);margin-bottom:12px}
+.ask-card textarea{width:100%;min-height:80px;border:1.5px solid var(--line);border-radius:12px;padding:12px;font-family:'Estedad',sans-serif;font-size:14px;resize:vertical;direction:rtl;outline:none}
+.ask-card textarea:focus{border-color:var(--purple)}
+.ask-btn{margin-top:10px;background:var(--purple);color:#fff;border:none;border-radius:12px;padding:11px 22px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer;width:100%}
+
+/* لیست سوالات */
+.section-title{font-size:15px;font-weight:800;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
+.qa-card{background:var(--white);border-radius:14px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);overflow:hidden}
+.qa-q{padding:14px 16px}
+.qa-q-meta{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.qa-page{font-size:10.5px;color:var(--gray);background:rgba(30,58,95,.06);padding:2px 8px;border-radius:6px}
+.qa-time{font-size:10.5px;color:var(--gray);margin-right:auto}
+.qa-q-text{font-size:14px;color:var(--ink);line-height:1.8}
+.qa-q-text .label{font-weight:700;color:var(--rose)}
+.qa-answer{padding:13px 16px;background:rgba(46,139,107,.06);border-top:1px solid var(--line)}
+.qa-answer .label{font-weight:700;color:var(--green-d);font-size:12.5px}
+.qa-answer-text{font-size:13.5px;color:#2a3a30;line-height:1.85;margin-top:4px}
+.qa-pending{padding:10px 16px;background:rgba(176,80,111,.05);border-top:1px solid var(--line);font-size:12px;color:var(--rose);display:flex;align-items:center;gap:6px}
+
+.empty{text-align:center;color:var(--gray);padding:40px 20px;font-size:14px}
+.empty-icon{font-size:40px;margin-bottom:12px}
+#loading{text-align:center;padding:50px;color:var(--gray)}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--green-d);color:#fff;padding:11px 24px;border-radius:24px;font-size:13px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+</style>
+</head>
+<body>
+<span class="hk-wm" style="top:30%;left:12%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:70%;left:55%">Hoda Khedmati</span>
+
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
+  <span class="hoda-back-label">❓ سوال‌های شما</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">❓ QUESTIONS & RÉPONSES</div>
+  <h1>سوال‌های شما</h1>
+  <div class="sub">سؤالاتت را بپرس و پاسخ مدرس را اینجا ببین</div>
+</div>
+
+<div class="wrap">
+  <div class="ask-card">
+    <h3>✍️ سوال جدید بپرس</h3>
+    <div class="sub">هر سؤالی درباره فرانسه یا درس‌ها داری، اینجا بنویس</div>
+    <textarea id="new-q" placeholder="سؤالت را اینجا بنویس..."></textarea>
+    <button class="ask-btn" onclick="submitQuestion()">📤 ارسال سؤال</button>
+  </div>
+
+  <div id="loading">در حال بارگذاری سؤالات...</div>
+  <div id="qa-list" style="display:none"></div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+const SB_URL='https://ifjsnasoxnalhttzhlpd.supabase.co';
+const SB_KEY='sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
+const sb=supabase.createClient(SB_URL,SB_KEY);
+let USER=null;
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2200);
+}
+
+function fmt(d){
+  if(!d)return'';
+  const date=new Date(d);
+  return date.toLocaleDateString('fa-IR')+' '+date.toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'});
+}
+
+async function init(){
+  const {data:{session}}=await sb.auth.getSession();
+  if(!session){window.location.href='auth.html';return;}
+  USER=session.user;
+  await loadQuestions();
+}
+
+async function submitQuestion(){
+  const text=document.getElementById('new-q').value.trim();
+  if(!text){toast('سؤالت را بنویس!');return;}
+  const {error}=await sb.from('questions').insert({
+    user_id:USER.id,email:USER.email,page:'سوال عمومی',question:text
+  });
+  if(!error){
+    document.getElementById('new-q').value='';
+    toast('✅ سؤالت ثبت شد');
+    await loadQuestions();
+  }else{
+    toast('خطا — دوباره تلاش کن');
+  }
+}
+
+async function loadQuestions(){
+  const {data}=await sb.from('questions')
+    .select('*')
+    .eq('user_id',USER.id)
+    .order('created_at',{ascending:false});
+  
+  const questions=data||[];
+  document.getElementById('loading').style.display='none';
+  const list=document.getElementById('qa-list');
+  list.style.display='block';
+  
+  if(questions.length===0){
+    list.innerHTML='<div class="empty"><div class="empty-icon">💭</div>هنوز سؤالی نپرسیده‌ای.<br>اولین سؤالت را بالا بنویس!</div>';
+    return;
+  }
+  
+  const answered=questions.filter(q=>q.answer);
+  const pending=questions.filter(q=>!q.answer);
+  
+  let html='';
+  
+  if(answered.length){
+    html+='<div class="section-title" style="color:#23704f">✅ پاسخ داده‌شده ('+answered.length+')</div>';
+    answered.forEach(q=>html+=qaCard(q));
+  }
+  
+  if(pending.length){
+    html+='<div class="section-title" style="color:#b0506f">⏳ در انتظار پاسخ ('+pending.length+')</div>';
+    pending.forEach(q=>html+=qaCard(q));
+  }
+  
+  list.innerHTML=html;
+}
+
+function qaCard(q){
+  let inner=`<div class="qa-q">
+    <div class="qa-q-meta">
+      <span class="qa-page">${q.page||'عمومی'}</span>
+      <span class="qa-time">${fmt(q.created_at)}</span>
+    </div>
+    <div class="qa-q-text"><span class="label">❓ سؤال:</span> ${q.question}</div>
+  </div>`;
+  
+  if(q.answer){
+    inner+=`<div class="qa-answer">
+      <span class="label">✅ پاسخ مدرس:</span>
+      <div class="qa-answer-text">${q.answer}</div>
+    </div>`;
+  }else{
+    inner+=`<div class="qa-pending">⏳ هنوز پاسخ داده نشده — به‌زودی پاسخ می‌گیری</div>`;
+  }
+  
+  return `<div class="qa-card">${inner}</div>`;
+}
+
+init();
+</script>
+</body>
+</html>
