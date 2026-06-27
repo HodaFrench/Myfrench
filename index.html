@@ -425,7 +425,7 @@ function openCat(id){
     document.getElementById('mtitle').textContent='InnerFrench';
     document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
     INNERFRENCH.forEach(e=>{
-      const a=document.createElement('a');a.className='item';a.href='innerfrench.html?ep='+e.num;
+      const a=document.createElement('a');a.className='item';a.href='IF_ep'+String(e.num).padStart(2,'0')+'.html';
       const coverHtml=`<div class="item-cover" style="background:#5a3b88"><span class="item-cover-txt">#${e.num}</span></div>`;
       a.innerHTML=coverHtml+`<div class="item-info"><div class="ititle">${e.titreFa}</div><span class="item-lvl">B1–B2 · اپیزود ${e.num}</span></div>`;
       body.appendChild(a);
