@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>L'uniforme &amp; le code vestimentaire a l'ecole — Vocabulaire · TCF Canada · @TCFHODA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style></head><body><div class='wrap'><nav class='nav' id='nav'></nav><div class='progress-wrap'><div class='pcount' id='pcount'>0 / 0 termes révisés</div><div class='pbar'><div class='pfill' id='pfill'></div></div><button class='btn' onclick='window.print()'>Imprimer / Enregistrer en PDF</button></div><div class='cover'><div class='kick'>TCF Canada — Vocabulaire spécial sujet</div><h1>L'uniforme <b>&amp; le code vestimentaire</b></h1><div class='b2'>Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><p class='lead'>Le vocabulaire du débat sur l'uniforme, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+) pour chaque mot.</p><div class='b2' style='background:#2E8B6B;color:#fff;display:inline-block;padding:3px 14px;border-radius:14px;margin-top:8px'>APERÇU GRATUIT · 10 premiers mots</div><svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="uniforme"><path d="M150 44 l30 18 l30 -18 l30 14 v92 h-120 v-92 z" fill="none" stroke="#5B5BD6" stroke-width="4" stroke-linejoin="round"/><path d="M180 62 l-10 24 l10 10 l10 -10 l-10 -24 z" fill="#5B5BD6" opacity="0.85"/><line x1="180" y1="96" x2="180" y2="150" stroke="#5B5BD6" stroke-width="4" stroke-linecap="round"/></svg><div class='sign'>Hoda KHEDMATI</div><span class='handle'>@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div></div><div id='root'></div><footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer></div><script>const CAT=[{"id": 1, "name": "Le vêtement scolaire", "fa": "پوشاکِ مدرسه", "icon": "👔", "color": "#5B5BD6"}, {"id": 2, "name": "S'habiller &amp; la mode", "fa": "لباس‌پوشیدن و مُد", "icon": "👗", "color": "#2E8B6B"}, {"id": 3, "name": "Obligation, interdiction, permission", "fa": "الزام، ممنوعیت، اجازه", "icon": "⚖️", "color": "#C77A2E"}, {"id": 4, "name": "Le coût de la tenue", "fa": "هزینه‌ی پوشاک", "icon": "💶", "color": "#C0392B"}, {"id": 5, "name": "Pressions &amp; problèmes", "fa": "فشارها و مشکلات", "icon": "🛡️", "color": "#2E6BD6"}, {"id": 6, "name": "Apparence &amp; distinctions", "fa": "ظاهر و تمایزها", "icon": "✨", "color": "#2E8B8B"}, {"id": 7, "name": "École, valeurs &amp; identité", "fa": "مدرسه، ارزش‌ها و هویت", "icon": "🏫", "color": "#7C5BD6"}];
+const D=[{"c": 1, "term": "un uniforme", "fa": "یونیفرم", "syn": ["une tenue unique", "un habit réglementaire"], "ex": [["Dans cette école, chaque élève porte un <b>uniforme</b> dès la rentrée.", "در این مدرسه، هر دانش‌آموز از آغازِ سال یک <b>یونیفرم</b> می‌پوشد."], ["Selon moi, l'<b>uniforme</b> efface au premier regard les différences de revenus.", "به نظر من، <b>یونیفرم</b> در نگاهِ نخست تفاوت‌های درآمدی را می‌زداید."], ["C'est précisément l'<b>uniforme</b> qui, bien qu'il soit contraignant, crée un sentiment d'unité (B2+).", "دقیقاً <b>یونیفرم</b> است که، هرچند محدودکننده باشد، حسِ یگانگی می‌آفریند."], ["Quand bien même il déplairait à certains, l'<b>uniforme</b> simplifie les matins pressés des familles (B2+).", "حتی اگر برخی را خوش نیاید، <b>یونیفرم</b> صبح‌های پرشتابِ خانواده‌ها را ساده می‌کند."]], "def": "Tenue vestimentaire identique imposée à tous les élèves d'un même établissement."}, {"c": 1, "term": "un code vestimentaire", "fa": "ضوابطِ پوشش", "syn": ["des règles de tenue", "une norme de l'habillement"], "ex": [["Le <b>code vestimentaire</b> interdit les tenues jugées indécentes.", "<b>ضوابطِ پوشش</b> پوشیدنِ لباس‌های نامناسب را ممنوع می‌کند."], ["À mon sens, un <b>code vestimentaire</b> clair évite bien des malentendus.", "به نظر من، یک <b>ضوابطِ پوشش</b> روشن از بسیاری سوءتفاهم‌ها جلوگیری می‌کند."], ["Pour peu qu'il soit appliqué avec souplesse, le <b>code vestimentaire</b> reste accepté de tous (B2+).", "به‌شرطِ آنکه با انعطاف اجرا شود، <b>ضوابطِ پوشش</b> موردِ پذیرشِ همه باقی می‌ماند."], ["Aussi strict soit-il, un <b>code vestimentaire</b> ne remplace pas l'éducation au respect (B2+).", "هر اندازه هم سخت‌گیرانه باشد، <b>ضوابطِ پوشش</b> جایگزینِ آموزشِ احترام نمی‌شود."]], "def": "Ensemble de règles indiquant ce que les élèves ne doivent pas porter."}, {"c": 1, "term": "un règlement d'uniforme", "fa": "آیین‌نامه‌ی یونیفرم", "syn": ["un cadre officiel", "des consignes de tenue"], "ex": [["Le <b>règlement d'uniforme</b> figure dans le carnet remis aux familles.", "<b>آیین‌نامه‌ی یونیفرم</b> در دفترچه‌ای که به خانواده‌ها داده می‌شود آمده است."], ["Beaucoup d'élèves ignorent encore le contenu du <b>règlement d'uniforme</b>.", "بسیاری از دانش‌آموزان هنوز محتوای <b>آیین‌نامه‌ی یونیفرم</b> را نمی‌دانند."], ["C'est en lisant le <b>règlement d'uniforme</b> que l'on comprend la logique de l'établissement (B2+).", "با خواندنِ <b>آیین‌نامه‌ی یونیفرم</b> است که منطقِ مدرسه را درمی‌یابیم."], ["Bien qu'il paraisse rigide, le <b>règlement d'uniforme</b> protège souvent les plus modestes (B2+).", "هرچند سخت به نظر برسد، <b>آیین‌نامه‌ی یونیفرم</b> اغلب از کم‌بضاعت‌ترها حمایت می‌کند."]], "def": "Document qui précise ce que les élèves sont tenus de porter."}, {"c": 1, "term": "une tenue réglementaire", "fa": "پوشاکِ مطابقِ مقررات", "syn": ["une tenue conforme", "une tenue convenable"], "ex": [["Le surveillant rappelle qu'une <b>tenue réglementaire</b> est exigée à l'entrée.", "ناظم یادآور می‌شود که در ورودی <b>پوشاکِ مطابقِ مقررات</b> لازم است."], ["À mon sens, une <b>tenue réglementaire</b> place chacun sur un pied d'égalité.", "به نظر من، <b>پوشاکِ مطابقِ مقررات</b> همه را در جایگاهی برابر قرار می‌دهد."], ["Pour qu'une <b>tenue réglementaire</b> soit respectée, encore faut-il qu'elle reste abordable (B2+).", "برای آنکه <b>پوشاکِ مطابقِ مقررات</b> رعایت شود، باید همچنان مقرون‌به‌صرفه بماند."], ["Quand bien même elle serait sobre, une <b>tenue réglementaire</b> n'étouffe pas la personnalité (B2+).", "حتی اگر ساده باشد، <b>پوشاکِ مطابقِ مقررات</b> شخصیت را خفه نمی‌کند."]], "def": "Habillement conforme aux règles fixées par l'établissement."}, {"c": 1, "term": "la blouse", "fa": "روپوش", "syn": ["un sarrau", "un tablier d'école"], "ex": [["Autrefois, la <b>blouse</b> protégeait les vêtements des taches d'encre.", "در گذشته، <b>روپوش</b> لباس‌ها را از لکه‌ی جوهر حفظ می‌کرد."], ["Certains regrettent la <b>blouse</b>, qu'ils trouvent à la fois simple et égalitaire.", "برخی برای <b>روپوش</b> افسوس می‌خورند، چون آن را هم ساده و هم برابری‌بخش می‌دانند."], ["C'est en généralisant la <b>blouse</b> que l'on pourrait, dit-on, réduire les comparaisons (B2+).", "می‌گویند با فراگیر کردنِ <b>روپوش</b> می‌توان مقایسه‌ها را کاهش داد."], ["Aussi modeste soit-elle, la <b>blouse</b> portait jadis une vraie valeur symbolique (B2+).", "هر اندازه هم ساده باشد، <b>روپوش</b> زمانی ارزشی نمادین داشت."]], "def": "Vêtement léger porté par-dessus les habits pour les protéger."}, {"c": 2, "term": "être tendance", "fa": "مُدروز بودن", "syn": ["suivre la mode", "être dans l'air du temps"], "ex": [["Beaucoup d'adolescents veulent <b>être tendance</b> pour se sentir intégrés.", "بسیاری از نوجوانان می‌خواهند <b>مُدروز</b> باشند تا احساسِ پذیرفته‌شدن کنند."], ["Selon moi, vouloir <b>être tendance</b> à tout prix crée une pression coûteuse.", "به نظر من، خواستنِ <b>مُدروز بودن</b> به هر قیمت، فشاری پرهزینه می‌سازد."], ["Quand bien même on chercherait à <b>être tendance</b>, l'école n'est pas un défilé (B2+).", "حتی اگر بکوشیم <b>مُدروز</b> باشیم، مدرسه جای رژه‌ی مد نیست."], ["C'est en cessant de vouloir <b>être tendance</b> que l'on retrouve sa propre allure (B2+).", "با دست کشیدن از میلِ <b>مُدروز بودن</b> است که ظاهرِ خاصِ خود را بازمی‌یابیم."]], "def": "Suivre la mode du moment et s'habiller selon les goûts actuels."}, {"c": 2, "term": "être démodé", "fa": "از مُد افتاده", "syn": ["passé de mode", "désuet"], "ex": [["Un élève craint parfois de paraître <b>démodé</b> devant ses camarades.", "گاهی دانش‌آموز می‌ترسد در برابرِ هم‌کلاسی‌ها <b>از مُد افتاده</b> به نظر برسد."], ["À mon sens, taxer quelqu'un de <b>démodé</b> nourrit des jugements superficiels.", "به نظر من، برچسبِ <b>از مُد افتاده</b> زدن به کسی، داوری‌های سطحی را تغذیه می‌کند."], ["Pour peu qu'un vêtement soit jugé <b>démodé</b>, il devient parfois source de moqueries (B2+).", "همین که لباسی <b>از مُد افتاده</b> دانسته شود، گاه به مایه‌ی تمسخر بدل می‌شود."], ["Aussi <b>démodé</b> qu'il paraisse, un habit propre vaut mieux qu'une marque hors de prix (B2+).", "هر اندازه هم <b>از مُد افتاده</b> به نظر برسد، لباسِ تمیز بهتر از مارکِ گران‌قیمت است."]], "def": "Ne plus correspondre à la mode actuelle ; paraître dépassé."}, {"c": 2, "term": "une garde-robe", "fa": "کمد و مجموعه‌ی لباس", "syn": ["un vestiaire", "une collection de vêtements"], "ex": [["Renouveler sa <b>garde-robe</b> chaque saison pèse lourd sur le budget.", "نوسازیِ <b>مجموعه‌ی لباس</b> در هر فصل، بارِ سنگینی بر بودجه می‌گذارد."], ["Selon moi, une <b>garde-robe</b> sobre suffit amplement à un élève.", "به نظر من، یک <b>مجموعه‌ی لباسِ</b> ساده برای دانش‌آموز کاملاً کافی است."], ["C'est en limitant sa <b>garde-robe</b> que l'on échappe à la dictature des marques (B2+).", "با محدود کردنِ <b>مجموعه‌ی لباس</b> است که از دیکتاتوریِ مارک‌ها می‌گریزیم."], ["Bien que sa <b>garde-robe</b> soit modeste, cet élève s'habille avec goût (B2+).", "هرچند <b>مجموعه‌ی لباسش</b> ساده است، این دانش‌آموز با سلیقه لباس می‌پوشد."]], "def": "Ensemble des vêtements dont dispose une personne."}, {"c": 2, "term": "le prêt-à-porter", "fa": "لباسِ آماده‌دوخت", "syn": ["la confection", "l'industrie standardisée"], "ex": [["Le <b>prêt-à-porter</b> a rendu les vêtements plus accessibles à tous.", "<b>لباسِ آماده‌دوخت</b> پوشاک را برای همه دسترس‌پذیرتر کرده است."], ["À mon sens, le <b>prêt-à-porter</b> bon marché atténue le poids de l'uniforme.", "به نظر من، <b>لباسِ آماده‌دوختِ</b> ارزان از بارِ یونیفرم می‌کاهد."], ["C'est grâce au <b>prêt-à-porter</b> que la tenue commune devient enfin abordable (B2+).", "به‌لطفِ <b>لباسِ آماده‌دوخت</b> است که پوشاکِ مشترک سرانجام مقرون‌به‌صرفه می‌شود."], ["Quand bien même il serait critiqué, le <b>prêt-à-porter</b> démocratise l'accès aux habits (B2+).", "حتی اگر موردِ نقد باشد، <b>لباسِ آماده‌دوخت</b> دسترسی به پوشاک را همگانی می‌کند."]], "def": "Industrie textile produisant des vêtements en tailles standardisées."}, {"c": 2, "term": "les accessoires", "fa": "زیورآلات و متعلقات", "syn": ["les ornements", "les compléments de tenue"], "ex": [["Même avec un uniforme, certains misent tout sur leurs <b>accessoires</b>.", "حتی با یونیفرم هم، برخی همه چیز را روی <b>زیورآلات و متعلقاتِ</b> خود می‌گذارند."], ["Selon moi, multiplier les <b>accessoires</b> réintroduit les comparaisons que l'uniforme voulait éviter.", "به نظر من، افزودنِ <b>زیورآلات و متعلقات</b> همان مقایسه‌هایی را بازمی‌گرداند که یونیفرم می‌خواست از آن بپرهیزد."], ["Pour peu qu'on les encadre, les <b>accessoires</b> redeviennent une simple touche personnelle (B2+).", "به‌شرطِ آنکه قاعده‌مند شوند، <b>زیورآلات و متعلقات</b> دوباره به چاشنیِ شخصیِ ساده‌ای بدل می‌شوند."], ["Aussi discrets soient-ils, les <b>accessoires</b> trahissent parfois de réels écarts de moyens (B2+).", "هر اندازه هم نامحسوس باشند، <b>زیورآلات و متعلقات</b> گاه تفاوت‌های واقعیِ توان مالی را آشکار می‌کنند."]], "def": "Éléments qui complètent une tenue : bijoux, ceinture, sac, etc."}];
+const PHRASES=[];
+const PH_HEAD="Boîte à phrases — débat « l'uniforme à l'école »";
+const PH_FA="جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی یونیفرم مدرسه (تکلیف ۳)";
+const HAS_PH=false;
+const PROMO_HTML="<section class='cat' id='promo'><div class='phrasebox' style='text-align:center'><h3>🎁 Ceci n'est qu'un aperçu</h3><div class='fa-h' dir='rtl' lang='fa'>این فقط یک پیش‌نمایشِ رایگان است — نسخه‌ی کامل شاملِ همه‌ی ۳۵ واژه، با ۴ مثالِ ترجمه‌شده (از B2 تا B2+) برای هر واژه، به‌علاوه‌ی جعبه‌ی جملاتِ آماده‌ی بحث است.</div><p class='fr' style='margin-top:8px'>La version complète contient les 35 mots, avec 4 exemples traduits (du B2 au B2+) chacun.</p><div class='sig-foot'><span class='name'>Hoda KHEDMATI</span><span class='handle'>@TCFHODA</span></div></div></section>";
+
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section'); sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}</article>`;
+  }).join('');
+  if(!cards) return;
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+if(HAS_PH){
+  const pb=document.createElement('section'); pb.className='cat'; pb.id='phrases';
+  pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+    <h3>🗣️ ${PH_HEAD}</h3><div class="fa-h" dir="rtl" lang="fa">${PH_FA}</div>
+    ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+    </div><div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(pb);
+}
+if(PROMO_HTML){ const t=document.createElement('div'); t.innerHTML=PROMO_HTML; root.appendChild(t.firstChild); }
+const total=D.length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`0 / ${total} termes révisés`;
+function refresh(){const done=document.querySelectorAll('.card.done').length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`${done} / ${total} termes révisés`; const pf=document.getElementById('pfill'); if(pf)pf.style.width=(done/total*100)+'%';}
+window.toggleDone=function(btn){const c=btn.closest('.card'); c.classList.toggle('done'); btn.classList.toggle('on'); refresh();};
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nv=document.querySelector('.nav'); if(nv)nv.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else { if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{ const match=(ONLY==='ph')?(s.id==='phrases'||s.id==='promo'):(s.id==='c'+ONLY); s.style.display=match?'':'none'; if(match)s.style.breakBefore='auto'; });
+  }
+}
+</script></body></html>
