@@ -1,87 +1,3 @@
-// ═══════════════════════════════════════════════════════════
-//  بانک محتوای کتابخانه — Hoda KHEDMATI
-//  برای افزودن محتوای جدید: فقط یک بلوک به LESSONS اضافه کن.
-//  صفحه‌ی اصلی، دسته‌بندی و جستجو خودکار ساخته می‌شوند.
-// ═══════════════════════════════════════════════════════════
-
-// دسته‌ها — برای افزودن دسته‌ی جدید فقط یک خط اینجا اضافه کن
-const CATEGORIES = [
-  { id: "culture", label: "فرهنگ فرانسه", icon: "🥐", color: "#8a2040" },
-  { id: "article", label: "آرتیکل", icon: "📰", color: "#5a3b88" },
-  { id: "roulette", label: "گردونه‌ی موضوع", icon: "🎡", color: "#7a5ba8", link: "ROULETTE.html" },
-  { id: "phrases", label: "جملات کاربردی", icon: "💬", color: "#c77d3a", link: "PHRASES_utiles.html" },
-  { id: "tcf",          label: "آمادگی TCF",   icon: "❖", color: "#1a4f7a" },
-  { id: "grammar",      label: "گرامر",        icon: "§", color: "#22618f" },
-  { id: "conversation", label: "مکالمه",       icon: "❝", color: "#2e7bb5" },
-  { id: "vocab",        label: "واژگان",       icon: "A", color: "#4a90c2" },
-  { id: "podcast",      label: "معرفی پادکست",       icon: "♪", color: "#5a6f9e" },
-  { id: "innerfrench",  label: "InnerFrench",       icon: "▶", color: "#2e7bb5" },
-  { id: "astuces",      label: "نکته‌های طلایی", icon: "✦", color: "#c4502d" },
-  { id: "adjectifs",    label: "صفت‌ها",         icon: "◆", color: "#7a5ba8" },
-  { id: "quiz",         label: "کوییز",          icon: "?", color: "#2e8b6b" },
-  { id: "reactions",    label: "چطور واکنش بدم؟", icon: "❝", color: "#d17b3f" },
-  { id: "prononciation", label: "تمرین تلفظ",     icon: "🗣", color: "#3f8a9c" },
-  { id: "editoa1",      label: "Édito A1 · واژگان", icon: "✎", color: "#5a8f4a" },
-  { id: "miniarticle",  label: "مینی‌آرتیکل",      icon: "✑", color: "#b0506f" },
-  // نمونه برای آینده — کافیست کامنت را برداری:
-  // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
-  // { id: "exam",  label: "آزمون", icon: "📝", color: "#2c5f8a" },
-];
-
-// ───────────────────────────────────────────────────────────
-//  زیرشاخه‌ها — فعلاً فقط برای TCF
-//  ساختار: TCF ← بخش (section) ← تکلیف (task)
-//  برای افزودن محتوا به زیرشاخه، در همان محتوا این دو فیلد را بده:
-//    section: "expression-orale",  task: "tache-3"
-// ───────────────────────────────────────────────────────────
-const SECTIONS = {
-  tcf: [
-    { id: "expression-orale",  label: "Expression Orale", labelFa: "بیان شفاهی",
-      tasks: [
-        { id: "tache-3", label: "Tâche 3", labelFa: "تکلیف ۳",
-          // ۱۰ موضوع استاندارد TCF — هر محتوا با فیلد sujet به یکی وصل می‌شود
-          sujets: [
-            { id: "etudes-travail",    label: "Études, travail et réussite",            labelFa: "تحصیل، کار و موفقیت" },
-            { id: "immigration",       label: "Immigration et vie à l'étranger",        labelFa: "مهاجرت و زندگی در خارج" },
-            { id: "technologie",       label: "Technologie, Internet et réseaux sociaux", labelFa: "تکنولوژی، اینترنت و شبکه‌های اجتماعی" },
-            { id: "medias",            label: "Médias et information",                   labelFa: "رسانه و اطلاعات" },
-            { id: "education",         label: "Éducation et enfance",                    labelFa: "آموزش و تربیت کودک" },
-            { id: "famille",           label: "Famille et mode de vie",                  labelFa: "خانواده و سبک زندگی" },
-            { id: "sante",             label: "Santé, sport et alimentation",           labelFa: "سلامتی، ورزش و تغذیه" },
-            { id: "environnement",     label: "Environnement et consommation",          labelFa: "محیط زیست و مصرف" },
-            { id: "voyage",            label: "Voyage et tourisme",                     labelFa: "سفر و گردشگری" },
-            { id: "societe",           label: "Société et valeurs",                     labelFa: "جامعه و ارزش‌ها" },
-          ]
-        },
-      ]
-    },
-  ],
-};
-
-// محتواها — هنوز خالی است؛ با هم پر می‌کنیم
-//
-// دو نوع محتوا می‌توان اضافه کرد:
-//
-// ۱) محتوای معمولی (فایل HTML داخل سایت):
-//   { file: "GR_001.html", title: "...", titleFr: "...", category: "grammar",
-//     level: "B1", premium: false, tags: ["..."] }
-//
-//   • تصویر: اگر چیزی ندهی، خودکار یک تصویر زیبا ساخته می‌شود.
-//   • برای عکس واقعی: فایل عکس را در مخزن آپلود کن و این خط را اضافه کن:
-//       img: "mon-image.jpg"
-//
-// ۲) محتوای واژگان (دسته‌ی vocab) — علاوه بر موارد بالا می‌تواند داشته باشد:
-//       theme: "دنیای کار",                    ← تمِ فایل (یک عبارت)
-//       keywords: ["دورکاری", "فناوری"]         ← کلمات کلیدی (۱ تا ۳ تا)
-//   این دو زیر کارت محتوا روی صفحه‌ی اصلی نمایش داده می‌شوند.
-//
-// ۲) پادکست (لینک خارجی مثل Spotify/YouTube + توضیح دوزبانه):
-//   { link: "https://open.spotify.com/...", title: "...", titleFr: "...",
-//     category: "podcast",
-//     descFa: "این پادکست درباره‌ی ... است",
-//     descFr: "Ce podcast parle de ...",
-//     tags: ["..."] }
-//
 const LESSONS = [
   {
     file: "GRAM_constructions_impersonnelles.html",
@@ -91,86 +7,10 @@ const LESSONS = [
     tags: ["subjonctif","indicatif","impersonnel","il faut","B2","C1"],
     summary: "ساختارهای غیرشخصی با وجه التزامی یا اخباری + ۱۲ تمرین تعاملی"
   },
-
-  {
-    file: "IF_ep09.html",
-    title: "🎧 InnerFrench #09 — La France vue de l'étranger",
-    titleFr: "#09 La France vue de l'étranger",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "فرانسه از نگاه خارجی‌ها"
-  },
-  {
-    file: "IF_ep10.html",
-    title: "🎧 InnerFrench #10 — L'argent, tabou en France ?",
-    titleFr: "#10 L'argent, tabou en France ?",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "پول، تابو در فرانسه؟"
-  },
-  {
-    file: "IF_ep11.html",
-    title: "🎧 InnerFrench #11 — Faut-il se lever tôt ?",
-    titleFr: "#11 Faut-il se lever tôt ?",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "آیا باید زود بیدار شد؟"
-  },
-  {
-    file: "IF_ep12.html",
-    title: "🎧 InnerFrench #12 — Le 14 juillet en France",
-    titleFr: "#12 Le 14 juillet en France",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "۱۴ ژوئیه در فرانسه"
-  },
-  {
-    file: "IF_ep13.html",
-    title: "🎧 InnerFrench #13 — Les malheurs des gagnants du loto",
-    titleFr: "#13 Les malheurs des gagnants du loto",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "بدبختی‌های برندگان لاتاری"
-  },
-  {
-    file: "IF_ep14.html",
-    title: "🎧 InnerFrench #14 — Comment créer le héros parfait",
-    titleFr: "#14 Comment créer le héros parfait",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "چطور قهرمان کامل بسازیم؟"
-  },
-  {
-    file: "IF_ep15.html",
-    title: "🎧 InnerFrench #15 — L'école en France",
-    titleFr: "#15 L'école en France",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "مدرسه در فرانسه"
-  },
-  {
-    file: "IF_ep16.html",
-    title: "🎧 InnerFrench #16 — Prendre l'habitude de faire du français",
-    titleFr: "#16 Prendre l'habitude de faire du français",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "عادت کردن به فرانسه"
-  },
-  {
-    file: "IF_ep17.html",
-    title: "🎧 InnerFrench #17 — Xavier Dolan, réalisateur prodige ?",
-    titleFr: "#17 Xavier Dolan, réalisateur prodige ?",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "گزاویه دولان، کارگردان نابغه؟"
-  },
-
   {file:"GRAM_passe_recent.html",title:"📐 Le Passé Récent — venir de",titleFr:"Le Passé Récent",category:"grammar",level:"A2–B1",tags:["passé récent","venir de","A2"],summary:"گذشته نزدیک — تازه"},
-  {file:"GRAM_passe_compose.html",title:"📐 Le Passé Composé",titleFr:"Le Passé Composé",category:"grammar",level:"A2–B1",tags:["passé composé","auxiliaire","participe passé"],summary:"گذشته مرکب کامل"},
   {file:"GRAM_pc_imparfait.html",title:"📐 Passé Composé et Imparfait",titleFr:"PC et Imparfait",category:"grammar",level:"B1–B2",tags:["passé composé","imparfait","B1"],summary:"تفاوت گذشته مرکب و استمراری"},
   {file:"GRAM_subjonctif.html",title:"📐 Subjonctif vs Indicatif",titleFr:"Subjonctif vs Indicatif",category:"grammar",level:"B1–C1",tags:["subjonctif","indicatif","B2","C1"],summary:"وجه التزامی کامل با تمام محرک‌ها"},
   {file:"GRAM_en_y_cod_coi.html",title:"📐 EN · Y · COD · COI",titleFr:"Pronoms compléments",category:"grammar",level:"B1–B2",tags:["pronoms","COD","COI","EN","Y"],summary:"ضمایر مفعولی کامل با ترتیب و جایگاه"},
-
   {
     file: "MINI_000.html",
     title: "✍️ Le silence qui parle",
@@ -523,7 +363,6 @@ const LESSONS = [
     tags: ["comparaison","plus","moins","aussi","autant"],
     summary: "مقایسه کامل در فرانسه از A2 تا C1"
   },
-
   {
     file: "VOCAB_prison_justice.html",
     title: "📚 La prison & la justice pénale",
@@ -556,7 +395,6 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","C1"],
     summary: "مواد مخدر، قانون و جامعه"
   },
-
   {
     file: "GRAM_futur_proche.html",
     title: "📐 Le Futur Proche — آینده نزدیک",
@@ -581,7 +419,6 @@ const LESSONS = [
     tags: ["futur","futur antérieur","temps composé","antériorité"],
     summary: "ساختار، کاربرد antériorité و مقایسه سه زمان آینده"
   },
-
   {
     file: "PODCAST_player.html",
     title: "🎙️ پادکست فرانسوی — پخش مستقیم",
@@ -590,7 +427,6 @@ const LESSONS = [
     tags: ["podcast","psychologie","écoute","B1","B2"],
     summary: "پخش مستقیم پادکست‌های فرانسوی — روان‌شناسی و رفاه"
   },
-
   {
     file: "PODCAST_ep288_amour.html",
     title: "🎙️ L'amour idéalisé — entre rêve et réalité",
@@ -599,7 +435,6 @@ const LESSONS = [
     tags: ["podcast","psychologie","amour","couple","B2"],
     summary: "اپیزود ۲۸۸: عشق آرمانی — بین رؤیا و واقعیت با درمانگر دیان صاباغ"
   },
-
   {
     file: "TCF/PAGE_examens_tcf.html",
     title: "📋 راهنمای امتحانات TCF / TEF / DELF",
@@ -664,7 +499,6 @@ const LESSONS = [
     tags: ["tcf","expression orale","tâche 3","débat","travail"],
     summary: "تاچه ۳: بحث — کار در خارج از کشور"
   },
-
   {
     file: "IMAGE/img_1166.html",
     title: "📸 تکنسین داخل لوله",
@@ -872,7 +706,6 @@ const LESSONS = [
     tags: ["image","décrire","description","A2-B1"],
     summary: "آزادی بر فراز صخره — توصیف تصویر"
   },
-
   {
     file: "innerfrench.html?ep=1",
     title: "🎧 InnerFrench #1 — یادگیری طبیعی زبان فرانسه",
@@ -929,8 +762,6 @@ const LESSONS = [
     tags: ["innerfrench","podcast","écoute","B1","B2"],
     summary: "نظریه‌های توطئه"
   },
-
-
   {
     file: "VIDEO_intro.html",
     title: "🎬 ویدیوهای آموزشی فرانسه",
@@ -975,7 +806,6 @@ const LESSONS = [
     tags: ["image","décrire","description","B1–B2"],
     summary: "توصیف تصویر با هایلایت واژگان و ساختارها"
   },
-
   {
     file: "IMAGE_disque_dur.html",
     title: "📸 توصیف تصویر — Disque dur sur le sable",
@@ -1050,7 +880,8 @@ const LESSONS = [
     category: "culture", level: "B1",
     tags: ["فرهنگ","کانادا","Acadie","Guyane","fête"],
     summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
-  },  {
+  },
+  {
     file: "VOCAB_mots_difficiles.html",
     title: "📚 ۱۰۰ کلمهٔ دشوار فرانسه",
     titleFr: "100 Mots Difficiles en Français",
@@ -1058,7 +889,6 @@ const LESSONS = [
     tags: ["واژگان","مشکل","avancé","B2","C1"],
     summary: "۱۰۰ کلمهٔ سطح B2–C1 با تعریف فرانسوی، ترجمهٔ فارسی و ۲ مثال هر کدام. قابل جستجو و فیلتر بر اساس سطح و موضوع (احساس، اخلاق، ذهن، اجتماع...).",
   },
-
   {
     file: "LECON_mind_maps_temps.html",
     title: "🗺️ Mind Maps — زمان‌های فرانسه",
@@ -1083,7 +913,6 @@ const LESSONS = [
     tags: ["فرهنگ","dessert","crème brûlée","mille-feuille","éclair"],
     summary: "دسرهای مشهور فرانسوی با هایلایت دوزبانه: crème brûlée، tarte Tatin، mille-feuille، éclair. چرا مشهورند؟ + جهانی‌شدن (ژاپن، کره، کانادا...)",
   },
-
   {
     file: "CULTURE_macaron.html",
     title: "🍬 Le Macaron — تاریخ و هنر",
@@ -1092,7 +921,6 @@ const LESSONS = [
     tags: ["فرهنگ","macaron","Ladurée","Pierre Hermé","pâtisserie"],
     summary: "پانصد سال تاریخ ماکارون: از کاترین دو مدیچی تا Pierre Hermé. Ladurée vs Hermé. علم ماکارون. دوزبانه با هایلایت‌های کلیکی.",
   },
-
   {
     file: "CULTURE_art_de_vivre.html",
     title: "L'Art de Vivre — هنر زندگی فرانسوی",
@@ -1100,15 +928,6 @@ const LESSONS = [
     category: "culture", level: "B1–B2",
     tags: ["فرهنگ","art de vivre","gastronomie","mode","café"],
     summary: "هنر زندگی فرانسوی: سفره و غذا، مد پاریسی، فرهنگ کافه، جشن‌های ملی. با واژگان، نقل‌قول‌ها و حقایق جذاب.",
-  },
-
-  {
-    file: "LECON_mind_maps_temps.html",
-    title: "Mind Maps — زمان‌های فرانسه",
-    titleFr: "Mind Maps des temps français",
-    category: "grammar", level: "A1–B2",
-    tags: ["درسنامه","زمان","mind map","présent","passé","futur"],
-    summary: "۶ زمان اصلی فرانسه در یک نگاه: Présent / Passé composé / Imparfait / Futur / Conditionnel / Subjonctif — هر کدام با فرمول، سیگنال‌ها، مثال و جدول مقایسه.",
   },
   {
     file: "LECON_h_aspire_muet.html",
@@ -1150,7 +969,6 @@ const LESSONS = [
     tags: ["درسنامه", "conditionnel", "si"],
     summary: "ساخت (Futur+پسوندهای Imparfait) + صرف ۸ فعل بی‌قاعده + ۵ کاربرد (Si / درخواست مؤدبانه / توصیه / خبر غیرمستقیم / آرزو) + ۷۰ تمرین تعاملی در ۵ گروه.",
   },
-
   {
     file: "LECON_heure.html",
     title: "درسنامه: گفتن ساعت",
@@ -1159,7 +977,6 @@ const LESSONS = [
     tags: ["درسنامه", "ساعت", "heure", "temps"],
     summary: "ساعت روزمره (et quart / et demie / moins) و رسمی (0-23) + پرسیدن ساعت + برنامه‌ریزی + ساعت تعاملی بصری + آزمون ۵ سؤالی.",
   },
-
   {
     file: "LECON_quand_quant.html",
     title: "درسنامه: QUAND یا QUANT؟",
@@ -1184,7 +1001,6 @@ const LESSONS = [
     tags: ["آرتیکل", "روانشناسی", "بهره‌وری"],
     summary: "مقاله‌ای از Nozbe: ۵ دزد انرژی رایج (آدم‌های منفی، تعلل، کار بی‌وقفه، بی‌نظمی، چیزهای غیرقابل کنترل). واژگان و ساختارهای B2.",
   },
-
   {
     file: "LECON_etre_aller.html",
     title: "درسنامه: J'ai été یا Je suis allé؟",
@@ -1212,35 +1028,6 @@ const LESSONS = [
     tags: ["درسنامه", "حروف اضافه", "à de"],
     summary: "صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی.",
   },
-
-  {
-    file: "LECON_etre_aller.html",
-    title: "درسنامه: J'ai été یا Je suis allé؟",
-    titleFr: "J'ai été ou je suis allé ?",
-    category: "grammar",
-    level: "A2–B1",
-    tags: ["درسنامه", "passé composé", "être aller"],
-    summary: "تفاوت دقیق j'ai été (بودم/تجربه) و je suis allé (رفتم — حرکت مشخص) با جدول مقایسه، نکات توافق و آزمون ۵ سؤالی.",
-  },
-  {
-    file: "LECON_possessifs.html",
-    title: "درسنامه: صفت‌های ملکی",
-    titleFr: "Les adjectifs possessifs",
-    category: "grammar",
-    level: "A1–B1",
-    tags: ["درسنامه", "صفت ملکی", "mon ma mes"],
-    summary: "جدول کامل صفت‌های ملکی + تله‌های رایج: mon amie (نه ma)، leur/leurs، و جنسیت اسم نه مالک. آزمون ۵ سؤالی.",
-  },
-  {
-    file: "LECON_a_ou_de.html",
-    title: "درسنامه: À یا DE بعد از صفت و اسم؟",
-    titleFr: "À ou DE en français ?",
-    category: "grammar",
-    level: "B1–B2",
-    tags: ["درسنامه", "حروف اضافه", "à de"],
-    summary: "صفت‌های همیشه + à (prêt à، habitué à) و همیشه + de (content de، capable de) + اسم‌ها + à/de. آزمون ۵ سؤالی.",
-  },
-
   {
     file: "LECON_prepositions.html",
     title: "درسنامه: حروف اضافه‌ی فرانسه",
@@ -1286,7 +1073,6 @@ const LESSONS = [
     tags: ["درسنامه", "واژگان", "certain quelque"],
     summary: "تفاوت دقیق certain (بعضی‌های مشخص) و quelques (چند تا). ترکیب‌های ثابت: quelque chose، quelque part. با آزمون.",
   },
-
   {
     file: "ARTICLE_voleurs_energie.html",
     title: "۱۰ دزد انرژی در زندگی",
@@ -1337,7 +1123,6 @@ const LESSONS = [
     tags: ["آرتیکل", "تحلیل"],
     summary: "شهر یا روستا؟ مقایسه‌ی کامل: امکانات شهر vs آرامش روستا + مدل ترکیبی جدید. واژگان مقایسه‌ای B1-B2 با تحلیل.",
   },
-
   {
     file: "LECON_consequence.html",
     title: "درسنامه: بیان نتیجه",
@@ -1388,7 +1173,6 @@ const LESSONS = [
     tags: ["درسنامه", "سؤال", "est-ce que"],
     summary: "درسنامه‌ی کامل سؤال پرسیدن — سه سطح (محاوره/معمولی/رسمی)، کلمات پرسشی، quel و qui/que، و اشتباه‌های رایج. با فهرست تیترها و آزمون.",
   },
-
   {
     file: "VOCAB_teletravail_intermediaire.html",
     title: "واژگان دورکاری و فناوری — متوسط",
@@ -1534,91 +1318,6 @@ const LESSONS = [
     summary: "۵۰ قید کلیدی برای غنی‌کردن جملات در سطح B2 — به‌صورت کارت با مثال. مناسب تقویت بیان در TCF Canada.",
   },
   {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000751533361",
-    title: "InnerFrench — شغل‌های «کسل‌کننده»",
-    titleFr: "InnerFrench — Le « job chiant »",
-    category: "podcast",
-    cover: "<svg viewBox=\'0 0 400 150\' xmlns=\'http://www.w3.org/2000/svg\'><defs><linearGradient id=\'pg\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'1\'><stop offset=\'0\' stop-color=\'#2e7bb5\'/><stop offset=\'1\' stop-color=\'#1a4f7a\'/></linearGradient></defs><rect width=\'400\' height=\'150\' fill=\'url(#pg)\'/><circle cx=\'330\' cy=\'34\' r=\'58\' fill=\'#ffffff\' opacity=\'0.06\'/><circle cx=\'58\' cy=\'120\' r=\'44\' fill=\'#ffffff\' opacity=\'0.05\'/><g opacity=\'0.92\'><rect x=\'150\' y=\'94\' width=\'100\' height=\'7\' rx=\'3\' fill=\'#c4a572\'/><rect x=\'168\' y=\'58\' width=\'64\' height=\'40\' rx=\'5\' fill=\'#fffdf8\'/><rect x=\'174\' y=\'64\' width=\'52\' height=\'28\' rx=\'2\' fill=\'#2e7bb5\'/><circle cx=\'200\' cy=\'46\' r=\'11\' fill=\'#c4a572\'/></g><g stroke=\'#fffdf8\' stroke-width=\'3\' fill=\'none\' stroke-linecap=\'round\' opacity=\'0.5\'><path d=\'M250 40 a18 18 0 0 1 28 0\'/><path d=\'M256 48 a10 10 0 0 1 16 0\'/></g><g opacity=\'0.85\'><rect x=\'96\' y=\'86\' width=\'20\' height=\'16\' rx=\'3\' fill=\'#c4a572\'/><path d=\'M116 89 a6 6 0 0 1 0 10\' stroke=\'#c4a572\' stroke-width=\'3\' fill=\'none\'/></g></svg>",
-    descFr: "Comptable, plombier, électricien... Ces métiers « ennuyeux » deviennent soudain à la mode ! Pourquoi ? Hugo et Ingrid remontent le temps : des Millennials qui cherchaient du sens dans leur travail, jusqu'à la Génération Z après le Covid. Aujourd'hui, beaucoup rêvent d'un « job chiant » — un travail simple qui laisse du temps pour tout le reste. Et si c'était ça, le vrai secret du bonheur ?",
-    descFa: "حسابدار، لوله‌کش، برق‌کار... شغل‌هایی که زمانی «خسته‌کننده» به نظر می‌رسیدند، حالا ناگهان خواستنی شده‌اند! چرا؟ هوگو و اینگرید کمی به عقب برمی‌گردند: از نسلی که دنبال «معنا» در کارش بود، تا نسل Z بعد از کرونا. امروز خیلی‌ها آرزوی یک «شغل کسل‌کننده» را دارند — کاری ساده که برایشان وقت آزاد بگذارد. نکند راز واقعی خوشبختی همین باشد؟",
-    tags: ["InnerFrench", "متوسط", "کار"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000385439014",
-    title: "InnerFrench — مطالعات جنسیت",
-    titleFr: "InnerFrench — Les études de genre",
-    category: "podcast",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='pgen' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#8a5ba8'/><stop offset='1' stop-color='#5a3b78'/></linearGradient></defs><rect width='400' height='150' fill='url(#pgen)'/><circle cx='330' cy='40' r='56' fill='#ffffff' opacity='0.06'/><circle cx='64' cy='118' r='42' fill='#ffffff' opacity='0.05'/><g opacity='0.9' stroke='#fffdf8' stroke-width='5' fill='none'><circle cx='168' cy='70' r='20'/><path d='M168 90 L168 116 M156 104 L180 104'/><circle cx='236' cy='62' r='20'/><path d='M250 48 L268 30 M256 30 L268 30 L268 42'/></g></svg>",
-    descFr: "Pourquoi pense-t-on souvent que les hommes sont meilleurs en maths ? Les garçons sont-ils vraiment plus violents que les filles ? Dans cet épisode, Hugo explore les « études de genre ». L'idée principale est simple : beaucoup de différences entre les hommes et les femmes ne sont pas biologiques, mais sociales. Avec des exemples tirés de livres, de films et d'expériences, il montre comment notre éducation construit, petit à petit, notre identité.",
-    descFa: "چرا اغلب فکر می‌کنیم مردها در ریاضی بهترند؟ آیا پسرها واقعاً از دخترها خشن‌ترند؟ در این قسمت، هوگو سراغ «مطالعات جنسیت» می‌رود. ایده‌ی اصلی ساده است: بسیاری از تفاوت‌های میان زن و مرد، نه زیستی، بلکه اجتماعی‌اند. او با مثال‌هایی از کتاب‌ها، فیلم‌ها و آزمایش‌ها نشان می‌دهد که چطور تربیت ما، کم‌کم، هویتمان را می‌سازد. 💭",
-    tags: ["InnerFrench", "متوسط", "جامعه"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000385007054",
-    title: "InnerFrench — ربات‌های احساساتی",
-    titleFr: "InnerFrench — Les robots émotionnels",
-    category: "podcast",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='probo' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#3f9c8a'/><stop offset='1' stop-color='#246b5a'/></linearGradient></defs><rect width='400' height='150' fill='url(#probo)'/><circle cx='328' cy='38' r='54' fill='#ffffff' opacity='0.06'/><circle cx='60' cy='120' r='40' fill='#ffffff' opacity='0.05'/><g opacity='0.92'><rect x='176' y='52' width='48' height='42' rx='8' fill='#fffdf8'/><circle cx='190' cy='70' r='5' fill='#3f9c8a'/><circle cx='210' cy='70' r='5' fill='#3f9c8a'/><path d='M190 84 a10 6 0 0 0 20 0' stroke='#3f9c8a' stroke-width='3' fill='none'/><rect x='196' y='40' width='8' height='12' fill='#c4a572'/><circle cx='200' cy='38' r='4' fill='#c4a572'/></g><g stroke='#fffdf8' stroke-width='3' fill='none' opacity='0.55'><path d='M150 60 a14 14 0 0 0 0 28'/><path d='M250 60 a14 14 0 0 1 0 28'/></g></svg>",
-    descFr: "Des robots qui comprennent nos émotions ? Cela ressemble à un film de science-fiction, mais ils existent déjà ! Dans cet épisode, Hugo parle de ces machines « émotionnelles » qui vivent déjà dans certaines familles et entreprises. Peut-on vraiment comprendre les sentiments humains avec des algorithmes ? Et faut-il avoir peur de partager notre vie avec eux ? Une réflexion fascinante sur la technologie et l'humain.",
-    descFa: "ربات‌هایی که احساسات ما را می‌فهمند؟ شبیه فیلم‌های علمی-تخیلی است، اما همین حالا وجود دارند! در این قسمت، هوگو درباره‌ی این ماشین‌های «احساساتی» حرف می‌زند که همین الان در برخی خانه‌ها و شرکت‌ها زندگی می‌کنند. آیا واقعاً می‌شود احساسات انسانی را با الگوریتم فهمید؟ و آیا باید از شریک‌شدن زندگی‌مان با آن‌ها بترسیم؟ 🤖",
-    tags: ["InnerFrench", "متوسط", "فناوری"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/easy-french-learn-french-through-authentic-conversations/id1624981488?l=fr-FR&i=1000773141482",
-    title: "Easy French — موفقیت در زندگی یا یک زندگی موفق؟",
-    titleFr: "Easy French — Réussir dans la vie ou réussir sa vie ?",
-    category: "podcast",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='psucc' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#c4502d'/><stop offset='1' stop-color='#8a3320'/></linearGradient></defs><rect width='400' height='150' fill='url(#psucc)'/><circle cx='330' cy='40' r='54' fill='#ffffff' opacity='0.06'/><circle cx='62' cy='118' r='40' fill='#ffffff' opacity='0.05'/><g opacity='0.9'><path d='M180 96 L180 70 L196 70 L196 96 Z' fill='#fffdf8'/><path d='M204 96 L204 54 L220 54 L220 96 Z' fill='#c4a572'/><path d='M156 96 L156 82 L172 82 L172 96 Z' fill='#fffdf8' opacity='0.7'/><path d='M150 60 L240 60' stroke='#fffdf8' stroke-width='2' opacity='0.4' stroke-dasharray='4 4'/></g></svg>",
-    descFr: "« Réussir dans la vie » et « réussir sa vie », est-ce vraiment la même chose ? 🤔 Dans cet épisode, les hôtes parlent sans filtre de la pression sociale, du piège de l'argent et du train de vie, et du poids de nos choix. Une conversation sincère qui pose plus de questions qu'elle ne donne de réponses — mais qui donne vraiment envie de réfléchir à nos propres priorités.",
-    descFa: "«موفق‌شدن در زندگی» و «یک زندگیِ موفق داشتن»، آیا واقعاً یک چیزند؟ 🤔 در این قسمت، مجری‌ها بی‌پرده درباره‌ی فشار اجتماعی، دامِ پول و سبک زندگی، و سنگینیِ انتخاب‌هایمان حرف می‌زنند. گفت‌وگویی صمیمانه که بیشتر از آنکه جواب بدهد، سؤال می‌سازد — اما واقعاً آدم را به فکر کردن درباره‌ی اولویت‌های خودش می‌اندازد. ✨",
-    tags: ["Easy French", "متوسط", "زندگی"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/easy-french-learn-french-through-authentic-conversations/id1624981488?l=fr-FR&i=1000772072275",
-    title: "Easy French — نظرهای غیرعامه‌پسند",
-    titleFr: "Easy French — Nos opinions impopulaires",
-    category: "podcast",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='popi' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#d4923f'/><stop offset='1' stop-color='#a8661f'/></linearGradient></defs><rect width='400' height='150' fill='url(#popi)'/><circle cx='328' cy='40' r='54' fill='#ffffff' opacity='0.07'/><circle cx='62' cy='118' r='40' fill='#ffffff' opacity='0.05'/><g opacity='0.92'><path d='M168 56 h44 a6 6 0 0 1 6 6 v22 a6 6 0 0 1 -6 6 h-28 l-12 12 v-12 h-4 a6 6 0 0 1 -6 -6 v-22 a6 6 0 0 1 6 -6 Z' fill='#fffdf8'/><path d='M226 70 h30 a5 5 0 0 1 5 5 v16 a5 5 0 0 1 -5 5 h-3 v9 l-9 -9 h-18 a5 5 0 0 1 -5 -5 v-2' fill='#c4a572' opacity='0.85'/></g></svg>",
-    descFr: "Peut-on ne pas aimer les sushis, les frites ou même les concerts ? 😱 Dans cet épisode, les hôtes partagent leurs opinions les plus impopulaires. Entre goûts surprenants, petites controverses et débats passionnés, ils dévoilent tout ce qu'ils adorent... ou détestent. Un épisode léger et amusant, parfait pour apprendre le vocabulaire des goûts et des opinions !",
-    descFa: "می‌شود کسی سوشی، سیب‌زمینی سرخ‌کرده یا حتی کنسرت دوست نداشته باشد؟ 😱 در این قسمت، مجری‌ها نظرهای غیرعامه‌پسندشان را به اشتراک می‌گذارند. میان سلیقه‌های عجیب، جدل‌های کوچک و بحث‌های پرشور، هرچه را دوست دارند... یا متنفرند فاش می‌کنند. قسمتی سبک و بامزه، عالی برای یادگیری واژگانِ سلیقه‌ها و نظرها! 🤭",
-    tags: ["Easy French", "متوسط", "سلیقه‌ها"],
-  },
-
-  {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000747027839",
-    title: "InnerFrench — بحران رستوران‌ها",
-    titleFr: "InnerFrench — La crise des restaurants",
-    category: "podcast",
-    theme: "غذا، فرهنگ و جامعه",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='pgc0653f' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#c0653f'/><stop offset='1' stop-color='#8a3f24'/></linearGradient></defs><rect width='400' height='150' fill='url(#pgc0653f)'/><circle cx='330' cy='34' r='58' fill='#ffffff' opacity='0.06'/><circle cx='58' cy='120' r='44' fill='#ffffff' opacity='0.05'/><g opacity='0.9'><rect x='184' y='48' width='32' height='52' rx='16' fill='#fffdf8'/><path d='M170 90 a30 30 0 0 0 60 0' stroke='#fffdf8' stroke-width='4' fill='none' opacity='0.75'/><rect x='197' y='118' width='6' height='16' rx='3' fill='#fffdf8' opacity='0.7'/></g><g stroke='#c4a572' stroke-width='3' fill='none' stroke-linecap='round' opacity='0.6'><path d='M250 44 a16 16 0 0 1 24 0'/><path d='M120 56 a16 16 0 0 1 24 0'/></g></svg>",
-    descFr: "La France est connue comme le pays des restaurants. Pourtant, aujourd'hui, les gens y vont moins et le secteur va mal. Hugo et Ingrid essaient de comprendre pourquoi. D'abord, avec l'aide d'un historien, ils racontent comment le restaurant est né en France au 18ᵉ siècle — et d'où vient vraiment le mot « restaurant ». Ensuite, ils expliquent les raisons de la crise : les prix qui montent, la qualité qui baisse, et surtout le mode de vie qui change (le télétravail, les applications de livraison...).",
-    descFa: "فرانسه به‌عنوان «سرزمین رستوران‌ها» شناخته می‌شود. اما این روزها مردم کمتر به رستوران می‌روند و این صنعت روزهای سختی را می‌گذراند. هوگو و اینگرید می‌خواهند بفهمند چرا. اول، با کمک یک تاریخ‌دان، برایمان تعریف می‌کنند که چطور رستوران در قرن هجدهم در فرانسه به‌وجود آمد — و اصلاً خودِ کلمه‌ی « restaurant » از کجا آمده! بعد، دلیل‌های این بحران را توضیح می‌دهند: بالا رفتن قیمت‌ها، پایین آمدن کیفیت، و مهم‌تر از همه تغییر سبک زندگی (دورکاری، اپلیکیشن‌های تحویل غذا...).",
-    tags: ["InnerFrench", "متوسط", "غذا و جامعه"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000686725143",
-    title: "InnerFrench — فرانسوی‌ها و کار",
-    titleFr: "InnerFrench — Les Français et le travail",
-    category: "podcast",
-    theme: "کار و سبک زندگی",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='pg41618a' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#41618a'/><stop offset='1' stop-color='#1e3a5f'/></linearGradient></defs><rect width='400' height='150' fill='url(#pg41618a)'/><circle cx='330' cy='34' r='58' fill='#ffffff' opacity='0.06'/><circle cx='58' cy='120' r='44' fill='#ffffff' opacity='0.05'/><g opacity='0.9'><rect x='184' y='48' width='32' height='52' rx='16' fill='#fffdf8'/><path d='M170 90 a30 30 0 0 0 60 0' stroke='#fffdf8' stroke-width='4' fill='none' opacity='0.75'/><rect x='197' y='118' width='6' height='16' rx='3' fill='#fffdf8' opacity='0.7'/></g><g stroke='#c4a572' stroke-width='3' fill='none' stroke-linecap='round' opacity='0.6'><path d='M250 44 a16 16 0 0 1 24 0'/><path d='M120 56 a16 16 0 0 1 24 0'/></g></svg>",
-    descFr: "Vus de l'étranger, les Français ont la réputation de ne pas aimer le travail : semaine de 35 heures, longues vacances, retraite confortable, pauses déjeuner interminables et grèves fréquentes... Mais en même temps, on dit qu'ils sont parmi les plus productifs au monde, et qu'ils ont trouvé un bon équilibre entre travail et vie personnelle. Dans cet épisode, Hugo sépare le vrai du faux pour comprendre la vraie relation des Français avec le travail.",
-    descFa: "از بیرون که به فرانسوی‌ها نگاه کنی، معروف‌اند به اینکه از کار خوششان نمی‌آید: هفته‌ی کاری ۳۵ ساعته، تعطیلات طولانی، بازنشستگی راحت، وقت‌های ناهارِ کِش‌دار و اعتصاب‌های پی‌درپی... اما از طرف دیگر می‌گویند آن‌ها جزو پُربازده‌ترین کارگران دنیا هستند و تعادل خوبی بین کار و زندگی شخصی پیدا کرده‌اند. در این قسمت، هوگو درست را از غلط جدا می‌کند تا بفهمیم رابطه‌ی واقعی فرانسوی‌ها با کار چطور است.",
-    tags: ["InnerFrench", "متوسط", "کار"],
-  },
-  {
-    link: "https://podcasts.apple.com/us/podcast/innerfrench/id1231472946?l=fr-FR&i=1000586086877",
-    title: "InnerFrench — دورکاری",
-    titleFr: "InnerFrench — Le télétravail",
-    category: "podcast",
-    theme: "کار و فناوری",
-    cover: "<svg viewBox='0 0 400 150' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='pg2e8b6b' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#2e8b6b'/><stop offset='1' stop-color='#1a5a44'/></linearGradient></defs><rect width='400' height='150' fill='url(#pg2e8b6b)'/><circle cx='330' cy='34' r='58' fill='#ffffff' opacity='0.06'/><circle cx='58' cy='120' r='44' fill='#ffffff' opacity='0.05'/><g opacity='0.9'><rect x='184' y='48' width='32' height='52' rx='16' fill='#fffdf8'/><path d='M170 90 a30 30 0 0 0 60 0' stroke='#fffdf8' stroke-width='4' fill='none' opacity='0.75'/><rect x='197' y='118' width='6' height='16' rx='3' fill='#fffdf8' opacity='0.7'/></g><g stroke='#c4a572' stroke-width='3' fill='none' stroke-linecap='round' opacity='0.6'><path d='M250 44 a16 16 0 0 1 24 0'/><path d='M120 56 a16 16 0 0 1 24 0'/></g></svg>",
-    descFr: "Avec les nouvelles technologies, de plus en plus de gens se sont mis au télétravail. En France, comme ailleurs, c'est surtout la pandémie de Covid qui a accéléré cette tendance. Dans cet épisode, Hugo et Ingrid partagent leur propre expérience pour présenter les avantages et les inconvénients du télétravail — un sujet qu'ils connaissent bien, car chez InnerFrench, tout le monde travaille 100 % à distance ! Ils parlent des effets de cette nouvelle façon de travailler pour les salariés, les entreprises et la société.",
-    descFa: "با آمدن فناوری‌های جدید، آدم‌های بیشتری به سراغ دورکاری رفتند. در فرانسه، مثل خیلی جاهای دیگر، این پاندمی کرونا بود که این روند را سرعت بخشید. در این قسمت، هوگو و اینگرید از تجربه‌ی خودشان می‌گویند تا مزایا و معایب دورکاری را نشان دهند — موضوعی که خوب می‌شناسندش، چون در InnerFrench همه صددرصد دورکار هستند! آن‌ها درباره‌ی تأثیر این شیوه‌ی تازه‌ی کار بر کارمندان، شرکت‌ها و کل جامعه صحبت می‌کنند.",
-    tags: ["InnerFrench", "متوسط", "دورکاری"],
-  },
-
-  {
     file: "GRAM_cedille_commencer.html",
     title: "قانون تلفظ ç (سدیج)",
     titleFr: "La cédille — ç",
@@ -1700,1250 +1399,9 @@ const LESSONS = [
     premium: false,
     tags: ["après que", "subjonctif", "indicatif", "تمرین"],
     summary: "چرا «après que» با indicatif می‌آید نه subjonctif (برخلاف avant que)؟ توضیح منطق، اشتباه پرتکرار، ترفند «après + مصدر گذشته» و ۵ تمرین تعاملی.",
-  },];
-
-// ═══════════════════════════════════════════════════════════
-//  بانک نکته‌ها — «می‌دونستی که...؟»
-//  هر بار یکی تصادفی روی صفحه‌ی اول نشان داده می‌شود.
-//  برای افزودن نکته‌ی جدید، فقط یک بلوک اضافه کن.
-//  type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
-// ═══════════════════════════════════════════════════════════
-const TIPS = [
-  // نکته‌ها را هدی می‌فرستد و اینجا اضافه می‌شوند.
-  // ساختار هر نکته:
-  //   { type: "saviez", fr: "...", fa: "...", cat: "grammar" }
-  //   type: "saviez" (می‌دونستی که) یا "rappel" (یادت باشه که)
-];
-
-// ═══════════════════════════════════════════════════════════
-//  نکته‌های طلایی — «نکته‌های هدی»
-//  نکته‌های کوتاه و کاربردی که در یک بخش جدا و ماندگار نمایش داده می‌شوند.
-//  هر نکته:
-//    titre   : عنوان کوتاه نکته
-//    correct : شکل درست (با ✅)
-//    faux    : شکل غلط (با ❌) — اختیاری
-//    note    : توضیح فارسی
-//    exemple : یک مثال فرانسه
-//    exempleFa : ترجمه‌ی مثال
-// ═══════════════════════════════════════════════════════════
-const ASTUCES = [
-  {
-    titre: "Se rendre compte — یکی از پرکاربردترین افعال دوضمیره",
-    sens: "«se rendre compte (de)» یعنی «متوجه شدن / پی بردن / به خود آمدن». یک فعل دوضمیره است و ضمیرش هیچ‌وقت حذف نمی‌شود.",
-    correct: "Je me rends compte de mon erreur.",
-    faux: "Je rends compte de mon erreur.",
-    note: "این فعل <b>دوضمیره</b> است: همیشه با ضمیر انعکاسی (me, te, se, nous, vous) می‌آید. نکته‌ی مهم: <b>se rendre compte DE</b> + اسم، یا <b>se rendre compte QUE</b> + جمله. در محاوره، «Tu te rends compte ?!» یعنی «باورت می‌شه؟! / فکرشو بکن!» برای بیان تعجب یا ناباوری.",
-    conjugaison: [
-      { p: "je", form: "me rends compte" },
-      { p: "tu", form: "te rends compte" },
-      { p: "il/elle", form: "se rend compte" },
-      { p: "nous", form: "nous rendons compte" },
-      { p: "vous", form: "vous rendez compte" },
-      { p: "ils/elles", form: "se rendent compte" },
-    ],
-    exemples: [
-      { fr: "Je me rends compte de mon erreur.", fa: "متوجه اشتباهم می‌شوم." },
-      { fr: "Tu te rends compte de ce qu'il a osé faire ?!", fa: "باورت می‌شه چه جرئتی کرد؟!" },
-      { fr: "Maintenant que tu te rends compte de ton erreur, tu dois t'excuser.", fa: "حالا که به اشتباهت پی بردی، باید عذرخواهی کنی." },
-      { fr: "Rends-toi compte ! (امری)", fa: "فکرشو بکن! / تصور کن!" },
-    ],
-    passe: {
-      intro: "در زمان گذشته (passé composé)، این فعل با <b>être</b> صرف می‌شود (چون دوضمیره است). نکته‌ی ظریف: چون مفعول مستقیم نیست (compte ثابت است)، اسم مفعول (participe) <b>توافق نمی‌کند</b> و همیشه «rendu compte» می‌ماند.",
-      ex: { fr: "Je me suis rendu compte que mes parents allaient divorcer.", fa: "متوجه شدم که والدینم می‌خواهند طلاق بگیرند." },
-    },
-    quiz: [
-      { q: "Je ___ compte de mon erreur. (présent)", options: ["me rends", "rends", "me rendre"], correct: 0, note: "حال: «je me rends compte» — ضمیر me اجباری است." },
-      { q: "Hier, elle ___ compte de la situation. (passé)", options: ["s'est rendu", "a rendu", "se rend"], correct: 0, note: "گذشته: با être صرف می‌شود → «elle s'est rendu compte». توجه: rendu توافق نمی‌کند." },
-      { q: "Vous ___ compte de ce problème ? (présent)", options: ["vous rendez", "rendez", "vous rendre"], correct: 0, note: "حال، دوم‌شخص جمع: «vous vous rendez compte»." },
-      { q: "Nous ___ compte trop tard. (passé composé)", options: ["nous sommes rendu", "avons rendu", "nous rendons"], correct: 0, note: "گذشته با être: «nous nous sommes rendu compte»." },
-      { q: "Tu ___ compte de ton erreur. (présent)", options: ["te rends", "rends", "tes rends"], correct: 0, note: "حال، دوم‌شخص مفرد: «tu te rends compte»." },
-    ],
-    source: "بر اساس Lawless French + منابع گرامری معتبر",
-  },
-  {
-    titre: "سؤال پرسیدن هیچ‌وقت با demander نمی‌آید!",
-    correct: "poser une question",
-    faux: "demander une question",
-    note: "برای «سؤال پرسیدن» همیشه از فعل <b>poser</b> استفاده کن، نه demander. فعل demander به‌معنای «درخواست کردن / خواستن» است، نه «سؤال پرسیدن».",
-    exemple: "L'élève pose une question au professeur.",
-    exempleFa: "دانش‌آموز از معلم یک سؤال می‌پرسد.",
   },
 ];
 
-// ═══════════════════════════════════════════════════════════
-//  صفت‌ها — کارت کامل هر صفت
-//  هر صفت:
-//    mot       : صفت (مذکر / مؤنث)
-//    emoji     : ایموجی‌های نماینده‌ی حس صفت
-//    traductions : آرایه‌ای از ترجمه‌های فارسی
-//    synonymes : آرایه‌ای از { fr, fa }
-//    combinaisons : آرایه‌ای از { fr, fa, icon }  (ترکیبات پرتکرار)
-//    phrase    : { fr, fa }  (یک جمله‌ی نمونه)
-// ═══════════════════════════════════════════════════════════
-const ADJECTIFS = [
-  {
-    mot: "déstabilisant / déstabilisante",
-    emoji: "😵‍💫⚠️",
-    traductions: [
-      "گیج‌کننده و آشفته‌کننده",
-      "برهم‌زننده‌ی تعادل ذهنی",
-      "سردرگم‌کننده",
-      "مختل‌کننده‌ی آرامش",
-    ],
-    synonymes: [
-      { fr: "perturbant", fa: "آشفته‌کننده" },
-      { fr: "troublant", fa: "نگران‌کننده / برهم‌زننده" },
-      { fr: "déroutant", fa: "گیج‌کننده" },
-      { fr: "inquiétant", fa: "نگران‌کننده" },
-      { fr: "déconcertant", fa: "سردرگم‌کننده" },
-    ],
-    combinaisons: [
-      { fr: "une situation déstabilisante", fa: "وضعیت آشفته‌کننده", icon: "⚠️" },
-      { fr: "une expérience déstabilisante", fa: "تجربه‌ی گیج‌کننده", icon: "🌍" },
-      { fr: "un changement déstabilisant", fa: "تغییرِ برهم‌زننده‌ی تعادل", icon: "🔄" },
-      { fr: "une nouvelle déstabilisante", fa: "خبر شوک‌آور", icon: "📰" },
-      { fr: "un événement déstabilisant", fa: "رویداد آشفته‌کننده", icon: "💥" },
-      { fr: "une période déstabilisante", fa: "دوره‌ای پر از بی‌ثباتی", icon: "⏳" },
-      { fr: "une remarque déstabilisante", fa: "اظهارنظر گیج‌کننده", icon: "💬" },
-      { fr: "une révélation déstabilisante", fa: "افشاگری شوک‌آور", icon: "🔍" },
-      { fr: "un contexte déstabilisant", fa: "شرایط ناپایدار و آشفته", icon: "🌐" },
-      { fr: "une décision déstabilisante", fa: "تصمیمی که تعادل را برهم می‌زند", icon: "⚖️" },
-    ],
-    phrase: {
-      fr: "Le déménagement dans un nouveau pays peut être une expérience déstabilisante au début, mais il permet souvent de développer une grande capacité d'adaptation.",
-      fa: "مهاجرت به یک کشور جدید در ابتدا می‌تواند تجربه‌ای گیج‌کننده و برهم‌زننده‌ی تعادل باشد، اما اغلب باعث تقویت توانایی سازگاری می‌شود.",
-    },
-  },
-  {
-    mot: "spacieux / spacieuse",
-    emoji: "🏡✨",
-    traductions: [
-      "جادار و راحت",
-      "وسیع و دلباز",
-      "دارای فضای باز",
-      "بزرگ و راحت (comfortable)",
-      "دارای فضای کافی",
-    ],
-    synonymes: [
-      { fr: "vaste", fa: "وسیع" },
-      { fr: "grand", fa: "بزرگ" },
-      { fr: "aéré", fa: "دلباز" },
-      { fr: "confortable", fa: "راحت" },
-    ],
-    combinaisons: [
-      { fr: "un appartement spacieux", fa: "آپارتمان جادار", icon: "🏢" },
-      { fr: "une maison spacieuse", fa: "خانه‌ی دلباز", icon: "🏡" },
-      { fr: "une chambre spacieuse", fa: "اتاق بزرگ و راحت", icon: "🛏️" },
-      { fr: "un salon spacieux", fa: "پذیرایی جادار", icon: "🛋️" },
-      { fr: "un espace spacieux", fa: "فضای وسیع", icon: "🌿" },
-      { fr: "des bureaux spacieux", fa: "دفاتر جادار", icon: "💼" },
-      { fr: "une cuisine spacieuse", fa: "آشپزخانه‌ی بزرگ", icon: "🍽️" },
-      { fr: "un intérieur spacieux", fa: "فضای داخلی دلباز", icon: "✨" },
-      { fr: "une terrasse spacieuse", fa: "تراس بزرگ", icon: "☀️" },
-      { fr: "un environnement spacieux", fa: "محیط باز و وسیع", icon: "🌳" },
-    ],
-    phrase: {
-      fr: "De nombreuses familles préfèrent vivre dans un logement spacieux afin de bénéficier d'un meilleur confort au quotidien.",
-      fa: "بسیاری از خانواده‌ها ترجیح می‌دهند در خانه‌ای جادار زندگی کنند تا از راحتی بیشتری در زندگی روزمره بهره‌مند شوند.",
-    },
-  },
-  {
-    mot: "pertinent / pertinente",
-    emoji: "🎯🧠",
-    traductions: [
-      "بجا و مرتبط",
-      "هوشمندانه و سنجیده",
-      "دقیق و منطقی",
-      "مناسب و کارآمد",
-    ],
-    synonymes: [
-      { fr: "approprié", fa: "مناسب" },
-      { fr: "judicieux", fa: "سنجیده و هوشمندانه" },
-      { fr: "cohérent", fa: "منسجم" },
-      { fr: "utile", fa: "مفید" },
-      { fr: "significatif", fa: "معنادار" },
-    ],
-    combinaisons: [
-      { fr: "une remarque pertinente", fa: "نکته‌ی بجا و هوشمندانه", icon: "💬" },
-      { fr: "une analyse pertinente", fa: "تحلیل دقیق و مرتبط", icon: "📊" },
-      { fr: "une solution pertinente", fa: "راه‌حل مناسب", icon: "🧩" },
-      { fr: "un argument pertinent", fa: "استدلال قوی و مرتبط", icon: "⚖️" },
-      { fr: "une question pertinente", fa: "سؤال بجا", icon: "❓" },
-      { fr: "des informations pertinentes", fa: "اطلاعات مرتبط و مفید", icon: "📚" },
-      { fr: "un commentaire pertinent", fa: "نظر هوشمندانه", icon: "🗣️" },
-      { fr: "une approche pertinente", fa: "رویکرد مناسب و منطقی", icon: "🧠" },
-      { fr: "une réponse pertinente", fa: "پاسخ دقیق و مرتبط", icon: "✅" },
-      { fr: "un exemple pertinent", fa: "مثال کاملاً بجا", icon: "✨" },
-    ],
-    phrase: {
-      fr: "Face aux défis environnementaux actuels, il est essentiel de proposer des solutions pertinentes et durables adaptées aux besoins de la société.",
-      fa: "در مواجهه با چالش‌های محیط‌زیستی امروز، ضروری است راه‌حل‌های مناسب و پایداری متناسب با نیازهای جامعه ارائه شود.",
-    },
-  },
-  {
-    mot: "animé / animée",
-    emoji: "🎉🌆",
-    traductions: [
-      "پرجنب‌وجوش",
-      "زنده و فعال",
-      "شلوغ و پرتحرک",
-      "پرانرژی و پویا",
-      "دارای فضای زنده و اجتماعی",
-    ],
-    synonymes: [
-      { fr: "vivant", fa: "زنده و فعال" },
-      { fr: "dynamique", fa: "پویا" },
-      { fr: "bruyant", fa: "پرصدا (بسته به متن)" },
-      { fr: "festif", fa: "جشن‌گونه" },
-    ],
-    combinaisons: [
-      { fr: "une ville animée", fa: "شهر پرجنب‌وجوش", icon: "🌆" },
-      { fr: "une rue animée", fa: "خیابان شلوغ و زنده", icon: "🚶‍♀️" },
-      { fr: "une soirée animée", fa: "شب پرانرژی", icon: "🎉" },
-      { fr: "une discussion animée", fa: "بحث داغ و پرحرارت", icon: "💬" },
-      { fr: "une ambiance animée", fa: "فضای شلوغ و زنده", icon: "🎶" },
-      { fr: "un quartier animé", fa: "محله‌ی پرجنب‌وجوش", icon: "🏙️" },
-      { fr: "un débat animé", fa: "بحث پرتنش و فعال", icon: "🗣️" },
-      { fr: "une vie animée", fa: "زندگی پرتحرک", icon: "🌿" },
-      { fr: "un marché animé", fa: "بازار شلوغ", icon: "🛍️" },
-      { fr: "une réunion animée", fa: "جلسه‌ی پربحث و فعال", icon: "👥" },
-    ],
-    phrase: {
-      fr: "Les grandes villes offrent souvent une vie animée avec de nombreuses activités culturelles et sociales.",
-      fa: "شهرهای بزرگ اغلب زندگی پرجنب‌وجوشی با فعالیت‌های فرهنگی و اجتماعی فراوان ارائه می‌دهند.",
-    },
-  },
-  {
-    mot: "chargé / chargée",
-    emoji: "⚡📚",
-    traductions: [
-      "پرفشار و شلوغ",
-      "سنگین و فشرده",
-      "پر از مسئولیت یا احساس",
-      "مملو و اشباع‌شده",
-      "دارای حجم زیاد",
-    ],
-    synonymes: [
-      { fr: "rempli", fa: "پُر" },
-      { fr: "intense", fa: "شدید" },
-      { fr: "dense", fa: "فشرده" },
-      { fr: "surchargé", fa: "بیش‌ازحد پُر" },
-    ],
-    combinaisons: [
-      { fr: "un emploi du temps chargé", fa: "برنامه‌ی بسیار شلوغ", icon: "📅" },
-      { fr: "une journée chargée", fa: "روز پرفشار", icon: "⏳" },
-      { fr: "un programme chargé", fa: "برنامه‌ی فشرده", icon: "📚" },
-      { fr: "une atmosphère chargée", fa: "فضای سنگین / پرتنش", icon: "⚠️" },
-      { fr: "des responsabilités chargées", fa: "مسئولیت‌های سنگین", icon: "💼" },
-      { fr: "un trafic chargé", fa: "ترافیک سنگین", icon: "🚗" },
-      { fr: "une émotion chargée", fa: "احساسات شدید و سنگین", icon: "❤️" },
-      { fr: "une période chargée", fa: "دوره‌ی پرفشار", icon: "📈" },
-      { fr: "une discussion chargée d'émotion", fa: "گفت‌وگوی احساسی و سنگین", icon: "💬" },
-    ],
-    phrase: {
-      fr: "De nombreuses personnes ont aujourd'hui un emploi du temps chargé, ce qui réduit considérablement leur temps de repos.",
-      fa: "امروزه بسیاری از افراد برنامه‌ای بسیار شلوغ دارند که زمان استراحت آن‌ها را به‌طور قابل‌توجهی کاهش می‌دهد.",
-    },
-  },
-  {
-    mot: "écoresponsable",
-    emoji: "🌿♻️",
-    traductions: [
-      "سازگار با محیط‌زیست",
-      "مسئولیت‌پذیر در برابر طبیعت",
-      "حامی محیط‌زیست",
-      "دارای رویکرد زیست‌محیطی",
-    ],
-    synonymes: [
-      { fr: "durable", fa: "پایدار" },
-      { fr: "vert", fa: "سبز / زیست‌محیطی" },
-      { fr: "responsable", fa: "مسئولیت‌پذیر" },
-    ],
-    combinaisons: [
-      { fr: "une consommation écoresponsable", fa: "مصرف مسئولانه در برابر طبیعت", icon: "🛒" },
-      { fr: "un comportement écoresponsable", fa: "رفتار دوستدار محیط‌زیست", icon: "🌱" },
-      { fr: "un mode de vie écoresponsable", fa: "سبک زندگی پایدار", icon: "🌿" },
-      { fr: "des produits écoresponsables", fa: "محصولات سازگار با محیط‌زیست", icon: "📦" },
-      { fr: "une entreprise écoresponsable", fa: "شرکت مسئولیت‌پذیر زیست‌محیطی", icon: "🏢" },
-      { fr: "un tourisme écoresponsable", fa: "گردشگری پایدار", icon: "✈️" },
-      { fr: "des gestes écoresponsables", fa: "رفتارهای کوچک سبز", icon: "🤝" },
-      { fr: "un emballage écoresponsable", fa: "بسته‌بندی سازگار با محیط‌زیست", icon: "📦" },
-      { fr: "une innovation écoresponsable", fa: "نوآوری سبز", icon: "💡" },
-      { fr: "une politique écoresponsable", fa: "سیاست زیست‌محیطی مسئولانه", icon: "🏛️" },
-    ],
-    phrase: {
-      fr: "Adopter un mode de vie écoresponsable permet de réduire l'impact environnemental et de préserver les ressources naturelles.",
-      fa: "اتخاذ یک سبک زندگی مسئولیت‌پذیر زیست‌محیطی کمک می‌کند اثرات محیط‌زیستی کاهش یابد و منابع طبیعی حفظ شوند.",
-    },
-  },
-  {
-    mot: "excessif / excessive",
-    emoji: "⚠️📊",
-    traductions: [
-      "بیش‌ازحد و افراطی",
-      "غیرمتعادل",
-      "فراتر از حد معمول",
-      "شدید و کنترل‌نشده",
-      "زیاده‌روی‌شده",
-    ],
-    synonymes: [
-      { fr: "démesuré", fa: "خارج از اندازه / افراطی" },
-      { fr: "abusif", fa: "سوءاستفاده‌آمیز / بیش‌ازحد" },
-      { fr: "exagéré", fa: "اغراق‌آمیز" },
-      { fr: "immodéré", fa: "غیرمتعادل" },
-      { fr: "trop élevé", fa: "خیلی زیاد" },
-    ],
-    combinaisons: [
-      { fr: "une consommation excessive", fa: "مصرف بیش‌ازحد", icon: "🍔" },
-      { fr: "une charge excessive", fa: "فشار/بار بیش‌ازحد", icon: "⚖️" },
-      { fr: "un stress excessif", fa: "استرس زیاد", icon: "😰" },
-      { fr: "une vitesse excessive", fa: "سرعت غیرمجاز و زیاد", icon: "🚗" },
-      { fr: "une utilisation excessive", fa: "استفاده‌ی بیش‌ازحد", icon: "📱" },
-      { fr: "des dépenses excessives", fa: "هزینه‌های افراطی", icon: "💸" },
-      { fr: "une pollution excessive", fa: "آلودگی بیش‌ازحد", icon: "🌫️" },
-      { fr: "une fatigue excessive", fa: "خستگی شدید", icon: "💤" },
-      { fr: "des attentes excessives", fa: "انتظارات غیرواقعی", icon: "🎯" },
-      { fr: "une exposition excessive", fa: "قرار گرفتن بیش‌ازحد", icon: "☀️" },
-    ],
-    phrase: {
-      fr: "L'utilisation excessive des écrans peut avoir des effets négatifs sur la concentration et la qualité du sommeil.",
-      fa: "استفاده بیش‌ازحد از صفحه‌نمایش‌ها می‌تواند اثرات منفی بر تمرکز و کیفیت خواب داشته باشد.",
-    },
-  },
-];
-
-// ═══════════════════════════════════════════════════════════
-//  کوییزهای کوتاه — «کوییز»
-//  هر کوییز:
-//    question : متن سؤال (می‌تواند جای خالی با ___ داشته باشد)
-//    options  : آرایه‌ای از گزینه‌ها
-//    correct  : ایندکس گزینه‌ی درست (از ۰)
-//    note     : توضیح کوتاه بعد از پاسخ (اختیاری)
-// ═══════════════════════════════════════════════════════════
-const QUIZ = [
-  {
-    question: "Ça dépend ___ la situation.",
-    options: ["sur", "à", "de", "pour"],
-    correct: 2,
-    note: "فعل « dépendre » همیشه با حرف اضافه‌ی <b>de</b> می‌آید: « ça dépend de… » (بستگی دارد به…).",
-  },
-  {
-    question: "Il faut faire des efforts ___ (تا حد ممکن).",
-    options: ["autant que possible", "autant de possible"],
-    correct: 0,
-    note: "عبارت درست « <b>autant que possible</b> » است به‌معنای «تا حد ممکن / تا جای ممکن».",
-  },
-  {
-    question: "Les parents ___ les enseignants sont préoccupés par l'usage des écrans.",
-    options: ["ainsi que", "autant que", "autant de"],
-    correct: 0,
-    note: "« <b>ainsi que</b> » یعنی «و همچنین / به‌همراهِ». اینجا والدین و معلمان را به هم وصل می‌کند.",
-  },
-  {
-    question: "Cette entreprise produit ___ déchets qu'avant.",
-    options: ["ainsi que", "autant que", "autant de"],
-    correct: 2,
-    note: "پیش از یک اسم (déchets) از « <b>autant de</b> » استفاده می‌کنیم: «به همان اندازه زباله». ساختار: autant de + اسم.",
-  },
-  {
-    question: "Je viendrai ___ il fasse beau.",
-    options: ["parce qu'", "puisqu'", "pourvu qu'", "dès qu'"],
-    correct: 2,
-    note: "« <b>pourvu que</b> » (به‌شرطِ اینکه) با subjonctif می‌آید: « pourvu qu'il fasse beau ».",
-  },
-  {
-    question: "Je doute qu'elle ___ la vérité avant aujourd'hui.",
-    options: ["sache", "savait", "ait su", "saurait"],
-    correct: 2,
-    note: "« douter que » + subjonctif. چون عمل پیش از «امروز» کامل شده، subjonctif passé به‌کار می‌رود: « <b>ait su</b> ».",
-  },
-  {
-    question: "Il faut que tu ___ ce travail avant ce soir.",
-    options: ["finisses", "aies fini", "finissais", "finiras"],
-    correct: 1,
-    note: "چون کار باید پیش از «امشب» تمام شده باشد، subjonctif passé درست است: « <b>aies fini</b> ».",
-  },
-  {
-    question: "Je cherche un appartement qui ___ deux chambres. (مطمئن نیستم وجود داشته باشد)",
-    options: ["a", "ait", "aura", "avait"],
-    correct: 1,
-    note: "چون وجود آپارتمان قطعی نیست، بعد از « qui » از subjonctif استفاده می‌کنیم: « <b>ait</b> ».",
-  },
-  {
-    question: "J'habite dans un appartement qui ___ deux chambres. (واقعاً وجود دارد)",
-    options: ["a", "ait", "aura", "ayant"],
-    correct: 0,
-    note: "چون آپارتمان واقعاً وجود دارد و واقعیت است، indicatif درست است: « <b>a</b> ».",
-  },
-  {
-    question: "C'est la seule personne qui ___ me comprendre.",
-    options: ["peut", "puisse", "pourra", "pouvait"],
-    correct: 1,
-    note: "بعد از صفت‌های مطلق مثل « le seul / la seule » از subjonctif استفاده می‌شود: « <b>puisse</b> ».",
-  },
-  {
-    question: "C'est le plus beau pays que je ___.",
-    options: ["connais", "connaisse", "connaîtrai", "ai connu"],
-    correct: 1,
-    note: "بعد از صفت عالی (le plus beau) از subjonctif استفاده می‌شود: « <b>connaisse</b> ».",
-  },
-];
-
-// ═══════════════════════════════════════════════════════════
-//  چطور واکنش بدم؟ — عبارت‌های واکنشی در موقعیت‌های مختلف
-//  هر موضوع:
-//    titre   : عنوان موقعیت (مثل Accepter)
-//    titreFa : ترجمه‌ی عنوان
-//    emoji   : ایموجی موضوع
-//    couleur : رنگ کارت
-//    expressions : آرایه‌ای از { fr, fa, ex, exFa, emoji }
-//        fr=عبارت، fa=ترجمه، ex=مثال، exFa=ترجمه‌ی مثال، emoji=ایموجی
-// ═══════════════════════════════════════════════════════════
-const REACTIONS = [
-  {
-    titre: "Accepter",
-    titreFa: "پذیرفتن / قبول کردن",
-    emoji: "🙆‍♀️✅",
-    couleur: "#6c63c4",
-    expressions: [
-      { fr: "D'accord / C'est d'accord", fa: "باشه / قبوله", emoji: "👍",
-        ex: "— On se voit à 8h ? — D'accord, à ce soir !", exFa: "— ساعت ۸ همدیگر را ببینیم؟ — باشه، تا شب!" },
-      { fr: "Comme tu veux", fa: "هرجور تو بخوای", emoji: "🤷‍♀️",
-        ex: "— On commande une pizza ou des sushis ? — Comme tu veux, j'aime les deux !", exFa: "— پیتزا سفارش بدیم یا سوشی؟ — هرجور تو بخوای، هردو را دوست دارم!" },
-      { fr: "Pourquoi pas ?", fa: "چرا که نه؟", emoji: "😏",
-        ex: "— Et si on allait au cinéma ce soir ? — Pourquoi pas !", exFa: "— نظرت چیه امشب بریم سینما؟ — چرا که نه!" },
-      { fr: "Avec plaisir !", fa: "با کمال میل!", emoji: "😊",
-        ex: "— Tu veux dîner chez nous ? — Avec plaisir, merci !", exFa: "— می‌خواهی شام خانه‌ی ما باشی؟ — با کمال میل، ممنون!" },
-      { fr: "Volontiers !", fa: "با کمال میل! / حتماً!", emoji: "🙌",
-        ex: "— Un peu plus de café ? — Volontiers !", exFa: "— کمی قهوه‌ی بیشتر؟ — با کمال میل!" },
-      { fr: "C'est une bonne idée", fa: "فکر خوبیه", emoji: "💡",
-        ex: "— On pourrait faire une pause ? — C'est une bonne idée, je suis fatigué.", exFa: "— می‌توانیم یک استراحت کنیم؟ — فکر خوبیه، خسته‌ام." },
-      { fr: "Super ! / C'est super !", fa: "عالیه! / محشره!", emoji: "🤩",
-        ex: "— J'ai réservé une table pour ce soir. — Super ! J'ai hâte !", exFa: "— برای امشب یک میز رزرو کردم. — عالیه! بی‌صبرانه منتظرم!" },
-      { fr: "Parfait ! / C'est parfait !", fa: "بی‌نقصه! / عالیه!", emoji: "👌",
-        ex: "— Je passe te chercher à midi. — Parfait, je serai prêt !", exFa: "— ظهر میام دنبالت. — عالیه، آماده خواهم بود!" },
-      { fr: "Génial ! / C'est génial", fa: "فوق‌العاده‌ست! / محشره!", emoji: "🎉",
-        ex: "— On part en weekend à la mer ! — Génial, j'adore la plage !", exFa: "— آخر هفته می‌رویم کنار دریا! — فوق‌العاده‌ست، عاشق ساحلم!" },
-      { fr: "Je veux bien", fa: "باشه، دوست دارم / مایلم", emoji: "🙂",
-        ex: "— Tu veux que je t'aide ? — Je veux bien, merci beaucoup !", exFa: "— می‌خواهی کمکت کنم؟ — باشه، خیلی ممنون!" },
-      { fr: "J'accepte", fa: "قبول می‌کنم", emoji: "🤝",
-        ex: "— Nous vous proposons ce poste. — J'accepte avec joie !", exFa: "— این شغل را به شما پیشنهاد می‌دهیم. — با خوشحالی قبول می‌کنم!" },
-    ],
-  },
-  {
-    titre: "Hésiter",
-    titreFa: "تردید کردن / دودل بودن",
-    emoji: "🤔💭",
-    couleur: "#4a90b8",
-    expressions: [
-      { fr: "Je ne sais pas", fa: "نمی‌دانم", emoji: "🤷",
-        ex: "— Tu viens à la fête ce soir ? — Je ne sais pas, je verrai.", exFa: "— امشب به مهمانی می‌آیی؟ — نمی‌دانم، می‌بینم چه می‌شود." },
-      { fr: "Je dois réfléchir", fa: "باید فکر کنم", emoji: "🧠",
-        ex: "— Tu acceptes ce nouveau travail ? — Je dois réfléchir avant de décider.", exFa: "— این کار جدید را قبول می‌کنی؟ — باید قبل از تصمیم فکر کنم." },
-      { fr: "Laisse-moi réfléchir", fa: "بگذار فکر کنم", emoji: "⏳",
-        ex: "— Alors, c'est oui ou c'est non ? — Laisse-moi réfléchir un instant.", exFa: "— خب، بله است یا نه؟ — یک لحظه بگذار فکر کنم." },
-      { fr: "Je ne suis pas sûr(e)", fa: "مطمئن نیستم", emoji: "😕",
-        ex: "— Ce restaurant est bien ? — Je ne suis pas sûre, je n'y suis jamais allée.", exFa: "— این رستوران خوب است؟ — مطمئن نیستم، هیچ‌وقت آنجا نرفته‌ام." },
-      { fr: "Je ne suis pas certain(e)", fa: "یقین ندارم", emoji: "🫤",
-        ex: "— Le train part à 9h ? — Je ne suis pas certain, vérifions l'horaire.", exFa: "— قطار ساعت ۹ حرکت می‌کند؟ — یقین ندارم، بیا برنامه را چک کنیم." },
-    ],
-  },
-  {
-    titre: "Refuser",
-    titreFa: "رد کردن / نه گفتن",
-    emoji: "🙅‍♀️❌",
-    couleur: "#c0563f",
-    expressions: [
-      { fr: "Non, merci", fa: "نه، ممنون", emoji: "🙏",
-        ex: "— Tu veux encore du gâteau ? — Non, merci, j'ai assez mangé.", exFa: "— باز هم کیک می‌خواهی؟ — نه ممنون، به‌اندازه‌ی کافی خوردم." },
-      { fr: "Je n'ai pas envie", fa: "حسش را ندارم / دلم نمی‌خواهد", emoji: "😑",
-        ex: "— On sort ce soir ? — Je n'ai pas envie, je suis fatigué.", exFa: "— امشب بیرون برویم؟ — حسش را ندارم، خسته‌ام." },
-      { fr: "Désolé, je ne suis pas libre", fa: "ببخشید، وقت ندارم", emoji: "📅",
-        ex: "— Tu peux venir demain ? — Désolé, je ne suis pas libre demain.", exFa: "— می‌توانی فردا بیایی؟ — ببخشید، فردا وقت ندارم." },
-      { fr: "Non, ça ne me dit rien", fa: "نه، اصلاً حسش نیست / جذبم نمی‌کند", emoji: "😐",
-        ex: "— On regarde un film d'horreur ? — Non, ça ne me dit rien.", exFa: "— یک فیلم ترسناک ببینیم؟ — نه، اصلاً حسش نیست." },
-      { fr: "Je ne peux pas", fa: "نمی‌توانم", emoji: "🚫",
-        ex: "— Tu m'aides à déménager samedi ? — Je ne peux pas, je travaille.", exFa: "— شنبه به جابه‌جایی‌ام کمک می‌کنی؟ — نمی‌توانم، سرِ کارم." },
-      { fr: "Je regrette mais… Quel dommage !", fa: "متأسفم ولی… چه حیف!", emoji: "😔",
-        ex: "— Tu viens à mon mariage ? — Je regrette, mais je serai à l'étranger. Quel dommage !", exFa: "— به عروسی‌ام می‌آیی؟ — متأسفم، ولی خارج از کشور خواهم بود. چه حیف!" },
-      { fr: "Je suis désolé(e), mais…", fa: "متأسفم، ولی…", emoji: "🙇",
-        ex: "— Tu peux me prêter ta voiture ? — Je suis désolé, mais j'en ai besoin aujourd'hui.", exFa: "— می‌توانی ماشینت را قرض بدهی؟ — متأسفم، ولی امروز خودم لازمش دارم." },
-      { fr: "C'est gentil mais…", fa: "لطف داری ولی…", emoji: "🙂",
-        ex: "— Je t'invite au restaurant ! — C'est gentil, mais je préfère rester à la maison.", exFa: "— تو را به رستوران دعوت می‌کنم! — لطف داری، ولی ترجیح می‌دهم خانه بمانم." },
-      { fr: "C'est hors de question !", fa: "اصلاً امکان ندارد! / محال است!", emoji: "🙅",
-        ex: "— Tu peux travailler ce dimanche ? — C'est hors de question, c'est mon jour de repos !", exFa: "— می‌توانی این یکشنبه کار کنی؟ — اصلاً امکان ندارد، روز استراحتم است!" },
-      { fr: "Malheureusement, ce n'est pas possible", fa: "متأسفانه، ممکن نیست", emoji: "😞",
-        ex: "— On peut avancer la réunion ? — Malheureusement, ce n'est pas possible aujourd'hui.", exFa: "— می‌توانیم جلسه را جلو بیندازیم؟ — متأسفانه، امروز ممکن نیست." },
-      { fr: "Une autre fois, peut-être", fa: "شاید یک وقت دیگر", emoji: "🔜",
-        ex: "— Tu viens prendre un café ? — Une autre fois, peut-être, là je suis pressé.", exFa: "— می‌آیی یک قهوه بخوریم؟ — شاید یک وقت دیگر، الان عجله دارم." },
-      { fr: "Sûrement pas !", fa: "به‌هیچ‌وجه! / قطعاً نه!", emoji: "🛑",
-        ex: "— Tu prêterais de l'argent à Paul ? — Sûrement pas, il ne rembourse jamais !", exFa: "— به پل پول قرض می‌دهی؟ — به‌هیچ‌وجه، او هیچ‌وقت پس نمی‌دهد!" },
-    ],
-  },
-];
-
-// ═══════════════════════════════════════════════════════════
-//  تمرین تلفظ — ویدیوهای هدی
-//  هر تمرین:
-//    jour    : شماره/عنوان روز
-//    titre   : موضوع تمرین (صداها)
-//    video   : مسیر فایل ویدیو
-//    texteFr : متن فرانسه (آرایه‌ای از جملات)
-//    texteFa : ترجمه‌ی فارسی (آرایه‌ای، هم‌ترتیب با جملات)
-//    focus   : صداهایی که تمرین می‌شوند
-// ═══════════════════════════════════════════════════════════
-const ECHAUFFEMENT = [
-  {
-    fr: "Une bête noire se baigne dans une baignoire noire",
-    fa: "یک جانورِ سیاه در یک وانِ سیاه آب‌تنی می‌کند",
-    focus: ["b / bê", "noire / baignoire"],
-    note: "تمرین صدای «بِ» و قافیه‌ی noire/baignoire. مواظب باش b و gn را قاطی نکنی!"
-  },
-  {
-    fr: "Il fait noir ce soir sur le trottoir, bonsoir",
-    fa: "امشب پیاده‌رو تاریک است، شب‌بخیر",
-    focus: ["oir (وار)", "soir / trottoir"],
-    note: "همه‌ی کلمه‌ها به صدای «وار» ختم می‌شوند — مثل یک آهنگ!"
-  },
-  {
-    fr: "Son chat Sasha chante sa chanson sans son",
-    fa: "گربه‌اش ساشا، ترانه‌اش را بی‌صدا می‌خواند",
-    focus: ["s / ch", "son / sans / chanson"],
-    note: "سخت‌ترین! تمرین تفاوت «س» و «ش». آرام شروع کن."
-  },
-];
-
-const PRONONCIATION = [
-  {
-    jour: "روز اول",
-    titre: "تمرین صداهای س، ز، ش و ژ",
-    focus: ["s", "z", "ch", "j"],
-    video: "videos/PRON_jour1_sifflantes.mp4",
-    texteFr: [
-      "Julie cherche son chat sous le soleil chaud de juillet.",
-      "Chaque jour, ce joli chat joue joyeusement avec une jupe jaune.",
-    ],
-    texteFa: [
-      "ژولی زیر آفتاب گرم ماه جولای دنبال گربه‌اش می‌گردد.",
-      "هر روز، این گربه‌ی ملوس با یک دامن زرد با شادی بازی می‌کند.",
-    ],
-  },
-  {
-    jour: "روز دوم",
-    titre: "تمرین صدای ر",
-    focus: ["r"],
-    video: "videos/PRON_jour2_r.mp4",
-    texteFr: [
-      "Rire régulièrement rend réellement la respiration relaxante et répéter cette phrase rapidement révèle votre rigueur en rhétorique ; mais râler rageusement ruine radicalement le rire.",
-    ],
-    texteFa: [
-      "خندیدن مداوم واقعاً نفس‌کشیدن را آرام می‌کند، و تکرار سریع این جمله جدیتتان را در فن بیان نشان می‌دهد؛ ولی غر زدن با عصبانیت، خنده را کلاً نابود می‌کند!",
-    ],
-  },
-  {
-    jour: "روز سوم",
-    titre: "تمرین صداهای نزل (تودماغی)",
-    focus: ["an", "en", "on", "in"],
-    video: "videos/PRON_jour3_nasales.mp4",
-    texteFr: [
-      "Pendant le printemps, Valentin entend un vent violent venant du Mont-Blanc.",
-      "Il plante des pommes, pourtant il pense aux pentes pendantes.",
-    ],
-    texteFa: [
-      "در فصل بهار، والنتین صدای یک باد تند را شنید که از طرف مون‌بلان می‌آمد.",
-      "او داشت سیب می‌کاشت، ولی با این حال فکرش پیش آن دامنه‌های شیب‌دار بود.",
-    ],
-  },
-  {
-    jour: "روز چهارم",
-    titre: "تمرین صدای س",
-    focus: ["s"],
-    video: "videos/PRON_jour4_s.mp4",
-    texteFr: [
-      "Salut salut monsieur Sans Souci, combien sont ces six cent six saucissons-ci ?",
-      "Ces six cent six saucissons-ci sont six sous.",
-      "Six sous, ces six cent six saucissons-ci ! Si ces six cent six saucissons-ci sont six sous, ces six cent six saucissons-ci sont trop chers.",
-    ],
-    texteFa: [
-      "سلام سلام آقای بی‌دغدغه! قیمت این ششصد و شش تا سوسیس چند است؟",
-      "این ششصد و شش تا سوسیس می‌شوند شش سو (واحد پول قدیمی فرانسوی).",
-      "چی؟ شش سو برای این ششصد و شش تا سوسیس؟! اگر واقعاً قیمت این ششصد و شش تا سوسیس شش سو باشد، پس خیلی گران است!",
-    ],
-  },
-  {
-    jour: "روز پنجم",
-    titre: "صدای on (تودماغی) و حرف r",
-    focus: ["on", "r"],
-    video: "videos/PRON_jour5_on_r.mp4",
-    texteFr: [
-      "Simon ronfle comme un lion,",
-      "son ronron roule dans le salon.",
-      "Il rêve qu'il est un dragon,",
-      "mais il a peur d'un papillon !",
-    ],
-    texteFa: [
-      "سیمون مثل یک شیر خر و پف می‌کند،",
-      "خرخرش توی اتاق پیچیده.",
-      "خواب می‌بیند که یک اژدهاست،",
-      "ولی از یک پروانه می‌ترسد!",
-    ],
-  },
-];
-
-// ═══════════════════════════════════════════════════════════
-//  Édito A1 — مرور واژگان هر درس با ۳ مثال
-//  هر درس:
-//    lecon  : عنوان/شماره‌ی درس
-//    titre  : موضوع درس
-//    mots   : آرایه‌ای از واژگان، هر کدام:
-//        mot    : واژه‌ی فرانسه
-//        fa     : ترجمه‌ی فارسی
-//        genre  : (اختیاری) le/la/un/une
-//        exemples : آرایه‌ای از ۳ مثال، هر کدام {fr, fa}
-// ═══════════════════════════════════════════════════════════
-const EDITOA1 = [
-  {
-    lecon: "Leçon 1",
-    titre: "سرگرمی‌ها (Les loisirs)",
-    mots: [
-      // ---- Les loisirs ----
-      { mot: "l'art", fa: "هنر", genre: "(m.)", exemples: [
-        { fr: "J'aime l'art moderne.", fa: "هنر مدرن را دوست دارم." },
-        { fr: "L'art est ma passion.", fa: "هنر علاقه‌ی من است." },
-        { fr: "Tu aimes l'art ?", fa: "تو هنر را دوست داری؟" },
-      ]},
-      { mot: "le cinéma", fa: "سینما", exemples: [
-        { fr: "Je vais au cinéma ce soir.", fa: "امشب به سینما می‌روم." },
-        { fr: "Tu aimes le cinéma ?", fa: "تو سینما را دوست داری؟" },
-        { fr: "Le cinéma français est célèbre.", fa: "سینمای فرانسه معروف است." },
-      ]},
-      { mot: "les langues", fa: "زبان‌ها", genre: "(f.)", exemples: [
-        { fr: "J'aime les langues étrangères.", fa: "زبان‌های خارجی را دوست دارم." },
-        { fr: "Les langues sont importantes.", fa: "زبان‌ها مهم هستند." },
-        { fr: "Elle parle trois langues.", fa: "او سه زبان صحبت می‌کند." },
-      ]},
-      { mot: "la musique", fa: "موسیقی", exemples: [
-        { fr: "J'écoute de la musique.", fa: "به موسیقی گوش می‌دهم." },
-        { fr: "La musique, c'est ma vie !", fa: "موسیقی، زندگی من است!" },
-        { fr: "Tu aimes la musique pop ?", fa: "موسیقی پاپ را دوست داری؟" },
-      ]},
-      { mot: "le sport", fa: "ورزش", exemples: [
-        { fr: "Je fais du sport le matin.", fa: "صبح‌ها ورزش می‌کنم." },
-        { fr: "Tu aimes le sport ?", fa: "ورزش را دوست داری؟" },
-        { fr: "Le sport, c'est bon pour la santé.", fa: "ورزش برای سلامتی خوب است." },
-      ]},
-    ],
-  },
-  {
-    lecon: "Leçon 2",
-    titre: "هویت و کشورها (L'identité)",
-    mots: [
-      { mot: "le nom", fa: "نام خانوادگی", exemples: [
-        { fr: "Quel est votre nom ?", fa: "نام خانوادگی شما چیست؟" },
-        { fr: "Mon nom est Karimi.", fa: "نام خانوادگی من کریمی است." },
-        { fr: "Écrivez votre nom ici.", fa: "نام خانوادگی‌تان را اینجا بنویسید." },
-      ]},
-      { mot: "le prénom", fa: "نام (کوچک)", exemples: [
-        { fr: "Mon prénom est Hoda.", fa: "نام من هدی است." },
-        { fr: "Quel est ton prénom ?", fa: "نام تو چیست؟" },
-        { fr: "C'est un joli prénom.", fa: "این نام قشنگی است." },
-      ]},
-      { mot: "la date de naissance", fa: "تاریخ تولد", exemples: [
-        { fr: "Quelle est ta date de naissance ?", fa: "تاریخ تولدت چیست؟" },
-        { fr: "Ma date de naissance est le 5 mai.", fa: "تاریخ تولد من پنجم مه است." },
-        { fr: "Écris ta date de naissance.", fa: "تاریخ تولدت را بنویس." },
-      ]},
-      { mot: "le lieu de naissance", fa: "محل تولد", exemples: [
-        { fr: "Mon lieu de naissance est Téhéran.", fa: "محل تولد من تهران است." },
-        { fr: "Quel est votre lieu de naissance ?", fa: "محل تولد شما کجاست؟" },
-        { fr: "Paris est son lieu de naissance.", fa: "پاریس محل تولد اوست." },
-      ]},
-      // ---- Les coordonnées ----
-      { mot: "l'adresse mail", fa: "آدرس ایمیل", genre: "(f.)", exemples: [
-        { fr: "Quelle est ton adresse mail ?", fa: "آدرس ایمیلت چیست؟" },
-        { fr: "Voici mon adresse mail.", fa: "این آدرس ایمیل من است." },
-        { fr: "J'ai une nouvelle adresse mail.", fa: "یک آدرس ایمیل جدید دارم." },
-      ]},
-      { mot: "le numéro de téléphone", fa: "شماره تلفن", exemples: [
-        { fr: "Quel est ton numéro de téléphone ?", fa: "شماره تلفنت چیست؟" },
-        { fr: "Je note ton numéro de téléphone.", fa: "شماره تلفنت را یادداشت می‌کنم." },
-        { fr: "Voici mon numéro de téléphone.", fa: "این شماره تلفن من است." },
-      ]},
-      // ---- Pays et nationalités (نمونه‌ی پرکاربرد) ----
-      { mot: "la France — français(e)", fa: "فرانسه — فرانسوی", exemples: [
-        { fr: "J'habite en France.", fa: "در فرانسه زندگی می‌کنم." },
-        { fr: "Elle est française.", fa: "او فرانسوی است (مؤنث)." },
-        { fr: "Il parle français.", fa: "او فرانسوی صحبت می‌کند." },
-      ]},
-      { mot: "l'Iran — iranien(ne)", fa: "ایران — ایرانی", exemples: [
-        { fr: "Je viens d'Iran.", fa: "من اهل ایران هستم." },
-        { fr: "Elle est iranienne.", fa: "او ایرانی است (مؤنث)." },
-        { fr: "Mon ami est iranien.", fa: "دوست من ایرانی است." },
-      ]},
-      { mot: "le Canada — canadien(ne)", fa: "کانادا — کانادایی", exemples: [
-        { fr: "Je voudrais aller au Canada.", fa: "دلم می‌خواهد به کانادا بروم." },
-        { fr: "Il est canadien.", fa: "او کانادایی است." },
-        { fr: "Le Canada est un grand pays.", fa: "کانادا کشور بزرگی است." },
-      ]},
-    ],
-  },
-];
-
-// ═══════════════════════════════════════════════════════════
-//  مینی‌آرتیکل — متن کوتاه با واژگان کلیکی
-//  هر آرتیکل:
-//    titre   : عنوان فرانسه
-//    emoji   : ایموجی
-//    niveau  : سطح (B1, B2...)
-//    paras   : آرایه‌ای از پاراگراف‌ها (رشته)
-//             واژه‌ی دشوار را به‌صورت ⟦mot|معنی فارسی⟧ بنویس
-//             تا روی سایت قابل کلیک شود و معنی‌اش ظاهر شود.
-//    morale  : (اختیاری) جمع‌بندی/نتیجه {fr, fa}
-// ═══════════════════════════════════════════════════════════
-const MINIARTICLES = [
-  {
-    titre: "Le silence qui parle",
-    emoji: "🤫",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Dans notre société ⟦moderne|مدرن⟧, le silence est devenu une ⟦denrée rare|کالای کمیاب⟧. Partout, des sons nous ⟦envahissent|به ما هجوم می‌آورند⟧ : la musique dans les magasins, les notifications sur nos téléphones, les voix à la télévision. On a l'impression que le silence est quelque chose à ⟦éviter|پرهیز کردن⟧, presque une chose ⟦gênante|ناراحت‌کننده⟧.",
-      "Pourtant, les ⟦psychologues|روانشناسان⟧ et les ⟦neuroscientifiques|عصب‌شناسان⟧ nous disent le contraire. Le silence n'est pas un ⟦vide|خلاء / خلوت⟧ — c'est un espace ⟦précieux|ارزشمند⟧ pour notre cerveau. ⟪Quand on se tait, le cerveau ne s'arrête pas de travailler|«se taire» = ساکت شدن (فعل انعکاسی) — contraire de parler⟫. Au contraire, il commence à ⟦intégrer|یکپارچه کردن / جذب کردن⟧ les informations reçues, à ⟦consolider|تثبیت کردن⟧ les souvenirs et à ⟦résoudre|حل کردن⟧ des problèmes.",
-      "Il y a aussi une dimension ⟦sociale|اجتماعی⟧ très intéressante dans le silence. Dans certaines cultures, comme au Japon ou dans les pays nordiques, le silence entre deux personnes est vu comme un signe de ⟦confiance|اعتماد⟧ et de ⟦complicité|همدلی / رفاقت⟧. On n'a pas besoin de remplir chaque moment par des mots. En France, au contraire, les silences dans une conversation peuvent parfois ⟦mettre mal à l'aise|ناراحت کردن⟧. On dit d'ailleurs qu'un ⟦ange passe|فرشته‌ای عبور می‌کند — اصطلاح فرانسوی برای سکوت ناخوشایند⟧ quand un silence ⟦s'installe|برقرار می‌شود⟧ brusquement.",
-      "Dans le monde professionnel, la capacité à ⟦supporter|تحمل کردن⟧ le silence est souvent un signe de ⟦maturité|بلوغ / پختگی⟧. Lors d'une négociation, ⟪la personne qui parle en premier rompt souvent son avantage|«rompre» = شکستن / از دست دادن — اصطلاح مذاکره⟫. Savoir attendre, savoir laisser un silence ⟦s'étirer|کشیده شدن⟧, c'est un pouvoir. Les grands ⟦orateurs|سخنرانان⟧ savent aussi utiliser les silences pour donner plus de ⟦poids|وزن / تأثیر⟧ à leurs mots.",
-      "Sur le plan ⟦médical|پزشکی⟧, des études montrent que l'exposition prolongée au bruit peut provoquer ⟦de l'hypertension|فشار خون بالا⟧, des problèmes de ⟦sommeil|خواب⟧ et même des ⟦troubles de la concentration|اختلال تمرکز⟧. À l'inverse, quelques minutes de silence par jour peuvent ⟦réduire|کاهش دادن⟧ le ⟦cortisol|کورتیزول — هورمون استرس⟧, l'hormone du stress. Certains ⟦thérapeutes|درمانگران⟧ recommandent même de ⟦pratiquer|تمرین کردن⟧ le « bain de silence » — s'asseoir sans stimulation pendant 15 à 20 minutes.",
-      "Et toi, ⟦as-tu peur|می‌ترسی⟧ du silence ? Est-ce que tu ⟦allumes|روشن می‌کنی⟧ immédiatement la télévision ou la musique quand tu rentres chez toi ? Si oui, ⟪essaie pendant une semaine de t'offrir 10 minutes de silence quotidien|«s'offrir» = به خود هدیه دادن — ساختار زیبا⟫. Tu pourrais être ⟦surpris|شگفت‌زده⟧ de ce que tu découvres en toi-même.",
-    ],
-    morale: { fr: "Le silence n'est pas l'absence de bruit, c'est la présence de soi.", fa: "سکوت غیبتِ صدا نیست، حضورِ خودت است." }
-  },
-  {
-    titre: "Apprendre à dire non",
-    emoji: "🙅",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "⟦Refuser|رد کردن / نه گفتن⟧ une demande, ⟦décliner|رد کردن (رسمی‌تر)⟧ une invitation, dire non à quelqu'un que l'on aime — pour beaucoup d'entre nous, c'est une des choses les plus difficiles dans la vie sociale. On a peur de ⟦blesser|آسیب رساندن به / آزردن⟧ l'autre, de paraître ⟦égoïste|خودخواه⟧, de ⟦rompre|شکستن (رابطه)⟧ une relation. Alors on dit oui, même quand on veut dire non.",
-      "Mais cette ⟦incapacité|ناتوانی⟧ à dire non a un prix ⟦élevé|بالا / سنگین⟧. Quand on ⟦accepte|قبول می‌کند⟧ des choses que l'on ne veut pas faire, on accumule du ⟦ressentiment|کینه / دلخوری⟧. On finit par en vouloir à l'autre, non pas parce qu'il a fait quelque chose de mal, mais parce qu'on n'a pas ⟦osé|جرأت کرده⟧ lui dire non. ⟪C'est une forme de violence passive envers soi-même|«envers soi-même» = نسبت به خودت — عبارت مهم⟫.",
-      "Les ⟦psychologues|روانشناسان⟧ parlent souvent de la notion de ⟦limites|حدود / مرزها⟧ — en anglais, on dit « boundaries ». Avoir des limites claires, c'est savoir ce qu'on accepte et ce qu'on n'accepte pas. Ce n'est pas de l'⟦égoïsme|خودخواهی⟧, c'est du ⟦respect de soi|احترام به خود⟧. Et paradoxalement, les personnes qui savent dire non ⟦inspirent|الهام می‌بخشند / الهام‌بخشند⟧ souvent plus le respect que celles qui ⟦cèdent|تسلیم می‌شوند⟧ à toutes les demandes.",
-      "Apprendre à dire non, c'est aussi une question de ⟦formulation|فرمول‌بندی / نحوه‌ی بیان⟧. Il y a une grande différence entre « Non, je ne veux pas » (direct et parfois brutal) et « Je ne peux pas m'engager là-dessus pour l'instant » (⟦honnête|صادقانه⟧ mais ⟦nuancé|ظریف / باملاحظه⟧). On peut aussi proposer une ⟦alternative|گزینهٔ جایگزین⟧ : « Je ne peux pas cette semaine, mais la semaine prochaine, ça ⟦me conviendrait|برایم مناسب است — conditionnel مؤدبانه⟫. »",
-      "Dans les cultures méditerranéennes et orientales, dont la France est une ⟦héritière|وارث / میراث‌بر⟧ partielle, le non direct peut être perçu comme ⟦impoli|بی‌ادبانه⟧. C'est pourquoi les Français ont souvent des façons indirectes de refuser : « C'est compliqué », « Je vais voir », « Peut-être ». Ces ⟦formules|فرمول‌ها / عبارات⟧ permettent de ne pas dire non frontalement tout en faisant comprendre que la réponse est ⟦négative|منفی⟧.",
-      "En fin de compte, dire non est un ⟦acte d'amour|اقدام محبت⟧ — envers soi-même, mais aussi envers l'autre. ⟪Quand on dit un oui qui cache un non|اصطلاح مجازی: وقتی بله‌ای که نه را پنهان می‌کند⟫, on ⟦trompe|فریب می‌دهیم⟧ la relation. Le non honnête est plus ⟦sain|سالم⟧ que le oui ⟦forcé|اجباری⟧. Apprendre à dire non avec ⟦douceur|ملایمت⟧ mais avec ⟦fermeté|قاطعیت⟧, c'est une compétence qui ⟦s'apprend|یاد گرفته می‌شود⟧ et qui change profondément la qualité de nos relations.",
-    ],
-    morale: { fr: "Dire non à l'autre, c'est souvent dire oui à soi-même.", fa: "نه گفتن به دیگری، اغلب یعنی بله گفتن به خودت." }
-  },
-  {
-    titre: "Le pouvoir des habitudes",
-    emoji: "🔄",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "On ⟦estime|تخمین می‌زند⟧ que près de 45 % de nos actions quotidiennes sont des ⟦habitudes|عادت‌ها⟧ — des comportements ⟦automatiques|خودکار⟧ que nous ⟦exécutons|اجرا می‌کنیم⟧ sans vraiment y penser. Se brosser les dents, prendre son café le matin, vérifier son téléphone en se réveillant : tout cela se fait ⟦mécaniquement|مکانیکی / بدون فکر⟧. La question est : est-ce une bonne chose ou une mauvaise chose ?",
-      "Le cerveau humain est un organe ⟦extraordinairement|به‌طور فوق‌العاده⟧ efficace. Pour ⟦économiser|صرفه‌جویی کردن⟧ de l'énergie, il ⟦automatise|خودکار می‌کند⟧ les tâches ⟦répétitives|تکراری⟧. Ce processus, qu'on appelle la ⟦«boucle de l'habitude»|حلقهٔ عادت⟧, fonctionne en trois étapes : un ⟦déclencheur|محرک / عامل⟧, une ⟦routine|روتین⟧, et une ⟦récompense|پاداش⟧. Par exemple : tu vois ton téléphone (déclencheur) → tu le prends et vérifies les notifications (routine) → tu ressens une ⟦légère satisfaction|رضایت اندک⟧ (récompense).",
-      "⟪Ce qui rend les habitudes si puissantes, c'est aussi ce qui les rend si difficiles à changer|ساختار c'est... que... — تأکید با relative⟫. Quand une habitude est ⟦ancrée|ریشه‌دوانده / رسوخ کرده⟧ dans notre cerveau, le circuit ⟦neuronal|عصبی⟧ correspondant devient très ⟦solide|محکم⟧. Les ⟦neuroscientifiques|عصب‌شناسان⟧ disent que les vieilles habitudes ne disparaissent jamais vraiment — elles restent ⟦en sommeil|در خواب / غیرفعال⟧, prêtes à ⟦se réactiver|دوباره فعال شدن⟧ au moindre ⟦stimulus|محرک⟧.",
-      "Comment alors créer de nouvelles habitudes et ⟦se débarrasser|خلاص شدن از⟧ des mauvaises ? Les recherches montrent qu'il ne faut pas essayer de ⟦supprimer|حذف کردن⟧ une habitude, mais la ⟦remplacer|جایگزین کردن⟧. Garder le même déclencheur et la même récompense, mais changer la routine. Si tu as l'habitude de manger du sucre quand tu es ⟦stressé|تحت استرس⟧ (déclencheur : stress → routine : manger du chocolat → récompense : soulagement), essaie de ⟦substituer|جایگزین کردن⟧ le chocolat par une promenade courte.",
-      "⟦Par ailleurs|علاوه بر این⟧, la recherche sur les habitudes a mis en lumière un concept important : les « ⟦habitudes clés|عادت‌های کلیدی⟧ » (keystone habits en anglais). Ce sont des habitudes qui ⟦entraînent|به‌دنبال خود می‌کشانند⟧ d'autres habitudes positives. Par exemple, les personnes qui commencent à faire de l'exercice régulièrement ⟦tendent à|تمایل دارند به⟧ mieux manger, à mieux dormir, et même à être plus ⟦productives|مولد / کارآمد⟧ au travail. Une seule habitude peut ⟦déclencher|راه‌اندازی کردن⟧ tout un ⟦effet domino|اثر دومینو⟧.",
-      "Pour ⟦modifier|تغییر دادن⟧ une habitude, il est aussi crucial de comprendre son ⟦environnement|محیط⟧. Notre ⟦entourage|محیط اطراف / اطرافیان⟧ et notre espace physique ⟦influencent|تأثیر می‌گذارند⟧ énormément nos comportements. Si tu veux lire plus, ⟦place|قرار بده⟧ un livre sur ta table de nuit. Si tu veux moins utiliser ton téléphone le soir, ⟦charge-le|شارجش کن⟧ dans une autre pièce. Modifier l'environnement est souvent plus ⟦efficace|مؤثر⟧ que ⟦faire appel à|توسل جستن به⟧ sa seule ⟦volonté|اراده⟧.",
-      "En ⟦définitive|در نهایت / به طور قطع⟧, nous ne sommes pas les ⟦esclaves|بردگان⟧ de nos habitudes — nous en sommes les ⟦créateurs|سازندگان⟧. Prendre conscience de ses automatismes, comprendre leur ⟦mécanique|مکانیزم⟧, et agir intentionnellement pour les ⟦façonner|شکل دادن⟧ : c'est là que réside notre ⟦liberté|آزادی⟧. ⟪Comme le disait Aristote : «Nous sommes ce que nous faisons de manière répétée.|نقل قول مشهور ارسطو⟫ L'excellence n'est donc pas un acte, mais une ⟦habitude|عادت⟧. »",
-    ],
-    morale: { fr: "Nos habitudes définissent qui nous sommes, mais nous pouvons toujours en choisir de nouvelles.", fa: "عادت‌هایمان تعریف می‌کنند که چه کسی هستیم، اما می‌توانیم همیشه عادت‌های جدیدی انتخاب کنیم." }
-  },
-  {
-    titre: "Vivre loin de sa famille",
-    emoji: "✈️",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Pour des millions de personnes dans le monde, vivre ⟦loin de ses proches|دور از نزدیکان⟧ est une réalité quotidienne. Que ce soit pour des raisons professionnelles, ⟦académiques|دانشگاهی⟧ ou ⟦économiques|اقتصادی⟧, des gens ⟦quittent|ترک می‌کنند⟧ leur pays, leur ville, leur ⟦village natal|زادگاه⟧ pour construire une vie ailleurs. Ce choix — car c'est souvent un choix — vient avec ses joies et ses ⟦douleurs|دردها⟧.",
-      "Le sentiment le plus ⟦universel|جهانی⟧ dans cette situation est la ⟦nostalgie|نوستالژی / دلتنگی⟧. Ce mot vient du grec : «nostos» (retour) et «algos» (douleur). La nostalgie, c'est littéralement la douleur du retour ⟦impossible|غیرممکن⟧ ou ⟦différé|به‌تأخیر افتاده⟧. Elle se manifeste dans les petites choses : l'odeur d'un plat qu'on ne trouve pas ici, une chanson qui ⟦ramène|بازمی‌گرداند⟧ des souvenirs, une fête de famille à laquelle on ⟦ne peut pas assister|نمی‌توان شرکت کرد⟧.",
-      "Mais vivre loin de sa famille n'est pas uniquement une source de souffrance. ⟪Pour beaucoup, c'est aussi une opportunité de découvrir qui l'on est vraiment|که واقعاً چه کسی هستیم — relative avec «qui»⟫, en dehors du ⟦regard|نگاه / دیدگاه⟧ familial. Loin de ses parents, on prend des décisions seul, on ⟦fait face|مواجه می‌شود⟧ aux problèmes sans filet de ⟦sécurité|ایمنی⟧, on ⟦développe|توسعه می‌دهد⟧ une ⟦résilience|تاب‌آوری⟧ et une ⟦confiance en soi|اعتماد به نفس⟧ qu'on n'aurait peut-être jamais ⟦acquises|کسب کرده⟧ autrement.",
-      "La ⟦technologie|فناوری⟧ a profondément changé l'expérience de la distance. Les ⟦appels vidéo|تماس تصویری⟧, les messages instantanés, les photos partagées en temps réel : tout cela ⟦réduit|کاهش می‌دهد⟧ le ⟦fossé|شکاف / فاصله⟧ géographique. ⟪Pourtant, aucune technologie ne peut remplacer la chaleur d'une étreinte|«étreinte» = آغوش گرفتن⟫ ou le simple fait de ⟦partager|مشارکت کردن / به اشتراک گذاشتن⟧ un repas. La présence physique reste ⟦irremplaçable|جایگزین‌ناپذیر⟧.",
-      "Les ⟦psychologues|روانشناسان⟧ recommandent plusieurs stratégies pour ⟦maintenir|حفظ کردن⟧ des liens ⟦forts|قوی⟧ malgré la distance. La première est la ⟦régularité|منظم بودن / نظم⟧ : pas besoin de longues conversations, mais un contact ⟦régulier|منظم⟧, même court, ⟦nourrit|تغذیه می‌کند / تقویت می‌کند⟧ la relation. La deuxième est le ⟦rituel|آیین / رسم⟧ partagé : regarder le même film le même soir, jouer ensemble en ligne, cuisiner la même recette en même temps. Ces petits ⟦rituels|آیین‌ها⟧ créent un sentiment de ⟦proximité|نزدیکی⟧ malgré les kilomètres.",
-      "Il y a aussi la question du ⟦retour|بازگشت⟧. Beaucoup de personnes qui ont quitté leur pays témoignent d'une expérience ⟦paradoxale|متناقض / پارادوکسیکال⟧ : après plusieurs années à l'étranger, quand elles rentrent, elles se sentent ⟦étrangères|بیگانه⟧ dans leur propre pays. Elles ont changé, leur ⟦environnement|محیط⟧ a changé. On appelle ça le ⟦«choc du retour»|شوک بازگشت⟧ ou «reverse culture shock». Ce n'est pas une anomalie — c'est la preuve que l'expérience de l'étranger a vraiment ⟦transformé|تغییر داده⟧ la personne.",
-      "En fin de compte, vivre loin de sa famille apprend une chose ⟦essentielle|ضروری / اساسی⟧ : l'amour ne dépend pas de la ⟦proximité géographique|نزدیکی جغرافیایی⟧. ⟪Les liens les plus forts sont ceux qui résistent au temps et à la distance|روابطی که در برابر زمان و فاصله مقاوم‌اند⟫. Et parfois, c'est justement l'absence qui ⟦révèle|آشکار می‌کند⟧ à quel point les personnes nous sont ⟦chères|عزیز⟧.",
-    ],
-    morale: { fr: "La distance mesure l'amour : ce qui résiste à l'absence était vraiment là.", fa: "فاصله عشق را می‌سنجد: آنچه در برابر دوری مقاوم می‌ماند، واقعی بود." }
-  },
-
-  {
-    titre: "Ma routine du matin",
-    emoji: "☀️",
-    niveau: "A1",
-    cat: "general",
-    court: true,
-    paras: [
-      "Le matin, je ⟦me réveille|بیدار می‌شوم⟧ à sept heures. Je ⟪prends mon petit-déjeuner|صبحانه می‌خورم — prendre با وعده‌ی غذایی⟫ et je bois un café.",
-      "Ensuite, je ⟦m'habille|لباس می‌پوشم⟧ et je pars au travail. J'aime bien mes matins ⟦tranquilles|آرام⟧."
-    ],
-    morale: { fr: "Une bonne journée commence par un bon matin.", fa: "یک روز خوب با یک صبح خوب شروع می‌شود." }
-  },
-  {
-    titre: "J'aime le week-end",
-    emoji: "🎉",
-    niveau: "A1",
-    cat: "general",
-    court: true,
-    paras: [
-      "Le week-end, je ne ⟦travaille|کار می‌کنم⟧ pas. Je ⟦me repose|استراحت می‌کنم⟧ et je vois mes amis.",
-      "Parfois, je ⟪vais au cinéma|به سینما می‌روم — aller à⟫ ou je ⟦me promène|قدم می‌زنم⟧ dans le parc. C'est ⟦agréable|دلپذیر⟧ !"
-    ],
-    morale: { fr: "Le repos est aussi important que le travail.", fa: "استراحت به‌اندازه‌ی کار مهم است." }
-  },
-  {
-    titre: "Mon plat préféré",
-    emoji: "🍝",
-    niveau: "A2",
-    cat: "general",
-    court: true,
-    paras: [
-      "Mon plat préféré, ⟦c'est|این است⟧ les pâtes. C'est simple, ⟦rapide|سریع⟧ et délicieux.",
-      "Je les prépare avec de la ⟦sauce tomate|سس گوجه⟧ et du fromage. Quand j'ai des invités, j'⟪en fais toujours|همیشه درست می‌کنم — en جایگزین پاستا⟫."
-    ],
-    morale: { fr: "Les plaisirs simples sont souvent les meilleurs.", fa: "لذت‌های ساده اغلب بهترین‌اند." }
-  },
-  {
-    titre: "Pourquoi j'apprends le français",
-    emoji: "🇫🇷",
-    niveau: "A2",
-    cat: "general",
-    court: true,
-    paras: [
-      "J'apprends le français ⟦parce que|چون⟧ j'aime cette langue. Elle est ⟦belle|زیبا⟧ et musicale.",
-      "Je veux ⟪pouvoir voyager|بتوانم سفر کنم — pouvoir + مصدر⟫ en France et parler avec les gens. Chaque jour, je ⟦progresse|پیشرفت می‌کنم⟧ un peu."
-    ],
-    morale: { fr: "Chaque petit pas compte dans l'apprentissage.", fa: "در یادگیری، هر قدم کوچک ارزش دارد." }
-  },
-
-  {
-    titre: "Qu'est-ce qui fait durer l'amour ?",
-    emoji: "❤️",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Aujourd'hui, les jeunes sont ⟦entourés|احاطه‌شده⟧ de messages sur l'amour romantique : dans les films, sur les réseaux sociaux et à travers les ⟦influenceurs|اینفلوئنسرها⟧. Ces messages montrent souvent l'amour comme quelque chose de facile et de parfait. Cela crée des ⟦attentes|انتظارات⟧ ⟦irréalistes|غیرواقعی⟧ sur les relations.",
-      "Pourtant, un amour ⟦sain|سالم⟧ ⟦repose sur|متکی است بر⟧ la ⟦confiance|اعتماد⟧, le ⟦respect|احترام⟧, une communication honnête et la capacité à gérer les ⟦désaccords|اختلاف‌نظرها⟧ avec ⟦bienveillance|مهربانی⟧. Apprendre ces ⟦compétences|مهارت‌ها⟧ tôt peut aider les jeunes à construire des relations plus ⟦solides|محکم⟧ à l'avenir.",
-      "Éduquer les jeunes à l'amour ne concerne pas seulement les relations amoureuses. Il s'agit aussi de les aider à comprendre leur ⟦valeur|ارزش⟧ personnelle, à développer leur ⟦empathie|همدلی⟧ et à apprendre l'importance de ⟦fixer des limites|تعیین مرز⟧ ⟦saines|سالم⟧.",
-    ],
-    morale: {
-      fr: "La plus grande leçon n'est pas « Trouve quelqu'un qui te complète », mais « Deviens une personne qui sait aimer et être aimée de façon saine. »",
-      fa: "بزرگ‌ترین درس این نیست که «کسی را پیدا کن که تو را کامل کند»، بلکه این است که «خودت کسی شو که بلد است سالم دوست بدارد و دوست داشته شود.»",
-    },
-  },
-  {
-    titre: "Faut-il éviter de prendre le petit-déjeuner ?",
-    emoji: "🍳",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Pendant longtemps, le petit-déjeuner a été ⟦considéré comme|تلقی شده به‌عنوان⟧ « le repas le plus important de la journée ». Mais est-ce que tout le monde ⟦devrait|باید⟧ vraiment en prendre ?",
-      "La réponse est plus ⟦nuancée|ظریف / دقیق⟧ qu'un simple oui ou non. ⟦Sauter|رد کردن / حذف کردن⟧ le petit-déjeuner peut ⟦convenir à|مناسب بودن برای⟧ certaines personnes, mais ce n'est pas ⟦automatiquement|به‌طور خودکار⟧ plus sain. Ce qui compte le plus, c'est votre ⟦alimentation|تغذیه⟧ globale et la qualité des aliments que vous ⟦consommez|مصرف می‌کنید⟧.",
-      "Les recherches ⟦suggèrent|نشان می‌دهند⟧ que les personnes qui prennent un petit-déjeuner ⟦nutritif|مغذی⟧ ont souvent une meilleure ⟦concentration|تمرکز⟧, un niveau d'énergie plus ⟦stable|پایدار⟧ et une ⟦humeur|خلق‌وخو⟧ plus positive. À l'inverse, le sauter peut provoquer une ⟦faim|گرسنگی⟧ plus intense plus tard, ce qui augmente le risque de ⟦trop manger|پرخوری⟧.",
-      "La vraie question n'est donc pas « Dois-je prendre un petit-déjeuner ? », mais plutôt « Quel type de petit-déjeuner ⟦soutient|پشتیبانی می‌کند⟧ le mieux mes objectifs ? » Un repas riche en ⟦protéines|پروتئین⟧, en ⟦fibres|فیبر⟧ et en bonnes graisses est bien plus ⟦bénéfique|مفید⟧ que des céréales sucrées ou des ⟦viennoiseries|شیرینی‌های صبحانه⟧.",
-    ],
-    morale: {
-      fr: "Les habitudes saines ne se construisent pas en suivant les tendances, mais en comprenant ce qui aide votre corps et votre cerveau à fonctionner au mieux.",
-      fa: "عادت‌های سالم با دنبال‌کردن مدها ساخته نمی‌شوند، بلکه با فهمیدن اینکه چه چیزی به بدن و مغز شما کمک می‌کند بهتر کار کنند.",
-    },
-  },
-  {
-    titre: "Le secret pour passer le meilleur été de votre vie",
-    emoji: "☀️",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Beaucoup de personnes pensent qu'un été réussi ⟦nécessite|نیاز دارد به⟧ des voyages ⟦coûteux|پرهزینه⟧ ou des projets ⟦extraordinaires|خارق‌العاده⟧. Pourtant, les plus beaux ⟦souvenirs|خاطرات⟧ ⟦naissent|متولد می‌شوند⟧ souvent des moments les plus simples.",
-      "Une promenade au ⟦coucher du soleil|غروب آفتاب⟧, un pique-nique entre amis, la lecture d'un livre dans un parc ou la ⟦découverte|کشف⟧ d'un nouveau ⟦quartier|محله⟧ de votre ville peuvent rendre l'été vraiment spécial. Les psychologues expliquent que vivre de nouvelles ⟦expériences|تجربه‌ها⟧ aide à créer des souvenirs plus ⟦marquants|ماندگار⟧.",
-      "En même temps, passer du temps de qualité avec les personnes que l'on aime et ⟦s'accorder|به خود اختصاص دادن⟧ des moments de repos peut avoir un impact plus important sur le ⟦bonheur|خوشبختی⟧ que le fait d'être ⟦constamment|دائماً⟧ ⟦occupé|مشغول⟧.",
-    ],
-    morale: {
-      fr: "Le secret d'un été inoubliable n'est pas d'en faire plus, mais d'être davantage présent dans l'instant. Essayez quelque chose de nouveau et profitez des petits moments : ce sont souvent eux qui deviennent les souvenirs les plus durables.",
-      fa: "راز یک تابستان فراموش‌نشدنی این نیست که کارهای بیشتری بکنی، بلکه این است که بیشتر در لحظه حاضر باشی. چیز تازه‌ای را امتحان کن و از لحظه‌های کوچک لذت ببر؛ اغلب همین‌ها ماندگارترین خاطرات می‌شوند.",
-    },
-  },
-  {
-    titre: "La lumière du matin : l'antidépresseur que nous négligeons",
-    emoji: "☀️",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Beaucoup d'entre nous commencent leur journée en regardant leur téléphone, alors que notre cerveau attend en réalité quelque chose de bien plus important : la lumière du soleil du matin.",
-      "Selon les psychologues, ⟦s'exposer à|قرار گرفتن در معرض⟧ la lumière naturelle peu après le ⟦réveil|بیدار شدن⟧ aide à ⟦réguler|تنظیم کردن⟧ notre ⟦horloge biologique|ساعت زیستی⟧, améliore la qualité du ⟦sommeil|خواب⟧ et ⟦favorise|تقویت می‌کند⟧ une meilleure humeur. La lumière matinale ⟦signale|علامت می‌دهد⟧ au cerveau de réduire la production de ⟦mélatonine|ملاتونین⟧ et d'augmenter l'état d'⟦éveil|بیداری⟧.",
-      "Le problème, c'est que notre mode de vie moderne nous garde souvent à l'intérieur. Nous passons des heures sous un ⟦éclairage|نورپردازی⟧ ⟦artificiel|مصنوعی⟧ qui ne peut pas remplacer tous les ⟦bienfaits|فواید⟧ de la lumière naturelle. Avec le temps, cela peut ⟦entraîner|منجر شدن به⟧ des ⟦troubles du sommeil|اختلالات خواب⟧, une baisse d'énergie et même des ⟦symptômes|نشانه‌ها⟧ dépressifs.",
-      "La bonne nouvelle, c'est que la solution est ⟦étonnamment|به‌طرز شگفت‌انگیزی⟧ simple. Passer seulement 10 à 15 minutes à l'extérieur le matin peut avoir un effet ⟦significatif|چشمگیر⟧ sur le ⟦bien-être|سلامت / تندرستی⟧ mental et physique.",
-    ],
-    morale: {
-      fr: "Parfois, l'un des meilleurs remèdes pour améliorer son humeur n'est ni un médicament ni une astuce de productivité : c'est simplement la lumière du soleil. Votre cerveau a plus besoin de la lumière du matin que votre téléphone n'a besoin de votre attention.",
-      fa: "گاهی یکی از بهترین درمان‌ها برای بهتر شدن خلق‌وخو، نه دارو است نه ترفند بهره‌وری: فقط نور خورشید است. مغز شما بیشتر به نور صبحگاهی نیاز دارد تا تلفنتان به توجه شما.",
-    },
-  },
-  {
-    titre: "« Sois heureux. » — mais est-ce le vrai but ?",
-    emoji: "🌍",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "La société moderne ⟦considère|در نظر می‌گیرد⟧ souvent le ⟦bonheur|خوشبختی⟧ comme le ⟦but ultime|هدف نهایی⟧ de la vie. Pourtant, toutes les cultures ne voient pas la vie de cette manière.",
-      "Une récente étude ⟦interculturelle|بین‌فرهنگی⟧ a montré que, dans de nombreux pays ⟦occidentaux|غربی⟧, les gens recherchent un « bonheur ⟦maximal|حداکثری⟧ », ⟦tandis que|در حالی که⟧ au Japon ou au Bhoutan, on préfère souvent une vie ⟦émotionnelle|عاطفی⟧ plus ⟦équilibrée|متعادل⟧. Pour eux, une belle vie ⟦repose aussi sur|متکی است بر⟧ l'⟦harmonie|هماهنگی⟧, le sens, les relations humaines et la ⟦paix intérieure|آرامش درونی⟧.",
-      "Les psychologues expliquent même que la recherche constante d'un bonheur extrême peut devenir ⟦épuisante|خسته‌کننده⟧. Parfois, la vie la plus saine n'est pas la plus heureuse, mais la plus ⟦porteuse de sens|معنادار⟧.",
-    ],
-    morale: {
-      fr: "Peut-être que le bonheur n'a jamais été une destination permanente. Peut-être qu'il est simplement le résultat d'une vie vécue avec équilibre, connexion et raison d'être. Toutes les belles vies ne paraissent pas infiniment heureuses de l'extérieur — et c'est tout à fait normal.",
-      fa: "شاید خوشبختی هیچ‌وقت یک مقصد همیشگی نبوده است. شاید فقط نتیجه‌ی زندگی‌ای است که با تعادل، ارتباط و هدف زیسته شده. همه‌ی زندگی‌های زیبا از بیرون بی‌نهایت شاد به نظر نمی‌رسند — و این کاملاً طبیعی است.",
-    },
-  },
-  {
-    titre: "Pourquoi les matins sont-ils si difficiles ?",
-    emoji: "🌅",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Pour beaucoup de gens, le matin est le moment le plus ⟦difficile|سخت⟧ de la journée. On se sent ⟦fatigué|خسته⟧, de mauvaise ⟦humeur|خلق‌وخو⟧, et l'idée de sortir du lit ⟦semble|به نظر می‌رسد⟧ presque impossible. Mais pourquoi ?",
-      "Pendant la nuit, notre corps se ⟦repose|استراحت می‌کند⟧ et notre cerveau a besoin de temps pour se ⟦réveiller|بیدار شدن⟧ complètement. De plus, beaucoup de personnes regardent leur téléphone juste après le réveil, ce qui ⟦fatigue|خسته می‌کند⟧ l'esprit dès les premières minutes.",
-      "Voici une petite ⟦astuce|ترفند⟧ : au lieu de prendre ton téléphone, ouvre la ⟦fenêtre|پنجره⟧ et laisse entrer la lumière du jour. Bois un grand ⟦verre|لیوان⟧ d'eau et ⟦étire-toi|کش‌وقوس برو⟧ quelques minutes. Ces gestes simples ⟦envoient|می‌فرستند⟧ un signal à ton corps : la journée commence !",
-    ],
-    morale: {
-      fr: "Un bon matin ne dépend pas de la chance, mais de quelques petites habitudes. Change ta routine du matin, et tu changeras toute ta journée.",
-      fa: "یک صبح خوب به شانس بستگی ندارد، بلکه به چند عادت کوچک. روتین صبحت را عوض کن، تا کل روزت عوض شود.",
-    },
-  },
-  {
-    titre: "La magie d'une courte promenade après le repas",
-    emoji: "🚶",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Après un bon repas, on a souvent ⟦envie de|تمایل به⟧ s'asseoir sur le canapé et de ne rien faire. Pourtant, une courte promenade peut faire des ⟦merveilles|معجزه⟧ pour notre corps et notre esprit.",
-      "Les ⟦chercheurs|پژوهشگران⟧ expliquent que marcher dix ou quinze minutes après le repas aide à mieux ⟦digérer|هضم کردن⟧ et à ⟦stabiliser|تثبیت کردن⟧ le taux de sucre dans le sang. C'est particulièrement utile après un repas ⟦copieux|سنگین / مفصل⟧.",
-      "Mais les ⟦bienfaits|فواید⟧ ne sont pas seulement physiques. Une petite marche permet aussi de se ⟦détendre|آرام شدن⟧, de prendre l'air et de ⟦libérer|آزاد کردن⟧ l'esprit. C'est un moment simple pour ⟦ralentir|آهسته شدن⟧ et apprécier le ⟦calme|آرامش⟧.",
-    ],
-    morale: {
-      fr: "Pas besoin d'un grand effort pour prendre soin de soi. Parfois, quelques pas suffisent pour se sentir mieux.",
-      fa: "برای مراقبت از خودت به تلاش بزرگی نیاز نیست. گاهی چند قدم کافی است تا حالت بهتر شود.",
-    },
-  },
-  {
-    titre: "Le manque de sommeil n'est pas qu'une simple fatigue",
-    emoji: "😴",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Quand on ne dort pas assez, on pense souvent que le seul ⟦problème|مشکل⟧ est la fatigue. Mais le manque de ⟦sommeil|خواب⟧ a des effets beaucoup plus ⟦profonds|عمیق⟧ sur notre corps et notre esprit.",
-      "Dormir trop peu ⟦affecte|تأثیر می‌گذارد بر⟧ la mémoire, la concentration et même l'⟦humeur|خلق‌وخو⟧. Une personne fatiguée devient plus facilement ⟦irritable|زودرنج⟧, plus ⟦stressée⟧ et a du mal à prendre de bonnes ⟦décisions|تصمیم‌ها⟧. Le manque de sommeil peut aussi ⟦affaiblir|تضعیف کردن⟧ le système immunitaire.",
-      "Les ⟦spécialistes|متخصصان⟧ ⟦recommandent|توصیه می‌کنند⟧ entre sept et huit heures de sommeil par nuit. Mais ce n'est pas seulement une question de ⟦durée|مدت⟧ : la ⟦qualité|کیفیت⟧ du sommeil compte tout autant. Une chambre calme et sombre, sans écran, aide à mieux dormir.",
-    ],
-    morale: {
-      fr: "Le sommeil n'est pas une perte de temps, c'est un investissement pour ta santé. Bien dormir, c'est déjà prendre soin de soi.",
-      fa: "خواب اتلاف وقت نیست، بلکه سرمایه‌گذاری برای سلامتی توست. خوب خوابیدن، یعنی همین حالا از خودت مراقبت کردن.",
-    },
-  },
-  {
-    titre: "L'art de dire « non » sans culpabiliser",
-    emoji: "🙅",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Dire « non » est souvent plus ⟦difficile|سخت⟧ qu'il n'y paraît. Beaucoup de personnes ⟦acceptent|می‌پذیرند⟧ des choses qu'elles ne veulent pas faire, simplement pour ne pas ⟦décevoir|ناامید کردن⟧ les autres. Résultat : elles se sentent ⟦fatiguées|خسته⟧ et ⟦frustrées|سرخورده⟧.",
-      "Pourtant, dire « non » n'est pas ⟦égoïste|خودخواهانه⟧. C'est une façon de ⟦respecter|احترام گذاشتن⟧ son temps, son énergie et ses ⟦besoins|نیازها⟧. Quand on dit oui à tout, on finit par dire non à soi-même.",
-      "On peut refuser avec ⟦gentillesse|مهربانی⟧ et ⟦honnêteté|صداقت⟧. Par exemple : « Merci de penser à moi, mais je ne peux pas cette fois. » Pas besoin de longues ⟦excuses|بهانه‌ها⟧ : une réponse simple et claire ⟦suffit|کافی است⟧.",
-    ],
-    morale: {
-      fr: "Dire « non » aux autres, c'est parfois dire « oui » à soi-même. Poser des limites, c'est un acte de respect envers soi.",
-      fa: "گاهی «نه» گفتن به دیگران، یعنی «بله» گفتن به خودت. مرز گذاشتن، نوعی احترام به خویشتن است.",
-    },
-  },
-  {
-    titre: "Pourquoi sommes-nous plus à l'aise avec certaines personnes ?",
-    emoji: "🤝",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Avez-vous remarqué qu'avec certaines personnes, tout ⟦semble|به نظر می‌رسد⟧ facile ? On se sent ⟦à l'aise|راحت⟧, on rit, le temps passe vite. Avec d'autres, au contraire, on se sent ⟦épuisé|خسته⟧ après quelques minutes.",
-      "Les psychologues parlent d'⟦énergie sociale|انرژی اجتماعی⟧. Chaque personne a une quantité ⟦limitée|محدود⟧ d'énergie pour les interactions. Certaines relations nous ⟦rechargent|دوباره شارژ می‌کنند⟧, tandis que d'autres nous ⟦vident|خالی می‌کنند⟧.",
-      "Cela ne ⟦signifie|به این معنا نیست⟧ pas que les personnes « fatigantes » sont mauvaises. Parfois, il s'agit simplement d'une différence de ⟦rythme|ریتم⟧ ou de ⟦caractère|شخصیت⟧. L'important est de ⟦reconnaître|تشخیص دادن⟧ ce dont on a besoin et de ⟦s'entourer|خود را احاطه کردن⟧ de personnes qui nous font du bien.",
-    ],
-    morale: {
-      fr: "Choisis bien les personnes avec qui tu passes ton temps. Les bonnes relations ne te fatiguent pas : elles te donnent de l'énergie.",
-      fa: "آدم‌هایی را که با آن‌ها وقت می‌گذرانی خوب انتخاب کن. روابط خوب خسته‌ات نمی‌کنند: به تو انرژی می‌دهند.",
-    },
-  },
-  {
-    titre: "L'écoute véritable, une compétence rare",
-    emoji: "👂",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Écouter ⟦semble|به نظر می‌رسد⟧ simple, mais écouter ⟦vraiment|واقعاً⟧ est beaucoup plus rare qu'on ne le pense. Souvent, pendant que l'autre parle, on prépare déjà notre ⟦réponse|پاسخ⟧ dans notre tête, sans vraiment l'écouter.",
-      "L'écoute ⟦véritable|واقعی⟧ demande de la ⟦patience|صبر⟧ et de l'⟦attention|توجه⟧. Cela signifie ⟦poser|کنار گذاشتن⟧ son téléphone, regarder la personne et ⟦accueillir|پذیرفتن⟧ ses mots sans juger. C'est un ⟦cadeau|هدیه⟧ qu'on offre à l'autre.",
-      "Quand on se sent vraiment ⟦écouté|شنیده‌شده⟧, on se sent ⟦compris|درک‌شده⟧ et ⟦respecté|محترم‌شمرده‌شده⟧. C'est l'une des bases d'une bonne relation, que ce soit en ⟦amitié|دوستی⟧, en ⟦famille|خانواده⟧ ou au travail.",
-    ],
-    morale: {
-      fr: "Écouter, ce n'est pas attendre son tour de parler. C'est offrir toute son attention à l'autre, sans rien demander en retour.",
-      fa: "گوش‌دادن یعنی منتظر نوبت حرف‌زدنت نباشی. یعنی تمام توجهت را به دیگری بدهی، بی‌آنکه چیزی در عوض بخواهی.",
-    },
-  },
-  {
-    titre: "Les erreurs, nos vrais professeurs",
-    emoji: "🎓",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "Personne n'aime se ⟦tromper|اشتباه کردن⟧. Une erreur peut nous faire sentir ⟦honteux|شرمنده⟧ ou ⟦déçus|ناامید⟧. Pourtant, les erreurs sont souvent nos meilleurs ⟦professeurs|معلم‌ها⟧.",
-      "Quand on fait une erreur, on ⟦apprend|یاد می‌گیریم⟧ quelque chose de nouveau. On comprend ce qui ne ⟦marche|کار می‌کند⟧ pas et comment ⟦s'améliorer|بهتر شدن⟧. Sans erreurs, il n'y a pas de ⟦progrès|پیشرفت⟧. Même les grands artistes et scientifiques ont ⟦échoué|شکست خورده‌اند⟧ de nombreuses fois avant de ⟦réussir|موفق شدن⟧.",
-      "Le ⟦secret|راز⟧, c'est de ne pas avoir ⟦peur|ترس⟧ de se tromper. Au lieu de te ⟦punir|تنبیه کردن⟧ pour une erreur, demande-toi : « Qu'est-ce que je peux apprendre de ça ? » Cette simple question ⟦transforme|تبدیل می‌کند⟧ un échec en ⟦leçon|درس⟧.",
-    ],
-    morale: {
-      fr: "Ne crains pas l'erreur, crains de ne rien apprendre. Chaque faute est une chance de devenir un peu meilleur.",
-      fa: "از اشتباه نترس، از یاد نگرفتن بترس. هر خطا فرصتی است برای کمی بهتر شدن.",
-    },
-  },
-  {
-    titre: "Pourquoi se comparer aux autres nous épuise",
-    emoji: "🪞",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Aujourd'hui, il est très facile de se ⟦comparer|مقایسه کردن⟧ aux autres. Sur les réseaux sociaux, on voit des gens qui ⟦semblent|به نظر می‌رسند⟧ plus heureux, plus beaux ou plus ⟦performants|موفق⟧ que nous. Et souvent, cela nous rend ⟦tristes|غمگین⟧.",
-      "Le ⟦problème|مشکل⟧, c'est qu'on compare notre vie réelle à une ⟦image|تصویر⟧ parfaite et souvent fausse. Les gens ne montrent que leurs meilleurs moments, jamais leurs ⟦doutes|تردیدها⟧ ni leurs ⟦difficultés|دشواری‌ها⟧.",
-      "Se comparer en ⟦permanence|دائماً⟧ nous ⟦épuise|خسته می‌کند⟧ et nous ⟦empêche|مانع می‌شود⟧ d'apprécier ce que nous avons. Chaque personne a son propre ⟦chemin|مسیر⟧ et son propre ⟦rythme|ریتم⟧. Le seul ⟦vrai|واقعی⟧ point de comparaison, c'est la personne que tu étais hier.",
-    ],
-    morale: {
-      fr: "Ne compare pas ton début au milieu de quelqu'un d'autre. Le seul concurrent qui compte, c'est toi-même.",
-      fa: "آغاز خودت را با میانه‌ی راه دیگران مقایسه نکن. تنها رقیبی که مهم است، خودِ تو هستی.",
-    },
-  },
-  {
-    titre: "Le pouvoir des petits débuts",
-    emoji: "🌱",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "On pense souvent qu'il faut un grand ⟦effort|تلاش⟧ ou un moment parfait pour commencer quelque chose. Alors on ⟦attend|منتظر می‌مانیم⟧... et on ne ⟦commence|شروع می‌کنیم⟧ jamais. Mais la ⟦vérité|حقیقت⟧, c'est que les grandes choses commencent toujours petit.",
-      "Lire une seule ⟦page|صفحه⟧ par jour, marcher dix minutes, écrire trois ⟦lignes|خط⟧ : ces petits gestes ⟦semblent|به نظر می‌رسند⟧ ⟦insignifiants|بی‌اهمیت⟧. Pourtant, ⟦répétés|تکرارشده⟧ chaque jour, ils ⟦produisent|تولید می‌کنند⟧ de grands résultats.",
-      "Le ⟦secret|راز⟧ n'est pas la ⟦motivation|انگیزه⟧, mais la ⟦régularité|نظم / مداومت⟧. Un petit pas chaque jour vaut mieux qu'un grand pas une seule fois. Commence petit, mais commence ⟦aujourd'hui|امروز⟧.",
-    ],
-    morale: {
-      fr: "Tu n'as pas besoin d'être grand pour commencer, mais tu dois commencer pour devenir grand. Le plus petit pas te rapproche déjà du but.",
-      fa: "برای شروع‌کردن لازم نیست بزرگ باشی، اما باید شروع کنی تا بزرگ شوی. کوچک‌ترین قدم، همین حالا تو را به هدف نزدیک‌تر می‌کند.",
-    },
-  },
-  {
-    titre: "Pourquoi sommes-nous toujours pressés ?",
-    emoji: "⏳",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Dans la vie moderne, tout le monde ⟦semble|به نظر می‌رسد⟧ ⟦pressé|عجول⟧. On marche vite, on mange vite, on répond vite. On a toujours l'⟦impression|احساس⟧ de manquer de temps. Mais pourquoi cette ⟦course|دوندگی⟧ permanente ?",
-      "La technologie nous a ⟦habitués|عادت داده⟧ à tout obtenir ⟦immédiatement|فوراً⟧. Un message, une réponse, une livraison : tout doit aller vite. Résultat : on perd la ⟦capacité|توانایی⟧ d'attendre et d'⟦apprécier|قدر دانستن⟧ le moment présent.",
-      "Pourtant, aller vite ne ⟦signifie|به معنای⟧ pas vivre mieux. Quand on est toujours pressé, on ⟦oublie|فراموش می‌کنیم⟧ de ⟦profiter|لذت بردن⟧ des petites choses. Ralentir, ce n'est pas perdre du temps : c'est ⟦retrouver|دوباره یافتن⟧ le ⟦goût|طعم⟧ de la vie.",
-    ],
-    morale: {
-      fr: "La vie n'est pas une course. Parfois, ralentir est la meilleure façon d'avancer.",
-      fa: "زندگی یک مسابقه نیست. گاهی آهسته‌شدن، بهترین راه برای پیش‌رفتن است.",
-    },
-  },
-  {
-    titre: "La solitude à l'ère des réseaux sociaux",
-    emoji: "📱",
-    niveau: "B2",
-    cat: "general",
-    paras: [
-      "Nous sommes plus ⟦connectés|متصل⟧ que jamais. Avec un téléphone, on peut parler à des gens du monde entier en quelques ⟦secondes|ثانیه⟧. Et pourtant, beaucoup de personnes se sentent plus ⟦seules|تنها⟧ qu'avant. Comment est-ce possible ?",
-      "Sur les réseaux sociaux, on a des ⟦centaines|صدها⟧ d'« amis », mais peu de ⟦véritables|واقعی⟧ relations. On ⟦échange|تبادل می‌کنیم⟧ des messages, des photos, des « j'aime », mais ces contacts ⟦restent|باقی می‌مانند⟧ souvent ⟦superficiels|سطحی⟧.",
-      "Le vrai lien humain ⟦demande|نیاز دارد⟧ du temps, de la ⟦présence|حضور⟧ et de vraies ⟦conversations|گفت‌وگوها⟧. Un appel, un café, un vrai moment ⟦partagé|به‌اشتراک‌گذاشته⟧ valent mieux que cent messages. La technologie est utile, mais elle ne ⟦remplace|جایگزین⟧ pas la chaleur humaine.",
-    ],
-    morale: {
-      fr: "Être connecté n'est pas la même chose qu'être proche. Cherche moins de contacts, mais de vraies connexions.",
-      fa: "متصل‌بودن با نزدیک‌بودن یکی نیست. دنبال ارتباط‌های کمتر، اما واقعی‌تر باش.",
-    },
-  },
-  {
-    titre: "Acheter moins, être plus heureux ?",
-    emoji: "🛍️",
-    niveau: "B1",
-    cat: "general",
-    paras: [
-      "La ⟦publicité|تبلیغات⟧ nous répète chaque jour la même chose : pour être heureux, il faut ⟦acheter|خریدن⟧ plus. Un nouveau téléphone, de nouveaux ⟦vêtements|لباس‌ها⟧, de nouveaux objets. Mais est-ce que posséder plus nous rend vraiment plus heureux ?",
-      "Les ⟦recherches|پژوهش‌ها⟧ montrent le contraire. Après l'⟦achat|خرید⟧, le ⟦plaisir|لذت⟧ disparaît vite, et on veut déjà autre chose. C'est un ⟦cercle|چرخه⟧ sans fin. Acheter trop peut même créer du ⟦stress|استرس⟧ et du ⟦désordre|بی‌نظمی⟧ dans notre vie.",
-      "De plus en plus de personnes ⟦choisissent|انتخاب می‌کنند⟧ de vivre avec moins. Garder seulement ce qui est ⟦utile|مفید⟧ ou ce qu'on ⟦aime|دوست داریم⟧ vraiment apporte un sentiment de ⟦liberté|آزادی⟧ et de ⟦légèreté|سبکی⟧.",
-    ],
-    morale: {
-      fr: "Le bonheur ne se trouve pas dans ce qu'on possède, mais dans ce qu'on apprécie. Avoir moins, c'est parfois vivre mieux.",
-      fa: "خوشبختی در آنچه داریم نیست، در آن چیزی است که قدرش را می‌دانیم. کمتر داشتن، گاهی یعنی بهتر زیستن.",
-    },
-  },
-  {
-    titre: "Faire des études permet-il de réussir sa carrière ?",
-    emoji: "🎓",
-    niveau: "B1",
-    cat: "tcf",
-    paras: [
-      "De nos jours, beaucoup de gens pensent que faire de longues ⟦études|تحصیلات⟧ est la clé pour ⟦réussir|موفق شدن⟧ sa carrière professionnelle. Cette idée est très ⟦répandue|رایج⟧, mais est-elle toujours vraie ? À mon avis, les études aident beaucoup, mais elles ne ⟦suffisent|کافی بودن⟧ pas à elles seules.",
-      "D'un côté, il est vrai que les études ⟦apportent|به ارمغان می‌آورند⟧ des connaissances et des ⟦compétences|مهارت‌ها⟧ importantes. Un ⟦diplôme|مدرک⟧ ouvre souvent des portes et ⟦facilite|آسان می‌کند⟧ l'accès à de bons emplois. Par exemple, pour devenir médecin ou ingénieur, les études sont ⟦indispensables|ضروری⟧.",
-      "D'un autre côté, le diplôme ne fait pas tout. De nombreuses ⟦qualités|ویژگی‌ها⟧ personnelles, comme la ⟦motivation|انگیزه⟧, la ⟦persévérance|پشتکار⟧ et la capacité à travailler en ⟦équipe|تیم⟧, sont aussi essentielles. D'ailleurs, certains ⟦entrepreneurs|کارآفرینان⟧ célèbres ont réussi sans diplôme.",
-      "En conclusion, je pense que les études ⟦constituent|تشکیل می‌دهند⟧ un atout important, mais elles ne ⟦garantissent|تضمین می‌کنند⟧ pas le succès. La réussite dépend aussi de l'effort personnel et des ⟦opportunités|فرصت‌ها⟧ que l'on sait ⟦saisir|قاپیدن / استفاده کردن از⟧.",
-    ],
-    morale: {
-      fr: "Les études sont une base solide, mais c'est la volonté et le travail qui construisent une vraie réussite.",
-      fa: "تحصیلات یک پایه‌ی محکم است، اما این اراده و تلاش است که موفقیت واقعی را می‌سازد.",
-    },
-  },
-  {
-    titre: "Vivre à l'étranger : plus d'avantages ou d'inconvénients ?",
-    emoji: "🌍",
-    niveau: "B1",
-    cat: "tcf",
-    paras: [
-      "Aujourd'hui, de plus en plus de personnes ⟦choisissent|انتخاب می‌کنند⟧ de vivre à l'⟦étranger|خارج از کشور⟧, que ce soit pour le travail, les études ou simplement par envie de ⟦changement|تغییر⟧. Mais cette expérience ⟦présente|دارد / ارائه می‌دهد⟧ à la fois des avantages et des inconvénients.",
-      "Parmi les avantages, vivre à l'étranger permet de ⟦découvrir|کشف کردن⟧ une nouvelle culture, d'apprendre une langue et de ⟦s'ouvrir|باز شدن⟧ l'esprit. C'est aussi une excellente occasion de ⟦développer|توسعه دادن⟧ son ⟦autonomie|استقلال⟧ et sa ⟦confiance en soi|اعتمادبه‌نفس⟧.",
-      "Cependant, il y a aussi des ⟦difficultés|دشواری‌ها⟧. Loin de sa famille et de ses amis, on peut ⟦ressentir|احساس کردن⟧ de la ⟦solitude|تنهایی⟧. De plus, la ⟦barrière|مانع⟧ de la langue et les différences culturelles ⟦rendent|می‌کنند⟧ parfois l'⟦adaptation|سازگاری⟧ difficile.",
-      "En conclusion, je pense que vivre à l'étranger ⟦présente|دارد⟧ plus d'avantages que d'inconvénients, à condition d'être bien ⟦préparé|آماده⟧. Cette expérience est ⟦enrichissante|غنی‌کننده⟧ et permet de grandir, malgré les ⟦défis|چالش‌ها⟧.",
-    ],
-    morale: {
-      fr: "Vivre à l'étranger n'est pas toujours facile, mais c'est une aventure qui transforme et fait grandir.",
-      fa: "زندگی در خارج همیشه آسان نیست، اما تجربه‌ای است که آدم را دگرگون می‌کند و رشد می‌دهد.",
-    },
-  },
-  {
-    titre: "Apprendre la langue du pays est-il essentiel pour s'intégrer ?",
-    emoji: "🗣️",
-    niveau: "B2",
-    cat: "tcf",
-    paras: [
-      "⟪Lorsqu'on s'installe|«وقتی که» — مترادف رسمی‌ترِ quand، مناسب نوشتار آزمونی⟫ dans un nouveau pays, ⟪la question se pose|«مسئله مطرح می‌شود» — کالوکیشن رایج برای شروع بحث⟫. ⟪Faut-il absolument maîtriser|«آیا حتماً باید مسلط شد» — ساختار پرسشی il faut + مصدر⟫ la langue locale pour s'⟦intégrer|ادغام شدن در جامعه⟧ ? ⟪Pour ma part|«از نظر من / به‌سهم خودم» — عبارت کلیدی برای بیان نظر شخصی در آزمون⟫, je suis convaincu que c'est un élément ⟦fondamental|بنیادی / اساسی⟧.",
-      "Tout d'abord, la langue est le principal outil de communication. Sans elle, il est difficile d'⟦accomplir les tâches du quotidien|انجام کارهای روزمره (کالوکیشن)⟧, comme faire ses courses, consulter un médecin ou chercher un emploi. La langue permet aussi de ⟦tisser des liens|پیوند برقرار کردن — کالوکیشن مهم (به‌جای faire des amis)⟧ avec les habitants.",
-      "De plus, parler la langue du pays est ⟦une marque de respect|نشانه‌ی احترام (کالوکیشن)⟧ envers la culture qui nous ⟦accueille|میزبانی می‌کند / می‌پذیرد⟧. ⟪Cela facilite non seulement... mais aussi|«نه‌تنها... بلکه» — ساختار تأکیدی دو بخشی، عالی برای آزمون⟫ : l'intégration sociale et professionnelle. Une personne qui maîtrise la langue ⟦inspire confiance|اعتماد برمی‌انگیزد — کالوکیشن⟧.",
-      "Cependant, l'intégration ne ⟦repose pas uniquement sur|تنها متکی بر... نیست (کالوکیشن + ساختار نفی)⟧ la langue. Le respect des ⟦coutumes|آداب‌ورسوم⟧ et ⟦l'ouverture d'esprit|گشاده‌نظری (کالوکیشن ثابت)⟧ comptent aussi. En conclusion, apprendre la langue est essentiel, ⟪car|«زیرا» — حرف ربط علت، رسمی‌تر از parce que⟫ elle est la clé qui ouvre la porte de la société.",
-    ],
-    morale: {
-      fr: "La langue n'est pas seulement un outil : c'est un pont entre les cultures et la première clé de l'intégration.",
-      fa: "زبان فقط یک ابزار نیست: پلی است میان فرهنگ‌ها و نخستین کلید ادغام در جامعه.",
-    },
-  },
-  {
-    titre: "Quel rôle joue la télévision dans l'éducation des enfants ?",
-    emoji: "📺",
-    niveau: "B1",
-    cat: "tcf",
-    paras: [
-      "La ⟦télévision|تلویزیون⟧ occupe une place importante dans la vie de nombreuses familles. Certains la ⟦considèrent|در نظر می‌گیرند⟧ comme un outil ⟦éducatif|آموزشی⟧, tandis que d'autres la voient comme une mauvaise ⟦influence|تأثیر⟧. Quel est donc son véritable rôle dans l'éducation des enfants ?",
-      "D'un côté, la télévision peut être ⟦bénéfique|مفید⟧. Les ⟦documentaires|مستندها⟧ et les émissions éducatives ⟦permettent|اجازه می‌دهند⟧ aux enfants de découvrir le monde, d'⟦enrichir|غنی کردن⟧ leur vocabulaire et de ⟦stimuler|تحریک کردن⟧ leur curiosité.",
-      "D'un autre côté, un usage ⟦excessif|بیش‌ازحد⟧ peut être ⟦nuisible|مضر⟧. Trop de télévision peut ⟦réduire|کاهش دادن⟧ le temps consacré à la lecture, au sport ou aux ⟦échanges|تبادل‌ها⟧ familiaux. De plus, certains programmes ne sont pas ⟦adaptés|مناسب⟧ aux jeunes.",
-      "En conclusion, je pense que la télévision peut jouer un rôle positif, à condition d'être bien ⟦encadrée|نظارت‌شده⟧. Le rôle des parents est ⟦crucial|بسیار مهم⟧ : ils doivent ⟦choisir|انتخاب کردن⟧ les programmes et ⟦limiter|محدود کردن⟧ le temps d'écran.",
-    ],
-    morale: {
-      fr: "La télévision n'est ni bonne ni mauvaise en soi : tout dépend de la manière dont on l'utilise.",
-      fa: "تلویزیون نه ذاتاً خوب است نه بد: همه‌چیز به نحوه‌ی استفاده از آن بستگی دارد.",
-    },
-  },
-  {
-    titre: "Internet favorise-t-il l'isolement des individus ?",
-    emoji: "🌐",
-    niveau: "B2",
-    cat: "tcf",
-    paras: [
-      "Internet a ⟦profondément|عمیقاً⟧ transformé notre façon de communiquer. Si certains ⟦affirment|ادعا می‌کنند⟧ qu'il nous ⟦rapproche|نزدیک می‌کند⟧, d'autres ⟦estiment|معتقدند⟧ au contraire qu'il ⟦favorise|تقویت می‌کند⟧ l'⟦isolement|انزوا⟧. Qu'en est-il vraiment ?",
-      "Il est vrai qu'Internet peut ⟦éloigner|دور کردن⟧ les gens. Certaines personnes passent des heures devant leur écran et ⟦négligent|غفلت می‌کنند از⟧ les relations réelles. Les ⟦échanges|تبادل‌ها⟧ virtuels ⟦remplacent|جایگزین می‌کنند⟧ parfois les vraies ⟦rencontres|دیدارها⟧, ce qui peut créer un sentiment de ⟦solitude|تنهایی⟧.",
-      "Cependant, Internet permet aussi de ⟦maintenir|حفظ کردن⟧ le contact avec des proches ⟦éloignés|دور⟧ et de ⟦rencontrer|ملاقات کردن⟧ des personnes qui partagent les mêmes ⟦centres d'intérêt|علایق⟧. Pour les personnes ⟦timides|خجالتی⟧ ou isolées, il peut même être un véritable ⟦lien|پیوند⟧ social.",
-      "En conclusion, je pense qu'Internet n'est pas ⟦responsable|مسئول⟧ de l'isolement en lui-même. Tout dépend de l'usage que l'on en fait. Utilisé avec ⟦modération|اعتدال⟧, il reste un formidable outil de communication.",
-    ],
-    morale: {
-      fr: "Internet rapproche ceux qui sont loin, mais peut éloigner ceux qui sont proches. L'équilibre est la clé.",
-      fa: "اینترنت دورها را نزدیک می‌کند، اما می‌تواند نزدیکان را دور کند. تعادل، کلید ماجراست.",
-    },
-  },,
-  {
-    titre: "Pourquoi la musique nous donne-t-elle des frissons ?",
-    emoji: "🎵",
-    niveau: "B1",
-    cat: "general",
-    paras: ["Vous écoutez votre chanson préférée et soudain, vous avez ⟦la chair de poule|مورمور شدن / سیخ شدن موها (اصطلاح)⟧. Ce phénomène ⟦étrange|عجیب⟧ touche presque tout le monde. Mais pourquoi la musique ⟪nous fait-elle|faire + مصدر = «باعث شدن». ساختار سببی⟫ cet effet ?", "Les scientifiques expliquent que la musique ⟦active|فعال می‌کند⟧ la même zone du cerveau que le plaisir. Quand une mélodie nous ⟦émeut|به هیجان می‌آورد (émouvoir)⟧, notre corps ⟦libère|آزاد می‌کند⟧ de la dopamine, l'hormone du bonheur.", "⟪Ce qui est fascinant|«آنچه شگفت‌انگیز است» — ce qui در نقش فاعل⟫, c'est que ce frisson ⟦dépend de|dépendre DE = «بستگی داشتن به»⟧ nos souvenirs. Une chanson liée à un beau moment ⟦nous touche|ما را متأثر می‌کند⟧ plus profondément."],
-    morale: { fr: "La musique n'est pas seulement du son : c'est une émotion partagée.", fa: "موسیقی فقط صدا نیست؛ یک احساس مشترک است." },
-  },
-  {
-    titre: "Le silence est-il devenu un luxe ?",
-    emoji: "🤫",
-    niveau: "B2",
-    cat: "general",
-    paras: ["Dans nos villes modernes, le bruit est ⟦partout|همه‌جا⟧ : voitures, notifications, conversations. Le vrai silence ⟪est devenu|devenir (گذشته با être) = «شده است»⟫ presque ⟦introuvable|نایاب / غیرقابل‌یافتن⟧.", "⟦Des études|مطالعاتی⟧ montrent que le silence ⟪permet au cerveau de|permettre À qqn DE = «به کسی اجازه دادن که». à + de⟫ se reposer et de ⟦se régénérer|بازسازی شدن (فعل دوضمیره)⟧. Quelques minutes de calme par jour ⟦réduisent|کاهش می‌دهند⟧ le stress.", "⟪Au lieu de|«به‌جای اینکه» + مصدر⟫ remplir chaque instant de bruit, ⟦il vaut mieux|بهتر است (il vaut mieux + مصدر)⟧ apprendre à ⟦apprécier|قدر دانستن⟧ le silence. C'est ⟦un cadeau|یک هدیه⟧ que l'on peut s'offrir gratuitement."],
-    morale: { fr: "Dans un monde bruyant, savoir se taire est une forme de sagesse.", fa: "در دنیایی پرهیاهو، سکوت‌کردن نوعی خرد است." },
-  },
-  {
-    titre: "Pourquoi rêvons-nous la nuit ?",
-    emoji: "💤",
-    niveau: "B1",
-    cat: "general",
-    paras: ["Chaque nuit, notre cerveau ⟦crée|می‌سازد⟧ des histoires ⟦étonnantes|شگفت‌انگیز⟧. Parfois on ⟦s'en souvient|se souvenir (en = de ce rêve) — فعل دوضمیره با de⟧, parfois non. Mais ⟪à quoi servent|servir À = «به چه کاری می‌آید». پرسش با à⟫ les rêves ?", "Selon les chercheurs, rêver ⟦aide à|aider À + مصدر = «کمک کردن به»⟧ ranger nos souvenirs et à ⟦gérer|مدیریت کردن⟧ nos émotions. Le rêve serait une sorte de ⟦« nettoyage »|پاک‌سازی⟧ mental pendant le sommeil.", "Certaines personnes arrivent même à ⟦contrôler|کنترل کردن⟧ leurs rêves : on appelle ça le ⟦« rêve lucide »|رؤیای شفاف / آگاهانه⟧. ⟪Quoi qu'il en soit|«به هر حال» — اصطلاح با subjonctif⟫, le monde des rêves reste un grand mystère."],
-    morale: { fr: "Nos rêves en disent parfois plus long que nos pensées éveillées.", fa: "گاهی رؤیاهایمان بیش از افکار بیدارمان حرف دارند." },
-  },
-  {
-    titre: "Faut-il vraiment suivre ses passions ?",
-    emoji: "🔥",
-    niveau: "B2",
-    cat: "general",
-    paras: ["« Suis ta passion ! » : on entend ce conseil ⟦partout|همه‌جا⟧. Mais ⟪est-ce toujours|«آیا همیشه» — وارونگی پرسشی⟫ une bonne idée ? Certains experts ⟦remettent en question|زیر سؤال بردن (اصطلاح)⟧ ce principe.", "Le problème, c'est que la passion seule ne ⟦suffit pas|کافی نیست (suffire)⟧. ⟪Sans|«بدون» + اسم⟫ travail et discipline, même la plus grande passion ⟦s'éteint|خاموش می‌شود (s'éteindre)⟧. La compétence ⟦naît|زاده می‌شود (naître)⟧ de l'effort, pas seulement du désir.", "⟪Plutôt que de|«به‌جای اینکه» + مصدر⟫ chercher LA passion parfaite, mieux vaut ⟦cultiver|پروراندن⟧ ce qu'on fait déjà. La passion ⟦peut naître|می‌تواند زاده شود⟧ de la maîtrise, et non l'inverse."],
-    morale: { fr: "La passion ne se trouve pas toujours : souvent, elle se construit.", fa: "اشتیاق همیشه پیدا نمی‌شود؛ اغلب ساخته می‌شود." },
-  },
-  {
-    titre: "Les animaux ont-ils des émotions ?",
-    emoji: "🐘",
-    niveau: "B1",
-    cat: "general",
-    paras: ["Un chien qui ⟦remue la queue|دم تکان می‌دهد⟧, un chat qui ⟦ronronne|خرخر می‌کند⟧... Les animaux semblent ⟦ressentir|حس کردن⟧ des émotions. Mais ⟪est-ce vraiment|آیا واقعاً⟫ le cas ?", "Les recherches récentes ⟦prouvent|اثبات می‌کنند⟧ que beaucoup d'animaux ⟦éprouvent|تجربه می‌کنند / حس می‌کنند⟧ de la joie, de la peur, et même de l'⟦empathie|همدلی⟧. Les éléphants, par exemple, ⟦pleurent|گریه می‌کنند⟧ leurs morts.", "⟪Plus on étudie les animaux, plus on découvre|«هرچه بیشتر... بیشتر». ساختار plus... plus⟫ qu'ils nous ⟦ressemblent|شبیه ما هستند (ressembler à)⟧. Cela nous ⟪invite à|inviter À = «دعوت کردن به». با à⟫ les respecter davantage."],
-    morale: { fr: "Reconnaître les émotions des animaux, c'est mieux comprendre le vivant.", fa: "شناختن احساسات حیوانات، یعنی بهتر فهمیدنِ حیات." },
-  },
-  {
-    titre: "Pourquoi le temps passe-t-il plus vite en vieillissant ?",
-    emoji: "⏳",
-    niveau: "B2",
-    cat: "general",
-    paras: ["Enfant, un été ⟦semblait|به نظر می‌رسید⟧ durer une éternité. Adulte, les années ⟦filent|به‌سرعت می‌گذرند (filer)⟧. Pourquoi avons-nous cette ⟦impression|احساس / برداشت⟧ ?", "Une explication : pour un enfant de 5 ans, une année ⟦représente|نمایندگی می‌کند / معادل است⟧ 20 % de sa vie. Pour un adulte de 50 ans, ⟦ce n'est qu'|تنها ... است (ne... que = فقط)⟧une toute petite ⟦fraction|کسر / بخش کوچک⟧. Le cerveau ⟦perçoit|درک می‌کند (percevoir)⟧ donc le temps différemment.", "L'autre raison : la ⟦routine|روزمرگی⟧. Quand tout ⟦se ressemble|شبیه هم است⟫, le cerveau ne ⟦retient|نگه می‌دارد / به‌خاطر می‌سپارد (retenir)⟧ rien. ⟪Pour que le temps ralentisse|pour que + subjonctif (ralentisse) = «تا اینکه زمان کند شود»⟫, il faut ⟦vivre de nouvelles expériences|تجربه‌های تازه داشتن⟧."],
-    morale: { fr: "La nouveauté étire le temps ; la routine le fait disparaître.", fa: "تازگی زمان را کش می‌دهد؛ روزمرگی آن را محو می‌کند." },
-  },
-  {
-    titre: "Le bonheur d'apprendre à tout âge",
-    emoji: "📚",
-    niveau: "B1",
-    cat: "general",
-    paras: ["On pense souvent qu'apprendre est ⟦réservé|مخصوص / محفوظ⟧ aux jeunes. ⟦Pourtant|با این حال⟧, le cerveau reste capable d'apprendre ⟪tout au long de|«در سراسرِ» — اصطلاح⟫ la vie.", "Apprendre une langue, un instrument ou un nouveau métier ⟦stimule|تحریک می‌کند⟧ le cerveau et ⟦retarde|به تأخیر می‌اندازد⟧ son ⟦vieillissement|پیری⟧. ⟪Il n'est jamais trop tard pour|«هیچ‌وقت برای... دیر نیست»⟫ commencer.", "⟦Le plus important|مهم‌ترین چیز⟧, c'est la ⟦curiosité|کنجکاوی⟧. Une personne curieuse ⟦continue de|continuer DE/À + مصدر = «ادامه دادن به»⟧ grandir, ⟪quel que soit|«هر چه باشد / صرف‌نظر از» + اسم. با subjonctif⟫ son âge."],
-    morale: { fr: "On ne devient pas vieux quand on cesse d'apprendre — mais l'inverse.", fa: "با ترک یادگیری پیر می‌شویم، نه برعکس." },
-  },
-  {
-    titre: "Pourquoi rougit-on quand on est gêné ?",
-    emoji: "😳",
-    niveau: "B1",
-    cat: "general",
-    paras: ["Un compliment, une erreur en public... et soudain, nos ⟦joues|گونه‌ها⟧ ⟦deviennent|می‌شوند⟧ rouges. ⟦Rougir|سرخ شدن⟧ est une réaction ⟦que l'on ne peut pas|که نمی‌توان⟧ contrôler. Pourquoi ?", "Quand on est ⟦gêné|خجالت‌زده⟧, le corps ⟦libère|آزاد می‌کند⟧ de l'adrénaline. Les petits ⟦vaisseaux|رگ‌ها⟧ du visage ⟦se dilatent|گشاد می‌شوند (فعل دوضمیره)⟧, et le sang ⟦afflue|هجوم می‌آورد / جاری می‌شود⟧ : c'est ce qui nous fait rougir.", "⟦Curieusement|به‌طور عجیب⟧, l'être humain est le seul animal qui rougit. Charles Darwin ⟦l'appelait|آن را می‌نامید⟧ ⟦« la plus humaine des expressions »|انسانی‌ترین حالت⟧. Rougir montre qu'on ⟪tient à|tenir À = «اهمیت دادن به». با à⟫ l'opinion des autres."],
-    morale: { fr: "Rougir, c'est le signe d'une âme sensible et honnête.", fa: "سرخ‌شدن، نشانه‌ی روحی حساس و صادق است." },
-  },
-  {
-    titre: "Faut-il toujours dire la vérité ?",
-    emoji: "🎭",
-    niveau: "B2",
-    cat: "general",
-    paras: ["Depuis l'enfance, on nous apprend qu'il ⟦ne faut pas|نباید⟧ mentir. Mais ⟦dans la vie réelle|در زندگی واقعی⟧, est-ce ⟦si simple|آن‌قدر ساده⟧ ? Parfois, un petit mensonge ⟦évite|جلوگیری می‌کند از⟧ de blesser quelqu'un.", "On parle alors de ⟦« mensonge blanc »|دروغ مصلحتی⟧ : ces petits mensonges ⟪destinés à|destiné À = «به‌منظورِ». با à⟫ protéger les autres. Dire à un ami que son plat est délicieux, ⟦même si|حتی اگر⟧ ce n'est pas tout à fait vrai.", "⟪Cela dit|«با این حال» — عبارت ربط⟫, le mensonge ⟦répété|تکرارشده⟧ ⟦détruit|نابود می‌کند⟧ la confiance. ⟦Tout est question de|همه‌چیز مسئله‌ی ... است⟧ mesure : la vérité avec ⟦bienveillance|مهربانی / حسن‌نیت⟧, voilà l'équilibre."],
-    morale: { fr: "La vérité est précieuse, mais la bonté l'est tout autant.", fa: "حقیقت ارزشمند است، اما مهربانی هم به همان اندازه." },
-  },
-  {
-    titre: "Le pouvoir surprenant de la gratitude",
-    emoji: "🙏",
-    niveau: "B1",
-    cat: "general",
-    paras: ["Dire « merci » ⟦paraît|به نظر می‌رسد (paraître)⟧ banal. ⟦Pourtant|با این حال⟧, la ⟦gratitude|سپاسگزاری⟧ a un effet ⟦puissant|قدرتمند⟧ sur notre bien-être. ⟪Plus on remercie, plus on se sent bien|«هرچه بیشتر... بهتر». ساختار plus... plus⟫.", "Des chercheurs ont demandé à des gens d'⟦écrire|نوشتن⟧ chaque soir trois choses ⟪dont ils étaient reconnaissants|être reconnaissant DE = «سپاسگزار بودن از». dont = de qqch⟫. Après quelques semaines, ces personnes étaient plus ⟦heureuses|خوشحال‌تر⟧ et moins ⟦stressées|مضطرب⟧.", "La gratitude nous ⟪aide à|aider À + مصدر⟫ ⟦apprécier|قدر دانستن⟧ ce que l'on a, ⟦au lieu de|به‌جای اینکه⟧ toujours désirer plus. C'est ⟦une habitude|یک عادت⟧ simple qui change la vie."],
-    morale: { fr: "Le bonheur ne vient pas d'avoir plus, mais d'apprécier ce qu'on a.", fa: "خوشبختی از داشتنِ بیشتر نمی‌آید، بلکه از قدردانیِ آنچه داریم." },
-  }
-]; 
-
-// ═══════════════════════════════════════════════════════════
-//  InnerFrench — پادکست با متن کامل و واژگان کلیکی
-//  هر قسمت:
-//    num    : شماره‌ی قسمت
-//    titre  : عنوان فرانسه
-//    titreFa: عنوان فارسی
-//    theme  : موضوع
-//    audio  : لینک مستقیم mp3 (از سرور InnerFrench)
-//    source : لینک صفحه‌ی اصلی (برای ذکر منبع)
-//    intro  : معرفی کوتاه فارسی
-//    paras  : پاراگراف‌های متن. واژه‌ی دشوار (A2+) به‌صورت ⟦mot|معنی⟧
-// ═══════════════════════════════════════════════════════════
 const INNERFRENCH = [
   {
     num: 1,
