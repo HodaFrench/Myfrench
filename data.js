@@ -570,6 +570,24 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","C1"],
     summary: "واکسیناسیون و بهداشت عمومی"
   },
+
+  {
+    file: "VOCAB_animaux_zoos.html",
+    title: "📚 Les animaux & les zoos",
+    titleFr: "Les animaux & les zoos",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","animaux","zoos"],
+    summary: "واژگان تخصصی موضوع «حیوانات و باغ‌وحش‌ها» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
+
+  {
+    file: "VOCAB_intelligence_artificielle.html",
+    title: "📚 Intelligence artificielle",
+    titleFr: "Intelligence artificielle",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","IA","intelligence artificielle","technologie"],
+    summary: "واژگان تخصصی موضوع «هوش مصنوعی» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
   {
     file: "VOCAB_glottophobie.html",
     title: "📚 La glottophobie & les discriminations",
@@ -1697,6 +1715,17 @@ const LESSONS = [
     premium: false,
     tags: ["حروف ربط", "subjonctif", "تمرین"],
     summary: "همه‌ی حروف ربط مهم (زمان، علت، هدف، تضاد، شرط) دسته‌بندی‌شده — با مثال، ترجمه‌ی فارسی، اینکه هر کدام indicatif یا subjonctif می‌خواهد، و ۶ تمرین تعاملی.",
+  },
+
+  {
+    file: "GRAM_mettre_en_valeur_arguments.html",
+    title: "✨ برجسته کردن استدلال‌ها",
+    titleFr: "Mettre en valeur ses arguments",
+    category: "grammar",
+    level: "پیشرفته (B2 → B2+)",
+    premium: false,
+    tags: ["استدلال", "تأکید", "mise en relief", "c'est qui que", "بیان شفاهی", "بیان کتبی"],
+    summary: "تکنیک‌های برجسته‌سازی و تأکید بر استدلال‌ها برای سطح B2 تا B2+ — مقدّم‌سازی واژه‌ها، ساختار «c'est… qui/que»، تنوع انواع جمله، تناوب معلوم و مجهول، ژروندیف در آغاز جمله، و بیان اولویت‌ها. مناسب بیان شفاهی و کتبی TCF.",
   },
   {
     file: "GRAM_conditionnel_present.html",
