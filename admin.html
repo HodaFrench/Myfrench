@@ -59,6 +59,20 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);color:var(--ink);l
 
 .refresh{background:var(--green);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:16px}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+
+.q-admin{background:var(--white);border-radius:14px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);padding:16px 18px}
+.q-admin.answered{opacity:.7;border-color:rgba(46,139,107,.3)}
+.q-admin-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.q-admin-email{font-size:13px;font-weight:700;color:var(--navy);direction:ltr}
+.q-admin-page{font-size:11px;color:var(--gray);background:rgba(30,58,95,.06);padding:2px 8px;border-radius:6px}
+.q-admin-time{font-size:11px;color:var(--gray);margin-right:auto}
+.q-admin-text{font-size:14px;color:var(--ink);background:rgba(122,91,168,.06);border-radius:10px;padding:12px;margin-bottom:10px;line-height:1.8}
+.q-admin-answer-box{display:flex;gap:8px;flex-direction:column}
+.q-admin-answer-box textarea{width:100%;min-height:60px;border:1.5px solid var(--line);border-radius:10px;padding:10px;font-family:'Estedad',sans-serif;font-size:13px;resize:vertical;direction:rtl;outline:none}
+.q-admin-answer-box textarea:focus{border-color:var(--green)}
+.q-admin-send{align-self:flex-start;background:var(--green-d);color:#fff;border:none;border-radius:10px;padding:8px 18px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:700;cursor:pointer}
+.q-admin-existing-answer{background:rgba(46,139,107,.08);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--green-d);line-height:1.8;border-right:3px solid var(--green)}
+.q-admin-existing-answer b{color:var(--navy)}
 </style>
 </head>
 <body>
@@ -82,12 +96,99 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);color:var(--ink);l
 <div id="panel" class="wrap" style="display:none">
   <div class="stats" id="stats"></div>
   <button class="refresh" onclick="loadAll()">🔄 به‌روزرسانی داده‌ها</button>
+  <div class="tabs" style="margin:18px 0 14px">
+    <button class="tab active" id="vtab-students" onclick="switchView('students')">👥 شاگردان</button>
+    <button class="tab" id="vtab-questions" onclick="switchView('questions')">❓ سؤالات بی‌پاسخ</button>
+  </div>
+  <div id="questions-view" style="display:none"></div>
   <div id="students"></div>
 </div>
 
 <script src="tracker.js"></script>
 <script>
 let allStudents = {};
+
+
+let currentView = 'students';
+let allQuestions = [];
+
+function switchView(view) {
+  currentView = view;
+  document.getElementById('vtab-students').classList.toggle('active', view==='students');
+  document.getElementById('vtab-questions').classList.toggle('active', view==='questions');
+  document.getElementById('students').style.display = view==='students' ? 'block' : 'none';
+  document.getElementById('questions-view').style.display = view==='questions' ? 'block' : 'none';
+  if (view==='questions') renderQuestions();
+}
+
+async function loadQuestions() {
+  if (!hodaSb) return;
+  const { data } = await hodaSb.from('questions').select('*').order('created_at',{ascending:false});
+  allQuestions = data || [];
+}
+
+function renderQuestions() {
+  const unanswered = allQuestions.filter(q => !q.answer);
+  const answered = allQuestions.filter(q => q.answer);
+  let html = '';
+  
+  if (allQuestions.length === 0) {
+    html = '<p style="text-align:center;color:#8a8275;padding:30px">هنوز سؤالی ثبت نشده است.</p>';
+  } else {
+    if (unanswered.length) {
+      html += '<h3 style="font-size:14px;color:#b0506f;margin:10px 0">❓ بی‌پاسخ ('+unanswered.length+')</h3>';
+      unanswered.forEach(q => html += qCard(q, false));
+    }
+    if (answered.length) {
+      html += '<h3 style="font-size:14px;color:#23704f;margin:20px 0 10px">✅ پاسخ‌داده‌شده ('+answered.length+')</h3>';
+      answered.forEach(q => html += qCard(q, true));
+    }
+  }
+  document.getElementById('questions-view').innerHTML = html;
+}
+
+function qCard(q, isAnswered) {
+  const time = fmt(q.created_at);
+  if (isAnswered) {
+    return `<div class="q-admin answered">
+      <div class="q-admin-top">
+        <span class="q-admin-email">${q.email}</span>
+        <span class="q-admin-page">${q.page||''}</span>
+        <span class="q-admin-time">${time}</span>
+      </div>
+      <div class="q-admin-text">❓ ${q.question}</div>
+      <div class="q-admin-existing-answer"><b>پاسخ شما:</b> ${q.answer}</div>
+    </div>`;
+  }
+  return `<div class="q-admin">
+    <div class="q-admin-top">
+      <span class="q-admin-email">${q.email}</span>
+      <span class="q-admin-page">${q.page||''}</span>
+      <span class="q-admin-time">${time}</span>
+    </div>
+    <div class="q-admin-text">❓ ${q.question}</div>
+    <div class="q-admin-answer-box">
+      <textarea id="ans-${q.id}" placeholder="پاسخت را اینجا بنویس..."></textarea>
+      <button class="q-admin-send" onclick="sendAnswer(${q.id})">📤 ارسال پاسخ</button>
+    </div>
+  </div>`;
+}
+
+async function sendAnswer(qId) {
+  const text = document.getElementById('ans-'+qId).value.trim();
+  if (!text) { alert('پاسخ خالی است'); return; }
+  const { error } = await hodaSb.from('questions')
+    .update({ answer: text, answered: true, answered_at: new Date().toISOString() })
+    .eq('id', qId);
+  if (!error) {
+    const q = allQuestions.find(x => x.id === qId);
+    if (q) { q.answer = text; }
+    renderQuestions();
+  } else {
+    alert('خطا در ارسال پاسخ');
+  }
+}
+
 
 async function init() {
   const user = await hodaGuard();
@@ -151,6 +252,8 @@ async function loadAll() {
   `;
   
   renderStudents();
+  await loadQuestions();
+  if (currentView==="questions") renderQuestions();
 }
 
 function fmt(dateStr) {
