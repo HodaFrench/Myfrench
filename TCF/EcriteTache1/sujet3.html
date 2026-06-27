@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expression Écrite Tâche 1 — Une fête surprise | Français avec Hoda</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,139,107,0.04) 31px,rgba(46,139,107,0.04) 32px);color:var(--ink);line-height:1.95;padding:0 0 80px}
+.wrap{max-width:840px;margin:0 auto;padding:0 1rem}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--green-d);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#2e8b6b,#23704f);color:#fff;padding:30px 26px 26px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.9}
+.card{background:var(--white);border-radius:16px;padding:20px 22px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line)}
+.card-label{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:5px 13px;border-radius:20px;margin-bottom:14px}
+.consigne{background:linear-gradient(135deg,rgba(176,80,111,.07),rgba(176,80,111,.03));border-right:4px solid var(--rose)}
+.consigne .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.consigne-fr{font-family:'Roboto',serif;font-size:15px;line-height:2;color:var(--ink);direction:ltr;text-align:left;font-style:italic}
+.consigne-count{display:inline-block;margin-top:10px;background:rgba(176,80,111,.1);color:var(--rose);font-size:12px;font-weight:700;padding:4px 12px;border-radius:8px}
+.modele{border-right:4px solid var(--green)}
+.modele .card-label{background:rgba(46,139,107,.12);color:var(--green-d)}
+.modele-text{font-family:'Roboto',serif;font-size:15px;line-height:2.1;color:var(--ink);direction:ltr;text-align:left;background:rgba(46,139,107,.04);border-radius:12px;padding:16px 18px}
+.hl-v{background:rgba(30,58,95,.1);color:#1e3a5f;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(30,58,95,.35)}
+.hl-g{background:rgba(122,91,168,.13);color:#5a3b88;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(122,91,168,.4)}
+.hl-c{background:rgba(176,122,74,.13);color:#8a5a2a;border-radius:3px;padding:1px 4px;font-weight:600;cursor:help;text-decoration:underline dotted rgba(176,122,74,.4)}
+.trad{border-right:4px solid var(--navy)}
+.trad .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.trad-text{font-size:14px;line-height:2.05;color:#3a3833}
+.analyse{border-right:4px solid var(--gold)}
+.analyse .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.ana-block{margin-bottom:16px}
+.ana-block:last-child{margin-bottom:0}
+.ana-h{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.ana-p{font-size:13.5px;line-height:1.95;color:#3a3833}
+.ana-p .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;font-style:italic}
+.steps{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.step{display:flex;gap:12px;align-items:flex-start;background:rgba(46,139,107,.04);border-radius:12px;padding:12px 14px}
+.step-num{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;font-family:'Roboto',serif}
+.step-c{flex:1}
+.step-t{font-size:13.5px;font-weight:700;color:var(--navy)}
+.step-d{font-size:12.5px;color:var(--gray);margin-top:2px}
+.step-ex{font-family:'Roboto',serif;font-size:12.5px;color:var(--green-d);font-style:italic;margin-top:4px;direction:ltr;text-align:left}
+.gram{border-right:4px solid var(--purple)}
+.gram .card-label{background:rgba(122,91,168,.13);color:#5a3b88}
+.gram-item{background:rgba(122,91,168,.05);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.gram-item:last-child{margin-bottom:0}
+.gram-title{font-size:14px;font-weight:800;color:#5a3b88;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.gram-rule{font-size:13px;line-height:1.9;color:#3a3833}
+.gram-ex{background:#fff;border-radius:8px;padding:9px 12px;margin-top:8px;font-family:'Roboto',serif;font-size:13px;direction:ltr;text-align:left;border-right:3px solid var(--purple);line-height:1.9}
+.gram-ex .em{color:#5a3b88;font-weight:700}
+.mindmap{border-right:4px solid var(--rose);background:linear-gradient(135deg,rgba(176,80,111,.04),transparent)}
+.mindmap .card-label{background:rgba(176,80,111,.12);color:var(--rose)}
+.mm-center{text-align:center;margin:8px 0 18px}
+.mm-core{display:inline-block;background:linear-gradient(135deg,#b0506f,#8a3a55);color:#fff;font-size:16px;font-weight:800;padding:12px 26px;border-radius:30px;box-shadow:0 4px 14px rgba(176,80,111,.3)}
+.mm-branches{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mm-branch{background:var(--white);border-radius:14px;padding:14px;border:1.5px solid var(--line)}
+.mm-branch-h{font-size:13.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px;padding-bottom:6px;border-bottom:1.5px dashed}
+.mm-list{display:flex;flex-direction:column;gap:5px}
+.mm-li{font-size:12.5px;color:#3a3833;display:flex;gap:6px;align-items:baseline}
+.mm-li .fr{font-family:'Roboto',serif;color:var(--green-d);font-weight:600;direction:ltr}
+.vocab{border-right:4px solid var(--navy)}
+.vocab .card-label{background:rgba(30,58,95,.1);color:var(--navy)}
+.voc-cat{margin-bottom:16px}
+.voc-cat:last-child{margin-bottom:0}
+.voc-cat-h{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.voc-grid{display:flex;flex-direction:column;gap:6px}
+.voc-row{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:9px;padding:9px 12px}
+.voc-fr{font-family:'Roboto',serif;font-size:13.5px;font-weight:600;color:var(--green-d);direction:ltr;flex-shrink:0;min-width:42%}
+.voc-fa{font-size:12.5px;color:#3a3833;flex:1}
+.tips{border-right:4px solid var(--gold);background:linear-gradient(135deg,rgba(176,122,74,.05),transparent)}
+.tips .card-label{background:rgba(176,122,74,.13);color:#8a5a2a}
+.tip-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:11px;font-size:13.5px;line-height:1.85}
+.tip-row:last-child{margin-bottom:0}
+.tip-ic{font-size:17px;flex-shrink:0}
+#done-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,253,246,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(217,206,184,.6);padding:10px 16px;display:flex;gap:10px}
+#done-btn{flex:1;padding:11px;background:var(--green-d);color:#f5f0e8;border:none;border-radius:10px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+#done-btn.done{background:#1a4f37}
+.hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
+@media(max-width:560px){.mm-branches{grid-template-columns:1fr}.voc-fr{min-width:38%}}</style>
+</head>
+<body>
+<span class="hk-wm" style="top:22%;left:8%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:52%;left:42%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:78%;left:62%">Hoda Khedmati</span>
+
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; موضوعات</a>
+  <span class="hoda-back-label">✍️ Écrite Tâche 1 · Une fête surprise</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">✍️ TCF CANADA · EXPRESSION ÉCRITE · TÂCHE 1 · B2</div>
+  <h1>Une fête surprise</h1>
+  <div class="sub">دعوت به جشن تولد غافلگیرانه</div>
+</div>
+
+<div class="wrap">
+
+<div class="card consigne">
+  <span class="card-label">📋 LA CONSIGNE — صورت سؤال</span>
+  <div class="consigne-fr">Vous rédigez un message à vos amis pour les convier à une fête d'anniversaire surprise organisée pour votre meilleur(e) ami(e). Indiquez le lieu, la date et l'heure, etc.</div>
+  <div class="consigne-count">📏 ۶۰ کلمه حداقل / ۱۲۰ کلمه حداکثر</div>
+  <div class="trad-text" style="margin-top:12px">🇮🇷 <strong>ترجمه:</strong> شما پیامی به دوستانتان می‌نویسید تا آن‌ها را به یک جشن تولد غافلگیرانه که برای بهترین دوستتان ترتیب داده‌اید دعوت کنید. مکان، تاریخ و ساعت و... را ذکر کنید.</div>
+</div>
+
+<div class="card modele">
+  <span class="card-label">⭐ LE TEXTE MODÈLE — متن نمونه</span>
+  <div class="modele-text">Salut les amis,<br>
+J'espère que vous allez bien ! Je vous écris pour vous <span class="hl-v" title="inviter à = دعوت کردن به">inviter</span> à une <span class="hl-v" title="une fête surprise = جشن غافلگیرانه">fête surprise</span> organisée pour l'anniversaire de Antoine. Elle <span class="hl-g" title="futur simple: aura lieu = برگزار خواهد شد (avoir lieu در مستقبل)">aura lieu</span> samedi prochain à 19h <span class="hl-c" title="chez moi = خانه من">chez moi</span> (adresse : 12 rue des Lilas). L'idée est de passer un <span class="hl-v" title="convivial = صمیمی، دوستانه">moment convivial</span> avec de la musique, des jeux et bien sûr un <span class="hl-v" title="un gâteau d'anniversaire = کیک تولد">gâteau d'anniversaire</span>. <span class="hl-c" title="Merci de + مصدر = لطفاً (درخواست مودبانه)">Merci de</span> garder la surprise et de ne rien <span class="hl-g" title="ne rien laisser échapper = چیزی را لو ندادن — نفی ne...rien">laisser échapper</span> ! <span class="hl-c" title="Penser à + مصدر = یادتان باشد که">Pensez à</span> <span class="hl-v" title="confirmer sa présence = حضور خود را تأیید کردن">confirmer votre présence</span> pour que je <span class="hl-g" title="subjonctif: puisse = بتوانم (بعد از pour que)">puisse</span> tout préparer au mieux. J'ai vraiment <span class="hl-c" title="avoir hâte que + subjonctif = بی‌صبرانه منتظر بودن">hâte qu'on soit</span> tous réunis pour <span class="hl-v" title="fêter = جشن گرفتن">fêter</span> ce moment spécial et <span class="hl-c" title="faire plaisir à = خوشحال کردن">faire plaisir à</span> Antoine.<br>
+À bientôt !<br>
+Nabil</div>
+  <p style="font-size:12px;color:var(--gray);margin-top:10px;text-align:center">💡 ماوس را روی کلمات رنگی نگه دارید · 🔵 واژگان · 🟣 گرامر · 🟠 عبارت کلیدی</p>
+</div>
+
+<div class="card trad">
+  <span class="card-label">🇮🇷 LA TRADUCTION — ترجمه روان</span>
+  <div class="trad-text">سلام دوستان،<br><br>
+امیدوارم حالتون خوب باشه! براتون می‌نویسم تا شما رو به یک جشن غافلگیرانه که برای تولد آنتوان ترتیب داده‌ام دعوت کنم. این جشن شنبه آینده ساعت ۱۹ خانه من برگزار می‌شه (آدرس: خیابان لیلا، پلاک ۱۲). ایده‌اش اینه که یه لحظه صمیمی با موسیقی، بازی و البته کیک تولد بگذرونیم. لطفاً غافلگیری رو حفظ کنید و چیزی لو ندید! یادتون باشه حضورتون رو تأیید کنید تا بتونم همه چیز رو به بهترین شکل آماده کنم. واقعاً بی‌صبرانه منتظرم که همه دور هم جمع بشیم تا این لحظه خاص رو جشن بگیریم و آنتوان رو خوشحال کنیم.<br><br>
+به امید دیدار!<br>
+نبیل</div>
+</div>
+
+<div class="card analyse">
+  <span class="card-label">🎯 L'ANALYSE — تحلیل مدرس</span>
+  <div class="ana-block">
+    <div class="ana-h">📌 این چه نوع متنی است؟</div>
+    <div class="ana-p">این یک <strong>دعوت‌نامه (invitation)</strong> گروهی است. مخاطب چند نفر (دوستان) هستند، پس از <strong>«vous»</strong> جمع استفاده می‌شود. این تاچه یک ویژگی مهم دارد: باید <strong>اطلاعات عملی</strong> را دقیق بدهی — <strong>مکان، تاریخ، ساعت، آدرس</strong>. فراموش کردن این‌ها یعنی از دست دادن امتیاز!</div>
+  </div>
+  <div class="ana-block">
+    <div class="ana-h">🏗️ ساختار ایده‌آل (که این متن رعایت کرده)</div>
+    <div class="steps"><div class="step">
+        <div class="step-num">1</div>
+        <div class="step-c">
+          <div class="step-t">سلام گروهی + احوال‌پرسی</div>
+          <div class="step-d">مخاطب چند نفر است، پس «les amis» و «vous».</div>
+          <div class="step-ex">→ Salut les amis, J'espère que vous allez bien !</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">2</div>
+        <div class="step-c">
+          <div class="step-t">هدف دعوت</div>
+          <div class="step-d">مستقیم بگو چرا می‌نویسی و مناسبت چیست.</div>
+          <div class="step-ex">→ Je vous écris pour vous inviter à une fête surprise...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">3</div>
+        <div class="step-c">
+          <div class="step-t">اطلاعات عملی (مهم‌ترین بخش!)</div>
+          <div class="step-d">مکان، تاریخ، ساعت، آدرس را دقیق بنویس. این بخش امتیاز کلیدی دارد.</div>
+          <div class="step-ex">→ samedi prochain à 19h chez moi (12 rue des Lilas)</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">4</div>
+        <div class="step-c">
+          <div class="step-t">برنامه جشن + درخواست‌ها</div>
+          <div class="step-d">بگو چه چیزی منتظرشان است + درخواست‌هایت (راز را نگه دارید، تأیید کنید).</div>
+          <div class="step-ex">→ musique, jeux, gâteau... Merci de garder la surprise...</div>
+        </div>
+      </div><div class="step">
+        <div class="step-num">5</div>
+        <div class="step-c">
+          <div class="step-t">ابراز اشتیاق + خداحافظی</div>
+          <div class="step-d">هیجانت را نشان بده تا دوستان ترغیب شوند بیایند.</div>
+          <div class="step-ex">→ J'ai hâte qu'on soit réunis ! À bientôt, Nabil</div>
+        </div>
+      </div></div>
+  </div>
+  <div class="ana-block">
+    <div class="ana-h">✅ چرا این متن نمره خوبی می‌گیرد؟</div>
+    <div class="ana-p">
+    • <strong>اطلاعات کامل:</strong> مکان <span class="fr">(chez moi)</span>، آدرس <span class="fr">(12 rue des Lilas)</span>، تاریخ <span class="fr">(samedi prochain)</span>، ساعت <span class="fr">(19h)</span><br>
+    • <strong>زمان مستقبل:</strong> <span class="fr">aura lieu</span> برای رویداد آینده<br>
+    • <strong>وجه التزامی (subjonctif):</strong> <span class="fr">pour que je puisse, hâte qu'on soit</span> — سطح B2/C1<br>
+    • <strong>درخواست‌های مودبانه:</strong> <span class="fr">Merci de..., Pensez à...</span><br>
+    • <strong>لحن پرانرژی:</strong> <span class="fr">bien sûr, vraiment, hâte</span> هیجان را منتقل می‌کند</div>
+  </div>
+</div>
+
+<div class="card gram">
+  <span class="card-label">📚 LA GRAMMAIRE — نکات گرامری برای یادگیری</span>
+  <div class="gram-item">
+    <div class="gram-title">🔑 ۱. زمان مستقبل ساده: «avoir lieu → aura lieu»</div>
+    <div class="gram-rule">برای رویدادی که <strong>در آینده</strong> اتفاق می‌افتد، از futur simple استفاده می‌کنیم. عبارت <strong>avoir lieu</strong> (برگزار شدن) در آینده می‌شود <strong>aura lieu</strong>.</div>
+    <div class="gram-ex">La fête <span class="em">aura lieu</span> samedi prochain. <br><span style="color:#8a8275;font-size:12px">↳ «برگزار خواهد شد» — رویداد آینده</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۲. وجه التزامی بعد از «pour que»</div>
+    <div class="gram-rule">بعد از <strong>pour que</strong> (تا اینکه) همیشه فعل به <strong>subjonctif</strong> می‌آید. این یکی از مهم‌ترین کاربردهای التزامی است که در آزمون امتیاز دارد.</div>
+    <div class="gram-ex">...pour que je <span class="em">puisse</span> tout préparer. <br><span style="color:#8a8275;font-size:12px">↳ puisse (نه peux) چون بعد از pour que</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۳. «avoir hâte QUE + subjonctif»</div>
+    <div class="gram-rule">برای بیان «بی‌صبرانه منتظر بودن»، از <strong>avoir hâte que</strong> + subjonctif استفاده می‌کنیم. اگر فاعل یکی باشد: <strong>avoir hâte DE</strong> + مصدر.</div>
+    <div class="gram-ex">J'ai <span class="em">hâte qu'</span>on <span class="em">soit</span> réunis. <br><span style="color:#8a8275;font-size:12px">↳ soit = شکل التزامی être</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۴. نفی «ne... rien» با مصدر</div>
+    <div class="gram-rule">برای «هیچ چیز» از <strong>ne... rien</strong> استفاده می‌کنیم. وقتی با مصدر می‌آید، هر دو بخش <strong>قبل</strong> از مصدر قرار می‌گیرند: <strong>ne rien + مصدر</strong>.</div>
+    <div class="gram-ex">...de <span class="em">ne rien</span> laisser échapper. <br><span style="color:#8a8275;font-size:12px">↳ «چیزی لو ندید» — ne rien با هم قبل از فعل</span></div>
+  </div><div class="gram-item">
+    <div class="gram-title">🔑 ۵. درخواست مودبانه: «Merci de» و «Penser à»</div>
+    <div class="gram-rule">دو راه مودبانه برای درخواست: <strong>Merci de</strong> + مصدر (= لطفاً) و <strong>Pensez à</strong> + مصدر (= یادتان باشد). هر دو در دعوت‌نامه‌ها رایج‌اند.</div>
+    <div class="gram-ex"><span class="em">Merci de</span> garder la surprise. <span class="em">Pensez à</span> confirmer.</div>
+  </div>
+</div>
+
+<div class="card mindmap">
+  <span class="card-label">🧠 LA CARTE MENTALE — نقشه ذهنی موضوع</span>
+  <div class="mm-center"><div class="mm-core">🎉 LA FÊTE</div></div>
+  <div class="mm-branches"><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#1e3a5f;border-color:rgba(30,58,95,.3)">📅 Les infos — اطلاعات</div>
+      <div class="mm-list"><div class="mm-li">📍 <span class="fr">le lieu</span> — مکان</div>
+<div class="mm-li">🗓️ <span class="fr">la date</span> — تاریخ</div>
+<div class="mm-li">🕐 <span class="fr">l'heure</span> — ساعت</div>
+<div class="mm-li">🏠 <span class="fr">l'adresse</span> — آدرس</div>
+<div class="mm-li">✅ <span class="fr">confirmer</span> — تأیید کردن</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#2e8b6b;border-color:rgba(46,139,107,.3)">🎈 La célébration — جشن</div>
+      <div class="mm-list"><div class="mm-li">🎂 <span class="fr">un gâteau</span> — کیک</div>
+<div class="mm-li">🎵 <span class="fr">la musique</span> — موسیقی</div>
+<div class="mm-li">🎮 <span class="fr">des jeux</span> — بازی‌ها</div>
+<div class="mm-li">🎁 <span class="fr">un cadeau</span> — هدیه</div>
+<div class="mm-li">🥳 <span class="fr">l'anniversaire</span> — تولد</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#7a5ba8;border-color:rgba(122,91,168,.3)">🤫 La surprise — غافلگیری</div>
+      <div class="mm-list"><div class="mm-li">🎊 <span class="fr">une fête surprise</span> — جشن غافلگیرانه</div>
+<div class="mm-li">🤐 <span class="fr">garder le secret</span> — راز را نگه داشتن</div>
+<div class="mm-li">😮 <span class="fr">surprendre</span> — غافلگیر کردن</div>
+<div class="mm-li">🎭 <span class="fr">organiser</span> — ترتیب دادن</div>
+</div>
+    </div><div class="mm-branch">
+      <div class="mm-branch-h" style="color:#b07a4a;border-color:rgba(176,122,74,.3)">🗣️ Les verbes — افعال</div>
+      <div class="mm-list"><div class="mm-li">▶️ <span class="fr">inviter à</span> — دعوت کردن</div>
+<div class="mm-li">▶️ <span class="fr">convier</span> — دعوت کردن (رسمی)</div>
+<div class="mm-li">▶️ <span class="fr">fêter</span> — جشن گرفتن</div>
+<div class="mm-li">▶️ <span class="fr">faire plaisir à</span> — خوشحال کردن</div>
+<div class="mm-li">▶️ <span class="fr">se réunir</span> — جمع شدن</div>
+</div>
+    </div></div>
+</div>
+
+<div class="card vocab">
+  <span class="card-label">🔑 LE VOCABULAIRE — واژگان و افعال مرتبط</span>
+  <div class="voc-cat">
+    <div class="voc-cat-h">▶️ افعال دعوت — Les verbes</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">inviter (qqn) à</span><span class="voc-fa">✉️ دعوت کردن به</span></div>
+<div class="voc-row"><span class="voc-fr">convier</span><span class="voc-fa">🎩 دعوت کردن (رسمی‌تر)</span></div>
+<div class="voc-row"><span class="voc-fr">organiser</span><span class="voc-fa">📋 ترتیب دادن، سازماندهی</span></div>
+<div class="voc-row"><span class="voc-fr">avoir lieu</span><span class="voc-fa">📍 برگزار شدن</span></div>
+<div class="voc-row"><span class="voc-fr">fêter</span><span class="voc-fa">🎉 جشن گرفتن</span></div>
+<div class="voc-row"><span class="voc-fr">confirmer sa présence</span><span class="voc-fa">✅ حضور را تأیید کردن</span></div>
+<div class="voc-row"><span class="voc-fr">faire plaisir à</span><span class="voc-fa">😊 خوشحال کردن</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">🎂 اسم‌های جشن — La fête</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">une fête surprise</span><span class="voc-fa">🎊 جشن غافلگیرانه</span></div>
+<div class="voc-row"><span class="voc-fr">un anniversaire</span><span class="voc-fa">🥳 تولد</span></div>
+<div class="voc-row"><span class="voc-fr">un gâteau d'anniversaire</span><span class="voc-fa">🎂 کیک تولد</span></div>
+<div class="voc-row"><span class="voc-fr">un moment convivial</span><span class="voc-fa">🤗 لحظه صمیمی</span></div>
+<div class="voc-row"><span class="voc-fr">des jeux</span><span class="voc-fa">🎮 بازی‌ها</span></div>
+<div class="voc-row"><span class="voc-fr">une ambiance</span><span class="voc-fa">✨ فضا، حال‌وهوا</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">📐 صفت‌ها و قیدها</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">convivial</span><span class="voc-fa">🤝 صمیمی، دوستانه</span></div>
+<div class="voc-row"><span class="voc-fr">spécial</span><span class="voc-fa">⭐ خاص</span></div>
+<div class="voc-row"><span class="voc-fr">réuni</span><span class="voc-fa">👥 گردهم‌آمده</span></div>
+<div class="voc-row"><span class="voc-fr">bien sûr</span><span class="voc-fa">✔️ البته</span></div>
+<div class="voc-row"><span class="voc-fr">vraiment</span><span class="voc-fa">💯 واقعاً</span></div>
+</div>
+  </div><div class="voc-cat">
+    <div class="voc-cat-h">🔗 عبارات کلیدی — Expressions</div>
+    <div class="voc-grid"><div class="voc-row"><span class="voc-fr">Merci de + inf</span><span class="voc-fa">🙏 لطفاً</span></div>
+<div class="voc-row"><span class="voc-fr">Pensez à + inf</span><span class="voc-fa">💭 یادتان باشد</span></div>
+<div class="voc-row"><span class="voc-fr">avoir hâte que</span><span class="voc-fa">⏳ بی‌صبرانه منتظر بودن</span></div>
+<div class="voc-row"><span class="voc-fr">garder la surprise</span><span class="voc-fa">🤫 راز را نگه داشتن</span></div>
+</div>
+  </div>
+</div>
+
+<div class="card tips">
+  <span class="card-label">💡 LES CONSEILS — نکات طلایی آزمون</span>
+  <div class="tip-row"><span class="tip-ic">📍</span><div><strong>اطلاعات عملی را فراموش نکن:</strong> مکان، تاریخ، ساعت، آدرس — این تاچه روی این جزئیات نمره می‌دهد. همه را بنویس!</div></div>
+<div class="tip-row"><span class="tip-ic">👥</span><div><strong>«vous» جمع:</strong> چون مخاطب چند نفر است، فعل‌ها را جمع ببند: «vous allez», «Pensez», «confirmer votre présence».</div></div>
+<div class="tip-row"><span class="tip-ic">🔮</span><div><strong>زمان مستقبل برای رویداد:</strong> «aura lieu» چون جشن در آینده است — نه گذشته یا حال.</div></div>
+<div class="tip-row"><span class="tip-ic">🎓</span><div><strong>subjonctif امتیاز می‌آورد:</strong> «pour que je puisse», «hâte qu'on soit» — نشانه سطح بالا.</div></div>
+<div class="tip-row"><span class="tip-ic">🙏</span><div><strong>درخواست مودبانه:</strong> از «Merci de...» و «Pensez à...» برای درخواست‌ها استفاده کن، نه دستوری.</div></div>
+<div class="tip-row"><span class="tip-ic">🎈</span><div><strong>هیجان نشان بده:</strong> «J'ai vraiment hâte» دوستان را ترغیب می‌کند بیایند — لحن دعوت باید گرم باشد.</div></div>
+
+</div>
+
+</div>
+
+<div id="done-bar"><button id="done-btn" onclick="markDone()">✓ این درس را خواندم</button></div>
+<script>
+(function(){
+  const key='EcriteT1_S3';
+  const done=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+  const btn=document.getElementById('done-btn');
+  if(done[key]){btn.textContent='✓ خوانده شده';btn.classList.add('done');}
+  const h=JSON.parse(localStorage.getItem('hoda_history')||'[]');
+  h.unshift({page:key,title:'TCF Écrite T1 — Une fête surprise',time:new Date().toLocaleString('fa-IR'),ts:Date.now()});
+  localStorage.setItem('hoda_history',JSON.stringify(h.slice(0,200)));
+  window.markDone=function(){
+    const d=JSON.parse(localStorage.getItem('hoda_done')||'{}');
+    d[key]=new Date().toISOString();localStorage.setItem('hoda_done',JSON.stringify(d));
+    btn.textContent='✓ خوانده شده';btn.classList.add('done');
+  };
+})();
+</script>
+</body>
+</html>
