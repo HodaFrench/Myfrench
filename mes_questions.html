@@ -5,53 +5,56 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>سوال‌های شما | Français avec Hoda</title>
 <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8;--purple-d:#5a3b88}
 body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,0.04) 31px,rgba(122,91,168,0.04) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
 .hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
 .hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--purple);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Estedad',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap}
 .hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
-.hero{background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;padding:30px 26px 26px;text-align:center}
+.hero{background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;padding:28px 26px 24px;text-align:center}
 .hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
 .hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px}
-.hero .sub{font-size:13px;opacity:.9}
-.wrap{max-width:780px;margin:0 auto;padding:0 1rem}
-
-/* فرم سوال جدید */
-.ask-card{background:var(--white);border-radius:16px;padding:18px 20px;margin:18px 0;box-shadow:0 3px 14px rgba(31,58,95,.06);border:1px solid var(--line);border-right:4px solid var(--purple)}
-.ask-card h3{font-size:15px;color:var(--navy);margin-bottom:4px}
-.ask-card .sub{font-size:12px;color:var(--gray);margin-bottom:12px}
-.ask-card textarea{width:100%;min-height:80px;border:1.5px solid var(--line);border-radius:12px;padding:12px;font-family:'Estedad',sans-serif;font-size:14px;resize:vertical;direction:rtl;outline:none}
-.ask-card textarea:focus{border-color:var(--purple)}
-.ask-btn{margin-top:10px;background:var(--purple);color:#fff;border:none;border-radius:12px;padding:11px 22px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer;width:100%}
-
-/* لیست سوالات */
-.section-title{font-size:15px;font-weight:800;margin:22px 0 12px;display:flex;align-items:center;gap:8px}
-.qa-card{background:var(--white);border-radius:14px;margin-bottom:12px;box-shadow:0 2px 10px rgba(31,58,95,.06);border:1px solid var(--line);overflow:hidden}
-.qa-q{padding:14px 16px}
-.qa-q-meta{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.qa-page{font-size:10.5px;color:var(--gray);background:rgba(30,58,95,.06);padding:2px 8px;border-radius:6px}
-.qa-time{font-size:10.5px;color:var(--gray);margin-right:auto}
-.qa-q-text{font-size:14px;color:var(--ink);line-height:1.8}
-.qa-q-text .label{font-weight:700;color:var(--rose)}
-.qa-answer{padding:13px 16px;background:rgba(46,139,107,.06);border-top:1px solid var(--line)}
-.qa-answer .label{font-weight:700;color:var(--green-d);font-size:12.5px}
-.qa-answer-text{font-size:13.5px;color:#2a3a30;line-height:1.85;margin-top:4px}
-.qa-pending{padding:10px 16px;background:rgba(176,80,111,.05);border-top:1px solid var(--line);font-size:12px;color:var(--rose);display:flex;align-items:center;gap:6px}
-
-.empty{text-align:center;color:var(--gray);padding:40px 20px;font-size:14px}
-.empty-icon{font-size:40px;margin-bottom:12px}
-#loading{text-align:center;padding:50px;color:var(--gray)}
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);z-index:9999;background:var(--green-d);color:#fff;padding:11px 24px;border-radius:24px;font-size:13px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.2);opacity:0;transition:opacity .3s;pointer-events:none}
-.toast.show{opacity:1}
+.hero .sub{font-size:13px;opacity:.92;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.faq{margin-top:18px}
+.faq-item{position:relative;background:linear-gradient(140deg,#f7f2fd 0%,#efe6f9 100%);border:1px solid #e4d7f4;border-radius:20px;padding:14px 14px 4px;margin-bottom:16px;box-shadow:0 3px 14px rgba(122,91,168,.08);overflow:hidden}
+.spk{position:absolute;pointer-events:none;color:#e0a93f;font-size:13px;opacity:.85}
+.spk.p{color:#b48fde}
+.faq-head{display:flex;align-items:flex-start;gap:4px;cursor:pointer;padding-bottom:12px}
+.faq-char{width:82px;flex-shrink:0;margin-top:6px}
+.dots{flex-shrink:0;width:14px;position:relative}
+.dots i{position:absolute;display:block;background:#fff;border-radius:50%;box-shadow:0 0 0 3px rgba(231,217,248,.6)}
+.dots i:nth-child(1){width:5px;height:5px;bottom:30px;right:1px}
+.dots i:nth-child(2){width:8px;height:8px;bottom:42px;right:3px}
+.qbubble{position:relative;flex:1;background:#fff;border-radius:26px 26px 26px 9px;padding:14px 16px;box-shadow:0 6px 18px rgba(122,91,168,.16),0 0 0 5px rgba(231,217,248,.5);align-self:center}
+.qbubble::before,.qbubble::after{content:"";position:absolute;background:#fff;border-radius:50%;box-shadow:0 0 0 5px rgba(231,217,248,.5)}
+.qbubble::before{width:26px;height:26px;top:-9px;right:24px;z-index:-1}
+.qbubble::after{width:18px;height:18px;top:-6px;right:54px;z-index:-1}
+.q-label{font-size:11px;font-weight:700;color:var(--purple-d);margin-bottom:3px;display:flex;align-items:center;gap:4px}
+.q-text{font-size:15px;font-weight:700;color:#3a2c5e;line-height:1.75}
+.fr{color:var(--rose);font-style:italic;font-weight:700;font-family:'Roboto',serif;font-size:1.02em}
+.chev{flex-shrink:0;align-self:center;color:var(--purple);font-size:18px;transition:transform .3s;margin-right:2px}
+.faq-item.open .chev{transform:rotate(180deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.faq-item.open .faq-answer{max-height:1600px}
+.answer-inner{background:#fff;border-radius:14px;padding:14px 16px;margin:0 2px 14px;border-right:4px solid var(--green);box-shadow:0 2px 8px rgba(31,58,95,.05)}
+.a-label{font-size:12px;font-weight:700;color:var(--green-d);margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.a-text{font-size:14px;color:#2a3a30;line-height:1.95}
+.a-text p{margin-bottom:9px}
+.a-text b{color:var(--purple-d);font-weight:700}
+.ex{display:inline-block;direction:ltr;font-family:'Roboto',serif;background:rgba(122,91,168,.08);border-radius:7px;padding:1px 8px;margin:1px 0;color:#3a2c5e;font-size:13.5px;unicode-bidi:isolate}
+.ex .h{color:var(--rose);font-weight:700}
+.tip{margin-top:6px;background:rgba(176,122,74,.09);border-radius:10px;padding:9px 12px;font-size:13px;color:#7a5532;display:flex;gap:7px;line-height:1.7}
+.tip b{color:#9a6a35}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:24px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #d9cbb0}
+.foot b{color:var(--purple-d)}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
 </style>
 </head>
 <body>
-<span class="hk-wm" style="top:30%;left:12%">Hoda Khedmati</span>
-<span class="hk-wm" style="top:70%;left:55%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:32%;left:10%">Hoda Khedmati</span>
+<span class="hk-wm" style="top:72%;left:56%">Hoda Khedmati</span>
 
 <div class="hoda-back">
   <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
@@ -59,121 +62,105 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 </div>
 
 <div class="hero">
-  <div class="hero-tag">❓ QUESTIONS & RÉPONSES</div>
+  <div class="hero-tag">❓ QUESTIONS FRÉQUENTES</div>
   <h1>سوال‌های شما</h1>
-  <div class="sub">سؤالاتت را بپرس و پاسخ مدرس را اینجا ببین</div>
+  <div class="sub">سوال‌های ریز و پرتکراری که سر راه یادگیری پیش می‌آد —<br>با جواب‌های ساده و کاربردی 🇫🇷</div>
 </div>
 
 <div class="wrap">
-  <div class="ask-card">
-    <h3>✍️ سوال جدید بپرس</h3>
-    <div class="sub">هر سؤالی درباره فرانسه یا درس‌ها داری، اینجا بنویس</div>
-    <textarea id="new-q" placeholder="سؤالت را اینجا بنویس..."></textarea>
-    <button class="ask-btn" onclick="submitQuestion()">📤 ارسال سؤال</button>
+  <div class="faq" id="faq"></div>
+  <div class="foot">
+    💬 سوال جدیدی داری که اینجا نیست؟<br>
+    از دکمه‌ی شناور <b>«سوال بپرس»</b> پایین هر صفحه برام بفرست تا جوابش رو اضافه کنم.
   </div>
-
-  <div id="loading">در حال بارگذاری سؤالات...</div>
-  <div id="qa-list" style="display:none"></div>
 </div>
 
-<div id="toast" class="toast"></div>
-
 <script>
-const SB_URL='https://ifjsnasoxnalhttzhlpd.supabase.co';
-const SB_KEY='sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK';
-const sb=supabase.createClient(SB_URL,SB_KEY);
-let USER=null;
+const CHAR = `<svg viewBox="0 0 128 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7cfae"/><stop offset="1" stop-color="#e9b58d"/></linearGradient>
+<linearGradient id="hr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d3727"/><stop offset="1" stop-color="#2d1e14"/></linearGradient>
+<linearGradient id="tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9474c1"/><stop offset="1" stop-color="#6c4d9e"/></linearGradient>
+</defs>
+<ellipse cx="64" cy="135" rx="50" ry="6" fill="#6c4d9e" opacity="0.12"/>
+<path d="M18 139 Q22 99 64 95 Q106 99 110 139 Z" fill="url(#tp)"/>
+<rect x="55" y="82" width="18" height="16" rx="7" fill="url(#sk)"/>
+<path d="M36 55 Q32 16 64 16 Q96 16 92 55 Q88 34 64 33 Q40 34 36 55 Z" fill="url(#hr)"/>
+<circle cx="64" cy="15" r="11" fill="url(#hr)"/>
+<circle cx="64" cy="56" r="30" fill="url(#sk)"/>
+<path d="M36 54 Q28 86 41 106 Q49 84 45 58 Z" fill="url(#hr)"/>
+<path d="M92 54 Q100 86 87 106 Q79 84 83 58 Z" fill="url(#hr)"/>
+<ellipse cx="48" cy="64" rx="5" ry="3" fill="#e88aa0" opacity="0.4"/>
+<ellipse cx="80" cy="64" rx="5" ry="3" fill="#e88aa0" opacity="0.4"/>
+<ellipse cx="52" cy="56" rx="4" ry="5" fill="#fff"/>
+<ellipse cx="76" cy="56" rx="4" ry="5" fill="#fff"/>
+<circle cx="53" cy="54" r="2.5" fill="#3a2a1f"/>
+<circle cx="77" cy="54" r="2.5" fill="#3a2a1f"/>
+<circle cx="53.8" cy="53" r="0.9" fill="#fff"/>
+<circle cx="77.8" cy="53" r="0.9" fill="#fff"/>
+<path d="M47 49 Q52 46 58 49" stroke="#3a2a1f" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+<path d="M70 49 Q76 46 81 49" stroke="#3a2a1f" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+<path d="M64 58 Q66 63 62 64" stroke="#d59a76" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<path d="M56 70 Q64 75 73 70" stroke="#b5705a" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+<path d="M96 116 Q108 92 84 80" fill="none" stroke="url(#tp)" stroke-width="16" stroke-linecap="round"/>
+<ellipse cx="80" cy="82" rx="11" ry="9" fill="url(#sk)"/>
+<g fill="url(#sk)" stroke="#d9a276" stroke-width="0.6">
+<rect x="69" y="66" width="5.2" height="14" rx="2.5"/>
+<rect x="75" y="64" width="5.2" height="16" rx="2.5"/>
+<rect x="81" y="65" width="5.2" height="15" rx="2.5"/>
+<rect x="87" y="68" width="5.2" height="12" rx="2.5"/>
+</g>
+<path d="M22 32 L23.7 36.3 L28 38 L23.7 39.7 L22 44 L20.3 39.7 L16 38 L20.3 36.3 Z" fill="#e0a93f"/>
+<path d="M104 40 L105.4 43.6 L109 45 L105.4 46.4 L104 50 L102.6 46.4 L99 45 L102.6 43.6 Z" fill="#a079d0"/>
+<path d="M100 16 L101 18.6 L104 20 L101 21 L100 24 L99 21 L96 20 L99 18.6 Z" fill="#e8c06a"/>
+</svg>`;
 
-function toast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2200);
-}
-
-function fmt(d){
-  if(!d)return'';
-  const date=new Date(d);
-  return date.toLocaleDateString('fa-IR')+' '+date.toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'});
-}
-
-async function init(){
-  const {data:{session}}=await sb.auth.getSession();
-  if(!session){window.location.href='auth.html';return;}
-  USER=session.user;
-  await loadQuestions();
-}
-
-async function submitQuestion(){
-  const text=document.getElementById('new-q').value.trim();
-  if(!text){toast('سؤالت را بنویس!');return;}
-  const {error}=await sb.from('questions').insert({
-    user_id:USER.id,email:USER.email,page:'سوال عمومی',question:text
-  });
-  if(!error){
-    document.getElementById('new-q').value='';
-    toast('✅ سؤالت ثبت شد');
-    await loadQuestions();
-  }else{
-    toast('خطا — دوباره تلاش کن');
+const FAQS = [
+  {
+    q: `بعد از <span class="fr" dir="ltr">et</span> می‌شه لیزون کرد؟`,
+    a: `<p><b>نه! 🚫</b> بعد از <span class="ex" dir="ltr">et</span> (به معنیِ «و») <b>هیچ‌وقت</b> لیزون نمی‌کنیم — حتی اگه کلمه‌ی بعدی با حرف صدادار شروع بشه.</p>
+        <p>مثال‌ها:</p>
+        <p><span class="ex" dir="ltr">un homme <span class="h">et</span> une femme</span><br>
+        تلفظ: «اَن اُم / اِ / اون فام» — بین <span class="ex" dir="ltr">et</span> و <span class="ex" dir="ltr">une</span> هیچ اتصالی نیست.</p>
+        <p><span class="ex" dir="ltr">vingt <span class="h">et</span> un</span> (۲۱)<br>
+        «وَن‌ت ـ اِ ـ اَن» — باز هم بین <span class="ex" dir="ltr">et</span> و <span class="ex" dir="ltr">un</span> لیزون نداریم.</p>
+        <p>چرا؟ چون حرف «t» در آخرِ <span class="ex" dir="ltr">et</span> یه استثناست: این تنها موردیه که حتی با صدادارِ بعدش هم وصل نمی‌شه. یه‌جورایی <span class="ex" dir="ltr">et</span> همیشه «تنها» می‌مونه.</p>
+        <div class="tip">💡 <span><b>ترفند:</b> هر جا <span class="ex" dir="ltr">et</span> دیدی، یه مکث کوچیک بذار و جدا تلفظش کن. همین کافیه!</span></div>`
   }
-}
+];
 
-async function loadQuestions(){
-  const {data}=await sb.from('questions')
-    .select('*')
-    .eq('user_id',USER.id)
-    .order('created_at',{ascending:false});
-  
-  const questions=data||[];
-  document.getElementById('loading').style.display='none';
-  const list=document.getElementById('qa-list');
-  list.style.display='block';
-  
-  if(questions.length===0){
-    list.innerHTML='<div class="empty"><div class="empty-icon">💭</div>هنوز سؤالی نپرسیده‌ای.<br>اولین سؤالت را بالا بنویس!</div>';
-    return;
-  }
-  
-  const answered=questions.filter(q=>q.answer);
-  const pending=questions.filter(q=>!q.answer);
-  
-  let html='';
-  
-  if(answered.length){
-    html+='<div class="section-title" style="color:#23704f">✅ پاسخ داده‌شده ('+answered.length+')</div>';
-    answered.forEach(q=>html+=qaCard(q));
-  }
-  
-  if(pending.length){
-    html+='<div class="section-title" style="color:#b0506f">⏳ در انتظار پاسخ ('+pending.length+')</div>';
-    pending.forEach(q=>html+=qaCard(q));
-  }
-  
-  list.innerHTML=html;
+function sparkles(){
+  return `<span class="spk" style="top:10px;left:14px">✦</span>
+          <span class="spk p" style="top:24px;right:16px">✦</span>
+          <span class="spk" style="bottom:18px;left:22px;font-size:10px">✦</span>`;
 }
-
-function qaCard(q){
-  let inner=`<div class="qa-q">
-    <div class="qa-q-meta">
-      <span class="qa-page">${q.page||'عمومی'}</span>
-      <span class="qa-time">${fmt(q.created_at)}</span>
-    </div>
-    <div class="qa-q-text"><span class="label">❓ سؤال:</span> ${q.question}</div>
-  </div>`;
-  
-  if(q.answer){
-    inner+=`<div class="qa-answer">
-      <span class="label">✅ پاسخ مدرس:</span>
-      <div class="qa-answer-text">${q.answer}</div>
-    </div>`;
-  }else{
-    inner+=`<div class="qa-pending">⏳ هنوز پاسخ داده نشده — به‌زودی پاسخ می‌گیری</div>`;
-  }
-  
-  return `<div class="qa-card">${inner}</div>`;
+function render(){
+  const box=document.getElementById('faq');
+  box.innerHTML=FAQS.map((f,i)=>`
+    <div class="faq-item" data-i="${i}">
+      ${sparkles()}
+      <div class="faq-head" onclick="toggle(${i})">
+        <div class="faq-char">${CHAR}</div>
+        <div class="dots"><i></i><i></i></div>
+        <div class="qbubble">
+          <div class="q-label">❓ سوال</div>
+          <div class="q-text">${f.q}</div>
+        </div>
+        <span class="chev">&#9662;</span>
+      </div>
+      <div class="faq-answer">
+        <div class="answer-inner">
+          <div class="a-label">✅ جواب هدا</div>
+          <div class="a-text">${f.a}</div>
+        </div>
+      </div>
+    </div>`).join('');
 }
-
-init();
+function toggle(i){
+  document.querySelector('.faq-item[data-i="'+i+'"]').classList.toggle('open');
+}
+render();
+document.querySelector('.faq-item') && document.querySelector('.faq-item').classList.add('open');
 </script>
 </body>
 </html>
