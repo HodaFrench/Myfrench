@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اشتباهات املایی رایج | Grammaire</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--navy-soft:#41618a;--gold:#b07a4a;--gold-soft:#c4a572;--terracotta:#c4502d;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--teal:#2e7d8f;--rose:#b0506f;--purple:#7a5ba8;}
+  body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.08) 31px,rgba(65,97,138,0.08) 32px);color:var(--ink);line-height:1.95;padding:24px 16px 70px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .topbar{text-align:center;margin-bottom:24px;}
+  .topbar a{display:inline-block;color:var(--navy);text-decoration:none;font-size:14px;border:1px solid var(--line);background:var(--cream);padding:8px 18px;border-radius:8px;transition:all .25s;}
+  .topbar a:hover{background:var(--navy);color:var(--cream);}
+  .header{background:linear-gradient(135deg,var(--terracotta),#9e3d22);color:var(--cream);padding:38px 30px;border-radius:20px;text-align:center;margin-bottom:26px;box-shadow:0 14px 34px rgba(196,80,45,.24);position:relative;overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.06);border-radius:50%;}
+  .header .tag{font-size:12px;color:#f3d9c8;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .header h1{font-family:'Roboto',serif;font-size:27px;font-weight:600;margin-bottom:8px;direction:ltr;}
+  .header .fa{font-size:15px;opacity:.95;}
+  .lead{background:var(--paper-warm);border-right:4px solid var(--gold-soft);border-radius:12px;padding:18px 22px;margin-bottom:24px;font-size:15px;line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+  .pair{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:18px;box-shadow:0 6px 18px rgba(31,58,95,.06);border-top:4px solid var(--teal);}
+  .pair-title{font-family:'Roboto',serif;font-size:20px;font-weight:700;color:var(--navy);direction:ltr;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .pair-title .vs{font-size:13px;color:var(--rose);font-family:'Estedad';}
+  .opt2{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .card{flex:1;min-width:140px;background:var(--cream);border-radius:12px;padding:13px 15px;border-right:3px solid var(--teal);}
+  .card .w{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:var(--teal);direction:ltr;display:block;margin-bottom:3px;}
+  .card .role{font-size:12.5px;color:var(--gray);margin-bottom:7px;}
+  .card .ex{font-family:'Roboto',serif;font-size:13.5px;color:#2c3e35;direction:ltr;display:block;}
+  .card .exfa{font-size:11.5px;color:var(--gray);}
+  .trick{margin-top:10px;background:rgba(176,122,74,.09);border-radius:10px;padding:9px 13px;font-size:13px;color:#7a5532;line-height:1.8;}
+  .trick b{color:#9a6a35;}
+  .quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:26px;box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz h2{font-size:19px;color:var(--navy);margin-bottom:4px;text-align:center;}
+  .quiz .qsub{font-size:12.5px;color:var(--gray);text-align:center;margin-bottom:18px;}
+  .q{margin-bottom:16px;padding:15px 16px;background:var(--cream);border-radius:12px;}
+  .q-text{font-size:14.5px;margin-bottom:10px;direction:ltr;font-family:'Roboto',serif;}
+  .q-text .fa{font-family:'Estedad';direction:rtl;display:block;color:var(--gray);font-size:12.5px;margin-top:3px;}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;}
+  .opt{flex:1;min-width:80px;border:1.5px solid var(--line);background:var(--white);border-radius:10px;padding:9px;font-family:'Roboto',serif;font-size:14px;cursor:pointer;transition:all .2s;text-align:center;}
+  .opt:hover{border-color:var(--navy-soft);}
+  .opt.correct{background:rgba(46,139,107,.15);border-color:var(--green);color:var(--green);font-weight:700;}
+  .opt.wrong{background:rgba(176,80,111,.13);border-color:var(--rose);color:var(--rose);}
+  .feedback{margin-top:9px;font-size:13px;font-weight:600;display:none;}
+  .feedback.ok{color:var(--green);display:block;}
+  .feedback.no{color:var(--rose);display:block;}
+  .footnote{text-align:center;color:var(--gray);font-size:12.5px;margin-top:26px;line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a href="index.html">&#8592; بازگشت به خانه</a></div>
+
+  <div class="header">
+    <div class="tag">ORTHOGRAPHE · ERREURS FRÉQUENTES</div>
+    <h1>Les fautes d'orthographe courantes</h1>
+    <div class="fa">اشتباهات املایی‌ای که حتی فرانسوی‌ها هم می‌کنند!</div>
+  </div>
+
+  <div class="lead">
+    بعضی کلمه‌ها در فرانسه <b>هم‌صدا</b> هستند (تلفظشان یکی است) ولی املا و معنی‌شان فرق دارد.
+    این‌ها بیشترین اشتباهِ نوشتاری را می‌سازند — حتی برای خودِ فرانسوی‌ها!
+    این درس مهم‌ترین جفت‌ها را با یک <b>ترفندِ ساده</b> برای هر کدام یاد می‌دهد.
+  </div>
+
+  <!-- a / à -->
+  <div class="pair">
+    <div class="pair-title">a <span class="vs">یا</span> à ❓</div>
+    <div class="opt2">
+      <div class="card"><span class="w">a</span><span class="role">فعل (avoir) — «دارد»</span><span class="ex">Il a un chien.</span><span class="exfa">یه سگ داره.</span></div>
+      <div class="card"><span class="w">à</span><span class="role">حرف اضافه — «به/در»</span><span class="ex">Je vais à Paris.</span><span class="exfa">می‌رم به پاریس.</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند:</b> اگر بتوانی به «<span dir="ltr">avait</span>» (داشت) تبدیلش کنی → <b>a</b> (بدون اکسان). وگرنه → <b>à</b>.</div>
+  </div>
+
+  <!-- et / est -->
+  <div class="pair">
+    <div class="pair-title">et <span class="vs">یا</span> est ❓</div>
+    <div class="opt2">
+      <div class="card"><span class="w">et</span><span class="role">حرف ربط — «و»</span><span class="ex">Paul et Marie.</span><span class="exfa">پل و ماری.</span></div>
+      <div class="card"><span class="w">est</span><span class="role">فعل (être) — «است»</span><span class="ex">Il est grand.</span><span class="exfa">اون بلندقده.</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند:</b> اگر بتوانی به «<span dir="ltr">était</span>» (بود) تبدیلش کنی → <b>est</b>. اگر یعنی «و» (و می‌توان «et puis» گفت) → <b>et</b>.</div>
+  </div>
+
+  <!-- son / sont -->
+  <div class="pair">
+    <div class="pair-title">son <span class="vs">یا</span> sont ❓</div>
+    <div class="opt2">
+      <div class="card"><span class="w">son</span><span class="role">صفت ملکی — «او ـَش»</span><span class="ex">son livre</span><span class="exfa">کتابش</span></div>
+      <div class="card"><span class="w">sont</span><span class="role">فعل (être جمع) — «هستند»</span><span class="ex">Ils sont là.</span><span class="exfa">اون‌ها اینجان.</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند:</b> اگر بتوانی به «<span dir="ltr">étaient</span>» (بودند) تبدیلش کنی → <b>sont</b>. وگرنه → <b>son</b>.</div>
+  </div>
+
+  <!-- ce / se -->
+  <div class="pair">
+    <div class="pair-title">ce <span class="vs">یا</span> se ❓</div>
+    <div class="opt2">
+      <div class="card"><span class="w">ce</span><span class="role">صفت اشاره — «این»</span><span class="ex">ce matin</span><span class="exfa">این صبح / امروز صبح</span></div>
+      <div class="card"><span class="w">se</span><span class="role">ضمیر انعکاسی (فعل)</span><span class="ex">Il se lave.</span><span class="exfa">خودش رو می‌شوره.</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند:</b> <b>se</b> همیشه قبل از فعل می‌آید (se laver, se lever). <b>ce</b> قبل از اسم می‌آید (ce livre).</div>
+  </div>
+
+  <!-- ces / ses -->
+  <div class="pair">
+    <div class="pair-title">ces <span class="vs">یا</span> ses ❓</div>
+    <div class="opt2">
+      <div class="card"><span class="w">ces</span><span class="role">اشاره‌ی جمع — «این‌ها»</span><span class="ex">ces livres</span><span class="exfa">این کتاب‌ها</span></div>
+      <div class="card"><span class="w">ses</span><span class="role">ملکی جمع — «ـ‌هایش»</span><span class="ex">ses amis</span><span class="exfa">دوست‌هایش</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند:</b> اگر «مالِ او»ست → <b>ses</b> (ses = les siens). اگر «این‌هایی که اینجان» → <b>ces</b>.</div>
+  </div>
+
+  <!-- -er / -é -->
+  <div class="pair" style="border-top-color:var(--rose);">
+    <div class="pair-title" style="color:var(--rose);">منده… ✍️ <span class="vs">mangé یا manger؟</span></div>
+    <div class="opt2">
+      <div class="card" style="border-right-color:var(--rose)"><span class="w" style="color:var(--rose)">-er</span><span class="role">مصدر (بعد از حرف اضافه یا فعل دوم)</span><span class="ex">Je veux manger.</span><span class="exfa">می‌خوام بخورم.</span></div>
+      <div class="card" style="border-right-color:var(--rose)"><span class="w" style="color:var(--rose)">-é</span><span class="role">اسم مفعول (با avoir/être)</span><span class="ex">J'ai mangé.</span><span class="exfa">خوردم.</span></div>
+    </div>
+    <div class="trick">💡 <b>ترفند طلایی:</b> فعل را با یک فعلِ گروه سوم (مثل <span dir="ltr">vendre/mordre</span>) جایگزین کن. اگر «<span dir="ltr">vendre</span>» جا می‌افتد → <b>-er</b>. اگر «<span dir="ltr">vendu</span>» جا می‌افتد → <b>-é</b>. <br>مثال: «Je veux (vendre)» ✓ → manger. «J'ai (vendu)» ✓ → mangé.</div>
+  </div>
+
+  <!-- تمرین -->
+  <div class="quiz">
+    <h2>✍️ تمرین تعاملی</h2>
+    <div class="qsub">املای درست را انتخاب کن</div>
+
+    <div class="q">
+      <div class="q-text">Il ___ deux frères.<span class="fa">اون دو تا برادر داره.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">a</div><div class="opt" data-ok="0">à</div></div>
+      <div class="feedback">«داشت = avait» جا می‌افتد → <b>a</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">Ma sœur ___ étudiante.<span class="fa">خواهرم دانشجوئه.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">est</div><div class="opt" data-ok="0">et</div></div>
+      <div class="feedback">«بود = était» جا می‌افتد → <b>est</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">Les enfants ___ dans le jardin.<span class="fa">بچه‌ها توی باغن.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">sont</div><div class="opt" data-ok="0">son</div></div>
+      <div class="feedback">«بودند = étaient» جا می‌افتد → <b>sont</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">Je dois ___ mes devoirs.<span class="fa">باید تکالیفم رو تموم کنم.</span> (finir/fini)</div>
+      <div class="opts"><div class="opt" data-ok="1">finir</div><div class="opt" data-ok="0">fini</div></div>
+      <div class="feedback">بعد از فعلِ دوم، مصدر → <b>finir</b> («vendre» جا می‌افتد)</div>
+    </div>
+    <div class="q">
+      <div class="q-text">Il ___ lève à 7 heures.<span class="fa">ساعت ۷ بیدار می‌شه.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">se</div><div class="opt" data-ok="0">ce</div></div>
+      <div class="feedback">قبل از فعل (lever) → <b>se</b></div>
+    </div>
+  </div>
+
+  <div class="footnote">© Hoda Khedmati — Français avec Hoda<br>a/à · et/est · son/sont · ce/se · -er/-é</div>
+</div>
+<script>
+document.querySelectorAll('.q').forEach(q=>{
+  const opts=q.querySelectorAll('.opt');const fb=q.querySelector('.feedback');
+  opts.forEach(o=>{o.addEventListener('click',()=>{
+    if(q.dataset.done)return;q.dataset.done="1";
+    const ok=o.dataset.ok==="1";o.classList.add(ok?'correct':'wrong');
+    if(!ok){opts.forEach(x=>{if(x.dataset.ok==="1")x.classList.add('correct');});}
+    fb.classList.add(ok?'ok':'no');
+  });});
+});
+</script>
+</body>
+</html>
