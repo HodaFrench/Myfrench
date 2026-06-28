@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Le diplôme &amp; la valeur — débat — Vocabulaire · TCF Canada · @TCFHODA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style></head><body><div class='wrap'><nav class='nav' id='nav'></nav><div class='progress-wrap'><div class='pcount' id='pcount'>0 / 0 termes révisés</div><div class='pbar'><div class='pfill' id='pfill'></div></div><button class='btn' onclick='window.print()'>Imprimer / Enregistrer en PDF</button></div><div class='cover'><div class='kick'>TCF Canada — Vocabulaire spécial sujet</div><h1>Le diplôme <b>&amp; la valeur</b></h1><div class='b2'>Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><p class='lead'>Le vocabulaire du débat sur les diplômes, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+) pour chaque mot.</p><div class='b2' style='background:#2E8B6B;color:#fff;display:inline-block;padding:3px 14px;border-radius:14px;margin-top:8px'>APERÇU GRATUIT · 2 mots par catégorie</div><svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="diplome"><path d="M180 54 l66 26 l-66 26 l-66 -26 z" fill="none" stroke="#5B5BD6" stroke-width="4" stroke-linejoin="round"/><path d="M150 92 v26 c0 12 60 12 60 0 v-26" fill="none" stroke="#5B5BD6" stroke-width="4" stroke-linecap="round"/><line x1="246" y1="80" x2="246" y2="122" stroke="#5B5BD6" stroke-width="4" stroke-linecap="round"/><circle cx="246" cy="128" r="6" fill="#2E8B6B"/></svg><div class='sign'>Hoda KHEDMATI</div><span class='handle'>@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div></div><div id='root'></div><footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer></div><script>const CAT=[{"id": 1, "name": "Le diplôme &amp; le cursus", "fa": "مدرک و دوره‌ی تحصیلی", "icon": "🎓", "color": "#5B5BD6"}, {"id": 2, "name": "La nécessité", "fa": "ضرورت", "icon": "🔑", "color": "#2E8B6B"}, {"id": 3, "name": "Le marché du travail", "fa": "بازارِ کار", "icon": "💼", "color": "#C77A2E"}, {"id": 4, "name": "Capacités &amp; compétences", "fa": "توانایی‌ها و مهارت‌ها", "icon": "🛠️", "color": "#C0392B"}, {"id": 5, "name": "Atouts, obstacles &amp; choix", "fa": "نقاط قوت، موانع و انتخاب", "icon": "🧭", "color": "#2E6BD6"}, {"id": 6, "name": "Mérite &amp; savoirs hors diplôme", "fa": "شایستگی و دانشِ بی‌مدرک", "icon": "📚", "color": "#2E8B8B"}, {"id": 7, "name": "Valoir &amp; la valeur", "fa": "ارزش داشتن و ارزش", "icon": "⚖️", "color": "#7C5BD6"}];
+const D=[{"c": 1, "term": "un diplôme", "fa": "مدرکِ تحصیلی", "syn": ["un titre", "une certification"], "ex": [["À la fin de ses études, l'étudiant reçoit un <b>diplôme</b>.", "در پایانِ تحصیل، دانشجو یک <b>مدرک</b> دریافت می‌کند."], ["Selon moi, un <b>diplôme</b> atteste un savoir sans prouver un savoir-faire.", "به نظر من، <b>مدرک</b> دانش را گواهی می‌کند بی‌آنکه مهارتِ عملی را اثبات کند."], ["C'est précisément le <b>diplôme</b> qui, bien qu'il rassure, peut figer le regard du recruteur (B2+).", "دقیقاً <b>مدرک</b> است که، هرچند اطمینان می‌بخشد، می‌تواند نگاهِ کارفرما را منجمد کند."], ["Quand bien même il serait modeste, un <b>diplôme</b> reste une base sur laquelle bâtir (B2+).", "حتی اگر کم‌اهمیت باشد، <b>مدرک</b> پایه‌ای می‌ماند که بر آن می‌توان ساخت."]], "def": "Titre qui certifie l'acquisition d'un niveau de connaissances."}, {"c": 1, "term": "être surdiplômé", "fa": "بیش از حد مدرک داشتن", "syn": ["être trop diplômé", "avoir un diplôme excédentaire"], "ex": [["Certains candidats craignent d'<b>être surdiplômés</b> pour un poste.", "برخی داوطلبان می‌ترسند برای یک شغل <b>بیش از حد مدرک داشته باشند</b>."], ["À mon sens, <b>être surdiplômé</b> n'est pas toujours un avantage à l'embauche.", "به نظر من، <b>بیش از حد مدرک داشتن</b> همیشه در استخدام مزیت نیست."], ["Pour peu qu'on le perçoive mal, le fait d'<b>être surdiplômé</b> ferme parfois des portes (B2+).", "همین که بد تعبیر شود، <b>بیش از حد مدرک داشتن</b> گاه درهایی را می‌بندد."], ["Aussi paradoxal que ce soit, <b>être surdiplômé</b> peut inquiéter un employeur (B2+).", "هر اندازه هم متناقض باشد، <b>بیش از حد مدرک داشتن</b> می‌تواند کارفرمایی را نگران کند."]], "def": "Posséder un niveau d'études supérieur à celui qu'exige un poste."}, {"c": 2, "term": "un prérequis", "fa": "پیش‌نیاز", "syn": ["une condition préalable", "un préalable"], "ex": [["Un certain diplôme constitue parfois un <b>prérequis</b> à l'embauche.", "گاه مدرکی معیّن، <b>پیش‌نیازِ</b> استخدام است."], ["À mon sens, multiplier les <b>prérequis</b> écarte des candidats valables.", "به نظر من، افزودنِ <b>پیش‌نیازها</b> داوطلبانِ شایسته را کنار می‌گذارد."], ["Pour peu qu'on les assouplisse, les <b>prérequis</b> ouvrent l'accès à plus de profils (B2+).", "همین که <b>پیش‌نیازها</b> را منعطف کنیم، دسترسی برای افرادِ بیشتری گشوده می‌شود."], ["Quand bien même il serait justifié, un <b>prérequis</b> trop rigide exclut injustement (B2+).", "حتی اگر موجه باشد، <b>پیش‌نیازِ</b> بیش از حد سخت، ناعادلانه کنار می‌گذارد."]], "def": "Condition exigée avant de pouvoir accéder à quelque chose."}, {"c": 2, "term": "indispensable", "fa": "ضروری/گریزناپذیر", "syn": ["essentiel", "incontournable"], "ex": [["Pour certains métiers, le diplôme demeure <b>indispensable</b>.", "برای برخی مشاغل، مدرک <b>ضروری</b> می‌ماند."], ["À mon sens, dire le diplôme <b>indispensable</b> partout est exagéré.", "به نظر من، <b>ضروری</b> خواندنِ مدرک در همه‌جا اغراق‌آمیز است."], ["C'est en distinguant les cas qu'on voit où le diplôme est vraiment <b>indispensable</b> (B2+).", "با تفکیکِ موارد است که می‌بینیم مدرک کجا به‌راستی <b>ضروری</b> است."], ["Quand bien même il paraîtrait <b>indispensable</b>, le diplôme cède parfois à l'expérience (B2+).", "حتی اگر <b>ضروری</b> بنماید، مدرک گاه جای خود را به تجربه می‌دهد."]], "def": "Dont on ne peut absolument pas se passer."}, {"c": 3, "term": "l'employabilité", "fa": "قابلیتِ استخدام", "syn": ["l'aptitude à l'emploi", "les chances d'embauche"], "ex": [["La formation continue renforce nettement l'<b>employabilité</b>.", "آموزشِ مستمر، <b>قابلیتِ استخدام</b> را به‌روشنی تقویت می‌کند."], ["À mon sens, l'<b>employabilité</b> repose autant sur le savoir-être que sur le diplôme.", "به نظر من، <b>قابلیتِ استخدام</b> به‌اندازه‌ی مدرک، بر مهارت‌های رفتاری استوار است."], ["C'est en se formant sans cesse qu'on entretient son <b>employabilité</b> (B2+).", "با آموختنِ پیوسته است که <b>قابلیتِ استخدامِ</b> خود را زنده نگه می‌داریم."], ["Quand bien même il serait diplômé, un candidat doit cultiver son <b>employabilité</b> (B2+).", "حتی اگر دارای مدرک باشد، داوطلب باید <b>قابلیتِ استخدامِ</b> خود را بپرورد."]], "def": "Capacité d'une personne à trouver et garder un emploi."}, {"c": 3, "term": "l'insertion professionnelle", "fa": "ورود به بازارِ کار", "syn": ["l'entrée dans l'emploi", "l'intégration au travail"], "ex": [["L'<b>insertion professionnelle</b> dépend de bien plus que du diplôme.", "<b>ورود به بازارِ کار</b> به چیزی فراتر از مدرک بستگی دارد."], ["À mon sens, un stage favorise l'<b>insertion professionnelle</b> des jeunes.", "به نظر من، کارآموزی، <b>ورود به بازارِ کارِ</b> جوانان را تسهیل می‌کند."], ["C'est en multipliant les expériences qu'on réussit son <b>insertion professionnelle</b> (B2+).", "با افزودنِ تجربه‌هاست که در <b>ورود به بازارِ کار</b> کامیاب می‌شویم."], ["Quand bien même elle tarderait, l'<b>insertion professionnelle</b> se prépare dès les études (B2+).", "حتی اگر دیر برسد، <b>ورود به بازارِ کار</b> از همان دورانِ تحصیل آماده می‌شود."]], "def": "Entrée durable d'une personne dans le monde du travail."}, {"c": 4, "term": "être compétent", "fa": "کاردان بودن", "syn": ["avoir les compétences", "être qualifié"], "ex": [["Un employeur cherche d'abord quelqu'un d'<b>compétent</b>.", "کارفرما پیش از همه به‌دنبالِ فردِ <b>کاردان</b> است."], ["À mon sens, <b>être compétent</b> se prouve sur le terrain, pas sur le papier.", "به نظر من، <b>کاردان بودن</b> در میدانِ عمل اثبات می‌شود، نه روی کاغذ."], ["C'est en pratiquant qu'on devient vraiment <b>compétent</b> (B2+).", "با تمرین است که به‌راستی <b>کاردان</b> می‌شویم."], ["Quand bien même il manquerait de diplôme, un autodidacte peut <b>être</b> très <b>compétent</b> (B2+).", "حتی اگر مدرک نداشته باشد، یک خودآموخته می‌تواند بسیار <b>کاردان باشد</b>."]], "def": "Avoir les connaissances et l'habileté nécessaires pour agir."}, {"c": 4, "term": "être qualifié", "fa": "واجدِ شرایط بودن", "syn": ["avoir les qualifications", "être habilité"], "ex": [["Pour ce poste, il faut <b>être qualifié</b> en gestion de projet.", "برای این شغل باید در مدیریتِ پروژه <b>واجدِ شرایط بود</b>."], ["À mon sens, <b>être qualifié</b> ne se résume pas à un titre.", "به نظر من، <b>واجدِ شرایط بودن</b> به یک عنوان خلاصه نمی‌شود."], ["C'est en validant ses acquis qu'on peut <b>être qualifié</b> sans long cursus (B2+).", "با اعتبارسنجیِ آموخته‌ها است که می‌توان بی‌دوره‌ای طولانی <b>واجدِ شرایط بود</b>."], ["Quand bien même il serait <b>qualifié</b>, un candidat doit encore convaincre (B2+).", "حتی اگر <b>واجدِ شرایط باشد</b>، داوطلب باز هم باید متقاعد کند."]], "def": "Posséder les qualifications reconnues pour exercer une fonction."}, {"c": 5, "term": "un atout", "fa": "نقطه‌ی قوت", "syn": ["un avantage", "un plus"], "ex": [["Une langue étrangère est un vrai <b>atout</b> sur un CV.", "یک زبانِ خارجی <b>نقطه‌ی قوتِ</b> واقعی در رزومه است."], ["À mon sens, la curiosité est un <b>atout</b> aussi précieux qu'un diplôme.", "به نظر من، کنجکاوی <b>نقطه‌ی قوتی</b> به گران‌بهاییِ یک مدرک است."], ["C'est en cultivant ses <b>atouts</b> qu'on compense d'éventuelles faiblesses (B2+).", "با پروراندنِ <b>نقاطِ قوت</b> است که ضعف‌های احتمالی را جبران می‌کنیم."], ["Quand bien même il serait discret, un <b>atout</b> finit par se révéler (B2+).", "حتی اگر کم‌پیدا باشد، یک <b>نقطه‌ی قوت</b> سرانجام آشکار می‌شود."]], "def": "Avantage qui aide à réussir ou à se distinguer."}, {"c": 5, "term": "un levier", "fa": "اهرم/عاملِ پیش‌برنده", "syn": ["un accélérateur", "un moteur"], "ex": [["Le réseau peut servir de <b>levier</b> vers un premier emploi.", "شبکه‌ی ارتباطی می‌تواند <b>اهرمی</b> به‌سوی نخستین شغل باشد."], ["À mon sens, la formation continue est un puissant <b>levier</b> de carrière.", "به نظر من، آموزشِ مستمر <b>اهرمِ</b> نیرومندِ شغلی است."], ["C'est en actionnant le bon <b>levier</b> qu'on débloque une situation (B2+).", "با به‌کارانداختنِ <b>اهرمِ</b> درست است که از بن‌بست می‌رهیم."], ["Quand bien même il serait modeste, un seul <b>levier</b> peut tout changer (B2+).", "حتی اگر ناچیز باشد، یک <b>اهرمِ</b> تنها می‌تواند همه چیز را دگرگون کند."]], "def": "Moyen qui permet de progresser plus vite vers un but."}, {"c": 6, "term": "un autodidacte", "fa": "خودآموخته", "syn": ["un apprenant en autonomie", "un formé par lui-même"], "ex": [["Un <b>autodidacte</b> compense l'absence de diplôme par la pratique.", "یک <b>خودآموخته</b> نبودِ مدرک را با تمرین جبران می‌کند."], ["À mon sens, un <b>autodidacte</b> motivé vaut bien des diplômés passifs.", "به نظر من، یک <b>خودآموخته‌ی</b> باانگیزه به‌اندازه‌ی بسیاری از فارغ‌التحصیلانِ منفعل می‌ارزد."], ["C'est en se formant seul qu'un <b>autodidacte</b> apprend à apprendre (B2+).", "با خودآموزی است که یک <b>خودآموخته</b>، آموختن را می‌آموزد."], ["Quand bien même il manquerait de titre, un <b>autodidacte</b> peut exceller (B2+).", "حتی اگر عنوان نداشته باشد، یک <b>خودآموخته</b> می‌تواند سرآمد شود."]], "def": "Personne qui apprend par elle-même, sans formation officielle."}, {"c": 6, "term": "la méritocratie", "fa": "شایسته‌سالاری", "syn": ["le règne du mérite", "la sélection par le talent"], "ex": [["La <b>méritocratie</b> promet à chacun une chance selon ses efforts.", "<b>شایسته‌سالاری</b> به هرکس بر پایه‌ی تلاشش فرصتی وعده می‌دهد."], ["À mon sens, la <b>méritocratie</b> reste un idéal difficile à atteindre.", "به نظر من، <b>شایسته‌سالاری</b> آرمانی دشوار برای دست‌یافتن می‌ماند."], ["C'est en réduisant les inégalités de départ qu'on rend la <b>méritocratie</b> réelle (B2+).", "با کاستنِ نابرابری‌های آغازین است که <b>شایسته‌سالاری</b> را واقعی می‌کنیم."], ["Quand bien même elle séduirait, la <b>méritocratie</b> ne se décrète pas (B2+).", "حتی اگر دلربا باشد، <b>شایسته‌سالاری</b> با فرمان پدید نمی‌آید."]], "def": "Système où la réussite dépend du mérite et de l'effort."}, {"c": 7, "term": "valoir", "fa": "ارزش داشتن", "syn": ["avoir de la valeur", "mériter"], "ex": [["Tous les diplômes ne se <b>valent</b> pas sur le marché.", "همه‌ی مدرک‌ها در بازار <b>ارزشِ</b> یکسان <b>ندارند</b>."], ["À mon sens, ce qui <b>vaut</b> vraiment, c'est l'envie d'apprendre.", "به نظر من، آنچه به‌راستی <b>ارزش دارد</b>، میلِ آموختن است."], ["C'est par les actes qu'un parcours montre ce qu'il <b>vaut</b> (B2+).", "با کنش‌هاست که یک مسیر نشان می‌دهد چه <b>ارزشی دارد</b>."], ["Quand bien même il coûterait cher, un cursus ne <b>vaut</b> que par ce qu'on en fait (B2+).", "حتی اگر گران تمام شود، یک دوره تنها به آنچه از آن می‌سازیم <b>ارزش دارد</b>."]], "def": "Avoir une certaine valeur ou mériter qu'on s'y intéresse."}, {"c": 7, "term": "la valeur", "fa": "ارزش", "syn": ["le mérite", "l'importance"], "ex": [["La <b>valeur</b> d'un diplôme évolue avec le temps.", "<b>ارزشِ</b> یک مدرک با گذرِ زمان دگرگون می‌شود."], ["À mon sens, la vraie <b>valeur</b> d'une personne dépasse ses titres.", "به نظر من، <b>ارزشِ</b> راستینِ یک آدم از عناوینش فراتر می‌رود."], ["C'est en agissant qu'on révèle sa <b>valeur</b>, plus que par un papier (B2+).", "با کنش است که <b>ارزشِ</b> خود را آشکار می‌کنیم، بیش از یک برگه."], ["Quand bien même elle serait sous-estimée, la <b>valeur</b> d'un effort finit par compter (B2+).", "حتی اگر دست‌کم گرفته شود، <b>ارزشِ</b> یک تلاش سرانجام به‌حساب می‌آید."]], "def": "Importance ou utilité reconnue à une personne ou une chose."}];
+const PHRASES=[];
+const PH_HEAD="Boîte à phrases — débat « les diplômes sont-ils indispensables ? »";
+const PH_FA="جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی ضرورتِ مدرک تحصیلی (تکلیف ۳)";
+const HAS_PH=false;
+const PROMO_HTML="<section class='cat' id='promo'><div class='phrasebox' style='text-align:center'><h3>🎁 Ceci n'est qu'un aperçu</h3><div class='fa-h' dir='rtl' lang='fa'>این فقط پیش‌نمایشِ رایگان است: از هر دسته تنها ۲ واژه را دیدی. نسخه‌ی کامل شاملِ هر ۷ دسته با مجموعِ ۳۵ واژه است — هر واژه ۴ مثالِ ترجمه‌شده (از B2 تا B2+)، به‌علاوه‌ی کارتِ اصطلاح و جعبه‌ی جملاتِ آماده‌ی بحث (تکلیف ۳). برای دسترسی به نسخه‌ی کامل با ما در ارتباط باش 👇</div><p class='fr' style='margin-top:8px'>Vous n'avez vu que 2 mots par catégorie. La version complète contient les 35 mots des 7 catégories, avec 4 exemples traduits (du B2 au B2+) chacun, la carte d'expression et la boîte à phrases.</p><div class='sig-foot'><span class='name'>Hoda KHEDMATI</span><span class='handle'>@TCFHODA</span></div></div></section>";
+
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section'); sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}</article>`;
+  }).join('');
+  if(!cards) return;
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+if(HAS_PH){
+  const pb=document.createElement('section'); pb.className='cat'; pb.id='phrases';
+  pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+    <h3>🗣️ ${PH_HEAD}</h3><div class="fa-h" dir="rtl" lang="fa">${PH_FA}</div>
+    ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+    </div><div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(pb);
+}
+if(PROMO_HTML){ const t=document.createElement('div'); t.innerHTML=PROMO_HTML; root.appendChild(t.firstChild); }
+const total=D.length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`0 / ${total} termes révisés`;
+function refresh(){const done=document.querySelectorAll('.card.done').length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`${done} / ${total} termes révisés`; const pf=document.getElementById('pfill'); if(pf)pf.style.width=(done/total*100)+'%';}
+window.toggleDone=function(btn){const c=btn.closest('.card'); c.classList.toggle('done'); btn.classList.toggle('on'); refresh();};
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nv=document.querySelector('.nav'); if(nv)nv.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else { if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{ const match=(ONLY==='ph')?(s.id==='phrases'||s.id==='promo'):(ONLY==='promo')?(s.id==='promo'):(s.id==='c'+ONLY); s.style.display=match?'':'none'; if(match)s.style.breakBefore='auto'; });
+  }
+}
+</script></body></html>
