@@ -42,6 +42,14 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
 .t-fr{font-family:'Roboto',serif;font-size:15px;color:var(--navy);direction:ltr}
 .t-fa{font-size:12px;color:var(--gray);margin-top:1px}
 .t-arr{color:#b0a8c0;font-size:14px;margin-right:auto;flex-shrink:0}
+
+.model-opt{margin-top:14px}
+.model-btn{width:100%;background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;border:none;border-radius:12px;padding:11px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.model-btn:active{transform:scale(.98)}
+.model-text{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.mt-fr{direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:14.5px;line-height:1.95;color:#2c3e50}
+.mt-fa{margin-top:11px;font-size:13px;color:#5a6b60;line-height:1.95;border-top:1px dashed var(--line);padding-top:11px}
+.mt-soon{color:#8a8275;font-size:13.5px;text-align:center;padding:6px}
 </style>
 
 
@@ -78,6 +86,10 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
   <div class="vocab-helper" id="r-vocab" style="display:none">
     <div class="vh-title">&#128218; کلمات و عبارات کمکی</div>
     <div class="vh-grid" id="r-vocab-grid"></div>
+  </div>
+  <div class="model-opt" id="r-model-opt">
+    <button class="model-btn" id="r-model-btn" onclick="toggleModel()">&#128221; متن نمونه‌ی ۵ خطی را ببین</button>
+    <div class="model-text" id="r-model-text" style="display:none"></div>
   </div>
 </div>
 <div class="mode-tabs">
@@ -137,6 +149,35 @@ function spin(){
   }
   requestAnimationFrame(anim);
 }
+const TEXTS={
+"la famille":{f:"Ma famille est très importante pour moi.<br>Nous sommes cinq à la maison : mes parents, mon frère, ma sœur et moi.<br>Le week-end, nous aimons manger ensemble et discuter de notre semaine.<br>Mes grands-parents habitent près de chez nous, alors on les voit souvent.<br>Pour moi, la famille, c'est le soutien et l'amour de tous les jours.",p:"خانواده برام خیلی مهمه. توی خونه پنج‌نفریم: پدر و مادرم، برادرم، خواهرم و من. آخر هفته دوست داریم با هم غذا بخوریم و درباره‌ی هفته‌مون حرف بزنیم. پدربزرگ و مادربزرگم نزدیک ما زندگی می‌کنن، برای همین زیاد می‌بینیمشون. برای من، خانواده یعنی حمایت و محبتِ هر روز."},
+"le travail":{f:"Je travaille dans un bureau depuis trois ans.<br>J'aime bien mes collègues, mais les réunions sont parfois trop longues.<br>Mon patron est sympa et il respecte notre temps.<br>Le matin, je suis plus productif, alors je fais les tâches difficiles tôt.<br>Le travail peut être fatigant, mais il donne un sens à ma journée.",p:"سه ساله که توی یه دفتر کار می‌کنم. همکارهام رو دوست دارم، ولی جلسه‌ها گاهی خیلی طولانی‌ان. رئیسم مهربونه و به وقتمون احترام می‌ذاره. صبح‌ها بازده‌ترم، برای همین کارهای سخت رو زود انجام می‌دم. کار می‌تونه خسته‌کننده باشه، ولی به روزم معنا می‌ده."},
+"les vacances":{f:"Chaque été, je pars en vacances avec ma famille.<br>Cette année, nous allons à la plage pour nous reposer au soleil.<br>J'adore voyager, visiter de nouveaux endroits et goûter la cuisine locale.<br>Avant de partir, je prépare toujours ma valise et mon passeport.<br>Les vacances, c'est le moment idéal pour oublier le stress et profiter de la vie.",p:"هر تابستون با خانواده‌م می‌رم تعطیلات. امسال می‌ریم ساحل تا زیر آفتاب استراحت کنیم. عاشق سفر، دیدن جاهای جدید و چشیدن غذای محلی‌ام. قبل از رفتن، همیشه چمدون و پاسپورتم رو آماده می‌کنم. تعطیلات بهترین وقته برای فراموش‌کردن استرس و لذت‌بردن از زندگی."},
+"la nourriture":{f:"J'aime beaucoup cuisiner pour mes amis le week-end.<br>Mon plat préféré est délicieux mais un peu épicé.<br>Quand je trouve une bonne recette, je la garde toujours.<br>J'aime les choses sucrées, mais je préfère un repas frais et léger.<br>Pour moi, un bon repas, c'est aussi un moment de partage.",p:"خیلی دوست دارم آخر هفته برای دوستام آشپزی کنم. غذای موردعلاقه‌م خوشمزه ولی کمی تنده. وقتی یه دستور پختِ خوب پیدا می‌کنم، همیشه نگهش می‌دارم. چیزای شیرین دوست دارم، ولی غذای تازه و سبک رو ترجیح می‌دم. برای من، یه غذای خوب یه لحظه‌ی هم‌نشینی هم هست."},
+"la santé":{f:"Pour rester en bonne santé, j'essaie de bien dormir et de faire de l'exercice.<br>Quand je suis malade, je vais chez le médecin et je prends mes médicaments.<br>Le stress est mauvais pour le corps, alors je fais attention.<br>Je mange sainement et je bois beaucoup d'eau.<br>La santé, c'est la chose la plus précieuse que nous ayons.",p:"برای سالم موندن، سعی می‌کنم خوب بخوابم و ورزش کنم. وقتی مریض می‌شم، می‌رم دکتر و داروهام رو می‌خورم. استرس برای بدن بده، برای همین حواسم هست. سالم غذا می‌خورم و آب زیاد می‌نوشم. سلامتی باارزش‌ترین چیزیه که داریم."},
+"l'environnement":{f:"La protection de l'environnement est un sujet très important aujourd'hui.<br>Pour réduire la pollution, j'essaie de recycler et d'économiser l'énergie.<br>Je prends le vélo ou les transports en commun au lieu de la voiture.<br>Le changement climatique menace la nature, alors chacun doit agir.<br>Protéger la planète, c'est protéger notre avenir.",p:"محافظت از محیط زیست امروز موضوع خیلی مهمیه. برای کم‌کردن آلودگی، سعی می‌کنم بازیافت کنم و انرژی رو ذخیره کنم. به‌جای ماشین، دوچرخه یا حمل‌ونقل عمومی سوار می‌شم. تغییر اقلیم طبیعت رو تهدید می‌کنه، پس همه باید کاری کنیم. محافظت از سیاره یعنی محافظت از آینده‌مون."},
+"la technologie":{f:"La technologie a complètement changé notre vie quotidienne.<br>Avec mon téléphone, je peux communiquer, travailler et apprendre partout.<br>Internet est très utile, mais il faut aussi faire attention à notre vie privée.<br>Parfois, je préfère éteindre mes écrans pour me reposer.<br>La technologie est un outil : tout dépend de comment on l'utilise.",p:"تکنولوژی زندگی روزمره‌مون رو کاملاً عوض کرده. با گوشیم می‌تونم همه‌جا ارتباط بگیرم، کار کنم و یاد بگیرم. اینترنت خیلی مفیده، ولی باید حواسمون به حریم خصوصی هم باشه. گاهی ترجیح می‌دم صفحه‌نمایش‌ها رو خاموش کنم تا استراحت کنم. تکنولوژی یه ابزاره: همه‌چیز به نحوه‌ی استفاده‌مون بستگی داره."},
+"les voyages":{f:"Voyager est l'une de mes plus grandes passions.<br>J'aime découvrir de nouvelles cultures et rencontrer des gens différents.<br>Quand je visite un pays, j'essaie toujours de parler la langue locale.<br>Avant chaque voyage, je prépare mon itinéraire et je réserve mon hôtel.<br>Chaque voyage me rend plus ouvert et plus curieux.",p:"سفر یکی از بزرگ‌ترین علاقه‌هامه. دوست دارم فرهنگ‌های جدید کشف کنم و آدم‌های متفاوت ببینم. وقتی یه کشور رو می‌بینم، همیشه سعی می‌کنم زبون محلی رو حرف بزنم. قبل از هر سفر، برنامه‌م رو می‌چینم و هتلم رو رزرو می‌کنم. هر سفری منو بازتر و کنجکاوتر می‌کنه."},
+"l'amitié":{f:"Pour moi, l'amitié est aussi importante que la famille.<br>Un vrai ami est quelqu'un qui te soutient dans les moments difficiles.<br>J'ai quelques amis proches en qui j'ai totalement confiance.<br>Nous rions ensemble, mais nous pouvons aussi parler de tout.<br>Une belle amitié, ça se construit avec le temps et la sincérité.",p:"برای من، دوستی به‌اندازه‌ی خانواده مهمه. یه دوستِ واقعی کسیه که توی لحظه‌های سخت کنارته. چند تا دوستِ صمیمی دارم که کاملاً بهشون اعتماد دارم. با هم می‌خندیم، ولی می‌تونیم درباره‌ی همه‌چی هم حرف بزنیم. یه دوستیِ خوب با زمان و صداقت ساخته می‌شه."},
+"l'école":{f:"Je me souviens encore très bien de mes années d'école.<br>J'avais des professeurs sévères, mais ils m'ont beaucoup appris.<br>À l'école, on n'apprend pas seulement des leçons, mais aussi à vivre ensemble.<br>Mes matières préférées étaient les langues et l'histoire.<br>L'éducation est la base de tout dans la vie.",p:"هنوزم سال‌های مدرسه‌م رو خیلی خوب یادمه. معلم‌های سخت‌گیری داشتم، ولی خیلی چیزا یادم دادن. توی مدرسه فقط درس یاد نمی‌گیری، بلکه با هم زندگی‌کردن رو هم یاد می‌گیری. درس‌های موردعلاقه‌م زبان و تاریخ بودن. آموزش پایه‌ی همه‌چیز توی زندگیه."},
+"le sport":{f:"Faire du sport est essentiel pour rester en forme.<br>Je m'entraîne trois fois par semaine, surtout le matin.<br>Le sport m'aide à réduire le stress et à mieux dormir.<br>J'aime aussi regarder les matchs avec mes amis le week-end.<br>Un corps actif, c'est un esprit en bonne santé.",p:"ورزش‌کردن برای فرم موندن ضروریه. هفته‌ای سه بار تمرین می‌کنم، بیشتر صبح‌ها. ورزش کمکم می‌کنه استرسم کم بشه و بهتر بخوابم. آخر هفته هم دوست دارم با دوستام مسابقه ببینم. بدنِ فعال یعنی ذهنِ سالم."},
+"la musique":{f:"La musique fait partie de ma vie tous les jours.<br>J'écoute différents styles selon mon humeur.<br>Quand je suis triste, une belle chanson peut me redonner le sourire.<br>J'aimerais aussi apprendre à jouer d'un instrument un jour.<br>La musique est une langue que tout le monde comprend.",p:"موسیقی هر روز بخشی از زندگیمه. بسته به حالم سبک‌های مختلف گوش می‌دم. وقتی غمگینم، یه آهنگِ قشنگ می‌تونه لبخند رو بهم برگردونه. دوست دارم یه روز نواختنِ یه ساز رو هم یاد بگیرم. موسیقی زبونیه که همه می‌فهمنش."},
+"Décrivez votre journée idéale.":{f:"Ma journée idéale commence tard, sans réveil.<br>Le matin, je prends un bon petit-déjeuner et je me promène au soleil.<br>L'après-midi, je fais une activité relaxante comme lire ou cuisiner.<br>Le soir, je retrouve mes amis pour un dîner agréable.<br>Une journée parfaite, c'est un équilibre entre repos et plaisir.",p:"روزِ ایده‌آلِ من دیر شروع می‌شه، بدون ساعتِ زنگ‌دار. صبح یه صبحانه‌ی خوب می‌خورم و زیر آفتاب قدم می‌زنم. بعدازظهر یه کارِ آرام‌بخش مثل کتاب‌خوندن یا آشپزی می‌کنم. شب با دوستام برای یه شامِ دلپذیر دور هم جمع می‌شیم. یه روزِ کامل یعنی تعادل بین استراحت و لذت."},
+"Quel est votre plus grand rêve ?":{f:"Mon plus grand rêve est de voyager dans le monde entier.<br>Je veux découvrir d'autres cultures et apprendre plusieurs langues.<br>J'espère aussi avoir un travail qui a du sens pour moi.<br>Je sais que ce n'est pas facile, mais je reste motivé.<br>Un jour, je suis sûr que je réaliserai ce rêve.",p:"بزرگ‌ترین رؤیای من سفر به سراسر دنیاست. می‌خوام فرهنگ‌های دیگه رو کشف کنم و چند تا زبون یاد بگیرم. امیدوارم یه کاری هم داشته باشم که برام معنا داره. می‌دونم آسون نیست، ولی باانگیزه می‌مونم. مطمئنم یه روز این رؤیا رو محقق می‌کنم."},
+"Parlez d'une personne importante dans votre vie.":{f:"Une personne très importante dans ma vie est ma mère.<br>Elle m'a toujours soutenu et elle croit en moi.<br>J'admire sa patience et sa force dans les moments difficiles.<br>Grâce à elle, j'ai appris à ne jamais abandonner.<br>Je lui suis vraiment reconnaissant pour tout ce qu'elle fait.",p:"یه آدمِ خیلی مهم توی زندگیم مادرمه. همیشه ازم حمایت کرده و بهم باور داره. صبر و قدرتش رو توی لحظه‌های سخت تحسین می‌کنم. به‌خاطر اون یاد گرفتم هیچ‌وقت تسلیم نشم. واقعاً برای همه‌ی کارهایی که می‌کنه ازش ممنونم."},
+"Quels sont les avantages et inconvénients des réseaux sociaux ?":{f:"Les réseaux sociaux ont beaucoup d'avantages et d'inconvénients.<br>D'un côté, ils permettent de rester connecté avec nos proches.<br>On peut aussi partager des idées et apprendre des choses utiles.<br>D'un autre côté, ils peuvent rendre les gens dépendants et nuire à la vie privée.<br>Le plus important, c'est de trouver un bon équilibre.",p:"شبکه‌های اجتماعی مزایا و معایب زیادی دارن. از یه طرف، اجازه می‌دن با عزیزانمون در ارتباط بمونیم. می‌شه ایده‌ها رو هم به اشتراک گذاشت و چیزای مفید یاد گرفت. از طرف دیگه، می‌تونن آدم‌ها رو وابسته کنن و به حریم خصوصی آسیب بزنن. مهم‌تر از همه، پیدا‌کردن یه تعادلِ خوبه."},
+"Si vous pouviez vivre dans un autre pays, lequel choisiriez-vous ?":{f:"Si je pouvais vivre dans un autre pays, je choisirais la France.<br>J'aime sa culture, sa langue et son art de vivre.<br>Bien sûr, il faudrait s'adapter à un nouveau mode de vie.<br>Au début, ce serait difficile, surtout pour la langue.<br>Mais je pense que ce serait une expérience inoubliable.",p:"اگه می‌تونستم توی یه کشور دیگه زندگی کنم، فرانسه رو انتخاب می‌کردم. فرهنگ، زبون و هنرِ زندگیش رو دوست دارم. البته باید با یه سبکِ زندگیِ جدید سازگار بشم. اولش سخت می‌بود، مخصوصاً برای زبون. ولی فکر می‌کنم تجربه‌ی فراموش‌نشدنی‌ای می‌بود."},
+"Décrivez votre repas préféré.":{f:"Mon repas préféré est un plat simple mais délicieux.<br>J'adore les pâtes avec une sauce tomate maison.<br>Ce qui rend ce plat spécial, c'est qu'on le mange en famille.<br>Ma mère le prépare le dimanche, et toute la maison sent bon.<br>Pour moi, un bon repas, c'est aussi de bons souvenirs.",p:"غذای موردعلاقه‌م یه غذای ساده ولی خوشمزه‌ست. عاشق ماکارونی با سسِ گوجه‌ی خونگی‌ام. چیزی که این غذا رو خاص می‌کنه اینه که خانوادگی می‌خوریمش. مادرم یکشنبه‌ها درستش می‌کنه و کلِ خونه بوی خوب می‌گیره. برای من، یه غذای خوب یعنی خاطره‌های خوب هم."},
+"Qu'est-ce qui vous rend heureux(se) ?":{f:"Beaucoup de petites choses me rendent heureux chaque jour.<br>Passer du temps avec mes proches me donne de l'énergie.<br>J'aime aussi les moments simples, comme un café le matin.<br>Apprendre quelque chose de nouveau me rend fier de moi.<br>Pour moi, le bonheur, ce sont surtout ces petits moments.",p:"خیلی چیزای کوچیک هر روز خوشحالم می‌کنن. وقت‌گذروندن با عزیزانم بهم انرژی می‌ده. لحظه‌های ساده رو هم دوست دارم، مثل یه قهوه‌ی صبحگاهی. یادگرفتنِ یه چیزِ جدید بهم حسِ افتخار می‌ده. برای من، خوشبختی بیشتر همین لحظه‌های کوچیکه."},
+"Comment passez-vous votre temps libre ?":{f:"Pendant mon temps libre, j'aime faire plusieurs activités.<br>Souvent, je lis un livre ou je regarde un bon film.<br>Quand il fait beau, je me promène dans la nature.<br>J'aime aussi retrouver mes amis pour discuter autour d'un café.<br>Le temps libre, c'est important pour se détendre et recharger les batteries.",p:"توی وقتِ آزادم دوست دارم کارهای مختلف بکنم. اغلب یه کتاب می‌خونم یا یه فیلمِ خوب می‌بینم. وقتی هوا خوبه، توی طبیعت قدم می‌زنم. دوست دارم با دوستام هم دور یه قهوه گپ بزنم. وقتِ آزاد برای آروم‌شدن و شارژ‌شدن مهمه."}
+};
+
+function toggleModel(){
+  var mt=document.getElementById('r-model-text');
+  var mb=document.getElementById('r-model-btn');
+  if(mt.style.display==='none'){mt.style.display='block';mb.textContent='\uD83D\uDD3C بستن متن نمونه';}
+  else{mt.style.display='none';mb.textContent='\uD83D\uDCDD متن نمونه‌ی ۵ خطی را ببین';}
+}
 function showResult(i){
   const items=mode==='w'?W:S;
   const item=items[i];
@@ -146,6 +187,14 @@ function showResult(i){
     document.getElementById('r-vocab-grid').innerHTML=item[2].map(v=>'<div class="vh-item">'+v+'</div>').join('');
     document.getElementById('r-vocab').style.display='block';
   }else{document.getElementById('r-vocab').style.display='none';}
+  // متن نمونه‌ی ۵ خطی
+  var mt=document.getElementById('r-model-text');
+  var mb=document.getElementById('r-model-btn');
+  mt.style.display='none';
+  mb.textContent='\uD83D\uDCDD متن نمونه‌ی ۵ خطی را ببین';
+  var tx=TEXTS[item[0]];
+  if(tx){mt.innerHTML='<div class="mt-fr">'+tx.f+'</div><div class="mt-fa">'+tx.p+'</div>';}
+  else{mt.innerHTML='<div class="mt-soon">نمونه‌ی این موضوع به‌زودی اضافه می‌شود ✍️</div>';}
   const rc=document.getElementById('rc');
   rc.classList.remove('show');void rc.offsetWidth;rc.classList.add('show');
   rc.scrollIntoView({behavior:'smooth',block:'nearest'});
