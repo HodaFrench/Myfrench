@@ -3,218 +3,317 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Les verbes avec EN et Y | Grammaire</title>
+<title>افعال با EN و Y | Grammaire</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
-  :root{--navy:#1e3a5f;--navy-deep:#16293f;--navy-soft:#41618a;--gold:#b07a4a;--gold-soft:#c4a572;--terracotta:#c4502d;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--purple:#7a5ba8;--blue:#22618f;}
+  :root{--navy:#1e3a5f;--navy-deep:#16293f;--navy-soft:#41618a;--gold:#b07a4a;--gold-soft:#c4a572;--terracotta:#c4502d;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--purple:#7a5ba8;--teal:#2e7d8f;--rose:#b0506f;}
   body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.08) 31px,rgba(65,97,138,0.08) 32px);color:var(--ink);line-height:1.95;padding:24px 16px 70px;}
-  .wrap{max-width:800px;margin:0 auto;}
+  .wrap{max-width:820px;margin:0 auto;}
   .topbar{text-align:center;margin-bottom:24px;}
   .topbar a{display:inline-block;color:var(--navy);text-decoration:none;font-size:14px;border:1px solid var(--line);background:var(--cream);padding:8px 18px;border-radius:8px;transition:all .25s;}
   .topbar a:hover{background:var(--navy);color:var(--cream);}
-  .header{background:linear-gradient(135deg,var(--blue),#2e7bb5);color:var(--cream);padding:38px 30px;border-radius:20px;text-align:center;margin-bottom:26px;box-shadow:0 14px 34px rgba(34,97,143,.24);position:relative;overflow:hidden;}
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft));color:var(--cream);padding:38px 30px;border-radius:20px;text-align:center;margin-bottom:26px;box-shadow:0 14px 34px rgba(31,58,95,.24);position:relative;overflow:hidden;}
   .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
-  .header .tag{font-size:12px;color:#cfe3f2;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
-  .header h1{font-family:'Roboto',serif;font-size:28px;font-weight:600;margin-bottom:8px;direction:ltr;}
+  .header .tag{font-size:12px;color:var(--gold-soft);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .header h1{font-family:'Roboto',serif;font-size:30px;font-weight:600;margin-bottom:8px;direction:ltr;}
   .header .fa{font-size:15px;opacity:.92;}
-  .lead{background:var(--paper-warm);border-right:4px solid var(--gold-soft);border-radius:12px;padding:18px 22px;margin-bottom:26px;font-size:15px;line-height:2.1;}
+  .lead{background:var(--paper-warm);border-right:4px solid var(--gold-soft);border-radius:12px;padding:18px 22px;margin-bottom:24px;font-size:15px;line-height:2.1;}
   .lead b{color:var(--terracotta);}
-  .sec{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:22px;box-shadow:0 3px 14px rgba(31,58,95,.05);}
-  .sec h2{font-family:'Roboto',serif;font-size:21px;color:var(--navy);margin-bottom:6px;direction:ltr;display:flex;align-items:center;gap:8px;}
-  .sec h2 .fa{font-family:'Estedad';font-size:14px;color:var(--gray);font-weight:400;}
-  .sec h2 .pill{font-family:'Roboto';font-size:13px;color:#fff;border-radius:20px;padding:3px 14px;font-weight:700;}
-  .pill.y{background:var(--green);}
-  .pill.en{background:var(--terracotta);}
-  .rule{background:rgba(34,97,143,.06);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14.5px;line-height:2;}
-  .rule b{color:var(--blue);}
-  .arrow{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:2px 10px;font-family:'Roboto';font-weight:700;direction:ltr;margin:0 3px;}
-  .ex{background:rgba(46,139,107,.06);border-right:3px solid var(--green);border-radius:10px;padding:10px 14px;margin:9px 0;}
-  .ex.r{border-right-color:var(--terracotta);background:rgba(196,80,45,.06);}
-  .ex .f{display:block;direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:15px;color:#243b35;font-weight:500;}
-  .ex.r .f{color:#5a2e1e;}
-  .ex .p{display:block;font-size:13px;color:#5a6b60;margin-top:3px;}
-  .ex .h{font-weight:700;color:var(--green-d);}
-  .ex.r .h{color:var(--terracotta);}
-  .vlist{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0;}
-  .vlist span{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-family:'Roboto';font-size:13.5px;direction:ltr;color:var(--navy);}
-  .vlist span b{color:var(--green-d);}
-  .vlist.r span b{color:var(--terracotta);}
-  .warn{background:rgba(176,80,111,.07);border-right:4px solid #b0506f;border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14px;line-height:2;}
-  .warn b{color:#b0506f;}
-  .tip{background:rgba(176,122,74,.1);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:14px;line-height:2;}
-  .tip b{color:var(--gold);}
-  table.cmp{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
-  table.cmp th,table.cmp td{border:1px solid var(--line);padding:9px 11px;text-align:center;}
-  table.cmp th{background:var(--navy);color:#fff;font-weight:600;}
-  table.cmp td{direction:ltr;font-family:'Roboto';}
-  table.cmp tr:nth-child(even){background:var(--cream);}
-  .quiz{background:linear-gradient(135deg,#fbfaf7,#f3f0ea);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:22px;}
-  .quiz h2{font-family:'Roboto';font-size:19px;color:var(--navy);margin-bottom:14px;}
-  .q{margin-bottom:16px;}
-  .q-txt{font-size:14.5px;margin-bottom:8px;direction:ltr;text-align:left;font-family:'Roboto';}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:26px;font-size:13.5px;}
+  .legend span{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--line);padding:8px 16px;border-radius:20px;font-weight:600;}
+  .dot{width:13px;height:13px;border-radius:50%;display:inline-block;}
+  .dot.y{background:var(--teal);}
+  .dot.en{background:var(--rose);}
+  .cat{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:22px;box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .cat.yc{border-top:4px solid var(--teal);}
+  .cat.enc{border-top:4px solid var(--rose);}
+  .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;padding-bottom:14px;border-bottom:2px solid var(--line);}
+  .cat-emoji{font-size:26px;}
+  .cat-title{font-family:'Roboto',serif;font-size:24px;font-weight:700;direction:ltr;}
+  .cat.yc .cat-title{color:var(--teal);}
+  .cat.enc .cat-title{color:var(--rose);}
+  .cat-title-fa{font-size:13px;color:var(--gold);font-weight:700;}
+  .rule{font-size:14.5px;line-height:2;margin:14px 0 6px;}
+  .rule b{color:var(--navy);}
+  .pill{display:inline-block;direction:ltr;font-family:'Roboto',serif;font-weight:700;border-radius:7px;padding:1px 9px;font-size:14px;}
+  .pill.y{background:rgba(46,125,143,.13);color:var(--teal);}
+  .pill.en{background:rgba(176,80,111,.13);color:var(--rose);}
+  .verb{margin-bottom:14px;padding:14px 16px;background:var(--cream);border-radius:12px;border-right:3px solid var(--line);}
+  .verb-fr{font-family:'Roboto',serif;font-size:16px;font-weight:700;color:var(--ink);direction:ltr;display:block;margin-bottom:2px;}
+  .verb-fa{font-size:12.5px;color:var(--gray);margin-bottom:9px;}
+  .ex{margin-top:7px;padding-right:4px;}
+  .ex-q{display:block;direction:ltr;font-family:'Roboto',serif;font-size:14px;color:#3a3a3a;}
+  .ex-a{display:block;direction:ltr;font-family:'Roboto',serif;font-size:14px;font-weight:600;margin-top:2px;}
+  .cat.yc .ex-a{color:var(--teal);}
+  .cat.enc .ex-a{color:var(--rose);}
+  .ex-fa{display:block;font-size:12px;color:var(--gray);margin-top:1px;}
+  .hl{font-weight:700;}
+  .cat.yc .hl{color:var(--teal);}
+  .cat.enc .hl{color:var(--rose);}
+  .box{background:linear-gradient(135deg,#fff8ef,#fdf2e3);border:1px solid #f0dcbf;border-radius:14px;padding:18px 20px;margin:24px 0;}
+  .box h3{font-size:16px;color:var(--terracotta);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+  .box p{font-size:14px;line-height:2;margin-bottom:8px;}
+  .box .pill{margin:0 2px;}
+  .place{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
+  .place .exline{background:var(--white);border-radius:9px;padding:8px 12px;border-right:3px solid var(--navy-soft);}
+  .place .exline span{display:block;direction:ltr;font-family:'Roboto',serif;font-size:13.5px;}
+  .warn{background:rgba(176,80,111,.06);border:1px dashed #e0b3c2;border-radius:12px;padding:14px 18px;margin:22px 0;font-size:13.5px;line-height:2;}
+  .warn b{color:var(--rose);}
+  /* تمرین */
+  .quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:26px;box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz h2{font-size:19px;color:var(--navy);margin-bottom:4px;text-align:center;}
+  .quiz .qsub{font-size:12.5px;color:var(--gray);text-align:center;margin-bottom:18px;}
+  .q{margin-bottom:16px;padding:15px 16px;background:var(--cream);border-radius:12px;}
+  .q-text{font-size:14.5px;margin-bottom:10px;direction:ltr;font-family:'Roboto',serif;}
+  .q-text .fa{font-family:'Estedad';direction:rtl;display:block;color:var(--gray);font-size:12.5px;margin-top:3px;}
   .opts{display:flex;gap:8px;flex-wrap:wrap;}
-  .opt{background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:7px 16px;cursor:pointer;font-family:'Roboto';font-size:14px;transition:all .2s;direction:ltr;}
-  .opt:hover{border-color:var(--blue);}
-  .opt.correct{background:var(--green);color:#fff;border-color:var(--green);}
-  .opt.wrong{background:#e8a0a0;border-color:#d07070;}
-  .fb{font-size:13px;margin-top:7px;font-weight:600;display:none;}
-  .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.06);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap;}
+  .opt{flex:1;min-width:90px;border:1.5px solid var(--line);background:var(--white);border-radius:10px;padding:9px;font-family:'Roboto',serif;font-size:14px;cursor:pointer;transition:all .2s;text-align:center;}
+  .opt:hover{border-color:var(--navy-soft);}
+  .opt.correct{background:rgba(46,139,107,.15);border-color:var(--green);color:var(--green);font-weight:700;}
+  .opt.wrong{background:rgba(176,80,111,.13);border-color:var(--rose);color:var(--rose);}
+  .feedback{margin-top:9px;font-size:13px;font-weight:600;display:none;}
+  .feedback.ok{color:var(--green);display:block;}
+  .feedback.no{color:var(--rose);display:block;}
+  .footnote{text-align:center;color:var(--gray);font-size:12.5px;margin-top:26px;line-height:1.8;}
 </style>
 </head>
 <body>
-<span class="hk-wm" style="top:33%;left:9%">Hoda Khedmati</span>
-<span class="hk-wm" style="top:73%;left:55%">Hoda Khedmati</span>
-
 <div class="wrap">
   <div class="topbar"><a href="index.html">&#8592; بازگشت به خانه</a></div>
 
   <div class="header">
-    <div class="tag">PRONOMS · GRAMMAIRE</div>
+    <div class="tag">PRONOMS · EN / Y</div>
     <h1>Les verbes avec EN et Y</h1>
-    <div class="fa">افعالی که با ضمیرهای EN و Y می‌آیند</div>
+    <div class="fa">افعالی که با ضمیر <b>en</b> یا <b>y</b> می‌آیند</div>
   </div>
 
   <div class="lead">
-    خیلی از افعال فرانسه با حرف اضافه‌ی <b>à</b> یا <b>de</b> ساخته می‌شوند. وقتی بخواهیم بعد از این افعال چیزی را تکرار نکنیم، از دو ضمیر کوچک ولی خیلی پرکاربرد استفاده می‌کنیم: <b>y</b> و <b>en</b>. قانون ساده است: فعل با <b>à</b> ← ضمیر <b>y</b> · فعل با <b>de</b> ← ضمیر <b>en</b>. در این درس کامل یادشان می‌گیریم، با کلی مثال و یک کوییز.
+    خیلی از فعل‌ها در فرانسه به یک حرف اضافه‌ی ثابت می‌چسبند: یا به <b>à</b> یا به <b>de</b>.
+    خبر خوب این است که یک قانون طلایی و خیلی ساده هست:
+    وقتی چیزی که بعد از فعل می‌آید را با ضمیر جایگزین می‌کنیم،
+    اگر فعل با <b>à</b> ساخته شده باشد → از <span class="pill y">y</span> استفاده می‌کنیم،
+    و اگر با <b>de</b> ساخته شده باشد → از <span class="pill en">en</span>.
+    این درس همین قانون را با دسته‌بندی، مثال و تمرین یاد می‌دهد.
   </div>
 
-  <!-- بخش Y -->
-  <div class="sec">
-    <h2>۱. ضمیر Y <span class="pill y">à + chose</span></h2>
-    <div class="rule">
-      ضمیر <b>y</b> جایگزین <b>à + یک چیز (نه شخص)</b> می‌شود. یعنی وقتی فعلی با <b>à</b> ساخته می‌شود و مفعولش یک <b>چیز</b> یا یک <b>موقعیت/مکان</b> است، آن را با <b>y</b> جایگزین می‌کنیم.
-      <br>الگو: <span class="arrow">verbe + à + qqch</span> <span class="arrow">y + verbe</span>
-    </div>
-    <p style="font-size:14.5px;margin:10px 0 4px;font-weight:600;color:var(--navy)">افعال پرکاربردِ این دسته (با à):</p>
-    <div class="vlist">
-      <span>penser <b>à</b> (فکر کردن به)</span>
-      <span>réfléchir <b>à</b> (تأمل کردن به)</span>
-      <span>s'intéresser <b>à</b> (علاقه داشتن به)</span>
-      <span>participer <b>à</b> (شرکت کردن در)</span>
-      <span>jouer <b>à</b> (بازی کردن)</span>
-      <span>répondre <b>à</b> (پاسخ دادن به)</span>
-      <span>croire <b>à</b> (باور داشتن به)</span>
-      <span>arriver <b>à</b> (موفق شدن به)</span>
-      <span>tenir <b>à</b> (پایبند بودن به)</span>
-      <span>renoncer <b>à</b> (صرف‌نظر کردن از)</span>
-    </div>
-    <div class="ex"><span class="f">Tu penses <span class="h">à ton examen</span> ? — Oui, j'<span class="h">y</span> pense.</span><span class="p">به امتحانت فکر می‌کنی؟ — آره، بهش فکر می‌کنم.</span></div>
-    <div class="ex"><span class="f">Elle participe <span class="h">à la réunion</span> ? — Oui, elle <span class="h">y</span> participe.</span><span class="p">تو جلسه شرکت می‌کنه؟ — آره، شرکت می‌کنه.</span></div>
-    <div class="ex"><span class="f">Vous jouez <span class="h">au tennis</span> ? — Oui, nous <span class="h">y</span> jouons.</span><span class="p">تنیس بازی می‌کنید؟ — آره، بازی می‌کنیم. (au = à+le)</span></div>
-    <div class="ex"><span class="f">Il a répondu <span class="h">à la question</span> ? — Oui, il <span class="h">y</span> a répondu.</span><span class="p">به سؤال جواب داد؟ — آره، جواب داد. (در زمان گذشته y قبل از فعل کمکی)</span></div>
-
-    <div class="rule" style="margin-top:18px">
-      <b>کاربرد دوم y — مکان:</b> ضمیر <b>y</b> جایگزین یک <b>مکان</b> هم می‌شود (به‌جای à, en, dans, sur, chez + مکان). یعنی «آنجا».
-    </div>
-    <div class="ex"><span class="f">Tu vas <span class="h">à Paris</span> ? — Oui, j'<span class="h">y</span> vais.</span><span class="p">به پاریس می‌روی؟ — آره، می‌روم (آنجا).</span></div>
-    <div class="ex"><span class="f">Elle habite <span class="h">à Lyon</span> ? — Oui, elle <span class="h">y</span> habite.</span><span class="p">در لیون زندگی می‌کند؟ — آره، آنجا زندگی می‌کند.</span></div>
-    <div class="ex"><span class="f">Les clés sont <span class="h">sur la table</span> ? — Oui, elles <span class="h">y</span> sont.</span><span class="p">کلیدها روی میزند؟ — آره، آنجا هستند.</span></div>
+  <div class="legend">
+    <span><i class="dot y"></i>فعل + à → <b>Y</b></span>
+    <span><i class="dot en"></i>فعل + de → <b>EN</b></span>
   </div>
 
-  <!-- بخش EN -->
-  <div class="sec">
-    <h2>۲. ضمیر EN <span class="pill en">de + chose</span></h2>
-    <div class="rule">
-      ضمیر <b>en</b> جایگزین <b>de + یک چیز (نه شخص)</b> می‌شود. وقتی فعلی با <b>de</b> ساخته می‌شود و مفعولش یک <b>چیز</b> است، آن را با <b>en</b> جایگزین می‌کنیم.
-      <br>الگو: <span class="arrow">verbe + de + qqch</span> <span class="arrow">en + verbe</span>
+  <!-- ===== Y ===== -->
+  <div class="cat yc">
+    <div class="cat-head">
+      <span class="cat-emoji">🎯</span>
+      <div><div class="cat-title">Verbes avec « à » → Y</div><div class="cat-title-fa">افعالی که با à می‌آیند، با Y جایگزین می‌شوند</div></div>
     </div>
-    <p style="font-size:14.5px;margin:10px 0 4px;font-weight:600;color:var(--navy)">افعال پرکاربردِ این دسته (با de):</p>
-    <div class="vlist r">
-      <span>parler <b>de</b> (صحبت کردن درباره)</span>
-      <span>rêver <b>de</b> (رؤیای ... داشتن)</span>
-      <span>avoir besoin <b>de</b> (نیاز داشتن به)</span>
-      <span>avoir envie <b>de</b> (دلِ ... خواستن)</span>
-      <span>s'occuper <b>de</b> (رسیدگی کردن به)</span>
-      <span>se souvenir <b>de</b> (به‌یاد آوردن)</span>
-      <span>profiter <b>de</b> (بهره بردن از)</span>
-      <span>avoir peur <b>de</b> (ترسیدن از)</span>
-      <span>se servir <b>de</b> (استفاده کردن از)</span>
-      <span>s'occuper <b>de</b> (مراقبت از)</span>
-    </div>
-    <div class="ex r"><span class="f">Tu parles <span class="h">de ton voyage</span> ? — Oui, j'<span class="h">en</span> parle.</span><span class="p">درباره‌ی سفرت حرف می‌زنی؟ — آره، درباره‌اش حرف می‌زنم.</span></div>
-    <div class="ex r"><span class="f">Elle a besoin <span class="h">d'aide</span> ? — Oui, elle <span class="h">en</span> a besoin.</span><span class="p">به کمک نیاز داره؟ — آره، نیاز داره.</span></div>
-    <div class="ex r"><span class="f">Vous rêvez <span class="h">de vacances</span> ? — Oui, nous <span class="h">en</span> rêvons.</span><span class="p">رؤیای تعطیلات دارید؟ — آره، داریم.</span></div>
-    <div class="ex r"><span class="f">Il s'est occupé <span class="h">du problème</span> ? — Oui, il s'<span class="h">en</span> est occupé.</span><span class="p">به مشکل رسیدگی کرد؟ — آره، رسیدگی کرد. (du = de+le)</span></div>
+    <div class="rule"><b>قانون:</b> ضمیر <span class="pill y">y</span> جایگزینِ «<span class="pill y">à</span> + یک چیز» می‌شود (نه یک شخص). y قبل از فعل می‌آید.</div>
 
-    <div class="rule" style="margin-top:18px">
-      <b>کاربرد دوم en — مقدار:</b> ضمیر <b>en</b> جایگزین چیزی می‌شود که با <b>مقدار</b> (un, une, des, du, beaucoup de, deux...) آمده. یعنی «از آن / ازشان».
+    <div class="verb">
+      <span class="verb-fr">penser à qqch</span>
+      <span class="verb-fa">به چیزی فکر کردن</span>
+      <div class="ex">
+        <span class="ex-q">Tu penses à ton examen ?</span>
+        <span class="ex-a">— Oui, j'<span class="hl">y</span> pense.</span>
+        <span class="ex-fa">— آره، بهش فکر می‌کنم.</span>
+      </div>
     </div>
-    <div class="ex r"><span class="f">Tu as <span class="h">des frères</span> ? — Oui, j'<span class="h">en</span> ai deux.</span><span class="p">برادر داری؟ — آره، دوتا دارم.</span></div>
-    <div class="ex r"><span class="f">Vous voulez <span class="h">du café</span> ? — Oui, j'<span class="h">en</span> veux.</span><span class="p">قهوه می‌خواهید؟ — آره، می‌خواهم.</span></div>
-    <div class="ex r"><span class="f">Elle mange <span class="h">beaucoup de fruits</span> ? — Oui, elle <span class="h">en</span> mange beaucoup.</span><span class="p">میوه زیاد می‌خوره؟ — آره، زیاد می‌خوره.</span></div>
-  </div>
 
-  <!-- مقایسه -->
-  <div class="sec">
-    <h2>۳. جمع‌بندی <span class="fa">— یک نگاه</span></h2>
-    <table class="cmp">
-      <tr><th>حرف اضافه‌ی فعل</th><th>ضمیر</th><th>مثال</th></tr>
-      <tr><td>à + chose / مکان</td><td><b style="color:var(--green-d)">y</b></td><td>penser à ça → j'y pense</td></tr>
-      <tr><td>de + chose / مقدار</td><td><b style="color:var(--terracotta)">en</b></td><td>parler de ça → j'en parle</td></tr>
-    </table>
-    <div class="warn">
-      ⚠️ <b>نکته‌ی خیلی مهم:</b> ضمیرهای <b>y</b> و <b>en</b> فقط برای <b>چیزها</b> هستند، نه <b>اشخاص</b>! برای اشخاص از ضمیرهای دیگر استفاده می‌کنیم:
-      <br>• <span style="direction:ltr;display:inline-block">penser <b>à une personne</b> → penser <b>à elle / à lui</b></span> (نه y)
-      <br>• <span style="direction:ltr;display:inline-block">parler <b>d'une personne</b> → parler <b>d'elle / de lui</b></span> (نه en)
-      <br>مثال: <span style="direction:ltr;display:inline-block">Tu penses à ta mère ? — Oui, je pense <b>à elle</b>.</span>
+    <div class="verb">
+      <span class="verb-fr">s'intéresser à qqch</span>
+      <span class="verb-fa">به چیزی علاقه داشتن</span>
+      <div class="ex">
+        <span class="ex-q">Elle s'intéresse à la politique ?</span>
+        <span class="ex-a">— Oui, elle s'<span class="hl">y</span> intéresse.</span>
+        <span class="ex-fa">— آره، بهش علاقه داره.</span>
+      </div>
     </div>
-    <div class="tip">
-      💡 <b>ترفند طلایی برای یادسپاری:</b> به حرف اضافه‌ی فعل نگاه کن، نه به ترجمه‌ی فارسی!
-      <br>اگه فعل با <b>à</b> ساخته شده → جوابش <b>y</b> («y» شبیه à، هر دو با خط بالا).
-      <br>اگه فعل با <b>de</b> ساخته شده → جوابش <b>en</b> («en» و «de» هر دو حروف نرم).
-      <br>پس همیشه اول بپرس: این فعل با à می‌آد یا de؟
+
+    <div class="verb">
+      <span class="verb-fr">réfléchir à qqch</span>
+      <span class="verb-fa">روی چیزی فکر/تأمل کردن</span>
+      <div class="ex">
+        <span class="ex-q">Vous réfléchissez à ma proposition ?</span>
+        <span class="ex-a">— Nous <span class="hl">y</span> réfléchissons.</span>
+        <span class="ex-fa">— داریم روش فکر می‌کنیم.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">faire attention à qqch</span>
+      <span class="verb-fa">به چیزی توجه/حواس‌جمعی کردن</span>
+      <div class="ex">
+        <span class="ex-q">Tu fais attention à ta santé ?</span>
+        <span class="ex-a">— Oui, j'<span class="hl">y</span> fais attention.</span>
+        <span class="ex-fa">— آره، حواسم بهش هست.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">participer à qqch</span>
+      <span class="verb-fa">در چیزی شرکت کردن</span>
+      <div class="ex">
+        <span class="ex-q">Il participe au projet ?</span>
+        <span class="ex-a">— Oui, il <span class="hl">y</span> participe.</span>
+        <span class="ex-fa">— آره، توش شرکت می‌کنه.</span>
+      </div>
     </div>
   </div>
 
-  <!-- کوییز -->
+  <!-- ===== EN ===== -->
+  <div class="cat enc">
+    <div class="cat-head">
+      <span class="cat-emoji">🔄</span>
+      <div><div class="cat-title">Verbes avec « de » → EN</div><div class="cat-title-fa">افعالی که با de می‌آیند، با EN جایگزین می‌شوند</div></div>
+    </div>
+    <div class="rule"><b>قانون:</b> ضمیر <span class="pill en">en</span> جایگزینِ «<span class="pill en">de</span> + یک چیز» می‌شود. en هم قبل از فعل می‌آید.</div>
+
+    <div class="verb">
+      <span class="verb-fr">parler de qqch</span>
+      <span class="verb-fa">درباره‌ی چیزی حرف زدن</span>
+      <div class="ex">
+        <span class="ex-q">Tu parles de ton voyage ?</span>
+        <span class="ex-a">— Oui, j'<span class="hl">en</span> parle.</span>
+        <span class="ex-fa">— آره، درباره‌اش حرف می‌زنم.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">avoir besoin de qqch</span>
+      <span class="verb-fa">به چیزی نیاز داشتن</span>
+      <div class="ex">
+        <span class="ex-q">Tu as besoin d'aide ?</span>
+        <span class="ex-a">— Oui, j'<span class="hl">en</span> ai besoin.</span>
+        <span class="ex-fa">— آره، بهش نیاز دارم.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">avoir envie de qqch</span>
+      <span class="verb-fa">دلِ چیزی را داشتن / هوسِ چیزی</span>
+      <div class="ex">
+        <span class="ex-q">Tu as envie d'un café ?</span>
+        <span class="ex-a">— Oui, j'<span class="hl">en</span> ai envie.</span>
+        <span class="ex-fa">— آره، دلم می‌خواد.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">s'occuper de qqch</span>
+      <span class="verb-fa">به چیزی رسیدگی کردن</span>
+      <div class="ex">
+        <span class="ex-q">Tu t'occupes du dîner ?</span>
+        <span class="ex-a">— Oui, je m'<span class="hl">en</span> occupe.</span>
+        <span class="ex-fa">— آره، ترتیبش رو می‌دم.</span>
+      </div>
+    </div>
+
+    <div class="verb">
+      <span class="verb-fr">se souvenir de qqch</span>
+      <span class="verb-fa">چیزی را به یاد آوردن</span>
+      <div class="ex">
+        <span class="ex-q">Tu te souviens de ce film ?</span>
+        <span class="ex-a">— Oui, je m'<span class="hl">en</span> souviens.</span>
+        <span class="ex-fa">— آره، یادمه.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- en برای مقدار -->
+  <div class="box">
+    <h3>💡 یک کاربرد مهم دیگرِ EN: مقدار</h3>
+    <p>
+      ضمیر <span class="pill en">en</span> یک نقش دیگر هم دارد:
+      جایگزینِ اسمی که با <b>مقدار</b> می‌آید — یعنی با <b>de / du / de la / des</b> یا با یک عدد.
+      در این حالت، اگر مقدار یا عدد داشته باشیم، آن را در آخر جمله تکرار می‌کنیم.
+    </p>
+    <div class="place">
+      <div class="exline"><span>Tu manges <b>des</b> pommes ? — Oui, j'<b style="color:#b0506f">en</b> mange.</span></div>
+      <div class="exline"><span>Tu as <b>deux</b> voitures ? — Oui, j'<b style="color:#b0506f">en</b> ai <b>deux</b>.</span></div>
+      <div class="exline"><span>Il boit <b>du</b> café ? — Oui, il <b style="color:#b0506f">en</b> boit <b>beaucoup</b>.</span></div>
+    </div>
+  </div>
+
+  <!-- جای ضمیر -->
+  <div class="box" style="background:linear-gradient(135deg,#eef5f7,#e3eef2);border-color:#bcd6df;">
+    <h3 style="color:#2e7d8f;">📍 جای EN و Y در جمله</h3>
+    <p>هر دو ضمیر <b>قبل از فعل</b> می‌آیند:</p>
+    <div class="place">
+      <div class="exline" style="border-right-color:#2e7d8f"><span>زمان حال: J'<b>y</b> pense. / J'<b>en</b> parle.</span></div>
+      <div class="exline" style="border-right-color:#2e7d8f"><span>منفی: Je n'<b>y</b> pense pas. / Je n'<b>en</b> parle pas.</span></div>
+      <div class="exline" style="border-right-color:#2e7d8f"><span>futur proche: Je vais <b>y</b> penser. / Je vais <b>en</b> parler.</span></div>
+      <div class="exline" style="border-right-color:#2e7d8f"><span>امری: Penses-<b>y</b> ! / Parles-<b>en</b> !</span></div>
+    </div>
+  </div>
+
+  <div class="warn">
+    ⚠️ <b>حواست باشد:</b> ضمیرهای <span class="pill y">y</span> و <span class="pill en">en</span> فقط برای <b>چیزها</b> و <b>مفاهیم</b> به کار می‌روند.
+    برای <b>اشخاص</b>، از ضمیرهای دیگری استفاده می‌کنیم:
+    با <b>à + شخص</b> → ضمیرِ غیرمستقیم (lui, leur)، و با <b>de + شخص</b> → de + ضمیر تأکیدی (de lui, d'elle).
+    مثال: <span dir="ltr">Je pense à mon frère → Je pense <b>à lui</b></span> (نه «j'y pense»).
+  </div>
+
+  <!-- تمرین -->
   <div class="quiz">
-    <h2>📝 کوییز — y یا en؟</h2>
+    <h2>✍️ تمرین تعاملی</h2>
+    <div class="qsub">گزینه‌ی درست را انتخاب کن (Y یا EN)</div>
+
     <div class="q">
-      <div class="q-txt">1. Tu penses à ton avenir ? — Oui, j'___ pense.</div>
-      <div class="opts"><span class="opt" data-ok="1">y</span><span class="opt" data-ok="0">en</span></div>
-      <div class="fb">✅ «penser à» → پس y درست است.</div>
+      <div class="q-text">Tu penses à tes vacances ? — Oui, j'___ pense.<span class="fa">به تعطیلاتت فکر می‌کنی؟</span></div>
+      <div class="opts"><div class="opt" data-ok="1">y</div><div class="opt" data-ok="0">en</div></div>
+      <div class="feedback">چون «penser <b>à</b>» با à می‌آید → Y</div>
     </div>
+
     <div class="q">
-      <div class="q-txt">2. Vous parlez de la politique ? — Oui, nous ___ parlons.</div>
-      <div class="opts"><span class="opt" data-ok="0">y</span><span class="opt" data-ok="1">en</span></div>
-      <div class="fb">✅ «parler de» → پس en درست است.</div>
+      <div class="q-text">Tu as besoin de ce livre ? — Oui, j'___ ai besoin.<span class="fa">به این کتاب نیاز داری؟</span></div>
+      <div class="opts"><div class="opt" data-ok="0">y</div><div class="opt" data-ok="1">en</div></div>
+      <div class="feedback">چون «avoir besoin <b>de</b>» با de می‌آید → EN</div>
     </div>
+
     <div class="q">
-      <div class="q-txt">3. Elle va à la piscine ? — Oui, elle ___ va.</div>
-      <div class="opts"><span class="opt" data-ok="1">y</span><span class="opt" data-ok="0">en</span></div>
-      <div class="fb">✅ مکان (à la piscine) → y درست است.</div>
+      <div class="q-text">Elle s'intéresse à l'art ? — Oui, elle s'___ intéresse.<span class="fa">به هنر علاقه داره؟</span></div>
+      <div class="opts"><div class="opt" data-ok="1">y</div><div class="opt" data-ok="0">en</div></div>
+      <div class="feedback">«s'intéresser <b>à</b>» → Y</div>
     </div>
+
     <div class="q">
-      <div class="q-txt">4. Tu as besoin de tes lunettes ? — Oui, j'___ ai besoin.</div>
-      <div class="opts"><span class="opt" data-ok="0">y</span><span class="opt" data-ok="1">en</span></div>
-      <div class="fb">✅ «avoir besoin de» → en درست است.</div>
+      <div class="q-text">Vous parlez de la réunion ? — Oui, nous ___ parlons.<span class="fa">درباره‌ی جلسه حرف می‌زنید؟</span></div>
+      <div class="opts"><div class="opt" data-ok="0">y</div><div class="opt" data-ok="1">en</div></div>
+      <div class="feedback">«parler <b>de</b>» → EN</div>
     </div>
+
     <div class="q">
-      <div class="q-txt">5. Il joue au foot ? — Oui, il ___ joue.</div>
-      <div class="opts"><span class="opt" data-ok="1">y</span><span class="opt" data-ok="0">en</span></div>
-      <div class="fb">✅ «jouer à» (au=à+le) → y درست است.</div>
+      <div class="q-text">Tu fais attention au chien ? — Oui, j'___ fais attention.<span class="fa">حواست به سگ هست؟</span></div>
+      <div class="opts"><div class="opt" data-ok="1">y</div><div class="opt" data-ok="0">en</div></div>
+      <div class="feedback">«faire attention <b>à</b>» → Y</div>
     </div>
+
     <div class="q">
-      <div class="q-txt">6. Vous voulez des croissants ? — Oui, j'___ veux trois.</div>
-      <div class="opts"><span class="opt" data-ok="0">y</span><span class="opt" data-ok="1">en</span></div>
-      <div class="fb">✅ مقدار (des croissants) → en درست است.</div>
+      <div class="q-text">Tu veux du thé ? — Oui, j'___ veux bien.<span class="fa">چای می‌خوای؟</span></div>
+      <div class="opts"><div class="opt" data-ok="0">y</div><div class="opt" data-ok="1">en</div></div>
+      <div class="feedback">«du thé» مقدار است (de) → EN</div>
     </div>
   </div>
+
+  <div class="footnote">© Hoda Khedmati — Français avec Hoda<br>قانون طلایی: à → Y &nbsp;|&nbsp; de → EN</div>
 </div>
 
 <script>
-document.querySelectorAll('.opt').forEach(o=>{
-  o.addEventListener('click',function(){
-    const q=this.closest('.q');
-    if(q.dataset.done)return;
-    q.dataset.done=1;
-    const ok=this.dataset.ok==='1';
-    this.classList.add(ok?'correct':'wrong');
-    if(!ok){q.querySelector('.opt[data-ok="1"]').classList.add('correct');}
-    q.querySelector('.fb').style.display='block';
+document.querySelectorAll('.q').forEach(q=>{
+  const opts=q.querySelectorAll('.opt');
+  const fb=q.querySelector('.feedback');
+  opts.forEach(o=>{
+    o.addEventListener('click',()=>{
+      if(q.dataset.done)return;
+      q.dataset.done="1";
+      const ok=o.dataset.ok==="1";
+      o.classList.add(ok?'correct':'wrong');
+      if(!ok){opts.forEach(x=>{if(x.dataset.ok==="1")x.classList.add('correct');});}
+      fb.classList.add(ok?'ok':'no');
+    });
   });
 });
 </script>
