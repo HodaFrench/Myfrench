@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang='fr'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>L'environnement &amp; l'écologie — Vocabulaire · TCF Canada · @TCFHODA</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+  :root{
+    --paper:#FBF8F0; --paper-edge:#ECE5D4;
+    --ink:#1B2A6B; --ink-soft:#46537d;
+    --rule:#DBD0EE; --margin:#D64537;
+    --shadow:0 12px 30px -16px rgba(27,42,107,.4);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;color:var(--ink);line-height:1.55;font-family:"Spectral",Georgia,serif;
+    background:radial-gradient(1100px 560px at 8% -8%,#fdf2e6 0,transparent 55%),
+      radial-gradient(1000px 640px at 112% 6%,#eceffb 0,transparent 52%),#ece7da;
+    padding:26px 16px 60px;font-size:17px;}
+  .wrap{max-width:840px;margin:0 auto;}
+
+  /* ---------- NAV + progress ---------- */
+  .nav{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:0 auto 14px;max-width:840px;}
+  .nav a{font-family:"Fraunces",serif;font-weight:600;font-size:.76rem;text-decoration:none;color:#fff;padding:6px 12px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;}
+  .progress-wrap{max-width:840px;margin:0 auto 22px;text-align:center;}
+  .pbar{height:9px;background:#e2dcc9;border-radius:999px;overflow:hidden;margin:6px auto 0;max-width:420px;}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,#2E8B6B,#2E6BD6);transition:width .3s;}
+  .pcount{font-family:"Fraunces",serif;font-weight:600;font-size:.82rem;color:var(--ink-soft);}
+  .btn{font-family:"Fraunces",serif;font-weight:600;font-size:.85rem;background:var(--ink);color:#fff;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;box-shadow:var(--shadow);margin-top:10px;}
+  .btn:hover{background:#243a8f;}
+
+  /* ---------- COVER ---------- */
+  .cover{position:relative;background:#fff;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;text-align:center;
+    padding:30px 26px 28px;margin-bottom:26px;
+    background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 32px,var(--rule) 32px,var(--rule) 33px);background-position:0 70px;}
+  .cover::before{content:"";position:absolute;top:0;bottom:0;left:46px;width:1.5px;background:var(--margin);opacity:.5;}
+  .cover .kick{font-family:"Caveat",cursive;color:var(--margin);font-size:1.7rem;transform:rotate(-2deg);}
+  .cover h1{font-family:"Fraunces",serif;font-weight:800;font-size:clamp(2rem,6vw,3rem);line-height:1.02;margin:.1em 0 .05em;letter-spacing:-.01em;}
+  .cover h1 b{color:var(--margin);}
+  .cover .b2{font-family:"Fraunces",serif;font-weight:800;font-size:1.5rem;color:#2E6BD6;margin:2px 0 8px;}
+  .cover .lead{color:var(--ink-soft);font-size:1rem;max-width:480px;margin:0 auto 6px;}
+  .cover svg{display:block;margin:10px auto 6px;width:min(360px,90%);height:auto;}
+  .cover .sign{font-family:"Caveat",cursive;font-weight:700;font-size:1.8rem;color:var(--ink);margin-top:4px;}
+  .cover .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.8rem;letter-spacing:.05em;color:#fff;background:var(--ink);padding:4px 13px;border-radius:999px;display:inline-block;margin-top:4px;}
+
+  /* ---------- SECTION ---------- */
+  section.cat{margin:0 0 10px;}
+  .band{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:13px;color:#fff;margin:26px 0 16px;box-shadow:var(--shadow);}
+  .band .ic{width:48px;height:48px;flex-shrink:0;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:25px;}
+  .band .t{font-family:"Fraunces",serif;font-weight:700;font-size:1.4rem;line-height:1.05;}
+  .secmark{string-set:secfr content(text);height:0;line-height:0;overflow:hidden;color:transparent;margin:0;font-size:1px;}
+  .band .f{font-family:"Vazirmatn",sans-serif;font-size:.95rem;opacity:.95;direction:rtl;margin-top:2px;font-weight:500;}
+  .band .hk{margin-left:auto;font-family:"Caveat",cursive;font-weight:700;font-size:1.05rem;opacity:.9;white-space:nowrap;}
+
+  /* ---------- TERM CARD ---------- */
+  .card{position:relative;background:var(--paper);border:1px solid var(--paper-edge);border-left:6px solid var(--accent);
+    border-radius:12px;box-shadow:var(--shadow);padding:16px 20px 18px;margin-bottom:18px;}
+  .card.done{opacity:.62;}
+  .card.done .term{text-decoration:line-through;}
+  .term-row{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap;}
+  .term{font-family:"Fraunces",serif;font-weight:800;font-size:1.32rem;color:var(--ink);line-height:1.1;margin-right:auto;}
+  .fa-term{font-family:"Vazirmatn",sans-serif;font-weight:600;font-size:1.12rem;color:var(--accent);direction:rtl;}
+  .chk{flex-shrink:0;font-family:"Fraunces",serif;font-weight:600;font-size:.66rem;border:1.5px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 10px;cursor:pointer;white-space:nowrap;}
+  .chk.on{background:var(--accent);color:#fff;}
+  .def{background:rgba(255,255,255,.6);border-radius:9px;padding:8px 12px;margin:9px 0 6px;font-size:.95rem;color:var(--ink-soft);}
+  .def b{color:var(--accent);font-family:"Fraunces",serif;font-weight:600;font-style:normal;}
+  .syn{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;}
+  .syn span{font-size:.78rem;background:#efe9da;color:var(--ink-soft);border-radius:6px;padding:3px 9px;}
+  .syn span::before{content:"≈ ";color:var(--accent);font-weight:700;}
+  .ex{display:flex;gap:11px;padding:9px 0;border-top:1px dotted var(--rule);}
+  .ex:first-of-type{border-top:1px solid #e6dfcd;margin-top:2px;}
+  .exn{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-family:"Fraunces",serif;font-weight:700;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+  .ex .body{flex:1;}
+  .ex .fr{margin:0;font-size:.98rem;color:var(--ink);}
+  .ex .fr b{background:linear-gradient(transparent 60%,color-mix(in srgb,var(--accent) 28%,transparent) 0);font-weight:700;padding:0 1px;}
+  .ex .fa{margin:5px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.92rem;color:var(--ink-soft);direction:rtl;text-align:right;line-height:1.7;}
+  .ex .fa b{color:var(--accent);font-weight:700;}
+
+  /* ---------- BOÎTE À PHRASES ---------- */
+  .phrasebox{background:var(--paper);border:2px dashed #5B4B8A;border-radius:14px;padding:18px 20px;margin:26px 0 10px;box-shadow:var(--shadow);}
+  .phrasebox h3{font-family:"Fraunces",serif;font-weight:800;font-size:1.2rem;margin:0 0 4px;color:#5B4B8A;}
+  .phrasebox .fa-h{font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;margin-bottom:10px;}
+  .ph{padding:8px 0;border-top:1px dotted var(--rule);}
+  .ph:first-of-type{border-top:none;}
+  .ph .fr{margin:0;font-size:.97rem;font-style:italic;color:var(--ink);}
+  .ph .fr b{font-style:normal;color:#5B4B8A;font-weight:700;}
+  .ph .fa{margin:4px 0 0;font-family:"Vazirmatn",sans-serif;font-size:.9rem;color:var(--ink-soft);direction:rtl;text-align:right;}
+
+  .sig-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin:10px 2px 0;}
+  .sig-foot .name{font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;color:var(--ink);transform:rotate(-2deg);}
+  .sig-foot .handle{font-family:"Fraunces",serif;font-weight:600;font-size:.7rem;letter-spacing:.04em;color:#fff;background:var(--ink);padding:3px 9px;border-radius:999px;}
+  footer{text-align:center;margin-top:34px;color:var(--ink-soft);font-size:.85rem;}
+  footer b{font-family:"Caveat",cursive;font-size:1.25rem;color:var(--ink);}
+
+  @media (max-width:520px){ body{font-size:16px;} .term{font-size:1.18rem;} }
+  @media print{
+    @page{size:A4 portrait;margin:14mm 13mm 16mm;}
+    body{background:#fff;padding:0;font-size:12.5px;}
+    .nav,.progress-wrap,.btn,.chk{display:none !important;}
+    .cover{break-after:always;break-inside:avoid;min-height:260mm;margin:0;padding:26px;border-radius:0;display:flex;flex-direction:column;justify-content:center;}
+    section.cat{break-before:always;}
+    .band{break-inside:avoid;break-after:avoid;box-shadow:none;margin-top:0;}
+    .card,.phrasebox{break-inside:avoid;box-shadow:none;}
+    .card.done{opacity:1;}
+    .sig-foot{break-inside:avoid;}
+    .ex .fr b{background:none;text-decoration:underline;text-decoration-color:var(--accent);}
+  }
+</style></head><body><div class='wrap'><nav class='nav' id='nav'></nav><div class='progress-wrap'><div class='pcount' id='pcount'>0 / 0 termes révisés</div><div class='pbar'><div class='pfill' id='pfill'></div></div><button class='btn' onclick='window.print()'>Imprimer / Enregistrer en PDF</button></div><div class='cover'><div class='kick'>TCF Canada — Vocabulaire spécial sujet</div><h1>L'environnement <b>&amp; l'écologie</b></h1><div class='b2'>Niveau B2 → B2+ · Expression Orale &amp; Écrite</div><p class='lead'>Le vocabulaire de l'environnement, classé par catégorie : définition, traduction persane et 4 exemples (du B2 au B2+). Les mots de la nature (forêt, océan, fleuve, faune, flore…) sont tissés dans les exemples.</p><div class='b2' style='background:#2E8B6B;color:#fff;display:inline-block;padding:3px 14px;border-radius:14px;margin-top:8px'>APERÇU GRATUIT · 10 premiers mots</div><svg viewBox="0 0 360 188" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ecologie"><circle cx="180" cy="94" r="42" fill="none" stroke="#2E8B6B" stroke-width="4"/><path d="M180 116 C168 100 168 78 192 70 C190 92 186 104 180 116 z" fill="#2E8B6B" opacity="0.85"/><path d="M180 116 C192 104 196 86 174 76 C176 96 178 108 180 116 z" fill="#5B5BD6" opacity="0.55"/><line x1="180" y1="116" x2="180" y2="132" stroke="#2E8B6B" stroke-width="4" stroke-linecap="round"/></svg><div class='sign'>Hoda KHEDMATI</div><span class='handle'>@TCFHODA</span><div style="font-family:'Spectral',serif;font-size:11px;color:#46537d;margin-top:16px;letter-spacing:.02em;">© Hoda KHEDMATI — Tous droits réservés · usage personnel</div></div><div id='root'></div><footer>Travaille un mot à la fois : lis la définition, dis l'exemple à voix haute, puis coche « Vu ».<br><b>Hoda KHEDMATI</b> · @TCFHODA</footer></div><script>const CAT=[{"id": 1, "name": "Le climat &amp; l'effet de serre", "fa": "اقلیم و اثرِ گلخانه‌ای", "icon": "🌡️", "color": "#C0392B"}, {"id": 2, "name": "La pollution &amp; les déchets", "fa": "آلودگی و زباله", "icon": "🛢️", "color": "#5B5BD6"}, {"id": 3, "name": "Énergies &amp; ressources", "fa": "انرژی و منابع", "icon": "⚡", "color": "#C77A2E"}, {"id": 4, "name": "Faune, flore &amp; espèces", "fa": "جانوران، گیاهان و گونه‌ها", "icon": "🐯", "color": "#2E8B6B"}, {"id": 5, "name": "Catastrophes &amp; destruction", "fa": "فاجعه‌ها و تخریب", "icon": "🌊", "color": "#2E6BD6"}, {"id": 6, "name": "Solutions &amp; gestes verts", "fa": "راهکارها و کنش‌های سبز", "icon": "♻️", "color": "#2E8B8B"}, {"id": 7, "name": "Enjeux &amp; développement durable", "fa": "چالش‌ها و توسعه‌ی پایدار", "icon": "🌍", "color": "#7C5BD6"}];
+const D=[{"c": 1, "term": "l'effet de serre", "fa": "اثرِ گلخانه‌ای", "syn": ["le piégeage de la chaleur", "le réchauffement par les gaz"], "ex": [["L'<b>effet de serre</b> réchauffe peu à peu l'air, la mer et la terre.", "<b>اثرِ گلخانه‌ای</b> اندک‌اندک هوا، دریا و خشکی را گرم می‌کند."], ["Selon moi, l'<b>effet de serre</b> menace autant la faune des forêts que celle des océans.", "به نظر من، <b>اثرِ گلخانه‌ای</b> هم جانورانِ جنگل و هم جانورانِ اقیانوس را تهدید می‌کند."], ["C'est l'<b>effet de serre</b> qui, en dérèglant le climat, bouleverse les milieux naturels (B2+).", "این <b>اثرِ گلخانه‌ای</b> است که با برهم‌زدنِ اقلیم، زیستگاه‌های طبیعی را زیرورو می‌کند."], ["Quand bien même il serait naturel, l'<b>effet de serre</b> s'emballe à cause de l'activité humaine (B2+).", "حتی اگر طبیعی باشد، <b>اثرِ گلخانه‌ای</b> به‌سببِ فعالیتِ انسان از کنترل خارج می‌شود."]], "def": "Phénomène par lequel les gaz retiennent la chaleur autour de la planète."}, {"c": 1, "term": "le réchauffement climatique", "fa": "گرمایشِ زمین", "syn": ["la hausse des températures", "le dérèglement du climat"], "ex": [["Le <b>réchauffement climatique</b> fait fondre les glaces et monter la mer.", "<b>گرمایشِ زمین</b> یخ‌ها را آب می‌کند و سطحِ دریا را بالا می‌آورد."], ["À mon sens, le <b>réchauffement climatique</b> assèche les lacs, les rivières et les étangs.", "به نظر من، <b>گرمایشِ زمین</b> دریاچه‌ها، رودها و برکه‌ها را خشک می‌کند."], ["C'est en limitant nos émissions qu'on freine le <b>réchauffement climatique</b> (B2+).", "با محدود کردنِ انتشارِ گازهاست که <b>گرمایشِ زمین</b> را کُند می‌کنیم."], ["Quand bien même il semblerait lointain, le <b>réchauffement climatique</b> touche déjà chaque côte (B2+).", "حتی اگر دور بنماید، <b>گرمایشِ زمین</b> هم‌اکنون هر ساحلی را درمی‌نوردد."]], "def": "Augmentation durable de la température moyenne de la planète."}, {"c": 1, "term": "le dérèglement du climat", "fa": "برهم‌خوردنِ اقلیم", "syn": ["le bouleversement climatique", "le désordre climatique"], "ex": [["Le <b>dérèglement du climat</b> multiplie les sécheresses et les inondations.", "<b>برهم‌خوردنِ اقلیم</b> خشکسالی‌ها و سیل‌ها را افزون می‌کند."], ["Selon moi, le <b>dérèglement du climat</b> bouleverse la flore comme la faune.", "به نظر من، <b>برهم‌خوردنِ اقلیم</b> هم گیاهان و هم جانوران را زیرورو می‌کند."], ["C'est le <b>dérèglement du climat</b> qui, saison après saison, rend le temps imprévisible (B2+).", "این <b>برهم‌خوردنِ اقلیم</b> است که فصل به فصل، آب‌وهوا را پیش‌بینی‌ناپذیر می‌کند."], ["Quand bien même on le nierait, le <b>dérèglement du climat</b> se lit déjà dans la nature (B2+).", "حتی اگر آن را انکار کنیم، <b>برهم‌خوردنِ اقلیم</b> هم‌اکنون در طبیعت خوانده می‌شود."]], "def": "Perturbation profonde des équilibres climatiques habituels."}, {"c": 1, "term": "les émissions de CO2", "fa": "انتشارِ کربن", "syn": ["les rejets de carbone", "les gaz à effet de serre"], "ex": [["Les <b>émissions de CO2</b> proviennent surtout du pétrole, du gaz et du charbon.", "<b>انتشارِ کربن</b> بیش از همه از نفت، گاز و زغال‌سنگ سرچشمه می‌گیرد."], ["À mon sens, réduire les <b>émissions de CO2</b> protège l'air que nous respirons.", "به نظر من، کاهشِ <b>انتشارِ کربن</b> از هوایی که تنفس می‌کنیم محافظت می‌کند."], ["C'est en repensant nos transports qu'on baisse vraiment les <b>émissions de CO2</b> (B2+).", "با بازاندیشی در حمل‌ونقل است که به‌راستی <b>انتشارِ کربن</b> را پایین می‌آوریم."], ["Quand bien même elles seraient invisibles, les <b>émissions de CO2</b> pèsent sur toute la planète (B2+).", "حتی اگر نامرئی باشند، <b>انتشارِ کربن</b> بر کلِ سیاره سنگینی می‌کند."]], "def": "Rejets de dioxyde de carbone dans l'atmosphère par l'homme."}, {"c": 1, "term": "la fonte des glaces", "fa": "ذوبِ یخ‌ها", "syn": ["la fonte des glaciers", "le recul des glaces"], "ex": [["La <b>fonte des glaces</b> fait monter le niveau de la mer.", "<b>ذوبِ یخ‌ها</b> سطحِ دریا را بالا می‌آورد."], ["À mon sens, la <b>fonte des glaces</b> met en danger des espèces entières.", "به نظر من، <b>ذوبِ یخ‌ها</b> گونه‌های کاملی را به خطر می‌اندازد."], ["C'est la <b>fonte des glaces</b> qui, en grignotant les côtes, menace les villes du bord de mer (B2+).", "این <b>ذوبِ یخ‌ها</b> است که با خوردنِ سواحل، شهرهای کناریِ دریا را تهدید می‌کند."], ["Quand bien même elle paraîtrait lente, la <b>fonte des glaces</b> est déjà irréversible par endroits (B2+).", "حتی اگر آهسته بنماید، <b>ذوبِ یخ‌ها</b> در برخی جاها هم‌اکنون برگشت‌ناپذیر است."]], "def": "Disparition progressive des glaciers sous l'effet de la chaleur."}, {"c": 2, "term": "la pollution", "fa": "آلودگی", "syn": ["la contamination", "la dégradation"], "ex": [["La <b>pollution</b> salit l'air, l'eau des fleuves et même le sable des plages.", "<b>آلودگی</b> هوا، آبِ رودها و حتی شِنِ ساحل‌ها را آلوده می‌کند."], ["À mon sens, la <b>pollution</b> des océans menace les poissons et les oiseaux.", "به نظر من، <b>آلودگیِ</b> اقیانوس‌ها ماهی‌ها و پرندگان را تهدید می‌کند."], ["C'est en changeant nos habitudes qu'on réduit la <b>pollution</b> à la source (B2+).", "با تغییرِ عادت‌هایمان است که <b>آلودگی</b> را از سرچشمه کاهش می‌دهیم."], ["Quand bien même elle serait diffuse, la <b>pollution</b> finit par contaminer toute la chaîne du vivant (B2+).", "حتی اگر پراکنده باشد، <b>آلودگی</b> سرانجام کلِ زنجیره‌ی زندگی را آلوده می‌کند."]], "def": "Dégradation de l'environnement, souvent due à l'activité humaine."}, {"c": 2, "term": "les déchets", "fa": "زباله", "syn": ["les ordures", "les rebuts"], "ex": [["On jette chaque jour des <b>déchets</b> qui finissent parfois dans la mer.", "هر روز <b>زباله‌هایی</b> دور می‌ریزیم که گاه سر از دریا درمی‌آورند."], ["À mon sens, trop de <b>déchets</b> plastiques étouffent la faune marine.", "به نظر من، <b>زباله‌های</b> پلاستیکیِ بیش از حد، جانورانِ دریایی را خفه می‌کنند."], ["C'est en triant nos <b>déchets</b> qu'on permet leur recyclage (B2+).", "با تفکیکِ <b>زباله‌هایمان</b> است که بازیافتِ آن‌ها را ممکن می‌کنیم."], ["Quand bien même ils paraîtraient anodins, nos <b>déchets</b> mettent des siècles à disparaître (B2+).", "حتی اگر بی‌اهمیت بنمایند، <b>زباله‌های</b> ما قرن‌ها برای ناپدیدشدن وقت می‌برند."]], "def": "Restes inutilisés que l'on jette après usage."}, {"c": 2, "term": "le gaspillage", "fa": "اسراف/هدررفت", "syn": ["la dilapidation", "le gâchis"], "ex": [["Le <b>gaspillage</b> de l'eau appauvrit les lacs et les rivières.", "<b>اسرافِ</b> آب، دریاچه‌ها و رودها را تهی می‌کند."], ["À mon sens, le <b>gaspillage</b> alimentaire est l'un des plus révoltants.", "به نظر من، <b>هدررفتِ</b> مواد غذایی یکی از زننده‌ترین‌هاست."], ["C'est en achetant moins qu'on lutte concrètement contre le <b>gaspillage</b> (B2+).", "با خریدِ کمتر است که به‌طورِ عملی با <b>اسراف</b> مبارزه می‌کنیم."], ["Quand bien même il semblerait minime, chaque <b>gaspillage</b> épuise une ressource limitée (B2+).", "حتی اگر ناچیز بنماید، هر <b>هدررفتی</b> منبعی محدود را تهی می‌کند."]], "def": "Fait d'utiliser ou de jeter sans nécessité ce qui pourrait servir."}, {"c": 2, "term": "le tri sélectif", "fa": "تفکیکِ زباله", "syn": ["le tri des déchets", "la séparation des ordures"], "ex": [["Le <b>tri sélectif</b> sépare le verre, le plastique, le papier et le carton.", "<b>تفکیکِ زباله</b>، شیشه، پلاستیک، کاغذ و مقوا را جدا می‌کند."], ["À mon sens, le <b>tri sélectif</b> est le geste vert le plus simple à adopter.", "به نظر من، <b>تفکیکِ زباله</b> ساده‌ترین کنشِ سبز برای پذیرفتن است."], ["C'est grâce au <b>tri sélectif</b> que les matières repartent dans un nouveau cycle (B2+).", "به‌لطفِ <b>تفکیکِ زباله</b> است که مواد به چرخه‌ای تازه بازمی‌گردند."], ["Quand bien même il demanderait un effort, le <b>tri sélectif</b> devient vite une habitude (B2+).", "حتی اگر اندکی تلاش بخواهد، <b>تفکیکِ زباله</b> به‌زودی به عادت بدل می‌شود."]], "def": "Séparation des déchets selon leur nature pour les recycler."}, {"c": 2, "term": "le recyclage", "fa": "بازیافت", "syn": ["la valorisation des déchets", "le retraitement"], "ex": [["Le <b>recyclage</b> donne une seconde vie au verre et au papier.", "<b>بازیافت</b> به شیشه و کاغذ زندگیِ دوباره می‌بخشد."], ["À mon sens, le <b>recyclage</b> préserve les ressources naturelles de la planète.", "به نظر من، <b>بازیافت</b> منابعِ طبیعیِ سیاره را حفظ می‌کند."], ["C'est en généralisant le <b>recyclage</b> qu'on réduit l'extraction de matières neuves (B2+).", "با فراگیر کردنِ <b>بازیافت</b> است که استخراجِ موادِ نو را کاهش می‌دهیم."], ["Quand bien même il ne suffirait pas seul, le <b>recyclage</b> reste un maillon essentiel (B2+).", "حتی اگر به‌تنهایی کافی نباشد، <b>بازیافت</b> حلقه‌ای ضروری می‌ماند."]], "def": "Transformation des déchets en nouvelles matières réutilisables."}];
+const PHRASES=[];
+const PH_HEAD="Boîte à phrases — débat « protéger l'environnement »";
+const PH_FA="جعبه‌ی عبارت‌های آماده برای بحث درباره‌ی محیط‌زیست (تکلیف ۳)";
+const HAS_PH=false;
+const PROMO_HTML="<section class='cat' id='promo'><div class='phrasebox' style='text-align:center'><h3>🎁 Ceci n'est qu'un aperçu</h3><div class='fa-h' dir='rtl' lang='fa'>این فقط یک پیش‌نمایشِ رایگان است — نسخه‌ی کامل شاملِ همه‌ی ۳۵ واژه، با ۴ مثالِ ترجمه‌شده (از B2 تا B2+) برای هر واژه، به‌علاوه‌ی جعبه‌ی جملاتِ آماده‌ی بحث است.</div><p class='fr' style='margin-top:8px'>La version complète contient les 35 mots, avec 4 exemples traduits (du B2 au B2+) chacun.</p><div class='sig-foot'><span class='name'>Hoda KHEDMATI</span><span class='handle'>@TCFHODA</span></div></div></section>";
+
+const root=document.getElementById('root'), nav=document.getElementById('nav');
+CAT.forEach(cat=>{
+  nav.insertAdjacentHTML('beforeend',`<a href="#c${cat.id}" style="background:${cat.color}">${cat.icon} ${cat.name.replace('&amp;','&')}</a>`);
+  const sec=document.createElement('section'); sec.className='cat'; sec.id='c'+cat.id;
+  let cards=D.filter(d=>d.c===cat.id).map(d=>{
+    const exs=d.ex.map((e,i)=>`<div class="ex"><span class="exn">${i+1}</span><div class="body"><p class="fr">${e[0]}</p><p class="fa" dir="rtl" lang="fa">${e[1]}</p></div></div>`).join('');
+    const syn=d.syn.map(s=>`<span>${s}</span>`).join('');
+    return `<article class="card" style="--accent:${cat.color}">
+      <div class="term-row"><span class="term">${d.term}</span><span class="fa-term" dir="rtl" lang="fa">${d.fa}</span>
+        <button class="chk" onclick="toggleDone(this)">Vu ✓</button></div>
+      <div class="def"><b>Déf.</b> ${d.def}</div>
+      ${syn?`<div class="syn">${syn}</div>`:''}
+      ${exs}</article>`;
+  }).join('');
+  if(!cards) return;
+  sec.innerHTML=`<div class="secmark">${cat.name.replace('&amp;','&')}</div><div class="band" style="background:${cat.color}">
+      <span class="ic">${cat.icon}</span>
+      <div><div class="t">${cat.name}</div><div class="f" dir="rtl" lang="fa">${cat.fa}</div></div>
+      <span class="hk">✎ Hoda KHEDMATI</span></div>
+    ${cards}
+    <div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(sec);
+});
+if(HAS_PH){
+  const pb=document.createElement('section'); pb.className='cat'; pb.id='phrases';
+  pb.innerHTML=`<div class="secmark">Boîte à phrases — débat</div><div class="phrasebox">
+    <h3>🗣️ ${PH_HEAD}</h3><div class="fa-h" dir="rtl" lang="fa">${PH_FA}</div>
+    ${PHRASES.map(p=>`<div class="ph"><p class="fr">${p[0]}</p><p class="fa" dir="rtl" lang="fa">${p[1]}</p></div>`).join('')}
+    </div><div class="sig-foot"><span class="name">Hoda KHEDMATI</span><span class="handle">@TCFHODA</span></div>`;
+  root.appendChild(pb);
+}
+if(PROMO_HTML){ const t=document.createElement('div'); t.innerHTML=PROMO_HTML; root.appendChild(t.firstChild); }
+const total=D.length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`0 / ${total} termes révisés`;
+function refresh(){const done=document.querySelectorAll('.card.done').length; const pc=document.getElementById('pcount'); if(pc)pc.textContent=`${done} / ${total} termes révisés`; const pf=document.getElementById('pfill'); if(pf)pf.style.width=(done/total*100)+'%';}
+window.toggleDone=function(btn){const c=btn.closest('.card'); c.classList.toggle('done'); btn.classList.toggle('on'); refresh();};
+const ONLY=new URLSearchParams(location.search).get('only');
+if(ONLY){
+  const nv=document.querySelector('.nav'); if(nv)nv.style.display='none';
+  const pw=document.querySelector('.progress-wrap'); if(pw)pw.style.display='none';
+  const ft=document.querySelector('footer'); if(ft)ft.style.display='none';
+  const cover=document.querySelector('.cover');
+  if(ONLY==='cover'){ root.style.display='none'; if(cover){cover.style.minHeight='auto';cover.style.breakAfter='auto';} }
+  else { if(cover)cover.style.display='none';
+    document.querySelectorAll('section.cat').forEach(s=>{ const match=(ONLY==='ph')?(s.id==='phrases'||s.id==='promo'):(s.id==='c'+ONLY); s.style.display=match?'':'none'; if(match)s.style.breakBefore='auto'; });
+  }
+}
+</script></body></html>
