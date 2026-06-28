@@ -617,6 +617,24 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","environnement","écologie","climat","pollution"],
     summary: "واژگان تخصصی موضوع «محیط زیست و اکولوژی» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
   },
+
+  {
+    file: "VOCAB_cinema_series.html",
+    title: "📚 Le cinéma & les séries",
+    titleFr: "Le cinéma & les séries",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","cinéma","séries","films"],
+    summary: "واژگان تخصصی موضوع «سینما و سریال‌ها» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
+
+  {
+    file: "VOCAB_diplome_valeur.html",
+    title: "📚 Le diplôme & sa valeur",
+    titleFr: "Le diplôme & la valeur",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","diplôme","études","travail"],
+    summary: "واژگان تخصصی موضوع «دیپلم و ارزش آن» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
   {
     file: "VOCAB_glottophobie.html",
     title: "📚 La glottophobie & les discriminations",
