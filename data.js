@@ -23,7 +23,7 @@ const CATEGORIES = [
   { id: "prononciation", label: "تمرین تلفظ",     icon: "🗣", color: "#3f8a9c" },
   { id: "editoa1",      label: "Édito A1 · واژگان", icon: "✎", color: "#5a8f4a" },
   { id: "miniarticle",  label: "مینی‌آرتیکل",      icon: "✑", color: "#b0506f" },
-  { id: "questions",    label: "سوال‌های شما",     icon: "❓", color: "#7a5ba8", link: "mes_questions.html" },
+  { id: "questions",    label: "سوال‌های پرتکرار",     icon: "❓", color: "#7a5ba8", link: "mes_questions.html" },
   { id: "expressions",  label: "اصطلاحات فرانسوی", icon: "🎭", color: "#c75b39", link: "EXPRESSIONS.html" },
   // نمونه برای آینده — کافیست کامنت را برداری:
   // { id: "video", label: "ویدیو", icon: "🎬", color: "#5b6fc0" },
