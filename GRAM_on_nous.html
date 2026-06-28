@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On یا Nous | Grammaire</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--navy:#1e3a5f;--navy-soft:#41618a;--gold:#b07a4a;--gold-soft:#c4a572;--terracotta:#c4502d;--paper:#f4f3f5;--paper-warm:#ebeaed;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--teal:#2e7d8f;--rose:#b0506f;--purple:#7a5ba8;}
+  body{font-family:'Estedad',Arial,sans-serif;background-color:var(--paper);background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(65,97,138,0.08) 31px,rgba(65,97,138,0.08) 32px);color:var(--ink);line-height:1.95;padding:24px 16px 70px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  .topbar{text-align:center;margin-bottom:24px;}
+  .topbar a{display:inline-block;color:var(--navy);text-decoration:none;font-size:14px;border:1px solid var(--line);background:var(--cream);padding:8px 18px;border-radius:8px;transition:all .25s;}
+  .topbar a:hover{background:var(--navy);color:var(--cream);}
+  .header{background:linear-gradient(135deg,var(--navy),var(--navy-soft));color:var(--cream);padding:38px 30px;border-radius:20px;text-align:center;margin-bottom:26px;box-shadow:0 14px 34px rgba(31,58,95,.24);position:relative;overflow:hidden;}
+  .header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.05);border-radius:50%;}
+  .header .tag{font-size:12px;color:var(--gold-soft);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+  .header h1{font-family:'Roboto',serif;font-size:32px;font-weight:600;margin-bottom:8px;direction:ltr;}
+  .header .fa{font-size:15px;opacity:.92;}
+  .lead{background:var(--paper-warm);border-right:4px solid var(--gold-soft);border-radius:12px;padding:18px 22px;margin-bottom:24px;font-size:15px;line-height:2.1;}
+  .lead b{color:var(--terracotta);}
+  .cat{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:22px;box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .cat.c1{border-top:4px solid var(--teal);}
+  .cat.c2{border-top:4px solid var(--rose);}
+  .cat.c3{border-top:4px solid var(--purple);}
+  .cat-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;padding-bottom:14px;border-bottom:2px solid var(--line);}
+  .cat-emoji{font-size:26px;}
+  .cat-title{font-family:'Roboto',serif;font-size:23px;font-weight:700;direction:ltr;}
+  .cat.c1 .cat-title{color:var(--teal);}
+  .cat.c2 .cat-title{color:var(--rose);}
+  .cat.c3 .cat-title{color:var(--purple);}
+  .cat-title-fa{font-size:13px;color:var(--gold);font-weight:700;}
+  .rule{font-size:14.5px;line-height:2;margin:12px 0;}
+  .rule b{color:var(--navy);}
+  .pill{display:inline-block;direction:ltr;font-family:'Roboto',serif;font-weight:700;border-radius:7px;padding:1px 9px;font-size:14px;background:rgba(46,125,143,.13);color:var(--teal);}
+  .pill.r{background:rgba(176,80,111,.13);color:var(--rose);}
+  .ex{margin:8px 0;padding:12px 15px;background:var(--cream);border-radius:11px;border-right:3px solid var(--line);}
+  .ex .f{display:block;direction:ltr;font-family:'Roboto',serif;font-size:14.5px;color:#2c3e35;font-weight:600;}
+  .ex .p{display:block;font-size:12.5px;color:var(--gray);margin-top:2px;}
+  .hl{font-weight:700;color:var(--terracotta);}
+  .warn{background:rgba(176,80,111,.06);border:1px dashed #e0b3c2;border-radius:12px;padding:14px 18px;margin:20px 0;font-size:13.5px;line-height:2;}
+  .warn b{color:var(--rose);}
+  .tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px;}
+  .tbl th,.tbl td{border:1px solid var(--line);padding:9px 10px;text-align:center;}
+  .tbl th{background:var(--navy);color:var(--cream);font-weight:600;}
+  .tbl td{direction:ltr;font-family:'Roboto',serif;}
+  .tbl td.fa{direction:rtl;font-family:'Estedad';color:var(--gray);font-size:12.5px;}
+  .quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:26px;box-shadow:0 8px 24px rgba(31,58,95,.06);}
+  .quiz h2{font-size:19px;color:var(--navy);margin-bottom:4px;text-align:center;}
+  .quiz .qsub{font-size:12.5px;color:var(--gray);text-align:center;margin-bottom:18px;}
+  .q{margin-bottom:16px;padding:15px 16px;background:var(--cream);border-radius:12px;}
+  .q-text{font-size:14.5px;margin-bottom:10px;direction:ltr;font-family:'Roboto',serif;}
+  .q-text .fa{font-family:'Estedad';direction:rtl;display:block;color:var(--gray);font-size:12.5px;margin-top:3px;}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;}
+  .opt{flex:1;min-width:80px;border:1.5px solid var(--line);background:var(--white);border-radius:10px;padding:9px;font-family:'Roboto',serif;font-size:14px;cursor:pointer;transition:all .2s;text-align:center;}
+  .opt:hover{border-color:var(--navy-soft);}
+  .opt.correct{background:rgba(46,139,107,.15);border-color:var(--green);color:var(--green);font-weight:700;}
+  .opt.wrong{background:rgba(176,80,111,.13);border-color:var(--rose);color:var(--rose);}
+  .feedback{margin-top:9px;font-size:13px;font-weight:600;display:none;}
+  .feedback.ok{color:var(--green);display:block;}
+  .feedback.no{color:var(--rose);display:block;}
+  .footnote{text-align:center;color:var(--gray);font-size:12.5px;margin-top:26px;line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a href="index.html">&#8592; بازگشت به خانه</a></div>
+
+  <div class="header">
+    <div class="tag">PRONOMS · ON / NOUS</div>
+    <h1>On ou Nous ?</h1>
+    <div class="fa">«on» یا «nous» — کِی کدام؟</div>
+  </div>
+
+  <div class="lead">
+    در فرانسه برای گفتنِ «ما» دو راه هست: <b>nous</b> و <b>on</b>.
+    در زبان روزمره، فرانسوی‌ها تقریباً همیشه به‌جای nous از <b>on</b> استفاده می‌کنند!
+    این درس فرقشان، صرفِ فعل، و نکته‌ی مهمِ هماهنگی را یاد می‌دهد.
+  </div>
+
+  <!-- on = nous -->
+  <div class="cat c1">
+    <div class="cat-head"><span class="cat-emoji">🗣️</span><div><div class="cat-title">« On » = « Nous » (familier)</div><div class="cat-title-fa">on به‌معنیِ «ما» در زبان روزمره</div></div></div>
+    <div class="rule">در مکالمه‌ی روزمره، <span class="pill">on</span> همان «ما» است، ولی فعلش <b>همیشه سوم‌شخص مفرد</b> صرف می‌شود (مثل il/elle).</div>
+    <div class="ex"><span class="f"><span class="hl">On</span> va au cinéma ce soir. <span style="color:#8a8275">(= Nous allons…)</span></span><span class="p">امشب می‌ریم سینما.</span></div>
+    <div class="ex"><span class="f"><span class="hl">On</span> est arrivés à midi. <span style="color:#8a8275">(= Nous sommes arrivés…)</span></span><span class="p">ظهر رسیدیم.</span></div>
+    <div class="warn">💡 <b>نکته:</b> <span dir="ltr">nous</span> رسمی‌تر و کتابی‌تر است (نامه، مقاله، سخنرانی). <span dir="ltr">on</span> خودمونی و روزمره است (مکالمه با دوستان). در آزمونِ شفاهی هر دو درست‌اند، ولی on طبیعی‌تر به نظر می‌رسد.</div>
+  </div>
+
+  <!-- صرف -->
+  <div class="cat c2">
+    <div class="cat-head"><span class="cat-emoji">🔧</span><div><div class="cat-title">La conjugaison</div><div class="cat-title-fa">صرفِ فعل با on (مثل il/elle)</div></div></div>
+    <table class="tbl">
+      <tr><th>با nous</th><th>با on (روزمره)</th><th>فارسی</th></tr>
+      <tr><td>Nous mangeons</td><td>On mange</td><td class="fa">می‌خوریم</td></tr>
+      <tr><td>Nous avons</td><td>On a</td><td class="fa">داریم</td></tr>
+      <tr><td>Nous sommes</td><td>On est</td><td class="fa">هستیم</td></tr>
+      <tr><td>Nous allons</td><td>On va</td><td class="fa">می‌رویم</td></tr>
+    </table>
+    <div class="rule">می‌بینی که با <b>on</b> فعل کوتاه‌تر و ساده‌تر است — برای همین فرانسوی‌ها عاشقش‌اند!</div>
+  </div>
+
+  <!-- هماهنگی -->
+  <div class="cat c3">
+    <div class="cat-head"><span class="cat-emoji">⚠️</span><div><div class="cat-title">L'accord avec « on »</div><div class="cat-title-fa">هماهنگیِ صفت و اسم مفعول</div></div></div>
+    <div class="rule">این نکته‌ی ظریف و مهم است: فعل با <b>on</b> مفرد است، اما وقتی on به‌معنیِ «ما»ست، <b>صفت و اسم مفعول</b> می‌تواند با تعداد و جنسیتِ واقعیِ افراد <b>جمع/مؤنث</b> شود.</div>
+    <div class="ex"><span class="f">On est <span class="hl">contents</span>. <span style="color:#8a8275">(چند مرد یا گروه مختلط)</span></span><span class="p">ما خوشحالیم.</span></div>
+    <div class="ex"><span class="f">On est <span class="hl">contentes</span>. <span style="color:#8a8275">(چند زن)</span></span><span class="p">ما (زن‌ها) خوشحالیم.</span></div>
+    <div class="ex"><span class="f">Hier, on est <span class="hl">allés</span> à la plage.</span><span class="p">دیروز رفتیم ساحل. (فعل مفرد «est»، اما مفعول جمع «allés»)</span></div>
+    <div class="warn">⭐ پس قاعده این است: <b>فعل = مفرد</b> (on va, on est)، اما <b>صفت/مفعول = مطابقِ افرادِ واقعی</b> (contents, allées).</div>
+  </div>
+
+  <!-- on غیرشخصی -->
+  <div class="cat c1">
+    <div class="cat-head"><span class="cat-emoji">🌍</span><div><div class="cat-title">« On » impersonnel</div><div class="cat-title-fa">on به‌معنیِ «آدم/مردم» (کلی)</div></div></div>
+    <div class="rule">کاربرد دومِ <b>on</b>: وقتی فاعل نامشخص یا کلی است — معادلِ «آدم»، «مردم»، یا جمله‌ی مجهول در فارسی.</div>
+    <div class="ex"><span class="f">En France, <span class="hl">on</span> dîne vers 20 heures.</span><span class="p">در فرانسه، حدود ساعت ۸ شام می‌خورند.</span></div>
+    <div class="ex"><span class="f"><span class="hl">On</span> ne sait jamais.</span><span class="p">آدم هیچ‌وقت نمی‌دونه. / معلوم نیست.</span></div>
+    <div class="ex"><span class="f">Ici, <span class="hl">on</span> parle français.</span><span class="p">اینجا فرانسه صحبت می‌شود.</span></div>
+  </div>
+
+  <!-- تمرین -->
+  <div class="quiz">
+    <h2>✍️ تمرین تعاملی</h2>
+    <div class="qsub">گزینه‌ی درست را انتخاب کن</div>
+
+    <div class="q">
+      <div class="q-text">On ___ au restaurant ce soir.<span class="fa">امشب می‌ریم رستوران.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">va</div><div class="opt" data-ok="0">allons</div></div>
+      <div class="feedback">با on فعل مفرد می‌شود → <b>on va</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">Nous ___ très contents.<span class="fa">ما خیلی خوشحالیم.</span></div>
+      <div class="opts"><div class="opt" data-ok="0">est</div><div class="opt" data-ok="1">sommes</div></div>
+      <div class="feedback">با nous فعل جمع → <b>nous sommes</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">(چند خانم) On est ___ de vous voir.<span class="fa">ما (زن‌ها) از دیدنتون خوشحالیم.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">contentes</div><div class="opt" data-ok="0">content</div></div>
+      <div class="feedback">صفت با افرادِ واقعی (زنانِ جمع) هماهنگ می‌شود → <b>contentes</b></div>
+    </div>
+    <div class="q">
+      <div class="q-text">En France, on ___ beaucoup de pain.<span class="fa">در فرانسه نان زیاد می‌خورند.</span></div>
+      <div class="opts"><div class="opt" data-ok="1">mange</div><div class="opt" data-ok="0">mangent</div></div>
+      <div class="feedback">on غیرشخصی هم فعلِ مفرد می‌گیرد → <b>on mange</b></div>
+    </div>
+  </div>
+
+  <div class="footnote">© Hoda Khedmati — Français avec Hoda<br>on = nous (روزمره) &nbsp;|&nbsp; فعل مفرد، صفت مطابقِ افراد</div>
+</div>
+<script>
+document.querySelectorAll('.q').forEach(q=>{
+  const opts=q.querySelectorAll('.opt');const fb=q.querySelector('.feedback');
+  opts.forEach(o=>{o.addEventListener('click',()=>{
+    if(q.dataset.done)return;q.dataset.done="1";
+    const ok=o.dataset.ok==="1";o.classList.add(ok?'correct':'wrong');
+    if(!ok){opts.forEach(x=>{if(x.dataset.ok==="1")x.classList.add('correct');});}
+    fb.classList.add(ok?'ok':'no');
+  });});
+});
+</script>
+</body>
+</html>
