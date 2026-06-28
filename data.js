@@ -1118,6 +1118,15 @@ const LESSONS = [
     category: "culture", level: "B1",
     tags: ["فرهنگ","کانادا","Acadie","Guyane","fête"],
     summary: "جشن ملی آکادیایی‌ها در نیوبرانزویک و کارناوال ترسناک کاین در گویان فرانسه"
+  },
+
+  {
+    file: "CULTURE_saint_exupery.html",
+    title: "🌹 آنتوان دو سنت‌اگزوپری",
+    titleFr: "Antoine de Saint-Exupéry",
+    category: "culture", level: "B1",
+    tags: ["فرهنگ","ادبیات","Petit Prince","نویسنده","خلبان"],
+    summary: "زندگی آنتوان دو سنت‌اگزوپری؛ خلبان و نویسنده‌ی شازده‌کوچولو — آثار، جمله‌ی معروف، و ناپدیدشدنش. دوزبانه (فرانسه + فارسی)."
   },  {
     file: "VOCAB_mots_difficiles.html",
     title: "📚 ۱۰۰ کلمهٔ دشوار فرانسه",
