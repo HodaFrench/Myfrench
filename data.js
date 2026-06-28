@@ -608,6 +608,15 @@ const LESSONS = [
     tags: ["vocabulaire","TCF","B2","notes","évaluation","école","débat"],
     summary: "واژگان مناظره‌ی «نمرات و ارزشیابی در مدرسه» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
   },
+
+  {
+    file: "VOCAB_environnement_ecologie.html",
+    title: "📚 L'environnement & l'écologie",
+    titleFr: "L'environnement & l'écologie",
+    category: "vocab", level: "B2–C1",
+    tags: ["vocabulaire","TCF","B2","environnement","écologie","climat","pollution"],
+    summary: "واژگان تخصصی موضوع «محیط زیست و اکولوژی» برای TCF Canada (بیان شفاهی و کتبی) — دسته‌بندی‌شده، با تعریف، ترجمه‌ی فارسی و ۴ مثال (B2 تا B2+) برای هر کلمه."
+  },
   {
     file: "VOCAB_glottophobie.html",
     title: "📚 La glottophobie & les discriminations",
