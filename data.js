@@ -1756,6 +1756,39 @@ const LESSONS = [
   },
 
   {
+    file: "GRAM_intensite_comparaison.html",
+    title: "⚖️ شدت و مقایسه",
+    titleFr: "L'intensité et la comparaison",
+    category: "grammar",
+    level: "متوسط (A2–B1)",
+    premium: false,
+    tags: ["مقایسه","comparatif","superlatif","très","trop","plus que","meilleur"],
+    summary: "بیان شدت (très/trop/si) و مقایسه (plus/moins/aussi … que)، برترین (le plus)، استثناهای bon→meilleur و bien→mieux، مقایسه با اسم و فعل، با مثال، جدول و ۵ تمرین تعاملی.",
+  },
+
+  {
+    file: "GRAM_on_nous.html",
+    title: "🗣️ On یا Nous؟",
+    titleFr: "On ou Nous ?",
+    category: "grammar",
+    level: "متوسط (A2–B1)",
+    premium: false,
+    tags: ["on","nous","ضمیر","صرف فعل","هماهنگی","زبان روزمره"],
+    summary: "تفاوت on و nous در زبان روزمره و رسمی، صرف فعل با on (مثل il/elle)، نکته‌ی مهم هماهنگیِ صفت و اسم مفعول، و on غیرشخصی (به‌معنیِ آدم/مردم)، با جدول و ۴ تمرین.",
+  },
+
+  {
+    file: "GRAM_fautes_orthographe.html",
+    title: "✍️ اشتباهات املایی رایج",
+    titleFr: "Les fautes d'orthographe courantes",
+    category: "grammar",
+    level: "متوسط (A2–B2)",
+    premium: false,
+    tags: ["املا","orthographe","a à","et est","son sont","ce se","homophones"],
+    summary: "کلمه‌های هم‌صدا که بیشترین اشتباه نوشتاری را می‌سازند: a/à، et/est، son/sont، ce/se، ces/ses، و -er/-é. برای هر جفت یک ترفند ساده‌ی تشخیص + ۵ تمرین تعاملی.",
+  },
+
+  {
     file: "GRAM_verbes_en_y.html",
     title: "🔁 افعال با EN و Y",
     titleFr: "Les verbes avec EN et Y",
