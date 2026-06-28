@@ -47,6 +47,25 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 .ex .h{color:var(--rose);font-weight:700}
 .tip{margin-top:6px;background:rgba(176,122,74,.09);border-radius:10px;padding:9px 12px;font-size:13px;color:#7a5532;display:flex;gap:7px;line-height:1.7}
 .tip b{color:#9a6a35}
+.a-text h4{font-size:14.5px;color:var(--purple-d);margin:13px 0 6px;padding-bottom:4px;border-bottom:1.5px solid #ece4f6;display:flex;align-items:center;gap:6px;font-weight:700}
+.a-text h4:first-child{margin-top:2px}
+.a-text ul{margin:6px 0;padding-right:6px;list-style:none}
+.a-text li{position:relative;padding-right:18px;margin-bottom:6px;font-size:13.5px}
+.a-text li::before{content:"◖";position:absolute;right:0;color:var(--purple);font-size:10px;top:3px}
+.rulebox{background:linear-gradient(135deg,#f3eefb,#ece2f7);border-radius:11px;padding:11px 14px;margin:8px 0;font-size:13.5px;border-right:3px solid var(--purple);line-height:1.85}
+.rulebox b{color:var(--purple-d)}
+.cmp{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.cmp>div{flex:1;min-width:130px;border-radius:11px;padding:10px 12px;font-size:13px;line-height:1.7}
+.cmp .yes{background:rgba(46,139,107,.1);border:1px solid #b6e0cd}
+.cmp .no{background:rgba(176,80,111,.08);border:1px solid #e6c2cf}
+.cmp .lab{font-weight:700;font-size:12px;margin-bottom:4px;display:block}
+.cmp .yes .lab{color:var(--green-d)}
+.cmp .no .lab{color:var(--rose)}
+.warnb{background:rgba(196,80,45,.07);border:1px dashed #e0b3a0;border-radius:11px;padding:10px 13px;margin:9px 0;font-size:13px;line-height:1.8;color:#8a4a32}
+.warnb b{color:#c4502d}
+.deep{background:#faf7f0;border:1px solid #ece3d0;border-radius:11px;padding:10px 13px;margin:9px 0;font-size:12.5px;color:#6a6052;line-height:1.85}
+.deep b{color:var(--gold)}
+.src{margin-top:12px;font-size:11px;color:#9a93a8;border-top:1px solid #eee;padding-top:8px;line-height:1.7}
 .foot{text-align:center;font-size:12.5px;color:var(--gray);margin:24px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #d9cbb0}
 .foot b{color:var(--purple-d)}
 .hk-wm{position:fixed;pointer-events:none;z-index:99999;font-family:Georgia,serif;font-size:13px;font-weight:600;color:rgba(30,58,95,0.07);letter-spacing:2px;transform:rotate(-25deg);user-select:none;white-space:nowrap}
@@ -118,14 +137,45 @@ const CHAR = `<svg viewBox="0 0 128 140" xmlns="http://www.w3.org/2000/svg" aria
 const FAQS = [
   {
     q: `بعد از <span class="fr" dir="ltr">et</span> می‌شه لیزون کرد؟`,
-    a: `<p><b>نه! 🚫</b> بعد از <span class="ex" dir="ltr">et</span> (به معنیِ «و») <b>هیچ‌وقت</b> لیزون نمی‌کنیم — حتی اگه کلمه‌ی بعدی با حرف صدادار شروع بشه.</p>
-        <p>مثال‌ها:</p>
-        <p><span class="ex" dir="ltr">un homme <span class="h">et</span> une femme</span><br>
-        تلفظ: «اَن اُم / اِ / اون فام» — بین <span class="ex" dir="ltr">et</span> و <span class="ex" dir="ltr">une</span> هیچ اتصالی نیست.</p>
-        <p><span class="ex" dir="ltr">vingt <span class="h">et</span> un</span> (۲۱)<br>
-        «وَن‌ت ـ اِ ـ اَن» — باز هم بین <span class="ex" dir="ltr">et</span> و <span class="ex" dir="ltr">un</span> لیزون نداریم.</p>
-        <p>چرا؟ چون حرف «t» در آخرِ <span class="ex" dir="ltr">et</span> یه استثناست: این تنها موردیه که حتی با صدادارِ بعدش هم وصل نمی‌شه. یه‌جورایی <span class="ex" dir="ltr">et</span> همیشه «تنها» می‌مونه.</p>
-        <div class="tip">💡 <span><b>ترفند:</b> هر جا <span class="ex" dir="ltr">et</span> دیدی، یه مکث کوچیک بذار و جدا تلفظش کن. همین کافیه!</span></div>`
+    a: `<h4>🚫 پاسخ کوتاه</h4>
+        <p>نه — <b>هیچ‌وقت</b>. لیزون بعد از <span class="ex" dir="ltr">et</span> یکی از معدود لیزون‌هاییه که در فرانسه <b>کاملاً ممنوع</b>ه. این یه قانونِ <b>مطلق و بدون استثنا</b>ست: چه کلمه‌ی بعدی با حرف صدادار شروع بشه، چه با «h»، باز هم هیچ اتصالی انجام نمی‌شه.</p>
+
+        <h4>📖 لیزون اصلاً یعنی چی؟</h4>
+        <p>در فرانسه خیلی از حروفِ آخرِ کلمه‌ها تلفظ نمی‌شن (مثل «s» در <span class="ex" dir="ltr">les</span> یا «t» در <span class="ex" dir="ltr">petit</span>). ولی گاهی وقتی کلمه‌ی بعدی با صدادار شروع می‌شه، اون حرفِ خاموش «زنده» می‌شه و به صدادارِ بعدی می‌چسبه. به این پدیده می‌گن <b>لیزون</b>. مثلاً <span class="ex" dir="ltr">les enfants</span> می‌شه «له‌<b>ز</b>انفان». لیزون به فرانسه روانی و آهنگ می‌ده.</p>
+        <div class="rulebox">لیزون سه نوعه: <b>اجباری</b> (حتماً باید انجام بشه، مثل <span class="ex" dir="ltr">les amis</span>)، <b>اختیاری</b> (در زبان رسمی‌تر، دلبخواه)، و <b>ممنوع</b> (هیچ‌وقت نباید انجام بشه). لیزون بعد از <span class="ex" dir="ltr">et</span> در دسته‌ی <b>ممنوع</b>ه.</div>
+
+        <h4>❓ چرا بعد از et ممنوعه؟</h4>
+        <p>این فقط یه قانون حفظی نیست؛ یه دلیلِ تاریخی و یه دلیلِ کاربردی داره:</p>
+        <ul>
+        <li><b>دلیل تاریخی:</b> کلمه‌ی <span class="ex" dir="ltr">et</span> از واژه‌ی لاتینِ <span class="ex" dir="ltr">et</span> میاد. درسته که در نوشتار یه «t» داره، ولی این صدای «t» <b>قرن‌ها پیش</b> — خیلی زودتر از بقیه‌ی حروفِ پایانیِ فرانسه — به‌کلی از تلفظ افتاد. برای همین دیگه هیچ‌وقت برنمی‌گرده، حتی برای لیزون.</li>
+        <li><b>دلیل کاربردی (جلوگیری از سوءتفاهم):</b> اگه بعد از <span class="ex" dir="ltr">et</span> لیزون کنی و «ت» رو بچسبونی، شنونده ممکنه فکر کنه فعلِ <span class="ex" dir="ltr">est</span> (یعنی «است») رو گفتی! چون <span class="ex" dir="ltr">et</span> (و) و <span class="ex" dir="ltr">est</span> (است) فقط با همین تفاوت می‌تونن قاطی بشن.</li>
+        </ul>
+        <div class="warnb">⚠️ <b>مثالِ سوءتفاهم:</b> در <span class="ex" dir="ltr">un chien et un chat</span> (یه سگ و یه گربه)، اگه اشتباهی لیزون کنی و بگی «اَن شی‌ین <b>ت</b>اَن شا»، انگار داری می‌گی «سگ یه گربه <b>است</b>» — که بی‌معنیه! سگ که گربه نیست. پس نبودِ لیزون اینجا <b>معنی رو حفظ می‌کنه</b>.</div>
+
+        <h4>✅ مثال‌های درست</h4>
+        <div class="cmp">
+        <div class="yes"><span class="lab">✅ درست (بدون لیزون)</span><span class="ex" dir="ltr">un homme <span class="h">et</span> une femme</span><br>«اَن اُم / اِ / اون فام»</div>
+        <div class="no"><span class="lab">❌ غلط (با لیزون)</span><span class="ex" dir="ltr">un homme et‿une femme</span><br>«...اِ‌<b>ت</b>‌اون...» ❌</div>
+        </div>
+        <ul>
+        <li><span class="ex" dir="ltr">du pain <span class="h">et</span> du beurre</span> → «دو پَن / اِ / دو بور» (نون و کره)</li>
+        <li><span class="ex" dir="ltr">vingt <span class="h">et</span> un</span> (۲۱) → «وَن / تِ‌نوشته‌نشه / اِ / اَن» — بین et و un لیزون نیست</li>
+        <li><span class="ex" dir="ltr">lui <span class="h">et</span> elle</span> → «لویی / اِ / اِل» (او و او)</li>
+        </ul>
+
+        <h4>🎯 یه تله‌ی مهم: et ≠ est</h4>
+        <p>این دو کلمه هم‌صدا نیستن ولی نزدیک‌ان، و فرقِ لیزونشون کلیدیه:</p>
+        <div class="cmp">
+        <div class="no"><span class="lab">et (و) — هیچ‌وقت لیزون</span><span class="ex" dir="ltr">Paul <span class="h">et</span> Anne</span><br>«پل / اِ / اَن»</div>
+        <div class="yes"><span class="lab">est (است) — لیزون اجباری</span><span class="ex" dir="ltr">Paul <span class="h">est</span> ici</span><br>«پل / اِ‌<b>ت</b> / ایسی»</div>
+        </div>
+
+        <h4>💡 ترفندِ یادسپاری</h4>
+        <div class="rulebox">هر جا <span class="ex" dir="ltr">et</span> (به معنیِ «و») دیدی، در ذهنت یه <b>دیوارِ کوچیک</b> بعدش بذار: یه مکثِ کوتاه کن و جدا تلفظش کن. <span class="ex" dir="ltr">et</span> همیشه «تنها» می‌مونه و به هیچ کلمه‌ای نمی‌چسبه. ✋</div>
+
+        <div class="deep">🔎 <b>نکته‌ی پیشرفته:</b> یادت باشه لیزون فقط بعد از <span class="ex" dir="ltr">et</span> ممنوع نیست — بعد از <b>اسمِ مفرد</b> (<span class="ex" dir="ltr">un repas | excellent</span>)، بعد از <b>علامت نگارشی</b> (ویرگول و نقطه)، و قبل از کلماتی با «h»ی دمیده (<span class="ex" dir="ltr">les | héros</span>) هم ممنوعه. ولی <span class="ex" dir="ltr">et</span> معروف‌ترین و پرتکرارترین موردیه که زبان‌آموزها اشتباه می‌کنن.</div>
+
+        <div class="src">📚 منابع: ویکی‌پدیای فرانسه (Liaison en français)؛ دفتر زبان فرانسه‌ی کبک (OQLF/BDL — contextes de liaisons interdites)؛ مراجع تدریس FLE.</div>`
   },
   {
     q: `می‌گیم <span class="fr" dir="ltr">je suis 20 ans</span> یا <span class="fr" dir="ltr">j'ai 20 ans</span>؟`,
