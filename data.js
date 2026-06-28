@@ -1738,6 +1738,17 @@ const LESSONS = [
   },
 
   {
+    file: "GRAM_verbes_en_y.html",
+    title: "🔁 افعال با EN و Y",
+    titleFr: "Les verbes avec EN et Y",
+    category: "grammar",
+    level: "متوسط (B1)",
+    premium: false,
+    tags: ["pronoms", "en", "y", "à", "de", "ضمیر", "تمرین"],
+    summary: "ضمیرهای پرکاربرد en و y — قانون ساده (فعل با à ← y، فعل با de ← en)، کاربردِ مکان و مقدار، تله‌ی اشخاص، با ۱۴ مثال و کوییز تعاملی.",
+  },
+
+  {
     file: "GRAM_mettre_en_valeur_arguments.html",
     title: "✨ برجسته کردن استدلال‌ها",
     titleFr: "Mettre en valeur ses arguments",
