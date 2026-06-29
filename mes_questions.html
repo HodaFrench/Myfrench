@@ -97,17 +97,46 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 </div>
 
 <script>
-const CHAR = `<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+const CHAR = `<svg viewBox="0 0 128 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
-<linearGradient id="qg" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#8a6bc4"/><stop offset="1" stop-color="#6c4d9e"/>
-</linearGradient>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7cfae"/><stop offset="1" stop-color="#e9b58d"/></linearGradient>
+<linearGradient id="hr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b4230"/><stop offset="1" stop-color="#34241a"/></linearGradient>
+<linearGradient id="tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9474c1"/><stop offset="1" stop-color="#6c4d9e"/></linearGradient>
 </defs>
-<circle cx="48" cy="48" r="42" fill="none" stroke="#e4d7f4" stroke-width="3"/>
-<circle cx="48" cy="48" r="33" fill="url(#qg)"/>
-<text x="48" y="49" text-anchor="middle" dominant-baseline="central" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#ffffff">؟</text>
-<circle cx="80" cy="26" r="4" fill="#c9b3ec"/>
-<circle cx="14" cy="62" r="3" fill="#d9c9f0"/>
+<ellipse cx="64" cy="135" rx="46" ry="6" fill="#6c4d9e" opacity="0.12"/>
+<path d="M20 139 Q24 100 64 96 Q104 100 108 139 Z" fill="url(#tp)"/>
+<path d="M44 104 Q40 122 52 138 L40 138 Q30 120 34 102 Z" fill="#5e4090" opacity="0.45"/>
+<rect x="55" y="82" width="18" height="16" rx="7" fill="url(#sk)"/>
+<path d="M34 56 Q30 14 64 14 Q98 14 94 56 Q90 32 64 31 Q38 32 34 56 Z" fill="url(#hr)"/>
+<circle cx="64" cy="54" r="30" fill="url(#sk)"/>
+<path d="M34 54 Q26 90 40 110 Q49 86 45 58 Z" fill="url(#hr)"/>
+<path d="M94 54 Q102 90 88 110 Q79 86 83 58 Z" fill="url(#hr)"/>
+<path d="M34 56 Q33 30 64 32 Q64 47 44 50 Q37 52 34 56 Z" fill="url(#hr)"/>
+<path d="M94 56 Q95 30 64 32 Q64 47 84 50 Q91 52 94 56 Z" fill="url(#hr)"/>
+<ellipse cx="47" cy="63" rx="5" ry="3" fill="#e88aa0" opacity="0.4"/>
+<ellipse cx="81" cy="63" rx="5" ry="3" fill="#e88aa0" opacity="0.4"/>
+<ellipse cx="52" cy="55" rx="4" ry="5.2" fill="#fff"/>
+<ellipse cx="76" cy="55" rx="4" ry="5.2" fill="#fff"/>
+<circle cx="53.4" cy="53.4" r="2.6" fill="#3a2a1f"/>
+<circle cx="77.4" cy="53.4" r="2.6" fill="#3a2a1f"/>
+<circle cx="54.3" cy="52.3" r="0.9" fill="#fff"/>
+<circle cx="78.3" cy="52.3" r="0.9" fill="#fff"/>
+<path d="M46 47 Q52 43 59 47" stroke="#3a2a1f" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+<path d="M69 47 Q76 43 82 47" stroke="#3a2a1f" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+<path d="M64 57 Q66 62 62 63" stroke="#d59a76" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+<path d="M55 69 Q64 74 72 68" stroke="#b5705a" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+<path d="M96 116 Q110 92 86 80" fill="none" stroke="url(#tp)" stroke-width="15" stroke-linecap="round"/>
+<ellipse cx="82" cy="82" rx="11" ry="9" fill="url(#sk)"/>
+<g fill="url(#sk)" stroke="#d9a276" stroke-width="0.6">
+<rect x="71" y="66" width="5.2" height="14" rx="2.5"/>
+<rect x="77" y="64" width="5.2" height="16" rx="2.5"/>
+<rect x="83" y="65" width="5.2" height="15" rx="2.5"/>
+<rect x="89" y="68" width="5.2" height="12" rx="2.5"/>
+</g>
+<circle cx="103" cy="34" r="14" fill="#8a6bc4"/>
+<text x="103" y="35" text-anchor="middle" dominant-baseline="central" font-family="Georgia,serif" font-size="18" font-weight="700" fill="#fff">؟</text>
+<circle cx="120" cy="16" r="3.5" fill="#c9b3ec"/>
+<circle cx="113" cy="50" r="2.4" fill="#d9c9f0"/>
 </svg>`;
 
 const FAQS = [
