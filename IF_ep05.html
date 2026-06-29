@@ -47,6 +47,14 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 .ap-speed-btn:hover{background:rgba(255,255,255,.25)}
 .ap-speed-btn.active{background:#fff;color:#1e3a5f}
 .ap-fallback{display:inline-block;margin-top:10px;color:rgba(255,255,255,.9);font-size:11.5px;text-decoration:underline}
+
+/* tooltip کلیک‌پذیر هایلایت (موبایل‌فرست) */
+.hl-v,.hl-g,.hl-e{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#hl-tip{position:fixed;z-index:99998;max-width:260px;background:#23304a;color:#fff;font-family:'Estedad',sans-serif;font-size:13.5px;line-height:1.7;padding:10px 13px;border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.28);opacity:0;transform:translateY(6px);transition:opacity .18s,transform .18s;pointer-events:none;text-align:right;direction:rtl}
+#hl-tip.show{opacity:1;transform:translateY(0)}
+#hl-tip::after{content:"";position:absolute;left:var(--ax,50%);bottom:-7px;transform:translateX(-50%);border:7px solid transparent;border-top-color:#23304a;border-bottom:0}
+#hl-tip.below::after{top:-7px;bottom:auto;border-top:0;border-bottom-color:#23304a}
+#hl-tip .tw{color:#ffd9a0;font-weight:700;font-family:'Roboto',serif;direction:ltr;display:block;margin-bottom:3px;font-size:13px}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="tracker.js"></script>
@@ -171,5 +179,42 @@ function setSpeed(rate, btn){
 }
 </script>
 <script>hodaAutoInitFull();</script>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.id='hl-tip';document.body.appendChild(tip);
+  var open=false;
+  function show(el){
+    var t=el.getAttribute('title')||el.getAttribute('data-tip')||'';
+    if(!t){return;}
+    // جداکردن کلمه و توضیح (الگو: «کلمه — توضیح» یا کل متن)
+    var word=el.textContent.trim();
+    tip.innerHTML='<span class="tw" dir="ltr">'+word+'</span>'+t;
+    tip.classList.add('show');open=true;
+    var r=el.getBoundingClientRect();
+    var tr=tip.getBoundingClientRect();
+    var left=r.left+r.width/2-tr.width/2;
+    left=Math.max(8,Math.min(left,window.innerWidth-tr.width-8));
+    var top=r.top-tr.height-10;
+    tip.classList.remove('below');
+    if(top<8){top=r.bottom+10;tip.classList.add('below');}
+    tip.style.left=left+'px';tip.style.top=top+'px';
+    var ax=r.left+r.width/2-left;tip.style.setProperty('--ax',ax+'px');
+  }
+  function hide(){tip.classList.remove('show');open=false;}
+  document.querySelectorAll('.hl-v,.hl-g,.hl-e').forEach(function(el){
+    // جابجایی title به data-tip تا تول‌تیپ مرورگر ظاهر نشه
+    var t=el.getAttribute('title');
+    if(t){el.setAttribute('data-tip',t);el.removeAttribute('title');}
+    el.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(open&&tip._cur===el){hide();tip._cur=null;return;}
+      tip._cur=el;show(el);
+    });
+  });
+  document.addEventListener('click',function(){if(open)hide();});
+  window.addEventListener('scroll',function(){if(open)hide();},{passive:true});
+  window.addEventListener('resize',function(){if(open)hide();});
+})();
+</script>
 </body>
 </html>
