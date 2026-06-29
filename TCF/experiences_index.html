@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تجربه‌های بچه‌ها | TCF</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--teal:#2e7d8f;--teal-d:#236170;--amber:#c9892f;--amber-d:#a06d1f}
+body{font-family:'Estedad',sans-serif;background:#f4f3f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(201,137,47,0.05) 31px,rgba(201,137,47,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%28201%2C137%2C47%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat;opacity:1}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--amber);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#c9892f,#a06d1f);color:#fff;padding:28px 26px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.2px;margin-bottom:11px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:21px;font-weight:700;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.93;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#fdf6ea;border-right:4px solid var(--amber);border-radius:12px;padding:14px 17px;margin-top:18px;font-size:13.5px;line-height:1.95}
+.intro b{color:var(--amber-d)}
+
+/* کارت اطلاعات بالای هر تجربه */
+.exp-card{background:var(--white);border:1px solid var(--line);border-radius:18px;margin-top:18px;box-shadow:0 4px 16px rgba(201,137,47,.08);overflow:hidden}
+.exp-meta{background:linear-gradient(135deg,#fdf6ea,#f7ecd6);padding:16px 18px;border-bottom:2px solid #f0ddb8}
+.meta-title{font-size:16px;font-weight:800;color:var(--amber-d);margin-bottom:12px;display:flex;align-items:center;gap:8px;line-height:1.4}
+.meta-grid{display:flex;flex-direction:column;gap:8px}
+.meta-row{display:flex;align-items:center;gap:9px;font-size:13.5px}
+.meta-ic{flex-shrink:0;width:30px;height:30px;background:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 2px 6px rgba(201,137,47,.15)}
+.meta-k{color:var(--gray);font-size:12px;min-width:74px}
+.meta-v{font-weight:700;color:var(--ink)}
+
+/* بدنه‌ی شرح تجربه */
+.exp-body{padding:16px 18px}
+.exp-body h3{font-size:14px;font-weight:800;color:var(--amber-d);margin:16px 0 8px;padding-bottom:5px;border-bottom:1.5px solid #f0ddb8;display:flex;align-items:center;gap:7px}
+.exp-body h3:first-child{margin-top:0}
+.exp-body p{font-size:14px;line-height:2.05;color:#33302a;margin-bottom:10px}
+.exp-body .quote{background:#faf7f0;border-right:3px solid var(--amber);border-radius:10px;padding:12px 15px;font-size:13.8px;line-height:2.05;color:#4a453c;margin:10px 0}
+
+/* هایلایت نکات مهم */
+.hl{background:linear-gradient(transparent 55%, #ffe39a 55%);font-weight:700;color:#5a4012;padding:0 2px}
+.hl-g{background:linear-gradient(transparent 55%, #b6e8cf 55%);font-weight:700;color:#1c5a3e;padding:0 2px}
+.hl-r{background:linear-gradient(transparent 55%, #f6c6d4 55%);font-weight:700;color:#8a2c47;padding:0 2px}
+.fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+
+/* جعبه‌ی درس‌های کلیدی */
+.keybox{background:rgba(46,139,107,.07);border:1px solid #bce0cd;border-radius:13px;padding:14px 16px;margin-top:16px}
+.keybox .kt{font-size:13.5px;font-weight:800;color:var(--green-d);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.keybox ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.keybox li{position:relative;padding-right:22px;font-size:13.3px;line-height:1.8;color:#2a3a30}
+.keybox li::before{content:"✓";position:absolute;right:0;top:1px;color:var(--green);font-weight:800}
+
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:22px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #e0cfa8}
+.foot b{color:var(--amber-d)}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; آمادگی TCF</a>
+  <span class="hoda-back-label">🗣️ تجربه‌های بچه‌ها</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">🗣️ EXPÉRIENCES · RETOURS D'EXAMEN</div>
+  <h1>تجربه‌های بچه‌ها</h1>
+  <div class="sub">تجربه‌ی واقعیِ داوطلب‌ها از آزمون TCF —<br>خلاصه‌شده با نکته‌های کلیدیِ هایلایت‌شده 🇨🇦</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    🎯 اینجا تجربه‌ی واقعیِ کسایی که آزمون TCF دادن رو جمع و <b>خلاصه</b> کردم، با <b>نکته‌های مهمِ هایلایت‌شده</b>. تمرکز روی <b>روش‌ها، منابع، حال‌وهوای مرکز و رفتار ممتحن‌هاست</b> — نه موضوع‌های خاصِ اون روز.
+  </div>
+
+  <!-- ===== تجربه ۱ ===== -->
+  <div class="exp-card">
+    <div class="exp-meta">
+      <div class="meta-title">🗣️ تجربه‌ی شفاهی، شنیداری، خواندنی و نوشتاری</div>
+      <div class="meta-grid">
+        <div class="meta-row"><span class="meta-ic">📅</span><span class="meta-k">تاریخ آزمون</span><span class="meta-v">۲۹ ژوئن ۲۰۲۶</span></div>
+        <div class="meta-row"><span class="meta-ic">📍</span><span class="meta-k">مرکز</span><span class="meta-v">مرکز GB — تورنتو</span></div>
+        <div class="meta-row"><span class="meta-ic">🍁</span><span class="meta-k">نوع آزمون</span><span class="meta-v">TCF Canada</span></div>
+      </div>
+    </div>
+    <div class="exp-body">
+
+      <h3>🏢 حال‌وهوای مرکز</h3>
+      <p>به گفته‌ی این داوطلب، <span class="hl-g">مرکز GB تورنتو مرکزِ خوب و حرفه‌ای</span> بود. بیشترِ کسانی که برای آزمون اومده بودن هندی بودن. سه نفر از ممتحن‌ها رو دیده (دو خانم و یک آقای سیاه‌پوست) و یک خانمِ کبکی هم بوده.</p>
+
+      <h3>👤 رفتار ممتحن</h3>
+      <p>ممتحنِ این داوطلب یک آقای چشم‌آبی <span class="fr">با لهجه‌ی کاملِ فرانسوی</span> بوده. توصیفش این بود: <span class="hl-g">ممتحنِ خوب، زیرک و دوستانه</span> که <span class="hl-g">اصلاً استرس نمی‌داد</span>. حتی موقعِ صحبت بیرون رو نگاه می‌کرد تا داوطلب راحت باشه.</p>
+      <p>یک نکته‌ی مهم: ممتحن مدام وسطِ حرف می‌پرید و <span class="hl-r">با شیطنت نمی‌ذاشت داوطلب متنِ حفظی بگه</span> — تا جوابِ خودش رو در لحظه بده. این داوطلب حدس می‌زنه که این کار هم برای کمک بوده و هم چون <span class="hl-r">ظاهراً اگر بفهمن جواب حفظی‌ست، از نمره کم می‌کنن</span>.</p>
+      <div class="quote">💬 «با اینکه وسطاش شیطنت می‌کرد که من حفظی نگم، اما فکر می‌کنم یه‌جورایی برای کمک بهم می‌پرسید — چون مثل اینکه اگه بفهمن از روی حفظی می‌گی، نمره کم می‌کنن.»</div>
+
+      <h3>🎤 تجربه‌ی بخش شفاهی</h3>
+      <p>در طولِ آزمون، هر بار که داوطلب به سمتِ <span class="hl-r">متنِ حفظی‌اش برمی‌گشت، ممتحن سرش رو تکون می‌داد و قطعش می‌کرد</span> و یه سوالِ شخصی و فی‌البداهه می‌پرسید تا جوابِ واقعی بگیره. در پایان، وقتی یک دقیقه مونده بود، ممتحن سوالِ آخر رو نپرسید و آزمون تموم شد. وقتی داوطلب پرسید «چطور بود؟»، ممتحن گفت <span class="fr">«نمی‌تونیم بگیم»</span> (یعنی ممتحن‌ها اجازه‌ی اعلامِ نتیجه ندارن).</p>
+
+      <h3>📚 منابع و روش‌ها</h3>
+      <p>این داوطلب برای <span class="hl">شنیداری و خواندنی، روی «سایت ایلیا» خیلی مسلط</span> بوده. به گفته‌ی خودش، <span class="hl">سوال‌های شنیداری از سوالِ ۱۰ به بعد تکراری</span> شدن و چون به سایت مسلط بوده، با دیدنِ گزینه جواب رو می‌زده. <span class="hl">خواندنی هم تکراری</span> بوده.</p>
+      <div class="quote">💬 «من خیلی مسلط بودم به سایت ایلیا — تا گزینه رو می‌دیدم می‌زدم. ریدینگم هم تکراری بود.»</div>
+      <p>یک نکته‌ی جالب: این داوطلب <span class="hl-r">عمداً یک سوال از هر بخش رو اشتباه زده</span> تا نمره‌اش کامل (C2) نشه و دردسرساز نشه — و در نهایت <span class="hl-g">هر دو مهارتِ شنیداری و خواندنی رو C2</span> گرفته.</p>
+
+      <h3>✍️ بخش نوشتاری (روش، نه موضوع)</h3>
+      <p>برای نوشتاری هم بخشی از سوژه‌ها <span class="hl">از سایت ایلیا آشنا/تکراری</span> بوده و فقط یکی از موضوع‌ها جدید بوده. (به خواسته‌ی خودمون، موضوع‌های دقیق رو اینجا نمی‌نویسیم.)</p>
+
+      <div class="keybox">
+        <div class="kt">⭐ درس‌های کلیدیِ این تجربه</div>
+        <ul>
+          <li><b>متنِ حفظی خطرناکه:</b> ممتحن‌ها زبده‌ان و حفظی‌بودن رو تشخیص می‌دن و ظاهراً نمره کم می‌کنن. تمرین کن که در لحظه و طبیعی جواب بدی.</li>
+          <li><b>تسلط روی بانکِ سوال (مثل سایت ایلیا)</b> برای شنیداری و خواندنی می‌تونه خیلی کمک‌کننده باشه، چون بخشی از سوال‌ها تکراری‌ان.</li>
+          <li><b>ممتحن اگه وسطِ حرفت پرید، نترس</b> — این طبیعیه و گاهی برای کمکه. آماده باش که نظرِ شخصیت رو بدی.</li>
+          <li><b>ممتحن‌ها نتیجه رو اعلام نمی‌کنن</b> («On ne peut pas vous dire») — پس بعد از آزمون انتظارِ بازخورد نداشته باش.</li>
+          <li><b>مرکز GB تورنتو</b> از نظرِ این داوطلب حرفه‌ای و کم‌استرس بوده.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="foot">💬 تجربه‌های بیشتر به‌مرور اضافه می‌شن. هر کدوم درس‌های مهمی برای آمادگیِ بهتر داره.</div>
+</div>
+</body>
+</html>
