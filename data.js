@@ -1098,6 +1098,15 @@ const LESSONS = [
     summary: "تفاوت C'est و Il est — یکی از رایج‌ترین اشتباهات"
   },
   {
+    file: "VOCAB_decrire_personnalite.html",
+    title: "📚 توصیف شخصیت (Dis-le autrement)",
+    titleFr: "Décrire la personnalité",
+    category: "vocab", level: "B1–B2",
+    tags: ["vocabulaire","personnalité","caractère","expressions","B1","bon vivant","portrait"],
+    summary: "به‌جای جمله‌ی طولانی، یک اسمِ دقیق! ۸ عبارتِ پرکاربرد برای توصیفِ شخصیت آدم‌ها (bon vivant, grande gueule, coureur de jupons, langue de vipère, blagueur, geek, fêtard, footeux) — هر کدام با معنی، ترجمه‌ی تحت‌اللفظی و ۳ مثال.",
+  },
+
+  {
     file: "VOCAB_decrire_look.html",
     title: "👤 Décrire le look de quelqu'un",
     titleFr: "Décrire le look",
