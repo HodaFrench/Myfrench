@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Décrire la personnalité | Vocabulaire</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--teal:#2e7d8f;--cream:#f9f8fa}
+body{font-family:'Estedad',sans-serif;background:#f4f3f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(46,125,143,0.05) 31px,rgba(46,125,143,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%2846%2C125%2C143%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat;opacity:1}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--teal);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#2e7d8f,#236170);color:#fff;padding:28px 26px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.5px;margin-bottom:12px;font-weight:600}
+.hero h1{font-family:'Roboto',serif;font-size:23px;font-weight:700;margin-bottom:6px;direction:ltr}
+.hero .sub{font-size:13px;opacity:.92}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#eef6f8;border-right:4px solid var(--teal);border-radius:12px;padding:15px 18px;margin-top:18px;font-size:14px;line-height:2}
+.intro b{color:#236170}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-top:16px;box-shadow:0 3px 14px rgba(46,125,143,.07);overflow:hidden}
+.card-head{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;background:linear-gradient(140deg,#f3f9fb,#e9f2f5)}
+.emoji{font-size:26px;flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;box-shadow:0 2px 6px rgba(46,125,143,.12)}
+.titles{flex:1;min-width:0}
+.expr{font-family:'Roboto',serif;font-size:17px;font-weight:700;color:#236170;direction:ltr;text-align:left}
+.trait{font-size:12.5px;color:var(--gray);margin-top:2px}
+.chev{flex-shrink:0;color:var(--teal);font-size:16px;transition:transform .3s}
+.card.open .chev{transform:rotate(180deg)}
+.body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.card.open .body{max-height:800px}
+.inner{padding:14px 16px;border-top:1px solid var(--line)}
+.meaning{font-size:14px;color:#26333a;line-height:1.9;margin-bottom:10px}
+.meaning b{color:#236170}
+.lit{font-size:12.5px;color:#7a6f60;font-style:italic;background:rgba(176,122,74,.08);border-radius:8px;padding:5px 10px;display:inline-block;margin-bottom:10px}
+.ex-lab{font-size:11px;font-weight:700;color:var(--gray);margin-bottom:5px}
+.exs{display:flex;flex-direction:column;gap:7px}
+.exline{background:rgba(46,139,107,.06);border-right:3px solid var(--green);border-radius:9px;padding:7px 11px}
+.exline .f{display:block;direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:13.8px;color:#2c3e35;font-weight:600}
+.exline .p{display:block;font-size:12.3px;color:#5a6b60;margin-top:2px}
+.reg{margin-top:10px;font-size:11.5px;color:var(--rose);background:rgba(176,80,111,.07);border-radius:9px;padding:6px 11px}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:22px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #cbd9dc}
+.foot b{color:#236170}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; واژگان</a>
+  <span class="hoda-back-label">📚 توصیف شخصیت</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📚 VOCABULAIRE · DIS-LE AUTREMENT</div>
+  <h1>Décrire la personnalité</h1>
+  <div class="sub">به‌جای یه جمله‌ی طولانی، یه کلمه‌ی دقیق! 🇫🇷</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    یه ترفندِ مهم برای طبیعی‌تر حرف‌زدن: به‌جای توضیحِ طولانیِ یه ویژگی، فرانسوی‌ها اغلب از <b>یه اسمِ خاص</b> استفاده می‌کنن.
+    مثلاً به‌جای «او زیاد حرف می‌زند» می‌گن <b dir="ltr">C'est une grande gueule</b>. این بخش این اسم‌ها رو با مثال یادت می‌ده.
+  </div>
+  <div id="list"></div>
+  <div class="foot">💡 این کلمه‌ها فرانسه‌ت رو <b>طبیعی و بومی</b> می‌کنن — توی توصیفِ آدم‌ها به کارشون ببر.</div>
+</div>
+
+<script>
+const ITEMS = [
+{
+  emoji:"🍷", expr:"un bon vivant", trait:"Il aime les plaisirs de la vie",
+  lit:"یه «خوب‌زیست»",
+  mean:"کسی که <b>از لذت‌های زندگی لذت می‌بره</b> — خوش‌خوراک، خوش‌گذران و سرزنده. آدمی که عاشقِ غذای خوب، شراب، دوستان و خوش‌بودنه.",
+  ex:[["Mon oncle est un vrai bon vivant : il adore cuisiner et recevoir ses amis.","عموی من واقعاً اهلِ خوش‌گذرونیه: عاشقِ آشپزی و مهمون‌داریه."],
+      ["Profite de la vie, sois un bon vivant !","از زندگی لذت ببر، خوش بگذرون!"],
+      ["C'est un bon vivant qui ne refuse jamais un bon repas.","آدمِ خوش‌خوراکیه که هیچ‌وقت یه غذای خوب رو رد نمی‌کنه."]],
+  reg:"مثبت و دوست‌داشتنی."
+},
+{
+  emoji:"🗣️", expr:"une grande gueule", trait:"Il aime parler beaucoup",
+  lit:"یه «دهن‌گنده»",
+  mean:"کسی که <b>زیاد و بلند حرف می‌زنه</b> و رُک و پررو نظر می‌ده — گاهی پشتِ حرفش عمل نیست. می‌تونه هم منفی باشه هم تحسین‌آمیز (آدمِ نترس در حرف‌زدن).",
+  ex:[["En réunion, c'est une grande gueule, mais il travaille peu.","تو جلسه خیلی حرف می‌زنه، ولی کم کار می‌کنه."],
+      ["Ne fais pas ta grande gueule !","انقدر زبون‌درازی نکن!"],
+      ["C'est une grande gueule au grand cœur.","زبونش درازه ولی دلش مهربونه."]],
+  reg:"خودمونی (familier)."
+},
+{
+  emoji:"💘", expr:"un coureur de jupons", trait:"Il aime séduire les femmes",
+  lit:"یه «دونده‌ی دامن‌ها»",
+  mean:"مردی که <b>دائم دنبالِ دل‌بری از زن‌هاست</b> و عاشق‌پیشه و هوس‌بازه — معادلِ «زن‌باز» یا «دختربازِ» فارسی.",
+  ex:[["Méfie-toi de lui, c'est un vrai coureur de jupons.","ازش حواست باشه، آدمِ هوس‌بازیه."],
+      ["Il a la réputation d'être un coureur de jupons.","به زن‌باز بودن معروفه."],
+      ["Jeune, mon grand-père était un sacré coureur de jupons.","پدربزرگم جوون که بود حسابی دختر‌باز بود."]],
+  reg:"خودمونی، کمی منفی."
+},
+{
+  emoji:"🐍", expr:"une langue de vipère", trait:"Il aime dire du mal des autres",
+  lit:"یه «زبانِ افعی»",
+  mean:"کسی که <b>پشتِ سرِ دیگران بد می‌گه</b> و بدگو و نیش‌زنه — معادلِ «زبانِ مار» یا «نیش‌دار» فارسی.",
+  ex:[["Fais attention à ce qu'elle dit, c'est une langue de vipère.","به حرف‌هاش دقت کن، آدمِ بدگوییه."],
+      ["Quelle langue de vipère ! Elle critique tout le monde.","عجب زبونِ ماری! از همه بد می‌گه."],
+      ["Les langues de vipère adorent les rumeurs.","آدم‌های نیش‌دار عاشقِ شایعه‌ان."]],
+  reg:"منفی."
+},
+{
+  emoji:"😂", expr:"un blagueur", trait:"Il adore faire des blagues",
+  lit:"یه «شوخی‌کن»",
+  mean:"کسی که <b>عاشقِ شوخی و جوک گفتنه</b> و بامزه و شیطونه — معادلِ «شوخ‌طبع» یا «بامزه».",
+  ex:[["Mon frère est un grand blagueur, il fait rire tout le monde.","داداشم خیلی شوخه، همه رو می‌خندونه."],
+      ["Ne le prends pas au sérieux, c'est un blagueur.","جدی‌اش نگیر، داره شوخی می‌کنه."],
+      ["Avec ce blagueur, on ne s'ennuie jamais !","با این آدمِ بامزه هیچ‌وقت حوصله‌مون سر نمی‌ره!"]],
+  reg:"خنثی/مثبت. (مؤنث: une blagueuse)"
+},
+{
+  emoji:"💻", expr:"un geek", trait:"Il adore l'informatique",
+  lit:"یه «گیک» (وام‌واژه از انگلیسی)",
+  mean:"کسی که <b>عاشقِ کامپیوتر، فناوری و بازی‌های ویدیویی‌ه</b> — معادلِ «خوره‌ی کامپیوتر/تکنولوژی».",
+  ex:[["Mon cousin est un geek, il passe ses journées sur son ordinateur.","پسرعموم گیکه، تمامِ روز پای کامپیوترشه."],
+      ["C'est un geek qui connaît tout sur les nouvelles technologies.","خوره‌ی تکنولوژیه و همه‌چیز رو درباره‌ی فناوری‌های جدید می‌دونه."],
+      ["Les geeks adorent les jeux vidéo et les gadgets.","گیک‌ها عاشقِ بازی‌های ویدیویی و گجت‌ان."]],
+  reg:"خودمونی، امروزی."
+},
+{
+  emoji:"🎉", expr:"un fêtard", trait:"Il adore faire la fête",
+  lit:"یه «جشن‌گیر»",
+  mean:"کسی که <b>عاشقِ مهمونی و خوش‌گذرونیِ شبانه‌ست</b> — معادلِ «اهلِ پارتی» یا «خوش‌گذران».",
+  ex:[["À l'université, c'était un vrai fêtard.","تو دانشگاه واقعاً اهلِ پارتی بود."],
+      ["Les fêtards sortent presque tous les week-ends.","آدم‌های اهلِ مهمونی تقریباً هر آخرِهفته بیرون می‌رن."],
+      ["Je suis trop fatigué pour être un fêtard ce soir.","امشب زیادی خسته‌ام که اهلِ پارتی باشم."]],
+  reg:"خودمونی. (مؤنث: une fêtarde)"
+},
+{
+  emoji:"⚽", expr:"un footeux", trait:"Il adore le foot",
+  lit:"یه «فوتبالی»",
+  mean:"کسی که <b>عاشقِ فوتباله</b> (چه بازی‌کردن چه تماشا) — معادلِ «فوتبال‌دوست» یا «طرفدارِ پروپاقرصِ فوتبال».",
+  ex:[["Mon père est un footeux, il regarde tous les matchs.","بابام فوتبالیه، همه‌ی بازی‌ها رو می‌بینه."],
+      ["Le dimanche, les footeux se retrouvent au stade.","یکشنبه‌ها فوتبال‌دوست‌ها تو ورزشگاه جمع می‌شن."],
+      ["En tant que footeux, il connaît tous les joueurs.","به‌عنوان یه عاشقِ فوتبال، همه‌ی بازیکن‌ها رو می‌شناسه."]],
+  reg:"خیلی خودمونی. (مؤنث: une footeuse)"
+}
+];
+
+function render(){
+  document.getElementById('list').innerHTML = ITEMS.map((it,i)=>`
+    <div class="card" data-i="${i}">
+      <div class="card-head" onclick="tog(${i})">
+        <div class="emoji">${it.emoji}</div>
+        <div class="titles">
+          <div class="expr">C'est ${it.expr}</div>
+          <div class="trait">${it.trait}</div>
+        </div>
+        <span class="chev">&#9662;</span>
+      </div>
+      <div class="body"><div class="inner">
+        <div class="lit">📖 ${it.lit}</div>
+        <div class="meaning">${it.mean}</div>
+        <div class="ex-lab">✍️ مثال‌ها</div>
+        <div class="exs">${it.ex.map(x=>`<div class="exline"><span class="f">${x[0]}</span><span class="p">${x[1]}</span></div>`).join('')}</div>
+        <div class="reg">📌 ${it.reg}</div>
+      </div></div>
+    </div>`).join('');
+}
+function tog(i){document.querySelector('.card[data-i="'+i+'"]').classList.toggle('open');}
+render();
+document.querySelector('.card') && document.querySelector('.card').classList.add('open');
+</script>
+</body>
+</html>
