@@ -286,5 +286,32 @@
   </script>
   <script src="protect.js"></script>
 <script>hodaAutoInitFull();</script>
+<script>
+/* hoda-protect: بازدارنده‌ی کپی (نه امنیت کامل) */
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();},{capture:true});
+  document.addEventListener('selectstart',function(e){
+    var t=e.target;
+    if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;
+    e.preventDefault();
+  });
+  document.addEventListener('copy',function(e){
+    var t=e.target;
+    if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;
+    e.preventDefault();
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    var inField=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable);
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&['c','x','u','s','a'].indexOf(k)>-1&&!inField){e.preventDefault();}
+  },{capture:true});
+})();
+</script>
+<style>
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+</style>
 </body>
 </html>
