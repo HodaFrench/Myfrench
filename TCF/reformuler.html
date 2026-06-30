@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سه تکنیک بازگویی | TCF</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--teal:#2e7d8f;--teal-d:#236170;--purple:#7a5ba8;--purple-d:#5a3b88}
+body{font-family:'Estedad',sans-serif;background:#f4f3f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(122,91,168,0.05) 31px,rgba(122,91,168,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%28122%2C91%2C168%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat;opacity:1}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--purple);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;padding:28px 26px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.2px;margin-bottom:11px;font-weight:600}
+.hero h1{font-family:'Estedad',serif;font-size:21px;font-weight:800;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.93;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#f3eefb;border-right:4px solid var(--purple);border-radius:12px;padding:15px 18px;margin-top:18px;font-size:14px;line-height:2.05}
+.intro b{color:var(--purple-d)}
+.why{background:rgba(46,139,107,.07);border:1px solid #bce0cd;border-radius:12px;padding:13px 16px;margin-top:14px;font-size:13.5px;line-height:1.95}
+.why b{color:var(--green-d)}
+.sec-label{font-size:12px;font-weight:800;color:var(--purple-d);letter-spacing:1px;margin:24px 4px 2px;text-transform:uppercase;display:flex;align-items:center;gap:7px}
+.sec-label::before{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#d6c9e8)}
+.sec-label::after{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,#d6c9e8,transparent)}
+.tech{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-top:16px;box-shadow:0 3px 14px rgba(122,91,168,.08);overflow:hidden}
+.tech-head{display:flex;align-items:center;gap:12px;padding:15px 17px;background:linear-gradient(140deg,#f5f0fc,#ece2f7)}
+.tech-num{flex-shrink:0;width:38px;height:38px;background:var(--purple);color:#fff;border-radius:11px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.tech-title{font-size:15.5px;font-weight:800;color:var(--purple-d);line-height:1.4}
+.tech-sub{font-size:11.5px;color:var(--gray);direction:ltr;text-align:left;margin-top:2px;font-family:'Roboto',serif}
+.tech-body{padding:15px 17px}
+.tech-body p{font-size:14px;line-height:2.05;color:#33302a;margin-bottom:10px}
+.tech-body b{color:var(--purple-d)}
+.ex-pair{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.ex-row{border-radius:10px;padding:10px 13px;font-size:13.5px;line-height:1.8}
+.ex-before{background:rgba(176,80,111,.06);border-right:3px solid var(--rose)}
+.ex-after{background:rgba(46,139,107,.07);border-right:3px solid var(--green)}
+.ex-lab{font-size:11px;font-weight:700;margin-bottom:3px;display:block}
+.ex-before .ex-lab{color:var(--rose)}
+.ex-after .ex-lab{color:var(--green-d)}
+.ex-fr{direction:ltr;text-align:left;font-family:'Roboto',serif;font-weight:600;color:#2c3e35;display:block}
+.ex-fa{font-size:12.3px;color:#5a6b60;display:block;margin-top:2px}
+.toolbox{background:#faf7f0;border:1px solid #ece3d0;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:13px;line-height:1.95;color:#6a6052}
+.toolbox b{color:var(--gold)}
+.toolbox .fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+.deep{background:#eef4f6;border:1px solid #cfe0e5;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:12.7px;line-height:1.95;color:#3a5560}
+.deep b{color:var(--teal-d)}
+.deep .fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+.warnb{background:rgba(196,80,45,.07);border:1px dashed #e0b3a0;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:13px;line-height:1.9;color:#8a4a32}
+.warnb b{color:#c4502d}
+.warnb .fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:#a8442a}
+/* جدول انواع reformulation */
+.types{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-top:16px;box-shadow:0 3px 14px rgba(122,91,168,.08);overflow:hidden}
+.types-head{padding:14px 17px;background:linear-gradient(140deg,#f5f0fc,#ece2f7);font-size:15px;font-weight:800;color:var(--purple-d);display:flex;align-items:center;gap:8px}
+.type-item{padding:13px 17px;border-top:1px solid var(--line)}
+.type-name{font-size:14px;font-weight:700;color:var(--purple-d);margin-bottom:3px;display:flex;align-items:center;gap:7px}
+.type-name .fr{direction:ltr;font-family:'Roboto',serif;font-size:12.5px;color:var(--teal-d)}
+.type-desc{font-size:13px;color:#4a453c;line-height:1.85;margin-bottom:6px}
+.type-ex{background:rgba(46,125,143,.06);border-radius:9px;padding:8px 12px;font-size:13px}
+.type-ex .fr{direction:ltr;text-align:left;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d);display:block}
+.type-ex .fa{font-size:12px;color:#5a6b60;display:block;margin-top:2px}
+.video-box{background:linear-gradient(135deg,#fff3f6,#ffe9ef);border:1px solid #f0c9d6;border-radius:14px;padding:16px 18px;margin-top:18px}
+.video-box .vt{font-size:14px;font-weight:700;color:var(--rose);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.video-box p{font-size:13px;line-height:1.9;color:#5a4750}
+.video-box a{display:inline-block;margin-top:10px;background:var(--rose);color:#fff;text-decoration:none;padding:9px 18px;border-radius:22px;font-size:13px;font-weight:700}
+.src{margin-top:18px;font-size:11px;color:#9a93a8;border-top:1px solid #eee;padding-top:10px;line-height:1.7;text-align:center}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:14px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #d6c9e8}
+.foot b{color:var(--purple-d)}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; آمادگی TCF</a>
+  <span class="hoda-back-label">🔄 سه تکنیک بازگویی</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">🔄 REFORMULER COMME UN NATIF</div>
+  <h1>سه تکنیک برای بازگویی مثلِ یک فرانسوی‌زبان</h1>
+  <div class="sub">وقتی کلمه‌ای یادت نمی‌آد یا می‌خوای جمله‌ت طبیعی‌تر بشه 🇫🇷</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    «بازگویی» (<span dir="ltr">la reformulation</span>) یعنی <b>یک معنا را با کلمات و ساختارِ دیگری دوباره بیان کنی</b>، بدونِ اینکه معنی عوض بشه. این یکی از مهم‌ترین مهارت‌های زبانه: هم وقتی کلمه‌ای یادت نمی‌آد به کمکت می‌آد، هم نوشتار و گفتارت را <b>روان‌تر، دقیق‌تر و بدونِ تکرار</b> می‌کنه. در منابعِ فرانسوی می‌گن بازگویی <b>«نشانه‌ی فهم»</b> است: اینکه بتونی چیزی را با کلماتِ خودت بازگو کنی، یعنی واقعاً معنی‌اش را گرفتی.
+  </div>
+  <div class="why">
+    🎯 <b>چرا برای آزمون TCF حیاتیه؟</b> در <span dir="ltr">Expression orale</span>، ممتحن دنبالِ اینه که ببینه می‌تونی <b>ارتباط برقرار کنی</b> — نه اینکه هر کلمه را حفظ باشی. اگر وسطِ حرف کلمه‌ای یادت رفت و با کلماتِ دیگه توضیحش دادی، این <b>خودش یک مهارتِ ارزشمنده و نمره داره</b>. در <span dir="ltr">Expression écrite</span> هم بازگویی به تو کمک می‌کنه از <b>تکرارِ کلمات</b> پرهیز کنی و سطحِ متن را بالا ببری. پس بازگویی، نجات‌دهنده‌ی توئه!
+  </div>
+
+  <div class="sec-label">🛠️ سه تکنیکِ پایه</div>
+
+  <!-- تکنیک ۱ -->
+  <div class="tech">
+    <div class="tech-head"><div class="tech-num">۱</div><div><div class="tech-title">مترادف و متضاد (جایگزینیِ واژگانی)</div><div class="tech-sub">la synonymie · l'antonymie</div></div></div>
+    <div class="tech-body">
+      <p>ساده‌ترین و سریع‌ترین تکنیک: کلمه‌ای را که یادت نمی‌آد یا تکراری شده، با یک <b>مترادف</b> (هم‌معنی) جایگزین کن. یا با یک <b>متضاد + نفی</b> دورش بزن.</p>
+      <div class="ex-pair">
+        <div class="ex-row ex-before"><span class="ex-lab">❌ کلمه «épuisé» (خیلی خسته) یادت نیست</span><span class="ex-fr">Je suis... très très...</span><span class="ex-fa">من خیلی خیلی...</span></div>
+        <div class="ex-row ex-after"><span class="ex-lab">✅ مترادف</span><span class="ex-fr">Je suis vraiment fatigué.</span><span class="ex-fa">واقعاً خسته‌ام.</span></div>
+        <div class="ex-row ex-after"><span class="ex-lab">✅ متضاد + نفی</span><span class="ex-fr">Ce n'est pas cher du tout.</span><span class="ex-fa">اصلاً گرون نیست. (به‌جای «ارزونه»)</span></div>
+      </div>
+      <p>دقت کن که مترادف‌ها <b>هیچ‌وقت کاملاً یکسان نیستن</b> و هر کدوم یک نوانس (ظرافتِ معنایی) دارن. مثلاً به‌جای فعلِ تکراریِ <span class="fr">dire</span> می‌تونی بگی: <span class="fr">déclarer, répondre, affirmer, annoncer</span>؛ و به‌جای صفتِ <span class="fr">important</span> بگی: <span class="fr">essentiel, fondamental, majeur, crucial</span>.</p>
+      <div class="toolbox">🧰 <b>عبارت‌های پل:</b> <span class="fr">c'est-à-dire…</span> (یعنی...) · <span class="fr">autrement dit…</span> (به عبارتِ دیگر...) · <span class="fr">ou plutôt…</span> (یا بهتره بگم...) · <span class="fr">en d'autres termes…</span> (به بیانِ دیگر...)</div>
+      <div class="warnb">⚠️ <b>تله:</b> مراقبِ <b>رجیستر (سطحِ زبان)</b> باش. <span class="fr">bouffer</span> و <span class="fr">manger</span> هر دو «خوردن»‌اند، ولی اولی خیلی خودمونیه و در آزمونِ رسمی مناسب نیست. مترادفی انتخاب کن که با لحنِ جمله‌ات بخونه.</div>
+    </div>
+  </div>
+
+  <!-- تکنیک ۲ -->
+  <div class="tech">
+    <div class="tech-head"><div class="tech-num">۲</div><div><div class="tech-title">توضیح بده (دورگویی / périphrase)</div><div class="tech-sub">la périphrase · la définition</div></div></div>
+    <div class="tech-body">
+      <p>وقتی کلمه‌ی دقیق را اصلاً بلد نیستی یا یادت رفته، گیر نکن! <b>کارکرد، ویژگی یا تعریفِ</b> آن چیز را توضیح بده. این کار «دورگویی» (<span dir="ltr">périphrase</span>) نام داره و فرانسوی‌زبان‌ها دائم ازش استفاده می‌کنن.</p>
+      <div class="ex-pair">
+        <div class="ex-row ex-before"><span class="ex-lab">❌ کلمه «arrosoir» (آبپاش) یادت رفته</span><span class="ex-fr">Euh... le... le truc pour... euh...</span><span class="ex-fa">اِاِ... اون... اون چیزه برای...</span></div>
+        <div class="ex-row ex-after"><span class="ex-lab">✅ توضیح بده (périphrase)</span><span class="ex-fr">C'est l'objet qu'on utilise pour donner de l'eau aux plantes.</span><span class="ex-fa">اون وسیله‌ایه که برای آب‌دادن به گیاه‌ها ازش استفاده می‌کنیم.</span></div>
+      </div>
+      <p>نکته‌ی جالب: همین دورگویی در ادبیاتِ فرانسه یک آرایه‌ی زیباست. مثلاً به‌جای <span class="fr">le soleil</span> (خورشید) شاعرها می‌گن <span class="fr">l'astre du jour</span> (ستاره‌ی روز)، یا به‌جای <span class="fr">le roi</span> می‌گن <span class="fr">le souverain</span> یا <span class="fr">le monarque</span>.</p>
+      <div class="toolbox">🧰 <b>قالب‌های توضیح:</b> <span class="fr">C'est un truc/objet qui…</span> (یه چیزیه که...) · <span class="fr">C'est une sorte de…</span> (یه‌جور... ـه) · <span class="fr">C'est quand on…</span> (وقتیه که آدم...) · <span class="fr">Ça sert à…</span> (به دردِ... می‌خوره) · <span class="fr">C'est une personne qui…</span> (کسیه که...)</div>
+    </div>
+  </div>
+
+  <!-- تکنیک ۳ -->
+  <div class="tech">
+    <div class="tech-head"><div class="tech-num">۳</div><div><div class="tech-title">ساختارِ جمله را عوض کن</div><div class="tech-sub">la transformation syntaxique</div></div></div>
+    <div class="tech-body">
+      <p>همان معنا را با <b>چینشِ دستوریِ متفاوت</b> بگو. این تکنیک هم برای دورزدنِ ساختاری که در آن گیر کردی خوبه، هم برای متنوع‌کردنِ سبک. چند راهِ رایج:</p>
+      <p>🔹 <b>معلوم ↔ مجهول:</b> <span class="fr">L'équipe a écrit le rapport</span> ↔ <span class="fr">Le rapport a été écrit par l'équipe</span>.<br>
+      🔹 <b>فعل ↔ اسم:</b> <span class="fr">Il a décidé de partir</span> ↔ <span class="fr">La décision de partir a été prise</span>.<br>
+      🔹 <b>جابه‌جاییِ اجزا:</b> <span class="fr">Il a réussi avec succès</span> ↔ <span class="fr">Avec succès, il a réussi</span>.</p>
+      <div class="ex-pair">
+        <div class="ex-row ex-before"><span class="ex-lab">❌ توی یک ساختارِ پیچیده گیر کردی</span><span class="ex-fr">Si j'avais su que... enfin... il aurait fallu que...</span><span class="ex-fa">اگه می‌دونستم که... یعنی... باید می‌شد که...</span></div>
+        <div class="ex-row ex-after"><span class="ex-lab">✅ ساده از نو بساز</span><span class="ex-fr">En fait, c'est simple : je ne savais pas. Donc je n'ai rien fait.</span><span class="ex-fa">راستش ساده‌ست: من نمی‌دونستم. برای همین کاری نکردم.</span></div>
+      </div>
+      <div class="deep">🔎 <b>نکته‌ی ظریف:</b> تغییرِ ساختار گاهی <b>کانونِ توجه (focalisation)</b> را جابه‌جا می‌کنه. در <span class="fr">Il décida de partir</span> تأکید روی «او»ست؛ در <span class="fr">La décision de partir fut prise</span> تأکید روی «تصمیم». معنی نزدیک می‌مونه ولی لحن عوض می‌شه — این خودش ابزارِ سبک‌سازیه.</div>
+      <div class="warnb">⚠️ <b>قاعده‌ی طلایی (از منابعِ FLE):</b> یک جمله‌ی <b>کوتاه و درست</b>، همیشه بهتر از یک جمله‌ی <span class="fr">long</span> و نصفه‌ست. اگر در ساختاری گیر کردی، رهاش کن و ساده‌تر بگو — این نشانه‌ی ضعف نیست، نشانه‌ی هوشمندیه.</div>
+    </div>
+  </div>
+
+  <div class="sec-label">💬 برای مکالمه: چهار نوع بازگویی</div>
+  <div class="types">
+    <div class="types-head">🗣️ وقتی با ممتحن حرف می‌زنی</div>
+    <div class="type-item">
+      <div class="type-name">۱. بازگوییِ آینه‌ای <span class="fr">(reformulation miroir)</span></div>
+      <div class="type-desc">حرفِ طرف را با کلماتِ خودت تکرار می‌کنی تا نشون بدی فهمیدی و درست متوجه شدی. در Tâche 2 و 3 عالیه.</div>
+      <div class="type-ex"><span class="fr">Si je comprends bien, vous voulez dire que…</span><span class="fa">اگه درست فهمیده باشم، منظورتون اینه که...</span></div>
+    </div>
+    <div class="type-item">
+      <div class="type-name">۲. بازگوییِ روشن‌سازی <span class="fr">(clarification)</span></div>
+      <div class="type-desc">وقتی چیزی مبهمه، با یک سؤال شفافش می‌کنی. به ممتحن نشون می‌ده فعالانه گوش می‌دی.</div>
+      <div class="type-ex"><span class="fr">Pouvez-vous préciser ce que vous entendez par… ?</span><span class="fa">می‌تونید دقیق‌تر بگید منظورتون از... چیه؟</span></div>
+    </div>
+    <div class="type-item">
+      <div class="type-name">۳. بازگوییِ پرسشی <span class="fr">(forme interrogative)</span></div>
+      <div class="type-desc">برای تأییدِ فهمت، حرف را به شکلِ سؤال بازگو می‌کنی.</div>
+      <div class="type-ex"><span class="fr">Vous voulez dire que c'est trop cher ?</span><span class="fa">یعنی می‌گید زیادی گرونه؟</span></div>
+    </div>
+    <div class="type-item">
+      <div class="type-name">۴. بازگوییِ خلاصه‌ای <span class="fr">(synthèse)</span></div>
+      <div class="type-desc">نکته‌های اصلی را در یک جمله جمع‌بندی می‌کنی. برای بستنِ بحث در Tâche 3 فوق‌العاده‌ست.</div>
+      <div class="type-ex"><span class="fr">En résumé, il y a des avantages mais aussi des risques.</span><span class="fa">خلاصه، هم مزایایی هست هم خطراتی.</span></div>
+    </div>
+  </div>
+
+  <div class="video-box">
+    <div class="vt">🎬 ویدیوی پیشنهادی برای تمرین</div>
+    <p>برای دیدنِ این تکنیک‌ها با مثال‌های بیشتر و تلفظِ درست، این ویدیو/مقاله‌ی <b>French School TV</b> با عنوان «سه تکنیک برای بازگویی مثلِ یک فرانسوی‌زبان» خیلی مفیده. توصیه می‌کنم بعد از خوندنِ این بخش، اون را هم ببینی.</p>
+    <a href="https://frenchschooltv.com/blogs/blog/trois-techniques-pour-reformuler-comme-un-natif" target="_blank" rel="noopener">تماشای ویدیو و مقاله ↗</a>
+  </div>
+
+  <div class="src">📚 منابع: Lefebvre-Dalloz Compétences؛ Scribbr (reformulation/paraphrase)؛ Digischool؛ Demos؛ activitesfle (FLE) — محتوا با تدریس و مثال‌های اورجینال تنظیم شده.</div>
+  <div class="foot">💡 این تکنیک‌ها را تمرین کن تا سرِ آزمون هیچ‌وقت وسطِ حرف گیر نکنی. <b>بازگویی = نجاتِ مکالمه!</b></div>
+</div>
+</body>
+</html>
