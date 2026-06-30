@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>۱۵ فرمول ایمیل‌نویسی | TCF</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--teal:#2e7d8f;--teal-d:#236170;--blue:#3f6d9a;--blue-d:#2d4f73}
+body{font-family:'Estedad',sans-serif;background:#f4f3f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(63,109,154,0.05) 31px,rgba(63,109,154,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%2863%2C109%2C154%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat;opacity:1}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--blue);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#3f6d9a,#2d4f73);color:#fff;padding:28px 26px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.2px;margin-bottom:11px;font-weight:600}
+.hero h1{font-family:'Estedad',serif;font-size:21px;font-weight:800;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.93;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#eef3f8;border-right:4px solid var(--blue);border-radius:12px;padding:15px 18px;margin-top:18px;font-size:14px;line-height:2.05}
+.intro b{color:var(--blue-d)}
+.fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-top:15px;box-shadow:0 3px 14px rgba(63,109,154,.07);overflow:hidden}
+.card-h{display:flex;align-items:center;gap:11px;padding:14px 16px;background:linear-gradient(140deg,#eef3f8,#e1ebf4)}
+.card-n{flex-shrink:0;min-width:34px;height:34px;padding:0 8px;background:var(--blue);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+.card-t{font-size:15px;font-weight:800;color:var(--blue-d);line-height:1.4}
+.card-b{padding:14px 16px}
+.sec-intro{font-size:13.5px;line-height:2;color:#33302a;margin-bottom:12px}
+.sec-intro b{color:var(--blue-d)}
+.note-b{font-size:13.8px;line-height:2;color:#33302a}
+.note-b p{margin-bottom:9px}
+.note-b b{color:var(--blue-d)}
+.wordlist{list-style:none;display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.wordlist li{background:rgba(63,109,154,.05);border-right:3px solid var(--blue);border-radius:9px;padding:8px 12px;font-size:13.3px;line-height:1.7}
+.formula{background:#fafbfc;border:1px solid #e8eef3;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.f-fr{display:flex;align-items:flex-start;gap:9px;direction:ltr;text-align:left;font-family:'Roboto',serif;font-weight:700;font-size:15px;color:var(--blue-d);line-height:1.4}
+.f-num{flex-shrink:0;width:22px;height:22px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'Estedad'}
+.f-fa{font-size:13.5px;font-weight:700;color:#3a4550;margin:6px 0 7px;padding-right:31px}
+.f-use{font-size:12.8px;line-height:1.9;color:#5a5550;padding-right:31px}
+.f-use b{color:var(--blue-d)}
+.deep{background:#eef4f6;border:1px solid #cfe0e5;border-radius:11px;padding:11px 14px;margin-top:6px;font-size:12.7px;line-height:1.95;color:#3a5560}
+.deep b{color:var(--teal-d)}
+.tipbox{background:rgba(46,139,107,.07);border:1px solid #bce0cd;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:13px;line-height:1.9;color:#2a5547}
+.tipbox b{color:var(--green-d)}
+.warnb{background:rgba(196,80,45,.07);border:1px dashed #e0b3a0;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:13px;line-height:1.9;color:#8a4a32}
+.warnb b{color:#c4502d}
+.badgood{display:flex;flex-direction:column;gap:9px;margin:10px 0}
+.badgood>div{border-radius:11px;padding:11px 14px}
+.bad{background:rgba(176,80,111,.07);border:1px solid #e3b8c6}
+.good{background:rgba(46,139,107,.08);border:1px solid #bce0cd}
+.badgood .lab{display:block;font-size:11px;font-weight:800;margin-bottom:4px}
+.bad .lab{color:var(--rose)}
+.good .lab{color:var(--green-d)}
+.badgood .fr{display:block;font-size:14px;margin-bottom:3px}
+.badgood .fa{display:block;font-size:12.5px;color:#5a5550;line-height:1.8}
+/* مثال کامل ایمیل */
+.mail-demo{background:#fff;border:1.5px solid #d8e2ec;border-radius:14px;margin-top:15px;overflow:hidden;box-shadow:0 4px 16px rgba(63,109,154,.1)}
+.mail-top{background:var(--blue-d);color:#fff;padding:11px 16px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px}
+.mail-body{padding:16px 18px;direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:13.5px;line-height:1.95;color:#2c3540}
+.mail-body .ln{display:block;margin-bottom:7px}
+.mail-body .hl-m{background:#fff3cd;padding:0 3px;border-radius:3px;font-weight:600}
+.mail-note{padding:10px 16px;background:#f6f9fb;font-size:12px;color:#5a6570;line-height:1.8;border-top:1px solid #e8eef3}
+.src{margin-top:18px;font-size:11px;color:#9aa3ac;border-top:1px solid #eee;padding-top:10px;line-height:1.7;text-align:center}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:14px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #d8e2ec}
+.foot b{color:var(--blue-d)}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; آمادگی TCF</a>
+  <span class="hoda-back-label">📧 ایمیل‌نویسی فرانسوی</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">📧 ÉCRIRE UN MAIL · 15 EXPRESSIONS</div>
+  <h1>۱۵ فرمول کاربردی برای ایمیل‌نویسی فرانسوی</h1>
+  <div class="sub">از خطاب تا خداحافظی — همه‌ی فرمول‌هایی که<br>برای تسکِ نوشتاریِ TCF لازم داری 🇫🇷</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    نوشتنِ ایمیلِ رسمی به فرانسه <b>ساختارِ مشخصی</b> داره که اگه یادش بگیری، در <b>تسکِ ۱ نوشتاریِ TCF</b> (که اغلب نوشتنِ یک پیام/ایمیله) خیلی به کارت می‌آد. این درسنامه قدم‌به‌قدم فرمول‌های آماده را با ترجمه و توضیح بهت می‌ده.
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">📮</div><div class="card-t">اول از همه: «ایمیل» به فرانسه چی می‌شه؟</div></div>
+    <div class="card-b note-b"><p>فرانسوی‌ها برای «ایمیل» چند کلمه دارن و <b>هر چهارتا درست‌اند</b>:</p>
+ <ul class="wordlist">
+   <li><span class="fr">un mail</span> — رایج‌ترین (واژه‌ی بین‌المللی، با تلفظ انگلیسی «میل»)</li>
+   <li><span class="fr">un email / un e-mail</span> — همان، نوشتاری‌تر</li>
+   <li><span class="fr">un courriel</span> — معادلِ کاملاً فرانسویِ آن (کوتاه‌شده‌ی <span class="fr">courrier électronique</span>) — مخصوصاً در کبک ۹ بسیار رایج</li>
+   <li><span class="fr">un courrier électronique</span> — رسمی و کامل، کم‌کاربرد</li>
+ </ul>
+ <div class="tipbox">💡 در <b>کبک و کانادا</b>، کلمه‌ی <span class="fr">courriel</span> خیلی پرکاربرده و نشانه‌ی احترام به زبانِ فرانسه‌ست. برای آزمونِ TCF Canada استفاده ازش امتیازِ خوبیه.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">👋</div><div class="card-t">۱) شروعِ ایمیل (فرمولِ خطاب)</div></div>
+    <div class="card-b">
+      <p class="sec-intro">اولین چیزی که می‌نویسی، نحوه‌ی خطاب به مخاطبه. این به این بستگی داره که <b>اسم یا جنسیتِ</b> طرف را می‌دونی یا نه.</p>
+      
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">1</span><span dir="ltr">Madame, Monsieur,</span></div>
+          <div class="f-fa">خانم، آقا، (وقتی جنسیتِ مخاطب را نمی‌دانی)</div>
+          <div class="f-use">وقتی <b>نمی‌دونی</b> چه کسی ایمیلت را می‌خونه (مرد یا زن). همیشه از روی ادب با <span class='fr'>Madame</span> شروع کن، هر دو با حرفِ بزرگ و ویرگول، و بعد به خطِ بعد برو.</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">2</span><span dir="ltr">Madame la Directrice,</span></div>
+          <div class="f-fa">خانمِ مدیر، (وقتی جنسیت/سمت را می‌دانی)</div>
+          <div class="f-use">وقتی <b>می‌دونی</b> طرف کیه یا چه سمتی داره. مثلاً <span class='fr'>Monsieur Bernard,</span> یا <span class='fr'>Madame la Directrice,</span>.</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">3</span><span dir="ltr">À l'attention de…</span></div>
+          <div class="f-fa">به‌نامِ… / جهتِ توجهِ…</div>
+          <div class="f-use">وقتی ایمیل برای <b>یک شخص یا سمتِ خاصه</b> ولی نمی‌دونی دقیقاً کی بازش می‌کنه (مثلاً منشیِ او). مثال: <span class='fr'>À l'attention du responsable des ressources humaines,</span> — یعنی «جهتِ توجهِ مسئولِ منابعِ انسانی».</div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">✏️</div><div class="card-t">۲) دلیلِ نوشتن (جمله‌ی اول)</div></div>
+    <div class="card-b">
+      <p class="sec-intro">بعد از خطاب، باید بگی <b>چرا</b> این ایمیل را می‌نویسی. فرمولِ کلیدی <span class='fr'>Je me permets de vous écrire pour…</span> است (یعنی «اجازه می‌خواهم برایتان بنویسم تا...»).</p>
+      
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">1</span><span dir="ltr">Je me permets de vous écrire pour…</span></div>
+          <div class="f-fa">اجازه می‌خواهم برایتان بنویسم تا… (+ مصدر)</div>
+          <div class="f-use">وقتی می‌خوای چیزی <b>پیشنهاد</b> بدی. بعدش فعل به‌صورتِ مصدر میاد. مثال: <span class='fr'>…pour vous proposer mes services.</span> (تا خدماتم را به شما پیشنهاد بدهم).</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">2</span><span dir="ltr">…en relation à / à propos de / concernant…</span></div>
+          <div class="f-fa">در ارتباط با / درباره‌ی / در خصوصِ…</div>
+          <div class="f-use">وقتی <b>پاسخِ</b> چیزی را می‌دی (مثلاً یک آگهیِ شغلی). مثال: <span class='fr'>Je me permets de vous écrire concernant l'offre d'emploi que vous avez publiée.</span> (در خصوصِ آگهیِ شغلی‌ای که منتشر کردید).</div>
+        </div>
+      <div class="deep">⚠️ <b>نکته‌ی دستوریِ ظریف:</b> بعضی از این رابط‌ها حرفِ اضافه می‌خوان و بعضی نه: <span class='fr'>à propos <b>de</b></span> و <span class='fr'>au sujet <b>de</b></span> با «de» میان؛ ولی <span class='fr'>concernant</span> و <span class='fr'>en ce qui concerne</span> مستقیم به اسم وصل می‌شن (بدونِ حرفِ اضافه).</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">🙏</div><div class="card-t">۳) تشکر (قبل از پایان)</div></div>
+    <div class="card-b">
+      <p class="sec-intro">در فرانسه ادب خیلی مهمه. قبل از بستنِ ایمیل، از خواننده تشکر می‌کنی که <b>وقت گذاشته و ایمیلت را خونده</b>.</p>
+      
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">1</span><span dir="ltr">Je vous remercie d'avoir pris le temps de me lire.</span></div>
+          <div class="f-fa">از شما سپاسگزارم که وقت گذاشتید و نوشته‌ام را خواندید.</div>
+          <div class="f-use">یک فرمولِ مؤدبانه و امن برای تشکر. می‌تونی به‌جای <span class='fr'>me lire</span> چیزِ دیگه‌ای بذاری: <span class='fr'>…de lire mon CV / ma proposition.</span></div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">2</span><span dir="ltr">Merci d'avoir pris le temps de me lire.</span></div>
+          <div class="f-fa">ممنون که وقت گذاشتید و نوشته‌ام را خواندید.</div>
+          <div class="f-use">نسخه‌ی کمی ساده‌تر و گرم‌تر.</div>
+        </div>
+      <div class="deep">📝 <b>نکته‌ی مهمِ هماهنگی:</b> اگر <b>زن</b> هستی، در <span class='fr'>Je vous remercie de m'avoir lu<b>e</b></span> یک «e» به آخرِ <span class='fr'>lu</span> اضافه می‌شه (به‌خاطرِ هماهنگیِ صفتِ مفعولی با مفعولِ مقدم).</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">🎬</div><div class="card-t">۴) پایانِ ایمیل (خداحافظی رسمی)</div></div>
+    <div class="card-b">
+      <p class="sec-intro">برای بستنِ ایمیل، <b>دو کار</b> می‌کنی: اول یک <b>عمل/انتظار</b> را بیان می‌کنی، بعد یک <b>فرمولِ خداحافظیِ رسمی</b>. این فرمول‌ها در فرانسه ثابت‌اند و حفظ‌کردنشان لازم است.</p>
+      
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">1</span><span dir="ltr">En attendant votre réponse, je vous prie d'agréer mes salutations distinguées.</span></div>
+          <div class="f-fa">در انتظارِ پاسختان، احترامات فائقه‌ام را بپذیرید.</div>
+          <div class="f-use">کلاسیک‌ترین فرمولِ پایانِ رسمی. <span class='fr'>je vous prie d'agréer…</span> یعنی «خواهش می‌کنم بپذیرید...».</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">2</span><span dir="ltr">Je vous prie de recevoir mes sincères salutations.</span></div>
+          <div class="f-fa">خواهشمندم سلام‌های صمیمانه‌ام را بپذیرید.</div>
+          <div class="f-use">یک نسخه‌ی کمی نرم‌تر ولی همچنان رسمی.</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">3</span><span dir="ltr">Je me tiens à votre disposition pour un futur entretien.</span></div>
+          <div class="f-fa">برای یک مصاحبه‌ی بعدی در خدمتِ شما هستم.</div>
+          <div class="f-use">وقتی برای کار/مصاحبه نوشتی و می‌خوای آمادگیت را اعلام کنی.</div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">4</span><span dir="ltr">Je reste à votre disposition pour répondre à toutes vos questions.</span></div>
+          <div class="f-fa">برای پاسخ به همه‌ی سؤالاتتان در خدمتِ شما هستم.</div>
+          <div class="f-use">وقتی اطلاعاتی فرستادی و می‌خوای بگی اگر سؤالی بود، آماده‌ای.</div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">🚫</div><div class="card-t">هشدارِ مهم: این را هرگز نگو!</div></div>
+    <div class="card-b note-b"><p>یک اشتباهِ خیلی رایج که باید ازش پرهیز کنی:</p>
+ <div class="badgood">
+   <div class="bad"><span class="lab">❌ غلط</span><span class="fr">J'espère votre réponse.</span><span class="fa">«امیدوارم پاسختان را...» — این در فرانسه بی‌ادبانه و غیررسمیه! انگار طرف را مجبور به جواب‌دادن می‌کنی.</span></div>
+   <div class="good"><span class="lab">✅ درست</span><span class="fr">En attendant votre réponse… / En espérant votre réponse…</span><span class="fa">«در انتظارِ پاسختان...» — مؤدبانه و درست.</span></div>
+ </div>
+ <div class="warnb">⚠️ فعلِ <span class="fr">espérer</span> (امیدوار بودن) با <span class="fr">attendre</span> (منتظر بودن) فرق داره. در پایانِ ایمیلِ رسمی، <span class="fr">en attendant</span> یا <span class="fr">en espérant</span> + اسم درسته، ولی <span class="fr">j'espère votre réponse</span> غلطه.</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">📎</div><div class="card-t">۵) سه عنصرِ پرکاربردِ داخلِ ایمیل</div></div>
+    <div class="card-b">
+      <p class="sec-intro">این سه اصطلاح را در متنِ ایمیل‌ها زیاد می‌بینی و لازمت می‌شن:</p>
+      
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">1</span><span dir="ltr">ci-joint</span></div>
+          <div class="f-fa">پیوست / ضمیمه</div>
+          <div class="f-use">وقتی فایلی (PDF, Word, عکس...) را <b>به ایمیل چسبوندی</b>. در فرانسه نمی‌گن «attaché»! می‌گن <span class='fr'>ci-joint</span>. مثال: <span class='fr'>Vous trouverez mon CV ci-joint.</span> (رزومه‌ام را پیوست می‌یابید) یا <span class='fr'>Vous avez mon CV ci-joint dans ce mail.</span></div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">2</span><span dir="ltr">cliquer sur le lien ci-dessous</span></div>
+          <div class="f-fa">روی لینکِ زیر کلیک کنید</div>
+          <div class="f-use"><span class='fr'>un lien</span> یعنی «لینک» (نه «link»!). وقتی می‌خوای کسی روی یک پیوندِ اینترنتی کلیک کنه. مثال: <span class='fr'>Cliquez sur le lien ci-dessous pour télécharger le document.</span></div>
+        </div>
+        <div class="formula">
+          <div class="f-fr"><span class="f-num">3</span><span dir="ltr">mettre quelqu'un en copie</span></div>
+          <div class="f-fa">کسی را در رونوشت (cc) گذاشتن</div>
+          <div class="f-use">وقتی می‌خوای بگی یک نفرِ دیگه هم همین ایمیل را دریافت می‌کنه. مثال: <span class='fr'>Je mets mon assistante en copie dans ce mail.</span> (دستیارم را در رونوشتِ این ایمیل می‌گذارم) — چون مثلاً اوست که به سؤال‌ها جواب می‌ده.</div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sec-label" style="font-size:13px;font-weight:800;color:var(--blue-d);margin:24px 4px 2px;text-align:center">📬 یک نمونه‌ی کاملِ ایمیل</div>
+  <div class="mail-demo">
+    <div class="mail-top">📧 Exemple : réponse à une offre d'emploi</div>
+    <div class="mail-body">
+      <span class="ln"><span class="hl-m">Madame, Monsieur,</span></span>
+      <span class="ln"><span class="hl-m">Je me permets de vous écrire concernant</span> l'offre d'emploi de directeur commercial que vous avez publiée sur votre site.</span>
+      <span class="ln">Passionné par ce domaine, je pense correspondre au profil recherché. <span class="hl-m">Vous trouverez mon CV ci-joint.</span></span>
+      <span class="ln"><span class="hl-m">Je vous remercie d'avoir pris le temps de me lire.</span></span>
+      <span class="ln"><span class="hl-m">Je me tiens à votre disposition</span> pour un futur entretien.</span>
+      <span class="ln"><span class="hl-m">En attendant votre réponse, je vous prie d'agréer mes salutations distinguées.</span></span>
+      <span class="ln">Karim</span>
+    </div>
+    <div class="mail-note">💡 بخش‌های هایلایت‌شده همون فرمول‌هایی هستن که در این درس یاد گرفتی: خطاب، دلیلِ نوشتن، پیوست، تشکر، اعلامِ آمادگی، و خداحافظیِ رسمی.</div>
+  </div>
+
+  <div class="src">📚 محتوا با تدریس و مثال‌های اورجینال تنظیم شده (الهام از درسِ French School TV درباره‌ی فرمول‌های ایمیل). برای تمرین، در تسکِ ۱ نوشتاری این فرمول‌ها را به کار ببر.</div>
+  <div class="foot">📧 این فرمول‌ها را حفظ کن تا در آزمون، نوشتنِ ایمیل برایت <b>سریع و حرفه‌ای</b> بشه!</div>
+</div>
+<script>
+/* hoda-protect */
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();},{capture:true});
+  document.addEventListener('selectstart',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('copy',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('keydown',function(e){var t=e.target;var inField=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable);var k=(e.key||'').toLowerCase();if((e.ctrlKey||e.metaKey)&&['c','x','u','s','a'].indexOf(k)>-1&&!inField){e.preventDefault();}},{capture:true});
+})();
+</script>
+<style>
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+</style>
+</body>
+</html>
