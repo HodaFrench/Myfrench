@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>معرفی خود | من مبتدی‌ام</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#3a9b6e;--green-d:#2a7a54;--teal-d:#236170}
+body{font-family:'Estedad',sans-serif;background:#f2f8f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(58,155,110,0.05) 31px,rgba(58,155,110,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%2858%2C155%2C110%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--green);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#3a9b6e,#2a7a54);color:#fff;padding:26px 24px 22px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 14px;font-size:11px;letter-spacing:1px;margin-bottom:10px;font-weight:600}
+.hero h1{font-size:21px;font-weight:800;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.93;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#e7f4ee;border-right:4px solid var(--green);border-radius:12px;padding:14px 17px;margin-top:18px;font-size:13.8px;line-height:2;color:#2a4a3a}
+.intro b{color:var(--green-d)}
+.sec{font-size:13.5px;font-weight:800;color:var(--green-d);margin:24px 4px 10px;display:flex;align-items:center;gap:8px}
+.sec::before{content:"";flex:0 0 20px;height:3px;background:var(--green);border-radius:2px}
+.intro-card{background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:11px;overflow:hidden;box-shadow:0 2px 10px rgba(58,155,110,.06)}
+.ic-head{display:flex;align-items:center;gap:12px;padding:13px 15px;cursor:pointer;background:linear-gradient(140deg,#f0f8f4,#e6f3ec)}
+.ic-emoji{flex-shrink:0;width:44px;height:44px;background:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:23px;box-shadow:0 2px 6px rgba(58,155,110,.15)}
+.ic-meta{flex:1}
+.ic-name{font-size:16px;font-weight:800;color:var(--green-d);direction:ltr;text-align:right}
+.ic-theme{font-size:12px;color:var(--gray)}
+.ic-chev{color:var(--green);font-size:13px;transition:transform .3s}
+.intro-card.open .ic-chev{transform:rotate(180deg)}
+.ic-body{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.intro-card.open .ic-body{max-height:900px}
+.ic-inner{padding:13px 15px;border-top:1px solid var(--line)}
+.line{padding:8px 0;border-bottom:1px dashed #eee}
+.line:last-child{border-bottom:none}
+.line .fr{display:block;direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:15px;font-weight:600;color:#2a3a30}
+.line .fa{display:block;font-size:13px;color:#5a6b60;margin-top:2px}
+/* قالب تمرین */
+.template{background:linear-gradient(135deg,#fff8ec,#fdf0d8);border:1.5px solid #ecd9aa;border-radius:16px;padding:18px;margin-top:14px}
+.tpl-t{font-size:15px;font-weight:800;color:#9a6a1f;margin-bottom:5px}
+.tpl-d{font-size:12.8px;color:#8a6a3a;line-height:1.8;margin-bottom:14px}
+.tpl-line{margin-bottom:13px}
+.tpl-fr{direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:15px;color:#3a3a30;line-height:1.7;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.blank{display:inline-block;min-width:90px;border:none;border-bottom:2px solid #d4a843;background:#fffdf8;font-family:'Roboto',serif;font-size:15px;color:#1a5063;padding:2px 8px;text-align:center;outline:none}
+.blank:focus{border-bottom-color:#9a6a1f;background:#fff}
+.tpl-hint{font-size:11.5px;color:#a8895a;margin-top:2px;direction:rtl;text-align:right}
+/* ضبط صدا */
+.rec-box{background:var(--white);border:1.5px solid var(--line);border-radius:16px;padding:18px;margin-top:14px;text-align:center}
+.rec-t{font-size:15px;font-weight:800;color:var(--green-d);margin-bottom:5px}
+.rec-d{font-size:12.5px;color:var(--gray);line-height:1.8;margin-bottom:14px}
+.rec-controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.rec-btn{border:none;border-radius:24px;padding:11px 22px;font-family:'Estedad';font-size:14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:transform .1s}
+.rec-btn:active{transform:scale(.95)}
+.rec-start{background:#e0524f;color:#fff}
+.rec-stop{background:#555;color:#fff}
+.rec-btn:disabled{opacity:.4;cursor:not-allowed}
+.rec-status{font-size:12.5px;color:var(--gray);margin-top:12px;min-height:18px}
+.rec-dot{display:inline-block;width:10px;height:10px;background:#e0524f;border-radius:50%;margin-left:6px;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.saved-list{margin-top:14px;text-align:right}
+.saved-item{background:#f0f8f4;border:1px solid #cfe8db;border-radius:12px;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.saved-item audio{flex:1;height:34px}
+.saved-date{font-size:11px;color:var(--gray);white-space:nowrap}
+.saved-del{background:none;border:none;color:#c0524f;cursor:pointer;font-size:17px;padding:2px 6px}
+.login-note{background:#fff3e0;border:1px solid #f0d9a8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8a6a3a;line-height:1.8;margin-top:12px}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:18px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #cfe8db}
+.foot b{color:var(--green-d)}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
+  <span class="hoda-back-label">🌱 من مبتدی‌ام · معرفی خود</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">🌱 NIVEAU A1 · SE PRÉSENTER</div>
+  <h1>معرفی خودت به فرانسه</h1>
+  <div class="sub">اولین قدم: یاد بگیر خودت را معرفی کنی —<br>۱۰ نمونه‌ی ساده، یک تمرین، و ضبط صدای خودت 🎤</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    👋 توی این درس، <b>۱۰ نفر</b> خودشان را به فرانسه معرفی می‌کنند: اسم، سن، شغل، خانواده، علاقه‌ها و ایمیلشان. همه خیلی <b>ساده</b> (سطح A1) با ترجمه‌ی فارسی. اول بخوانشان، بعد با <b>قالبِ تمرین</b> خودت را معرفی کن و <b>صدایت را ضبط کن</b>!
+  </div>
+
+  <div class="sec">۱۰ نمونه‌ی معرفی</div>
+  <div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👨‍🎓</div>
+    <div class="ic-meta"><div class="ic-name">Lucas</div><div class="ic-theme">دانشجو</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour ! Je m'appelle Lucas Martin.</span><span class="fa">سلام! اسمم لوکا مارتن است.</span></div><div class="line"><span class="fr">J'ai 19 ans.</span><span class="fa">۱۹ سالمه.</span></div><div class="line"><span class="fr">Je suis étudiant à Lyon.</span><span class="fa">دانشجو در شهر لیون هستم.</span></div><div class="line"><span class="fr">J'habite avec mes parents et ma petite sœur.</span><span class="fa">با پدرومادرم و خواهرِ کوچکم زندگی می‌کنم.</span></div><div class="line"><span class="fr">J'aime le football et la musique.</span><span class="fa">فوتبال و موسیقی دوست دارم.</span></div><div class="line"><span class="fr">Mon adresse e-mail est lucas.martin@email.fr.</span><span class="fa">ایمیلم lucas.martin@email.fr است.</span></div><div class="line"><span class="fr">Sur Instagram, mon compte est @lucas_m19.</span><span class="fa">در اینستاگرام، حسابم @lucas_m19 است.</span></div><div class="line"><span class="fr">Enchanté !</span><span class="fa">از آشنایی خوشبختم!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👩‍🏫</div>
+    <div class="ic-meta"><div class="ic-name">Emma</div><div class="ic-theme">معلم</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Salut ! Moi, c'est Emma Dubois.</span><span class="fa">سلام! من اِما دوبوا هستم.</span></div><div class="line"><span class="fr">J'ai 28 ans.</span><span class="fa">۲۸ سالمه.</span></div><div class="line"><span class="fr">Je suis professeure de français.</span><span class="fa">معلمِ زبان فرانسه هستم.</span></div><div class="line"><span class="fr">Je suis mariée et j'ai un fils.</span><span class="fa">متأهلم و یک پسر دارم.</span></div><div class="line"><span class="fr">J'adore lire et voyager.</span><span class="fa">عاشقِ کتاب‌خواندن و سفر هستم.</span></div><div class="line"><span class="fr">Mon e-mail, c'est emma.dubois@email.fr.</span><span class="fa">ایمیلم emma.dubois@email.fr است.</span></div><div class="line"><span class="fr">Mon compte Twitter est @emma_prof.</span><span class="fa">حسابِ توییترم @emma_prof است.</span></div><div class="line"><span class="fr">À bientôt !</span><span class="fa">به‌زودی می‌بینمت!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👨‍💻</div>
+    <div class="ic-meta"><div class="ic-name">Karim</div><div class="ic-theme">برنامه‌نویس</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour à tous !</span><span class="fa">سلام به همگی!</span></div><div class="line"><span class="fr">Je me présente : je m'appelle Karim Benali.</span><span class="fa">خودم را معرفی می‌کنم: اسمم کریم بنعلی است.</span></div><div class="line"><span class="fr">J'ai 32 ans et je suis informaticien.</span><span class="fa">۳۲ سالمه و برنامه‌نویسِ کامپیوتر هستم.</span></div><div class="line"><span class="fr">J'habite à Marseille, seul.</span><span class="fa">در مارسی، تنها زندگی می‌کنم.</span></div><div class="line"><span class="fr">Mes passions sont les jeux vidéo et le cinéma.</span><span class="fa">علاقه‌هایم بازی‌های ویدیویی و سینماست.</span></div><div class="line"><span class="fr">Vous pouvez m'écrire à karim.benali@email.fr.</span><span class="fa">می‌توانید به karim.benali@email.fr برایم بنویسید.</span></div><div class="line"><span class="fr">Mon pseudo sur les réseaux est @karim_dev.</span><span class="fa">نامِ کاربری‌ام در شبکه‌ها @karim_dev است.</span></div><div class="line"><span class="fr">Au revoir !</span><span class="fa">خداحافظ!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👩‍⚕️</div>
+    <div class="ic-meta"><div class="ic-name">Sofia</div><div class="ic-theme">پرستار</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Coucou ! Je m'appelle Sofia Rossi.</span><span class="fa">سلام! اسمم سوفیا روسی است.</span></div><div class="line"><span class="fr">J'ai 25 ans.</span><span class="fa">۲۵ سالمه.</span></div><div class="line"><span class="fr">Je suis infirmière à l'hôpital.</span><span class="fa">پرستار در بیمارستان هستم.</span></div><div class="line"><span class="fr">Je vis avec mon copain à Nice.</span><span class="fa">با دوست‌پسرم در نیس زندگی می‌کنم.</span></div><div class="line"><span class="fr">J'aime la danse et la cuisine italienne.</span><span class="fa">رقص و آشپزیِ ایتالیایی دوست دارم.</span></div><div class="line"><span class="fr">Mon adresse e-mail : sofia.rossi@email.fr.</span><span class="fa">ایمیلم: sofia.rossi@email.fr.</span></div><div class="line"><span class="fr">Sur TikTok, je suis @sofia_danse.</span><span class="fa">در تیک‌تاک، @sofia_danse هستم.</span></div><div class="line"><span class="fr">Bisous !</span><span class="fa">بوس!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👨‍🍳</div>
+    <div class="ic-meta"><div class="ic-name">Thomas</div><div class="ic-theme">آشپز</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour ! Je suis Thomas Petit.</span><span class="fa">سلام! من توما پُتی هستم.</span></div><div class="line"><span class="fr">J'ai 40 ans.</span><span class="fa">۴۰ سالمه.</span></div><div class="line"><span class="fr">Je suis cuisinier dans un restaurant.</span><span class="fa">آشپز در یک رستوران هستم.</span></div><div class="line"><span class="fr">Je suis divorcé et j'ai deux enfants.</span><span class="fa">طلاق گرفته‌ام و دو فرزند دارم.</span></div><div class="line"><span class="fr">J'aime la nature et le vélo.</span><span class="fa">طبیعت و دوچرخه‌سواری دوست دارم.</span></div><div class="line"><span class="fr">Mon e-mail est thomas.petit@email.fr.</span><span class="fa">ایمیلم thomas.petit@email.fr است.</span></div><div class="line"><span class="fr">Je n'ai pas de réseaux sociaux.</span><span class="fa">شبکه‌ی اجتماعی ندارم.</span></div><div class="line"><span class="fr">Bonne journée !</span><span class="fa">روزِ خوبی داشته باشی!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👩‍🎨</div>
+    <div class="ic-meta"><div class="ic-name">Chloé</div><div class="ic-theme">هنرمند</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Salut tout le monde !</span><span class="fa">سلام به همه!</span></div><div class="line"><span class="fr">Je m'appelle Chloé Lefèvre.</span><span class="fa">اسمم کلویه لوفِور است.</span></div><div class="line"><span class="fr">J'ai 23 ans.</span><span class="fa">۲۳ سالمه.</span></div><div class="line"><span class="fr">Je suis artiste peintre.</span><span class="fa">نقاشِ هنرمند هستم.</span></div><div class="line"><span class="fr">J'habite à Paris avec une amie.</span><span class="fa">در پاریس با یک دوست زندگی می‌کنم.</span></div><div class="line"><span class="fr">Ma passion, c'est l'art et la photographie.</span><span class="fa">علاقه‌ام هنر و عکاسی است.</span></div><div class="line"><span class="fr">Contactez-moi : chloe.lefevre@email.fr.</span><span class="fa">با من تماس بگیرید: chloe.lefevre@email.fr.</span></div><div class="line"><span class="fr">Mon compte Instagram : @chloe_art.</span><span class="fa">حسابِ اینستاگرامم: @chloe_art.</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">🧑‍🔧</div>
+    <div class="ic-meta"><div class="ic-name">Mehdi</div><div class="ic-theme">مکانیک</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour !</span><span class="fa">سلام!</span></div><div class="line"><span class="fr">Je m'appelle Mehdi Amrani.</span><span class="fa">اسمم مهدی امرانی است.</span></div><div class="line"><span class="fr">J'ai 35 ans.</span><span class="fa">۳۵ سالمه.</span></div><div class="line"><span class="fr">Je suis mécanicien.</span><span class="fa">مکانیک هستم.</span></div><div class="line"><span class="fr">Je suis marié, j'ai trois enfants.</span><span class="fa">متأهلم، سه فرزند دارم.</span></div><div class="line"><span class="fr">J'aime le sport et les voitures.</span><span class="fa">ورزش و ماشین دوست دارم.</span></div><div class="line"><span class="fr">Mon e-mail : mehdi.amrani@email.fr.</span><span class="fa">ایمیلم: mehdi.amrani@email.fr.</span></div><div class="line"><span class="fr">Sur Facebook, je suis Mehdi Amrani.</span><span class="fa">در فیسبوک، مهدی امرانی هستم.</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👩‍💼</div>
+    <div class="ic-meta"><div class="ic-name">Léa</div><div class="ic-theme">کارمند</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour, enchantée !</span><span class="fa">سلام، از آشنایی خوشبختم!</span></div><div class="line"><span class="fr">Je m'appelle Léa Moreau.</span><span class="fa">اسمم لِئا مورو است.</span></div><div class="line"><span class="fr">J'ai 30 ans.</span><span class="fa">۳۰ سالمه.</span></div><div class="line"><span class="fr">Je travaille dans un bureau, je suis secrétaire.</span><span class="fa">در یک دفتر کار می‌کنم، منشی هستم.</span></div><div class="line"><span class="fr">Je suis célibataire.</span><span class="fa">مجرد هستم.</span></div><div class="line"><span class="fr">J'aime le yoga et les voyages.</span><span class="fa">یوگا و سفر دوست دارم.</span></div><div class="line"><span class="fr">Mon adresse e-mail : lea.moreau@email.fr.</span><span class="fa">ایمیلم: lea.moreau@email.fr.</span></div><div class="line"><span class="fr">Mon compte LinkedIn : Léa Moreau.</span><span class="fa">حسابِ لینکدینم: لِئا مورو.</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">🧑‍🎤</div>
+    <div class="ic-meta"><div class="ic-name">Hugo</div><div class="ic-theme">موسیقی‌دان</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Salut ! Moi c'est Hugo Garcia.</span><span class="fa">سلام! من هوگو گارسیا هستم.</span></div><div class="line"><span class="fr">J'ai 21 ans.</span><span class="fa">۲۱ سالمه.</span></div><div class="line"><span class="fr">Je suis musicien et étudiant.</span><span class="fa">موسیقی‌دان و دانشجو هستم.</span></div><div class="line"><span class="fr">J'habite chez mes grands-parents.</span><span class="fa">خانه‌ی پدربزرگ و مادربزرگم زندگی می‌کنم.</span></div><div class="line"><span class="fr">J'adore la guitare et les concerts.</span><span class="fa">عاشقِ گیتار و کنسرت هستم.</span></div><div class="line"><span class="fr">Écris-moi : hugo.garcia@email.fr.</span><span class="fa">برایم بنویس: hugo.garcia@email.fr.</span></div><div class="line"><span class="fr">Mon compte YouTube : Hugo Music.</span><span class="fa">حسابِ یوتیوبم: Hugo Music.</span></div><div class="line"><span class="fr">Salut !</span><span class="fa">خداحافظ!</span></div></div></div>
+</div>
+<div class="intro-card">
+  <div class="ic-head" onclick="this.parentElement.classList.toggle('open')">
+    <div class="ic-emoji">👩‍🔬</div>
+    <div class="ic-meta"><div class="ic-name">Inès</div><div class="ic-theme">دانشمند</div></div>
+    <span class="ic-chev">▼</span>
+  </div>
+  <div class="ic-body"><div class="ic-inner"><div class="line"><span class="fr">Bonjour à toutes et à tous !</span><span class="fa">سلام به همه!</span></div><div class="line"><span class="fr">Je me présente : Inès Khelifi.</span><span class="fa">خودم را معرفی می‌کنم: اینس خلیفی.</span></div><div class="line"><span class="fr">J'ai 27 ans.</span><span class="fa">۲۷ سالمه.</span></div><div class="line"><span class="fr">Je suis chercheuse en biologie.</span><span class="fa">پژوهشگرِ زیست‌شناسی هستم.</span></div><div class="line"><span class="fr">Je vis seule avec mon chat.</span><span class="fa">تنها با گربه‌ام زندگی می‌کنم.</span></div><div class="line"><span class="fr">J'aime la lecture et la randonnée.</span><span class="fa">کتاب‌خواندن و کوه‌پیمایی دوست دارم.</span></div><div class="line"><span class="fr">Mon e-mail : ines.khelifi@email.fr.</span><span class="fa">ایمیلم: ines.khelifi@email.fr.</span></div><div class="line"><span class="fr">Mon compte sur X : @ines_bio.</span><span class="fa">حسابم در اِکس (توییتر): @ines_bio.</span></div></div></div>
+</div>
+
+  <div class="sec">حالا نوبتِ توست! (قالبِ تمرین)</div>
+  <div class="template">
+    <div class="tpl-t">✏️ خودت را معرفی کن</div>
+    <div class="tpl-d">جاهای خالی را پر کن. روی هر خط بزن و اطلاعاتِ خودت را بنویس. (می‌توانی از نمونه‌های بالا کمک بگیری.)</div>
+
+    <div class="tpl-line">
+      <div class="tpl-fr">Bonjour ! Je m'appelle <input class="blank" placeholder="..." style="min-width:140px">.</div>
+      <div class="tpl-hint">سلام! اسمم ... است.</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">J'ai <input class="blank" placeholder="..." style="min-width:50px"> ans.</div>
+      <div class="tpl-hint">... سالم است.</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">Je suis <input class="blank" placeholder="..." style="min-width:120px">.</div>
+      <div class="tpl-hint">شغلم ... است (مثلاً étudiant, professeur).</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">J'habite à <input class="blank" placeholder="..." style="min-width:110px">.</div>
+      <div class="tpl-hint">در شهرِ ... زندگی می‌کنم.</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">J'aime <input class="blank" placeholder="..." style="min-width:160px">.</div>
+      <div class="tpl-hint">... دوست دارم (علاقه‌هایت).</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">Mon e-mail est <input class="blank" placeholder="..." style="min-width:180px">.</div>
+      <div class="tpl-hint">ایمیلم ... است.</div>
+    </div>
+    <div class="tpl-line">
+      <div class="tpl-fr">Enchanté(e) !</div>
+      <div class="tpl-hint">از آشنایی خوشبختم!</div>
+    </div>
+  </div>
+
+  <div class="sec">صدایت را ضبط کن 🎤</div>
+  <div class="rec-box">
+    <div class="rec-t">🎤 معرفیِ خودت را با صدای بلند بگو</div>
+    <div class="rec-d">دکمه‌ی ضبط را بزن، معرفی‌ات را بخوان، بعد ذخیره کن. صدایت در حسابت می‌ماند تا هر وقت خواستی دوباره گوش بدهی و پیشرفتت را ببینی.</div>
+    <div class="rec-controls">
+      <button class="rec-btn rec-start" id="recStart">🎙️ شروع ضبط</button>
+      <button class="rec-btn rec-stop" id="recStop" disabled>⏹️ توقف و ذخیره</button>
+    </div>
+    <div class="rec-status" id="recStatus"></div>
+    <div class="login-note" id="loginNote" style="display:none">🔒 برای اینکه صدایت <b>برای همیشه</b> ذخیره شود، باید وارد حسابت شده باشی. اگر وارد نشده‌ای، صدا فقط روی همین گوشی می‌ماند.</div>
+    <div class="saved-list" id="savedList"></div>
+  </div>
+
+  <div class="foot">🌱 آفرین! حالا می‌توانی خودت را به فرانسه معرفی کنی. این اولین قدمِ بزرگ است!</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ───── ضبط صدا با ذخیره‌ی دائمی ─────
+(function(){
+  const SB_URL="https://ifjsnasoxnalhttzhlpd.supabase.co";
+  const SB_KEY="sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK";
+  let sb=null, user=null;
+  try{ if(window.supabase){ sb=window.supabase.createClient(SB_URL,SB_KEY); } }catch(e){}
+
+  const startBtn=document.getElementById('recStart');
+  const stopBtn=document.getElementById('recStop');
+  const status=document.getElementById('recStatus');
+  const savedList=document.getElementById('savedList');
+  const loginNote=document.getElementById('loginNote');
+  let mediaRecorder=null, chunks=[];
+
+  // چک ورود کاربر
+  async function checkUser(){
+    if(!sb) return null;
+    try{ const {data}=await sb.auth.getSession(); user=data.session?data.session.user:null; }catch(e){ user=null; }
+    if(!user) loginNote.style.display='block';
+    return user;
+  }
+  checkUser().then(loadSaved);
+
+  startBtn.onclick=async function(){
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+      mediaRecorder=new MediaRecorder(stream); chunks=[];
+      mediaRecorder.ondataavailable=e=>chunks.push(e.data);
+      mediaRecorder.onstop=async function(){
+        const blob=new Blob(chunks,{type:'audio/webm'});
+        stream.getTracks().forEach(t=>t.stop());
+        await saveRecording(blob);
+      };
+      mediaRecorder.start();
+      startBtn.disabled=true; stopBtn.disabled=false;
+      status.innerHTML='در حال ضبط... <span class="rec-dot"></span>';
+    }catch(e){
+      status.textContent='⚠️ نتوانستم به میکروفون دسترسی پیدا کنم. لطفاً اجازه‌ی میکروفون را بده.';
+    }
+  };
+  stopBtn.onclick=function(){
+    if(mediaRecorder&&mediaRecorder.state!=='inactive'){ mediaRecorder.stop(); }
+    startBtn.disabled=false; stopBtn.disabled=true;
+    status.textContent='در حال ذخیره...';
+  };
+
+  async function saveRecording(blob){
+    const when=new Date().toLocaleString('fa-IR');
+    // اگر کاربر وارد است → ذخیره در فضای ابری (دائمی)
+    if(user&&sb){
+      try{
+        const fname=user.id+'/intro_'+Date.now()+'.webm';
+        const {error}=await sb.storage.from('recordings').upload(fname,blob,{contentType:'audio/webm'});
+        if(error) throw error;
+        // ثبت در جدول
+        try{ await sb.from('user_recordings').insert({user_id:user.id,path:fname,label:'معرفی خود',created_at:new Date().toISOString()}); }catch(e){}
+        status.textContent='✅ ذخیره شد (در حسابت، برای همیشه)';
+        loadSaved();
+        return;
+      }catch(e){
+        status.textContent='⚠️ ذخیره در حساب نشد؛ روی همین گوشی ذخیره می‌کنم.';
+      }
+    }
+    // در غیر این صورت → ذخیره‌ی محلی روی همین مرورگر
+    saveLocal(blob,when);
+    status.textContent='✅ ذخیره شد (روی همین گوشی)';
+  }
+
+  // ذخیره‌ی محلی با IndexedDB
+  function saveLocal(blob,when){
+    const r=new FileReader();
+    r.onload=function(){
+      let arr=JSON.parse(localStorage.getItem('hoda_recordings')||'[]');
+      arr.push({data:r.result,when:when}); 
+      try{ localStorage.setItem('hoda_recordings',JSON.stringify(arr)); }catch(e){}
+      loadSaved();
+    };
+    r.readAsDataURL(blob);
+  }
+
+  async function loadSaved(){
+    savedList.innerHTML='';
+    // ابری
+    if(user&&sb){
+      try{
+        const {data}=await sb.from('user_recordings').select('*').eq('user_id',user.id).order('created_at',{ascending:false});
+        if(data&&data.length){
+          for(const rec of data){
+            const {data:urlData}=await sb.storage.from('recordings').createSignedUrl(rec.path,3600);
+            if(urlData&&urlData.signedUrl) addSavedItem(urlData.signedUrl,new Date(rec.created_at).toLocaleString('fa-IR'),rec.id);
+          }
+          return;
+        }
+      }catch(e){}
+    }
+    // محلی
+    let arr=JSON.parse(localStorage.getItem('hoda_recordings')||'[]');
+    arr.slice().reverse().forEach((rec,idx)=>{
+      addSavedItem(rec.data,rec.when,'local_'+(arr.length-1-idx));
+    });
+  }
+
+  function addSavedItem(url,when,id){
+    const div=document.createElement('div');div.className='saved-item';
+    const audio=document.createElement('audio');audio.controls=true;audio.src=url;
+    const date=document.createElement('span');date.className='saved-date';date.textContent=when;
+    const del=document.createElement('button');del.className='saved-del';del.textContent='🗑️';
+    del.onclick=function(){ deleteRec(id); };
+    div.appendChild(audio);div.appendChild(date);div.appendChild(del);
+    savedList.appendChild(div);
+  }
+
+  async function deleteRec(id){
+    if(String(id).startsWith('local_')){
+      let arr=JSON.parse(localStorage.getItem('hoda_recordings')||'[]');
+      const i=parseInt(id.replace('local_',''));
+      arr.splice(i,1); localStorage.setItem('hoda_recordings',JSON.stringify(arr));
+      loadSaved();
+    } else if(user&&sb){
+      try{ await sb.from('user_recordings').delete().eq('id',id); loadSaved(); }catch(e){}
+    }
+  }
+})();
+</script>
+<script>
+/* hoda-protect */
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();},{capture:true});
+  document.addEventListener('selectstart',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('copy',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('keydown',function(e){var t=e.target;var inField=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable);var k=(e.key||'').toLowerCase();if((e.ctrlKey||e.metaKey)&&['c','x','u','s','a'].indexOf(k)>-1&&!inField){e.preventDefault();}},{capture:true});
+})();
+</script>
+<style>
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+</style>
+</body>
+</html>
