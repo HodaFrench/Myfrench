@@ -65,6 +65,20 @@ body{font-family:'Estedad',sans-serif;background:#f2f8f5;background-image:repeat
 .saved-date{font-size:11px;color:var(--gray);white-space:nowrap}
 .saved-del{background:none;border:none;color:#c0524f;cursor:pointer;font-size:17px;padding:2px 6px}
 .login-note{background:#fff3e0;border:1px solid #f0d9a8;border-radius:11px;padding:11px 14px;font-size:12.5px;color:#8a6a3a;line-height:1.8;margin-top:12px}
+
+.write-box{background:linear-gradient(135deg,#eef7f2,#e2f0e8);border:1.5px solid #c5e3d3;border-radius:16px;padding:18px;margin-top:14px}
+.wb-t{font-size:15px;font-weight:800;color:#2a7a54;margin-bottom:5px}
+.wb-d{font-size:12.8px;color:#3a6a52;line-height:1.8;margin-bottom:13px}
+.wb-area{width:100%;min-height:150px;border:1.5px solid #c5e3d3;border-radius:12px;padding:13px;font-family:'Roboto',serif;font-size:15px;line-height:1.9;color:#2a3a30;resize:vertical;background:#fff;outline:none;direction:ltr;text-align:left}
+.wb-area:focus{border-color:#3a9b6e}
+.wb-area:disabled{background:#f4f8f6;color:#5a6b60}
+.wb-btns{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.wb-btn{border:none;border-radius:22px;padding:10px 22px;font-family:'Estedad';font-size:14px;font-weight:700;cursor:pointer;transition:transform .1s}
+.wb-btn:active{transform:scale(.96)}
+.wb-save{background:#3a9b6e;color:#fff}
+.wb-edit{background:#5a7db5;color:#fff}
+.wb-btn:disabled{opacity:.4;cursor:not-allowed}
+.wb-status{font-size:12.5px;color:#2a7a54;margin-top:10px;min-height:18px;font-weight:600}
 .foot{text-align:center;font-size:12.5px;color:var(--gray);margin:18px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #cfe8db}
 .foot b{color:var(--green-d)}
 </style>
@@ -200,6 +214,18 @@ body{font-family:'Estedad',sans-serif;background:#f2f8f5;background-image:repeat
       <div class="tpl-fr">Enchanté(e) !</div>
       <div class="tpl-hint">از آشنایی خوشبختم!</div>
     </div>
+  </div>
+
+  <div class="sec">متنِ معرفی‌ات را ذخیره کن ✍️</div>
+  <div class="write-box">
+    <div class="wb-t">✍️ معرفیِ کاملت را اینجا بنویس</div>
+    <div class="wb-d">وقتی جاهای خالیِ بالا را پر کردی، کلِ متنِ معرفی‌ات را اینجا بنویس و ذخیره کن. هر وقت خواستی می‌توانی برگردی، بخوانی‌اش و ویرایشش کنی. (در حسابت ذخیره می‌شود.)</div>
+    <textarea class="wb-area" id="introText" placeholder="Bonjour ! Je m'appelle ...&#10;J'ai ... ans.&#10;Je suis ...&#10;J'habite à ...&#10;J'aime ...&#10;Mon e-mail est ...&#10;Enchanté(e) !"></textarea>
+    <div class="wb-btns">
+      <button class="wb-btn wb-save" id="saveIntroBtn">💾 ذخیره</button>
+      <button class="wb-btn wb-edit" id="editIntroBtn" style="display:none">✏️ ویرایش</button>
+    </div>
+    <div class="wb-status" id="introStatus"></div>
   </div>
 
   <div class="sec">صدایت را ضبط کن 🎤</div>
@@ -342,6 +368,75 @@ body{font-family:'Estedad',sans-serif;background:#f2f8f5;background-image:repeat
       try{ await sb.from('user_recordings').delete().eq('id',id); loadSaved(); }catch(e){}
     }
   }
+})();
+</script>
+<script>
+// ───── ثبت و ویرایش متن معرفی ─────
+(function(){
+  const SB_URL="https://ifjsnasoxnalhttzhlpd.supabase.co";
+  const SB_KEY="sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK";
+  let sb=null, user=null;
+  try{ if(window.supabase){ sb=window.supabase.createClient(SB_URL,SB_KEY); } }catch(e){}
+
+  const area=document.getElementById('introText');
+  const saveBtn=document.getElementById('saveIntroBtn');
+  const editBtn=document.getElementById('editIntroBtn');
+  const status=document.getElementById('introStatus');
+  if(!area) return;
+
+  async function check(){
+    if(!sb) return null;
+    try{ const {data}=await sb.auth.getSession(); user=data.session?data.session.user:null; }catch(e){ user=null; }
+    return user;
+  }
+
+  function lockArea(){ area.disabled=true; saveBtn.style.display='none'; editBtn.style.display='inline-block'; }
+  function unlockArea(){ area.disabled=false; saveBtn.style.display='inline-block'; editBtn.style.display='none'; area.focus(); }
+
+  async function load(){
+    await check();
+    let txt='';
+    if(user&&sb){
+      try{
+        const {data}=await sb.from('user_texts').select('content').eq('user_id',user.id).eq('kind','se_presenter').maybeSingle();
+        if(data&&data.content) txt=data.content;
+      }catch(e){}
+    }
+    if(!txt){ try{ txt=localStorage.getItem('hoda_intro_text')||''; }catch(e){} }
+    if(txt){ area.value=txt; lockArea(); status.textContent='✅ متنِ ذخیره‌شده‌ات بارگذاری شد.'; }
+  }
+  load();
+
+  saveBtn.onclick=async function(){
+    const txt=area.value.trim();
+    if(!txt){ status.textContent='⚠️ اول یک متن بنویس.'; return; }
+    status.textContent='در حال ذخیره...';
+    // محلی همیشه
+    try{ localStorage.setItem('hoda_intro_text',txt); }catch(e){}
+    // ابری اگر وارد است
+    if(user&&sb){
+      try{
+        // آیا رکورد هست؟
+        const {data:ex}=await sb.from('user_texts').select('id').eq('user_id',user.id).eq('kind','se_presenter').maybeSingle();
+        if(ex&&ex.id){
+          await sb.from('user_texts').update({content:txt,updated_at:new Date().toISOString()}).eq('id',ex.id);
+        } else {
+          await sb.from('user_texts').insert({user_id:user.id,kind:'se_presenter',content:txt,updated_at:new Date().toISOString()});
+        }
+        status.textContent='✅ ذخیره شد (در حسابت، برای همیشه).';
+        lockArea();
+        return;
+      }catch(e){
+        status.textContent='✅ ذخیره شد (روی همین گوشی). برای ذخیره‌ی دائمی وارد حسابت شو.';
+        lockArea();
+        return;
+      }
+    }
+    status.textContent='✅ ذخیره شد (روی همین گوشی). برای ذخیره‌ی دائمی وارد حسابت شو.';
+    lockArea();
+  };
+
+  editBtn.onclick=function(){ unlockArea(); status.textContent='حالا می‌توانی ویرایش کنی و دوباره ذخیره کنی.'; };
 })();
 </script>
 <script>
