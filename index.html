@@ -453,7 +453,62 @@ function openVocabFolders(){
   });
   document.getElementById('overlay').classList.add('open');
 }
+
+// ───── دسته‌بندی les mots de l'info ─────
+const MI_CATEGORIES=[
+  {cat:"ecole",fa:"کلمات مدرسه",fr:"Les mots de l'école",emoji:"🏫"},
+  {cat:"travail",fa:"کلمات کار",fr:"Les mots du travail",emoji:"💼"},
+  {cat:"loisirs",fa:"سرگرمی و فرهنگ",fr:"Loisirs et culture",emoji:"🎭"},
+  {cat:"tourisme",fa:"کلمات گردشگری",fr:"Les mots du tourisme",emoji:"✈️"},
+  {cat:"consommation",fa:"کلمات مصرف",fr:"Les mots de la consommation",emoji:"🛒"},
+  {cat:"relations",fa:"روابط اجتماعی و خانوادگی",fr:"Relations sociales et familiales",emoji:"👨‍👩‍👧"},
+  {cat:"transports",fa:"کلمات حمل‌ونقل",fr:"Les mots des transports",emoji:"🚲"},
+  {cat:"environnement",fa:"کلمات محیط زیست",fr:"Les mots de l'environnement",emoji:"🌿"},
+  {cat:"sante",fa:"کلمات سلامت",fr:"Les mots de la santé",emoji:"❤️"},
+  {cat:"medias",fa:"کلمات رسانه‌ها",fr:"Les mots des médias",emoji:"📱"}
+];
+function openMotsInfoCats(){
+  document.getElementById('mtitle').textContent="les mots de l'info";
+  document.getElementById('mtitle').style.color='#b07a4a';
+  document.getElementById('mcount').textContent=MI_CATEGORIES.length+' دسته';
+  const body=document.getElementById('mbody');body.innerHTML='';
+  const back=document.createElement('a');back.className='item';back.href='javascript:void(0)';
+  back.onclick=function(){openVocabFolders();};
+  back.innerHTML='<div class="item-cover" style="background:#999"><span class="item-cover-txt">↩</span></div><div class="item-info"><div class="ititle">بازگشت به پوشه‌ها</div></div>';
+  body.appendChild(back);
+  MI_CATEGORIES.forEach(function(c){
+    var n=(typeof LESSONS!=='undefined'?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub==='mots_info'&&l.cat2===c.cat;}).length:0);
+    var a=document.createElement('a');a.className='item';a.href='javascript:void(0)';
+    a.onclick=function(){openMotsInfoLessons(c.cat,c.fa);};
+    a.innerHTML='<div class="item-cover" style="background:#b07a4a"><span class="item-cover-txt" style="font-size:24px">'+c.emoji+'</span></div>'+
+      '<div class="item-info"><div class="ititle">'+c.fr+'</div><span class="item-lvl">'+c.fa+' · '+(n?n+' درس':'به‌زودی')+'</span></div>';
+    body.appendChild(a);
+  });
+  document.getElementById('overlay').classList.add('open');
+}
+function openMotsInfoLessons(cat,faName){
+  var items=(typeof LESSONS!=='undefined'?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub==='mots_info'&&l.cat2===cat;}):[]);
+  document.getElementById('mtitle').textContent=faName;
+  document.getElementById('mtitle').style.color='#b07a4a';
+  document.getElementById('mcount').textContent=items.length+' درس';
+  var body=document.getElementById('mbody');body.innerHTML='';
+  var back=document.createElement('a');back.className='item';back.href='javascript:void(0)';
+  back.onclick=function(){openMotsInfoCats();};
+  back.innerHTML='<div class="item-cover" style="background:#999"><span class="item-cover-txt">↩</span></div><div class="item-info"><div class="ititle">بازگشت به دسته‌ها</div></div>';
+  body.appendChild(back);
+  if(!items.length){
+    var e=document.createElement('div');e.className='empty';e.textContent='این دسته هنوز خالی است — به‌زودی پر می‌شود.';body.appendChild(e);
+  } else items.forEach(function(l){
+    var a=document.createElement('a');a.className='item';a.href=l.file||'#';
+    var short=(l.titleFr||l.title).trim().substring(0,28);
+    var lvl=l.level?'<span class="item-lvl">'+l.level+'</span>':'';
+    a.innerHTML='<div class="item-cover" style="background:#b07a4a"><span class="item-cover-txt">'+short+'</span></div><div class="item-info"><div class="ititle">'+l.title+'</div>'+lvl+'</div>';
+    body.appendChild(a);
+  });
+  document.getElementById('overlay').classList.add('open');
+}
 function openVocabSub(sub,faName,color){
+  if(sub==='mots_info'){openMotsInfoCats();return;}
   const items=(typeof LESSONS!=='undefined'?LESSONS.filter(l=>l.category==='vocab'&&l.sub===sub):[]);
   document.getElementById('mtitle').textContent=faName;
   document.getElementById('mtitle').style.color=color||'#22618f';
