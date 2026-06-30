@@ -548,6 +548,18 @@ const LESSONS = [
     tags: ["vocabulaire","modes de vie","jeunes","B1"],
     summary: "واژگان سبک زندگی جوانان فرانسوی"
   },
+
+  {
+    file: "MOTSINFO_01.html",
+    title: "درس اول: تلفن همراه در مدرسه",
+    titleFr: "Le téléphone portable à l'école",
+    category: "vocab",
+    sub: "mots_info",
+    level: "B1–B2",
+    premium: false,
+    tags: ["کلمات خبری", "جامعه", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی درباره‌ی ممنوعیت موبایل در مدارس، با تعریف، معنی و مثال‌های پیشرفته‌ی B2 (جمله‌های استدلالی با متصل‌کننده‌ها).",
+  },
   {
     file: "GRAMMAR_comparaison.html",
     title: "📐 La Comparaison — مقایسه در فرانسه",
