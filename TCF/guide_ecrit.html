@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>راهنمای کلی نوشتار | TCF</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1e3a5f;--gold:#b07a4a;--ink:#2c2a26;--gray:#8a8275;--line:#e6e3dd;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--teal:#2e7d8f;--teal-d:#236170;--coral:#c75b39;--coral-d:#a8472a}
+body{font-family:'Estedad',sans-serif;background:#f4f3f5;background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(199,91,57,0.05) 31px,rgba(199,91,57,0.05) 32px);color:var(--ink);line-height:1.9;padding:0 0 90px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27180%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2717%27%20font-weight%3D%27600%27%20fill%3D%27rgba%28199%2C91%2C57%2C0.06%29%27%20transform%3D%27rotate%28-25%20150%2090%29%27%20letter-spacing%3D%271.5%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat;opacity:1}
+.hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
+.hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--coral);color:#fff;text-decoration:none;border-radius:22px;padding:6px 16px;font-size:13.5px;font-weight:700;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center}
+.hero{background:linear-gradient(135deg,#c75b39,#a8472a);color:#fff;padding:28px 26px 24px;text-align:center}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:11px;letter-spacing:1.2px;margin-bottom:11px;font-weight:600}
+.hero h1{font-family:'Estedad',serif;font-size:22px;font-weight:800;margin-bottom:6px}
+.hero .sub{font-size:13px;opacity:.93;line-height:1.7}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem}
+.intro{background:#fdeee9;border-right:4px solid var(--coral);border-radius:12px;padding:15px 18px;margin-top:18px;font-size:14px;line-height:2.05}
+.intro b{color:var(--coral-d)}
+.sec-label{font-size:12.5px;font-weight:800;color:var(--coral-d);letter-spacing:.5px;margin:24px 4px 2px;display:flex;align-items:center;gap:7px}
+.sec-label::before{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#e2c4b8)}
+.sec-label::after{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,#e2c4b8,transparent)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-top:14px;box-shadow:0 3px 14px rgba(199,91,57,.07);overflow:hidden}
+.card-h{display:flex;align-items:center;gap:11px;padding:14px 16px;background:linear-gradient(140deg,#fdf1ec,#f8e3da)}
+.card-n{flex-shrink:0;width:34px;height:34px;background:var(--coral);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.card-t{font-size:15px;font-weight:800;color:var(--coral-d)}
+.card-t .fr{display:block;font-size:11.5px;color:var(--gray);direction:ltr;text-align:left;font-family:'Roboto',serif;margin-top:1px}
+.card-b{padding:14px 16px}
+.card-b p{font-size:13.8px;line-height:2;color:#33302a;margin-bottom:9px}
+.card-b b{color:var(--coral-d)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.chip{background:rgba(46,139,107,.1);color:var(--green-d);border-radius:18px;padding:4px 12px;font-size:12px;font-weight:700}
+.chip.w{background:rgba(199,91,57,.1);color:var(--coral-d)}
+.struct{background:#faf7f0;border:1px solid #ece3d0;border-radius:11px;padding:12px 15px;margin-top:10px}
+.struct-t{font-size:12.5px;font-weight:800;color:var(--gold);margin-bottom:8px}
+.struct ol{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:7px}
+.struct li{position:relative;padding-right:26px;font-size:13px;line-height:1.8;color:#4a453c;counter-increment:s}
+.struct li::before{content:counter(s);position:absolute;right:0;top:0;width:18px;height:18px;background:var(--gold);color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+.struct .fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+.tipbox{background:rgba(46,125,143,.07);border:1px solid #cfe0e5;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:12.8px;line-height:1.9;color:#3a5560}
+.tipbox b{color:var(--teal-d)}
+.tipbox .fr{direction:ltr;unicode-bidi:isolate;font-family:'Roboto',serif;font-weight:600;color:var(--teal-d)}
+.warnb{background:rgba(196,80,45,.07);border:1px dashed #e0b3a0;border-radius:11px;padding:11px 14px;margin-top:10px;font-size:13px;line-height:1.9;color:#8a4a32}
+.warnb b{color:var(--coral-d)}
+.goldrules{background:linear-gradient(135deg,#fff9f0,#fdf1e3);border:1px solid #ecd9bd;border-radius:14px;padding:16px 18px;margin-top:16px}
+.goldrules .gt{font-size:14px;font-weight:800;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.goldrules ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.goldrules li{position:relative;padding-right:24px;font-size:13.3px;line-height:1.85;color:#5a4d38}
+.goldrules li::before{content:"★";position:absolute;right:0;top:1px;color:var(--gold)}
+.goldrules b{color:var(--coral-d)}
+.crit{display:flex;flex-direction:column;gap:9px;margin-top:6px}
+.crit-item{display:flex;gap:11px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.crit-ic{flex-shrink:0;width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:rgba(46,139,107,.12)}
+.crit-tx{flex:1}
+.crit-tx h4{font-size:13.5px;font-weight:800;color:var(--green-d);margin-bottom:2px}
+.crit-tx p{font-size:12.7px;line-height:1.8;color:#4a5550;margin:0}
+.src{margin-top:18px;font-size:11px;color:#a89a92;border-top:1px solid #eee;padding-top:10px;line-height:1.7;text-align:center}
+.foot{text-align:center;font-size:12.5px;color:var(--gray);margin:14px 6px 0;line-height:1.8;padding:14px;background:var(--white);border-radius:14px;border:1px dashed #e2c4b8}
+.foot b{color:var(--coral-d)}
+</style>
+</head>
+<body>
+<div class="hoda-watermark" aria-hidden="true"></div>
+<div class="hoda-back">
+  <a class="hoda-back-btn" href="index.html">&#8592; آمادگی TCF</a>
+  <span class="hoda-back-label">✍️ راهنمای نوشتار</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">✍️ EXPRESSION ÉCRITE · GUIDE GÉNÉRAL</div>
+  <h1>راهنمای کلی بخش نوشتار</h1>
+  <div class="sub">قبل از شروعِ سه تسک، این را بخوان —<br>ساختار، زمان‌بندی، معیارهای نمره و تله‌ها 🇨🇦</div>
+</div>
+<div class="wrap">
+  <div class="intro">
+    بخشِ <b>Expression écrite</b> آزمونِ TCF Canada، <b>۶۰ دقیقه</b> وقت داره و <b>سه تسک</b> داره که باید <b>به‌ترتیب</b> انجام بشن (اول ۱، بعد ۲، بعد ۳). هر تسک <b>هدف و نوعِ متنِ متفاوتی</b> داره. این راهنما قبل از ورود به تسک‌ها، نقشه‌ی کلی را بهت می‌ده تا با دیدِ باز شروع کنی.
+  </div>
+
+  <div class="sec-label">⏱️ زمان‌بندیِ پیشنهادی</div>
+  <div class="card">
+    <div class="card-b">
+      <p>زمانِ ثابتی برای هر تسک تعیین نشده، ولی چون تسک ۳ سخت‌ترین و امتیازآورترینه، بهتره وقت را هوشمندانه تقسیم کنی. یک تقسیمِ پیشنهادی بر اساسِ منابعِ آماده‌سازی:</p>
+      <div class="struct">
+        <div class="struct-t">⏱️ تقسیمِ ۶۰ دقیقه</div>
+        <ol>
+          <li><b>تسک ۱:</b> حدود <b>۱۰ دقیقه</b> (پیام کوتاه)</li>
+          <li><b>تسک ۲:</b> حدود <b>۲۰ دقیقه</b> (روایت/توصیف)</li>
+          <li><b>تسک ۳:</b> حدود <b>۲۵–۳۰ دقیقه</b> (متنِ استدلالی)</li>
+        </ol>
+      </div>
+      <div class="tipbox">💡 <b>چند دقیقه‌ی آخر را برای بازخوانی (relecture) نگه دار.</b> غلط‌های هماهنگی فعل و فاعل، صفت‌ها و گذشته‌ی افعال «گران» تموم می‌شن. یک نگاهِ دوباره می‌تونه نمره‌ت را نجات بده.</div>
+    </div>
+  </div>
+
+  <div class="sec-label">📋 سه تسک در یک نگاه</div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">۱</div><div class="card-t">پیامِ کوتاهِ روزمره<span class="fr">Tâche 1 · décrire / informer</span></div></div>
+    <div class="card-b">
+      <div class="meta"><span class="chip">سطح A2–B1</span><span class="chip w">معمولاً ۶۰–۱۲۰ کلمه</span></div>
+      <p>یک <b>پیامِ کوتاه</b> (اغلب ایمیل یا پیام) در موقعیتی از زندگیِ روزمره می‌نویسی، خطاب به یک یا چند نفر که <b>جایگاهشان در صورتِ سؤال مشخص شده</b>. هدف: <b>پیام را روشن برسونی و اطلاعاتِ خواسته‌شده را بدی</b> (توصیف، دعوت، خبر دادن، درخواست...).</p>
+      <div class="warnb">⚠️ <b>تله‌ی مهم:</b> این تسک <b>جای بیانِ نظر و استدلال نیست!</b> فقط اطلاعات بده و پیام را منتقل کن. خیلی‌ها اشتباهاً اینجا شروع به نظر‌دادن می‌کنن.</div>
+      <div class="tipbox">💡 <b>لحن را از روی مخاطب تنظیم کن:</b> برای دوست/همکارِ نزدیک <span class="fr">tu</span>، و برای رئیس/غریبه/فروشنده <span class="fr">vous</span>. این در صورتِ سؤال مشخص می‌شه — پیداش کن و ثابت بمون.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">۲</div><div class="card-t">روایت و توصیف<span class="fr">Tâche 2 · raconter / décrire</span></div></div>
+    <div class="card-b">
+      <div class="meta"><span class="chip">سطح B1–B2</span><span class="chip w">معمولاً ۱۲۰–۱۵۰ کلمه</span></div>
+      <p>اغلب یک <b>مقاله‌ی وبلاگی</b> می‌نویسی. هدف اصلی <b>روایت‌کردن (narration)</b> است: یک تجربه یا خاطره را تعریف می‌کنی، توصیف می‌کنی و توضیح می‌دی — طوری که خواننده را جذب کنی یا ترغیبش کنی.</p>
+      <div class="struct">
+        <div class="struct-t">🧱 ساختارِ ساده‌ی یک مقاله‌ی وبلاگی</div>
+        <ol>
+          <li><b>عنوانِ جذاب:</b> یک تیترِ گیرا که کنجکاوی بسازه</li>
+          <li><b>مقدمه:</b> معرفیِ کوتاه و جذابِ موضوع</li>
+          <li><b>بدنه:</b> روایتِ تجربه‌ات با جزئیات و احساسات</li>
+          <li><b>جمع‌بندیِ کوتاه</b></li>
+        </ol>
+      </div>
+      <div class="tipbox">💡 <b>احساساتت را بیان کن:</b> <span class="fr">J'étais ravi, surpris, ému, impressionné…</span> — این‌ها متن را زنده و جذاب می‌کنن و سطحت را نشون می‌دن.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h"><div class="card-n">۳</div><div class="card-t">متنِ استدلالی (مهم‌ترین)<span class="fr">Tâche 3 · synthèse + argumentation</span></div></div>
+    <div class="card-b">
+      <div class="meta"><span class="chip">سطح B2–C1</span><span class="chip w">معمولاً ۱۲۰–۱۸۰ کلمه</span></div>
+      <p>این <b>تعیین‌کننده‌ترین تسکِ کلِ آزمونه</b> — همینه که تو را از NCLC 6 به 7 و از 7 به 9 می‌بره. دو سند (دو دیدگاهِ مخالف) درباره‌ی یک موضوع به تو می‌دن، و باید یک <b>مقاله‌ی کوتاه</b> در دو بخش بنویسی:</p>
+      <div class="struct">
+        <div class="struct-t">🧱 ساختارِ طلاییِ تسک ۳</div>
+        <ol>
+          <li><b>عنوان:</b> تیتری که موضوعِ بحث را نشون بده</li>
+          <li><b>بخش اول (۴۰–۶۰ کلمه):</b> دو دیدگاه را <b>با کلماتِ خودت بازگو (reformuler)</b> و خلاصه کن — متعادل و با ذکرِ منبعِ هر نظر</li>
+          <li><b>بخش دوم (۸۰–۱۲۰ کلمه):</b> <b>نظرِ خودت</b> را بگو و با استدلال و مثال دفاع کن</li>
+        </ol>
+      </div>
+      <div class="tipbox">💡 <b>کلیدِ بخش اول، «بازگویی» است</b> — نه کپیِ متن! اینجاست که درسنامه‌ی <b>«سه تکنیک بازگویی»</b> (مترادف، مجهول‌سازی، اسم‌سازی) به دادت می‌رسه. حتماً قبلش اون را بخون.</div>
+      <div class="warnb">⚠️ <b>نتیجه‌ی نهایی را نَواُفتاده (نُوانس‌دار) بگذار:</b> به‌جای نظرِ تندِ صددرصدی، از <span class="fr">d'un côté… de l'autre…</span> و <span class="fr">il me semble que…</span> استفاده کن. نتیجه‌ی متعادل امتیازِ بیشتری می‌گیره.</div>
+    </div>
+  </div>
+
+  <div class="sec-label">📊 معیارهای نمره‌دهی</div>
+  <div class="card-b" style="padding:0">
+    <p style="font-size:13.5px;line-height:2;color:#33302a;margin-bottom:10px">نوشته‌ات را <b>دو ممتحنِ مستقل</b> ارزیابی می‌کنن، بر اساسِ این سه معیارِ اصلی:</p>
+    <div class="crit">
+      <div class="crit-item"><div class="crit-ic">🗣️</div><div class="crit-tx"><h4>رعایتِ دستورِ کار (consigne)</h4><p>آیا دقیقاً همان چیزی را نوشتی که خواسته شده؟ نوعِ متن، مخاطب و تعدادِ کلمات درست است؟</p></div></div>
+      <div class="crit-item"><div class="crit-ic">🧩</div><div class="crit-tx"><h4>انسجام و پیوستگی (cohérence)</h4><p>آیا ایده‌ها منظم و با <b>کلماتِ ربط (connecteurs)</b> به هم وصل شدن؟ مقدمه، بدنه و نتیجه دارد؟</p></div></div>
+      <div class="crit-item"><div class="crit-ic">📚</div><div class="crit-tx"><h4>کیفیتِ زبانی (linguistique)</h4><p>غنای واژگان، درستیِ دستور و املا، و تنوعِ ساختارِ جمله‌ها. تکرار نکن، ساختارها را متنوع کن.</p></div></div>
+    </div>
+  </div>
+
+  <div class="sec-label">⭐ قانون‌های طلایی</div>
+  <div class="goldrules">
+    <div class="gt">✅ این‌ها را همیشه رعایت کن</div>
+    <ul>
+      <li><b>تسک‌ها را به‌ترتیب انجام بده</b> (۱ → ۲ → ۳).</li>
+      <li><b>تعدادِ کلمات را رعایت کن.</b> اگر به حداقل نرسی، تسک خودکار <span class="fr">«A1 non atteint»</span> نمره می‌گیره — یعنی صفر!</li>
+      <li><b>دستورِ کار را دو بار بخون.</b> جوابِ خیلی چیزها (مخاطب، لحن، نوعِ متن) همون‌جا توی صورتِ سؤاله.</li>
+      <li><b>از کلماتِ ربط استفاده کن:</b> <span class="fr">cependant, de plus, par conséquent, en revanche…</span></li>
+      <li><b>جمله‌های خیلی بلند نزن؛</b> ساختارها را متنوع کن و از تکرار پرهیز کن.</li>
+      <li><b>چند دقیقه‌ی آخر را بازخوانی کن</b> — هماهنگی‌ها و صرفِ افعال را چک کن.</li>
+    </ul>
+  </div>
+  <div class="warnb" style="margin-top:14px">🚫 <b>نوشته‌ات اصلاً تصحیح نمی‌شه اگر:</b> خوانا نباشه، تعدادِ کلمات رعایت نشه، یا خارج از موضوع (<span class="fr">hors-sujet</span>) باشه. در این حالت <span class="fr">«Niveau A1 non atteint»</span> روی کارنامه ثبت می‌شه.</div>
+
+  <div class="src">📚 منابع: tcfca.com؛ Réussir-TCF Canada؛ TCF Canada Formation؛ Mes4C2؛ SavoirX — محتوا با تدریس و تنظیمِ اورجینال. این یک راهنمای کلیه؛ برای جزئیات و تمرین، وارد تسک‌های ۱، ۲ و ۳ شو.</div>
+  <div class="foot">✍️ حالا که نقشه‌ی کلی را داری، آماده‌ای که سراغِ <b>سه تسک</b> بری. موفق باشی!</div>
+</div>
+<script>
+/* hoda-protect */
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();},{capture:true});
+  document.addEventListener('selectstart',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('copy',function(e){var t=e.target;if(t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable))return;e.preventDefault();});
+  document.addEventListener('keydown',function(e){var t=e.target;var inField=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable);var k=(e.key||'').toLowerCase();if((e.ctrlKey||e.metaKey)&&['c','x','u','s','a'].indexOf(k)>-1&&!inField){e.preventDefault();}},{capture:true});
+})();
+</script>
+<style>
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
+</style>
+</body>
+</html>
