@@ -560,6 +560,18 @@ const LESSONS = [
     tags: ["کلمات خبری", "جامعه", "B2"],
     summary: "۱۰ واژه‌ی کلیدی درباره‌ی ممنوعیت موبایل در مدارس، با تعریف، معنی و مثال‌های پیشرفته‌ی B2 (جمله‌های استدلالی با متصل‌کننده‌ها).",
   },
+
+  {
+    file: "MOTSINFO_02.html",
+    title: "درس دوم: آزار و اذیت در مدرسه",
+    titleFr: "Le harcèlement scolaire",
+    category: "vocab",
+    sub: "mots_info",
+    level: "B1–B2",
+    premium: false,
+    tags: ["کلمات خبری", "جامعه", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی درباره‌ی آزار و اذیت در مدرسه، با تعریف، معنی و مثال‌های پیشرفته‌ی B2.",
+  },
   {
     file: "GRAMMAR_comparaison.html",
     title: "📐 La Comparaison — مقایسه در فرانسه",
