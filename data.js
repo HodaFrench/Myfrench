@@ -1431,6 +1431,28 @@ const LESSONS = [
     summary: "۵ اقدام عملی برای حفظ گونه‌های در معرض خطر: کاهش ردپای کربن، مصرف مسئولانه، حمایت از انجمن‌ها، آگاه‌سازی، پرهیز از مواد مضر. تحلیل واژگان و ساختارهای B1.",
   },
   {
+    file: "ARTICLE_enfants_reseaux_vietnam.html",
+    title: "نمی‌توان بچه‌ها را به حال خود در شبکه‌های اجتماعی رها کرد",
+    titleFr: "Nous ne pouvons pas laisser les enfants livrés aux réseaux sociaux",
+    category: "article",
+    level: "B2–C1",
+    premium: false,
+    tags: ["آرتیکل", "جامعه", "فناوری"],
+    summary: "بحثی درباره‌ی محدودکردن دسترسی کودکان زیر ۱۶ سال به شبکه‌های اجتماعی در ویتنام، تجربه‌ی استرالیا، و چرا ممنوعیت به‌تنهایی کافی نیست. واژگان پیشرفته با ترجمه و هایلایت.",
+  },
+
+  {
+    file: "ARTICLE_enfants_reseaux_parents.html",
+    title: "چطور والدین بدون ممنوع‌کردن شبکه‌های اجتماعی از بچه‌ها محافظت کنند",
+    titleFr: "Comment protéger les enfants sans interdire les réseaux sociaux",
+    category: "article",
+    level: "B2–C1",
+    premium: false,
+    tags: ["آرتیکل", "جامعه", "خانواده"],
+    summary: "راهکارهای عملی برای والدین: سواد دیجیتال، کنترل‌های والدین، آگاهی از هوش مصنوعی و گفت‌وگوی باز به‌جای ممنوعیت کامل. واژگان پیشرفته با ترجمه و هایلایت.",
+  },
+
+  {
     file: "ARTICLE_surtourisme.html",
     title: "سورتوریسم: چه تأثیری بر شهرها و محیط زیست دارد؟",
     titleFr: "Le surtourisme : quel impact sur les villes et sur l'environnement ?",
