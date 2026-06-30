@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "TRAVAIL_04.html",
+    title: "نسل Z",
+    titleFr: "La génération Z",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "travail",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی با تعریف، معنی و مثال‌های B2.",
+  },
+
+  {
+    file: "TRAVAIL_03.html",
+    title: "استخدام با بازی ویدیویی",
+    titleFr: "Le recrutement par le jeu vidéo",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "travail",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی با تعریف، معنی و مثال‌های B2.",
+  },
+
+  {
+    file: "TRAVAIL_02.html",
+    title: "نابرابری دستمزد",
+    titleFr: "L'inégalité salariale",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "travail",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی با تعریف، معنی و مثال‌های B2.",
+  },
+
+  {
+    file: "TRAVAIL_01.html",
+    title: "حیوانات خانگی در محل کار",
+    titleFr: "Les animaux de compagnie au bureau",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "travail",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی با تعریف، معنی و مثال‌های B2.",
+  },
+
+  {
     file: "MOTSINFO_02.html",
     title: "درس دوم: آزار و اذیت در مدرسه",
     titleFr: "Le harcèlement scolaire",
