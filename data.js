@@ -572,6 +572,30 @@ const LESSONS = [
     tags: ["کلمات خبری", "جامعه", "B2"],
     summary: "۱۰ واژه‌ی کلیدی درباره‌ی آزار و اذیت در مدرسه، با تعریف، معنی و مثال‌های پیشرفته‌ی B2.",
   },
+
+  {
+    file: "MOTSINFO_03.html",
+    title: "درس سوم: حذف نمره‌ها در مدرسه",
+    titleFr: "La suppression des notes",
+    category: "vocab",
+    sub: "mots_info",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری", "آموزش", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی درباره‌ی حذف نمره‌ها در مدرسه با مثال‌های B2.",
+  },
+
+  {
+    file: "MOTSINFO_04.html",
+    title: "درس چهارم: کلاس منعطف",
+    titleFr: "La classe flexible",
+    category: "vocab",
+    sub: "mots_info",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری", "آموزش", "B2"],
+    summary: "۱۰ واژه‌ی کلیدی درباره‌ی کلاس منعطف با مثال‌های B2.",
+  },
   {
     file: "GRAMMAR_comparaison.html",
     title: "📐 La Comparaison — مقایسه در فرانسه",
