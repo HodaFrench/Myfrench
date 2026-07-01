@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "LOISIRS_04.html",
+    title: "کتاب صوتی",
+    titleFr: "Le livre audio",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "loisirs",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "LOISIRS_03.html",
+    title: "رفت‌وآمد به سینماها",
+    titleFr: "La fréquentation des cinémas",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "loisirs",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "LOISIRS_02.html",
+    title: "سریال‌های تلویزیونی",
+    titleFr: "Les séries télévisées",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "loisirs",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "LOISIRS_01.html",
+    title: "غذای خیابانی",
+    titleFr: "La cuisine de rue",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "loisirs",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "TRAVAIL_04.html",
     title: "نسل Z",
     titleFr: "La génération Z",
