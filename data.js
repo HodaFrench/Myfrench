@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "TOURISME_04.html",
+    title: "حفاظت از میراث",
+    titleFr: "La préservation du patrimoine",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "tourisme",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TOURISME_03.html",
+    title: "گردشگری مسئولانه",
+    titleFr: "Le tourisme responsable",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "tourisme",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TOURISME_02.html",
+    title: "تأثیر شبکه‌های اجتماعی",
+    titleFr: "L'influence des réseaux sociaux",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "tourisme",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TOURISME_01.html",
+    title: "ایده‌هایی برای مقصد",
+    titleFr: "Des idées de destinations",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "tourisme",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "LOISIRS_04.html",
     title: "کتاب صوتی",
     titleFr: "Le livre audio",
