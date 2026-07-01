@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "CONSO_04.html",
+    title: "خودتولیدی",
+    titleFr: "L'autoproduction",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "consommation",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "CONSO_03.html",
+    title: "پول نقد",
+    titleFr: "L'argent liquide",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "consommation",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "CONSO_02.html",
+    title: "فروش مجدد لباس",
+    titleFr: "La revente de vêtements",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "consommation",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "CONSO_01.html",
+    title: "انعام",
+    titleFr: "Le pourboire",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "consommation",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "TOURISME_04.html",
     title: "حفاظت از میراث",
     titleFr: "La préservation du patrimoine",
