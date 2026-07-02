@@ -187,6 +187,41 @@ body{font-family:'Estedad',sans-serif;background:#faf6f0;background-image:repeat
   <div class="note">💡 همه‌ی مثال‌ها در سطحِ <b>B2</b> ساخته شده‌اند: جمله‌های مرکب و استدلالی با متصل‌کننده‌هایی مثل <span class="fr-inline">bien que, par conséquent, étant donné que, c'est pourquoi, toutefois, ainsi</span>. این ساختارها را در نوشتار و گفتارت تمرین کن.</div>
   <div class="foot">🗞️ بر اساس مقاله‌ی La Croix (موضوع: ممنوعیت موبایل در مدرسه) — تدریس و مثال‌های اورجینال</div>
 </div>
+<style>
+.lp-nav{max-width:760px;margin:22px auto 0;padding:0 1rem}
+.lp-read{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#fff;border:2px solid #2e8b6b;color:#2e8b6b;font-family:"Estedad",sans-serif;font-size:15px;font-weight:800;padding:14px;border-radius:16px;cursor:pointer;transition:.2s;-webkit-tap-highlight-color:transparent}
+.lp-read:active{transform:scale(.97)}
+.lp-read.done{background:#2e8b6b;color:#fff;border-color:#2e8b6b}
+.lp-read .chk{width:24px;height:24px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:14px}
+.lp-read.done .chk{background:#fff;color:#2e8b6b}
+.lp-btns{display:flex;gap:10px;margin-top:12px}
+.lp-btns a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:13px 8px;border-radius:14px;text-decoration:none;font-family:"Estedad",sans-serif;font-size:13.5px;font-weight:700;transition:.2s;-webkit-tap-highlight-color:transparent}
+.lp-btns a:active{transform:scale(.96)}
+.lp-prev{background:#f0e6da;color:#8a5d33}
+.lp-next{background:linear-gradient(135deg,#b07a4a,#8a5d33);color:#fff}
+.lp-btns a.dis{opacity:.4;pointer-events:none}
+.lp-home{display:block;text-align:center;margin-top:12px;color:#8a8275;font-size:12.5px;text-decoration:none;font-family:"Estedad",sans-serif;font-weight:600}
+</style><div class="lp-nav"><button class="lp-read" id="lpRead" onclick="lpToggle()"><span class="chk"></span><span class="lbl">این درس را خواندم</span></button><div class="lp-btns"><a class="lp-prev dis" href="javascript:void(0)">&#8250; درس قبل</a><a class="lp-next" href="MOTSINFO_02.html">درس بعد &#8249;</a></div><a class="lp-home" href="MOTSINFO_cat.html?cat=ecole">&#8617; بازگشت به لیست درس‌ها</a></div><script>
+(function(){
+  var FID="MOTSINFO_01.html";
+  var K="hoda_read_lessons";
+  function load(){try{return JSON.parse(localStorage.getItem(K)||"[]")}catch(e){return[]}}
+  function save(a){localStorage.setItem(K,JSON.stringify(a));try{cloud(a)}catch(e){}}
+  var SB="https://ifjsnasoxnalhttzhlpd.supabase.co",SK="sb_publishable_3aBoJ8PEPsrnOpgR_vOG4A_NDfJd6cK";
+  function uid(){var u=localStorage.getItem("hoda_uid");if(!u){u="u"+Date.now()+Math.random().toString(36).slice(2,8);localStorage.setItem("hoda_uid",u);}return u;}
+  function cloud(a){fetch(SB+"/rest/v1/user_texts",{method:"POST",headers:{"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Prefer":"resolution=merge-duplicates"},body:JSON.stringify({user_id:uid(),kind:"read_lessons",content:JSON.stringify(a)})}).catch(function(){});}
+  window.lpToggle=function(){
+    var a=load(),i=a.indexOf(FID),btn=document.getElementById("lpRead");
+    if(i>-1){a.splice(i,1);btn.classList.remove("done");btn.querySelector(".lbl").textContent="این درس را خواندم";btn.querySelector(".chk").textContent="";}
+    else{a.push(FID);btn.classList.add("done");btn.querySelector(".lbl").textContent="خوانده شد ✓";btn.querySelector(".chk").textContent="✓";}
+    save(a);
+  };
+  window.addEventListener("DOMContentLoaded",function(){
+    var a=load(),btn=document.getElementById("lpRead");
+    if(a.indexOf(FID)>-1){btn.classList.add("done");btn.querySelector(".lbl").textContent="خوانده شد ✓";btn.querySelector(".chk").textContent="✓";}
+  });
+})();
+</script>
 <script>
 /* hoda-protect */
 (function(){
