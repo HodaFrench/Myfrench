@@ -508,7 +508,7 @@ function openMotsInfoLessons(cat,faName){
   document.getElementById('overlay').classList.add('open');
 }
 function openVocabSub(sub,faName,color){
-  if(sub==='mots_info'){openMotsInfoCats();return;}
+  if(sub==='mots_info'){window.location.href='MOTSINFO_index.html';return;}
   const items=(typeof LESSONS!=='undefined'?LESSONS.filter(l=>l.category==='vocab'&&l.sub===sub):[]);
   document.getElementById('mtitle').textContent=faName;
   document.getElementById('mtitle').style.color=color||'#22618f';
@@ -1036,5 +1036,25 @@ body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-se
 input,textarea,[contenteditable]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
 img{-webkit-user-drag:none;user-drag:none;pointer-events:none}
 </style>
+<script>
+// باز کردن خودکار درس‌های یک دسته وقتی از صفحه‌ی دسته‌ها برمی‌گردیم
+(function(){
+  function tryOpen(){
+    var h=window.location.hash||'';
+    var m=h.match(/mi=([a-z_]+)/);
+    var cat=m?m[1]:null;
+    if(!cat){try{cat=sessionStorage.getItem('mi_open_cat');}catch(e){}}
+    if(!cat)return;
+    var fa='';try{fa=sessionStorage.getItem('mi_open_fa')||'';}catch(e){}
+    try{sessionStorage.removeItem('mi_open_cat');sessionStorage.removeItem('mi_open_fa');}catch(e){}
+    if(typeof openMotsInfoLessons==='function'){
+      // نام فارسی دسته را از MI_CATEGORIES بگیر اگر موجود بود
+      if(typeof MI_CATEGORIES!=='undefined'){var c=MI_CATEGORIES.filter(function(x){return x.cat===cat;})[0];if(c)fa=c.fa;}
+      setTimeout(function(){openMotsInfoLessons(cat,fa);},250);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',tryOpen);}else{tryOpen();}
+})();
+</script>
 </body>
 </html>
