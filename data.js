@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "MEDIAS_04.html",
+    title: "ردِپای دیجیتال",
+    titleFr: "Les traces numériques",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "medias",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "MEDIAS_03.html",
+    title: "بچه‌های یوتیوبر",
+    titleFr: "Les enfants youtubeurs",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "medias",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "MEDIAS_02.html",
+    title: "پیامک‌ها",
+    titleFr: "Les textos",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "medias",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "MEDIAS_01.html",
+    title: "آلودگی دیجیتال",
+    titleFr: "La pollution numérique",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "medias",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "SANTE_04.html",
     title: "سلامت روان",
     titleFr: "La santé mentale",
