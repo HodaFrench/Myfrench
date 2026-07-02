@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "ENVIRON_04.html",
+    title: "خشکسالی",
+    titleFr: "La sécheresse",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "environnement",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "ENVIRON_03.html",
+    title: "تغییرات اقلیمی",
+    titleFr: "Le changement climatique",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "environnement",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "ENVIRON_02.html",
+    title: "مدیریت زباله",
+    titleFr: "Le traitement des déchets",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "environnement",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "ENVIRON_01.html",
+    title: "حفاظت از حیوانات",
+    titleFr: "La protection des animaux",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "environnement",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "TRANSPORTS_04.html",
     title: "خیابان‌های مدرسه",
     titleFr: "Les rues scolaires",
