@@ -89,9 +89,8 @@ var CATS=["ecole", "travail", "loisirs", "tourisme", "consommation", "relations"
 function count(cat){try{return (typeof LESSONS!=='undefined'?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub==='mots_info'&&l.cat2===cat;}).length:0);}catch(e){return 0;}}
 function fillCounts(){CATS.forEach(function(c){var n=count(c),el=document.getElementById('cnt_'+c);if(el){if(n>0){el.textContent=n+' درس';el.className='cnt';}else{el.textContent='به‌زودی';el.className='cnt soon';}}});}
 function goCat(cat,fa){
-  // ذخیره انتخاب و رفتن به صفحه‌ی اصلی که درس‌های آن دسته را باز می‌کند
-  try{sessionStorage.setItem('mi_open_cat',cat);sessionStorage.setItem('mi_open_fa',fa);}catch(e){}
-  window.location.href='index.html#mi='+cat;
+  try{sessionStorage.setItem('mi_cat',cat);}catch(e){}
+  window.location.href='MOTSINFO_cat.html?cat='+cat;
 }
 window.addEventListener('DOMContentLoaded',fillCounts);
 </script><script>(function(){document.addEventListener("contextmenu",function(e){e.preventDefault();},{capture:true});document.addEventListener("copy",function(e){var t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable))return;e.preventDefault();});document.addEventListener("keydown",function(e){var t=e.target;var f=t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable);var k=(e.key||"").toLowerCase();if((e.ctrlKey||e.metaKey)&&["c","x","u","s","a"].indexOf(k)>-1&&!f){e.preventDefault();}},{capture:true});})();</script><style>body{-webkit-user-select:none;user-select:none}input,textarea,[contenteditable]{user-select:text}img{pointer-events:none}</style></body></html>
