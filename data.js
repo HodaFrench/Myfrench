@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "SANTE_04.html",
+    title: "سلامت روان",
+    titleFr: "La santé mentale",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "sante",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "SANTE_03.html",
+    title: "بدخوراکی",
+    titleFr: "La malbouffe",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "sante",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "SANTE_02.html",
+    title: "کمبود خواب",
+    titleFr: "Le manque de sommeil",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "sante",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "SANTE_01.html",
+    title: "تغذیه‌ی بدون گوشت",
+    titleFr: "L'alimentation sans viande",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "sante",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "ENVIRON_04.html",
     title: "خشکسالی",
     titleFr: "La sécheresse",
