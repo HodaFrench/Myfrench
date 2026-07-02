@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "RELATIONS_04.html",
+    title: "نابرابری زن و مرد",
+    titleFr: "Les inégalités femmes/hommes",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "relations",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "RELATIONS_03.html",
+    title: "کنترل والدین",
+    titleFr: "Le contrôle parental",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "relations",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "RELATIONS_02.html",
+    title: "خانواده‌ی بازترکیب‌شده",
+    titleFr: "La famille recomposée",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "relations",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "RELATIONS_01.html",
+    title: "هم‌خانگی",
+    titleFr: "La colocation",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "relations",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "CONSO_04.html",
     title: "خودتولیدی",
     titleFr: "L'autoproduction",
