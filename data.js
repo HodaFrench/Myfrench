@@ -563,6 +563,58 @@ const LESSONS = [
   },
 
   {
+    file: "TRANSPORTS_04.html",
+    title: "خیابان‌های مدرسه",
+    titleFr: "Les rues scolaires",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "transports",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TRANSPORTS_03.html",
+    title: "دوچرخه‌سواری اشتراکی",
+    titleFr: "Le co-vélotage",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "transports",
+    level: "B2",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TRANSPORTS_02.html",
+    title: "اسکوتر در شهر",
+    titleFr: "La trottinette en ville",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "transports",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
+    file: "TRANSPORTS_01.html",
+    title: "رایگان‌بودن حمل‌ونقل عمومی",
+    titleFr: "La gratuité des transports",
+    category: "vocab",
+    sub: "mots_info",
+    cat2: "transports",
+    level: "B1",
+    premium: false,
+    tags: ["کلمات خبری","B2"],
+    summary: "۱۰ واژه با مثال B2.",
+  },
+
+  {
     file: "RELATIONS_04.html",
     title: "نابرابری زن و مرد",
     titleFr: "Les inégalités femmes/hommes",
