@@ -85,6 +85,8 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+{file:"EDITOB1_02.html",title:"🟣 روابط دوستانه",titleFr:"Les relations amicales",category:"vocab",sub:"edito_b1",level:"B1",premium:false,tags:["amitie","amis","soutien"],summary:"واژگان دوستی، حمایت و روابط دوستانه با تعریف فرانسه، ترجمه و مثال‌های B1"},
+
 {file:"EDITOB1_01.html",title:"🟣 روابط خانوادگی و عاطفی",titleFr:"Les relations familiales",category:"vocab",sub:"edito_b1",level:"B1",premium:false,tags:["famille","amour","relations"],summary:"۴۵ واژه‌ی روابط خانوادگی، عشق و روابط انسانی با تعریف فرانسه، ترجمه و مثال‌های B1"},
 
   {
