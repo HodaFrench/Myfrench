@@ -85,6 +85,8 @@ const SECTIONS = {
 //     tags: ["..."] }
 //
 const LESSONS = [
+{file:"EDITOB1_01.html",title:"🟣 روابط خانوادگی و عاطفی",titleFr:"Les relations familiales",category:"vocab",sub:"edito_b1",level:"B1",premium:false,tags:["famille","amour","relations"],summary:"۴۵ واژه‌ی روابط خانوادگی، عشق و روابط انسانی با تعریف فرانسه، ترجمه و مثال‌های B1"},
+
   {
     file: "IF_ep08.html",
     title: "🎧 InnerFrench #08 — Les stéréotypes",
