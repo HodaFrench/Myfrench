@@ -439,35 +439,8 @@ const VOC_FOLDERS=[
   {sub:"edito_a2",fa:"ادیتو A2",fr:"Edito A2",emoji:"🔵",color:"#4a7db5"},
   {sub:"edito_b1",fa:"ادیتو B1",fr:"Edito B1",emoji:"🟣",color:"#8258a8"}
 ];
-function openVocabFolders(){
-  document.getElementById('mtitle').textContent='واژگان';
-  document.getElementById('mtitle').style.color='#22618f';
-  document.getElementById('mcount').textContent=VOC_FOLDERS.length+' پوشه';
-  const body=document.getElementById('mbody');body.innerHTML='';
-  VOC_FOLDERS.forEach(f=>{
-    const n=(typeof LESSONS!=='undefined'?LESSONS.filter(l=>l.category==='vocab'&&l.sub===f.sub).length:0);
-    const a=document.createElement('a');a.className='item';a.href='javascript:void(0)';
-    a.onclick=function(){openVocabSub(f.sub,f.fa,f.color);};
-    a.innerHTML=`<div class="item-cover" style="background:${f.color}"><span class="item-cover-txt" style="font-size:26px">${f.emoji}</span></div>`+
-      `<div class="item-info"><div class="ititle">${f.fr}</div><span class="item-lvl">${f.fa} · ${n?n+' درس':'به‌زودی'}</span></div>`;
-    body.appendChild(a);
-  });
-  document.getElementById('overlay').classList.add('open');
-}
+function openVocabFolders(){window.location.href='CAT.html?cat=vocab';}
 
-// ───── دسته‌بندی les mots de l'info ─────
-const MI_CATEGORIES=[
-  {cat:"ecole",fa:"کلمات مدرسه",fr:"Les mots de l'école",emoji:"🏫"},
-  {cat:"travail",fa:"کلمات کار",fr:"Les mots du travail",emoji:"💼"},
-  {cat:"loisirs",fa:"سرگرمی و فرهنگ",fr:"Loisirs et culture",emoji:"🎭"},
-  {cat:"tourisme",fa:"کلمات گردشگری",fr:"Les mots du tourisme",emoji:"✈️"},
-  {cat:"consommation",fa:"کلمات مصرف",fr:"Les mots de la consommation",emoji:"🛒"},
-  {cat:"relations",fa:"روابط اجتماعی و خانوادگی",fr:"Relations sociales et familiales",emoji:"👨‍👩‍👧"},
-  {cat:"transports",fa:"کلمات حمل‌ونقل",fr:"Les mots des transports",emoji:"🚲"},
-  {cat:"environnement",fa:"کلمات محیط زیست",fr:"Les mots de l'environnement",emoji:"🌿"},
-  {cat:"sante",fa:"کلمات سلامت",fr:"Les mots de la santé",emoji:"❤️"},
-  {cat:"medias",fa:"کلمات رسانه‌ها",fr:"Les mots des médias",emoji:"📱"}
-];
 function openMotsInfoCats(){
   document.getElementById('mtitle').textContent="les mots de l'info";
   document.getElementById('mtitle').style.color='#b07a4a';
@@ -508,89 +481,14 @@ function openMotsInfoLessons(cat,faName){
   });
   document.getElementById('overlay').classList.add('open');
 }
-function openVocabSub(sub,faName,color){
-  if(sub==='mots_info'){window.location.href='MOTSINFO_index.html';return;}
-  const items=(typeof LESSONS!=='undefined'?LESSONS.filter(l=>l.category==='vocab'&&l.sub===sub):[]);
-  document.getElementById('mtitle').textContent=faName;
-  document.getElementById('mtitle').style.color=color||'#22618f';
-  document.getElementById('mcount').textContent=items.length+' درس';
-  const body=document.getElementById('mbody');body.innerHTML='';
-  // دکمه بازگشت به پوشه‌ها
-  const back=document.createElement('a');back.className='item';back.href='javascript:void(0)';
-  back.onclick=function(){openVocabFolders();};
-  back.innerHTML='<div class="item-cover" style="background:#999"><span class="item-cover-txt">↩</span></div><div class="item-info"><div class="ititle">بازگشت به پوشه‌ها</div></div>';
-  body.appendChild(back);
-  if(!items.length){
-    const e=document.createElement('div');e.className='empty';e.textContent='این پوشه هنوز خالی است — به‌زودی پر می‌شود.';body.appendChild(e);
-  } else items.forEach(l=>{
-    const a=document.createElement('a');a.className='item';a.href=l.file||'#';
-    const short=(l.titleFr||l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'')).trim().substring(0,28);
-    const cover=l.image?`<div class="item-cover" style="background:#eee;padding:0;overflow:hidden"><img src="${l.image}" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div>`:`<div class="item-cover" style="background:${color||'#2e8b6b'}"><span class="item-cover-txt">${short}</span></div>`;
-    const lvl=l.level?`<span class="item-lvl">${l.level}</span>`:'';
-    a.innerHTML=`${cover}<div class="item-info"><div class="ititle">${l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim()}</div>${lvl}</div>`;
-    body.appendChild(a);
-  });
-  document.getElementById('overlay').classList.add('open');
-}
+function openVocabSub(sub,faName,color){if(sub==='mots_info'){window.location.href='MOTSINFO_index.html';return;}window.location.href='CAT.html?cat=vocab&sub='+sub;}
+
 function openCat(id){
-    if(id==='podcast'){ window.location.href='PODCAST_index.html'; return; }
-    if(id==='podcast'){ window.location.href='PODCAST_index.html'; return; }
-    if(id==='tcf'){ window.location.href='TCF/index.html'; return; }
-  if(id==='vocab'){openVocabFolders();return;}
-  const ci=catInfo(id);
-  if(CAT_LINKS[id]){window.location.href=CAT_LINKS[id];return;}
-  document.getElementById('mtitle').textContent=ci.label;
-  document.getElementById('mtitle').style.color=ci.color||'#1f3a5f';
-  const body=document.getElementById('mbody');
-  body.innerHTML='';
-  if(id==='miniarticle'){
-    const arts = typeof MINIARTICLES!=='undefined' ? MINIARTICLES : [];
-    document.getElementById('mcount').textContent = arts.length ? arts.length+' متن' : '';
-    if(!arts.length){ body.innerHTML='<div class="empty">محتوایی یافت نشد</div>'; }
-    else arts.forEach((m,i)=>{
-      const a=document.createElement('a');a.className='item';
-      a.href=MINI_FILES[m.titre]||'index.html';
-      const miniShort = (m.titre||'').substring(0,28);
-      const miniHtml = `<div class="item-cover" style="background:#8a5a2a"><span class="item-cover-txt">${miniShort}</span></div>`;
-      const miniLvl = m.niveau ? `<span class="item-lvl">${m.niveau}</span>` : '';
-      a.innerHTML=`${miniHtml}<div class="item-info"><div class="ititle">${m.titre||''}</div>${miniLvl}</div>`;
-      body.appendChild(a);
-    });
-    document.getElementById('overlay').classList.add('open');
-  } else if(id==='innerfrench'){
-    document.getElementById('mtitle').textContent='InnerFrench';
-    document.getElementById('mcount').textContent=INNERFRENCH.length+' اپیزود';
-    INNERFRENCH.forEach(e=>{
-      const a=document.createElement('a');a.className='item';a.href='IF_ep'+String(e.num).padStart(2,'0')+'.html';
-      const coverHtml=`<div class="item-cover" style="background:#5a3b88"><span class="item-cover-txt">#${e.num}</span></div>`;
-      a.innerHTML=coverHtml+`<div class="item-info"><div class="ititle">${e.titreFa}</div><span class="item-lvl">B1–B2 · اپیزود ${e.num}</span></div>`;
-      body.appendChild(a);
-    });
-    document.getElementById('overlay').classList.add('open');
-  } else {
-    if(id==='grammar'){
-      const gd=document.createElement('a');gd.className='item';gd.href='GRAMMAIRE_DIALOGUE_index.html';
-      gd.innerHTML='<div class="item-cover" style="background:linear-gradient(135deg,#1f3a5f,#16293f)"><span class="item-cover-txt">📗 Grammaire<br>en Dialogue</span></div><div class="item-info"><div class="ititle">📗 Grammaire en Dialogue</div><span class="item-lvl">کتاب کامل · ۳۲ فصل</span></div>';
-      body.appendChild(gd);
-    }
-    const items=LESSONS.filter(l=>l.category===id);
-    document.getElementById('mcount').textContent=items.length+' محتوا';
-    if(!items.length){body.innerHTML='<div class="empty">محتوایی یافت نشد</div>';}
-    else items.forEach(l=>{
-      const a=document.createElement('a');a.className='item';a.href=l.file||'#';
-      const catColors = {grammar:'#1e3a5f',vocab:'#2e8b6b',miniarticle:'#8a5a2a',culture:'#6b3fa0',tcf:'#8a2040',image:'#22618f',innerfrench:'#2e8b6b',article:'#1e3a5f',podcast:'#b07a4a'};
-      const coverColor = catColors[id] || '#1e3a5f';
-      const shortTitle = (l.titleFr || l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'')).trim().substring(0,28);
-      const imgHtml = l.image
-        ? `<div class="item-cover" style="background:#eee;padding:0;overflow:hidden"><img src="${l.image}" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>`
-        : `<div class="item-cover" style="background:${coverColor}"><span class="item-cover-txt">${shortTitle}</span></div>`;
-      const lvlBadge = l.level ? `<span class="item-lvl">${l.level}</span>` : '';
-      a.innerHTML=`${imgHtml}<div class="item-info"><div class="ititle">${l.title.replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤]/g,'').trim()}</div>${lvlBadge}</div>`;
-      body.appendChild(a);
-    });
-  }
-  document.getElementById('overlay').classList.add('open');
+  var DIRECT={debutant:'DEBUTANT_index.html',roulette:'ROULETTE.html',phrases:'PHRASES_utiles.html',questions:'mes_questions.html',expressions:'EXPRESSIONS.html',podcast:'PODCAST_index.html',tcf:'TCF/index.html'};
+  if(DIRECT[id]){window.location.href=DIRECT[id];return;}
+  window.location.href='CAT.html?cat='+id;
 }
+
 function closeModal(e){
   if(!e||e.target===document.getElementById('overlay'))
     document.getElementById('overlay').classList.remove('open');
