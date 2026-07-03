@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>محتوا</title>
+<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#33302a;--soft:#7d7264;--cream:#f7f5f1}
+body{font-family:"Estedad",sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;padding:0 0 70px;-webkit-tap-highlight-color:transparent}
+.top{position:sticky;top:0;z-index:200;background:rgba(247,245,241,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;gap:8px;padding:10px 14px}
+.top button,.top a{display:inline-flex;align-items:center;gap:5px;text-decoration:none;border:none;border-radius:22px;padding:8px 15px;font-family:"Estedad";font-size:13px;font-weight:800;cursor:pointer;transition:.15s}
+.top button:active,.top a:active{transform:scale(.94)}
+.top .home{background:#1f3a5f;color:#fff}
+.top .back{background:#e6e2db;color:#33302a}
+.top .tl{font-size:13px;color:var(--soft);flex:1;text-align:center;font-weight:800}
+.hero{text-align:center;padding:22px 20px 8px}
+.hero .ic{width:70px;height:70px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 12px;color:#fff}
+.hero h1{font-size:21px;font-weight:800;margin-bottom:3px}
+.hero .cnt{display:inline-block;margin-top:9px;font-size:12px;font-weight:800;border-radius:14px;padding:4px 13px}
+.grid{max-width:680px;margin:0 auto;padding:14px 14px}
+.card{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;padding:13px 14px;margin-bottom:11px;text-decoration:none;color:inherit;box-shadow:0 3px 12px rgba(0,0,0,.04);transition:.16s}
+.card:active{transform:scale(.98)}
+.card-cov{flex-shrink:0;width:56px;height:56px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;font-weight:800;overflow:hidden;text-align:center}
+.card-cov img{width:100%;height:100%;object-fit:cover}
+.card-cov .txt{font-family:"Roboto",serif;font-size:9.5px;font-weight:700;padding:3px;line-height:1.2;direction:ltr}
+.card-info{flex:1;min-width:0}
+.card-t{font-size:14.5px;font-weight:800;margin-bottom:3px;line-height:1.4}
+.card-fr{font-family:"Roboto",serif;font-size:11px;color:#666;direction:ltr;text-align:left;font-style:italic;margin-bottom:3px}
+.card-lvl{display:inline-block;font-size:10px;font-weight:800;background:rgba(0,0,0,.06);border-radius:10px;padding:2px 9px;color:#555}
+.card-arr{flex-shrink:0;font-size:20px;color:#bbb}
+.empty{text-align:center;padding:44px 24px;color:var(--soft)}
+.empty .e{font-size:46px;margin-bottom:12px;opacity:.5}
+.foot{text-align:center;font-size:12px;color:var(--soft);margin:14px 20px 0;padding:12px}
+.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27320%27%20height%3D%27190%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2716%27%20fill%3D%27rgba%280%2C0%2C0%2C0.04%29%27%20transform%3D%27rotate%28-25%20160%2095%29%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat}
+</style></head><body>
+<div class="hoda-watermark"></div>
+<div class="top"><a class="home" href="index.html">🏠 خانه</a><button class="back" onclick="goBack()">&#8594; بازگشت</button><span class="tl" id="tl">محتوا</span></div>
+<div class="hero"><div class="ic" id="hic">📚</div><h1 id="htitle">...</h1><div class="cnt" id="hcnt"></div></div>
+<div class="grid" id="grid"></div>
+<div class="foot"><b>Français avec Hoda</b></div>
+
+<script src="data.js"></script>
+<script>
+function qs(k){return new URLSearchParams(location.search).get(k);}
+var CAT=qs('cat'), SUB=qs('sub');
+
+var CAT_META={
+  grammar:{fa:'گرامر',ic:'📖',color:'#1f3a5f'},
+  vocab:{fa:'واژگان',ic:'📚',color:'#2e8b6b'},
+  miniarticle:{fa:'مینی‌آرتیکل',ic:'📝',color:'#8a5a2a'},
+  innerfrench:{fa:'InnerFrench',ic:'🎧',color:'#5a3b88'},
+  article:{fa:'آرتیکل',ic:'📄',color:'#1e3a5f'},
+  culture:{fa:'فرهنگ فرانسه',ic:'🇫🇷',color:'#6b3fa0'},
+  image:{fa:'توصیف تصویر',ic:'🖼️',color:'#22618f'}
+};
+var DIRECT={debutant:'DEBUTANT_index.html',roulette:'ROULETTE.html',phrases:'PHRASES_utiles.html'};
+var VOCFOLD=(typeof VOC_FOLDERS!=='undefined')?VOC_FOLDERS:[];
+var SPECIAL_SUB={mots_info:'MOTSINFO_index.html'};
+
+function clean(t){return (t||'').replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤🟢🔵🟣🗞️🗂️📄📝]/g,'').trim();}
+
+function goBack(){
+  // اگر در حالت درس‌های یک زیرپوشه واژگان هستیم -> برگرد به لیست پوشه‌های واژگان
+  if(CAT==='vocab' && SUB){ location.href='CAT.html?cat=vocab'; return; }
+  // در غیر این صورت -> برگرد به خانه
+  location.href='index.html';
+}
+
+function setHeader(fa,ic,color,cnt){
+  document.getElementById('htitle').textContent=fa;
+  document.getElementById('tl').textContent=fa;
+  document.getElementById('hic').textContent=ic;
+  document.getElementById('hic').style.background=color;
+  document.getElementById('hcnt').textContent=cnt;
+  document.getElementById('hcnt').style.background='rgba(0,0,0,.06)';
+  document.getElementById('hcnt').style.color=color;
+  document.title=fa;
+}
+
+function makeCard(href,cov,covStyle,title,fr,lvl,isImg){
+  var covInner = isImg ? '<img src="'+cov+'">' : (cov.length>2 ? '<span class="txt">'+cov+'</span>' : cov);
+  return '<a class="card" href="'+href+'"><div class="card-cov" style="'+covStyle+'">'+covInner+'</div>'+
+    '<div class="card-info"><div class="card-t">'+title+'</div>'+
+    (fr?'<div class="card-fr">'+fr+'</div>':'')+
+    (lvl?'<span class="card-lvl">'+lvl+'</span>':'')+
+    '</div><div class="card-arr">‹</div></a>';
+}
+
+function render(){
+  var grid=document.getElementById('grid');
+  // حالت ۱: زیرپوشه واژگان -> درس‌ها
+  if(CAT==='vocab' && SUB){
+    var fold=VOCFOLD.find(function(f){return f.sub===SUB;})||{fa:SUB,fr:'',color:'#2e8b6b',emoji:'📚'};
+    var items=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub===SUB;}):[];
+    setHeader(fold.fa,fold.emoji||'📚',fold.color||'#2e8b6b',items.length+' درس');
+    if(!items.length){grid.innerHTML='<div class="empty"><div class="e">📭</div>این پوشه هنوز خالی است — به‌زودی پر می‌شود.</div>';return;}
+    var h='';
+    items.forEach(function(l){
+      var short=clean(l.titleFr||l.title).substring(0,26);
+      h+=makeCard(l.file||'#', l.image||short, l.image?'background:#eee;padding:0':'background:'+(fold.color||'#2e8b6b'), clean(l.title), l.titleFr||'', l.level||'', !!l.image);
+    });
+    grid.innerHTML=h;
+    return;
+  }
+  // حالت ۲: واژگان -> پوشه‌ها
+  if(CAT==='vocab'){
+    setHeader('واژگان','📚','#2e8b6b',VOCFOLD.length+' پوشه');
+    var h='';
+    VOCFOLD.forEach(function(f){
+      var n=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub===f.sub;}).length:0;
+      var href = SPECIAL_SUB[f.sub] ? SPECIAL_SUB[f.sub] : 'CAT.html?cat=vocab&sub='+f.sub;
+      h+=makeCard(href, f.emoji||'📁', 'background:'+(f.color||'#2e8b6b'), f.fa, f.fr||'', n?n+' درس':'به‌زودی', false);
+    });
+    grid.innerHTML=h;
+    return;
+  }
+  // حالت ۳: دسته‌های مستقیم (لینک به صفحه دیگر)
+  if(DIRECT[CAT]){ location.href=DIRECT[CAT]; return; }
+  // حالت ۴: دسته‌های معمولی از LESSONS
+  var meta=CAT_META[CAT]||{fa:CAT,ic:'📚',color:'#1f3a5f'};
+  var h='';
+  // آیتم ویژه گرامر
+  if(CAT==='grammar'){
+    h+=makeCard('GRAMMAIRE_DIALOGUE_index.html','📗 Grammaire en Dialogue','background:linear-gradient(135deg,#1f3a5f,#16293f)','📗 Grammaire en Dialogue','','کتاب کامل · ۳۲ فصل',false);
+  }
+  // InnerFrench و miniarticle ساختار خاص دارند
+  if(CAT==='innerfrench' && typeof INNERFRENCH!=='undefined'){
+    setHeader(meta.fa,meta.ic,meta.color,INNERFRENCH.length+' اپیزود');
+    INNERFRENCH.forEach(function(e){
+      h+=makeCard('IF_ep'+String(e.num).padStart(2,'0')+'.html','#'+e.num,'background:#5a3b88',e.titreFa,'','اپیزود '+e.num,false);
+    });
+    grid.innerHTML=h; return;
+  }
+  if(CAT==='miniarticle' && typeof MINIARTICLES!=='undefined'){
+    setHeader(meta.fa,meta.ic,meta.color,MINIARTICLES.length+' متن');
+    MINIARTICLES.forEach(function(m){
+      var href=(typeof MINI_FILES!=='undefined'&&MINI_FILES[m.titre])?MINI_FILES[m.titre]:'index.html';
+      h+=makeCard(href,(m.titre||'').substring(0,26),'background:#8a5a2a',m.titre||'','',m.niveau||'',false);
+    });
+    grid.innerHTML=h; return;
+  }
+  // معمولی
+  var items=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category===CAT;}):[];
+  setHeader(meta.fa,meta.ic,meta.color,items.length+' محتوا');
+  items.forEach(function(l){
+    var short=clean(l.titleFr||l.title).substring(0,26);
+    h+=makeCard(l.file||'#', l.image||short, l.image?'background:#eee;padding:0':'background:'+meta.color, clean(l.title), l.titleFr||'', l.level||'', !!l.image);
+  });
+  if(!items.length && CAT!=='grammar'){grid.innerHTML='<div class="empty"><div class="e">📭</div>محتوایی یافت نشد</div>';return;}
+  grid.innerHTML=h;
+}
+document.addEventListener('DOMContentLoaded',render);
+</script>
+<script>(function(){document.addEventListener("contextmenu",function(e){e.preventDefault();},{capture:true});document.addEventListener("copy",function(e){var t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable))return;e.preventDefault();});document.addEventListener("keydown",function(e){var t=e.target;var f=t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable);var k=(e.key||"").toLowerCase();if((e.ctrlKey||e.metaKey)&&["c","x","u","s","a"].indexOf(k)>-1&&!f){e.preventDefault();}},{capture:true});})();</script>
+<style>body{-webkit-user-select:none;user-select:none}input,textarea,[contenteditable]{user-select:text}img{pointer-events:none}</style>
+</body></html>
