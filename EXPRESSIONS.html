@@ -72,6 +72,107 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 <script>
 const EXPR = [
 {
+  fr:"On aura tout vu",
+  lit:"همه‌چیز رو دیده خواهیم بود",
+  fa:"برای ابرازِ <b>تعجب یا اعتراض</b> وقتی یه چیزِ عجیب یا باورنکردنی اتفاق می‌افته — یعنی «دیگه همه‌چیز رو دیدیم!» / «این دیگه نوبره!»",
+  ex:[["Il veut se faire rembourser un cadeau qu'il a offert ? On aura tout vu !","می‌خواد پولِ کادویی که خودش داده رو پس بگیره؟ دیگه همه‌چی رو دیدیم!"],
+      ["Un chat qui fait du skateboard ? Alors là, on aura tout vu !","گربه‌ای که اسکیت‌بورد سواری می‌کنه؟ دیگه این نوبره!"],
+      ["Ils ferment la boulangerie pour ouvrir un parking ? On aura tout vu.","نونوایی رو می‌بندن که پارکینگ بزنن؟ دیگه همه‌چی رو دیدیم."]],
+  note:"برای ابرازِ حیرت یا نارضایتی از یه چیزِ نامعقول.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="42" cy="55" r="16" fill="#fff" stroke="#3a5a7a" stroke-width="2"/><circle cx="42" cy="55" r="6" fill="#3a5a7a"/><circle cx="78" cy="55" r="16" fill="#fff" stroke="#3a5a7a" stroke-width="2"/><circle cx="78" cy="55" r="6" fill="#3a5a7a"/><path d="M30 34 Q42 26 54 34" stroke="#8a2040" stroke-width="2.5" fill="none"/><path d="M66 34 Q78 26 90 34" stroke="#8a2040" stroke-width="2.5" fill="none"/><text x="60" y="98" font-size="20" text-anchor="middle" fill="#8a2040">!</text></svg>`
+},
+{
+  fr:"Ça me pèse",
+  lit:"این برام سنگینی می‌کنه",
+  fa:"وقتی یه چیزی <b>روی دوشِ آدم سنگینی می‌کنه</b> و آزارش می‌ده — چه یه مسئولیت، چه یه احساس، چه یه موقعیت.",
+  ex:[["Cette dispute avec mon frère, ça me pèse vraiment.","این دعوا با برادرم واقعاً روی دوشمه."],
+      ["Le silence entre nous commence à me peser.","این سکوتِ بینمون داره کم‌کم اذیتم می‌کنه."],
+      ["Vivre loin de ma famille, ça me pèse de plus en plus.","دور از خانواده زندگی‌کردن هر روز برام سنگین‌تر می‌شه."]],
+  note:"برای بارِ عاطفی یا روانیِ یه موقعیت.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="60" cy="40" r="14" fill="#c98a5a"/><path d="M46 62 Q46 54 60 54 Q74 54 74 62 L76 78 L44 78 Z" fill="#c98a5a"/><rect x="40" y="80" width="40" height="20" rx="3" fill="#8a6a4a"/><text x="60" y="95" font-size="13" text-anchor="middle" fill="#fff" font-weight="bold">kg</text><path d="M52 30 Q60 24 68 30" stroke="#5a3a2a" stroke-width="2" fill="none"/></svg>`
+},
+{
+  fr:"Faire une fixette (sur)",
+  lit:"یه گیرِ ثابت زدن (روی چیزی)",
+  fa:"یعنی <b>گیر دادن به یه چیز</b> یا وسواس پیدا کردن روش — وقتی فکرِ آدم مدام روی یه موضوع قفل می‌شه. (خودمونی)",
+  ex:[["Elle fait une fixette sur son poids, c'est inquiétant.","روی وزنش گیر داده، نگران‌کننده‌ست."],
+      ["Arrête de faire une fixette sur cette erreur, ça arrive à tout le monde !","انقدر به این اشتباه گیر نده، برای همه پیش میاد!"],
+      ["Il fait une fixette sur une fille de sa classe.","روی یه دخترِ کلاسشون قفل کرده."]],
+  note:"خیلی خودمونی (familier) — برای وسواس یا گیرِ فکری.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="60" cy="55" r="30" fill="none" stroke="#b0506f" stroke-width="3"/><circle cx="60" cy="55" r="20" fill="none" stroke="#b0506f" stroke-width="3"/><circle cx="60" cy="55" r="10" fill="none" stroke="#b0506f" stroke-width="3"/><circle cx="60" cy="55" r="4" fill="#8a2040"/><text x="60" y="105" font-size="11" text-anchor="middle" fill="#8a2040">🎯</text></svg>`
+},
+{
+  fr:"Il m'a balancé",
+  lit:"او منو پرت کرد / لو داد",
+  fa:"دو معنی داره: ۱) <b>لو دادن، فروختن</b> کسی (خبرچینی) ۲) <b>یهو چیزی گفتن یا پرت‌کردن</b> به سمتِ کسی. (خودمونی)",
+  ex:[["Il m'a balancé au prof, quel traître !","منو به معلم لو داد، چه خائنی!"],
+      ["Elle m'a balancé la vérité en pleine figure.","حقیقت رو یهو کوبید تو صورتم."],
+      ["Il m'a balancé les clés depuis la fenêtre.","کلیدها رو از پنجره پرت کرد سمتم."]],
+  note:"«balancer quelqu'un» = لو دادن؛ «balancer quelque chose» = پرت‌کردن/یهو گفتن.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="40" cy="45" r="12" fill="#c98a5a"/><path d="M40 57 L40 80 M40 63 L58 55 M40 63 L30 80 M40 80 L48 98 M40 80 L32 98" stroke="#c98a5a" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="72" cy="48" r="6" fill="#8a2040"/><path d="M62 52 Q78 44 86 54" stroke="#8a2040" stroke-width="2" fill="none" stroke-dasharray="3 3"/></svg>`
+},
+{
+  fr:"Ne pas avoir la tête à…",
+  lit:"سر به ... نداشتن",
+  fa:"یعنی <b>حال‌وحوصله یا تمرکزِ یه کار رو نداشتن</b> چون فکرِ آدم جای دیگه‌ست — «حواسم به این نیست» / «تو حسش نیستم».",
+  ex:[["Désolé, je n'ai pas la tête à faire la fête ce soir.","ببخشید، امشب حالِ مهمونی ندارم."],
+      ["Avec tous ces problèmes, il n'a pas la tête au travail.","با این همه مشکل، حواسش به کار نیست."],
+      ["Je n'ai pas la tête à ça maintenant, on en parle demain ?","الان حواسم به این نیست، فردا حرف بزنیم؟"]],
+  note:"برای نبودِ تمرکز یا حوصله به‌خاطرِ درگیریِ ذهنی.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="50" cy="55" r="20" fill="#c98a5a"/><circle cx="44" cy="52" r="2.5" fill="#3a2a1a"/><circle cx="56" cy="52" r="2.5" fill="#3a2a1a"/><path d="M44 64 Q50 68 56 64" stroke="#3a2a1a" stroke-width="2" fill="none"/><circle cx="85" cy="35" r="4" fill="#aaa"/><circle cx="93" cy="40" r="6" fill="#bbb"/><circle cx="83" cy="44" r="5" fill="#ccc"/><path d="M70 45 Q78 40 80 44" stroke="#999" stroke-width="1.5" fill="none" stroke-dasharray="2 2"/></svg>`
+},
+{
+  fr:"Je lâche l'affaire",
+  lit:"قضیه رو ول می‌کنم",
+  fa:"یعنی <b>بی‌خیال شدن، ول کردن، تسلیم شدن</b> — وقتی آدم دیگه تلاش رو کنار می‌ذاره. (خودمونی)",
+  ex:[["J'ai essayé dix fois, maintenant je lâche l'affaire.","ده بار امتحان کردم، دیگه بی‌خیالش می‌شم."],
+      ["Ne lâche pas l'affaire si près du but !","انقدر نزدیکِ هدف ول نکن!"],
+      ["Il a lâché l'affaire au bout de deux jours.","بعد از دو روز بی‌خیالش شد."]],
+  note:"خودمونی — معادلِ «رها کردن» یا «تسلیم شدن».",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><path d="M40 50 Q38 44 44 44 L44 40 Q44 36 48 36 Q48 33 52 33 L52 38 M52 38 Q52 30 56 30 Q60 30 60 38 L60 50" fill="none" stroke="#c98a5a" stroke-width="3"/><path d="M40 50 Q38 66 52 68 L58 68 Q72 66 72 52" fill="#c98a5a" opacity="0.5"/><path d="M78 40 L98 40 L94 34 M98 40 L94 46" stroke="#8a2040" stroke-width="2.5" fill="none"/><circle cx="85" cy="60" r="8" fill="none" stroke="#8a2040" stroke-width="2"/><path d="M85 52 L85 68" stroke="#8a2040" stroke-width="2"/></svg>`
+},
+{
+  fr:"Tourner en rond",
+  lit:"دایره‌ای چرخیدن",
+  fa:"یعنی <b>درجا زدن، دور خود چرخیدن، به‌جایی نرسیدن</b> — وقتی آدم پیشرفت نمی‌کنه یا تو یه بن‌بست گیر کرده.",
+  ex:[["Ça fait une heure qu'on tourne en rond, on n'avance pas.","یه ساعته داریم درجا می‌زنیم، پیش نمی‌ریم."],
+      ["Sans nouvelles idées, le projet tourne en rond.","بدونِ ایده‌های تازه، پروژه درجا می‌زنه."],
+      ["Je tourne en rond dans cet appartement, j'ai besoin de sortir.","تو این آپارتمان دارم دور خودم می‌چرخم، باید برم بیرون."]],
+  note:"برای نبودِ پیشرفت یا حسِ گیرافتادن.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><path d="M60 30 A30 30 0 1 1 34 45" fill="none" stroke="#b0506f" stroke-width="3"/><path d="M34 45 L28 38 M34 45 L41 39" stroke="#b0506f" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="60" cy="60" r="6" fill="#8a2040"/></svg>`
+},
+{
+  fr:"Être mort(e) de honte",
+  lit:"از خجالت مُرده بودن",
+  fa:"یعنی <b>از خجالت آب شدن، خیلی شرمنده شدن</b> — وقتی آدم انقدر خجالت می‌کشه که انگار می‌خواد آب بشه بره تو زمین.",
+  ex:[["Quand je suis tombé devant tout le monde, j'étais mort de honte.","وقتی جلوی همه افتادم، از خجالت داشتم آب می‌شدم."],
+      ["Elle était morte de honte après son erreur en public.","بعد از اشتباهش جلوی جمع، از خجالت مرد."],
+      ["Mes parents ont raconté mes histoires d'enfance, j'étais mort de honte !","پدر و مادرم خاطرات بچگیم رو تعریف کردن، از خجالت آب شدم!"]],
+  note:"برای شرمِ شدید — «mort de» یعنی «به‌شدت».",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="60" cy="55" r="26" fill="#e88a8a"/><circle cx="50" cy="52" r="3" fill="#5a1a1a"/><circle cx="70" cy="52" r="3" fill="#5a1a1a"/><path d="M50 68 Q60 62 70 68" stroke="#5a1a1a" stroke-width="2.5" fill="none"/><ellipse cx="42" cy="62" rx="6" ry="4" fill="#d05a5a" opacity="0.6"/><ellipse cx="78" cy="62" rx="6" ry="4" fill="#d05a5a" opacity="0.6"/><path d="M40 40 L46 44 M80 40 L74 44" stroke="#5a1a1a" stroke-width="2"/></svg>`
+},
+{
+  fr:"N'en déplaise à certains",
+  lit:"هرچند بعضی‌ها خوششون نیاد",
+  fa:"یعنی <b>با عرضِ معذرت از بعضی‌ها / چه بعضی‌ها خوششون بیاد چه نیاد</b> — وقتی آدم می‌خواد نظرش رو با قاطعیت بگه با اینکه می‌دونه بعضی‌ها مخالفن. (کمی ادبی)",
+  ex:[["N'en déplaise à certains, la cuisine française reste la meilleure.","با عرضِ معذرت از بعضی‌ها، آشپزیِ فرانسوی هنوز بهترینه."],
+      ["N'en déplaise aux critiques, ce film est un chef-d'œuvre.","هرچند منتقدها خوششون نیاد، این فیلم یه شاهکاره."],
+      ["N'en déplaise à mes collègues, je pense qu'on se trompe.","با عرضِ معذرت از همکارام، فکر می‌کنم داریم اشتباه می‌کنیم."]],
+  note:"لحنِ کمی رسمی/ادبی — برای بیانِ نظر با وجودِ مخالفت.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="55" cy="48" r="18" fill="#c98a5a"/><circle cx="49" cy="46" r="2.5" fill="#3a2a1a"/><circle cx="61" cy="46" r="2.5" fill="#3a2a1a"/><path d="M49 56 L61 56" stroke="#3a2a1a" stroke-width="2.5"/><path d="M55 66 L55 76 M42 90 Q55 78 68 90" fill="none" stroke="#c98a5a" stroke-width="4" stroke-linecap="round"/><path d="M78 40 Q88 38 90 46" stroke="#8a2040" stroke-width="2" fill="none"/><text x="84" y="60" font-size="14" fill="#8a2040">☝</text></svg>`
+},
+{
+  fr:"Ne rien avoir là-dedans",
+  lit:"این تو هیچی نداشتن",
+  fa:"با اشاره به سر، یعنی <b>کله‌اش پوکه / چیزی حالیش نیست / باهوش نیست</b>. گاهی هم به‌معنیِ «تهش هیچی نیست». (خودمونی و کمی تند)",
+  ex:[["Il est beau, mais il n'a rien là-dedans (en montrant sa tête).","خوش‌قیافه‌ست، ولی کله‌اش پوکه (با اشاره به سرش)."],
+      ["Ce discours est joli, mais il n'y a rien là-dedans.","این سخنرانی قشنگه، ولی تهش هیچی نداره."],
+      ["Ne te fie pas aux apparences : parfois, il n'y a rien là-dedans.","به ظاهر اعتماد نکن: بعضی وقتا تهش هیچی نیست."]],
+  note:"خودمونی و کمی تند — با اشاره به سر یعنی کم‌هوش.",
+  svg:`<svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#f4ead4"/><circle cx="60" cy="52" r="24" fill="none" stroke="#c98a5a" stroke-width="3"/><circle cx="52" cy="50" r="2.5" fill="#c98a5a"/><circle cx="68" cy="50" r="2.5" fill="#c98a5a"/><path d="M52 62 Q60 58 68 62" stroke="#c98a5a" stroke-width="2" fill="none"/><text x="60" y="30" font-size="16" text-anchor="middle" fill="#b0506f">···</text><path d="M40 88 Q60 82 80 88" stroke="#c98a5a" stroke-width="3" fill="none" opacity="0.4"/></svg>`
+},
+
+{
   fr:"Trois pelés et un tondu",
   lit:"سه تا کچل و یه تراشیده‌سر",
   fa:"یعنی <b>خیلی کم، تقریباً هیچ‌کس</b> — وقتی جایی خیلی خلوته و فقط چند نفر انگشت‌شمار اونجان.",
