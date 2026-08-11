@@ -105,7 +105,7 @@ body{background:#fff!important;background-image:none!important}
   <div class="lock">🔒</div>
   <h2>دسترسی محدود</h2>
   <p>این صفحه فقط برای مدیر سایت است.</p>
-  <a href="index.html">← Retour به سایت</a>
+  <a href="index.html">← بازگشت به سایت</a>
 </div>
 
 <div id="panel" class="wrap" style="display:none">
@@ -319,7 +319,7 @@ function renderStudents() {
     // نکات
     let noteList = s.notes.length
       ? s.notes.map(n => `<div class="detail-row note-row"><span>📝 ${n.note}</span><span class="time">${fmt(n.created_at)}</span></div>`).join('')
-      : '<div class="detail-empty">نکته‌ای ذخیره نشده</div>';
+      : '<div class="detail-empty">Note‌ای ذخیره نشده</div>';
     
     // سؤالات
     let qList = s.questions.length

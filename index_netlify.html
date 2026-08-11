@@ -873,8 +873,8 @@ body{background:#fff!important;background-image:none!important}
     <p class="section-sub">ساخته‌شده برای فارسی‌زبانان — هر توضیح، هر درس، هر منبع.</p>
     <div class="features-grid">
       <div class="feature-card"><div class="feature-icon">📚</div><h3>Leçons structurées</h3><p>درس‌های ساختارمند — از اولین حرف تا مکالمهٔ روان.</p></div>
-      <div class="feature-card"><div class="feature-icon">🎯</div><h3>Préparation TCF</h3><p>آمادگی کامل برای آزمون TCF Canada و مهاجرت.</p></div>
-      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>Vocabulaire و گرامر با مثال‌های واقعی و ترجمهٔ فارسی.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎯</div><h3>Préparation TCF</h3><p>آمادگی کامل برای Quiz TCF Canada و مهاجرت.</p></div>
+      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>واژگان و گرامر با Exemple‌های واقعی و ترجمهٔ فارسی.</p></div>
       <div class="feature-card"><div class="feature-icon">🎧</div><h3>Podcasts &amp; Culture</h3><p>پادکست‌های InnerFrench و محتوای فرهنگی فرانسه.</p></div>
     </div>
   </div>
@@ -974,7 +974,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("search").value = "";
             if (!skipHash) location.hash = "cat=" + catId;
             openResults();
-            // دسته‌ی نکته‌های طلایی → نمایش مخصوص
+            // دسته‌ی Note‌های طلایی → نمایش مخصوص
             if (catId === "astuces") {
                 renderAstuces();
             } else if (catId === "adjectifs") {
@@ -1002,22 +1002,22 @@ body{background:#fff!important;background-image:none!important}
             }
         }
 
-        // نمایش کارت‌های نکته‌ی طلایی
+        // نمایش کارت‌های Note‌ی طلایی
         function renderAstuces() {
             document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("astuces");
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
             const list = (typeof ASTUCES !== "undefined") ? ASTUCES : [];
-            document.getElementById("count").textContent = list.length + " نکته";
+            document.getElementById("count").textContent = list.length + " Note";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز نکته‌ای اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز Note‌ای اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map((a, ai) => `
                 <div class="astuce-card">
-                    <div class="astuce-badge">✦ نکته‌ی طلایی</div>
+                    <div class="astuce-badge">✦ Note‌ی طلایی</div>
                     <h4 class="astuce-titre" dir="ltr" style="text-align:right;">${a.titre}</h4>
                     ${a.sens ? `<div class="astuce-sens">${a.sens}</div>` : ""}
                     <div class="astuce-compare">
@@ -1034,7 +1034,7 @@ body{background:#fff!important;background-image:none!important}
                     </div>` : ""}
                     ${a.exemples ? `
                     <div class="astuce-exs">
-                        <div class="astuce-sub-title">📝 مثال‌ها</div>
+                        <div class="astuce-sub-title">📝 Exemple‌ها</div>
                         ${a.exemples.map(e => `<div class="astuce-ex"><div class="ax-fr" dir="ltr">${e.fr}</div><div class="ax-fa">${e.fa}</div></div>`).join("")}
                     </div>` : ""}
                     ${a.passe ? `
@@ -1045,7 +1045,7 @@ body{background:#fff!important;background-image:none!important}
                     </div>` : ""}
                     ${a.quiz ? `
                     <div class="astuce-quiz">
-                        <div class="astuce-sub-title">🎯 آزمون صرف (حال و گذشته)</div>
+                        <div class="astuce-sub-title">🎯 Quiz صرف (حال و گذشته)</div>
                         ${a.quiz.map((q, qi) => `
                             <div class="quiz-q" id="aq-${ai}-${qi}">
                                 <div class="quiz-q-text" dir="ltr">${q.q}</div>
@@ -1060,7 +1060,7 @@ body{background:#fff!important;background-image:none!important}
                 </div>`).join("");
         }
 
-        // پاسخ به آزمون نکته‌ها
+        // پاسخ به Quiz Note‌ها
         function answerAstuceQuiz(ai, qi, chosen, correct) {
             const qEl = document.getElementById("aq-" + ai + "-" + qi);
             const fb = document.getElementById("aqfb-" + ai + "-" + qi);
@@ -1236,7 +1236,7 @@ body{background:#fff!important;background-image:none!important}
             window.scrollTo({ top: 0, behavior: "instant" });
         }
 
-        // نمایش Exercicesی تلفظ
+        // نمایش Exercice‌های تلفظ
         let activePron = "guide";
         function renderPrononciation() {
             document.getElementById("grid").classList.add("grid-single");
@@ -1308,7 +1308,7 @@ body{background:#fff!important;background-image:none!important}
                 if (!ech.length) {
                     body.innerHTML = '<div class="empty"><span class="big">🔥</span>Bientôt</div>';
                 } else {
-                    const intro = `<div class="ech-intro">🔥 <b>زبان‌گردان (virelangue)</b> بهترین راه برای گرم‌کردن زبان و تمرین صداهای سخت است. هر جمله را ۳ بار بگو: اول آرام، بعد سریع‌تر، آخر همراه نوت صوتی.</div>`;
+                    const intro = `<div class="ech-intro">🔥 <b>زبان‌گردان (virelangue)</b> بهترین راه برای گرم‌کردن زبان و Exercice صداهای سخت است. هر جمله را ۳ بار بگو: اول آرام، بعد سریع‌تر، آخر همراه نوت صوتی.</div>`;
                     body.innerHTML = intro + ech.map((e, i) => `
                         <div class="ech-card">
                             <div class="ech-num">${i+1}</div>
@@ -1484,7 +1484,7 @@ body{background:#fff!important;background-image:none!important}
                 </a>`).join("");
         }
 
-        // باز کردن یک قسمت → متن کامل با Vocabulaire کلیکی + پخش‌کننده
+        // باز کردن یک قسمت → متن کامل با واژگان کلیکی + پخش‌کننده
         function openInnerEpisode(idx) {
             const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
             const ep = list[idx];
@@ -1496,7 +1496,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = "متن کامل";
             const grid = document.getElementById("grid");
             grid.innerHTML = `
-                <button class="back-to-list" onclick="openCat('innerfrench')">→ Retour au sommaire پادکست‌ها</button>
+                <button class="back-to-list" onclick="openCat('innerfrench')">→ بازگشت به فهرست پادکست‌ها</button>
                 <div class="if-episode">
                     <div class="if-ep-head">
                         <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
@@ -1527,9 +1527,9 @@ body{background:#fff!important;background-image:none!important}
             window.scrollTo({ top: 0, behavior: "instant" });
         }
 
-        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با Vocabulaire کلیکی
+        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
         function parseClickWords(text) {
-            // نوع ۱: Structure grammaticale/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
+            // نوع ۱: ساختار گرامری/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
             text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens) {
                 const m = mot.replace(/"/g, '&quot;');
                 const s = sens.replace(/"/g, '&quot;');
@@ -1599,7 +1599,7 @@ body{background:#fff!important;background-image:none!important}
                 </div>`;
 
             const intro = miniActiveCat === 'tcf'
-                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 آزمون TCF و لحن آزمونی نوشته شده‌اند. عالی برای تمرین استدلال و Vocabulaire آزمون.</div>'
+                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 Quiz TCF و لحن Quizی نوشته شده‌اند. عالی برای Exercice استدلال و واژگان Quiz.</div>'
                 : '';
 
             if (!list.length) {
@@ -1637,7 +1637,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = a.niveau || "";
             const grid = document.getElementById("grid");
             grid.innerHTML = `
-                <button class="mini-back" onclick="renderMiniarticles()">→ Retour au sommaire</button>
+                <button class="mini-back" onclick="renderMiniarticles()">→ بازگشت به فهرست</button>
                 <div class="mini-card">
                     <div class="mini-head">
                         ${a.emoji ? `<span class="mini-emoji">${a.emoji}</span>` : ""}
@@ -1672,7 +1672,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = list.length + " درس";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">Bientôt Vocabulaire درس‌ها با مثال اینجا می‌آید</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">Bientôt واژگان درس‌ها با Exemple اینجا می‌آید</span></div>';
                 return;
             }
             grid.innerHTML = list.map((l, i) => `
@@ -1683,7 +1683,7 @@ body{background:#fff!important;background-image:none!important}
                 </button>`).join("");
         }
 
-        // باز کردن یک درس → نمایش Vocabulaire با مثال
+        // باز کردن یک درس → نمایش واژگان با Exemple
         function openEditoLecon(idx) {
             const list = (typeof EDITOA1 !== "undefined") ? EDITOA1 : [];
             const l = list[idx];
@@ -1720,7 +1720,7 @@ body{background:#fff!important;background-image:none!important}
             "conditionnel": { fr: "Le Conditionnel", fa: "وجه شرطی", icon: "◈" },
             "subjonctif":   { fr: "Le Subjonctif", fa: "وجه التزامی", icon: "◈" },
             "indicatif":    { fr: "L'Indicatif", fa: "وجه اخباری", icon: "◈" },
-            "autres":       { fr: "Points divers", fa: "نکته‌های متفرقه", icon: "✦" },
+            "autres":       { fr: "Points divers", fa: "Note‌های متفرقه", icon: "✦" },
         };
 
         // نمایش پوشه‌های گرامر (هر مود فعلی یک پوشه)
@@ -2029,7 +2029,7 @@ body{background:#fff!important;background-image:none!important}
                 <div class="tip-head">${head}</div>
                 <div class="tip-fr" dir="ltr">${t.fr}</div>
                 <div class="tip-fa">${t.fa}</div>
-                <div class="tip-next">برای نکته‌ی بعدی لمس کن ↺</div>`;
+                <div class="tip-next">برای Note‌ی بعدی لمس کن ↺</div>`;
         }
 
         function closeTip(e) {
