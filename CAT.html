@@ -1,162 +1,224 @@
-<!DOCTYPE html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>محتوا</title>
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Français avec Hoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--ink:#33302a;--soft:#7d7264;--cream:#f7f5f1}
-body{font-family:"Estedad",sans-serif;background:var(--cream);color:var(--ink);line-height:1.8;padding:0 0 70px;-webkit-tap-highlight-color:transparent}
-.top{position:sticky;top:0;z-index:200;background:rgba(247,245,241,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;gap:8px;padding:10px 14px}
-.top button,.top a{display:inline-flex;align-items:center;gap:5px;text-decoration:none;border:none;border-radius:22px;padding:8px 15px;font-family:"Estedad";font-size:13px;font-weight:800;cursor:pointer;transition:.15s}
-.top button:active,.top a:active{transform:scale(.94)}
-.top .home{background:#1f3a5f;color:#fff}
-.top .back{background:#e6e2db;color:#33302a}
-.top .tl{font-size:13px;color:var(--soft);flex:1;text-align:center;font-weight:800}
-.hero{text-align:center;padding:22px 20px 8px}
-.hero .ic{width:70px;height:70px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 12px;color:#fff}
-.hero h1{font-size:21px;font-weight:800;margin-bottom:3px}
-.hero .cnt{display:inline-block;margin-top:9px;font-size:12px;font-weight:800;border-radius:14px;padding:4px 13px}
-.grid{max-width:680px;margin:0 auto;padding:14px 14px}
-.card{display:flex;align-items:center;gap:13px;background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;padding:13px 14px;margin-bottom:11px;text-decoration:none;color:inherit;box-shadow:0 3px 12px rgba(0,0,0,.04);transition:.16s}
-.card:active{transform:scale(.98)}
-.card-cov{flex-shrink:0;width:56px;height:56px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;font-weight:800;overflow:hidden;text-align:center}
-.card-cov img{width:100%;height:100%;object-fit:cover}
-.card-cov .txt{font-family:"Roboto",serif;font-size:9.5px;font-weight:700;padding:3px;line-height:1.2;direction:ltr}
-.card-info{flex:1;min-width:0}
-.card-t{font-size:14.5px;font-weight:800;margin-bottom:3px;line-height:1.4}
-.card-fr{font-family:"Roboto",serif;font-size:11px;color:#666;direction:ltr;text-align:left;font-style:italic;margin-bottom:3px}
-.card-lvl{display:inline-block;font-size:10px;font-weight:800;background:rgba(0,0,0,.06);border-radius:10px;padding:2px 9px;color:#555}
-.card-arr{flex-shrink:0;font-size:20px;color:#bbb}
-.empty{text-align:center;padding:44px 24px;color:var(--soft)}
-.empty .e{font-size:46px;margin-bottom:12px;opacity:.5}
-.foot{text-align:center;font-size:12px;color:var(--soft);margin:14px 20px 0;padding:12px}
-.hoda-watermark{position:fixed;inset:0;z-index:9000;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27320%27%20height%3D%27190%27%3E%3Ctext%20x%3D%270%27%20y%3D%27100%27%20font-family%3D%27Georgia%2Cserif%27%20font-size%3D%2716%27%20fill%3D%27rgba%280%2C0%2C0%2C0.04%29%27%20transform%3D%27rotate%28-25%20160%2095%29%27%3EHoda%20Khedmati%3C/text%3E%3C/svg%3E");background-repeat:repeat}
-</style></head><body>
-<div class="hoda-watermark"></div>
-<div class="top"><a class="home" href="index.html">🏠 خانه</a><button class="back" onclick="goBack()">&#8594; بازگشت</button><span class="tl" id="tl">محتوا</span></div>
-<div class="hero"><div class="ic" id="hic">📚</div><h1 id="htitle">...</h1><div class="cnt" id="hcnt"></div></div>
-<div class="grid" id="grid"></div>
-<div class="foot"><b>Français avec Hoda</b></div>
+  :root{
+    --blue:#1a73e8; --red:#ea4335; --green:#1e8e3e; --amber:#f9a825; --teal:#12a4b4;
+    --purple:#9334e6; --orange:#e8710a; --pink:#d01884; --indigo:#3f51b5;
+    --ink:#202124; --grey:#5f6368; --faint:#80868b; --line:#dadce0; --line-2:#e8eaed;
+    --bg:#fff; --mist:#f8f9fa;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  *{-webkit-user-select:none;user-select:none}
+  input,textarea,[contenteditable]{user-select:text}
+  img{pointer-events:none}
+  body{font-family:'Roboto',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:0 0 60px;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}
+  svg{display:block}
+  a{text-decoration:none;color:inherit}
+  /* top bar */
+  .top{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-2);display:flex;align-items:center;gap:14px;padding:0 20px;height:60px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .mark{width:28px;height:28px;border-radius:8px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;overflow:hidden;flex:none}
+  .brand .mark i{display:block}
+  .brand .mark i:nth-child(1){background:var(--blue)}.brand .mark i:nth-child(2){background:var(--red)}
+  .brand .mark i:nth-child(3){background:var(--amber)}.brand .mark i:nth-child(4){background:var(--green)}
+  .brand b{font-weight:700;font-size:16.5px;letter-spacing:-.3px}
+  .back{margin-left:auto;display:inline-flex;align-items:center;gap:7px;background:#f1f3f4;color:#3c4043;border:none;border-radius:8px;padding:8px 16px;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s}
+  .back:hover{background:#e8eaed}
+  .back svg{width:16px;height:16px}
+  @media(max-width:560px){.brand b{font-size:15px}}
+  /* hero */
+  .hero{text-align:center;padding:32px 20px 10px;max-width:680px;margin:0 auto}
+  .hero .ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;color:#fff;margin:0 auto 14px;box-shadow:0 6px 18px rgba(60,64,67,.18)}
+  .hero .ic svg{width:32px;height:32px}
+  .hero h1{font-size:26px;font-weight:500;letter-spacing:-.4px}
+  .hero .cnt{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:500;border-radius:999px;padding:5px 14px}
+  /* grid */
+  .grid{max-width:680px;margin:0 auto;padding:18px 16px}
+  .card{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line-2);border-radius:14px;padding:14px;margin-bottom:12px;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(60,64,67,.06);transition:box-shadow .16s,transform .16s,border-color .16s}
+  .card:hover{box-shadow:0 2px 8px rgba(60,64,67,.14),0 6px 18px rgba(60,64,67,.10);transform:translateY(-2px);border-color:var(--line)}
+  .card:active{transform:scale(.995)}
+  .card-cov{flex-shrink:0;width:54px;height:54px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden;text-align:center}
+  .card-cov svg{width:26px;height:26px}
+  .card-cov img{width:100%;height:100%;object-fit:cover}
+  .card-cov .txt{font-family:'Roboto',sans-serif;font-size:10px;font-weight:500;padding:4px;line-height:1.25;direction:ltr}
+  .card-info{flex:1;min-width:0}
+  .card-t{font-size:15px;font-weight:500;margin-bottom:2px;line-height:1.4}
+  .card-fr{font-size:11.5px;color:var(--grey);direction:ltr;text-align:left;margin-bottom:4px}
+  .card-lvl{display:inline-block;font-size:10.5px;font-weight:500;background:var(--mist);border:1px solid var(--line-2);border-radius:999px;padding:2px 10px;color:var(--grey)}
+  .card-arr{flex-shrink:0;color:var(--faint);display:flex;align-items:center}
+  .card-arr svg{width:20px;height:20px}
+  .empty{text-align:center;padding:56px 24px;color:var(--grey)}
+  .empty .e{display:flex;justify-content:center;margin-bottom:14px;color:var(--faint)}
+  .empty .e svg{width:44px;height:44px}
+  .foot{text-align:center;font-size:13px;color:var(--faint);margin:18px 20px 0;padding:12px}
+  .foot b{color:var(--grey);font-weight:500}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <div class="top">
+    <a class="brand" href="index.html"><span class="mark"><i></i><i></i><i></i><i></i></span><b>Français avec Hoda</b></a>
+    <button class="back" onclick="goBack()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      Retour
+    </button>
+  </div>
+
+  <div class="hero"><div class="ic" id="hic"></div><h1 id="htitle">…</h1><div class="cnt" id="hcnt"></div></div>
+  <div class="grid" id="grid"></div>
+  <div class="foot"><b>Français avec Hoda</b></div>
 
 <script src="data.js"></script>
 <script>
 function qs(k){return new URLSearchParams(location.search).get(k);}
 var CAT=qs('cat'), SUB=qs('sub');
 
+/* ─ icônes (SVG, sans emoji) ─ */
+var I={
+  vocab:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-1.5-1.2-3.5-2-6-2v13c2.5 0 4.5.8 6 2M12 6c1.5-1.2 3.5-2 6-2v13c-2.5 0-4.5.8-6 2M12 6v13"/></svg>',
+  grammar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11a3 3 0 013 3v4a3 3 0 01-3 3H9l-4 3v-3a3 3 0 01-1-2V8a3 3 0 013-3z"/></svg>',
+  image:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0012 0M12 17v4M9 21h6"/></svg>',
+  ecoute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0116 0v1M4 13a2 2 0 002 2h1v-4H6a2 2 0 00-2 2zM20 13a2 2 0 01-2 2h-1v-4h1a2 2 0 012 2z"/></svg>',
+  mini:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 01-2-2zM17 8h3v9a2 2 0 01-2 2M7 9h7M7 13h7M7 17h4"/></svg>',
+  article:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>',
+  culture:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10L12 4l8 6M5 10v9h14v-9M9 19v-5h6v5"/></svg>',
+  pron:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2l2-5 3 11 3-14 3 10 2-3h3"/></svg>',
+  tcf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V4M6 4h11l-2 3 2 3H6"/></svg>'
+};
+var ARR='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+
 var CAT_META={
-  grammar:{fa:'گرامر',ic:'📖',color:'#1f3a5f'},
-  vocab:{fa:'واژگان',ic:'📚',color:'#2e8b6b'},
-  miniarticle:{fa:'مینی‌آرتیکل',ic:'📝',color:'#8a5a2a'},
-  innerfrench:{fa:'InnerFrench',ic:'🎧',color:'#5a3b88'},
-  article:{fa:'آرتیکل',ic:'📄',color:'#1e3a5f'},
-  culture:{fa:'فرهنگ فرانسه',ic:'🇫🇷',color:'#6b3fa0'},
-  image:{fa:'توصیف تصویر',ic:'🖼️',color:'#22618f'}
+  grammar:{fr:'Grammaire',ic:'grammar',color:'var(--red)'},
+  vocab:{fr:'Vocabulaire',ic:'vocab',color:'var(--blue)'},
+  miniarticle:{fr:'Mini-articles',ic:'mini',color:'var(--purple)'},
+  innerfrench:{fr:'Compréhension',ic:'ecoute',color:'var(--teal)'},
+  podcast:{fr:'Compréhension',ic:'ecoute',color:'var(--teal)'},
+  article:{fr:'Articles',ic:'article',color:'var(--orange)'},
+  culture:{fr:'Culture française',ic:'culture',color:'var(--indigo)'},
+  image:{fr:'Expression orale',ic:'image',color:'var(--green)'},
+  prononciation:{fr:'Prononciation',ic:'pron',color:'var(--pink)'},
+  tcf:{fr:'TCF Canada',ic:'tcf',color:'var(--amber)'}
 };
 var DIRECT={debutant:'DEBUTANT_index.html',roulette:'ROULETTE.html',phrases:'PHRASES_utiles.html'};
 var VOC_FOLDERS=[
-  {sub:"mots_aujourdhui",fa:"کلمات امروز",fr:"les mots d'aujourd'hui",emoji:"📰",color:"#2e8b6b"},
-  {sub:"thematique",fa:"واژگان موضوعی",fr:"Vocabulaire thématique",emoji:"🗂️",color:"#22618f"},
-  {sub:"mots_info",fa:"کلمات خبری",fr:"les mots de l'info",emoji:"🗞️",color:"#b07a4a"},
-  {sub:"edito_a1",fa:"ادیتو A1",fr:"Edito A1",emoji:"🟢",color:"#5a9e5a"},
-  {sub:"edito_a2",fa:"ادیتو A2",fr:"Edito A2",emoji:"🔵",color:"#4a7db5"},
-  {sub:"edito_b1",fa:"ادیتو B1",fr:"Edito B1",emoji:"🟣",color:"#8258a8"}
+  {sub:"mots_aujourdhui",fr:"Les mots d'aujourd'hui"},
+  {sub:"thematique",fr:"Vocabulaire thématique"},
+  {sub:"mots_info",fr:"Les mots de l'info"},
+  {sub:"edito_a1",fr:"Edito A1"},
+  {sub:"edito_a2",fr:"Edito A2"},
+  {sub:"edito_b1",fr:"Edito B1"}
 ];
-var VOCFOLD=(typeof VOC_FOLDERS!=='undefined')?VOC_FOLDERS:[];
+var VOCFOLD=VOC_FOLDERS;
 var SPECIAL_SUB={mots_info:'MOTSINFO_index.html'};
 
-function clean(t){return (t||'').replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤🟢🔵🟣🗞️🗂️📄📝]/g,'').trim();}
+function clean(t){return (t||'').replace(/[📐📚✍️🎧📰🗼🎯🎙️📸👤🟢🔵🟣🗞️🗂️📄📝📗📭]/g,'').trim();}
+function esc(t){return (t||'').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 function goBack(){
-  // اگر در حالت درس‌های یک زیرپوشه واژگان هستیم -> برگرد به لیست پوشه‌های واژگان
   if(CAT==='vocab' && SUB){ location.href='CAT.html?cat=vocab'; return; }
-  // در غیر این صورت -> برگرد به خانه
   location.href='index.html';
 }
 
-function setHeader(fa,ic,color,cnt){
-  document.getElementById('htitle').textContent=fa;
-  document.getElementById('tl').textContent=fa;
-  document.getElementById('hic').textContent=ic;
-  document.getElementById('hic').style.background=color;
-  document.getElementById('hcnt').textContent=cnt;
-  document.getElementById('hcnt').style.background='rgba(0,0,0,.06)';
-  document.getElementById('hcnt').style.color=color;
-  document.title=fa;
+function setHeader(fr,iconKey,color,cnt){
+  document.getElementById('htitle').textContent=fr;
+  document.getElementById('tl')&&(document.getElementById('tl').textContent=fr);
+  var hic=document.getElementById('hic');
+  hic.innerHTML=I[iconKey]||I.vocab;
+  hic.style.background=color;
+  var hc=document.getElementById('hcnt');
+  hc.textContent=cnt;
+  hc.style.background='var(--mist)';
+  hc.style.border='1px solid var(--line-2)';
+  hc.style.color=color;
+  document.title=fr+' — Français avec Hoda';
 }
 
-function makeCard(href,cov,covStyle,title,fr,lvl,isImg){
-  var covInner = isImg ? '<img src="'+cov+'">' : (cov.length>2 ? '<span class="txt">'+cov+'</span>' : cov);
+/* covInner: HTML déjà construit (img / svg / texte) */
+function makeCard(href,covStyle,covInner,title,fr,lvl){
   return '<a class="card" href="'+href+'"><div class="card-cov" style="'+covStyle+'">'+covInner+'</div>'+
-    '<div class="card-info"><div class="card-t">'+title+'</div>'+
-    (fr?'<div class="card-fr">'+fr+'</div>':'')+
-    (lvl?'<span class="card-lvl">'+lvl+'</span>':'')+
-    '</div><div class="card-arr">‹</div></a>';
+    '<div class="card-info"><div class="card-t">'+esc(title)+'</div>'+
+    (fr?'<div class="card-fr">'+esc(fr)+'</div>':'')+
+    (lvl?'<span class="card-lvl">'+esc(lvl)+'</span>':'')+
+    '</div><div class="card-arr">'+ARR+'</div></a>';
 }
+function covImg(src){return {style:'background:#eef1f4;padding:0',inner:'<img src="'+src+'">'};}
+function covIcon(iconKey,color){return {style:'background:'+color,inner:I[iconKey]||I.vocab};}
+function covText(txt,color){return {style:'background:'+color,inner:'<span class="txt">'+esc(txt)+'</span>'};}
 
 function render(){
   var grid=document.getElementById('grid');
-  // حالت ۱: زیرپوشه واژگان -> درس‌ها
+  // 1) sous-dossier vocabulaire -> leçons
   if(CAT==='vocab' && SUB){
-    var fold=VOCFOLD.find(function(f){return f.sub===SUB;})||{fa:SUB,fr:'',color:'#2e8b6b',emoji:'📚'};
+    var fold=VOCFOLD.find(function(f){return f.sub===SUB;})||{fr:SUB};
     var items=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub===SUB;}):[];
-    setHeader(fold.fa,fold.emoji||'📚',fold.color||'#2e8b6b',items.length+' درس');
-    if(!items.length){grid.innerHTML='<div class="empty"><div class="e">📭</div>این پوشه هنوز خالی است — به‌زودی پر می‌شود.</div>';return;}
+    setHeader(fold.fr,'vocab','var(--blue)',items.length+' leçons');
+    if(!items.length){grid.innerHTML=emptyHtml('Ce dossier est encore vide — bientôt disponible.');return;}
     var h='';
     items.forEach(function(l){
-      var short=clean(l.titleFr||l.title).substring(0,26);
-      h+=makeCard(l.file||'#', l.image||short, l.image?'background:#eee;padding:0':'background:'+(fold.color||'#2e8b6b'), clean(l.title), l.titleFr||'', l.level||'', !!l.image);
+      var c=l.image?covImg(l.image):covText(clean(l.titleFr||l.title).substring(0,26),'var(--blue)');
+      h+=makeCard(l.file||'#',c.style,c.inner,clean(l.title),l.titleFr||'',l.level||'');
     });
-    grid.innerHTML=h;
-    return;
+    grid.innerHTML=h; return;
   }
-  // حالت ۲: واژگان -> پوشه‌ها
+  // 2) vocabulaire -> dossiers
   if(CAT==='vocab'){
-    setHeader('واژگان','📚','#2e8b6b',VOCFOLD.length+' پوشه');
+    setHeader('Vocabulaire','vocab','var(--blue)',VOCFOLD.length+' dossiers');
     var h='';
     VOCFOLD.forEach(function(f){
       var n=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category==='vocab'&&l.sub===f.sub;}).length:0;
-      var href = SPECIAL_SUB[f.sub] ? SPECIAL_SUB[f.sub] : 'CAT.html?cat=vocab&sub='+f.sub;
-      h+=makeCard(href, f.emoji||'📁', 'background:'+(f.color||'#2e8b6b'), f.fa, f.fr||'', n?n+' درس':'به‌زودی', false);
+      var href=SPECIAL_SUB[f.sub]?SPECIAL_SUB[f.sub]:'CAT.html?cat=vocab&sub='+f.sub;
+      var c=covIcon('vocab','var(--blue)');
+      h+=makeCard(href,c.style,c.inner,f.fr,'',n?n+' leçons':'bientôt');
     });
-    grid.innerHTML=h;
-    return;
+    grid.innerHTML=h; return;
   }
-  // حالت ۳: دسته‌های مستقیم (لینک به صفحه دیگر)
+  // 3) redirections directes
   if(DIRECT[CAT]){ location.href=DIRECT[CAT]; return; }
-  // حالت ۴: دسته‌های معمولی از LESSONS
-  var meta=CAT_META[CAT]||{fa:CAT,ic:'📚',color:'#1f3a5f'};
+  // 4) catégories normales
+  var meta=CAT_META[CAT]||{fr:CAT,ic:'vocab',color:'var(--blue)'};
   var h='';
-  // آیتم ویژه گرامر
   if(CAT==='grammar'){
-    h+=makeCard('GRAMMAIRE_DIALOGUE_index.html','📗 Grammaire en Dialogue','background:linear-gradient(135deg,#1f3a5f,#16293f)','📗 Grammaire en Dialogue','','کتاب کامل · ۳۲ فصل',false);
+    h+=makeCard('GRAMMAIRE_DIALOGUE_index.html','background:linear-gradient(135deg,#ea4335,#c5221f)',I.grammar,'Grammaire en Dialogue','Le livre complet','32 chapitres');
   }
-  // InnerFrench و miniarticle ساختار خاص دارند
   if(CAT==='innerfrench' && typeof INNERFRENCH!=='undefined'){
-    setHeader(meta.fa,meta.ic,meta.color,INNERFRENCH.length+' اپیزود');
+    setHeader(meta.fr,meta.ic,meta.color,INNERFRENCH.length+' épisodes');
     INNERFRENCH.forEach(function(e){
-      h+=makeCard('IF_ep'+String(e.num).padStart(2,'0')+'.html','#'+e.num,'background:#5a3b88',e.titreFa,'','اپیزود '+e.num,false);
+      var c=covIcon('ecoute','var(--teal)');
+      h+=makeCard('IF_ep'+String(e.num).padStart(2,'0')+'.html',c.style,c.inner,e.titreFa,'','Épisode '+e.num);
     });
     grid.innerHTML=h; return;
   }
   if(CAT==='miniarticle' && typeof MINIARTICLES!=='undefined'){
-    setHeader(meta.fa,meta.ic,meta.color,MINIARTICLES.length+' متن');
+    setHeader(meta.fr,meta.ic,meta.color,MINIARTICLES.length+' articles');
     MINIARTICLES.forEach(function(m){
       var href=(typeof MINI_FILES!=='undefined'&&MINI_FILES[m.titre])?MINI_FILES[m.titre]:'index.html';
-      h+=makeCard(href,(m.titre||'').substring(0,26),'background:#8a5a2a',m.titre||'','',m.niveau||'',false);
+      var c=covText((m.titre||'').substring(0,26),'var(--purple)');
+      h+=makeCard(href,c.style,c.inner,m.titre||'','',m.niveau||'');
     });
     grid.innerHTML=h; return;
   }
-  // معمولی
+  // normal
   var items=(typeof LESSONS!=='undefined')?LESSONS.filter(function(l){return l.category===CAT;}):[];
-  setHeader(meta.fa,meta.ic,meta.color,items.length+' محتوا');
+  setHeader(meta.fr,meta.ic,meta.color,items.length+' contenus');
   items.forEach(function(l){
-    var short=clean(l.titleFr||l.title).substring(0,26);
-    h+=makeCard(l.file||'#', l.image||short, l.image?'background:#eee;padding:0':'background:'+meta.color, clean(l.title), l.titleFr||'', l.level||'', !!l.image);
+    var c=l.image?covImg(l.image):covText(clean(l.titleFr||l.title).substring(0,26),meta.color);
+    h+=makeCard(l.file||'#',c.style,c.inner,clean(l.title),l.titleFr||'',l.level||'');
   });
-  if(!items.length && CAT!=='grammar'){grid.innerHTML='<div class="empty"><div class="e">📭</div>محتوایی یافت نشد</div>';return;}
+  if(!items.length && CAT!=='grammar'){grid.innerHTML=emptyHtml('Aucun contenu trouvé.');return;}
   grid.innerHTML=h;
+}
+function emptyHtml(msg){
+  return '<div class="empty"><div class="e"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h4l2 3h4l2-3h4M4 13l2.5-7h11L20 13v5a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg></div>'+msg+'</div>';
 }
 document.addEventListener('DOMContentLoaded',render);
 </script>
 <script>(function(){document.addEventListener("contextmenu",function(e){e.preventDefault();},{capture:true});document.addEventListener("copy",function(e){var t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable))return;e.preventDefault();});document.addEventListener("keydown",function(e){var t=e.target;var f=t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable);var k=(e.key||"").toLowerCase();if((e.ctrlKey||e.metaKey)&&["c","x","u","s","a"].indexOf(k)>-1&&!f){e.preventDefault();}},{capture:true});})();</script>
-<style>body{-webkit-user-select:none;user-select:none}input,textarea,[contenteditable]{user-select:text}img{pointer-events:none}</style>
 </body></html>
