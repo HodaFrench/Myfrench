@@ -52,7 +52,7 @@ body{font-family:'Estedad',sans-serif;background:var(--paper);background-image:r
 <span class="hk-wm" style="top:74%;left:54%">Hoda Khedmati</span>
 
 <div class="hoda-back">
-  <a class="hoda-back-btn" href="index.html">&#8592; خانه</a>
+  <a class="hoda-back-btn" href="index.html">&#8592; Accueil</a>
   <span class="hoda-back-label">🎭 اصطلاحات فرانسوی</span>
 </div>
 
@@ -323,7 +323,7 @@ function render(){
       <div class="ex-body"><div class="ex-inner">
         <div class="row"><div class="row-lab">📖 ترجمه‌ی تحت‌اللفظی</div><span class="lit">${e.lit}</span></div>
         <div class="row"><div class="row-lab">💡 معنی واقعی</div><div class="mean">${e.fa}</div></div>
-        <div class="row"><div class="row-lab">✍️ مثال</div><div class="exs">${e.ex.map(x=>`<div class="exline"><span class="f">${x[0]}</span><span class="p">${x[1]}</span></div>`).join('')}</div></div>
+        <div class="row"><div class="row-lab">Exemple</div><div class="exs">${e.ex.map(x=>`<div class="exline"><span class="f">${x[0]}</span><span class="p">${x[1]}</span></div>`).join('')}</div></div>
         <div class="note">📌 <span>${e.note}</span></div>
       </div></div>
     </div>`).join('');

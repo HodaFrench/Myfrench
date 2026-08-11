@@ -885,7 +885,7 @@
         <h3 id="resultsTitle">همهٔ محتواها</h3>
         <div class="count" id="count"></div>
       </div>
-      <button class="back-btn" onclick="goHome()">↑ بازگشت به خانه</button>
+      <button class="back-btn" onclick="goHome()">↑ Retour à l'accueil</button>
     </div>
     <div class="grid" id="grid"></div>
   </div>
@@ -997,7 +997,7 @@
             document.getElementById("count").textContent = list.length + " نکته";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز نکته‌ای اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز نکته‌ای اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map((a, ai) => `
@@ -1081,7 +1081,7 @@
             document.getElementById("count").textContent = list.length + " صفت";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">◆</span>هنوز صفتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">◆</span>هنوز صفتی اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map(a => `
@@ -1135,7 +1135,7 @@
             document.getElementById("count").textContent = list.length + " کوییز";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">?</span>هنوز کوییزی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">?</span>هنوز کوییزی اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map((q, qi) => `
@@ -1180,7 +1180,7 @@
             document.getElementById("count").textContent = list.length + " موضوع";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">❝</span>هنوز موضوعی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">❝</span>هنوز موضوعی اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             activeReact = 0;
@@ -1261,7 +1261,7 @@
                     </a>`;
             } else if (which === "video") {
                 if (!vids.length) {
-                    body.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                    body.innerHTML = '<div class="empty"><span class="big">🗣</span>هنوز ویدیویی اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 } else {
                     body.innerHTML = vids.map(p => {
                         const sounds = (p.focus || []).map(s => `<span class="pron-sound" dir="ltr">${s}</span>`).join("");
@@ -1291,7 +1291,7 @@
                 }
             } else if (which === "ech") {
                 if (!ech.length) {
-                    body.innerHTML = '<div class="empty"><span class="big">🔥</span>به‌زودی</div>';
+                    body.innerHTML = '<div class="empty"><span class="big">🔥</span>Bientôt</div>';
                 } else {
                     const intro = `<div class="ech-intro">🔥 <b>زبان‌گردان (virelangue)</b> بهترین راه برای گرم‌کردن زبان و تمرین صداهای سخت است. هر جمله را ۳ بار بگو: اول آرام، بعد سریع‌تر، آخر همراه نوت صوتی.</div>`;
                     body.innerHTML = intro + ech.map((e, i) => `
@@ -1306,7 +1306,7 @@
                                 <div class="ech-step"><span class="ech-step-n">۳</span> به نوت صوتی گوش بده و <b>تکرار کن</b> <span dir="ltr" class="ech-step-fr">— écoute et répète</span></div>
                             </div>
                             ${e.note ? `<div class="ech-note">💡 ${e.note}</div>` : ""}
-                            ${e.audio ? `<button class="ech-play" onclick="playInPlayer('${safeUrl(e.audio)}','زبان‌گردان ${i+1}')">▶ پخش نوت صوتی</button>` : `<div class="ech-soon">🎤 نوت صوتی به‌زودی اضافه می‌شود</div>`}
+                            ${e.audio ? `<button class="ech-play" onclick="playInPlayer('${safeUrl(e.audio)}','زبان‌گردان ${i+1}')">▶ پخش نوت صوتی</button>` : `<div class="ech-soon">🎤 نوت صوتی Bientôt اضافه می‌شود</div>`}
                         </div>`).join("");
                 }
             }
@@ -1419,7 +1419,7 @@
                                     <span class="prive-item-titre">${it.titre}</span>
                                     ${it.desc ? `<span class="prive-item-desc">${it.desc}</span>` : ""}
                                 </div>`).join("")}
-                        </div>` : `<div class="prive-empty">هنوز محتوایی اضافه نشده — به‌زودی</div>`}
+                        </div>` : `<div class="prive-empty">هنوز محتوایی اضافه نشده — Bientôt</div>`}
                     </div>`).join("")}`;
         }
 
@@ -1432,7 +1432,7 @@
             document.getElementById("count").textContent = items.length + " مقاله";
             const grid = document.getElementById("grid");
             if (!items.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">🥐</span>به‌زودی<br><span style="font-size:14px">محتوا اضافه می‌شود</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">🥐</span>Bientôt<br><span style="font-size:14px">محتوا اضافه می‌شود</span></div>';
                 return;
             }
             grid.innerHTML = items.map(function(item) {
@@ -1454,7 +1454,7 @@
             document.getElementById("count").textContent = list.length + " قسمت";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">▶</span>هنوز قسمتی اضافه نشده<br><span style="font-size:14px">به‌زودی</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">▶</span>هنوز قسمتی اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map((ep, i) => `
@@ -1657,7 +1657,7 @@
             document.getElementById("count").textContent = list.length + " درس";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">به‌زودی واژگان درس‌ها با مثال اینجا می‌آید</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">Bientôt واژگان درس‌ها با مثال اینجا می‌آید</span></div>';
                 return;
             }
             grid.innerHTML = list.map((l, i) => `
@@ -1796,7 +1796,7 @@
                     <button class="sub-card" style="--c:${ci.color}" onclick="openSujet('${catId}','${secId}','${taskId}','${s.id}')">
                         <span class="sub-fr-l" dir="ltr">${s.label}</span>
                         <span class="sub-fa-l">${s.labelFa}</span>
-                        <span class="sub-go">${n ? n + ' محتوا ←' : 'به‌زودی'}</span>
+                        <span class="sub-go">${n ? n + ' محتوا ←' : 'Bientôt'}</span>
                     </button>`;
                 }).join("");
             } else {
@@ -1877,7 +1877,7 @@
             document.getElementById("count").textContent = filtered.length + " محتوا";
 
             if (filtered.length === 0) {
-                grid.innerHTML = `<div class="empty"><span class="big">📚</span>هنوز محتوایی در این بخش نیست<br><span style="font-size:14px">به‌زودی اضافه می‌شود</span></div>`;
+                grid.innerHTML = `<div class="empty"><span class="big">📚</span>هنوز محتوایی در این بخش نیست<br><span style="font-size:14px">Bientôt اضافه می‌شود</span></div>`;
                 return;
             }
 
