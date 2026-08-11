@@ -18,7 +18,7 @@
     if(!session){window.location.href='auth.html';return;}
     const u=session.user.email?.split('@')[0]||'';
     const el=document.getElementById('_username');
-    if(el) el.textContent=u;
+    if(el) el.textContent=(u||'').replace(/[0-9]+$/,'');
   });
   function _logout(){_sb.auth.signOut().then(()=>window.location.href='auth.html');}
 </script>
@@ -147,7 +147,7 @@
       <a href="CAT.html?cat=vocab">Vocabulaire</a>
       <a href="CAT.html?cat=grammar">Grammaire</a>
       <a href="TCF/index.html">TCF Canada</a>
-      <a href="PODCAST_index.html">Balados</a>
+      <a href="PODCAST_index.html">Podcast</a>
     </div>
     <div class="nav-right">
       <a class="tg" href="https://t.me/tcfhoda" target="_blank" rel="noopener">
@@ -215,7 +215,7 @@
         <a class="card c-ecoute" href="PODCAST_index.html">
           <div class="top"><span class="ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0116 0v1M4 13a2 2 0 002 2h1v-4H6a2 2 0 00-2 2zM20 13a2 2 0 01-2 2h-1v-4h1a2 2 0 012 2z"/></svg></span>
             <h3>Compréhension</h3></div>
-          <p class="desc">Des balados et des épisodes pour habituer l’oreille au français réel.</p>
+          <p class="desc">Des podcasts et des épisodes pour habituer l’oreille au français réel.</p>
           <div class="foot"><span class="count">28 épisodes</span><span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
         </a>
 
