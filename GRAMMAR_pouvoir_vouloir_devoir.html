@@ -107,7 +107,7 @@ body{background:#fff!important;background-image:none!important}
 <div class="hero">
   <div class="hero-tag">📐 GRAMMAIRE · افعال وجهی</div>
   <h1>Pouvoir · Vouloir · Devoir</h1>
-  <div class="sub">افعال ناقص — توانستن · خواستن · باید · با مثال، ترجمه و تمرین</div>
+  <div class="sub">افعال ناقص — توانستن · خواستن · باید · Avec exemples, traduction et exercices</div>
 </div>
 <div class="wrap">
 
@@ -392,7 +392,7 @@ function a(el,chosen){
 <div id="rec-widget">
   <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
   <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
+    <button id="rec-btn" onclick="toggleRec()">🎙️ Enregistrer</button>
     <span id="rec-timer">۰:۰۰</span>
     <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
   </div>
@@ -422,7 +422,7 @@ function a(el,chosen){
           stream.getTracks().forEach(t=>t.stop());
         };
         mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
+        btn.textContent = '⏹ Arrêter';
         btn.classList.add('recording');
         seconds = 0;
         timerInterval = setInterval(()=>{

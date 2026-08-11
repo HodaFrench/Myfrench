@@ -89,7 +89,7 @@ body{background:#fff!important;background-image:none!important}
 <div class="hero">
   <div class="hero-tag">📸 DÉCRIRE UNE IMAGE · B1</div>
   <h1>Un disque dur sur le sable</h1>
-  <div class="sub">توصیف تصویر با هایلایت واژگان و ساختارها — روی کلمات کلیک کن</div>
+  <div class="sub">توصیف تصویر با هایلایت Vocabulaire و ساختارها — روی کلمات کلیک کن</div>
 </div>
 <div class="wrap">
 
@@ -101,7 +101,7 @@ body{background:#fff!important;background-image:none!important}
 
 <div class="legend">
   <div class="lg"><span class="lg-dot" style="background:rgba(30,58,95,.35)"></span><b style="color:#1e3a5f">واژه / اسم</b></div>
-  <div class="lg"><span class="lg-dot" style="background:rgba(176,122,74,.4)"></span><b style="color:#8a5a2a">ساختار گرامری</b></div>
+  <div class="lg"><span class="lg-dot" style="background:rgba(176,122,74,.4)"></span><b style="color:#8a5a2a">Structure grammaticale</b></div>
   <div class="lg"><span class="lg-dot" style="background:rgba(46,139,107,.3)"></span><b style="color:#1d6b50">توصیف / صفت</b></div>
   <span style="font-size:11px;color:var(--gray);margin-right:auto">👆 روی کلمات رنگی کلیک کن</span>
 </div>
@@ -137,7 +137,7 @@ body{background:#fff!important;background-image:none!important}
 </div>
 
 <div class="text-card">
-  <div class="text-label">📚 VOCABULAIRE — واژگان کلیدی</div>
+  <div class="text-label">📚 VOCABULAIRE — Vocabulaire کلیدی</div>
   <table class="vocab-table">
     <tr><th>واژه</th><th>نوع</th><th>معنی</th></tr>
     <tr><td class="fr">un disque dur externe</td><td class="type">nm</td><td>هارد دیسک اکسترنال</td></tr>
@@ -226,7 +226,7 @@ function t(el){
 <div id="rec-widget">
   <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
   <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
+    <button id="rec-btn" onclick="toggleRec()">🎙️ Enregistrer</button>
     <span id="rec-timer">۰:۰۰</span>
     <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
   </div>
@@ -256,7 +256,7 @@ function t(el){
           stream.getTracks().forEach(t=>t.stop());
         };
         mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
+        btn.textContent = '⏹ Arrêter';
         btn.classList.add('recording');
         seconds = 0;
         timerInterval = setInterval(()=>{

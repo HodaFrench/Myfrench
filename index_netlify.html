@@ -874,7 +874,7 @@ body{background:#fff!important;background-image:none!important}
     <div class="features-grid">
       <div class="feature-card"><div class="feature-icon">📚</div><h3>Leçons structurées</h3><p>درس‌های ساختارمند — از اولین حرف تا مکالمهٔ روان.</p></div>
       <div class="feature-card"><div class="feature-icon">🎯</div><h3>Préparation TCF</h3><p>آمادگی کامل برای آزمون TCF Canada و مهاجرت.</p></div>
-      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>واژگان و گرامر با مثال‌های واقعی و ترجمهٔ فارسی.</p></div>
+      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>Vocabulaire و گرامر با مثال‌های واقعی و ترجمهٔ فارسی.</p></div>
       <div class="feature-card"><div class="feature-icon">🎧</div><h3>Podcasts &amp; Culture</h3><p>پادکست‌های InnerFrench و محتوای فرهنگی فرانسه.</p></div>
     </div>
   </div>
@@ -1236,7 +1236,7 @@ body{background:#fff!important;background-image:none!important}
             window.scrollTo({ top: 0, behavior: "instant" });
         }
 
-        // نمایش تمرین‌های تلفظ
+        // نمایش Exercicesی تلفظ
         let activePron = "guide";
         function renderPrononciation() {
             document.getElementById("grid").classList.add("grid-single");
@@ -1484,7 +1484,7 @@ body{background:#fff!important;background-image:none!important}
                 </a>`).join("");
         }
 
-        // باز کردن یک قسمت → متن کامل با واژگان کلیکی + پخش‌کننده
+        // باز کردن یک قسمت → متن کامل با Vocabulaire کلیکی + پخش‌کننده
         function openInnerEpisode(idx) {
             const list = (typeof INNERFRENCH !== "undefined") ? INNERFRENCH : [];
             const ep = list[idx];
@@ -1496,7 +1496,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = "متن کامل";
             const grid = document.getElementById("grid");
             grid.innerHTML = `
-                <button class="back-to-list" onclick="openCat('innerfrench')">→ بازگشت به فهرست پادکست‌ها</button>
+                <button class="back-to-list" onclick="openCat('innerfrench')">→ Retour au sommaire پادکست‌ها</button>
                 <div class="if-episode">
                     <div class="if-ep-head">
                         <div class="if-ep-titre" dir="ltr">${ep.titre}</div>
@@ -1527,9 +1527,9 @@ body{background:#fff!important;background-image:none!important}
             window.scrollTo({ top: 0, behavior: "instant" });
         }
 
-        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
+        // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با Vocabulaire کلیکی
         function parseClickWords(text) {
-            // نوع ۱: ساختار گرامری/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
+            // نوع ۱: Structure grammaticale/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
             text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens) {
                 const m = mot.replace(/"/g, '&quot;');
                 const s = sens.replace(/"/g, '&quot;');
@@ -1599,7 +1599,7 @@ body{background:#fff!important;background-image:none!important}
                 </div>`;
 
             const intro = miniActiveCat === 'tcf'
-                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 آزمون TCF و لحن آزمونی نوشته شده‌اند. عالی برای تمرین استدلال و واژگان آزمون.</div>'
+                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 آزمون TCF و لحن آزمونی نوشته شده‌اند. عالی برای تمرین استدلال و Vocabulaire آزمون.</div>'
                 : '';
 
             if (!list.length) {
@@ -1637,7 +1637,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = a.niveau || "";
             const grid = document.getElementById("grid");
             grid.innerHTML = `
-                <button class="mini-back" onclick="renderMiniarticles()">→ بازگشت به فهرست</button>
+                <button class="mini-back" onclick="renderMiniarticles()">→ Retour au sommaire</button>
                 <div class="mini-card">
                     <div class="mini-head">
                         ${a.emoji ? `<span class="mini-emoji">${a.emoji}</span>` : ""}
@@ -1672,7 +1672,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = list.length + " درس";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">Bientôt واژگان درس‌ها با مثال اینجا می‌آید</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✎</span>هنوز درسی اضافه نشده<br><span style="font-size:14px">Bientôt Vocabulaire درس‌ها با مثال اینجا می‌آید</span></div>';
                 return;
             }
             grid.innerHTML = list.map((l, i) => `
@@ -1683,7 +1683,7 @@ body{background:#fff!important;background-image:none!important}
                 </button>`).join("");
         }
 
-        // باز کردن یک درس → نمایش واژگان با مثال
+        // باز کردن یک درس → نمایش Vocabulaire با مثال
         function openEditoLecon(idx) {
             const list = (typeof EDITOA1 !== "undefined") ? EDITOA1 : [];
             const l = list[idx];

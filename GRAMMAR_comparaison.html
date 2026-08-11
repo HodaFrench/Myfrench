@@ -188,7 +188,7 @@ body{background:#fff!important;background-image:none!important}
 <div class="hero">
   <div class="hero-tag">📐 GRAMMAIRE · گرامر</div>
   <h1>La Comparaison</h1>
-  <div class="sub">مقایسه در زبان فرانسه · از A2 تا C1<br>با مثال، ترجمه و تمرین</div>
+  <div class="sub">مقایسه در زبان فرانسه · از A2 تا C1<br>Avec exemples, traduction et exercices</div>
 </div>
 
 <div class="wrap">
@@ -733,7 +733,7 @@ function ans(el, chosen){
 <div id="rec-widget">
   <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
   <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
+    <button id="rec-btn" onclick="toggleRec()">🎙️ Enregistrer</button>
     <span id="rec-timer">۰:۰۰</span>
     <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
   </div>
@@ -763,7 +763,7 @@ function ans(el, chosen){
           stream.getTracks().forEach(t=>t.stop());
         };
         mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
+        btn.textContent = '⏹ Arrêter';
         btn.classList.add('recording');
         seconds = 0;
         timerInterval = setInterval(()=>{

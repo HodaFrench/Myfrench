@@ -322,7 +322,7 @@ function a(el,chosen){
 <div id="rec-widget">
   <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
   <div class="rec-controls">
-    <button id="rec-btn" onclick="toggleRec()">🎙️ شروع ضبط</button>
+    <button id="rec-btn" onclick="toggleRec()">🎙️ Enregistrer</button>
     <span id="rec-timer">۰:۰۰</span>
     <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
   </div>
@@ -352,7 +352,7 @@ function a(el,chosen){
           stream.getTracks().forEach(t=>t.stop());
         };
         mediaRecorder.start();
-        btn.textContent = '⏹ توقف ضبط';
+        btn.textContent = '⏹ Arrêter';
         btn.classList.add('recording');
         seconds = 0;
         timerInterval = setInterval(()=>{
