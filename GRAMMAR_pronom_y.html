@@ -79,13 +79,13 @@ body{background:#fff!important;background-image:none!important}
 .hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 <div class="hoda-back">
-  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; گرامر</a>
-  <span class="hoda-back-label">گرامر</span>
+  <a class="hoda-back-btn" href="javascript:history.back()">&#8592; Grammaire</a>
+  <span class="hoda-back-label">Grammaire</span>
 </div>
 
 <div class="topbar">
   <a href="../index.html">⌂ Français avec Hoda</a>
-  <span style="font-size:13px;opacity:.7">📐 گرامر</span>
+  <span style="font-size:13px;opacity:.7">📐 Grammaire</span>
 </div>
 <div class="hero">
   <div class="hero-tag">📐 GRAMMAIRE · ضمیر</div>
@@ -115,7 +115,7 @@ body{background:#fff!important;background-image:none!important}
     </div>
     <div class="ex">
       <div class="ex-fr">— Tu habites <span style="text-decoration:underline;color:#6b3fa0">en France</span> ? — Oui, j'<span class="hl">y</span> habite depuis 5 ans.</div>
-      <div class="ex-fa">آیا در فرانسه زندگی می‌کنی؟ — بله، ۵ سال است اینجا زندگی می‌کنم.</div>
+      <div class="ex-fa">آیا در فرانسه زندگی می‌کنی؟ — بله، 5 سال است اینجا زندگی می‌کنم.</div>
       <div class="ex-why">💡 Y = en France — حرف اضافه «en» + کشور مؤنث</div>
     </div>
     <div class="ex">
@@ -266,7 +266,7 @@ body{background:#fff!important;background-image:none!important}
   <div class="q-feedback ko">❌ <b>Vas-y</b> — با S! قانون: فعل «aller» در امری مثبت قبل از Y، یک S می‌گیرد.</div>
 </div>
 
-<div class="score-bar">امتیاز: <span id="sc">0</span> از ۶</div>
+<div class="score-bar">امتیاز: <span id="sc">0</span> از 6</div>
 </div>
 
 <script>
@@ -323,7 +323,7 @@ function a(el,chosen){
   <div class="rec-title">🎙️ صدایت رو ضبط کن</div>
   <div class="rec-controls">
     <button id="rec-btn" onclick="toggleRec()">🎙️ Enregistrer</button>
-    <span id="rec-timer">۰:۰۰</span>
+    <span id="rec-timer">0:00</span>
     <span style="font-size:11px;color:#b0a090">ضبط‌ها در مرورگرت ذخیره می‌مونن</span>
   </div>
   <div class="rec-list" id="rec-list"></div>
@@ -335,7 +335,7 @@ function a(el,chosen){
   const REC_KEY = 'hoda_recs_' + PAGE;
   let mediaRecorder = null, chunks = [], timerInterval = null, seconds = 0;
   
-  function toFa(n){ return String(n).replace(/[0-9]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]); }
+  function toFa(n){ return String(n).replace(/[0-9]/g,d=>'0123456789'[d]); }
   function fmtTime(s){ return toFa(Math.floor(s/60))+':'+toFa(s%60<10?'0'+s%60:s%60); }
   
   window.toggleRec = async function(){
@@ -515,7 +515,7 @@ body{padding-bottom:130px!important}
 </style>
 <div class="gram-nav">
   <a class="gnav-btn prev" href="GRAMMAR_cest_ilest.html">&#8594; C'est / Il est</a>
-  <span style="font-size:11px;color:#b0a898;font-family:'Estedad',sans-serif">گرامر</span>
+  <span style="font-size:11px;color:#b0a898;font-family:'Estedad',sans-serif">Grammaire</span>
   <a class="gnav-btn next" href="LECON_verbes_prepositions.html">فعل‌ها + à یا de &#8592;</a>
 </div>
 <script>hodaAutoInitFull();</script>

@@ -874,7 +874,7 @@ body{background:#fff!important;background-image:none!important}
     <div class="features-grid">
       <div class="feature-card"><div class="feature-icon">📚</div><h3>Leçons structurées</h3><p>درس‌های ساختارمند — از اولین حرف تا مکالمهٔ روان.</p></div>
       <div class="feature-card"><div class="feature-icon">🎯</div><h3>Préparation TCF</h3><p>آمادگی کامل برای Quiz TCF Canada و مهاجرت.</p></div>
-      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>واژگان و گرامر با Exemple‌های واقعی و ترجمهٔ فارسی.</p></div>
+      <div class="feature-card"><div class="feature-icon">📖</div><h3>Vocabulaire &amp; Grammaire</h3><p>واژگان و Grammaire با Exemples واقعی و Traduction فارسی.</p></div>
       <div class="feature-card"><div class="feature-icon">🎧</div><h3>Podcasts &amp; Culture</h3><p>پادکست‌های InnerFrench و محتوای فرهنگی فرانسه.</p></div>
     </div>
   </div>
@@ -919,7 +919,7 @@ body{background:#fff!important;background-image:none!important}
         let activeSection = null;  // بخش فعال (مثل expression-orale)
         let activeTask = null;     // تکلیف فعال (مثل tache-3)
         let activeSujet = null;    // موضوع فعال (مثل immigration)
-        let activeGroupe = null;   // پوشه‌ی فعال در گرامر (مثل conditionnel)
+        let activeGroupe = null;   // پوشه‌ی فعال در Grammaire (مثل conditionnel)
 
         function lessonsIn(catId) {
             return LESSONS.filter(l => l.category === catId).length;
@@ -974,7 +974,7 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("search").value = "";
             if (!skipHash) location.hash = "cat=" + catId;
             openResults();
-            // دسته‌ی Note‌های طلایی → نمایش مخصوص
+            // دسته‌ی Notes طلایی → نمایش مخصوص
             if (catId === "astuces") {
                 renderAstuces();
             } else if (catId === "adjectifs") {
@@ -1002,7 +1002,7 @@ body{background:#fff!important;background-image:none!important}
             }
         }
 
-        // نمایش کارت‌های Note‌ی طلایی
+        // نمایش کارت‌های Note طلایی
         function renderAstuces() {
             document.getElementById("grid").classList.add("grid-single");
             const ci = catInfo("astuces");
@@ -1012,12 +1012,12 @@ body{background:#fff!important;background-image:none!important}
             document.getElementById("count").textContent = list.length + " Note";
             const grid = document.getElementById("grid");
             if (!list.length) {
-                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز Note‌ای اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
+                grid.innerHTML = '<div class="empty"><span class="big">✦</span>هنوز Note اضافه نشده<br><span style="font-size:14px">Bientôt</span></div>';
                 return;
             }
             grid.innerHTML = list.map((a, ai) => `
                 <div class="astuce-card">
-                    <div class="astuce-badge">✦ Note‌ی طلایی</div>
+                    <div class="astuce-badge">✦ Note طلایی</div>
                     <h4 class="astuce-titre" dir="ltr" style="text-align:right;">${a.titre}</h4>
                     ${a.sens ? `<div class="astuce-sens">${a.sens}</div>` : ""}
                     <div class="astuce-compare">
@@ -1034,7 +1034,7 @@ body{background:#fff!important;background-image:none!important}
                     </div>` : ""}
                     ${a.exemples ? `
                     <div class="astuce-exs">
-                        <div class="astuce-sub-title">📝 Exemple‌ها</div>
+                        <div class="astuce-sub-title">📝 Exemples</div>
                         ${a.exemples.map(e => `<div class="astuce-ex"><div class="ax-fr" dir="ltr">${e.fr}</div><div class="ax-fa">${e.fa}</div></div>`).join("")}
                     </div>` : ""}
                     ${a.passe ? `
@@ -1060,7 +1060,7 @@ body{background:#fff!important;background-image:none!important}
                 </div>`).join("");
         }
 
-        // پاسخ به Quiz Note‌ها
+        // پاسخ به Quiz Notes
         function answerAstuceQuiz(ai, qi, chosen, correct) {
             const qEl = document.getElementById("aq-" + ai + "-" + qi);
             const fb = document.getElementById("aqfb-" + ai + "-" + qi);
@@ -1107,7 +1107,7 @@ body{background:#fff!important;background-image:none!important}
                     </div>
                     ${(a.traductions && a.traductions.length) ? `
                     <div class="adj-block">
-                        <div class="adj-label">🔹 ترجمه</div>
+                        <div class="adj-label">🔹 Traduction</div>
                         <div class="adj-trads">${a.traductions.map(t => `<span class="adj-trad">${t}</span>`).join("")}</div>
                     </div>` : ""}
                     ${(a.synonymes && a.synonymes.length) ? `
@@ -1236,7 +1236,7 @@ body{background:#fff!important;background-image:none!important}
             window.scrollTo({ top: 0, behavior: "instant" });
         }
 
-        // نمایش Exercice‌های تلفظ
+        // نمایش Exercices تلفظ
         let activePron = "guide";
         function renderPrononciation() {
             document.getElementById("grid").classList.add("grid-single");
@@ -1529,7 +1529,7 @@ body{background:#fff!important;background-image:none!important}
 
         // تبدیل متن با نشانه‌ی ⟦mot|معنی⟧ به HTML با واژگان کلیکی
         function parseClickWords(text) {
-            // نوع ۱: ساختار گرامری/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
+            // نوع ۱: ساختار Grammaire/کالوکیشن ⟪structure|توضیح⟫ (آبی، با آیکون)
             text = text.replace(/⟪([^|⟫]+)\|([^⟫]+)⟫/g, function(_, mot, sens) {
                 const m = mot.replace(/"/g, '&quot;');
                 const s = sens.replace(/"/g, '&quot;');
@@ -1599,7 +1599,7 @@ body{background:#fff!important;background-image:none!important}
                 </div>`;
 
             const intro = miniActiveCat === 'tcf'
-                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 Quiz TCF و لحن Quizی نوشته شده‌اند. عالی برای Exercice استدلال و واژگان Quiz.</div>'
+                ? '<div class="mini-section-intro">📝 این آرتیکل‌ها با موضوعات Tâche 3 Quiz TCF و لحن Quiz نوشته شده‌اند. عالی برای Exercice استدلال و واژگان Quiz.</div>'
                 : '';
 
             if (!list.length) {
@@ -1715,21 +1715,21 @@ body{background:#fff!important;background-image:none!important}
                 </div>`).join("");
         }
 
-        // اطلاعات پوشه‌های گرامر (مودهای فعلی و دسته‌بندی‌ها)
+        // اطلاعات پوشه‌های Grammaire (مودهای فعلی و دسته‌بندی‌ها)
         const GRAMMAR_GROUPES = {
             "conditionnel": { fr: "Le Conditionnel", fa: "وجه شرطی", icon: "◈" },
             "subjonctif":   { fr: "Le Subjonctif", fa: "وجه التزامی", icon: "◈" },
             "indicatif":    { fr: "L'Indicatif", fa: "وجه اخباری", icon: "◈" },
-            "autres":       { fr: "Points divers", fa: "Note‌های متفرقه", icon: "✦" },
+            "autres":       { fr: "Points divers", fa: "Notes متفرقه", icon: "✦" },
         };
 
-        // نمایش پوشه‌های گرامر (هر مود فعلی یک پوشه)
+        // نمایش پوشه‌های Grammaire (هر مود فعلی یک پوشه)
         function renderGroupes(catId) {
             document.getElementById("grid").classList.remove("grid-single");
             const ci = catInfo(catId);
             document.getElementById("resultsTitle").innerHTML =
                 '<span style="color:' + ci.color + '">' + ci.icon + '</span> ' + ci.label;
-            // گروه‌بندی محتواهای گرامر بر اساس فیلد groupe (پیش‌فرض: autres)
+            // گروه‌بندی محتواهای Grammaire بر اساس فیلد groupe (پیش‌فرض: autres)
             const lessons = LESSONS.filter(l => l.category === catId);
             const groupesMap = {};
             lessons.forEach(l => {
@@ -1757,7 +1757,7 @@ body{background:#fff!important;background-image:none!important}
             }).join("");
         }
 
-        // باز کردن یک پوشه‌ی گرامر → نمایش محتواهای داخلش
+        // باز کردن یک پوشه‌ی Grammaire → نمایش محتواهای داخلش
         function openGroupe(groupe) {
             activeGroupe = groupe;
             openResults();
@@ -2029,7 +2029,7 @@ body{background:#fff!important;background-image:none!important}
                 <div class="tip-head">${head}</div>
                 <div class="tip-fr" dir="ltr">${t.fr}</div>
                 <div class="tip-fa">${t.fa}</div>
-                <div class="tip-next">برای Note‌ی بعدی لمس کن ↺</div>`;
+                <div class="tip-next">برای Note بعدی لمس کن ↺</div>`;
         }
 
         function closeTip(e) {

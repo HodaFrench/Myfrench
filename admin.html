@@ -319,7 +319,7 @@ function renderStudents() {
     // نکات
     let noteList = s.notes.length
       ? s.notes.map(n => `<div class="detail-row note-row"><span>📝 ${n.note}</span><span class="time">${fmt(n.created_at)}</span></div>`).join('')
-      : '<div class="detail-empty">Note‌ای ذخیره نشده</div>';
+      : '<div class="detail-empty">Note ذخیره نشده</div>';
     
     // سؤالات
     let qList = s.questions.length
