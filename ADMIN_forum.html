@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>پنل هدی — مدیریت سوالات</title>
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--rose:#b0506f}
-body{font-family:'Estedad',sans-serif;background:#1e3a5f;color:#f5f0e8;padding:0;min-height:100vh}
+body{font-family:'Vazirmatn',sans-serif;background:#1e3a5f;color:#f5f0e8;padding:0;min-height:100vh}
 .admin-header{background:rgba(0,0,0,.3);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .admin-header h1{font-size:16px;font-weight:700}
 .admin-header a{color:#c4a572;font-size:12px;text-decoration:none}
 .admin-body{max-width:800px;margin:0 auto;padding:20px 1rem}
 .auth-box{background:rgba(255,255,255,.08);border-radius:14px;padding:24px;margin-bottom:20px;text-align:center}
-.auth-input{width:100%;padding:10px 14px;border-radius:8px;border:none;background:rgba(255,255,255,.1);color:#f5f0e8;font-family:'Estedad',sans-serif;font-size:14px;margin-bottom:10px;direction:ltr}
-.auth-btn{padding:9px 24px;background:var(--gold);color:#1e3a5f;border:none;border-radius:9px;font-family:'Estedad',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
+.auth-input{width:100%;padding:10px 14px;border-radius:8px;border:none;background:rgba(255,255,255,.1);color:#f5f0e8;font-family:'Vazirmatn',sans-serif;font-size:14px;margin-bottom:10px;direction:ltr}
+.auth-btn{padding:9px 24px;background:var(--gold);color:#1e3a5f;border:none;border-radius:9px;font-family:'Vazirmatn',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
 .q-card{background:rgba(255,255,255,.07);border-radius:12px;padding:16px;margin-bottom:12px;border:1px solid rgba(255,255,255,.1)}
 .q-text{font-size:14px;line-height:1.8;margin-bottom:12px;background:rgba(255,255,255,.05);border-radius:8px;padding:10px 14px}
 .q-meta{font-size:11px;color:#c4b8a8;margin-bottom:10px}
-.q-answer{width:100%;min-height:80px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#f5f0e8;font-family:'Estedad',sans-serif;font-size:13.5px;padding:10px;resize:vertical;margin-bottom:8px}
+.q-answer{width:100%;min-height:80px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#f5f0e8;font-family:'Vazirmatn',sans-serif;font-size:13.5px;padding:10px;resize:vertical;margin-bottom:8px}
 .q-answer:focus{outline:none;border-color:var(--gold)}
 .q-actions{display:flex;gap:8px}
-.btn-approve{flex:1;padding:8px;background:var(--green);color:#fff;border:none;border-radius:8px;font-family:'Estedad',sans-serif;font-size:13px;font-weight:600;cursor:pointer}
-.btn-reject{padding:8px 16px;background:var(--rose);color:#fff;border:none;border-radius:8px;font-family:'Estedad',sans-serif;font-size:13px;cursor:pointer}
+.btn-approve{flex:1;padding:8px;background:var(--green);color:#fff;border:none;border-radius:8px;font-family:'Vazirmatn',sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+.btn-reject{padding:8px 16px;background:var(--rose);color:#fff;border:none;border-radius:8px;font-family:'Vazirmatn',sans-serif;font-size:13px;cursor:pointer}
 .status-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;margin-right:8px}
 .pending{background:rgba(176,122,74,.3);color:#f5c47a}
 .approved{background:rgba(46,139,107,.3);color:#7ee8c0}
@@ -66,9 +66,9 @@ body{background:#fff!important;background-image:none!important}
   <!-- panel -->
   <div id="panel">
     <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
-      <button onclick="loadQ('pending')" style="padding:7px 16px;background:rgba(176,122,74,.3);color:#f5c47a;border:none;border-radius:8px;cursor:pointer;font-family:'Estedad',sans-serif;font-size:13px">⏳ در انتظار</button>
-      <button onclick="loadQ('approved')" style="padding:7px 16px;background:rgba(46,139,107,.3);color:#7ee8c0;border:none;border-radius:8px;cursor:pointer;font-family:'Estedad',sans-serif;font-size:13px">✅ تأییدشده</button>
-      <button onclick="loadQ('rejected')" style="padding:7px 16px;background:rgba(176,80,111,.3);color:#f5a0c0;border:none;border-radius:8px;cursor:pointer;font-family:'Estedad',sans-serif;font-size:13px">❌ ردشده</button>
+      <button onclick="loadQ('pending')" style="padding:7px 16px;background:rgba(176,122,74,.3);color:#f5c47a;border:none;border-radius:8px;cursor:pointer;font-family:'Vazirmatn',sans-serif;font-size:13px">⏳ در انتظار</button>
+      <button onclick="loadQ('approved')" style="padding:7px 16px;background:rgba(46,139,107,.3);color:#7ee8c0;border:none;border-radius:8px;cursor:pointer;font-family:'Vazirmatn',sans-serif;font-size:13px">✅ تأییدشده</button>
+      <button onclick="loadQ('rejected')" style="padding:7px 16px;background:rgba(176,80,111,.3);color:#f5a0c0;border:none;border-radius:8px;cursor:pointer;font-family:'Vazirmatn',sans-serif;font-size:13px">❌ ردشده</button>
     </div>
     <div id="q-list"><div class="loading">⏳ بارگذاری...</div></div>
   </div>
