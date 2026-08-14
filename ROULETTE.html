@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Roue des thèmes | Français avec Hoda</title>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--cream:#f9f8fa;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--pur:#7a5ba8}
@@ -14,7 +14,7 @@ body{font-family:'Vazirmatn',sans-serif;background:var(--paper);background-image
 .hoda-back-btn{display:flex;align-items:center;gap:5px;background:var(--navy);color:#f5f0e8;text-decoration:none;border-radius:22px;padding:6px 16px;font-family:'Vazirmatn',sans-serif;font-size:13.5px;font-weight:700;white-space:nowrap;transition:background .2s}
 .hoda-back-btn:hover{background:#2a5080}
 .hero{background:linear-gradient(135deg,#1e3a5f,#2a4f7f);color:#fff;padding:26px 20px 22px;text-align:center}
-.hero h1{font-family:'Roboto',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.hero h1{font-family:'Lexend',serif;font-size:22px;font-weight:700;margin-bottom:4px}
 .wheel-sec{display:flex;flex-direction:column;align-items:center;padding:24px 0 14px}
 .wheel-wrap{position:relative;width:270px;height:270px}
 .wheel-ptr{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:26px;z-index:10;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
@@ -26,7 +26,7 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
 .result-card.show{display:block}
 @keyframes si{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .r-label{font-size:10.5px;font-weight:700;color:var(--pur);letter-spacing:1.5px;margin-bottom:6px}
-.r-topic{font-family:'Roboto',serif;font-size:22px;font-weight:700;color:var(--navy);direction:ltr;text-align:left}
+.r-topic{font-family:'Lexend',serif;font-size:22px;font-weight:700;color:var(--navy);direction:ltr;text-align:left}
 .r-fa{font-size:14px;color:var(--gray);margin-top:3px;margin-bottom:10px}
 .vocab-helper{background:var(--cream);border-radius:10px;padding:12px 14px;margin-top:8px}
 .vh-title{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px}
@@ -39,7 +39,7 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
 .t-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--white);border-radius:10px;cursor:pointer;transition:all .18s;border:1px solid var(--line)}
 .t-item:hover{background:rgba(122,91,168,.06);border-color:rgba(122,91,168,.3)}
 .t-num{font-size:10.5px;font-weight:700;color:var(--pur);width:26px;text-align:center;flex-shrink:0}
-.t-fr{font-family:'Roboto',serif;font-size:15px;color:var(--navy);direction:ltr}
+.t-fr{font-family:'Lexend',serif;font-size:15px;color:var(--navy);direction:ltr}
 .t-fa{font-size:12px;color:var(--gray);margin-top:1px}
 .t-arr{color:#b0a8c0;font-size:14px;margin-right:auto;flex-shrink:0}
 
@@ -47,7 +47,7 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
 .model-btn{width:100%;background:linear-gradient(135deg,#7a5ba8,#5a3b88);color:#fff;border:none;border-radius:12px;padding:11px;font-family:'Vazirmatn',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
 .model-btn:active{transform:scale(.98)}
 .model-text{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.mt-fr{direction:ltr;text-align:left;font-family:'Roboto',serif;font-size:14.5px;line-height:1.95;color:#2c3e50}
+.mt-fr{direction:ltr;text-align:left;font-family:'Lexend',serif;font-size:14.5px;line-height:1.95;color:#2c3e50}
 .mt-fa{margin-top:11px;font-size:13px;color:#5a6b60;line-height:1.95;border-top:1px dashed var(--line);padding-top:11px}
 .mt-soon{color:#8a8275;font-size:13.5px;text-align:center;padding:6px}
 </style>
@@ -55,7 +55,7 @@ canvas{border-radius:50%;box-shadow:0 8px 36px rgba(122,59,136,.35),0 0 0 5px rg
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="tracker.js"></script>
-<link id="groboto2" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><style id="gtheme">
+<link id="groboto2" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style id="gtheme">
 :root{--paper:#fff!important;--paper-edge:#e8eaed!important;--cream:#f8f9fa!important;--white:#fff!important;--bg:#fff!important;--ink:#202124!important;--ink-soft:#5f6368!important;--soft:#5f6368!important;--gray:#5f6368!important;--grey:#5f6368!important;--line:#e8eaed!important;--rule:#e8eaed!important;--border:#e8eaed!important;--navy:#1a73e8!important;--blue:#1a73e8!important;--primary:#1a73e8!important;--brown:#1a73e8!important;--brown-d:#1660cf!important;--gold:#e8710a!important;--amber:#f9a825!important;--margin:#ea4335!important;--green:#1e8e3e!important;--green-d:#157a33!important;--rose:#d01884!important;--red:#ea4335!important;--accent:#1a73e8!important}
 body{background:#fff!important;background-image:none!important}
 .hero,.header,.chero,.band,.cover-band,.sec-badge{background:#1a73e8!important;background-image:none!important;color:#fff!important}
@@ -132,7 +132,7 @@ function drawWheel(a){
     ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=2;ctx.stroke();
     ctx.save();ctx.translate(cx,cx);ctx.rotate(s+arc/2);
     ctx.textAlign='right';ctx.fillStyle='rgba(255,255,255,.95)';
-    ctx.font="bold 10.5px 'Roboto',sans-serif";
+    ctx.font="bold 10.5px 'Lexend',sans-serif";
     ctx.fillText((items[i%items.length][0]).substring(0,16),r-10,4);
     ctx.restore();
   }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Les Desserts Français — فرهنگ فرانسه · Français avec Hoda</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{--navy:#1e3a5f;--accent:#b07a4a;--accent2:#8a2040;--green:#2e8b6b;--blue:#2e7bb5;
@@ -26,12 +26,12 @@
   .header::before{content:"🍰";position:absolute;top:-15px;left:10px;font-size:120px;opacity:.1;}
   .header h1{font-size:24px;font-weight:700;margin-bottom:8px;}
   .header .sub{font-size:13.5px;opacity:.92;line-height:2;}
-  .header .sub-fr{font-family:'Roboto',serif;font-style:italic;margin-top:8px;opacity:.85;}
+  .header .sub-fr{font-family:'Lexend',serif;font-style:italic;margin-top:8px;opacity:.85;}
   /* لید */
   .lead{background:var(--white);border:1px solid var(--line);border-radius:14px;
     padding:20px 22px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media(max-width:560px){.lead{grid-template-columns:1fr;}}
-  .lead-fr{font-family:'Roboto',serif;font-size:15px;direction:ltr;text-align:left;
+  .lead-fr{font-family:'Lexend',serif;font-size:15px;direction:ltr;text-align:left;
     line-height:1.9;color:var(--ink);}
   .lead-fa{font-size:14px;line-height:2.1;color:var(--ink);}
   .lead-title{font-size:12px;font-weight:700;letter-spacing:1.5px;
@@ -43,7 +43,7 @@
     padding:14px;text-align:center;}
   .reason-em{font-size:28px;margin-bottom:8px;}
   .reason-title{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;}
-  .reason-fr{font-family:'Roboto',serif;font-size:13px;color:var(--gray);direction:ltr;text-align:left;line-height:1.7;}
+  .reason-fr{font-family:'Lexend',serif;font-size:13px;color:var(--gray);direction:ltr;text-align:left;line-height:1.7;}
   /* دسرها */
   .dessert-card{background:var(--white);border:1px solid var(--line);border-radius:18px;
     overflow:hidden;margin-bottom:18px;box-shadow:0 6px 20px rgba(31,58,95,.06);}
@@ -51,19 +51,19 @@
   .dc-image-placeholder{width:100%;height:180px;display:flex;align-items:center;justify-content:center;
     font-size:70px;background:linear-gradient(135deg,var(--warm),var(--cream));}
   .dc-body{padding:20px 22px;}
-  .dc-name{font-family:'Roboto',serif;font-size:20px;font-weight:700;color:var(--navy);
+  .dc-name{font-family:'Lexend',serif;font-size:20px;font-weight:700;color:var(--navy);
     direction:ltr;text-align:left;margin-bottom:4px;}
   .dc-fa{font-size:15px;color:var(--accent);font-weight:600;margin-bottom:12px;}
   .dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   @media(max-width:540px){.dc-grid{grid-template-columns:1fr;}}
-  .dc-fr{font-family:'Roboto',serif;font-size:14.5px;direction:ltr;text-align:left;
+  .dc-fr{font-family:'Lexend',serif;font-size:14.5px;direction:ltr;text-align:left;
     line-height:1.85;color:var(--ink);}
   .dc-fa-text{font-size:13.5px;line-height:2;color:var(--ink);}
   .dc-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;
     border-radius:8px;margin-top:10px;margin-left:6px;}
   /* هایلایت */
   .hw{background:rgba(176,122,74,.15);color:#6b4010;border-radius:3px;
-    padding:1px 4px;font-weight:600;font-family:'Roboto',serif;cursor:pointer;
+    padding:1px 4px;font-weight:600;font-family:'Lexend',serif;cursor:pointer;
     border-bottom:2px solid rgba(176,122,74,.4);position:relative;transition:all .2s;}
   .hw:hover,.hw.open{background:rgba(176,122,74,.28);}
   .pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
@@ -88,7 +88,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="tracker.js"></script>
-<link id="groboto2" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><style id="gtheme">
+<link id="groboto2" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style id="gtheme">
 :root{--paper:#fff!important;--paper-edge:#e8eaed!important;--cream:#f8f9fa!important;--white:#fff!important;--bg:#fff!important;--ink:#202124!important;--ink-soft:#5f6368!important;--soft:#5f6368!important;--gray:#5f6368!important;--grey:#5f6368!important;--line:#e8eaed!important;--rule:#e8eaed!important;--border:#e8eaed!important;--navy:#1a73e8!important;--blue:#1a73e8!important;--primary:#1a73e8!important;--brown:#1a73e8!important;--brown-d:#1660cf!important;--gold:#e8710a!important;--amber:#f9a825!important;--margin:#ea4335!important;--green:#1e8e3e!important;--green-d:#157a33!important;--rose:#d01884!important;--red:#ea4335!important;--accent:#1a73e8!important}
 body{background:#fff!important;background-image:none!important}
 .hero,.header,.chero,.band,.cover-band,.sec-badge{background:#1a73e8!important;background-image:none!important;color:#fff!important}
