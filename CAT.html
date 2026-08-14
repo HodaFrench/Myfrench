@@ -198,8 +198,8 @@ function render(){
   }
   if(CAT==='miniarticle' && typeof MINIARTICLES!=='undefined'){
     setHeader(meta.fr,meta.ic,meta.color,MINIARTICLES.length+' articles');
-    MINIARTICLES.forEach(function(m){
-      var href=(typeof MINI_FILES!=='undefined'&&MINI_FILES[m.titre])?MINI_FILES[m.titre]:'index.html';
+    MINIARTICLES.forEach(function(m,idx){
+      var href='MINI_'+String(idx).padStart(3,'0')+'.html';
       var c=covText((m.titre||'').substring(0,26),'var(--purple)');
       h+=makeCard(href,c.style,c.inner,m.titre||'','',m.niveau||'');
     });
