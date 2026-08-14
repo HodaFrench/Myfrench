@@ -32,8 +32,9 @@
   .lesson:hover{box-shadow:0 2px 8px rgba(60,64,67,.14),0 6px 18px rgba(60,64,67,.10);transform:translateY(-2px);border-color:var(--line)}
   .lnum{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:500;font-size:17px}
   .linfo{flex:1;min-width:0}
-  .lt{font-size:15px;font-weight:500;line-height:1.4}
+  .lt{font-size:16px;font-weight:500;line-height:1.4;direction:ltr}
   .lf{font-size:11.5px;color:var(--grey);direction:ltr;text-align:left;margin-top:1px}
+  .lfa{font-family:'Vazirmatn',Tahoma,sans-serif;direction:rtl;text-align:right;font-size:12px;color:var(--faint);margin-top:2px}
   .lv{display:inline-block;font-size:10.5px;font-weight:500;margin-top:5px;padding:2px 10px;border-radius:999px;background:var(--mist);border:1px solid var(--line-2);color:var(--grey)}
   .larr{flex:none;color:var(--faint)}.larr svg{width:20px;height:20px}
   .empty{text-align:center;padding:50px 24px;color:var(--grey)}
@@ -87,8 +88,8 @@ function build(){
   var list=document.getElementById('list');
   if(!items.length){list.innerHTML='<div class="empty">Ce thème sera bientôt disponible.</div>';return;}
   list.innerHTML=items.map(function(l,i){
-    var t=clean(l.title)||clean(l.titleFr);
-    var fr=l.titleFr?('<div class="lf">'+l.titleFr+'</div>'):'';
+    var t=l.titleFr||clean(l.title);
+    var fr=l.title?('<div class="lfa">'+clean(l.title)+'</div>'):'';
     var lv=l.level?('<span class="lv">'+l.level+'</span>'):'';
     return '<a class="lesson" href="'+(l.file||'#')+'"><div class="lnum" style="background:'+meta.c+'">'+(i+1)+'</div>'+
       '<div class="linfo"><div class="lt">'+t+'</div>'+fr+lv+'</div><div class="larr">'+ARR+'</div></a>';
