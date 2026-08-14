@@ -261,7 +261,7 @@ async function loadAll() {
   document.getElementById('stats').innerHTML = `
     <div class="stat"><div class="stat-num">${totalStudents}</div><div class="stat-label">👥 شاگردان</div></div>
     <div class="stat"><div class="stat-num">${totalDone}</div><div class="stat-label">✅ درس خوانده‌شده</div></div>
-    <div class="stat"><div class="stat-num">${Math.round(totalMinutes)}</div><div class="stat-label">⏱ دقیقه مطالعه</div></div>
+    <div class="stat"><div class="stat-num">${Math.round(totalMinutes)}</div><div class="stat-label">⏱ Minutes d'étude</div></div>
     <div class="stat"><div class="stat-num">${totalQuestions}</div><div class="stat-label">❓ سؤالات</div></div>
     <div class="stat"><div class="stat-num">${totalNotes}</div><div class="stat-label">📝 نکات ذخیره‌شده</div></div>
   `;
@@ -311,7 +311,7 @@ function renderStudents() {
       ? s.study.map(st => `<div class="detail-row"><span>📅 ${fmtDate(st.date)}</span><span class="time">${Math.round((st.total_seconds||0)/60)} دقیقه</span></div>`).join('')
       : '<div class="detail-empty">هنوز زمان مطالعه ثبت نشده</div>';
     
-    // تاریخچه بازدید (۱۵ مورد اخیر)
+    // Historique بازدید (۱۵ مورد اخیر)
     let visitList = s.visits.length
       ? s.visits.slice(0,15).map(v => `<div class="detail-row"><span>${v.title||v.page}</span><span class="time">${fmt(v.visited_at)}</span></div>`).join('')
       : '<div class="detail-empty">بازدیدی ثبت نشده</div>';
@@ -355,7 +355,7 @@ function renderStudents() {
             <div class="detail-list">${qList}</div>
           </div>
           <div class="detail-section">
-            <div class="detail-h">🕐 تاریخچه بازدید (۱۵ مورد اخیر)</div>
+            <div class="detail-h">🕐 Historique بازدید (۱۵ مورد اخیر)</div>
             <div class="detail-list">${visitList}</div>
           </div>
         </div>
