@@ -9,9 +9,9 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box;}
   :root{
-    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#b07a4a; --gold-soft:#c4a572;
-    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#2c2a26; --gray:#8a8275;
-    --line:#e2e1e3; --white:#fcfbfd; --green:#2e8b6b; --terracotta:#c4502d; --accent:#b07a4a;
+    --navy:#1e3a5f; --navy-soft:#41618a; --purple:#7a5ba8; --gold:#1a73e8; --gold-soft:#c4a572;
+    --paper:#f4f3f5; --paper-warm:#ebeaed; --cream:#f9f8fa; --ink:#202124; --gray:#5f6368;
+    --line:#e2e1e3; --white:#ffffff; --green:#2e8b6b; --terracotta:#c4502d; --accent:#1a73e8;
   }
   body{font-family:'Vazirmatn',Arial,sans-serif; background-color:var(--paper);
     background-image:repeating-linear-gradient(transparent, transparent 31px, rgba(46,123,181,0.05) 31px, rgba(46,123,181,0.05) 32px);
@@ -21,8 +21,8 @@
   .topbar a{color:var(--accent); text-decoration:none; font-size:13.5px; border:1px solid var(--line);
     background:var(--cream); padding:9px 16px; border-radius:9px; transition:all .2s;}
   .topbar a:hover{background:var(--accent); color:#fff;}
-  .lc-header{background:linear-gradient(135deg, var(--accent), #b07a4acc); color:#fff;
-    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #b07a4a40; position:relative; overflow:hidden;}
+  .lc-header{background:linear-gradient(135deg, var(--accent), #1a73e8cc); color:#fff;
+    padding:30px 28px; border-radius:20px; margin-bottom:20px; box-shadow:0 14px 34px #1a73e840; position:relative; overflow:hidden;}
   .lc-header::after{content:"";position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:rgba(255,255,255,.07);border-radius:50%;}
   .lc-header .lc-emoji{font-size:34px; margin-bottom:8px;}
   .lc-header h1{font-size:26px; font-weight:700; margin-bottom:5px;}
@@ -36,7 +36,7 @@
   .lc-tab{font-family:'Vazirmatn',sans-serif; font-size:13.5px; font-weight:600; background:var(--white);
     color:var(--ink); border:1.5px solid var(--line); border-radius:22px; padding:9px 16px; cursor:pointer; transition:all .2s;}
   .lc-tab:hover{border-color:var(--accent);}
-  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #b07a4a40;}
+  .lc-tab.active{background:var(--accent); color:#fff; border-color:var(--accent); box-shadow:0 4px 12px #1a73e840;}
   /* بخش */
   .lc-section{animation:fadeIn .35s ease;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
@@ -51,7 +51,7 @@
     background:var(--cream); padding:10px 14px; border-radius:9px; line-height:1.7;}
   .lc-ex b{color:var(--accent); font-weight:700;}
   .lc-ex-fa{font-size:13px; color:var(--gray); margin-top:6px; padding-right:4px;}
-  .lc-tip{background:linear-gradient(135deg, #b07a4a14, #b07a4a08); border-right:4px solid var(--accent);
+  .lc-tip{background:linear-gradient(135deg, #1a73e814, #1a73e808); border-right:4px solid var(--accent);
     border-radius:10px; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:2;}
   .lc-tip b{color:var(--accent);}
   /* جدول */
@@ -65,7 +65,7 @@
   .lc-head span{font-weight:700; color:var(--navy) !important;}
   /* Quiz */
   .lc-quiz-intro{font-size:14px; color:var(--ink); margin:18px 0 14px; font-weight:600;}
-  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #b07a4a08); border-radius:14px; padding:18px 20px; margin-top:8px;}
+  .lc-quiz{background:linear-gradient(135deg, rgba(46,139,107,0.06), #1a73e808); border-radius:14px; padding:18px 20px; margin-top:8px;}
   .lcq-q{margin-bottom:18px;}
   .lcq-q:last-child{margin-bottom:0;}
   .lcq-text{font-family:'Lexend',serif; font-size:16px; color:var(--navy); font-weight:500; direction:ltr; text-align:left; margin-bottom:10px;}
@@ -122,7 +122,7 @@ body{background:#fff!important;background-image:none!important}
     <div class="lc-tabs"><button class="lc-tab active" onclick="showSection(0)">🔧 ساخت قید با -MENT</button><button class="lc-tab" onclick="showSection(1)">⏰ قیدهای زمان</button><button class="lc-tab" onclick="showSection(2)">📍 قیدهای مکان</button><button class="lc-tab" onclick="showSection(3)">📊 قیدهای کمیت و تأکید</button><button class="lc-tab" onclick="showSection(4)">🎭 قیدهای حالت — ment</button></div>
     
         <div class="lc-section" id="lc-sec-0" style="display:block">
-          <h2 class="lc-sec-title" style="color:#b07a4a">🔧 ساخت قید با -MENT</h2>
+          <h2 class="lc-sec-title" style="color:#1a73e8">🔧 ساخت قید با -MENT</h2>
           
 <p class="lc-p">اکثر قیدهای فرانسه از <b>صفت مؤنث + ment</b> ساخته می‌شوند:</p>
 
@@ -141,7 +141,7 @@ body{background:#fff!important;background-image:none!important}
           
         </div>
         <div class="lc-section" id="lc-sec-1" style="display:none">
-          <h2 class="lc-sec-title" style="color:#b07a4a">⏰ قیدهای زمان</h2>
+          <h2 class="lc-sec-title" style="color:#1a73e8">⏰ قیدهای زمان</h2>
           
 <p class="lc-p">پرکاربردترین قیدهای زمانی را باید حفظ کرد:</p>
 
@@ -172,7 +172,7 @@ body{background:#fff!important;background-image:none!important}
           
         </div>
         <div class="lc-section" id="lc-sec-2" style="display:none">
-          <h2 class="lc-sec-title" style="color:#b07a4a">📍 قیدهای مکان</h2>
+          <h2 class="lc-sec-title" style="color:#1a73e8">📍 قیدهای مکان</h2>
           
 <div class="lc-table">
   <div class="lc-tr-row lc-head"><span>قید</span><span>معنی</span><span>Exemple</span></div>
@@ -193,7 +193,7 @@ body{background:#fff!important;background-image:none!important}
           
         </div>
         <div class="lc-section" id="lc-sec-3" style="display:none">
-          <h2 class="lc-sec-title" style="color:#b07a4a">📊 قیدهای کمیت و تأکید</h2>
+          <h2 class="lc-sec-title" style="color:#1a73e8">📊 قیدهای کمیت و تأکید</h2>
           
 <p class="lc-p">این قیدها برای تأکید، مقایسه و بیان مقدار:</p>
 
@@ -219,7 +219,7 @@ body{background:#fff!important;background-image:none!important}
           
         </div>
         <div class="lc-section" id="lc-sec-4" style="display:none">
-          <h2 class="lc-sec-title" style="color:#b07a4a">🎭 قیدهای حالت — ment</h2>
+          <h2 class="lc-sec-title" style="color:#1a73e8">🎭 قیدهای حالت — ment</h2>
           
 <p class="lc-p">این قیدهای -ment پرکاربردترین‌های نوشتار و گفتار رسمی‌اند:</p>
 

@@ -9,8 +9,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --navy:#1e3a5f;--paper:#f4f3f5;--cream:#f9f8fa;
-  --ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;
-  --gold:#a8874f;--rose:#b0506f;--green:#2e8b6b;--blue:#22618f;
+  --ink:#202124;--gray:#5f6368;--line:#e2e1e3;--white:#ffffff;
+  --gold:#e8710a;--rose:#b0506f;--green:#2e8b6b;--blue:#22618f;
 }
 body{font-family:'Vazirmatn',sans-serif;background:var(--paper);
   background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(30,58,95,0.04) 31px,rgba(30,58,95,0.04) 32px);
@@ -85,7 +85,7 @@ body{font-family:'Vazirmatn',sans-serif;background:var(--paper);
   cursor:pointer;position:relative;transition:all .2s}
 .kw:hover,.kw.open{background:rgba(34,97,143,.23)}
 .kw-pop{position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
-  background:var(--navy);color:#f7f3ea;font-family:'Vazirmatn',sans-serif;
+  background:var(--navy);color:#f8f9fa;font-family:'Vazirmatn',sans-serif;
   font-size:12px;font-weight:500;direction:rtl;white-space:nowrap;
   padding:5px 12px;border-radius:8px;z-index:20;
   box-shadow:0 6px 18px rgba(0,0,0,.22);opacity:0;visibility:hidden;
@@ -154,7 +154,7 @@ body{background:#fff!important;background-image:none!important}
 .hoda-back{position:sticky;top:0;z-index:200;background:rgba(255,253,246,.97);backdrop-filter:blur(12px);border-bottom:1.5px solid rgba(217,206,184,.55);display:flex;align-items:center;gap:10px;padding:9px 16px}
 .hoda-back-btn{display:flex;align-items:center;gap:5px;background:#1e3a5f;color:#f5f0e8;text-decoration:none;border:none;border-radius:22px;padding:6px 16px;font-family:'Vazirmatn',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s}
 .hoda-back-btn:hover{background:#2a5080}
-.hoda-back-label{font-size:12px;color:#8a8275;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hoda-back-label{font-size:12px;color:#5f6368;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 <div class="hoda-back">
   <a class="hoda-back-btn" href="javascript:history.back()">&#8592; واژگان</a>
@@ -235,7 +235,7 @@ body{background:#fff!important;background-image:none!important}
   </div>
 
   <div class="flash-card" onclick="flip(this)">
-    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-color" style="background:#e8710a"></div>
     <div class="fc-front">
       <div class="fc-word">l'habillement</div>
       <div class="fc-type">nm · اسم مذکر</div>
@@ -300,7 +300,7 @@ body{background:#fff!important;background-image:none!important}
   </div>
 
   <div class="flash-card" onclick="flip(this)">
-    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-color" style="background:#e8710a"></div>
     <div class="fc-front">
       <div class="fc-word">sobre / la sobriété</div>
       <div class="fc-type">adj / nf</div>
@@ -365,7 +365,7 @@ body{background:#fff!important;background-image:none!important}
   </div>
 
   <div class="flash-card" onclick="flip(this)">
-    <div class="fc-color" style="background:#a8874f"></div>
+    <div class="fc-color" style="background:#e8710a"></div>
     <div class="fc-front">
       <div class="fc-word">l'intimité</div>
       <div class="fc-type">nf · اسم مؤنث</div>
@@ -591,12 +591,12 @@ function answer(el, chosen){
 <!-- 🎙️ Voice Recorder -->
 <style>
 #rec-widget{
-  background:var(--white,#fcfbfd);
+  background:var(--white,#ffffff);
   border:1px solid rgba(217,206,184,.6);
   border-radius:14px;padding:14px 16px;
   margin:16px 0;box-shadow:0 3px 12px rgba(31,58,95,.06);
 }
-.rec-title{font-size:11px;font-weight:700;color:#b07a4a;letter-spacing:1.5px;margin-bottom:10px}
+.rec-title{font-size:11px;font-weight:700;color:#1a73e8;letter-spacing:1.5px;margin-bottom:10px}
 .rec-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 #rec-btn{
   display:flex;align-items:center;gap:6px;
@@ -607,11 +607,11 @@ function answer(el, chosen){
 }
 #rec-btn.recording{background:#c0392b;animation:pulse 1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
-#rec-timer{font-size:12px;color:#8a8275;font-variant-numeric:tabular-nums}
+#rec-timer{font-size:12px;color:#5f6368;font-variant-numeric:tabular-nums}
 .rec-list{display:flex;flex-direction:column;gap:6px;margin-top:10px}
 .rec-item{background:#f5f0e8;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px}
 .rec-item audio{flex:1;height:30px;accent-color:#1e3a5f}
-.rec-item-date{font-size:10px;color:#8a8275;flex-shrink:0}
+.rec-item-date{font-size:10px;color:#5f6368;flex-shrink:0}
 .rec-del{background:none;border:none;color:#c0392b;cursor:pointer;font-size:14px;opacity:.5;flex-shrink:0}
 .rec-del:hover{opacity:1}
 .rec-empty{font-size:12px;color:#b0a090;text-align:center;padding:8px 0}

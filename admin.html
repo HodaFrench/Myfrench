@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#1e3a5f;--gold:#b07a4a;--paper:#f4f3f5;--ink:#2c2a26;--gray:#8a8275;--line:#e2e1e3;--white:#fcfbfd;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
+:root{--navy:#1e3a5f;--gold:#1a73e8;--paper:#f4f3f5;--ink:#202124;--gray:#5f6368;--line:#e2e1e3;--white:#ffffff;--green:#2e8b6b;--green-d:#23704f;--rose:#b0506f;--purple:#7a5ba8}
 body{font-family:'Vazirmatn',sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;padding:0 0 40px}
 .topbar{background:var(--navy);color:#fff;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .topbar h1{font-size:17px;font-weight:700}
@@ -54,7 +54,7 @@ body{font-family:'Vazirmatn',sans-serif;background:var(--paper);color:var(--ink)
 .detail-row{font-size:12.5px;background:var(--white);border-radius:8px;padding:8px 12px;border:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}
 .detail-row .time{color:var(--gray);font-size:11px;flex-shrink:0}
 .detail-empty{font-size:12px;color:var(--gray);font-style:italic;padding:6px}
-.note-row{background:rgba(176,122,74,.06);border-color:rgba(176,122,74,.2)}
+.note-row{background:rgba(60,64,67,.06);border-color:rgba(60,64,67,.2)}
 .q-row{background:rgba(122,91,168,.06);border-color:rgba(122,91,168,.2)}
 
 .refresh{background:var(--green);color:#fff;border:none;border-radius:10px;padding:9px 18px;font-family:'Vazirmatn',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:16px}
@@ -148,7 +148,7 @@ function renderQuestions() {
   let html = '';
   
   if (allQuestions.length === 0) {
-    html = '<p style="text-align:center;color:#8a8275;padding:30px">هنوز سؤالی ثبت نشده است.</p>';
+    html = '<p style="text-align:center;color:#5f6368;padding:30px">هنوز سؤالی ثبت نشده است.</p>';
   } else {
     if (unanswered.length) {
       html += '<h3 style="font-size:14px;color:#b0506f;margin:10px 0">❓ بی‌پاسخ ('+unanswered.length+')</h3>';
@@ -284,7 +284,7 @@ function fmtDate(dateStr) {
 function renderStudents() {
   const emails = Object.keys(allStudents).sort();
   if (emails.length === 0) {
-    document.getElementById('students').innerHTML = '<p style="text-align:center;color:#8a8275;padding:30px">هنوز شاگردی فعالیتی نداشته است.</p>';
+    document.getElementById('students').innerHTML = '<p style="text-align:center;color:#5f6368;padding:30px">هنوز شاگردی فعالیتی نداشته است.</p>';
     return;
   }
   
