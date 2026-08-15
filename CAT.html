@@ -192,7 +192,7 @@ function render(){
     setHeader(meta.fr,meta.ic,meta.color,INNERFRENCH.length+' épisodes');
     INNERFRENCH.forEach(function(e){
       var c=covIcon('ecoute','var(--teal)');
-      h+=makeCard('IF_ep'+String(e.num).padStart(2,'0')+'.html',c.style,c.inner,e.titreFa,'','Épisode '+e.num);
+      h+=makeCard('IF_ep'+String(e.num).padStart(2,'0')+'.html',c.style,c.inner,e.titre,(e.titreFa||''),'Épisode '+e.num);
     });
     grid.innerHTML=h; return;
   }
