@@ -168,38 +168,10 @@ const LESSONS = [
     tags: ["innerfrench","podcast","B1","écoute"],
     summary: "بدبختی‌های برندگان لاتاری"
   },
-  {
-    file: "IF_ep14.html",
-    title: "🎧 InnerFrench #14 — Comment créer le héros parfait",
-    titleFr: "#14 Comment créer le héros parfait",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "چطور قهرمان کامل بسازیم؟"
-  },
-  {
-    file: "IF_ep15.html",
-    title: "🎧 InnerFrench #15 — L'école en France",
-    titleFr: "#15 L'école en France",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "مدرسه در فرانسه"
-  },
-  {
-    file: "IF_ep16.html",
-    title: "🎧 InnerFrench #16 — Prendre l'habitude de faire du français",
-    titleFr: "#16 Prendre l'habitude de faire du français",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "عادت کردن به فرانسه"
-  },
-  {
-    file: "IF_ep17.html",
-    title: "🎧 InnerFrench #17 — Xavier Dolan, réalisateur prodige ?",
-    titleFr: "#17 Xavier Dolan, réalisateur prodige ?",
-    category: "innerfrench", level: "B1–B2",
-    tags: ["innerfrench","podcast","B1","écoute"],
-    summary: "گزاویه دولان، کارگردان نابغه؟"
-  },
+  
+  
+  
+  
 
   {file:"GRAM_passe_recent.html",title:"📐 Le Passé Récent — venir de",titleFr:"Le Passé Récent",category:"grammar",level:"A2–B1",tags:["passé récent","venir de","A2"],summary:"گذشته نزدیک — تازه"},
   {file:"GRAM_passe_compose.html",title:"📐 Le Passé Composé",titleFr:"Le Passé Composé",category:"grammar",level:"A2–B1",tags:["passé composé","auxiliaire","participe passé"],summary:"گذشته مرکب کامل"},
@@ -1505,7 +1477,7 @@ const LESSONS = [
   },
 
   {
-    file: "innerfrench.html?ep=1",
+    file: "IF_ep01.html",
     title: "🎧 InnerFrench #1 — یادگیری طبیعی زبان فرانسه",
     titleFr: "#1 Apprendre le français naturellement",
     category: "innerfrench", level: "B1–B2",
@@ -1513,7 +1485,7 @@ const LESSONS = [
     summary: "یادگیری طبیعی زبان فرانسه"
   },
   {
-    file: "innerfrench.html?ep=2",
+    file: "IF_ep02.html",
     title: "🎧 InnerFrench #2 — زندگی با ربات‌ها",
     titleFr: "#2 Vivre avec les robots",
     category: "innerfrench", level: "B1–B2",
@@ -1521,7 +1493,7 @@ const LESSONS = [
     summary: "زندگی با ربات‌ها"
   },
   {
-    file: "innerfrench.html?ep=3",
+    file: "IF_ep03.html",
     title: "🎧 InnerFrench #3 — خوشبخت‌ترین کشورها",
     titleFr: "#3 Les pays les plus heureux",
     category: "innerfrench", level: "B1–B2",
@@ -1529,7 +1501,7 @@ const LESSONS = [
     summary: "خوشبخت‌ترین کشورها"
   },
   {
-    file: "innerfrench.html?ep=4",
+    file: "IF_ep04.html",
     title: "🎧 InnerFrench #4 — نظریه‌ی جنسیت",
     titleFr: "#4 La théorie du genre",
     category: "innerfrench", level: "B1–B2",
@@ -1537,7 +1509,7 @@ const LESSONS = [
     summary: "نظریه‌ی جنسیت"
   },
   {
-    file: "innerfrench.html?ep=5",
+    file: "IF_ep05.html",
     title: "🎧 InnerFrench #5 — رئیس‌جمهور جدید فرانسه: امانوئل ماکرون",
     titleFr: "#5 Le nouveau président français : Emmanuel Macron",
     category: "innerfrench", level: "B1–B2",
@@ -1545,7 +1517,7 @@ const LESSONS = [
     summary: "رئیس‌جمهور جدید فرانسه: امانوئل ماکرون"
   },
   {
-    file: "innerfrench.html?ep=6",
+    file: "IF_ep06.html",
     title: "🎧 InnerFrench #6 — یادگیری زبان: مزایای پنهان",
     titleFr: "#6 Apprendre une langue : les avantages cachés",
     category: "innerfrench", level: "B1–B2",
@@ -1553,7 +1525,7 @@ const LESSONS = [
     summary: "یادگیری زبان: مزایای پنهان"
   },
   {
-    file: "innerfrench.html?ep=7",
+    file: "IF_ep07.html",
     title: "🎧 InnerFrench #7 — نظریه‌های توطئه",
     titleFr: "#7 Les théories du complot",
     category: "innerfrench", level: "B1–B2",
